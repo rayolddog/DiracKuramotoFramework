@@ -436,7 +436,7 @@ OPEN QUESTION:
     plt.tight_layout()
     plt.savefig('higgs_clock.png', dpi=150)
     print("\nSaved: higgs_clock.png")
-    plt.show()
+    # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 
 
 if __name__ == '__main__':

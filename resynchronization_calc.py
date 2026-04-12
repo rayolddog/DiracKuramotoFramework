@@ -419,7 +419,7 @@ def plot_correlation_comparison():
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/bell_gap_analysis.png',
+    plt.savefig('bell_gap_analysis.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: bell_gap_analysis.png]")
@@ -521,7 +521,7 @@ def simulate_detector_mass_asymmetry():
                  '"More rotation occurs in the particle than the detector"',
                  fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/detector_mass_asymmetry.png',
+    plt.savefig('detector_mass_asymmetry.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: detector_mass_asymmetry.png]")
@@ -691,7 +691,7 @@ def simulate_dirac_measurement():
                  'L-R Coupling (K=m) vs Measurement Field (B)',
                  fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/dirac_measurement_dynamics.png',
+    plt.savefig('dirac_measurement_dynamics.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: dirac_measurement_dynamics.png]")
@@ -798,7 +798,7 @@ def investigate_cosine_phase():
                 arrowprops=dict(arrowstyle='->', color='purple', lw=2))
 
     plt.tight_layout()
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/cosine_phase_analysis.png',
+    plt.savefig('cosine_phase_analysis.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: cosine_phase_analysis.png]")
@@ -909,7 +909,7 @@ def derive_required_distribution():
                  'it must bias the hidden variable distribution THIS specifically',
                  fontsize=13, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/route_a_requirement.png',
+    plt.savefig('route_a_requirement.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: route_a_requirement.png]")

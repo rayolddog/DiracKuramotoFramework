@@ -141,7 +141,7 @@ def chsh_optimal(e_func, n_grid=360):
     for a2 in angles_range:
         for b in angles_range:
             for b2 in angles_range:
-                val = abs(e_func(0) - e_func(-b2) + e_func(a2 - b) + e_func(a2 - b2))
+                val = abs(e_func(-b2) + e_func(a2 - b) + e_func(a2 - b2))
                 if val > best:
                     best = val
     return best
@@ -262,7 +262,7 @@ def run():
     plt.tight_layout()
     plt.savefig('bell_phase.png', dpi=150)
     print("\nSaved: bell_phase.png")
-    plt.show()
+    # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 
 
 if __name__ == '__main__':

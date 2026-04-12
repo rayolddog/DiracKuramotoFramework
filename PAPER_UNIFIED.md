@@ -63,13 +63,13 @@ The equation has no mechanism to select one outcome. The Born rule —
 P(0) = |α|² — is postulated, not derived.
 
 The three mainstream responses each carry significant costs. Copenhagen introduces
-a mysterious collapse with no physical mechanism. Everett's many-worlds preserves
-unitarity at the cost of infinite unobservable branches. Bohmian mechanics accepts
+a mysterious collapse with no physical mechanism. Everett's many-worlds [16] preserves
+unitarity at the cost of infinite unobservable branches. Bohmian mechanics [15] accepts
 explicit nonlocality through a physically inert pilot wave.
 
 ### 1.2 What Is Missing: A Dynamical Mechanism for Decoherence
 
-Environmental decoherence [Zurek 2003] has become the standard framework for
+Environmental decoherence [4] has become the standard framework for
 understanding how quantum superpositions become effectively classical. It
 successfully explains the emergence of preferred "pointer states" and the
 suppression of off-diagonal density matrix elements through interaction with
@@ -104,7 +104,7 @@ We make three claims, in decreasing order of mathematical rigor:
 
 We state clearly at the outset:
 
-- We do not challenge Bell's theorem. The quantum correlations E(a,b) = −cos(a−b)
+- We do not challenge Bell's theorem [9]. The quantum correlations E(a,b) = −cos(a−b)
   arise from the entangled singlet state and the full Dirac spinor structure —
   standard quantum mechanics.
 - We do not modify the Dirac equation or any of its predictions.
@@ -142,7 +142,7 @@ The coupling strength is exactly *m*.
 
 ### 2.2 The Kuramoto Identification
 
-The standard Kuramoto model [Kuramoto 1975] describes the phase dynamics of N
+The standard Kuramoto model [2] describes the phase dynamics of N
 coupled oscillators:
 
 $$\frac{d\phi_i}{dt} = \omega_i + \frac{K}{N}\sum_j \sin(\phi_j - \phi_i)$$
@@ -161,7 +161,7 @@ $$\boxed{K = y_f \cdot |\langle\phi\rangle| = y_f \cdot \frac{v}{\sqrt{2}} = m} 
 **Equation (3) is the central result of this paper: the particle's mass equals
 its Kuramoto coupling constant.**
 
-The Higgs vacuum expectation value ⟨φ⟩ = v/√2 ≈ 174 GeV drives the two chiral
+The Higgs vacuum expectation value [11, 12] ⟨φ⟩ = v/√2 ≈ 174 GeV drives the two chiral
 clocks into synchronized oscillation. Before electroweak symmetry breaking (v → 0),
 K → 0 and all fermions are massless — their chiral clocks are independent. After
 symmetry breaking, K = m and the clocks synchronize.
@@ -220,7 +220,7 @@ phase evolution across both clock sectors.
 | Dirac mass term couples ψ_L ↔ ψ_R | Standard QFT; textbook |
 | m = 0 → chiral sectors decouple | Standard QFT; textbook |
 | Higgs-Yukawa sets fermion mass via ⟨φ⟩ | Standard Model; established |
-| Negative-energy Dirac solutions = reversed temporal phase | Standard (Feynman-Stückelberg) |
+| Negative-energy Dirac solutions = reversed temporal phase | Standard (Feynman-Stückelberg [21, 22]) |
 | **Mass term has Kuramoto coupling structure** | **New interpretation (this work)** |
 | **K = m identification** | **New (this work)** |
 
@@ -284,7 +284,7 @@ m = 1.0 (θ_rel ≈ 53°), a = 0, b = π/4:
 
 ### 3.5 The Non-Relativistic Deficiency Explained
 
-A non-relativistic phase-clock model that tracks only the temporal de Broglie
+A non-relativistic phase-clock model that tracks only the temporal de Broglie [13]
 phase ω = E/ℏ retains only E_LL, discarding E_SS and E_LS. This gives:
 
 $$E_{NR}(a, b) = -\frac{1}{2}\cos(a - b), \qquad \text{CHSH}_{NR} \leq \sqrt{2} \approx 1.414$$
@@ -357,13 +357,15 @@ distance Δz is:
 
 $$\Gamma_{grav} = \frac{GM^2}{\hbar \Delta z}$$
 
-For macroscopic objects (M ~ 1 kg, Δz ~ 1 m), Γ_grav ~ 10⁻⁷ rad/s — small
-compared to atomic frequencies but sufficient over macroscopic timescales to
-maintain bulk phase coherence.
+For macroscopic objects (M ~ 1 kg, Δz ~ 1 m), Γ_grav ~ 6 × 10²³ rad/s — an
+extremely fast rate, which is precisely why bulk coherence is maintained so
+effectively for macroscopic masses. The gravitational synchronization coupling
+grows as M², ensuring that macroscopic objects are locked into collective phase
+coherence far more strongly than microscopic particles.
 
 ### 4.5 Connection to Penrose-Diósi
 
-This picture has a natural connection to Penrose's proposal [Penrose 1996] that
+This picture has a natural connection to Penrose's proposal [6] that
 gravity causes quantum state reduction. Penrose argues that a superposition of
 two mass configurations with different spacetime geometries is unstable, with
 collapse timescale τ ~ ℏ/E_g where E_g is the gravitational self-energy of the
@@ -383,8 +385,7 @@ The re-synchronization picture is interpretive. It does not:
 
 1. Derive decoherence rates quantitatively from Kuramoto parameters (this would
    require a full quantum treatment of many-body Kuramoto dynamics)
-2. ~~Explain how the Born rule probability P = |α|² emerges from synchronization
-   dynamics~~ (addressed in Section 6)
+2. The Born rule probability P = |α|² is addressed in Section 6
 3. Provide a Lorentz-covariant formulation of the measurement process
 
 ---
@@ -463,7 +464,7 @@ The Kuramoto model provides a natural answer. For N coupled oscillators with
 phases φ₁, φ₂, ..., φ_N, the degree of collective synchronization is measured by
 the order parameter:
 
-$$R \cdot e^{i\Psi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\phi_j} \qquad (9)$$
+$$R \cdot e^{i\Psi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\phi_j} \qquad (8)$$
 
 where R ∈ [0,1] is the synchronization amplitude and Ψ is the collective phase.
 The probability that a single oscillator with phase φ locks to the collective
@@ -493,18 +494,18 @@ the detector's synchronized state.
 For a complex oscillator with amplitude A·e^{iφ} coupling to a reference
 oscillator, the synchronization probability is:
 
-$$P_{sync} \propto |A \cdot e^{i\phi}|^2 = |A|^2 \qquad (10)$$
+$$P_{sync} \propto |A \cdot e^{i\phi}|^2 = |A|^2 \qquad (9)$$
 
 The phase determines *which* detector eigenstate is reached. The amplitude
 determines *how likely* that synchronization is. Averaging over the random bulk
 phase Φ_bulk (which is uniformly distributed over [0, 2π) from the particle's
 perspective), all cross terms vanish:
 
-$$\langle e^{i(\phi_0 - \phi_1)} \rangle_{\Phi_{bulk}} = 0 \qquad (11)$$
+$$\langle e^{i(\phi_0 - \phi_1)} \rangle_{\Phi_{bulk}} = 0 \qquad (10)$$
 
 Only the diagonal terms survive:
 
-$$P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2 \qquad (12)$$
+$$P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2 \qquad (11)$$
 
 This is the Born rule, derived from Kuramoto synchronization statistics rather
 than postulated.
@@ -555,15 +556,15 @@ coupling amplitude, with probability proportional to |amplitude|².
 
 ## 7. Zitterbewegung as a Beat Frequency
 
-Zitterbewegung — the rapid oscillatory motion of a Dirac electron at frequency
-2mc²/ℏ — is, according to accepted standards, attributed to interference between positive and negative
+Zitterbewegung [3] — the rapid oscillatory motion of a Dirac electron at frequency
+2mc²/ℏ — is conventionally attributed to interference between positive and negative
 frequency components. In the phase-clock picture, it has a more intuitive
 interpretation.
 
 The temporal clock oscillates at ω_t = E/ℏ. The spatial clock oscillates at
 ω_s = p²/(mγ·ℏ). Their beat frequency in the non-relativistic limit:
 
-$$\omega_{Zitter} \approx \frac{2mc^2}{\hbar} \qquad (8)$$
+$$\omega_{Zitter} \approx \frac{2mc^2}{\hbar} \qquad (12)$$
 
 This is exactly the known Zitterbewegung frequency. In the phase-clock
 interpretation, Zitterbewegung is the **beat note between the temporal and spatial
@@ -579,16 +580,16 @@ photons.
 
 ## 8. Antiparticles and CP Violation
 
-### 7.1 Antiparticles as Time-Reversed Clocks
+### 8.1 Antiparticles as Time-Reversed Clocks
 
 The negative-energy Dirac solution v(p,s)e^{+iEt/ℏ} has temporal phase running
 in the opposite sense to a positive-energy particle. In the Kuramoto framework:
 **antiparticles are particles with time-reversed phase clocks** (φ → −φ).
 
 This is not a reinterpretation — it is already implicit in the Feynman-Stückelberg
-interpretation. The phase-clock language makes it explicit.
+interpretation [21, 22]. The phase-clock language makes it explicit.
 
-### 7.2 CP Violation as Synchronization Asymmetry
+### 8.2 CP Violation as Synchronization Asymmetry
 
 The Kuramoto equations (2a, 2b) contain the CP-violating phase δ_CP. For
 particles, the equilibrium phase lock is Δφ = +δ_CP; for antiparticles,
@@ -637,7 +638,7 @@ coupling for massive fermions — stands regardless.
 We distinguish between predictions that follow from the mathematical identification
 (Section 2) and those that follow from the interpretive claims (Sections 4-6).
 
-### 9.1 From the Mathematical Identification
+### 10.1 From the Mathematical Identification
 
 **P1 — Three-term decomposition of Bell correlations.** For massive entangled
 particles, the correlation E(a,b) = −cos(a−b) decomposes into E_LL + E_SS + E_LS,
@@ -649,10 +650,10 @@ could reveal this structure.
 **P2 — Zitterbewegung as clock beat.** The identification of ω_Zitter = 2mc²/ℏ
 as the beat frequency between temporal and spatial clocks is consistent with all
 known properties of Zitterbewegung. Trapped-ion simulations with tunable effective
-mass [Gerritsma et al. 2010] could probe the transition from locked to unlocked
+mass [10] could probe the transition from locked to unlocked
 clock behavior as effective mass passes through zero.
 
-### 9.2 From the Interpretive Framework
+### 10.2 From the Interpretive Framework
 
 **P3 — Decoherence rate scaling with mass.** If the Kuramoto synchronization rate
 is K = m, heavier particles should decohere faster: τ_sync ~ ℏ/m. This is
@@ -668,7 +669,7 @@ Comparing entanglement decay times for kaon pairs (m_K = 494 MeV) versus B-meson
 pairs (m_B = 5,280 MeV) should show τ_B/τ_K ~ m_K/m_B ≈ 0.094. Existing
 collider data on neutral kaon and B-meson decoherence could be analyzed.
 
-### 9.3 Honest Assessment
+### 10.3 Honest Assessment
 
 These predictions are qualitative scaling arguments, not quantitative predictions
 with computed coefficients. The framework in its current form is an interpretation
@@ -680,9 +681,9 @@ This is the main limitation and the main avenue for future work.
 
 ## 11. Comparison with Existing Frameworks
 
-### 10.1 Interpretations of Quantum Mechanics
+### 11.1 Interpretations of Quantum Mechanics
 
-| Property | Copenhagen | Everett MWI | Bohmian | GRW/CSL | Superdeterminism | **This work** |
+| Property | Copenhagen | Everett MWI | Bohmian | GRW/CSL [8, 23] | Superdeterminism | **This work** |
 |---|---|---|---|---|---|---|
 | ψ is real? | No | Yes | Yes | Yes | Varies | **Yes** |
 | Collapse? | Postulated | No | No | Stochastic | Not needed | **Re-synchronization** |
@@ -693,10 +694,10 @@ This is the main limitation and the main avenue for future work.
 | Bell's theorem? | Accepted | Accepted | Accepted (nonlocal) | Accepted | Denied (meas. indep.) | **Accepted** |
 | Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Derived (Section 6)** |
 
-### 10.2 Decoherence Models
+### 11.2 Decoherence Models
 
 The closest existing framework is the Penrose-Diósi gravitational decoherence
-model [Penrose 1996, Diósi 1989]. Both that model and ours identify gravity as
+model [6, 7]. Both that model and ours identify gravity as
 the agent of classicalization. The key differences:
 
 - Penrose-Diósi: collapse timescale τ ~ ℏ/E_g (gravitational self-energy)
@@ -707,9 +708,9 @@ The predictions are qualitatively similar (heavier → faster decoherence) but
 derive from different dynamics. A quantitative comparison awaits a full
 derivation of Kuramoto decoherence rates from first principles.
 
-### 10.3 Zurek's Einselection
+### 11.3 Zurek's Einselection
 
-Zurek's quantum Darwinism [Zurek 2003, 2009] identifies "pointer states" as
+Zurek's quantum Darwinism [4, 5] identifies "pointer states" as
 states that survive interaction with the environment. In the Kuramoto picture,
 pointer states are the synchronized states — the phase-locked configurations
 that are stable under coupling to the macroscopic bulk. States that cannot
@@ -718,19 +719,19 @@ are dynamically unstable and decohere. This is consistent with einselection
 but provides a specific dynamical mechanism (phase locking) for why certain
 states survive.
 
-### 10.4 Superdeterminism
+### 11.4 Superdeterminism
 
-Superdeterminism [Bell 1976, 't Hooft 2016] escapes Bell's theorem by denying
+Superdeterminism [20, 19] escapes Bell's theorem by denying
 measurement independence: the hidden variable λ and the detector settings (a, b)
 are correlated because they share a common causal past. If ρ(λ|a,b) ≠ ρ(λ),
 Bell's derivation does not go through, and local hidden variable models can
 reproduce quantum correlations.
 
-This comparison is important because an earlier version of this work [Olddog 2025,
-Paper 1] explicitly invoked the measurement-independence loophole through the
-gravitational bulk phase Φ_bulk — arguing that since both detectors and the
+This comparison is important because the measurement-independence loophole through
+the gravitational bulk phase Φ_bulk — arguing that since both detectors and the
 particle source share a common gravitational field, their states are
-correlated. That claim has been withdrawn in the present paper.
+correlated — might seem to apply here. We explicitly reject this route in the
+present paper, as discussed below.
 
 **Why this framework is not superdeterministic:**
 
@@ -754,7 +755,7 @@ correlated. That claim has been withdrawn in the present paper.
 
 4. **No retrocausality or conspiracy.** Superdeterministic models require that
    the state of the universe at the Big Bang already encodes which detector
-   settings will be chosen in a 2015 Bell test. This framework requires only
+   settings will be chosen in a 2015 Bell test [14]. This framework requires only
    that macroscopic detectors are phase-coherent objects immersed in a
    gravitational field — a physically uncontroversial claim.
 
@@ -768,7 +769,7 @@ correlations are quantum, and the Kuramoto mechanism explains how they are
 
 ## 12. Discussion
 
-### 11.1 The Interpretive Status
+### 12.1 The Interpretive Status
 
 This paper presents a mathematical identification (Dirac = Kuramoto) and an
 interpretive framework built on it (measurement = re-synchronization). The
@@ -777,16 +778,16 @@ interpretive framework is physically motivated but not yet quantitatively
 predictive beyond standard decoherence.
 
 We are in the category of interpretation papers — alongside many-worlds,
-Bohmian mechanics, and relational QM. The contribution is not new equations
+Bohmian mechanics, and relational QM [24]. The contribution is not new equations
 but a new way of reading existing equations that provides physical intuition
 for the measurement process.
 
-### 11.2 The Historical Note
+### 12.2 The Historical Note
 
 The timeline is suggestive:
 
 - 1928: Dirac equation (the two-clock structure)
-- 1935: EPR paper ("spooky action at a distance")
+- 1935: EPR paper [25] ("spooky action at a distance")
 - 1964: Bell's theorem
 - 1975: Kuramoto model
 
@@ -795,7 +796,7 @@ existed 36 years before Bell showed it was needed. The synchronization framework
 that describes the coupling existed 11 years after Bell. The identification
 presented here connects these threads.
 
-### 11.3 Future Directions
+### 12.3 Future Directions
 
 Three directions could elevate this from interpretation to testable theory:
 
@@ -836,11 +837,11 @@ We have shown that:
    asymmetry (M >> m) ensures definite outcomes. Decoherence is not merely loss
    of coherence — it is redirection of coherence.
 
-4. **The Born rule follows from synchronization statistics.** The probability
-   P = |α|² is the squared modulus of the complex coupling amplitude between
-   particle and detector oscillators. The phase averages out; the amplitude
-   squared remains. This is the natural probability measure for any physical
-   wave coupling to a resonant absorber.
+4. **The Born rule emerges naturally from synchronization statistics.** The probability
+   P = |α|² is argued to follow from the squared modulus of the complex coupling
+   amplitude between particle and detector oscillators. The phase averages out;
+   the amplitude squared remains. This is the natural probability measure for any
+   physical wave coupling to a resonant absorber.
 
 5. **Zitterbewegung is the beat frequency** between temporal and spatial phase
    clocks, at ω = 2mc²/ℏ.
@@ -919,10 +920,28 @@ Mechanics*. Springer.
 [20] Bell, J. S. (1976). The theory of local beables. *Epistemological Letters*,
 9, 11–24. [Reprinted in *Speakable and Unspeakable in Quantum Mechanics*, CUP.]
 
+[21] Stückelberg, E. C. G. (1941). La mécanique du point matériel en théorie de
+relativité et en théorie des quanta. *Helv. Phys. Acta*, 14, 588–594.
+
+[22] Feynman, R. P. (1949). The theory of positrons. *Phys. Rev.*, 76(6), 749–759.
+
+[23] Pearle, P. (1989). Combining stochastic dynamical state-vector reduction with
+spontaneous localization. *Phys. Rev. A*, 39(5), 2277–2289.
+
+[24] Rovelli, C. (1996). Relational quantum mechanics. *Int. J. Theor. Phys.*,
+35(8), 1637–1678.
+
+[25] Einstein, A., Podolsky, B., & Rosen, N. (1935). Can quantum-mechanical
+description of physical reality be considered complete? *Phys. Rev.*, 47(10),
+777–780.
+
+[26] Nelson, E. (1966). Derivation of the Schrödinger equation from Newtonian
+mechanics. *Phys. Rev.*, 150(4), 1079–1085.
+
 ---
 
 *Simulation code and numerical verification available at:
-github.com/rayolddog/BellWithoutFasterThanLight*
+https://github.com/rayolddog/DiracKuramotoFramework*
 
 *The three-term decomposition (Section 3) can be reproduced by running
 `dirac_extension.py`. The Kuramoto phase dynamics (Section 2) are demonstrated

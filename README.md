@@ -63,6 +63,7 @@ Each Python script verifies specific claims made in the paper. They can be run i
 numpy
 scipy
 matplotlib
+qiskit          # required by bell_energy_test.py and bulk_sync_asymmetry.py
 ```
 
 ### Running

@@ -4,7 +4,7 @@
 
 ---
 
-## 1. The Time-Phase Wave
+## 1. The Time-Phase Wave Function
 
 The Schrödinger equation — which never collapses:
 
@@ -43,7 +43,7 @@ $$\Phi_{D_1} = \Phi_{D_2} = \Phi_{\text{bulk}} \qquad \text{(both detectors, bef
 
 ---
 
-## 3. Bell's Theorem — Where the Assumption Fails
+## 3. Bell's Theorem — Where the Factorization Fails
 
 Bell's hidden variable theorem writes:
 
@@ -264,7 +264,7 @@ Heavier solvents (lower $\omega$) should produce larger diffusion than Stokes-Ei
 
 ---
 
-## 11. The Quantum-Classical Transition
+## 11. Quantum-Classical Transition
 
 ### Nelson's stochastic mechanics
 
@@ -408,6 +408,11 @@ $$\begin{array}{lll}
 \text{Matter asymmetry} & \text{Baryogenesis} & \eta \approx \varepsilon\sin^2\delta_{\text{CP}} \\
 \text{Born rule } P = |\psi|^2 & \text{Postulated} & \text{Sync probability} = |R|^2 \\
 \text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Clock orthogonality: } \delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
+\text{Measurement} & \text{Wavefunction collapse} & \text{Kuramoto re-sync to bulk} \\
+\text{Entanglement} & \text{Non-separable state} & \text{Synchronized clocks at creation: } \varphi_A = \varphi_B \\
+\text{Bell's theorem} & \text{No local HV model} & \Phi_{\text{bulk}} \text{ shared} \Rightarrow \text{factorization fails} \\
+\text{Quantum-classical} & \text{Decoherence} & k_BT\tau/m \gg \hbar/2m \\
+\text{Nelson stochastic QM} & \nu = \hbar/2m & \text{Zero-point field diffusion} \\
 \end{array}$$
 
 ---

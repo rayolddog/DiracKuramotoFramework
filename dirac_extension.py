@@ -363,7 +363,7 @@ def run():
     plt.tight_layout()
     plt.savefig('dirac_extension.png', dpi=150)
     print("\nSaved: dirac_extension.png")
-    plt.show()
+    # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 
     # ── Summary ───────────────────────────────────────────────────────────
     print("""

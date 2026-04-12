@@ -334,7 +334,7 @@ def make_plots():
     )
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plt.savefig('/Users/john-bramble/Desktop/SchrodingerBell/sg_angular.png', dpi=150,
+    plt.savefig('sg_angular.png', dpi=150,
                 bbox_inches='tight')
     print("Saved sg_angular.png")
 

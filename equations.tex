@@ -138,6 +138,17 @@ Bell's integral~\eqref{eq:bell} implicitly assumes independent components.
 This is not a conspiracy: $\Phi_{\text{bulk}}$ is a single shared variable established
 subliminally and locally, long before the measurement.
 
+\begin{center}
+\begin{tabular}{lp{4cm}p{5cm}}
+\toprule
+Assumption & Standard form & Status in this model \\
+\midrule
+Locality & $A$ depends only on $(a,\lambda)$ & Satisfied --- each detector is local \\
+Measurement independence & $\rho(\lambda\mid a,b)=\rho(\lambda)$ & \textbf{Fails} --- $\Phi_{\text{bulk}}\in\lambda$ is shared \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \subsection{Correlation functions}
 
 \begin{center}
@@ -232,6 +243,7 @@ Without the Higgs ($K=0$) all fermions are massless and $\theta_{\text{rel}}=\pi
 \midrule
 Phase & $e^{-iEt/\hbar}$ & $e^{+iEt/\hbar}$ \\
 Clock direction & Forward ($+E$) & \textbf{Reversed} ($-E$) \\
+Large/small components & Temporal dominant & Spatial dominant (swapped) \\
 Sync equilibrium & $\varphi_L-\varphi_R\to+\delta_{\text{CP}}$ & $\varphi_L-\varphi_R\to-\delta_{\text{CP}}$\\
 \bottomrule
 \end{tabular}
@@ -338,6 +350,11 @@ Clock phase noise standard deviation:
   \quad\text{(zero-point floor)}
 \end{equation}
 
+Bose-Einstein occupation number:
+\begin{equation}
+  \langle n(\omega)\rangle = \frac{1}{e^{\hbar\omega/k_BT}-1}
+\end{equation}
+
 Planck blackbody spectrum from thermal clock distribution:
 \begin{equation}
   u(\omega,T) = \frac{\hbar\omega^3}{\pi^2 c^3}\cdot\frac{1}{e^{\hbar\omega/k_BT}-1}
@@ -356,6 +373,11 @@ difference at contact:
   \delta p = K\sin(\varphi_i-\varphi_j) \approx K\,\delta\varphi,
   \qquad
   \delta\varphi \sim \mathcal{N}\!\left(0,\,\sigma_\varphi^2(T)\right)
+\end{equation}
+
+Mean squared impulse per collision:
+\begin{equation}
+  \langle(\delta p)^2\rangle = K^2\sigma_\varphi^2(T) = K^2\frac{k_BT}{\hbar\omega}
 \end{equation}
 
 The Langevin equation for a Brownian particle:
@@ -416,6 +438,25 @@ The quantum-classical crossover:
 
 The Schr\"odinger's cat boundary coincides with the Penrose collapse time equalling
 the thermal decoherence time -- two criteria derived from the same clock model.
+
+\begin{equation}
+  \tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2}
+  \quad\Longleftrightarrow\quad
+  \tau_{\text{thermal}} = \frac{m}{k_BT\,\tau_{\text{coll}}}
+\end{equation}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+System & $\hbar/2m$ (m$^2$/s) & $k_BT\tau/m$ at 300\,K & Regime \\
+\midrule
+Electron in atom ($\tau\sim 10^{-15}$\,s) & $3\times 10^{-5}$ & $10^{-21}$ & \textbf{Quantum} \\
+Proton ($\tau\sim 10^{-13}$\,s) & $1.7\times 10^{-8}$ & $10^{-18}$ & Quantum \\
+Protein ($10^{-22}$\,kg) & $5\times 10^{-13}$ & $10^{-14}$ & Borderline \\
+1\,$\mu$m dust grain & $10^{-22}$ & $10^{-11}$ & \textbf{Classical} \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 % ─── 12 ───────────────────────────────────────────────────────────────────────
 \section{The Born Rule from Synchronization Statistics}
@@ -565,6 +606,11 @@ Antiparticle & $e^{+iEt/\hbar}$ & Reversed clock \\
 Matter asymmetry & Baryogenesis & $\eta\approx\varepsilon\sin^2\delta_{\text{CP}}$ \\
 Born rule $P=|\psi|^2$ & Postulated & Sync probability $=|R|^2$ \\
 Uncertainty principle & $\Delta x\,\Delta p\geq\hbar/2$ & Clock orthogonality: $\delta\varphi_L\,\delta\varphi_R\geq\tfrac{1}{2}$ \\
+Measurement & Wavefunction collapse & Kuramoto re-sync to bulk \\
+Entanglement & Non-separable state & Synchronized clocks: $\varphi_A=\varphi_B$ \\
+Bell's theorem & No local HV model & $\Phi_{\text{bulk}}$ shared $\Rightarrow$ factorization fails \\
+Quantum-classical & Decoherence & $k_BT\tau/m \gg \hbar/2m$ \\
+Nelson stochastic QM & $\nu=\hbar/2m$ & Zero-point field diffusion \\
 \bottomrule
 \end{tabular}
 \end{center}
