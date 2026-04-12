@@ -36,6 +36,44 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 | [equations.tex](equations.tex) | LaTeX source for the equation reference |
 | [equations.pdf](equations.pdf) | Compiled PDF of the equation reference |
 
+## Numerical Verification Scripts
+
+Each Python script verifies specific claims made in the paper. They can be run independently.
+
+| Script | Verifies |
+|---|---|
+| `kuramoto_sync.py` | Core Kuramoto phase dynamics --- particles synchronizing to detector bulk |
+| `bell_phase.py` | Bell inequality comparison: LHV vs phase-clock vs QM correlations |
+| `dirac_extension.py` | Three-term Bell decomposition (E_LL + E_SS + E_LS = -cos(a-b)) to machine precision |
+| `higgs_clock.py` | Higgs as Kuramoto synchronizer; antiparticles as reversed clocks; CP violation |
+| `gravity_twistor.py` | Gravity as bulk synchronization; Penrose collapse; twistor connection |
+| `local_causality.py` | Full causal timeline showing no FTL required for Bell correlations |
+| `predictions.py` | Five testable predictions where the framework differs from standard QM |
+| `vacuum_temperature.py` | Temperature as clock phase width; Brownian motion; quantum-classical transition |
+| `everett_thermal.py` | Single-world thermalization of residual wavefunction amplitude |
+| `bell_energy_test.py` | CHSH Bell test at different photon energies under Kuramoto model |
+| `gravitational_bell.py` | Bell correlation degradation from gravitational decoherence |
+| `bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry |
+| `resynchronization_calc.py` | Measurement as re-synchronization producing -cos(a-b) |
+| `sg_angular.py` | Stern-Gerlach splitting modulation with gravitational angle |
+
+### Requirements
+
+```
+numpy
+scipy
+matplotlib
+```
+
+### Running
+
+```bash
+python dirac_extension.py    # verify three-term decomposition
+python higgs_clock.py         # Higgs-Kuramoto identification
+python gravity_twistor.py     # gravity and Penrose collapse
+python vacuum_temperature.py  # temperature and Brownian motion
+```
+
 ---
 
 ## The Central Result
