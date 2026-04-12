@@ -379,6 +379,18 @@ $$\sigma_\varphi(0) = \frac{1}{\sqrt{2}} \;\text{rad}$$
 
 This residual prevents perfect phase locking of either clock. The zero-point energy $\frac{1}{2}\hbar\omega$ per mode is the energy cost of this minimum phase uncertainty. The uncertainty principle is thus the statement that the zero-point field cannot be removed — complete synchronization of both clocks simultaneously is forbidden by the geometry of spinor space.
 
+### Nyquist–Shannon bandwidth limit
+
+The connection between the zero-point floor and the uncertainty principle can be made sharper through a Nyquist–Shannon argument. A Dirac particle's internal clock oscillates at the Compton frequency $\omega_C = mc^2/\hbar$. By the Nyquist sampling theorem, this clock has a maximum spatial bandwidth: it can resolve phase structures no finer than the Compton wavelength $\lambda_C = h/(mc)$. This sets an irreducible minimum position uncertainty:
+
+$$\Delta x_{\min} \sim \frac{\hbar}{mc}$$
+
+For a particle with momentum spread $\Delta p$, the de Broglie relation gives a spatial frequency $k = p/\hbar$ that the clock must resolve. The Nyquist limit requires the clock bandwidth $mc/\hbar$ to exceed $k$, yielding:
+
+$$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$$
+
+The uncertainty principle is thus a **bandwidth limitation of the particle's own internal clock**. A heavier particle has a faster clock and therefore finer spatial resolution, but the resolution is always finite. No oscillator can resolve frequencies beyond its own Nyquist limit.
+
 ### The commutator from clock coupling
 
 The canonical commutation relation:
