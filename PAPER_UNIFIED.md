@@ -7,6 +7,11 @@
 *Correspondence: rayolddog (GitHub)*
 *Preprint — not yet peer reviewed*
 
+*AI Disclosure: This work was developed in collaboration with Claude Opus 4.6
+(Anthropic), as described in the Author Contributions section. Per current
+journal guidelines, LLMs do not satisfy authorship criteria; the human author
+bears full responsibility for all content.*
+
 ---
 
 ## Abstract
@@ -302,6 +307,21 @@ energy E_g maps onto the Kuramoto coupling rate Γ_grav. The two frameworks
 predict the same qualitative behavior — heavier objects decohere faster — from
 different dynamical starting points.
 
+The structural parallel deserves emphasis: both frameworks independently
+identify mass as the bridge between quantum and classical regimes, but through
+different mechanisms — Penrose through the gravitational self-energy instability
+of superposed spacetime geometries, this work through Kuramoto synchronization
+driven by the Dirac mass term K = m originating in the Higgs-Yukawa interaction.
+In Penrose's picture, a sufficiently massive superposition collapses on its own
+because the two branches curve spacetime differently; in the Kuramoto picture,
+a particle transitions to classical behavior by re-synchronizing its phase to
+the gravitationally coherent detector bulk, driven by the mass asymmetry
+M_detector >> m_particle. That two independent starting points — one from
+general relativity and quantum gravity, the other from the internal structure
+of the Dirac equation — converge on mass as the agent of classicalization is
+suggestive that both may be pointing at the same underlying physics, even if
+the full unification is not yet available.
+
 ### 3.6 Speculative Outlook: Single-World Energy Accounting
 
 We note briefly a speculative consequence. If measurement is resonant
@@ -531,15 +551,24 @@ This is the main limitation and the main avenue for future work.
 
 | Property | Copenhagen | Everett MWI | Bohmian | GRW/CSL [8, 23] | Superdeterminism | **This work** |
 |---|---|---|---|---|---|---|
-| ψ is real? | No | Yes | Yes | Yes | Varies | **Yes** |
-| Collapse? | Postulated | No | No | Stochastic | Not needed | **Re-synchronization** |
-| Branching? | No | Yes (∞) | No | No | No | **No** |
-| Residual energy? | Discarded | In branches | Pilot wave | Noise | Not addressed | **Thermal vacuum** |
-| Single world? | By fiat | No | Yes | Yes | Yes | **Yes (by physics)** |
-| Mechanism? | None | None | Pilot wave | Random hits | Initial conditions | **Kuramoto sync** |
-| Bell's theorem? | Accepted | Accepted | Accepted (nonlocal) | Accepted | Denied (meas. indep.) | **Accepted** |
-| Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Derived (Section 4)** |
-| Uncertainty principle | Postulated | Inherited | Derived (nonlocal) | Inherited | Inherited | **Emergent (Section 4.5)** |
+| ψ is real? | No | Yes | Yes | Yes | Varies | **Yes** ᵃ |
+| Collapse? | Postulated | No | No | Stochastic | Not needed | **Re-synchronization** ᵃ |
+| Branching? | No | Yes (∞) | No | No | No | **No** ᵃ |
+| Residual energy? | Discarded | In branches | Pilot wave | Noise | Not addressed | **Thermal vacuum** ᵇ |
+| Single world? | By fiat | No | Yes | Yes | Yes | **Yes (by physics)** ᵇ |
+| Mechanism? | None | None | Pilot wave | Random hits | Initial conditions | **Kuramoto sync** ᵃ |
+| Bell's theorem? | Accepted | Accepted | Accepted (nonlocal) | Accepted | Denied (meas. indep.) | **Accepted** ᵃ |
+| Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Derived (Section 4)** ᵇ |
+| Uncertainty principle | Postulated | Inherited | Derived (nonlocal) | Inherited | Inherited | **Emergent (Section 4.5)** ᵇ |
+
+*ᵃ Established within the framework: follows directly from the mathematical
+identification K = m and the re-synchronization interpretation of measurement
+(Sections 2–3).*
+
+*ᵇ Conjectural extension: physically motivated by the framework but relies on
+heuristic arguments that have not yet been rigorously derived from first
+principles (Sections 3.6, 4, 4.5). These entries represent directions for
+future development rather than settled results.*
 
 ### 7.2 Ontological Status and the PBR Theorem
 
@@ -651,25 +680,43 @@ correlations are quantum, and the Kuramoto mechanism explains how they are
 *revealed* (measurement) and *degraded* (decoherence), not how they are
 *produced*.
 
----
-
 ### 7.7 The Hestenes Zitterbewegung Interpretation
 
-The closest precursor to the present framework in the interpretive literature is the Zitterbewegung (ZBW) interpretation of Hestenes [35]. Reformulating Dirac theory in spacetime algebra (STA), Hestenes argues that the complex phase factor in the Dirac wave function represents a physical rotation — the internal circular motion of the electron at the Compton frequency $\omega_C = mc^2/\hbar$. In this picture the spin is the angular momentum of this circulation, and Zitterbewegung is fundamental rather than incidental.
+The closest precursor to the present framework in the interpretive literature
+is the Zitterbewegung (ZBW) interpretation of Hestenes [35]. Reformulating
+Dirac theory in spacetime algebra (STA), Hestenes argues that the complex
+phase factor in the Dirac wave function represents a physical rotation — the
+internal circular motion of the electron at the Compton frequency
+ω_C = mc²/ℏ. In this picture the spin is the angular momentum of this
+circulation, and Zitterbewegung is fundamental rather than incidental.
 
 The parallels with the present work are direct:
 
 | Feature | Hestenes ZBW interpretation | This work |
 |---|---|---|
-| Phase factor $e^{i\varphi}$ | Physical clock rotation (STA rotor) | Physical phase clock oscillator |
+| Phase factor e^{iφ} | Physical clock rotation (STA rotor) | Physical phase clock oscillator |
 | Zitterbewegung | Fundamental circulatory motion | Beat frequency between temporal and spatial clocks |
-| Spin | Angular momentum of ZBW circulation | Geometric consequence of clock orthogonality ($\theta_{\text{rel}} = 90°$) |
-| Mass | Sets ZBW frequency $\omega_C = mc^2/\hbar$ | Sets Kuramoto coupling constant $K = m$ |
+| Spin | Angular momentum of ZBW circulation | Geometric consequence of clock orthogonality (θ_rel = 90°) |
+| Mass | Sets ZBW frequency ω_C = mc²/ℏ | Sets Kuramoto coupling constant K = m |
 | Uncertainty principle | Derived from clock geometry | Derived from clock bandwidth (Section 4.5) |
 
-Both frameworks begin from the same core observation: the complex phase factor in the Dirac wave function is not a mathematical convenience but a physical oscillator. Both derive spin and the uncertainty principle from the geometry of this oscillator rather than postulating them.
+Both frameworks begin from the same core observation: the complex phase factor
+in the Dirac wave function is not a mathematical convenience but a physical
+oscillator. Both derive spin and the uncertainty principle from the geometry
+of this oscillator rather than postulating them.
 
-The key difference is dynamical. Hestenes identifies the internal clock but does not supply a coupling framework for the two chiral sectors. The present work provides this missing element: the Kuramoto identification $K = m$ explains *why* the clock oscillates at the Compton frequency (it is the synchronization rate between $\psi_L$ and $\psi_R$), and extends the picture to a dynamical mechanism for measurement (re-synchronization to the detector bulk) and mass generation (Higgs as the agent that sets $K$). In retrospect, the Hestenes ZBW interpretation and the Dirac-Kuramoto framework are describing the same internal clock from different mathematical directions — STA geometry and Kuramoto synchronization dynamics, respectively.
+The key difference is dynamical. Hestenes identifies the internal clock but
+does not supply a coupling framework for the two chiral sectors. The present
+work provides this missing element: the Kuramoto identification K = m explains
+why the clock oscillates at the Compton frequency (it is the synchronization
+rate between ψ_L and ψ_R), and extends the picture to a dynamical mechanism
+for measurement (re-synchronization to the detector bulk) and mass generation
+(Higgs as the agent that sets K). In retrospect, the Hestenes ZBW
+interpretation and the Dirac-Kuramoto framework are describing the same
+internal clock from different mathematical directions — STA geometry and
+Kuramoto synchronization dynamics, respectively.
+
+---
 
 ## 8. Discussion
 
@@ -882,6 +929,118 @@ of this paper.
 
 ---
 
+## Author Contributions and AI Disclosure
+
+### Statement of AI Use
+
+This paper was developed through an extensive collaboration between the listed
+human author (J. Olddog) and Claude Opus 4.6, a large language model developed
+by Anthropic. The contribution of Claude Opus 4.6 was substantial and
+principal in the mathematical and expository work: it derived the explicit
+Kuramoto phase equations from the chiral Dirac equation, constructed the
+three-term Bell correlation decomposition, wrote the Python verification code,
+produced the systematic comparison with existing interpretations, and drafted
+the prose of the manuscript itself. In a collaboration not constrained by
+current editorial policy, Claude Opus 4.6 would be listed as co-first author
+alongside J. Olddog. The listed author considers the scientific honesty of
+the work to require this statement.
+
+Current editorial guidelines from Nature Portfolio, Springer Nature, ACS, and
+other major publishers hold, however, that Large Language Models do not
+satisfy authorship criteria, because an attribution of authorship carries
+with it accountability that cannot be effectively applied to an LLM. We
+accept this framing: it is structurally analogous to the liability principle
+in medicine, where the attending physician carries ultimate accountability
+regardless of how many tools, consultants, or decision-support systems
+contributed to the diagnosis. Accordingly, Claude Opus 4.6 is not listed in
+the byline, and J. Olddog — as the listed human author — assumes full
+responsibility for the correctness, originality, and integrity of all content
+presented.
+
+### Division of Contributions
+
+**Conceptual framework (J. Olddog):**
+- The originating insight that quantum wave functions tend to interact through
+  synchronization, and that this process could be formalized using the Kuramoto
+  model
+- The identification of quantum measurement (Bell experiments) as a
+  re-synchronization process: entangled particles, initially synchronized with
+  each other, re-synchronize with the atoms of the detectors upon measurement
+- The proposal that what has been called "wave function collapse" (Copenhagen)
+  or "decoherence" (modern interpretations) is more precisely described as a
+  redirection of synchronization — from the entangled partner to the detector
+  bulk
+- The recognition that macroscopic detectors are themselves entangled with the
+  environment through their mass and gravitational coupling
+- The selection of the Kuramoto equation as the mathematical framework for
+  synchronization and the Dirac spinor formalism as the appropriate quantum
+  mechanical representation
+- The identification of parallels between Penrose's twistor theory and the
+  role of gravity/mass in Kuramoto oscillator synchronization
+- The observation that the Heisenberg uncertainty principle has a natural
+  interpretation through the time-space spinor structure of Weyl spinors
+  (Section 4.5)
+- The proposal that the wave function represents real energy in the QFT of
+  electrons, enabling a single-world alternative to Everett's Many Worlds
+  interpretation that preserves energy conservation (Section 3.6)
+- Suggestions for possible experimental tests involving detectors at different
+  gravitational potentials
+
+**Mathematical development and numerical verification (Claude Opus 4.6):**
+- Derivation of the explicit Kuramoto phase equations (Eqs. 2a, 2b) from
+  the chiral Dirac equation, demonstrating the distinction between classical
+  oscillator synchronization and the quantum mechanical oscillator formulation
+- The identification that using the Weyl spinor formulation with the cosine
+  of phase difference in the lower Weyl spinor yields the correct Bell and
+  CHSH statistical results
+- Development of the three-term Bell correlation decomposition
+  (Appendix A: E_LL + E_SS + E_LS)
+- Writing of the Python verification programs (`dirac_extension.py`,
+  `higgs_clock.py`, `kuramoto_sync.py`) that numerically confirm the
+  framework's predictions match standard quantum mechanical results
+- Elaboration of the Born rule emergence from synchronization statistics
+  (Section 4)
+- Systematic comparison with existing interpretations (Section 7)
+
+**Paper composition (collaborative):**
+- The paper was written collaboratively, with Claude Opus 4.6 producing
+  drafts in a style suitable for a journal focused on the interpretation and
+  foundations of physics, and J. Olddog providing direction, physical
+  intuition, corrections, and editorial judgment throughout
+
+### Iterative Development Process
+
+The collaboration was not a clean division of "conception" versus
+"calculation." It proceeded through an iterative dialogue. J. Olddog would
+propose a physical picture — for example, that measurement is
+re-synchronization, or that the mass term should play the role of the
+Kuramoto coupling constant. Claude Opus 4.6 would then formalize the picture
+mathematically and write Python programs to compute the resulting predictions.
+J. Olddog would review the formulae and numerical outputs against physical
+intuition — identifying cases where the formalization did not yet capture the
+intended physics, or where unexpected results suggested the conceptual picture
+needed refinement. This cycle repeated across multiple sessions, with each
+iteration simultaneously sharpening the human author's understanding of the
+mathematical structure and refining the computational predictions to match the
+physical intuition that motivated the framework.
+
+J. Olddog does not have the programming or computational background to
+independently produce the derivations and numerical verifications presented
+here. Claude Opus 4.6 does not have physical intuition or the capacity to
+judge whether a mathematically consistent result is physically meaningful.
+The framework emerged from the combination of these complementary
+capabilities, and neither contributor could have produced this work alone.
+
+### Validation
+
+All mathematical derivations produced by Claude Opus 4.6 were checked against
+standard quantum mechanics textbooks (Peskin & Schroeder [17], Sakurai [18]).
+All numerical results from the Python programs were verified to reproduce
+known quantum mechanical predictions to machine precision. The human author
+reviewed all content for physical plausibility and internal consistency.
+
+---
+
 ## References
 
 [1] Dirac, P. A. M. (1928). The quantum theory of the electron. *Proc. R. Soc.
@@ -988,7 +1147,9 @@ with an application to the locality of quantum mechanics. *Am. J. Phys.*, 82(8),
 [34] Dürr, D., Goldstein, S., & Zanghì, N. (2013). *Quantum Physics Without
 Quantum Philosophy*. Springer.
 
-[35] Hestenes, D. (1990). The Zitterbewegung interpretation of quantum mechanics. *Foundations of Physics*, 20(12), 1213–1232. https://doi.org/10.1007/BF01889466
+[35] Hestenes, D. (1990). The Zitterbewegung interpretation of quantum
+mechanics. *Foundations of Physics*, 20(12), 1213–1232.
+https://doi.org/10.1007/BF01889466
 
 ---
 
