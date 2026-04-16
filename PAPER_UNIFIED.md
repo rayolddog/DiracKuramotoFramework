@@ -653,6 +653,24 @@ correlations are quantum, and the Kuramoto mechanism explains how they are
 
 ---
 
+### 7.7 The Hestenes Zitterbewegung Interpretation
+
+The closest precursor to the present framework in the interpretive literature is the Zitterbewegung (ZBW) interpretation of Hestenes [35]. Reformulating Dirac theory in spacetime algebra (STA), Hestenes argues that the complex phase factor in the Dirac wave function represents a physical rotation — the internal circular motion of the electron at the Compton frequency $\omega_C = mc^2/\hbar$. In this picture the spin is the angular momentum of this circulation, and Zitterbewegung is fundamental rather than incidental.
+
+The parallels with the present work are direct:
+
+| Feature | Hestenes ZBW interpretation | This work |
+|---|---|---|
+| Phase factor $e^{i\varphi}$ | Physical clock rotation (STA rotor) | Physical phase clock oscillator |
+| Zitterbewegung | Fundamental circulatory motion | Beat frequency between temporal and spatial clocks |
+| Spin | Angular momentum of ZBW circulation | Geometric consequence of clock orthogonality ($\theta_{\text{rel}} = 90°$) |
+| Mass | Sets ZBW frequency $\omega_C = mc^2/\hbar$ | Sets Kuramoto coupling constant $K = m$ |
+| Uncertainty principle | Derived from clock geometry | Derived from clock bandwidth (Section 4.5) |
+
+Both frameworks begin from the same core observation: the complex phase factor in the Dirac wave function is not a mathematical convenience but a physical oscillator. Both derive spin and the uncertainty principle from the geometry of this oscillator rather than postulating them.
+
+The key difference is dynamical. Hestenes identifies the internal clock but does not supply a coupling framework for the two chiral sectors. The present work provides this missing element: the Kuramoto identification $K = m$ explains *why* the clock oscillates at the Compton frequency (it is the synchronization rate between $\psi_L$ and $\psi_R$), and extends the picture to a dynamical mechanism for measurement (re-synchronization to the detector bulk) and mass generation (Higgs as the agent that sets $K$). In retrospect, the Hestenes ZBW interpretation and the Dirac-Kuramoto framework are describing the same internal clock from different mathematical directions — STA geometry and Kuramoto synchronization dynamics, respectively.
+
 ## 8. Discussion
 
 ### 8.1 The Interpretive Status
@@ -969,6 +987,8 @@ with an application to the locality of quantum mechanics. *Am. J. Phys.*, 82(8),
 
 [34] Dürr, D., Goldstein, S., & Zanghì, N. (2013). *Quantum Physics Without
 Quantum Philosophy*. Springer.
+
+[35] Hestenes, D. (1990). The Zitterbewegung interpretation of quantum mechanics. *Foundations of Physics*, 20(12), 1213–1232. https://doi.org/10.1007/BF01889466
 
 ---
 
