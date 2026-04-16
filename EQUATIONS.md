@@ -1,4 +1,4 @@
-# Equations: Bell Without Faster Than Light
+# Kuramoto synchronization in the Dirac equation
 
 *A time-phase clock interpretation of quantum mechanics*
 
@@ -144,7 +144,15 @@ with $y_f$ the Yukawa coupling and $v = 246\,\text{GeV}$ the Higgs vacuum expect
 
 The matter-antimatter asymmetry from CP-violating synchronization:
 
-$$\eta = \frac{N_{\text{matter}} - N_{\text{antimatter}}}{N_{\text{total}}} \approx \varepsilon \cdot \sin^2(\delta_{\text{CP}})$$
+$$\eta = \frac{N_{\text{matter}} - N_{\text{antimatter}}}{N_{\text{total}}} \approx \varepsilon \cdot \sin^2(\delta_{\text{CP}})$
+
+### Annihilation cross section
+
+The synchronization efficiency between a particle and its antiparticle at the moment of encounter depends on their phase mismatch:
+
+$\sigma_{\text{ann}} \propto |\langle\psi_{\text{particle}}|\psi_{\text{antiparticle}}\rangle|^2 \propto 1 + \varepsilon\cos(\delta_{\text{CP}})$
+
+The small asymmetry $\varepsilon$ accumulates over early-universe interactions, seeding the observed baryon asymmetry $\eta \sim 10^{-9}$.
 
 ---
 
@@ -166,7 +174,15 @@ The gravitational potential **is** the bulk clock synchronization field. Objects
 
 The clock-synchronization force recovers Newton exactly:
 
-$$a_{\text{clock}} = \frac{d\omega}{dr} \cdot \frac{c^2}{\omega_0} = \frac{GM}{r^2} \qquad \checkmark$$
+$$a_{\text{clock}} = \frac{d\omega}{dr} \cdot \frac{c^2}{\omega_0} = \frac{GM}{r^2} \qquad \checkmark$
+
+### Gravitational bulk coupling rate
+
+The rate at which gravity maintains phase coherence across a macroscopic bulk of mass $M$ at internal separation $\Delta z$:
+
+$\boxed{\Gamma_{\text{grav}} = \frac{GM^2}{\hbar\,\Delta z}}$
+
+For macroscopic objects ($M \sim 1\,\text{kg}$, $\Delta z \sim 1\,\text{m}$), $\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}$ — an extremely fast coupling rate that explains why macroscopic detectors maintain classical coherence. The $M^2$ scaling ensures bulk objects are locked far more strongly than microscopic particles.
 
 ### Penrose objective reduction as gravitational clock decoherence
 
@@ -425,7 +441,28 @@ $$\begin{array}{lll}
 \text{Bell's theorem} & \text{No local HV model} & \Phi_{\text{bulk}} \text{ shared} \Rightarrow \text{factorization fails} \\
 \text{Quantum-classical} & \text{Decoherence} & k_BT\tau/m \gg \hbar/2m \\
 \text{Nelson stochastic QM} & \nu = \hbar/2m & \text{Zero-point field diffusion} \\
-\end{array}$$
+\text{Zitterbewegung} & \omega = 2mc^2/\hbar & \text{L-R clock beat frequency} \\
+\end{array}$
+
+---
+
+## 15. Zitterbewegung as Clock Beat Frequency
+
+Zitterbewegung — the rapid trembling motion of a free Dirac particle — is the beat note between the temporal and spatial phase clocks.
+
+The temporal clock oscillates at $\omega_t = E/\hbar$; the spatial clock at $\omega_s = p^2/(m\gamma\hbar)$. Their beat frequency in the non-relativistic limit:
+
+$\boxed{\omega_{\text{Zitter}} \approx \frac{2mc^2}{\hbar}}$
+
+This is the known Zitterbewegung frequency, here derived as the beat note between two coupled oscillators rather than as interference between positive- and negative-frequency Dirac solutions.
+
+| Mass regime | $K = m$ | Clock behavior | Zitterbewegung |
+|---|---|---|---|
+| Massless ($m = 0$) | $0$ | Permanently decoupled, $\theta_{\text{rel}} = 90°$ | None — consistent with photons |
+| Light particle (small $m$) | Small | Loose synchronization | Large amplitude |
+| Heavy particle (large $m$) | Large | Fast, tight lock | Small amplitude |
+
+The Zitterbewegung frequency is the Compton frequency $\omega_C = mc^2/\hbar$ — the same rate that sets the Nyquist spatial bandwidth limit in Section 13 and the synchronization timescale $\tau_{\text{sync}} = 1/K = \hbar/mc^2$.
 
 ---
 
