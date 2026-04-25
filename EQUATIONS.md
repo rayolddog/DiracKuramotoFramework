@@ -414,6 +414,8 @@ $$\begin{array}{lll}
 \text{Quantum-classical} & \text{Decoherence} & k_BT\tau/m \gg \hbar/2m \\
 \text{Nelson stochastic QM} & \nu = \hbar/2m & \text{Zero-point field diffusion} \\
 \text{Zitterbewegung} & \omega = 2mc^2/\hbar & \text{L-R clock beat frequency} \\
+\text{Spin-statistics sign} & \text{Pauli antisymmetry} & \chi \to -\chi \text{ under } 2\pi \text{ rotation (SU(2) double cover)} \\
+\text{Microcausality} & [\psi(x),\psi(y)]_\pm = 0,\ (x-y)^2<0 & \text{Sync manifold respects the light cone} \\
 \end{array}$
 
 ---
@@ -435,6 +437,43 @@ This is the known Zitterbewegung frequency, here derived as the beat note betwee
 | Heavy particle (large $m$) | Large | Fast, tight lock | Small amplitude |
 
 The Zitterbewegung frequency is the Compton frequency $\omega_C = mc^2/\hbar$ — the same rate that sets the Nyquist spatial bandwidth limit in Section 13 and the synchronization timescale $\tau_{\text{sync}} = 1/K = \hbar/mc^2$.
+
+---
+
+## 16. Spin-Statistics from the Chiral Pair
+
+The Madelung-style polar decomposition of each Weyl spinor splits the wave function into three layers:
+
+$$\boxed{\psi_{L,R} = \rho_{L,R}^{1/2}\, e^{i\phi_{L,R}}\, \chi_{L,R}}$$
+
+with $\rho_{L,R} \geq 0$ a real amplitude density, $\phi_{L,R}$ a real phase mod $2\pi$ (the Kuramoto clock variable), and $\chi_{L,R}$ a unit two-spinor frame in the SU(2) representation. Of the three, only $\chi_{L,R}$ lives in a representation where a sign can appear under $2\pi$ rotation.
+
+### Rotation operator
+
+For the Dirac 4-spinor in the standard basis with $\Sigma = \mathrm{diag}(\boldsymbol{\sigma},\boldsymbol{\sigma})$:
+
+$$U(\theta,\hat{n}) = \exp\!\left(-i\,\theta\,\boldsymbol{\Sigma}\cdot\hat{n}/2\right), \qquad U(2\pi,\hat{n}) = -\mathbb{1}_{4\times 4}$$
+
+### Sign under $2\pi$ rotation by representation
+
+| Object | Representation | $\langle\psi|U(2\pi)|\psi\rangle$ |
+|---|---|---|
+| Scalar | trivial | $+1$ |
+| Vector (spin 1) | SO(3), integer | $+1$ |
+| Weyl 2-spinor (single chirality) | SU(2), spin-½ | $-1$ |
+| Dirac 4-spinor (chiral pair) | $(\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})$ | $-1$ |
+
+By the Feynman-Finkelstein argument, exchange of two identical particles in 3+1D is continuously homotopic to a $2\pi$ rotation of one of them, so the sign of the rotation overlap is the sign of the exchange amplitude. The chiral pair the framework already commits to (for $K=m$) is precisely the spin-½ representation that forces fermion antisymmetry. The Kuramoto ODE for $(\phi_L,\phi_R)$ acts on real-valued phases and is exchange-symmetric — the fermion sign is in $\chi_{L,R}$, not in $\phi_{L,R}$ or $\rho_{L,R}$.
+
+### Microcausality
+
+For two field events at spacelike separation:
+
+$$\boxed{[\psi(x),\psi(y)]_\pm = 0 \quad \text{for}\quad (x-y)^2 < 0}$$
+
+(commutator for bosons, anticommutator for fermions). MCI reading: no chain of Kuramoto sync events has connected the clocks at $x$ and $y$; their structures are independent in the synchronization manifold. The choice of sign in the (anti)commutator is forced by the same SU(2) double-cover fact above — it is one structural fact, not two.
+
+See Appendix D of the main paper and `spin_statistics.py` for numerical verification (six tests, including a momentum scan over six decades that confirms the sign is unaffected by the relativistic large/small mixing of Appendix A).
 
 ---
 

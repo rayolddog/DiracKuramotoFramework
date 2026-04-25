@@ -894,6 +894,21 @@ known properties of Zitterbewegung (Appendix B). Trapped-ion simulations with
 tunable effective mass [10] could probe the transition from locked to unlocked
 clock behavior as effective mass passes through zero.
 
+**P3a — Spin-statistics is reproduced, not derived.** The framework's commitment
+to a chiral clock pair (ψ_L, ψ_R) coupled by K = m is identical, as a
+representation-theoretic object, to the (½, 0) ⊕ (0, ½) Lorentz representation
+that carries spin-1/2. Under spatial rotation by 2π, each Weyl half picks up
+−1; by the Feynman-Finkelstein continuous-deformation argument, exchange of
+two such particles in 3+1D inherits the same sign, giving fermion
+antisymmetry. We verify this numerically across a wide range of v/c — the
+relativistic large/small mixing of Appendix A does not erode the sign — and
+show that the pure Kuramoto phase dynamics (Eqs. 2a, 2b), treated as a
+classical ODE on real-valued phases, are exchange-symmetric and carry no
+sign. The fermion sign therefore lives in the spinor frames χ_{L,R} of the
+Madelung decomposition, not in the Kuramoto coupling itself. This is a
+consistency check, not a new derivation; details and numerical results are
+in Appendix D.
+
 ### 6.2 From the Interpretive Framework
 
 **P3 — Decoherence rate scaling with mass.** If the Kuramoto synchronization rate
@@ -1360,6 +1375,151 @@ The small asymmetry ε accumulates over the early universe to produce the observ
 baryon asymmetry η ~ 10⁻⁹. This is a qualitative mechanism, not a quantitative
 prediction — a full calculation requires electroweak baryogenesis beyond the scope
 of this paper.
+
+---
+
+## Appendix D: Spin-Statistics in the Many Clocks Framework
+
+### D.1 The Geometric Fact
+
+The spin-statistics theorem in standard relativistic quantum field theory rests
+on three ingredients: Lorentz covariance, a positive-energy spectrum, and
+microcausality. The Many Clocks Interpretation does not replace any of these —
+it inherits them from the underlying Dirac theory. What MCI *can* do is
+display the geometric core of the theorem in its own language and identify,
+within the Madelung-Kuramoto decomposition, exactly which factor carries the
+fermion sign.
+
+The geometric core is the fact that a spin-½ system under a 2π spatial
+rotation acquires an overall phase of −1, and a 2π rotation is continuously
+homotopic in 3+1 dimensions to an exchange of two identical particles
+(Finkelstein-Misner [33]; see also Feynman's belt argument). A spinor
+representation therefore forces fermion statistics, and an integer-spin
+representation forces Bose statistics. This is what spin_statistics.py
+verifies in six tests.
+
+### D.2 What MCI Commits To
+
+The Madelung-style polar decomposition (Eq. 2a, 2b setup) writes each chiral
+Weyl spinor as
+
+$$\psi_{L,R} = \rho_{L,R}^{1/2}\, e^{i\phi_{L,R}}\, \chi_{L,R} \qquad (D1)$$
+
+with three layers: a non-negative amplitude density ρ_{L,R}, a real phase
+φ_{L,R} mod 2π, and a unit two-spinor frame χ_{L,R} carrying the spin
+orientation. Of these:
+
+- **Amplitudes ρ_{L,R}**: real, ≥ 0. No sign is algebraically possible.
+- **Phases φ_{L,R}**: real, mod 2π. They are the Kuramoto clock variables;
+  the equations of motion (2a, 2b) act on them as a coupled real ODE.
+  Particle exchange A ↔ B in this layer is a relabeling of the joint
+  tuple (φ_L^A, φ_R^A, φ_L^B, φ_R^B); the ODE is symmetric in (A, B), so
+  this layer carries no sign either.
+- **Spinor frames χ_{L,R}**: SU(2) doublets. These are the only objects in
+  the framework that live in a representation where 2π rotation can flip
+  the sign — and they do flip it.
+
+The chiral pair commitment that gives mass via K = m (Section 2.2) is
+representation-theoretically the same object as the spin-½ pair (½, 0) ⊕
+(0, ½). MCI does not derive the spinor sign from the Kuramoto coupling; it
+inherits it from the algebraic structure of the chiral pair the framework
+already commits to.
+
+### D.3 Numerical Verification
+
+The script `spin_statistics.py` performs six tests in the Madelung-Kuramoto
+language. Selected results (m = 1 natural units; full output in the script):
+
+| Test | Object | Operation | Result |
+|---|---|---|---|
+| A | Dirac 4-spinor u(p, ↑) | Rotation by 2π around z | ⟨u\|U\|u⟩ = −1 |
+| B | Weyl 2-spinor χ_↑ | Rotation by 2π around z | R χ_↑ = −χ_↑ |
+| C | Identical-momentum singlet (p = 1) | Full exchange A↔B | ⟨Ψ\|P\|Ψ⟩ = −1 |
+| D | Entangled singlet, scan in p | Spin exchange | −1.0000000000 across p ∈ [10⁻⁴, 50] |
+| E | Scalar pair / symmetric vector pair | Full exchange | +1 |
+| F | Kuramoto (φ_L, φ_R) ODE | Classical relabeling A↔B | invariant; no sign |
+
+Test D is the substantive content. The Dirac singlet of dirac_extension.py
+mixes large and small components according to the relativistic angle
+θ_rel = arcsin(v/c) (Appendix A). Across six decades in momentum — from
+v/c ≈ 10⁻⁴ to v/c ≈ 1 − 10⁻⁴ — the spin-exchange amplitude is exactly −1,
+to numerical precision. The redistribution of weight among the E_LL,
+E_SS, E_LS blocks studied in Appendix A does not perturb the antisymmetry
+sign by even one part in 10¹⁰.
+
+Test F is the negative result. Two classical Kuramoto chiral pairs with
+identical (K, ω) are evolved from random initial conditions; both reach the
+synchronization order parameter |r| = 1.0 in finite time. Particle exchange
+A ↔ B at the level of the ODE is a permutation of the four real numbers
+(φ_L^A, φ_R^A, φ_L^B, φ_R^B); the dynamics are invariant under this
+permutation, and there is no algebraic slot in which a sign could appear.
+This confirms structurally what is also clear by inspection: the −1 of
+fermion antisymmetry cannot be coming from the phase-clock dynamics.
+
+### D.4 Microcausality as No Sync Across Spacelike Separation
+
+The other ingredient of the standard theorem — microcausality — has a clean
+MCI gloss. The framework's third structural commitment (Section 1.5) is that
+synchronization is a local, objective, physical event: two clock-carrying
+systems synchronize via Kuramoto coupling at the interaction event, and
+nowhere else. The synchronization manifold is built up locally through the
+causal network of past interactions.
+
+For two field events at spacelike separation (x − y)² < 0, no causal chain
+of interactions connects them; no Kuramoto coupling has yet acted between
+their associated clocks. In this sense the clocks at x and y are
+*independent in the synchronization manifold*. Translating to the
+field-operator level, this independence is what microcausality demands:
+
+$$[\psi(x), \psi(y)]_\pm = 0 \quad \text{for } (x-y)^2 < 0 \qquad (D2)$$
+
+The choice between commutator (bosons, lower sign) and anticommutator
+(fermions, upper sign) is not free. Combined with Lorentz covariance and a
+positive-energy spectrum, the requirement that the relevant field-operator
+two-point function vanish at spacelike separation forces the sign — and the
+sign is forced by the same representation-theoretic fact that fixes 2π
+rotation. There is one fact, not two: the spinor double cover. MCI does not
+add anything to this argument; it provides a physical reading of what
+microcausality *means* in the framework's own terms — *the synchronization
+manifold has not yet connected spacelike-separated regions* — but the sign
+itself is still inherited from the SU(2) representation of the chiral pair.
+
+This reading also explains why microcausality is *natural* in MCI rather
+than being an extra postulate. The framework is already committed (commitment
+3) to synchronization being local, and (commitment 5) to past phase history
+being overwritten only at sync events. Spacelike-separated regions, by
+construction, have not been in sync, so their field structures must be
+compatible at the operator level. Microcausality is the operator-algebra
+expression of "the sync manifold respects the light cone."
+
+### D.5 Honest Assessment
+
+Three claims are made in this appendix, in descending order of strength:
+
+1. **Verified.** The Madelung-Kuramoto decomposition (D1) localizes the
+   fermion sign in the spinor-frame factor χ_{L,R} and not in the phase or
+   amplitude factors. This is a numerical and structural observation,
+   confirmed in spin_statistics.py.
+
+2. **Inherited.** Spin-statistics in MCI follows from the chiral pair
+   commitment via the standard 2π-rotation / continuous-deformation argument
+   for exchange in 3+1D. MCI does not contribute a new step to the
+   derivation, but it does identify the chiral pair (which the framework
+   needs anyway, for K = m) as the structural origin of the sign.
+
+3. **Interpretive.** Microcausality has a physical reading in MCI: it states
+   that the synchronization manifold respects the light cone, i.e., that no
+   Kuramoto coupling has yet connected spacelike-separated events. The sign
+   in the (anti)commutator is again inherited from the spinor representation;
+   MCI adds a physical picture but no new mathematical content.
+
+The framework therefore reproduces the spin-statistics theorem and gives it
+a clean reading, but does not derive it independently of the standard QFT
+machinery. The value of the appendix is interpretive: it shows that the
+framework's mass-coupling commitment (K = m on the chiral pair) and the
+standard spin-statistics theorem are coherent with each other in a
+non-trivial way, and that the framework's locality commitment naturally
+underwrites microcausality.
 
 ---
 
