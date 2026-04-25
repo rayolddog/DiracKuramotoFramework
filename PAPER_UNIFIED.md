@@ -1,5 +1,5 @@
-# The Dirac Equation as a Kuramoto Phase-Synchronization System:
-## Mass as Chiral Coupling and Measurement as Re-Synchronization
+# The Many Clocks Interpretation of Quantum Mechanics
+## The Dirac Equation as a Kuramoto Phase-Synchronization System: Mass as Chiral Coupling, Measurement as Re-Synchronization
 
 **J. Olddog¹**
 ¹ Independent Research
@@ -30,13 +30,22 @@ as Kuramoto re-synchronization: a particle initially synchronized with its entan
 partner re-synchronizes to the macroscopic detector bulk, whose overwhelmingly
 greater Kuramoto inertia (M_detector >> m_particle) forces conformity. Decoherence
 is not merely loss of phase coherence with the partner — it is the positive process
-of gaining coherence with the bulk. The Born rule P = |ψ|² emerges naturally from
-the synchronization statistics of coupled oscillators, rather than being postulated.
+of gaining coherence with the bulk. The Born rule P = |ψ|² is reframed as the
+long-run frequency of energy partition: |ψ|² is the energy density of the real
+ψ field, and the apparent stochasticity of measurement outcomes arises from
+unbiased zero-point + thermal background fluctuations at the synchronization
+event, rather than from an independent probability axiom.
 The Heisenberg uncertainty principle appears as a bandwidth limitation of the
 particle's internal phase clock.
 
-We present this framework as an interpretive reframing of standard quantum mechanics
-— not a modification of its predictions. The Dirac equation is unchanged; Bell's
+We present this framework — which we call the **Many Clocks Interpretation of
+Quantum Mechanics (MCI)** — as an interpretive reframing of standard quantum
+mechanics, not a modification of its predictions. The name is a deliberate
+echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by
+branching the universe at each measurement, MCI preserves a single world by
+treating each particle as carrying its own physical phase clock, with
+measurement as local synchronization between clocks. No conscious observer
+is required; no branching occurs. The Dirac equation is unchanged; Bell's
 theorem is not challenged. What is new is the identification of mass as
 synchronization coupling, measurement as re-synchronization dynamics, and
 decoherence as a Kuramoto process with a specific physical mechanism.
@@ -90,10 +99,12 @@ We make three claims, in decreasing order of mathematical rigor:
    from coherence with its entangled partner to coherence with the detector bulk.
    This provides a physical picture of decoherence. This is an interpretive claim.
 
-3. **The Born rule emerges from synchronization statistics** (Section 4). The
-   probability P = |α|² follows from the squared modulus of the complex coupling
-   amplitude in Kuramoto dynamics. This is an interpretive claim with mathematical
-   support.
+3. **The Born rule is reframed as energy partition** (Section 4). Reading |ψ|²
+   as wave energy density and the apparent stochasticity as unbiased
+   background-field fluctuation at the synchronization event, P = |α|²
+   appears as the long-run frequency of channel-energy partition rather than
+   as an independent probability axiom. This is an interpretive claim with
+   physical motivation, not a complete derivation.
 
 ### 1.4 What This Paper Does Not Claim
 
@@ -107,6 +118,70 @@ We state clearly at the outset:
 - The framework is an interpretation — it may or may not generate distinguishable
   predictions from standard decoherence theory. We are honest about this
   throughout.
+
+### 1.5 Relational Structure: The Many Clocks Interpretation
+
+We name this framework the **Many Clocks Interpretation of Quantum Mechanics
+(MCI)**. The name is a deliberate echo of Many-Worlds, with a sharp contrast:
+Many Worlds preserves unitarity by branching the universe at each measurement
+and accepting an exponentially proliferating multiverse; the Many Clocks
+Interpretation preserves a single world by treating each particle as carrying
+its own internal phase clock, with measurement as local synchronization
+between clocks. The interpretation is *relational* — there is no global
+preferred reference frame and no observer required — and it operates by the
+following structural commitments:
+
+1. **Every particle carries one or more intrinsic phase clocks.** For massive
+   Dirac fermions, two chiral clocks (L and R), coupled by K = m on the
+   synchronized manifold (Section 2). For photons, polarization clocks
+   coupled to detectors via K_γ ~ ω (Section 5). The clocks are physical
+   oscillators, not bookkeeping devices.
+
+2. **There is no global preferred frame.** Each interaction happens in the
+   local frame jointly defined by the interacting parties. Each particle's
+   clocks are intrinsic — defined in its own rest frame — and a particle's
+   clock structure is described differently in different observer frames,
+   but the physics of each interaction is invariant.
+
+3. **Synchronization is a local, objective, physical event.** When two
+   clock-carrying systems interact, their clocks synchronize via Kuramoto
+   coupling at the interaction event. The synchronization is objective:
+   distant observers in other frames may disagree about the ordering of
+   spacelike-separated events elsewhere, but the two parties to a specific
+   interaction always agree on what happened locally between them. This is
+   ordinary special-relativistic causality, not novel — but worth stating
+   because it removes the appearance of observer-dependence.
+
+4. **No conscious observer is required. No branching is required.** A single
+   objective physical world contains many clocks; interactions synchronize
+   them locally; measurement is a special case of synchronization in which
+   one party is a macroscopic detector with overwhelming Kuramoto inertia
+   (Section 3).
+
+5. **Past phase history is overwritten at each sync event.** After a small
+   number of interactions, a particle's pre-interaction phase is effectively
+   unrecoverable. This is the framework's specific dynamical mechanism for
+   decoherence and thermalization: not just loss of off-diagonal coherence,
+   but active phase-overwriting at each interaction event.
+
+6. **All physically meaningful quantities are gauge- and Lorentz-invariant.**
+   The individual chiral phases φ_L, φ_R shift uniformly under U(1) gauge
+   transformation; only the gauge-invariant difference φ_L − φ_R enters the
+   Kuramoto sine coupling. The L/R block decomposition of the spin operator
+   is frame-relative under Lorentz boosts, but the sum
+   E_LL + E_SS + E_LS = −cos(a−b) is Lorentz-invariant. The framework's
+   *predictions* live in invariant content; the interpretive language about
+   "which clock dominates" is a frame-relative description of an invariant
+   structure.
+
+The Many Clocks Interpretation has affinities with Hestenes' Zitterbewegung
+interpretation (Section 7.7) — both treat the complex phase factor in the
+Dirac wave function as a physical clock — and with Rovelli's relational
+quantum mechanics [24], in the sense that no global preferred frame or
+observer is needed. It differs from both in its explicit dynamical mechanism
+(Kuramoto re-synchronization), and from Rovelli's RQM in keeping ψ ontic
+rather than relational: the wavefunction is a real oscillating field, not a
+relational state.
 
 ---
 
@@ -137,27 +212,67 @@ The coupling strength is exactly *m*.
 
 ### 2.2 The Kuramoto Identification
 
-The standard Kuramoto model [2] describes the phase dynamics of N
+The standard (classical) Kuramoto model [2] describes the phase dynamics of N
 coupled oscillators:
 
 $$\frac{d\phi_i}{dt} = \omega_i + \frac{K}{N}\sum_j \sin(\phi_j - \phi_i)$$
 
-Writing ψ_L = ρ_L^{1/2} e^{iφ_L} χ_L and ψ_R = ρ_R^{1/2} e^{iφ_R} χ_R, the
-phase dynamics extracted from Equations (1) yield:
+The coupling here is *nonlinear* — sin(φ_j − φ_i) — whereas the chiral Dirac
+coupling in Equations (1a, 1b) is *linear* at the operator level: m·ψ_R sources
+the equation for ψ_L and vice versa. The Kuramoto sine therefore is not present
+in the Dirac equation as written. It emerges, however, as the near-equilibrium
+phenomenology of the linear coupling under a polar (Madelung-type)
+decomposition. We outline the reduction explicitly so that the regime of
+validity is on the record.
 
-$$\frac{d\phi_L}{dt} = \omega_L + K\sin(\phi_R - \phi_L + \delta_{CP}) \qquad (2a)$$
+Apply the decomposition
 
-$$\frac{d\phi_R}{dt} = \omega_R + K\sin(\phi_L - \phi_R - \delta_{CP}) \qquad (2b)$$
+$$\psi_L = \rho_L^{1/2}\, e^{i\phi_L}\, \chi_L, \qquad \psi_R = \rho_R^{1/2}\, e^{i\phi_R}\, \chi_R$$
 
-where the coupling constant is:
+where ρ_{L,R} are real amplitude densities, φ_{L,R} are clock phases, and
+χ_{L,R} are unit two-spinors carrying the spin orientation. Substituting into
+Equations (1a, 1b) and separating real and imaginary parts of the time
+component yields a coupled system: a continuity-like equation for the
+amplitudes and a phase equation for the clocks. With the standard chiral
+phase convention (the mass coupling carrying the implicit i factor inherited
+from γ⁰), the phase equations take the form
+
+$$\frac{d\phi_L}{dt} = \omega_L + K\sqrt{\rho_R/\rho_L}\,\sin(\phi_R - \phi_L + \delta_{CP}) \qquad (2a)$$
+
+$$\frac{d\phi_R}{dt} = \omega_R + K\sqrt{\rho_L/\rho_R}\,\sin(\phi_L - \phi_R - \delta_{CP}) \qquad (2b)$$
+
+with the coupling constant
 
 $$\boxed{K = y_f \cdot |\langle\phi\rangle| = y_f \cdot \frac{v}{\sqrt{2}} = m} \qquad (3)$$
 
-**Equation (3) is the central result of this paper: the particle's mass equals
-its Kuramoto coupling constant.** In SI units, this identification reads
-K = mc²/ℏ — the Compton frequency — making explicit that the Kuramoto coupling
-has dimensions of frequency [time⁻¹], as required by the synchronization
-equations (2a–2b).
+**On the synchronized manifold ρ_L ≈ ρ_R** — the regime relevant to a particle
+that has settled into a definite mass eigenstate — the amplitude prefactors
+reduce to unity and Equations (2a, 2b) become the Kuramoto form for two
+coupled oscillators. Off this manifold, the amplitude dynamics couple back
+through the continuity equation, and the system is properly described by the
+full Madelung pair with a quantum potential. The Kuramoto picture is therefore
+the *synchronized-manifold reduction* of the chiral Dirac dynamics, not a
+restatement of the Dirac equation itself.
+
+**Equation (3) is the central identification of this paper: on the
+synchronized manifold, the particle's mass plays the role of the Kuramoto
+coupling constant between its chiral phase clocks.** In SI units this reads
+K = mc²/ℏ — the Compton frequency — making explicit that the coupling has
+dimensions of frequency [time⁻¹], as required by the synchronization equations
+(2a–2b).
+
+This places the framework within the broader literature on **quantum
+synchronization** [36, 37, 38, 39], where Kuramoto-form phase dynamics have
+been derived from the semiclassical limit of quantum master equations for a
+range of coupled-oscillator systems (optomechanical arrays, cavity-QED,
+driven self-sustained oscillators, trapped-ion chains). The Weyl-spinor pair
+is the chiral-Dirac instance of this general phenomenon: the operator-level
+coupling is linear, but on the synchronized subspace the effective phase
+dynamics are Kuramoto. The distinction between *classical* Kuramoto
+synchronization (sine coupling fundamental at the equation-of-motion level)
+and the *quantum* version employed here (sine coupling emergent on the
+synchronized subspace from a linear underlying Hamiltonian) should be kept
+explicit throughout.
 
 The Higgs vacuum expectation value [11, 12] ⟨φ⟩ = v/√2 ≈ 174 GeV drives the two chiral
 clocks into synchronized oscillation. Before electroweak symmetry breaking (v → 0),
@@ -219,8 +334,8 @@ phase evolution across both clock sectors.
 | m = 0 → chiral sectors decouple | Standard QFT; textbook |
 | Higgs-Yukawa sets fermion mass via ⟨φ⟩ | Standard Model; established |
 | Negative-energy Dirac solutions = reversed temporal phase | Standard (Feynman-Stückelberg [21, 22]) |
-| **Mass term has Kuramoto coupling structure** | **New interpretation (this work)** |
-| **K = m identification** | **New (this work)** |
+| **Mass term reduces to Kuramoto coupling on the synchronized manifold** | **New interpretation (this work)** |
+| **K = m identification (synchronized-manifold reduction)** | **New (this work)** |
 
 ---
 
@@ -280,16 +395,44 @@ macroscopic detector provides a collective Kuramoto coupling that maintains a
 common phase Φ_bulk across the detector. This is analogous to the well-known
 classical synchronization of metronomes on a shared massive platform.
 
-The gravitational Kuramoto coupling for a mass M interacting with a bulk at
-distance Δz is:
+The collective rate is obtained by pair-counting the gravitational Kuramoto
+coupling. Consider a bulk of total mass M composed of N atoms, each of mass
+m_atom = M/N. The gravitational potential energy between any pair (i, j) at
+separation r_{ij} is U_pair = G·m_atom²/r_{ij}, which by the framework's
+general K = E/ℏ identification yields a pairwise Kuramoto rate
 
-$$\Gamma_{grav} = \frac{GM^2}{\hbar \Delta z}$$
+$$K_{\text{pair}} \sim \frac{G\, m_{\text{atom}}^2}{\hbar\, r_{ij}}$$
+
+The bulk contains N(N − 1)/2 ≈ N²/2 such pairs. Approximating all pair
+separations by a characteristic internal scale Δz, the aggregate gravitational
+synchronization rate is
+
+$$\Gamma_{\text{grav}} \sim \frac{N^2}{2} \cdot \frac{G\, m_{\text{atom}}^2}{\hbar\, \Delta z} = \frac{N^2}{2} \cdot \frac{G\,(M/N)^2}{\hbar\, \Delta z} = \frac{1}{2}\,\frac{G M^2}{\hbar\, \Delta z}$$
+
+Dropping the order-unity factor of ½ to obtain the characteristic rate:
+
+$$\boxed{\Gamma_{\text{grav}} \sim \frac{G M^2}{\hbar\, \Delta z}} \qquad (\text{characteristic, pair-counted})$$
+
+The M² scaling is therefore not a numerological coincidence but a consequence
+of pair counting in a many-body sync: each pair contributes ~K_pair, there
+are ~N² pairs, and the atomic mass m_atom = M/N enters quadratically per pair,
+so the total aggregate rate scales as N² · (M/N)² = M².
 
 For macroscopic objects (M ~ 1 kg, Δz ~ 1 m), Γ_grav ~ 6 × 10²³ rad/s — an
 extremely fast rate, which is precisely why bulk coherence is maintained so
 effectively for macroscopic masses. The gravitational synchronization coupling
 grows as M², ensuring that macroscopic objects are locked into collective phase
 coherence far more strongly than microscopic particles.
+
+The relation to Penrose's objective-reduction rate (Section 3.5) is one of
+counting: Penrose's E_G = Gm²/Δx is the gravitational self-energy of a
+*single* mass configuration in superposition with itself displaced; Γ_grav
+here is the aggregate Kuramoto rate over all N²/2 atomic pairs in the
+unsuperposed bulk, larger by precisely the pair-counting factor. The two
+quantities answer different questions — Penrose asks how fast a superposition
+collapses, Γ_grav asks how fast the unsuperposed bulk maintains internal
+phase coherence — but both follow from the same K = E/ℏ identification
+applied to gravitational pair interactions.
 
 ### 3.5 Connection to Penrose-Diósi
 
@@ -345,157 +488,384 @@ The re-synchronization picture is interpretive. It does not:
 
 ---
 
-## 4. The Born Rule from Synchronization Statistics
+## 4. The Born Rule as Energy Partition under Background-Fluctuation Stochasticity
 
-### 4.1 The Problem
+### 4.1 The Problem and the Reframing
 
 The Born rule — P = |ψ|² — is the bridge between the mathematical formalism and
-experimental outcomes. In standard quantum mechanics it is postulated, not derived.
-Copenhagen asserts it. Everett's many-worlds claims to derive it from branch
-counting, but this remains contested [27, 28]. The measurement problem, at its
-core, is the question of why probability equals the squared modulus of a complex
-amplitude.
+experimental outcomes. In standard quantum mechanics it is postulated, not
+derived. Copenhagen asserts it. Everett's many-worlds claims to derive it from
+branch counting, but this remains contested [27, 28]. The measurement problem,
+at its core, is the question of why probability equals the squared modulus of
+a complex amplitude.
 
-### 4.2 The Kuramoto Order Parameter
+This framework proposes a different reading. If the wavefunction is a *real
+physical oscillating field* (Section 2.3), then |ψ|² is not fundamentally a
+probability — it is the **energy density** of that field, exactly as for any
+classical wave. The probabilistic appearance of measurement outcomes arises
+from a separate source: unpredictable interference with the zero-point + thermal
+background field at the moment of synchronization with the detector. The Born
+rule, in this reading, is the **long-run frequency of energy partition into
+the available detector channels under unbiased stochastic background driving**,
+not a probability axiom of quantum theory.
 
-The Kuramoto model provides a natural answer. For N coupled oscillators with
-phases φ₁, φ₂, ..., φ_N, the degree of collective synchronization is measured by
-the order parameter:
+The closest precedent for this view is Nelson's stochastic mechanics [26],
+which derives the Schrödinger equation from a real diffusion process in a
+background stochastic field. Our framework supplies a physical identity for
+that field — the zero-point + thermal residual of the chiral phase clocks
+already present in the Kuramoto/Dirac picture (Sections 9 and 11 of the
+equations reference) — and reads the Born rule as the resulting energy-partition
+statistics, rather than as an independent postulate.
 
-$$R \cdot e^{i\Psi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\phi_j} \qquad (5)$$
+### 4.2 |ψ|² as Wave Energy Density
 
-where R ∈ [0,1] is the synchronization amplitude and Ψ is the collective phase.
-The probability that a single oscillator with phase φ locks to the collective
-is proportional to R² — the squared modulus of the complex order parameter.
+For any real oscillating field, the time-averaged energy density is proportional
+to the squared amplitude. A complex wavefunction ψ = α|0⟩ + β|1⟩ describes a
+superposed oscillator with amplitude α in channel |0⟩ and amplitude β in
+channel |1⟩. In the wave-realist reading, the energy carried by each channel
+is
 
-This is not a coincidence. It is a general property of phase-coupled oscillator
-systems: the coupling efficiency between a single oscillator and a synchronized
-cluster depends on the squared amplitude of the cluster's complex coherence.
+$$E_0 \propto |\alpha|^2, \qquad E_1 \propto |\beta|^2 \qquad (5)$$
 
-### 4.3 Application to Quantum Measurement
+with total wave energy E_total = E_0 + E_1 = |α|² + |β|² = 1 in normalized
+units. This is classical wave physics — no Born postulate is required to write
+down |α|² and |β|² as the quantities of interest. They are the energy fractions
+of the field in each channel.
 
-Consider a particle in superposition ψ = α|0⟩ + β|1⟩ arriving at a detector.
-The detector is a macroscopic Kuramoto-synchronized bulk with N >> 1 oscillators
-locked to phase Φ_bulk.
+### 4.3 Synchronization Deposits the Energy into One Channel
 
-The particle carries two components, each a complex amplitude with a definite
-phase:
+The detector channels available for synchronization are those eigenstates of
+the detector whose internal phase clocks can match the particle's. The Kuramoto
+re-synchronization event (Section 3) transfers wave energy from the particle
+to the detector, exciting one channel to its registered ("clicked") state.
 
-- Component |0⟩ with amplitude α = |α|e^{iφ₀}
-- Component |1⟩ with amplitude β = |β|e^{iφ₁}
+A discrete click — rather than a fractional excitation of multiple channels —
+arises because each detector channel is itself a quantized resonator with a
+discrete excitation threshold (the same threshold that defines the channel as
+a single detector eigenstate). The synchronization event delivers either the
+full quantum into one channel or none, determined by which channel "wins" the
+competition for the available wave energy.
 
-The Kuramoto synchronization process couples the particle to the detector bulk.
-The coupling strength between the particle component and the detector depends on
-the complex overlap — the projection of the particle's phase oscillator onto
-the detector's synchronized state.
+### 4.4 Stochasticity Comes from the Background Field
 
-For a complex oscillator with amplitude A·e^{iφ} coupling to a reference
-oscillator, the synchronization probability is:
+Why does any particular channel win in any particular event? And why do
+long-run frequencies match |α|² rather than some other partition?
 
-$$P_{sync} \propto |A \cdot e^{i\phi}|^2 = |A|^2 \qquad (6)$$
+The answer rests on the zero-point + thermal background field always present
+at the detector (Section 9 of the equations reference). At the instant of
+contact, the relative phase between the particle's clock and the detector
+bulk's clock is perturbed by unpredictable transient fluctuations of this
+background. These fluctuations bias the synchronization event toward one
+channel or another in any individual instance — but, being statistically
+symmetric across the relevant phase space (zero-point fluctuations are
+symmetric by construction; unbiased thermal noise is symmetric by the second
+law), they do not favor any channel systematically.
 
-The phase determines *which* detector eigenstate is reached. The amplitude
-determines *how likely* that synchronization is. Averaging over the random bulk
-phase Φ_bulk (which is uniformly distributed over [0, 2π) from the particle's
-perspective), all cross terms vanish:
+Two consequences follow:
 
-$$\langle e^{i(\phi_0 - \phi_1)} \rangle_{\Phi_{bulk}} = 0 \qquad (7)$$
+1. **Each individual outcome is not fundamentally random.** It is determined
+   by the specific instantaneous configuration of background fluctuations at
+   the moment of synchronization. We cannot, as observers, track this
+   configuration; the outcome therefore *appears* random.
+2. **Long-run frequencies converge to the energy fractions.** Over many events,
+   the unbiased background averages out, and the frequency with which each
+   channel is chosen converges to the energy fraction the original wave
+   carried in that channel:
 
-Only the diagonal terms survive:
+$$P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2 \qquad (6)$$
 
-$$P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2 \qquad (8)$$
+read here as long-run **frequencies of energy partition** rather than as an
+independent probability axiom.
 
-This is the Born rule, derived from Kuramoto synchronization statistics rather
-than postulated.
+The Born rule, on this reading, is the visible projection of a deterministic
+energy redistribution in which the only stochastic input is the unobserved
+background field. It is not a separate postulate of quantum mechanics; it is
+the law of energy partition under unbiased background driving, observed as
+frequency statistics because the background is unobserved.
 
-### 4.4 Why the Squared Modulus?
+### 4.5 Connection to Nelson's Stochastic Mechanics
 
-The answer is geometric. The wave function is complex because the internal clock
-is a phase oscillator — it lives on a circle in the complex plane. The probability
-of synchronization between two oscillators is the squared modulus of their complex
-overlap because:
+Nelson [26] showed that a real particle undergoing stochastic motion in a
+background field with diffusion coefficient ν = ℏ/(2m) satisfies the
+Schrödinger equation. The framework presented here makes that background field
+physically explicit (the zero-point + thermal residual of the chiral phase
+clocks, equations reference Sections 9 and 11) and reads the Born rule as a
+frequentist statement about energy partition under that background's
+stochastic driving. Where Nelson postulates the diffusion coefficient, this
+framework identifies its physical origin in the zero-point phase noise
+σ_φ(0) = 1/√2 rad — itself a consequence of the Kuramoto coupling K = m and
+the chiral clock structure.
 
-1. The coupling is linear in the complex amplitude (Kuramoto sine coupling)
-2. Probability is quadratic in the coupling (energy transfer ∝ amplitude²)
-3. The complex phase averages out over the bulk, leaving only |amplitude|²
+This is structurally a hidden-variable theory, in which the hidden variable is
+the instantaneous configuration of the background field at the detector. As
+such, it must satisfy Bell's theorem — and it does, because the framework
+does not use this story to explain Bell correlations. The correlations
+themselves come from the full Dirac spinor structure (standard QM, Section 2
+and Appendix A); only the *measurement statistics* of definite outcomes are
+accounted for via the energy-partition reading. The two stories are
+complementary, not competing.
 
-This is identical to why the intensity of a classical wave is proportional to the
-squared amplitude — and it should be, because the wave function *is* a real
-oscillating field in this framework. The Born rule is the statement that quantum
-probability equals wave intensity, which is the natural measure for any physical
-wave coupling to a detector.
+### 4.6 The Heisenberg Uncertainty Principle as the Fourier Bandwidth Theorem
 
-### 4.5 Connection to the Zero-Point Floor and the Uncertainty Principle
+In MCI's wave-realist reading (Section 4.2), the wavefunction ψ(x) is a real
+oscillating field. Position and momentum representations are related by Fourier
+transform via the de Broglie relation p = ℏk:
 
-The zero-point phase noise σ_φ(0) = 1/√2 rad (Section 9 of the equations
-reference) sets a minimum uncertainty in the synchronization process. Even at
-T = 0, a particle cannot synchronize with perfect fidelity — the irreducible
-phase noise means that the probability |α|² always has a minimum variance.
-This connects the Born rule to the Heisenberg uncertainty principle: both
-emerge from the same zero-point phase floor.
+$$\varphi(p) = \frac{1}{\sqrt{2\pi\hbar}} \int \psi(x)\, e^{-ipx/\hbar}\, dx$$
 
-A heuristic Nyquist–Shannon argument makes this connection intuitive. A
-Dirac particle's internal clock oscillates at the Compton frequency
-ω_C = mc²/ℏ. This clock has a maximum spatial bandwidth set by the
-Compton wavelength λ_C = h/(mc), suggesting an irreducible minimum position
-uncertainty of order:
+The **Fourier bandwidth theorem** of harmonic analysis — a rigorous mathematical
+result independent of any quantum interpretation — states that for any function
+f ∈ L²(ℝ) with Fourier transform f̂(k), the standard deviations of |f|² and
+|f̂|² (treated as probability densities on x and k respectively) satisfy
 
-$$\Delta x_{\min} \sim \frac{\hbar}{mc} \qquad (9)$$
+$$\sigma_x \cdot \sigma_k \geq \frac{1}{2} \qquad (7)$$
 
-The analogy to signal processing is suggestive: just as a sampled signal cannot
-resolve frequencies above the Nyquist limit, a particle's internal clock cannot
-resolve spatial structures finer than its own Compton wavelength. Combined with
-the de Broglie relation p = ℏk, this heuristic yields the familiar form of the
-Heisenberg uncertainty relation:
+with equality saturated by Gaussian wavepackets. Multiplying both sides by ℏ:
 
-$$\Delta x \cdot \Delta p \geq \frac{\hbar}{2} \qquad (10)$$
+$$\boxed{\sigma_x \cdot \sigma_p \geq \frac{\hbar}{2}} \qquad (8)$$
 
-We do not claim this as a rigorous derivation — a full treatment requires the
-clock complementarity analysis presented in the equations reference (Section 13).
-But the heuristic is physically illuminating: the uncertainty principle can be
-read as a bandwidth limitation of the particle's own internal clock, rather than
-an irreducible feature of nature independent of dynamics.
+This is the Heisenberg uncertainty relation, **factor of ½ exact**.
 
-### 4.6 What This Derivation Requires
+The framework's contribution here is interpretive, not derivational. Standard
+QM postulates ΔxΔp ≥ ℏ/2 as a separate axiom (or derives it from the operator
+commutator [x̂, p̂] = iℏ, which is itself a postulate, via the
+Robertson–Schrödinger inequality). MCI reads it as the Fourier bandwidth
+theorem applied to a real wavefunction — a theorem about waves, not an axiom
+about quantum systems. **In the wave-realist reading, the uncertainty principle
+is not a quantum mystery; it is harmonic analysis applied to a real physical
+field.**
 
-The derivation rests on three assumptions, all already present in the framework:
+#### The Compton scale is distinct from the universal floor
 
-1. The wave function is a physical oscillating field (not merely a calculational
-   tool)
-2. Measurement is Kuramoto synchronization to a macroscopic bulk
-3. The detector's bulk phase is uniformly distributed relative to the particle's
-   phase basis
+The Compton wavelength λ_C = h/(mc) is a separate, particle-specific scale
+worth distinguishing from the universal ½ of the Fourier theorem. A Dirac
+particle's internal chiral clocks oscillate at the Compton frequency
+ω_C = mc²/ℏ; this sets the characteristic spatial bandwidth over which the
+particle's *internal* clock structure becomes resolvable, and it is the typical
+scale of Zitterbewegung (Appendix B / Section 7.7).
 
-Assumption 3 is the most important. It is equivalent to the statement that the
-detector has no prior knowledge of which outcome will occur — it is the
-Kuramoto equivalent of the assumption of measurement independence in Bell's
-theorem. The detector synchronizes to whichever component has the largest
-coupling amplitude, with probability proportional to |amplitude|².
+The Compton scale is **not** the source of the ½ in the uncertainty relation —
+that ½ is universal, particle-independent, and follows from the Fourier theorem
+alone. The two facts are complementary:
+
+- **Universal floor (Fourier bandwidth, Eq. 8):** σ_x·σ_p ≥ ℏ/2 for any real wavefunction, every particle, every state.
+- **Particle-specific scale (Compton wavelength):** λ_C = h/(mc) is the length below which a single Dirac particle stops behaving as a localized point and begins to display its internal two-clock structure (Zitterbewegung, chiral mixing, pair production at higher energies).
+
+Earlier formulations conflated these — treating the Compton wavelength as the
+*source* of the Heisenberg ½. The corrected separation: the bound comes from
+harmonic analysis applied to the wavefunction (universal); the Compton scale
+is a particle-specific length at which the framework's two-clock structure
+(Section 2) becomes manifest.
+
+#### Connection to the zero-point phase floor
+
+The zero-point phase noise σ_φ(0) = 1/√2 rad (equations reference Section 9)
+is the same Fourier bandwidth theorem applied to the chiral phase clocks
+themselves: the minimum joint uncertainty in conjugate phase variables is
+itself ½ in natural units. The zero-point phase floor and the Heisenberg
+uncertainty relation are therefore the same theorem expressed in different
+variables — both follow from harmonic analysis of the wavefunction, both have
+factor ½, and both are unavoidable for any real oscillating field. The
+zero-point energy ½ℏω per mode is the energy cost of saturating this minimum
+phase uncertainty.
+
+### 4.7 What This Reframing Requires
+
+The energy-partition reading rests on three physical assumptions, all already
+present in the framework:
+
+1. The wavefunction is a real oscillating field carrying energy; |ψ|² is its
+   energy density (Section 2.3).
+2. Measurement is Kuramoto re-synchronization to a macroscopic detector that
+   transfers this energy into one channel (Section 3).
+3. The background field fluctuations (zero-point + thermal) that determine
+   which channel wins in any individual event are statistically unbiased on
+   the channel-selection phase space.
+
+Assumption 3 is the most important and the least directly testable. It is
+motivated by the symmetry of the zero-point field — there is no preferred
+direction for vacuum fluctuations — and by the second law as applied to
+unbiased thermal noise. But the rigorous claim that *long-run frequencies*
+converge exactly to *energy fractions* requires showing that the background
+statistical symmetry holds across the channel-selection phase space, which
+is not yet derived from first principles.
+
+The framework therefore offers a *reframing*, not a complete derivation: it
+replaces the standard Born axiom with a wave-realism + unbiased-background
+postulate set, which is weaker but not vacuous. Whether the bias-free
+assumption can be derived from underlying dynamics — for example, from the
+isotropy of the chiral phase clocks under U(1) phase redefinition — is a
+direction for future work (Section 8.3).
 
 ---
 
-## 5. The Massless Limit: An Open Question
+## 5. Extension to Photons via the Riemann–Silberstein Form
 
-For photons (m = 0, K = 0), the mixing angle θ_rel = 90° and the Dirac equation
-decouples into independent Weyl equations. There is no Kuramoto coupling between
-the chiral sectors.
+Photons are not Dirac particles. They are spin-1 vector bosons described by
+Maxwell's equations, with no rest mass to couple chiral sectors. The framework's
+central identification K = m therefore does not apply directly: there is no
+mass term to set a Kuramoto coupling between photon helicities. We address this
+by separating two questions that earlier formulations conflated: (i) where do
+photon Bell correlations come from? and (ii) where does the framework's
+measurement mechanism enter for photons?
 
-Yet polarization-entangled photons achieve full Bell violation (CHSH = 2√2). How?
+### 5.1 The Riemann–Silberstein Form of Maxwell
 
-Two possible answers exist within the framework:
+Maxwell's free equations can be written in a Weyl-like first-order form using
+the Riemann–Silberstein vector [40]:
 
-**Answer A:** For photons, the coupling K is set by energy rather than rest mass:
-K = ω = E/ℏ. Photons synchronize through their oscillation frequency, not rest
-mass. Since photons are always fully relativistic (θ_rel = 90°), all spinor
-components contribute equally.
+$$\mathbf{F} = \mathbf{E} + i\,\mathbf{B}, \qquad i\,\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F}, \qquad \nabla \cdot \mathbf{F} = 0$$
 
-**Answer B:** The Maxwell equations for polarized light have their own two-sector
-structure (Poincaré sphere), and the Kuramoto coupling may be derivable from
-classical electrodynamics directly.
+The two helicity eigenstates F_+ and F_− (right- and left-circular polarizations)
+are independent — there is no mass term, and the structure mirrors the m = 0
+chiral limit of the Dirac equation: two decoupled clocks, θ_rel = π/2 permanently.
+A Kuramoto coupling between F_+ and F_− of a single photon is identically zero
+in vacuum.
 
-**We do not resolve this question here.** The photon-Bell connection requires
-separate treatment. The core claim — that the Dirac mass term is a Kuramoto
-coupling for massive fermions — stands regardless.
+### 5.2 Where Photon Bell Correlations Come From
+
+The polarization Hilbert space of a photon is two-dimensional, spanned by any
+orthogonal pair (H/V, ±, L/R). It is mathematically isomorphic to the spin-½
+Hilbert space, with the Poincaré sphere playing the role of the Bloch sphere.
+For two polarization-entangled photons in the singlet state, the standard
+quantum correlation is
+
+$$E_\gamma(a, b) = -\cos\bigl(2(a-b)\bigr)$$
+
+and the CHSH bound saturates at 2√2. The factor of 2 in the angular dependence
+reflects the π-periodicity of polarizers (vs. 2π-periodicity of Stern–Gerlach
+analyzers).
+
+This correlation is a property of the polarization Hilbert space, not of any
+chiral coupling. It is delivered by standard QED — the same way standard QM
+with the Dirac spinor delivers the −cos(a−b) correlation for spin-½ pairs
+(Section 2). In both cases, the framework does not derive the Bell
+correlations; the underlying Hilbert-space structure does. The framework's
+contribution lies elsewhere.
+
+### 5.3 The Measurement Mechanism Transfers to Photons
+
+The framework's central interpretive claim — measurement is Kuramoto
+re-synchronization to the detector bulk (Section 3) — does not depend on the
+K = m identification for its physical content. It requires only that the system
+being measured carries a phase clock that can be synchronized to the detector.
+Photons satisfy this: each polarization mode carries a definite phase, and at
+detection the photon's polarization clock locks to the polarizer's selected
+channel (transmitted vs. rejected).
+
+The Kuramoto coupling for the photon-detector interaction is not zero — it is
+set by the photon's interaction with the detector matter (typically dipole
+coupling −d·E), not by any vacuum mass term. For a photon of energy E = ℏω
+coupling to a near-resonant detector channel, the natural Kuramoto rate scales
+with the photon's own oscillation frequency:
+
+$$K_\gamma \sim \omega = \frac{E}{\hbar}, \qquad \tau_{\text{sync}} \sim \frac{1}{K_\gamma} = \frac{\hbar}{E} \qquad (11)$$
+
+A 2 eV optical photon synchronizes to its detector in ~0.3 fs; a 10 keV X-ray
+locks in ~10⁻¹⁹ s. Higher-energy photons synchronize faster — the Kuramoto
+rate is set by the photon's energy via its interaction with the detector,
+rather than by any rest mass.
+
+This is the photon analog of K = m for fermions: in both cases, the
+synchronization rate to the detector is set by the energy scale that
+characterizes the system's coupling to its environment. For massive fermions
+at rest that scale is mc² (the Compton frequency); for photons it is ℏω
+(the photon's own frequency).
+
+### 5.4 Gravitational Decoherence and the Linewidth-Dependent Bell Test
+
+Two photon time scales must be kept distinct:
+
+- **τ_sync = ℏ/E** — the time for Kuramoto re-sync to the detector to complete (set by photon energy)
+- **τ_coh = 1/Δν** — the photon's coherence time during measurement (set by *linewidth*, independent of central energy)
+
+For a given measurement event, the photon is in coherent superposition during
+the τ_coh window. If the two detectors A and B in a Bell test are at different
+gravitational potentials, their bulk phases Φ_bulk(A) and Φ_bulk(B) accumulate
+a relative offset proportional to ω·ΔΦ_grav/c² · τ_coh. When this offset
+exceeds ~1 rad, the singlet correlation degrades.
+
+This is the linewidth-dependent gravitational Bell prediction (`predictions.py`
+P6b), now phrased in self-consistent form:
+
+$$\delta\phi_{\text{grav}} = \omega \cdot \frac{\Delta\Phi_{\text{grav}}}{c^2} \cdot \tau_{\text{coh}} = \frac{\omega \cdot \Delta\Phi_{\text{grav}}}{c^2 \cdot \Delta\nu} \qquad (12)$$
+
+$$\text{CHSH}(\Delta\nu) = 2\sqrt{2} \cdot \exp\!\left(-\frac{\delta\phi_{\text{grav}}^2}{2}\right) \qquad (13)$$
+
+Standard QM/QED predicts CHSH is independent of photon linewidth at fixed
+entanglement fidelity. The framework predicts it decreases with narrowing
+linewidth in the presence of a gravitational potential difference between the
+detectors. Tests are in reach using cavity-filtered narrow-linewidth photons
+at altitude differences of a few km (terrestrial) or with Earth–satellite
+baselines.
+
+### 5.5 Photons and Penrose Objective Reduction
+
+The gravitational synchronization rate Γ_grav = GM²/(ℏΔz) (Section 3.4)
+vanishes identically for a massless particle. Equivalently, the Penrose
+objective-reduction timescale τ_OR = πℏ/E_G with E_G = Gm²/Δx becomes
+infinite for m = 0. **The gravitational classicalization channel that drives
+massive systems toward definite outcomes is silent for photons.**
+
+This matches Penrose's own position. The OR proposal is designed for
+superpositions of macroscopically distinct *mass* configurations (mirrors,
+mesoscopic test masses); Penrose has been explicit that single photons fall
+outside its remit because they have no rest mass to source the gravitational
+self-energy.
+
+In the framework's reading, a photon therefore has only two pathways into the
+classical domain:
+
+1. **Measurement (active).** Kuramoto re-synchronization to a quantized
+   detector channel (§5.3). A single photon hitting a photodetector produces
+   a definite click; this is the only mechanism by which an isolated photon
+   classicalizes.
+2. **Coherent-state averaging (many-photon).** A macroscopically populated
+   mode (laser light, classical EM) has a positive Wigner function and obeys
+   Maxwell's equations classically. The classical limit emerges through
+   statistical superposition of many photon modes, not through any internal
+   collapse mechanism.
+
+A single photon in vacuum, between emission and detection, is **perpetually
+quantum** — it does not gravitationally classicalize, and it has no way to
+do so internally. This is consistent with the experimental fact that
+single-photon Bell tests preserve full coherence over kilometer-scale
+separations and Earth–satellite baselines (Micius, 2017), where any internal
+classicalization mechanism would have produced observable degradation.
+
+One subtlety: photons do follow null geodesics in curved spacetime
+(gravitational lensing, Shapiro delay). This is unitary classical evolution
+of the photon's trajectory, not collapse or decoherence of its quantum state
+— it bends paths without classicalizing states.
+
+The silence of the gravitational channel for photons is consistent with the
+linewidth-dependent prediction in §5.4, which attributes the gravitational
+effect not to the photon in flight but to the bulk-phase mismatch between
+detectors A and B at different gravitational potentials. The photon is the
+messenger; the gravitational decoherence is in the detectors.
+
+### 5.6 What Remains Open
+
+Two questions are not resolved by this section:
+
+1. **A first-principles derivation of K_γ from QED.** We have asserted
+   K_γ ~ ω as the natural scaling, motivated by photon-detector dipole
+   coupling. A rigorous derivation would relate K_γ to the absorption matrix
+   element ⟨e|d|g⟩ for the specific detector channel and compute the actual
+   sync time for realistic photodetectors (photomultipliers, avalanche
+   photodiodes, superconducting nanowire detectors).
+2. **The microscopic mechanism for the discrete click.** Section 4 attributes
+   discrete clicks to the threshold structure of detector channels. For
+   photons, this corresponds to the photoelectric or photon-counting
+   threshold of the detection element. The framework provides a mechanism
+   (re-sync to a quantized channel) but does not yet derive the threshold
+   from first principles.
+
+These are tractable extensions, not framework contradictions. The §5
+photon-coupling problem — flagged in earlier drafts as the framework's most
+serious open question — reduces to a pair of well-defined technical issues
+once the Bell correlations are correctly attributed to the polarization
+Hilbert space rather than to any Kuramoto coupling between photon helicities.
 
 ---
 
@@ -506,12 +876,17 @@ We distinguish between predictions that follow from the mathematical identificat
 
 ### 6.1 From the Mathematical Identification
 
-**P1 — Three-term decomposition of Bell correlations.** For massive entangled
-particles, the correlation E(a,b) = −cos(a−b) decomposes into E_LL + E_SS + E_LS,
-with the relative contributions depending on θ_rel = arcsin(v/c). While E_total
-is Lorentz-invariant, the decomposition itself is new and numerically verified
-(Appendix A). A hypothetical experiment separately addressing large and small
-spinor components could reveal this structure.
+**P1 — Block decomposition of Bell correlations.** For massive entangled
+particles, the standard correlation E(a,b) = −cos(a−b) can be partitioned
+into block contributions E_LL + E_SS + E_LS by restricting the spin
+operator to the upper, lower, and cross sectors of the Dirac spinor. The
+sum is additive by trace linearity (Appendix A); what depends on
+θ_rel = arcsin(v/c) is the *redistribution of weight* among the three
+blocks. A hypothetical experiment separately sensitive to the
+small-component contribution — for example, ultra-relativistic decay
+asymmetries — could in principle expose this redistribution. The
+decomposition itself is a consistency check on the chiral-clock reading
+of the spinor structure, not an independent prediction.
 
 **P2 — Zitterbewegung as clock beat.** The identification of ω_Zitter = 2mc²/ℏ
 as the beat frequency between temporal and spatial clocks is consistent with all
@@ -549,7 +924,7 @@ This is the main limitation and the main avenue for future work.
 
 ### 7.1 Interpretations of Quantum Mechanics
 
-| Property | Copenhagen | Everett MWI | Bohmian | GRW/CSL [8, 23] | Superdeterminism | **This work** |
+| Property | Copenhagen | Everett MWI | Bohmian | GRW/CSL [8, 23] | Superdeterminism | **MCI (this work)** |
 |---|---|---|---|---|---|---|
 | ψ is real? | No | Yes | Yes | Yes | Varies | **Yes** ᵃ |
 | Collapse? | Postulated | No | No | Stochastic | Not needed | **Re-synchronization** ᵃ |
@@ -558,8 +933,10 @@ This is the main limitation and the main avenue for future work.
 | Single world? | By fiat | No | Yes | Yes | Yes | **Yes (by physics)** ᵇ |
 | Mechanism? | None | None | Pilot wave | Random hits | Initial conditions | **Kuramoto sync** ᵃ |
 | Bell's theorem? | Accepted | Accepted | Accepted (nonlocal) | Accepted | Denied (meas. indep.) | **Accepted** ᵃ |
-| Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Derived (Section 4)** ᵇ |
-| Uncertainty principle | Postulated | Inherited | Derived (nonlocal) | Inherited | Inherited | **Emergent (Section 4.5)** ᵇ |
+| Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Reframed as energy partition (Section 4)** ᵇ |
+| Uncertainty principle | Postulated | Inherited | Derived (nonlocal) | Inherited | Inherited | **Emergent (Section 4.6)** ᵇ |
+| Observer needed? | Yes | Yes (branch) | No | No | No | **No** ᵃ |
+| Preferred frame? | No | No | Yes (pilot wave) | No | No | **No (relational, §1.5)** ᵃ |
 
 *ᵃ Established within the framework: follows directly from the mathematical
 identification K = m and the re-synchronization interpretation of measurement
@@ -722,14 +1099,23 @@ Kuramoto synchronization dynamics, respectively.
 
 ### 8.1 The Interpretive Status
 
-This paper presents a mathematical identification (Dirac = Kuramoto) and an
-interpretive framework built on it (measurement = re-synchronization). The
-mathematical identification is verifiable and, we believe, novel. The
+This paper presents a mathematical identification (Dirac = Kuramoto on the
+synchronized manifold) and a named interpretive framework built on it: the
+**Many Clocks Interpretation of Quantum Mechanics (MCI)**, introduced in §1.5.
+The mathematical identification is verifiable and, we believe, novel. The
 interpretive framework is physically motivated but not yet quantitatively
 predictive beyond standard decoherence.
 
-We are in the category of interpretation papers — alongside many-worlds,
-Bohmian mechanics, and relational QM [24]. The contribution is not new equations
+MCI sits in the category of interpretation papers — alongside Many-Worlds [16],
+Bohmian mechanics [15], and Rovelli's relational quantum mechanics [24]. Its
+distinguishing features are: (i) ψ is ontic (a real oscillating field), as in
+Bohmian and Everettian readings; (ii) measurement is local Kuramoto
+re-synchronization between clock-carrying systems, with no observer or
+branching required; (iii) the framework is relational — no global preferred
+frame — distinguishing it from Bohmian mechanics, which requires a preferred
+foliation; (iv) past phase history is overwritten at each sync event, giving
+a positive dynamical mechanism for thermalization rather than treating it as
+an emergent statistical phenomenon. The contribution is not new equations
 but a new way of reading existing equations that provides physical intuition
 for the measurement process. As Maudlin [32] has emphasized, interpretations
 are not idle philosophy — they guide which questions physicists ask and which
@@ -759,16 +1145,27 @@ Three directions could elevate this from interpretation to testable theory:
    framework gains predictive power. If they differ, the framework makes testable
    predictions.
 
-2. **Born rule — rigorous proof.** Section 4 argues that P = |α|² follows from
-   Kuramoto synchronization statistics: the squared modulus of the complex
-   coupling amplitude determines synchronization probability, and averaging over
-   the detector bulk phase eliminates cross terms. A rigorous derivation would
-   formalize this in a many-body quantum Kuramoto setting and prove that no
-   other probability measure is consistent with the synchronization dynamics.
+2. **Born rule — closing the unbiased-background assumption.** Section 4
+   reads the Born rule as the long-run frequency of energy partition under
+   unbiased background-field driving. The wave-realism premise (|ψ|² is wave
+   energy density) and the partition mechanism (Kuramoto re-synchronization
+   into a quantized detector channel) are physically motivated and testable
+   in principle. The remaining gap is the rigorous proof that the
+   zero-point + thermal background is statistically unbiased on the
+   channel-selection phase space — and that consequently long-run
+   frequencies converge *exactly* to energy fractions. A possible route is
+   to derive this from the U(1) symmetry of the chiral phase clocks under
+   global phase redefinition; another is a many-body quantum-Kuramoto
+   simulation that measures channel-frequency convergence directly.
 
-3. **Photon coupling.** Resolving the open question of Section 5 — what plays
-   the role of K for massless particles — would either extend the framework to
-   all of quantum mechanics or identify its boundary of applicability.
+3. **Photon coupling — first-principles K_γ from QED.** Section 5 proposes
+   that the photon-detector Kuramoto rate scales as K_γ ~ ω = E/ℏ, motivated
+   by the dipole interaction. A rigorous derivation would relate K_γ to the
+   absorption matrix element ⟨e|d|g⟩ for a specific detector channel and
+   compute realistic sync times for photomultipliers, avalanche photodiodes,
+   and superconducting nanowire detectors. Combined with the linewidth-
+   dependent gravitational Bell prediction (Section 5.4), this would give the
+   framework its sharpest near-term experimental test.
 
 ---
 
@@ -785,14 +1182,16 @@ We have shown that:
    asymmetry (M >> m) ensures definite outcomes. Decoherence is not merely loss
    of coherence — it is redirection of coherence.
 
-3. **The Born rule emerges naturally from synchronization statistics.** The probability
-   P = |α|² follows from the squared modulus of the complex coupling
-   amplitude between particle and detector oscillators. The phase averages out;
-   the amplitude squared remains.
+3. **The Born rule is reframed as energy partition.** Reading |ψ|² as wave
+   energy density and the apparent stochasticity of individual outcomes as
+   unbiased zero-point + thermal background fluctuation at the synchronization
+   event, the long-run frequency of channel selection equals the energy
+   fraction the wave carries in that channel. P = |α|² is then a frequentist
+   statement, not an independent probability axiom.
 
 4. **The uncertainty principle appears as a clock bandwidth limitation.** The
    Compton frequency sets the particle's spatial resolution via a Nyquist-like
-   bound (Section 4.5).
+   bound (Section 4.6).
 
 The framework does not modify quantum mechanics or challenge Bell's theorem. It
 provides a physical mechanism — Kuramoto phase synchronization — for processes
@@ -802,6 +1201,12 @@ describes but does not mechanistically explain.
 **In short: quantum mechanics produces the correlations. The Dirac mass term is
 the Kuramoto coupling that makes particles what they are. And measurement is the
 moment a small oscillator surrenders its phase to a large one.**
+
+This is the **Many Clocks Interpretation of Quantum Mechanics**: every particle
+carries an internal phase clock; interactions synchronize them locally; no
+observer is needed; no branching occurs; classical behavior emerges from
+collective synchronization in massive bulks; and the past is overwritten at
+each interaction event. A single world, many clocks, all locally synchronized.
 
 ---
 
@@ -819,7 +1224,7 @@ $$\sin\theta_{rel} = \frac{|\mathbf{p}|}{E} = \frac{v}{c} \qquad (A1)$$
 | Rest | 0 | 0° | Temporal clock only; no spatial phase |
 | Non-relativistic | ≪1 | ≪90° | Small spatial component |
 | Ultra-relativistic | → 1 | → 90° | Equal temporal and spatial |
-| Massless (photon) | 1 | 90° | Permanently decoupled chiral clocks |
+| Massless spin-½ (Weyl limit) | 1 | 90° | Permanently decoupled chiral clocks (photons are spin-1; see §5) |
 
 ### A.2 Large and Small Spinor Components
 
@@ -834,44 +1239,73 @@ two are the **small components** (spatial clock). In the non-relativistic limit
 the small components vanish; in the ultra-relativistic limit they equal the large
 components.
 
-### A.3 The Decomposition
+### A.3 The Block Decomposition
 
 For two Dirac particles in a singlet state, the Bell correlation
-E(a,b) = ⟨Ψ|(Σ_a)_A ⊗ (Σ_b)_B|Ψ⟩ decomposes as:
+E(a,b) = ⟨Ψ|(Σ_a)_A ⊗ (Σ_b)_B|Ψ⟩ can be partitioned into three contributions
+obtained by restricting the spin operator Σ to the upper (large) block, the
+lower (small) block, and the cross terms:
 
 $$E(a, b) = E_{LL} + E_{SS} + E_{LS} \qquad (A3)$$
 
-where:
 - **E_LL**: large × large — temporal clock contribution
 - **E_SS**: small × small — spatial clock contribution
 - **E_LS**: cross term — temporal-spatial coupling
 
-### A.4 Numerical Verification
+**Equation (A3) is an identity, not a derivation.** The full 4×4 spin operator
+Σ⊗Σ is the sum of the three block-restricted operators, so the expectation
+values are additive by trace linearity. The mathematical content of the
+appendix is therefore not the sum — which is guaranteed — but the
+*redistribution of weight* among the three blocks as the mixing angle
+θ_rel = arcsin(v/c) varies. At the non-relativistic limit (θ_rel → 0) all
+weight sits in E_LL with E_SS, E_LS → 0; at the ultra-relativistic limit
+(θ_rel → 90°) the three contributions become comparable. This redistribution
+is the consistency check the appendix performs on the chiral-clock reading
+of the spinor.
 
-The decomposition was verified numerically (see `dirac_extension.py`). At p = 1.0,
-m = 1.0 (θ_rel ≈ 53°), a = 0, b = π/4:
+### A.4 Block Weights at Finite Momentum
+
+The block contributions were computed with `dirac_extension.py` for the Dirac
+singlet at p = 1.0, m = 1.0 (θ_rel ≈ 53°), a = 0, b = π/4:
 
 | Term | Value | Physical meaning |
 |---|---|---|
 | E_LL | −0.354 | Temporal clock contribution |
 | E_SS | −0.071 | Spatial clock contribution |
-| E_LS | −0.282 | Rotation coupling (key term) |
+| E_LS | −0.282 | Rotation coupling (cross term) |
 | **E_LL + E_SS + E_LS** | **−0.707** | **Sum** |
 | −cos(π/4) | −0.707 | QM prediction ✓ |
 
-**The sum is exact to machine precision for all values of p and m tested.**
+The sum recovers −cos(π/4) to machine precision, as it must. The
+informative entries are the block weights: at this momentum the cross term
+E_LS already carries 40% of the total, and its share grows further at higher
+v/c. At p → 0 the weights collapse onto E_LL alone, recovering the standard
+non-relativistic Pauli singlet result.
 
-### A.5 The Non-Relativistic Deficiency Explained
+### A.5 Relation to the Stochastic Phase-Clock Toy
 
-A non-relativistic phase-clock model that tracks only the temporal de Broglie [13]
-phase ω = E/ℏ retains only E_LL, discarding E_SS and E_LS. This gives:
+A separate and simpler model exists in which a single classical clock phase
+per particle determines the click probability via Malus's law,
+P(+1 | n̂, φ) = cos²((φ − θ_n̂)/2). Evaluated for an EPR pair with shared
+initial phase, this stochastic phase-clock model returns the correlation
 
-$$E_{NR}(a, b) = -\frac{1}{2}\cos(a - b), \qquad \text{CHSH}_{NR} \leq \sqrt{2} \approx 1.414$$
+$$E_{\text{Malus}}(a, b) = -\tfrac{1}{2}\cos(a - b), \qquad \text{CHSH}_{\text{Malus}} \leq \sqrt{2} \approx 1.414$$
 
-This falls below even the classical Bell bound of 2.0. The deficiency is not a
-failure of the phase-clock interpretation — it is a failure to include both clocks.
-When the full four-component Dirac spinor is used, the exact quantum result is
-recovered. The mass term K = m ensures both clocks are present and coupled.
+(see `bell_phase.py`). This is sub-classical: it falls below even the local
+hidden-variable bound of 2 and cannot reproduce the loophole-free Bell
+violations.
+
+It is important to be precise about what this toy *is not*. The Malus-law
+model is **not** the same thing as restricting the Dirac correlation to
+E_LL. The Dirac large-block restriction at p → 0 returns the full Pauli
+singlet correlation −cos(a − b) (since the Dirac spinor reduces to its
+upper-block Pauli content with N → 1, r → 0), not −½cos(a − b). The two
+models share only the heuristic feature that both drop "half" of the
+relevant structure and both fall short of the quantum result. The moral is
+the same in either case: a phase-clock interpretation that drops the
+spatial component cannot reproduce −cos(a − b), and the four-component
+Dirac spinor — with K = m coupling its chiral sectors — is required to
+recover the full quantum correlation.
 
 ---
 
@@ -1150,6 +1584,26 @@ Quantum Philosophy*. Springer.
 [35] Hestenes, D. (1990). The Zitterbewegung interpretation of quantum
 mechanics. *Foundations of Physics*, 20(12), 1213–1232.
 https://doi.org/10.1007/BF01889466
+
+[36] Heinrich, G., Ludwig, M., Qian, J., Kubala, B., & Marquardt, F. (2011).
+Collective dynamics in optomechanical arrays. *Phys. Rev. Lett.*, 107(4),
+043603. https://doi.org/10.1103/PhysRevLett.107.043603
+
+[37] Mari, A., Farace, A., Didier, N., Giovannetti, V., & Fazio, R. (2013).
+Measures of quantum synchronization in continuous variable systems.
+*Phys. Rev. Lett.*, 111(10), 103605.
+https://doi.org/10.1103/PhysRevLett.111.103605
+
+[38] Walter, S., Nunnenkamp, A., & Bruder, C. (2014). Quantum
+synchronization of a driven self-sustained oscillator. *Phys. Rev. Lett.*,
+112(9), 094102. https://doi.org/10.1103/PhysRevLett.112.094102
+
+[39] Roulet, A., & Bruder, C. (2018). Synchronizing the smallest possible
+system. *Phys. Rev. Lett.*, 121(5), 053601.
+https://doi.org/10.1103/PhysRevLett.121.053601
+
+[40] Bialynicki-Birula, I. (1996). Photon wave function. *Progress in Optics*,
+36, 245–294. https://doi.org/10.1016/S0079-6638(08)70316-0
 
 ---
 

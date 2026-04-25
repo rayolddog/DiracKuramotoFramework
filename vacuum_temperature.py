@@ -2,6 +2,25 @@
 vacuum_temperature.py — Orbitals, Vacuum, Temperature, and Brownian Motion
 ============================================================================
 
+DISCLAIMER (added 2026-04-25):
+  The Brownian-motion section of this file (claim #4 below; the D_clock
+  derivation and the implied "K fixes Stokes-Einstein" relation) does not
+  survive scrutiny under the framework's own K = m identification. The K
+  used in D_clock has units of momentum (kg·m/s) and must be solved for
+  to match Stokes-Einstein, whereas the framework's K = m·c²/ℏ is a
+  Compton frequency (rad/s). Numerical attempts with physically motivated
+  K guesses (thermal momentum, m·c, m·v_thermal) miss empirical Stokes-
+  Einstein by 4-50 orders of magnitude. The "K fixes Stokes-Einstein"
+  step is therefore a phenomenological refit, not a derivation from K = m,
+  and the residual D ∝ 1/√ω prediction is downstream of that refit, not
+  independent. See EQUATIONS.md §10 ("Brownian Motion: An Open Question")
+  for the current honest status. The Brownian simulation code in this
+  file uses a free K_couple parameter for illustrative random-walk dynamics
+  only and should not be read as a derivation of D from the framework.
+
+  Claims #1, #2, #3 (orbitals as standing waves, photon residual / ZPF,
+  temperature as clock phase distribution width) are unaffected.
+
 FOUR CONNECTED CLAIMS:
 
   1. HYDROGEN ORBITALS ARE REAL STANDING WAVES
@@ -144,13 +163,18 @@ def planck_spectrum(omega_arr, T):
 
 
 # ─── 3. Brownian motion from clock desynchronization ─────────────────────────
+# DISCLAIMER: K_couple here is a free phenomenological parameter (kg·m/s per
+# radian), NOT the framework's K = m·c²/ℏ (which has units of rad/s and
+# cannot be plugged in here). The simulation illustrates random-walk
+# dynamics under a sin-coupled phase-impulse model; it is not a derivation
+# of D from the framework's K = m. See the file header and EQUATIONS.md §10.
 
 def simulate_brownian_clock(
     n_steps   = 5000,
     n_trajs   = 80,
     T         = 300.0,         # temperature (K)
     omega_mol = 1e13,          # molecular vibration frequency (rad/s)
-    K_couple  = 1e-23,         # Kuramoto coupling (kg·m/s per radian)
+    K_couple  = 1e-23,         # phenomenological coupling (kg·m/s per radian); see disclaimer
     m_particle= 1e-17,         # Brownian particle mass (kg)
     tau_coll  = 1e-13,         # mean collision interval (s)
     dt        = 1e-13,         # time step (s)

@@ -992,6 +992,12 @@ def print_summary():
 ║  The Born rule (cos²) does not emerge from the Dirac dynamics      ║
 ║  alone. It requires the QUANTUM STATE (singlet) as input.          ║
 ║                                                                    ║
+║  This finding is consistent with — and supports — the energy-      ║
+║  partition reading of the Born rule developed in Paper §4: the     ║
+║  Born rule does not arise from the Dirac/Kuramoto dynamics, it     ║
+║  arises from |ψ|² as wave energy density plus unbiased background- ║
+║  field stochasticity at the synchronization event.                 ║
+║                                                                    ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║  FINDING 5: Route A (measurement independence) is mathematically   ║
 ║  possible but requires very specific correlations                  ║

@@ -1,6 +1,6 @@
-# Kuramoto synchronization in the Dirac equation
+# Equation Reference for the Many Clocks Interpretation
 
-*A time-phase clock interpretation of quantum mechanics*
+*Kuramoto synchronization in the Dirac equation — the equation reference accompanying the Many Clocks Interpretation of Quantum Mechanics (MCI). See the main paper for the interpretive framework; this document is a compact lookup of the key equations and identifications.*
 
 ---
 
@@ -92,25 +92,27 @@ $$\theta_{\text{rel}} \xrightarrow{v/c \to 0} 0 \quad \text{(NR: 2-component Pau
 
 $$\theta_{\text{rel}} \xrightarrow{v/c \to 1} \frac{\pi}{2} \quad \text{(massless: permanent orthogonality)}$$
 
-### Three-term decomposition of the Bell correlation
+### Three-term block decomposition of the Bell correlation
 
-The full correlation decomposes as:
+By restricting the Dirac spin operator to the upper (large), lower (small), and cross blocks, the singlet correlation partitions as:
 
 $$E(a, b) = \underbrace{E_{LL}}_{\text{temporal} \times \text{temporal}} + \underbrace{E_{SS}}_{\text{spatial} \times \text{spatial}} + \underbrace{E_{LS}}_{\text{rotation coupling}} = -\cos(a - b)$$
 
-The non-relativistic clock model retains only $E_{LL} \approx -\tfrac{1}{2}\cos(a-b)$. The Dirac small component ($E_{SS} + E_{LS}$) provides the missing half — verified numerically to machine precision for all momenta.
+The sum is additive by trace linearity — an identity, not a derivation. The mathematical content is the *redistribution* of weight among the three blocks as $\theta_{\text{rel}}$ varies: at $p \to 0$, $E_{LL} \to -\cos(a-b)$ and $E_{SS}, E_{LS} \to 0$ (recovering the standard Pauli singlet); at $\theta_{\text{rel}} \to 90°$ the three contributions become comparable. The Malus-law toy in the table above (CHSH $\leq \sqrt{2}$, returning $-\tfrac{1}{2}\cos\Delta$) is a separate stochastic-phase model — it is not the same object as the Dirac large-block restriction.
 
 ---
 
-## 5. Massless Particles — Permanent Orthogonality
+## 5. Massless Spin-½ Fermions — Permanent Chiral Orthogonality
 
-For $m = 0$: $\theta_{\text{rel}} = \pi/2$ always. The Dirac equation splits into two independent Weyl equations:
+For $m = 0$ in the Dirac equation: $\theta_{\text{rel}} = \pi/2$ always. The equation splits into two independent Weyl equations:
 
 $$i\sigma^\mu \partial_\mu \chi_R = 0 \qquad \text{(spatial clock: helicity } h = +\tfrac{1}{2}\text{)}$$
 
 $$i\bar{\sigma}^\mu \partial_\mu \chi_L = 0 \qquad \text{(temporal clock: helicity } h = -\tfrac{1}{2}\text{)}$$
 
-The two clocks are permanently orthogonal and never mix. This is why photons have exactly **2** polarization states rather than 4.
+The two chiral clocks are permanently orthogonal and never mix. This applies to massless spin-½ fermions (idealized neutrinos before mass discovery).
+
+**Photons are not described by this section.** Photons are spin-1 vector bosons governed by Maxwell's equations, not by the Dirac/Weyl equation. Their two polarization states arise from gauge invariance reducing the four components of $A^\mu$ to two transverse degrees of freedom — *not* from chiral Weyl decoupling. The structural similarity (two decoupled helicity clocks) does exist when Maxwell is rewritten in Riemann–Silberstein form $\mathbf{F} = \mathbf{E} + i\mathbf{B}$; see Paper §5 for the photon treatment.
 
 ---
 
@@ -176,13 +178,15 @@ The clock-synchronization force recovers Newton exactly:
 
 $$a_{\text{clock}} = \frac{d\omega}{dr} \cdot \frac{c^2}{\omega_0} = \frac{GM}{r^2} \qquad \checkmark$
 
-### Gravitational bulk coupling rate
+### Gravitational bulk coupling rate (pair-counted)
 
-The rate at which gravity maintains phase coherence across a macroscopic bulk of mass $M$ at internal separation $\Delta z$:
+For a bulk of mass $M$ composed of $N$ atoms (each of mass $m_{\text{atom}} = M/N$), each pair contributes a Kuramoto rate $K_{\text{pair}} \sim G\,m_{\text{atom}}^2/(\hbar\,r_{ij})$ via the framework's $K = E/\hbar$ identification. Summing over the $N(N-1)/2 \approx N^2/2$ atomic pairs at characteristic internal separation $\Delta z$:
 
-$\boxed{\Gamma_{\text{grav}} = \frac{GM^2}{\hbar\,\Delta z}}$
+$$\Gamma_{\text{grav}} \sim \frac{N^2}{2}\cdot \frac{G\,(M/N)^2}{\hbar\,\Delta z} \;\sim\; \boxed{\frac{G M^2}{\hbar\,\Delta z}}$$
 
-For macroscopic objects ($M \sim 1\,\text{kg}$, $\Delta z \sim 1\,\text{m}$), $\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}$ — an extremely fast coupling rate that explains why macroscopic detectors maintain classical coherence. The $M^2$ scaling ensures bulk objects are locked far more strongly than microscopic particles.
+The $M^2$ scaling is a consequence of pair counting: each pair contributes $\sim K_{\text{pair}}$, there are $\sim N^2$ pairs, and $m_{\text{atom}} = M/N$ enters quadratically per pair, giving total $\sim N^2 (M/N)^2 = M^2$.
+
+For macroscopic objects ($M \sim 1\,\text{kg}$, $\Delta z \sim 1\,\text{m}$), $\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}$ — an extremely fast coupling rate that explains why macroscopic detectors maintain classical coherence. The $M^2$ scaling ensures bulk objects are locked far more strongly than microscopic particles. (See Paper §3.4 for the full derivation; Paper §5.5 for why $\Gamma_{\text{grav}} = 0$ for photons.)
 
 ### Penrose objective reduction as gravitational clock decoherence
 
@@ -248,35 +252,20 @@ $$u(\omega, T) = \frac{\hbar\omega^3}{\pi^2 c^3} \cdot \frac{1}{e^{\hbar\omega/k
 
 ---
 
-## 10. Brownian Motion from Clock Desynchronization
+## 10. Brownian Motion: An Open Question
 
-At each molecular collision, the momentum impulse is proportional to the clock phase difference:
+Earlier drafts proposed that the Kuramoto framework reproduces the Stokes-Einstein diffusion relation $D = k_BT/(6\pi\eta r)$ by treating each molecular collision as a phase-difference impulse $\delta p = K\,\delta\varphi$, summing the random walk, and extracting an effective $K$ by matching to experiment. We have removed that derivation. It does not survive scrutiny.
 
-$$\delta p = K \sin(\varphi_i - \varphi_j) \approx K\,\delta\varphi, \qquad \delta\varphi \sim \mathcal{N}\!\left(0,\, \sigma_\varphi^2(T)\right)$$
+The framework's central identification $K = m$ (Section 6) gives $K$ the units of frequency (rad/s, Compton frequency $mc^2/\hbar$). For a Brownian diffusion formula of the form $D = K^2\,\sigma_\varphi^2\,\tau_{\text{coll}}/(2m^2)$ to come out in $\mathrm{m}^2/\mathrm{s}$, $K$ must enter with units of momentum (kg·m/s). The two $K$'s are dimensionally distinct objects.
 
-Mean squared impulse per collision:
+Numerical attempts to bridge them by physically motivated guesses for an electron in water at 300 K — $K = p_{\text{thermal}} = \sqrt{2 m k_B T}$, $K = mc$ (Compton momentum), $K = m\,v_{\text{thermal}}$ — yield $D_{\text{clock}}$ values that miss the empirical Stokes-Einstein $D \approx 10^{-9}\,\mathrm{m}^2/\mathrm{s}$ by 4 to 50 orders of magnitude. There is no principled way for the framework's $K = m$ to reproduce molecular Brownian motion. Earlier drafts solved for $K$ to make the match work, which made the residual "prediction" $D \propto 1/\sqrt{\omega}$ downstream of the fit rather than independent.
 
-$$\langle (\delta p)^2 \rangle = K^2 \sigma_\varphi^2(T) = K^2 \frac{k_B T}{\hbar\omega}$$
+The relationship between the framework's chiral phase clocks and molecular Brownian motion is therefore an open question. Two routes for future work:
 
-The Langevin equation for a Brownian particle:
+1. **Many-body Kuramoto reduction.** Derive an effective collisional coupling for a fermion in a thermal bath from the framework's $K = m$ via a coarse-graining over many chiral-clock interactions, and check whether it can reproduce the friction coefficient $\gamma = 6\pi\eta r$.
+2. **Bound the framework's home regime.** Treat Brownian motion as outside the framework's natural scope (which is fermion chiral synchronization at the Compton scale), and rely on the Nelson stochastic-mechanics connection (Section 11) as the framework's appropriate touch-point with classical diffusion. The zero-point diffusion floor $\nu_{\text{ZPF}} = \hbar/2m$ remains well-motivated; the molecular Brownian regime does not reduce to it.
 
-$$m\ddot{x} = -\gamma\dot{x} + \xi(t), \qquad \langle \xi(t)\xi(t') \rangle = 2\gamma k_B T\, \delta(t-t')$$
-
-The diffusion coefficient predicted from clock parameters:
-
-$$\boxed{D_{\text{clock}} = \frac{K^2\, k_B T}{\hbar\omega} \cdot \frac{\tau_{\text{coll}}}{2m^2} \;\propto\; T}$$
-
-Matching to the Stokes-Einstein relation $D = k_BT/(6\pi\eta r)$ **fixes** the Kuramoto coupling:
-
-$$K = m\sqrt{\frac{\hbar\omega}{3\pi\eta r\,\tau_{\text{coll}}}}$$
-
-### New testable prediction
-
-Standard Stokes-Einstein has no dependence on molecular vibration frequency $\omega$. The clock model predicts:
-
-$$\boxed{D \propto \frac{1}{\sqrt{\omega}} \quad \text{for fixed } \eta,\, r,\, \tau}$$
-
-Heavier solvents (lower $\omega$) should produce larger diffusion than Stokes-Einstein predicts.
+We retain Section 11's quantum-classical crossover discussion, which rests on the standard Einstein–Smoluchowski $D \sim k_B T\,\tau/m$ rather than on any clock-fit derivation.
 
 ---
 
@@ -313,107 +302,91 @@ $$\tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2} \quad \Longleftrightar
 
 ---
 
-## 12. The Born Rule from Synchronization Statistics
+## 12. The Born Rule as Energy Partition
 
-The Born rule — $P = |\psi|^2$ — is derived from Kuramoto synchronization statistics rather than postulated.
+In this framework, $|\psi|^2$ is not fundamentally a probability — it is the **energy density** of the real oscillating field $\psi$. The probabilistic appearance of measurement outcomes reflects unpredictable interference with the zero-point + thermal background field at the moment of synchronization with the detector. The Born rule is read as the long-run frequency of energy partition into the available detector channels under unbiased stochastic background driving, not as an independent probability axiom.
 
-### The Kuramoto order parameter
+### Wave energy as the primary quantity
 
-For $N$ coupled oscillators with phases $\varphi_1, \ldots, \varphi_N$, the synchronization amplitude is:
+For a superposition $\psi = \alpha|0\rangle + \beta|1\rangle$ in the wave-realist reading,
 
-$$R \cdot e^{i\Psi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\varphi_j}$$
+$$E_0 \propto |\alpha|^2, \qquad E_1 \propto |\beta|^2$$
 
-The probability that a single oscillator locks to the collective is proportional to $R^2$ — the squared modulus of the complex order parameter.
+are the **energy fractions** carried by each channel. This is classical wave physics — no Born postulate is required to write down these quantities.
 
-### Application to measurement
+### Energy-partition mechanism
 
-A particle in superposition $\psi = \alpha|0\rangle + \beta|1\rangle$ arrives at a detector with bulk phase $\Phi_{\text{bulk}}$. The synchronization probability for each component depends on its complex coupling amplitude. Averaging over the uniformly distributed bulk phase eliminates cross terms:
+A Kuramoto re-synchronization event transfers wave energy from the particle to one detector channel, raising it to its excited (registered) state. A discrete click — rather than a fractional excitation across multiple channels — arises because each detector channel is itself a quantized resonator with a discrete excitation threshold.
 
-$$\langle e^{i(\varphi_0 - \varphi_1)} \rangle_{\Phi_{\text{bulk}}} = 0$$
-
-Only the diagonal terms survive:
+Which channel receives the quantum in any individual event depends on the instantaneous configuration of the background field at the moment of contact. Because the background fluctuations are statistically unbiased on the channel-selection phase space (zero-point symmetry; unbiased thermal noise), long-run frequencies of channel selection converge to the energy fractions:
 
 $$\boxed{P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2}$$
 
-### Why the squared modulus
+read here as long-run *frequencies of energy partition* rather than as a probability axiom of quantum theory.
 
-The wave function is complex because the internal clock is a phase oscillator living on a circle in the complex plane. The probability of synchronization is the squared modulus because:
+### Connection to Nelson stochastic mechanics
 
-1. Coupling is linear in the complex amplitude (Kuramoto sine coupling)
-2. Probability is quadratic in the coupling (energy transfer $\propto$ amplitude²)
-3. The complex phase averages out over the bulk, leaving only $|{\text{amplitude}}|^2$
+Nelson (1966) [26] showed that a real particle undergoing stochastic motion in a background field with diffusion coefficient $\nu = \hbar/(2m)$ satisfies the Schrödinger equation. The framework supplies a physical identity for that background — the zero-point residual of the chiral phase clocks (Section 9) — and reads the Born rule as the visible energy-partition statistics under that background's stochastic driving.
 
-The Born rule is the statement that quantum probability equals wave intensity — the natural measure for any physical wave coupling to a resonant detector.
+### Honest limitation
+
+The reframing replaces the standard Born axiom with a weaker postulate set (wave realism + unbiased background) but does not yet derive that the bias-free assumption is exact across the channel-selection phase space. This is a future-work item, not a settled result. The framework is structurally a hidden-variable theory in which the hidden variable is the instantaneous background-field configuration; it satisfies Bell's theorem because it does not use this story to explain Bell correlations (those come from the full Dirac spinor structure, Section 4 of this reference).
 
 ---
 
-## 13. Heisenberg Uncertainty from Clock Complementarity
+## 13. Heisenberg Uncertainty as the Fourier Bandwidth Theorem
 
-The uncertainty principle is not an axiom in this framework — it is a geometric consequence of the orthogonality between temporal and spatial clocks.
+In MCI's wave-realist reading, the wavefunction $\psi$ is a real oscillating field, and conjugate representations are related by Fourier transform via the de Broglie/Planck relations $p = \hbar k$, $E = \hbar\omega$. The **Fourier bandwidth theorem** of harmonic analysis — rigorous and independent of any quantum interpretation — gives the uncertainty relations directly, with factor of ½ exact.
 
-### Position-momentum uncertainty
+### Position-momentum
 
-The temporal clock oscillates at frequency $\omega = E/\hbar$; the spatial clock oscillates at wavenumber $k = p/\hbar$. These are coupled by the incidence relation (Section 8):
+For $\psi(x) \in L^2(\mathbb{R})$ with Fourier transform $\varphi(k)$:
 
-$$\omega^A = i\, x^{AA'}\pi_{A'} + m\,\eta^A$$
+$$\sigma_x \cdot \sigma_k \geq \frac{1}{2}$$
 
-A sharp position measurement locks the spatial clock phase $\varphi_R$ to a definite value at a point $x$. But the incidence relation couples $\varphi_R$ to $\varphi_L$ through the spacetime position — locking one forces the other into a superposition of frequencies. This is the Fourier relationship between position and momentum representations, here derived from clock geometry rather than postulated.
+Multiplying by $\hbar$ via $p = \hbar k$:
 
-The mixing angle $\theta_{\text{rel}}$ encodes the tradeoff:
+$$\boxed{\sigma_x \cdot \sigma_p \geq \frac{\hbar}{2}}$$
+
+Saturated by Gaussian wavepackets. This is the Heisenberg position-momentum uncertainty relation derived as a theorem about real waves, not postulated as an axiom about operators.
+
+### Energy-time
+
+The same theorem applied to the temporal wavefunction $\psi(t)$ and its Fourier transform in frequency:
+
+$$\sigma_t \cdot \sigma_\omega \geq \frac{1}{2} \;\Longrightarrow\; \boxed{\sigma_E \cdot \sigma_t \geq \frac{\hbar}{2}}$$
+
+via $E = \hbar\omega$. Same theorem, conjugate variables.
+
+### Zero-point phase floor as the same theorem in chiral variables
+
+The zero-point phase noise (Section 9):
+
+$$\sigma_\varphi(0) = \frac{1}{\sqrt{2}}\;\text{rad}$$
+
+is the Fourier bandwidth theorem applied to the chiral phase clocks themselves — the minimum joint uncertainty in conjugate phase variables is ½ in natural units. The zero-point energy $\tfrac{1}{2}\hbar\omega$ per mode is the energy cost of saturating this minimum phase uncertainty. The uncertainty principle and the zero-point field are the same statement in different variables.
+
+### Mixing angle $\theta_{\text{rel}}$ as which-clock-dominates indicator
+
+The Dirac mixing angle satisfies
 
 $$\tan\frac{\theta_{\text{rel}}}{2} = \frac{|\mathbf{p}|}{E + m}$$
 
-When $\theta_{\text{rel}} \to 0$ (rest frame), the temporal clock dominates and energy is sharp — but position is maximally uncertain (the particle is spatially delocalized). When $\theta_{\text{rel}} \to \pi/2$ (ultrarelativistic), the spatial clock dominates and momentum is sharp — but energy-time is maximally uncertain.
+At rest ($\theta_{\text{rel}} \to 0$) the temporal clock dominates; at ultrarelativistic speeds ($\theta_{\text{rel}} \to \pi/2$) the spatial clock dominates. The two limits are the geometric expression of Fourier complementarity in the chiral basis: localizing one clock at the cost of the other, with the conjugate uncertainty saturating the universal Fourier bound.
 
-The minimum uncertainty product follows from the Kuramoto coupling between the two clocks. The synchronization force:
+### Compton wavelength: a particle-specific scale, NOT the source of ½
 
-$$\frac{d\varphi_L}{dt} = \omega + K\sin(\varphi_R - \varphi_L)$$
+The Compton wavelength $\lambda_C = h/(mc)$ is a particle-specific scale at which the two-clock structure becomes manifest (Zitterbewegung, pair production, chiral mixing). It is **not** the source of the $\hbar/2$ in the uncertainty relation — that $\hbar/2$ is universal, particle-independent, and follows from the Fourier theorem alone, applying equally to electrons and to baseballs.
 
-ensures that locking $\varphi_L$ (energy measurement) introduces noise in $\varphi_R$ (momentum) of order $\delta\varphi_R \geq 1/(2\delta\varphi_L)$, because the sine coupling transfers phase uncertainty bidirectionally. Converting to physical units:
+A heavier particle has a faster clock (higher Compton frequency) and therefore a smaller characteristic length below which its internal clock structure becomes resolvable. But the *uncertainty bound* $\sigma_x \sigma_p \geq \hbar/2$ applies identically to all particles. The Compton scale and the Fourier bound are different facts about the wavefunction; conflating them was an error in earlier formulations.
 
-$$\Delta E = \hbar\,\Delta\omega, \qquad \Delta p = \hbar\,\Delta k$$
+### The commutator as the operator-level Fourier theorem
 
-$$\boxed{\Delta x \cdot \Delta p \;\geq\; \frac{\hbar}{2}}$$
-
-### Energy-time uncertainty
-
-The energy-time relation follows from the temporal clock directly. The particle clock runs at $\omega = E/\hbar$. A measurement lasting time $\Delta t$ samples $\Delta t / (2\pi/\omega)$ oscillation cycles. The frequency resolution of any oscillator observed for time $\Delta t$ is:
-
-$$\Delta\omega \geq \frac{1}{2\,\Delta t}$$
-
-Multiplying both sides by $\hbar$:
-
-$$\boxed{\Delta E \cdot \Delta t \;\geq\; \frac{\hbar}{2}}$$
-
-This is identical to the Fourier bandwidth theorem — but here the "signal" is a physical clock, not an abstract wave.
-
-### Zero-point phase noise as the uncertainty floor
-
-From Section 9, the zero-point phase noise at $T = 0$ is:
-
-$$\sigma_\varphi(0) = \frac{1}{\sqrt{2}} \;\text{rad}$$
-
-This residual prevents perfect phase locking of either clock. The zero-point energy $\frac{1}{2}\hbar\omega$ per mode is the energy cost of this minimum phase uncertainty. The uncertainty principle is thus the statement that the zero-point field cannot be removed — complete synchronization of both clocks simultaneously is forbidden by the geometry of spinor space.
-
-### Nyquist–Shannon bandwidth limit
-
-The connection between the zero-point floor and the uncertainty principle can be made sharper through a Nyquist–Shannon argument. A Dirac particle's internal clock oscillates at the Compton frequency $\omega_C = mc^2/\hbar$. By the Nyquist sampling theorem, this clock has a maximum spatial bandwidth: it can resolve phase structures no finer than the Compton wavelength $\lambda_C = h/(mc)$. This sets an irreducible minimum position uncertainty:
-
-$$\Delta x_{\min} \sim \frac{\hbar}{mc}$$
-
-For a particle with momentum spread $\Delta p$, the de Broglie relation gives a spatial frequency $k = p/\hbar$ that the clock must resolve. The Nyquist limit requires the clock bandwidth $mc/\hbar$ to exceed $k$, yielding:
-
-$$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$$
-
-The uncertainty principle is thus a **bandwidth limitation of the particle's own internal clock**. A heavier particle has a faster clock and therefore finer spatial resolution, but the resolution is always finite. No oscillator can resolve frequencies beyond its own Nyquist limit.
-
-### The commutator from clock coupling
-
-The canonical commutation relation:
+The canonical commutation relation
 
 $$[\hat{x}, \hat{p}] = i\hbar$$
 
-emerges from the non-commutativity of sequential clock measurements. Measuring position (locking $\varphi_R$, then reading $\varphi_L$) and measuring momentum (locking $\varphi_L$, then reading $\varphi_R$) do not commute because the Kuramoto sine coupling is nonlinear — the order of synchronization matters. The imaginary unit $i$ reflects the $\pi/2$ phase shift between the two clocks at the point of maximum complementarity ($\theta_{\text{rel}} = \pi/2$).
+is the operator-level expression of the Fourier bandwidth theorem: $\hat{x}$ and $\hat{p}$ are Fourier-conjugate operators, and the imaginary unit reflects the $\pi/2$ phase shift between conjugate Fourier variables. In MCI's chiral picture, this corresponds to the maximum complementarity ($\theta_{\text{rel}} = \pi/2$) between the temporal and spatial clocks — the geometric expression of the same harmonic-analytic content.
 
 ---
 
@@ -430,12 +403,11 @@ $$\begin{array}{lll}
 \text{Gravity} = \nabla^2\varphi_{\text{clock}} & \text{Newtonian potential} & \text{Twistor space curvature} \\
 \text{Penrose collapse} & \text{Wavefunction collapse} & \delta\varphi = \pi \\
 \text{Temperature} & k_BT & \sigma_\varphi^2 = k_BT/\hbar\omega \\
-\text{Brownian motion} & \text{Stokes-Einstein} & D = K^2\sigma_\varphi^2\tau/2m^2 \\
 \text{Zero-point field} & \tfrac{1}{2}\hbar\omega\text{ per mode} & \sigma_\varphi(0) = 1/\sqrt{2} \\
 \text{Antiparticle} & e^{+iEt/\hbar} & \text{Reversed clock} \\
 \text{Matter asymmetry} & \text{Baryogenesis} & \eta \approx \varepsilon\sin^2\delta_{\text{CP}} \\
-\text{Born rule } P = |\psi|^2 & \text{Postulated} & \text{Sync probability} = |R|^2 \\
-\text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Clock orthogonality: } \delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
+\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background} \\
+\text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Fourier bandwidth theorem on real }\psi\text{; chiral phases }\delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
 \text{Measurement} & \text{Wavefunction collapse} & \text{Kuramoto re-sync to bulk} \\
 \text{Entanglement} & \text{Non-separable state} & \text{Synchronized clocks at creation: } \varphi_A = \varphi_B \\
 \text{Bell's theorem} & \text{No local HV model} & \Phi_{\text{bulk}} \text{ shared} \Rightarrow \text{factorization fails} \\

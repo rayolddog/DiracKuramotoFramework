@@ -225,7 +225,7 @@ def cosmological_vacuum_estimate(
     t_universe_s   = 4.35e17,    # age of universe (~13.8 Gyr)
     n_particles    = 1e80,       # estimated baryons in observable universe
     events_per_s   = 1e15,       # quantum interaction rate per particle (rough)
-    alpha_sq_mean  = 0.5,        # average Born weight
+    alpha_sq_mean  = 0.5,        # average channel energy fraction |α|² (energy-partition reading; see Paper §4)
     omega_mean     = 1e14,       # typical photon/atomic frequency (rad/s)
 ):
     """
@@ -486,9 +486,12 @@ SUMMARY
 
 HONEST CAVEAT:
   This is an ontological interpretation, not a modification of QM.
-  All Born-rule probabilities are preserved. The model provides
-  a physical mechanism for why the vacuum has the energy it does,
-  and why branching is unnecessary given thermally absorptive sync.
+  All Born-rule frequencies are preserved — and in this framework
+  they are read as long-run energy-partition statistics of the real
+  ψ field (see Paper §4), not as an independent probability axiom.
+  The model provides a physical mechanism for why the vacuum has the
+  energy it does, and why branching is unnecessary given thermally
+  absorptive sync.
 """)
 
 

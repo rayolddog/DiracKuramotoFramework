@@ -4,12 +4,19 @@ higgs_clock.py — Higgs as Clock Synchronizer, Antiparticles as Reversed Clocks
 
 THREE CONNECTED IDEAS:
 
-  1. MASSLESS PARTICLES (photons, neutrinos in massless limit)
+  1. MASSLESS SPIN-1/2 FERMIONS (idealized massless neutrinos)
      θ_rel = 90° permanently. The temporal and spatial clocks are
      PERMANENTLY ORTHOGONAL. The Dirac 4-component structure collapses
      to two independent 2-component Weyl spinors — one for each
-     clock alignment. This is why photons have only 2 helicity states
-     and no rest frame.
+     clock alignment. Two helicity states, no rest frame.
+
+     NOTE: Photons are NOT described by this section. Photons are
+     spin-1 vector bosons governed by Maxwell's equations, not by
+     the Dirac/Weyl equation. Their two polarization states come
+     from gauge invariance reducing the four components of A^μ to
+     two transverse degrees of freedom, not from chiral decoupling.
+     See Paper §5 for the photon treatment via Riemann-Silberstein
+     F = E + iB.
 
   2. HIGGS FIELD AS KURAMOTO SYNCHRONIZER
      The Dirac mass term -m(ψ̄_L ψ_R + h.c.) is the COUPLING between
@@ -399,11 +406,12 @@ def run():
             ha='center', va='top', fontsize=12, fontweight='bold',
             transform=ax.transAxes)
     summary = """
-MASSLESS PARTICLE (photon, massless ν):
+MASSLESS SPIN-1/2 FERMION (idealized massless ν):
   θ_rel = 90° always
   L and R clocks permanently orthogonal
   → 2 Weyl spinors, 2 helicity states only
   → No rest frame possible
+  (Photons are spin-1 vector bosons; see Paper §5)
 
 MASSIVE PARTICLE:
   Higgs gives K = y_f · v/√2 = m

@@ -93,9 +93,12 @@ It DEPARTS from standard QM predictions in these scenarios:
       conspiracy but by the ordinary fact that the gravitational field is pre-shared.
 
   P6b. LINEWIDTH-DEPENDENT GRAVITATIONAL BELL TEST (near-term experimental design)
-      KEY INSIGHT: τ_sync = photon coherence time τ_coh = 1/Δν.
-      A narrow-linewidth photon spends longer in coherent superposition during detection,
-      accumulating more gravitational phase mismatch. Therefore:
+      KEY INSIGHT: Two photon time scales are distinct (see Paper §5.4):
+          τ_sync = ℏ/E   (Kuramoto re-sync to detector; set by photon energy)
+          τ_coh  = 1/Δν  (photon coherence time; set by linewidth, not energy)
+      For the gravitational decoherence prediction, what matters is τ_coh:
+      a narrow-linewidth photon spends longer in coherent superposition during
+      detection, accumulating more gravitational phase mismatch. Therefore:
 
           δφ = ω₀ · (ΔΦ/c²) · τ_coh = ω₀ · (ΔΦ/c²) / Δν
           CHSH(Δν) = 2√2 · exp(−δφ² / 2)

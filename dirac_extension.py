@@ -50,12 +50,16 @@ E(a, b) = E_LL + E_SS + E_LS
   E_SS: small-component × small-component  [spatial × spatial]
   E_LS: cross term                         [temporal × spatial = ROTATION COUPLING]
 
-NR phase-clock model retains only E_LL → -(1/2)cos(a-b)
-Full Dirac includes all three → -cos(a-b)  [verified numerically below]
-
-The "missing -(1/2)cos" splits between E_SS and E_LS.
-At v/c → 0: E_SS + E_LS → 0  (no small component)
-At any v/c: E_LL + E_SS + E_LS = -cos(a-b)  [Lorentz covariance]
+The block sum E_LL + E_SS + E_LS = E_full is an identity (additive by
+trace linearity), not a derivation. What varies with momentum is the
+*redistribution* of weight among the three blocks:
+  At p → 0:  E_LL → -cos(a-b),  E_SS, E_LS → 0  (Pauli singlet recovered)
+  At p = 1, m = 1:  the large-block restriction happens to give
+                    ≈ -(1/2)cos(a-b), numerically coinciding with the
+                    separate Malus-law stochastic phase toy in
+                    bell_phase.py — the two models are mathematically
+                    distinct and should not be conflated.
+  At v/c → 1:  the three blocks contribute comparably.
 
 CONNECTION TO ZITTERBEWEGUNG:
 ───────────────────────────────
@@ -244,8 +248,8 @@ def run():
     print(f"   E_LL + E_SS + E_LS = {e_ll+e_ss+e_cross:.6f}   (sum)")
     print(f"   E_full (direct):     {e_full:.6f}   (verification)")
     print(f"   −cos(a−b):           {e_qm:.6f}   (QM prediction ✓)")
-    print(f"\n   Missing factor in NR model: E_SS + E_LS = {e_ss+e_cross:.6f}")
-    print(f"   (exactly what the Dirac small component provides)")
+    print(f"\n   Small-component contribution at this p: E_SS + E_LS = {e_ss+e_cross:.6f}")
+    print(f"   (block weights redistribute with p; the sum is fixed by trace linearity)")
 
     # ── 3. Decomposition as function of θ_rel (momentum) ─────────────────
     print("\n3. Building E_full from components across all momenta:")
@@ -271,8 +275,8 @@ def run():
     ax = axes[0, 0]
     ax.plot(np.degrees(deltas), -np.cos(deltas),     'royalblue',   lw=2.5, label='QM: −cos(Δ)')
     ax.plot(np.degrees(deltas), e_full_d,            'royalblue',   lw=1,   linestyle=':', label='Dirac full (verif.)')
-    ax.plot(np.degrees(deltas), e_ll_d,              'darkorange',  lw=2,   linestyle='--', label='Large-only (NR model): ≈−½cos')
-    ax.plot(np.degrees(deltas), -0.5*np.cos(deltas), 'darkorange',  lw=1,   linestyle=':', label='Exact −½cos')
+    ax.plot(np.degrees(deltas), e_ll_d,              'darkorange',  lw=2,   linestyle='--', label='Dirac large-block only at p=1')
+    ax.plot(np.degrees(deltas), -0.5*np.cos(deltas), 'darkorange',  lw=1,   linestyle=':', label='Malus toy reference (−½cos, separate model)')
     ax.fill_between(np.degrees(deltas), e_ll_d, -np.cos(deltas),
                     alpha=0.15, color='green', label='Gap filled by Dirac small component')
     ax.set_xlabel('Δ = a − b  (degrees)')
@@ -381,11 +385,12 @@ def run():
 ║    θ_rel = 0:  NR, time and property vectors aligned                 ║
 ║    θ_rel = π/2: ultra-relativistic, equal mixing                    ║
 ║                                                                      ║
-║  THREE-TERM BELL CORRELATION:                                        ║
-║    E_LL (temporal × temporal)   → NR model gives this alone         ║
-║    E_SS (spatial × spatial)     → rotation contribution              ║
-║    E_LS (temporal × spatial)    → THE ROTATION COUPLING TERM        ║
-║    Sum = -cos(a-b) for all v/c  [verified numerically]              ║
+║  THREE-TERM BLOCK DECOMPOSITION (additive by trace linearity):       ║
+║    E_LL (temporal × temporal)   → carries all weight at p → 0       ║
+║    E_SS (spatial × spatial)     → small-component contribution       ║
+║    E_LS (temporal × spatial)    → cross / rotation coupling          ║
+║    Sum = -cos(a-b) is an identity, not a discovery                   ║
+║    Block weights redistribute with v/c (the substantive content)     ║
 ║                                                                      ║
 ║  ZITTERBEWEGUNG CONNECTION:                                          ║
 ║    Zbw oscillation = beat between ω_t = E/ℏ and ω_s = p·v/ℏ        ║
