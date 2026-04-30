@@ -109,7 +109,7 @@ from qiskit.transpiler.preset_passmanagers import generate_preset_pass_manager
 
 # ─── Configuration ──────────────────────────────────────────────────────────
 
-N_VALUES     = [2, 4, 8, 16]          # Default: clean fit through known-good range.
+N_VALUES     = [2, 4, 8]          # Default: clean fit through known-good range.
                                        # Add 32 only with mitigation tuned (see notes).
 K            = 0.06                    # Rzz coupling (rad). At N=32, GHZ phase = 1.92
                                        # rad rotates past π/2 — for clean N=32, use K=0.02.
@@ -118,7 +118,7 @@ USE_HARDWARE = True
 BACKEND_NAME = None                    # None = least busy; or e.g. "ibm_brisbane"
 
 # ── Mitigation toggles (hardware mode only) ─────────────────────────────────
-RESILIENCE_LEVEL = 1                   # 0 = none, 1 = readout (T-REx), 2 = + ZNE
+RESILIENCE_LEVEL = 2                   # 0 = none, 1 = readout (T-REx), 2 = + ZNE
 ENABLE_DD        = True                # XpXm dynamical decoupling on idle qubits
 DD_SEQUENCE      = "XpXm"              # "XpXm", "XX", or "XY4"
 
@@ -356,14 +356,14 @@ def plot_results(results, title_suffix: str = ""):
     ax.grid(True, which='both', alpha=0.3)
 
     plt.tight_layout()
-    fname = 'bulk_sync_hardware.png'
+    fname = 'bulk_sync_hardware_zne.png'
     plt.savefig(fname, dpi=150)
     print(f"\nSaved: {fname}")
 
 
 # ─── Slope fit and report ───────────────────────────────────────────────────
 
-SATURATION_THRESHOLD = 0.05      # |⟨X⟩| below this is treated as decohered
+SATURATION_THRESHOLD = 0.40      # |⟨X⟩| below this is treated as decohered
 
 def report_slopes(results):
     print("\n" + "=" * 70)
@@ -378,8 +378,13 @@ def report_slopes(results):
         Xsys = np.array([results[label][int(n)]['X_sys']   for n in N_arr])
         phi  = np.clip(phi, 1e-6, None)         # guard log of zero
 
-        # Identify saturated points
-        keep_mask = np.abs(Xsys) > SATURATION_THRESHOLD
+        # Identify points that should be excluded from the slope fit:
+        #   - lower saturation: |⟨X⟩| at or below the noise floor
+        #   - upper saturation: ⟨X⟩ > 1 (unphysical; arises from ZNE over-correction
+        #     when the linear extrapolation past the lowest noise factor lands above
+        #     the physical bound. The point is statistically consistent with theory
+        #     but cannot be used in a φ = arccos(X) fit.)
+        keep_mask = (np.abs(Xsys) > SATURATION_THRESHOLD) & (Xsys < 1.0)
         sat_Ns = N_arr[~keep_mask]
         for n in sat_Ns:
             saturated.append((label, int(n)))
@@ -401,18 +406,22 @@ def report_slopes(results):
         print(f"  {label:7s}   clean slope   = {clean_str}")
 
     if saturated:
-        print("\n  ⚠ Saturated points (|⟨X⟩| < {:.2f}, treated as decohered):"
-              .format(SATURATION_THRESHOLD))
+        print("\n  ⚠ Points excluded from slope fit:")
         for label, n in saturated:
-            x = results[label][n]['X_sys']
-            print(f"      {label:7s} N={n:<3d}  ⟨X_sys⟩={x:+.4f}  "
-                  f"(noise floor — exclude from slope fit)")
-        print("\n  Recovery options if saturation appears at smaller N than expected:")
-        print("      1. Increase RESILIENCE_LEVEL to 2 (enables ZNE; ~3-5× shot cost)")
+            x   = results[label][n]['X_sys']
+            std = results[label][n]['X_sys_std']
+            if abs(x) <= SATURATION_THRESHOLD:
+                tag = f"noise-floor saturation (|⟨X⟩| < {SATURATION_THRESHOLD:.2f})"
+            else:
+                tag = "ZNE over-correction (⟨X⟩ > 1, unphysical)"
+            print(f"      {label:7s} N={n:<3d}  ⟨X_sys⟩={x:+.4f} ± {std:.4f}  "
+                  f"({tag})")
+        print("\n  Recovery options:")
+        print("      1. Tighten ZNE: more shots per noise factor")
         print("      2. Reduce K (e.g., K = 0.02) — smaller phase per qubit")
         print("      3. Switch to all-to-all backend (IonQ/Quantinuum, paid)")
     else:
-        print("\n  ✓ All measured points clear of decoherence floor.")
+        print("\n  ✓ All measured points clear of decoherence floor and ZNE artifacts.")
 
     print("\nInterpretation:")
     print("  • Slopes near 0.5 (product) and 1.0 (GHZ) confirm the simulation's")

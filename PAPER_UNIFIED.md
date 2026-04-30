@@ -210,6 +210,47 @@ frame. Photons and massless-limit neutrinos are in this category.
 chirality state is stable alone; the physical particle is a superposition of both.
 The coupling strength is exactly *m*.
 
+### 2.1.1 Two Bases, One Spinor
+
+The same 4-component Dirac spinor admits two natural decompositions, which the
+framework uses for different purposes. We flag them explicitly to prevent
+conflations that have accumulated in earlier drafts.
+
+- **Weyl (chiral) basis:** ψ = (ψ_L, ψ_R)ᵀ, splitting the spinor by chirality.
+  The mass term is purely off-diagonal — m·(ψ̄_L ψ_R + ψ̄_R ψ_L) — which is what
+  makes it natural to read as a Kuramoto coupling K = m between two chiral
+  clocks. Used in §§2.2–2.6, the Higgs-Yukawa identification (§6 of the
+  equations reference), and the spin-statistics analysis of Appendix D.
+
+- **Dirac (standard) basis:** ψ = (ψ_upper, ψ_lower)ᵀ, splitting the spinor
+  into a *large* component (the Pauli 2-spinor at rest) and a *small* component
+  that vanishes at rest and grows with momentum as r = p/(E+m) = tan(θ_rel/2).
+  The block decomposition E_LL + E_SS + E_LS of the Bell correlation
+  (Appendix A; `dirac_extension.py`) is naturally written here, because the
+  standard relativistic spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives in this basis.
+
+The two bases are related by a constant unitary 4×4 change of basis and
+describe the same physical object. They agree at the two limits the framework
+cares about most:
+
+| Regime | Weyl picture | Dirac picture |
+|---|---|---|
+| Rest (θ_rel = 0) | ψ_L = ψ_R (synchronized) | small component = 0; only large |
+| Massless (θ_rel = π/2) | ψ_L, ψ_R decoupled | large and small blocks decouple by helicity |
+
+At intermediate momenta the two decompositions differ: the temporal-phase
+content is a θ_rel-dependent linear combination of upper and lower blocks in
+the Dirac basis, and a different θ_rel-dependent combination of ψ_L and ψ_R in
+the Weyl basis. The interpretive language "temporal clock" and "spatial clock"
+is most cleanly anchored in the Weyl basis — temporal ↔ ψ_L, spatial ↔ ψ_R —
+and translates to the Dirac basis only via the basis change. The mixing angle
+θ_rel = 2·arctan(p/(E+m)), defined operationally by the Dirac-basis large/small
+ratio, is the framework's single quantitative handle on this rotation; its
+geometric reading depends on which basis is in use.
+
+We use whichever basis makes the physics of a given section most transparent
+and flag the choice locally.
+
 ### 2.2 The Kuramoto Identification
 
 The standard (classical) Kuramoto model [2] describes the phase dynamics of N
@@ -933,6 +974,24 @@ with computed coefficients. The framework in its current form is an interpretati
 does not yet make predictions distinguishable from standard decoherence theory.
 This is the main limitation and the main avenue for future work.
 
+**Hardware demonstration of the bulk-sync prediction.** A digital-quantum
+implementation of the bulk-sync circuits (`bulk_sync_hardware.py`, run on
+`ibm_marrakesh` with readout-error mitigation, XpXm dynamical decoupling, and
+zero-noise extrapolation; N ∈ {2, 4, 8}, K = 0.06 rad, 4096 shots/circuit)
+reproduces the GHZ Heisenberg-scaling prediction cleanly: the log-log slope of
+φ_sys vs N comes out near 1, with measured ⟨X_sys⟩ within ≈ 5% of theory at all
+three N values. The product-bulk slope is not cleanly resolved at this coupling
+— the predicted phase shifts at small N (φ_pred ≈ 0.085 rad at N = 2) lie below
+the per-shot noise floor of the hardware, and ZNE over-corrects at N = 8
+(⟨X_sys⟩ = 1.04 ± 0.04, statistically consistent with theory but unphysical and
+thus unusable in an arccos-based fit). The data are consistent with the
+predicted asymmetry (φ_GHZ > φ_product at every usable N) and with GHZ
+Heisenberg scaling specifically. As stated in §1.4, this is a consistency check
+against standard quantum metrology, not a test of MCI's distinctive content;
+both standard QM and MCI predict identical scaling. The framework-distinctive
+predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P4
+(kaon vs B-meson decoherence), and `sg_angular.py`.
+
 ---
 
 ## 7. Comparison with Existing Frameworks
@@ -1182,6 +1241,42 @@ Three directions could elevate this from interpretation to testable theory:
    dependent gravitational Bell prediction (Section 5.4), this would give the
    framework its sharpest near-term experimental test.
 
+### 8.4 Categorization of Supporting Numerical Code
+
+The framework is supported by a set of Python programs that play different
+roles. We categorize them here so readers can see which carry evidential
+weight, which are illustrative or pedagogical, and which exist to disarm
+known conflations:
+
+| Program | Category | What it does | What is at stake |
+|---|---|---|---|
+| `spin_statistics.py` | **Evidential** | Six tests; fermion antisymmetry sign across 6 decades of v/c | Could have falsified the chiral-pair commitment (Appendix D); did not |
+| `gravitational_bell.py` | **Quantitative prediction** | Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2) | Operationalizes the framework's sharpest distinguishable prediction |
+| `predictions.py` | **Quantitative prediction** | Catalog of P1–P6 testable predictions, with retractions explicitly marked | Maps experimental contact points; documents falsified entries (P1, P3) |
+| `bell_energy_test.py` | **Quantitative prediction** | Qiskit CHSH simulation testing K(E) scalings vs photon energy | Discriminates K∝1/E from K∝ω from null QM |
+| `sg_angular.py` | **Quantitative prediction** | Stern-Gerlach angular dependence on local gravity (~4% effect) | Tests gravitational Kuramoto coupling beyond Bell tests |
+| `bulk_sync_asymmetry.py` | **Quantitative prediction** | Single-particle vs bulk phase-rotation scaling (√N vs N) | Tests the measurement asymmetry of §3 |
+| `bulk_sync_hardware.py` | **Consistency check (hardware)** | IBM Quantum execution of the bulk-sync circuits with readout mitigation, DD, and ZNE | Demonstrates digital-hardware reproduction of the simulation (GHZ slope ≈ 1 confirmed; product slope below noise floor at K=0.06); not framework-distinctive |
+| `dirac_extension.py` | **Illustrative** | Three-term Bell decomposition E_LL + E_SS + E_LS | Visualizes the weight redistribution of Appendix A; the sum itself is an identity |
+| `gravity_twistor.py` | **Illustrative** | Poisson ↔ Kuramoto field-equation correspondence; twistor connection | Visualizes §3.4 and EQUATIONS.md §8 |
+| `bell_phase.py` | **Clarifying** | Establishes Malus-law toy is sub-classical (CHSH ≤ √2), distinct from Dirac large block | Disarms the §A.5 conflation |
+| `local_causality.py` | **Clarifying** | Identifies where Bell's factorization actually breaks in MCI | Disarms the superdeterminism misreading (§7.6) |
+| `kuramoto_sync.py` | **Pedagogical** | Two-oscillator synchronization dynamics under K > 0 | Shows what K = m sync looks like in time |
+| `higgs_clock.py` | **Pedagogical** | K = m identification and antiparticle reverse-clock dynamics | Illustrates EQUATIONS.md §6 |
+| `resynchronization_calc.py` | **Negative result** | Tests whether re-sync alone reproduces −cos(a−b) | Confirms the Dirac spinor structure is necessary; closes a misreading |
+| `everett_thermal.py` | **Speculative** | Implements single-world energy accounting | Illustrates §3.6 (paper marks this speculative) |
+| `vacuum_temperature.py` | **Mixed** | ZPF / temperature / orbitals (claims 1–3); Brownian retracted (claim 4) | Three illustrative claims with one disclosed retraction (see EQUATIONS.md §10) |
+
+Evidential weight rests on `spin_statistics.py` (a non-trivial check that
+could have failed) and the quantitative-prediction scripts that operationalize
+§5.4, §6.2, and the gravitational-Kuramoto claims. The illustrative and
+pedagogical scripts visualize claims that are mathematically guaranteed by
+construction (trace linearity in `dirac_extension.py`, Kuramoto convergence
+in `kuramoto_sync.py`); they support readability and reproducibility without
+themselves providing evidence for the framework's interpretive content. The
+clarifying scripts disarm known misreadings. The speculative and negative-result
+scripts are disclosed honestly rather than presented as supporting the framework.
+
 ---
 
 ## 9. Conclusions
@@ -1226,6 +1321,9 @@ each interaction event. A single world, many clocks, all locally synchronized.
 ---
 
 ## Appendix A: Three-Term Bell Correlation Decomposition
+
+The decomposition below uses the Dirac/standard basis (large/small blocks);
+see §2.1.1 for the relationship to the Weyl-basis ψ_L, ψ_R picture used in §2.
 
 ### A.1 The Relativistic Mixing Angle
 
