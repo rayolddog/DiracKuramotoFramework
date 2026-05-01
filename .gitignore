@@ -9,3 +9,18 @@ __pycache__/
 
 # Claude Code
 .claude/
+
+# Notebooks
+TestQiskit.ipynb
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# macOS
+.DS_Store
