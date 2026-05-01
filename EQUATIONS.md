@@ -4,6 +4,19 @@
 
 ---
 
+## 0. Note on Bases
+
+Two decompositions of the same 4-component Dirac spinor appear below:
+
+- **Weyl (chiral) basis** ψ = (ψ_L, ψ_R)ᵀ — used in §§2, 5, 6, 8, 16. The mass term is off-diagonal, so K = m reads as a coupling between two chiral clocks.
+- **Dirac (standard) basis** ψ = (ψ_upper, ψ_lower)ᵀ = (large, small)ᵀ — used in §4 and the three-term block decomposition E_LL + E_SS + E_LS. The spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives here, with r = p/(E+m).
+
+The two are unitarily related. They agree at θ_rel = 0 (rest: ψ_L = ψ_R, small = 0) and θ_rel = π/2 (massless: chiral decoupling = large/small decoupling). At intermediate momenta the temporal-phase content is a θ_rel-dependent mixture in either basis. The interpretive identifications "temporal clock" and "spatial clock" are anchored to ψ_L and ψ_R respectively; the large/small split is the basis the block decomposition lives in.
+
+See PAPER_UNIFIED.md §2.1.1 for the full discussion.
+
+---
+
 ## 1. The Time-Phase Wave Function
 
 The Schrödinger equation — which never collapses:
@@ -75,6 +88,8 @@ where $\Delta = a - b$. The phase-clock model is sub-classical in isolation; the
 ---
 
 ## 4. Dirac Spinors as Time-Phase / Property Rotation
+
+This section uses the Dirac/standard basis (large/small blocks); the Weyl-basis description of the same spinor appears in §6. See §0 for the relationship between the two bases.
 
 For a particle with 3-momentum $p$ along $z$ (natural units $m = c = \hbar = 1$):
 
@@ -395,8 +410,8 @@ is the operator-level expression of the Fourier bandwidth theorem: $\hat{x}$ and
 $$\begin{array}{lll}
 \textbf{Time-phase model} & \textbf{Standard physics} & \textbf{Geometric (Twistor)} \\
 \hline
-\text{Temporal clock } \psi_L & \text{Left Weyl spinor} & \omega^A \\
-\text{Spatial clock } \psi_R & \text{Right Weyl spinor} & \pi_{A'} \\
+\text{Temporal clock } \psi_L\,^{*} & \text{Left Weyl spinor} & \omega^A \\
+\text{Spatial clock } \psi_R\,^{*} & \text{Right Weyl spinor} & \pi_{A'} \\
 \text{L-R coupling} = m & \text{Dirac mass term} & \text{Non-null: } Z\cdot\bar{Z} \neq 0 \\
 \theta_{\text{rel}} = 90° & \text{Massless particle} & \text{Null twistor} \\
 \text{Higgs synchronizer} & \text{Yukawa coupling} & \text{Twistor cohomology} \\
@@ -417,6 +432,8 @@ $$\begin{array}{lll}
 \text{Spin-statistics sign} & \text{Pauli antisymmetry} & \chi \to -\chi \text{ under } 2\pi \text{ rotation (SU(2) double cover)} \\
 \text{Microcausality} & [\psi(x),\psi(y)]_\pm = 0,\ (x-y)^2<0 & \text{Sync manifold respects the light cone} \\
 \end{array}$
+
+*\* Identification is exact in the Weyl basis. In the Dirac/standard basis the temporal-phase content is a θ_rel-dependent combination of upper and lower blocks; see §0.*
 
 ---
 

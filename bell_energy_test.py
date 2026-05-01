@@ -38,6 +38,50 @@ USER NOTE (session insight):
   For photons: K ∝ hν/ℏ = 2πν → higher-frequency photons sync faster (Model B).
   The two models differ in the sign of the slope: experiments can distinguish them.
 
+CAVEAT — THIS PROGRAM CANNOT BE RUN ON A REAL QUANTUM COMPUTER TO TEST K(E):
+─────────────────────────────────────────────────────────────────────────────
+  This file is an EXACT SIMULATION using qiskit.quantum_info; no real hardware
+  is required and the energy parameter is swept analytically. It is appropriate
+  for classical workstation execution.
+
+  If submitted to a real backend (IBM Quantum, IonQ via Braket, Quantinuum via
+  Azure, etc.), the program will produce a standard CHSH measurement near the
+  device's noise floor (S ≈ 2.5–2.8 on current superconducting hardware), but
+  it will NOT physically test the K(E) hypothesis. Reason:
+
+    Digital quantum computers do not contain photons. Their qubits are
+    fixed-energy two-level systems — superconducting qubits at ~5 GHz set
+    by the Josephson junction design, or trapped-ion hyperfine transitions
+    at GHz–THz set by the atomic structure. The qubit transition energy
+    is a hardware parameter that cannot be varied at runtime.
+
+  The "photon energy" knob in this simulation is a classical parameter that
+  rescales the Rzz(K(E)) coupling angle. It has no physical analog on a
+  quantum computer — there is nothing on the device to which "different
+  photon energies" could correspond. Sweeping the parameter on hardware
+  would just produce different gate angles applied to the same fixed-energy
+  qubits, with the resulting CHSH curve reflecting gate fidelity vs angle,
+  not photon energy vs synchronization fidelity.
+
+  WHERE THE K(E) HYPOTHESIS ACTUALLY NEEDS TO BE TESTED:
+    A photonics experiment with entangled photons at GENUINELY different
+    optical / RF frequencies — e.g., SPDC sources at different pump
+    wavelengths, or comparison between optical and microwave entangled
+    photons. The relevant variable is the photon's physical frequency,
+    not a circuit parameter on a digital device.
+
+  WHAT *CAN* BE TESTED ON A QUANTUM COMPUTER (from this framework):
+    bulk_sync_asymmetry.py — tests the √N (product bulk) vs N (synced bulk)
+    phase-rotation scaling under Rzz coupling. The relevant variable is
+    circuit structure, which IS something a quantum computer can vary.
+    That program is the natural Qiskit-on-hardware experiment for this
+    framework; this one is not.
+
+  In short: keep this program on a classical simulator. The energy sweep
+  is a mathematical study of how K(E) would shape Bell correlations IF
+  the hypothesis were correct; physical confirmation of K(E) requires
+  optical/photonics hardware, not digital quantum hardware.
+
 QISKIT IMPLEMENTATION:
   Uses qiskit.quantum_info (DensityMatrix, Statevector) for exact simulation.
   No shot-based Aer simulation needed — all expectation values are exact.

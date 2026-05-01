@@ -24,6 +24,19 @@ PREDICTIONS:
   Each bulk (product) → ⟨X_b_i⟩ = cos(K), φ_b = K
   Ratio (GHZ) / Ratio (product) → scales as sqrt(N)
 
+NATURAL FIT FOR REAL QUANTUM HARDWARE:
+  Of the framework's Qiskit programs, this one is the natural candidate for
+  execution on a real quantum computer (IBM Quantum, IonQ, Quantinuum, etc.).
+  Its discriminating variable is CIRCUIT STRUCTURE — product bulk vs GHZ bulk
+  vs single-qubit reference — which is something a digital quantum device
+  can vary by construction. The √N vs N phase-rotation scaling is a
+  prediction the device can in principle confirm or refute.
+
+  Contrast with bell_energy_test.py, whose discriminating variable is
+  PHOTON ENERGY: that variable has no physical analog on a fixed-frequency
+  qubit device and so cannot be tested on digital quantum hardware. See the
+  caveat in bell_energy_test.py's docstring.
+
 Install: pip install qiskit matplotlib numpy
 """
 
