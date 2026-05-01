@@ -24,3 +24,18 @@ TestQiskit.ipynb
 
 # macOS
 .DS_Store
+
+# IDE (JetBrains Junie)
+.junie/
+
+# Working notes / external feedback
+*.txt
+
+# Untracked illustrative/working figures (the tracked ones stay tracked)
+bell_phase.png
+bulk_sync_hardware.png
+bulk_sync_hardware2.png
+dirac_extension.png
+everett_thermal.png
+gravity_twistor.png
+higgs_clock.png
