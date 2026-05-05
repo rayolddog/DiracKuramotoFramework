@@ -3,8 +3,7 @@ entangled_pair_two_stage.py
 ---------------------------
 
 Schematic illustration of the two-stage measurement of an entangled photon
-pair, in the Many Clocks / Dirac-Kuramoto framework (Paper §4.4 LaTeX,
-§3.4 markdown).
+pair, in the Many Clocks / Dirac-Kuramoto framework (Paper §3.4).
 
 Layout, left to right:
   * Detector A (bulk, polarizer angle a, bulk phase Φ_bulk^A)
@@ -132,7 +131,7 @@ ax.text(0, 3.25,
         "Two-Stage Measurement of a Polarization-Entangled Photon Pair",
         ha="center", fontsize=14, fontweight="bold")
 ax.text(0, 2.85,
-        "Many Clocks / Dirac–Kuramoto framework — §4.4 (LaTeX), §3.4 (markdown)",
+        "Many Clocks / Dirac–Kuramoto framework — §3.4",
         ha="center", fontsize=9, style="italic", color="gray")
 
 # --------------- Source (creation point) ---------------

@@ -181,8 +181,8 @@ The framework now carries three Kuramoto couplings, each at a different scale:
 | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | gauge interaction | pair-sync at vertex (Stage 1) |
 | $\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)$ | gravity + atomic | bulk re-equilibration (Stage 2) |
 
-See Paper §3.4 (markdown) / §4.4 (LaTeX) for the full two-stage measurement
-process and its Bell / gravitational consequences.
+See Paper §3.4 for the full two-stage measurement process and its Bell /
+gravitational consequences.
 
 ### Antiparticles as reversed clocks
 
