@@ -1,653 +1,1149 @@
-\documentclass[11pt, a4paper]{article}
-
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{geometry}
-\usepackage{booktabs}
-\usepackage{array}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+]{article}
 \usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{microtype}
-\usepackage{parskip}
-\usepackage{enumitem}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% pdf_header.tex — Unicode-to-LaTeX mappings for pandoc/xelatex builds
+% Used by build_pdfs.sh for ManyClocks.pdf and Equations.pdf.
+% Maps prose-mode Unicode characters (Greek letters, math symbols, arrows,
+% blackboard bold, etc.) to LaTeX commands so they render correctly in
+% paragraphs, captions, and tables — outside of $...$ math mode where
+% the math font would normally handle them.
 
-\geometry{margin=2.5cm}
+\usepackage{newunicodechar}
+\usepackage{amsmath,amssymb}
+\newunicodechar{ℏ}{\ensuremath{\hbar}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≪}{\ensuremath{\ll}}
+\newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{∫}{\ensuremath{\int}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{·}{\ensuremath{\cdot}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{±}{\ensuremath{\pm}}
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{ξ}{\ensuremath{\xi}}
+\newunicodechar{ζ}{\ensuremath{\zeta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ℓ}{\ensuremath{\ell}}
+\newunicodechar{ℝ}{\ensuremath{\mathbb{R}}}
+\newunicodechar{ℂ}{\ensuremath{\mathbb{C}}}
+\newunicodechar{ℕ}{\ensuremath{\mathbb{N}}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{⁻}{\textsuperscript{-}}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+\newunicodechar{ᵃ}{\textsuperscript{a}}
+\newunicodechar{ᵇ}{\textsuperscript{b}}
+\newunicodechar{−}{$-$}
+\newunicodechar{—}{---}
+\newunicodechar{–}{--}
+\newunicodechar{…}{\ldots}
+\newunicodechar{′}{\ensuremath{'}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
 
-% Colours
-\definecolor{clockblue}{RGB}{30, 80, 160}
-\definecolor{syncgreen}{RGB}{20, 120, 60}
-\definecolor{warmorange}{RGB}{190, 90, 20}
-
-% Section formatting
-\titleformat{\section}{\large\bfseries\color{clockblue}}{}{0em}{}[\titlerule]
-\titleformat{\subsection}{\normalsize\bfseries\color{syncgreen}}{}{0em}{}
-
-% Header / footer
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\small\textit{Bell Without Faster Than Light}}
-\lhead{\small\textit{Time-Phase Clock Equations}}
-\cfoot{\thepage}
-
-% Boxed equation environment
-\newcommand{\beq}[1]{%
-  \begin{center}
-  \fbox{\begin{minipage}{0.88\textwidth}\vspace{4pt}%
-  \begin{equation}#1\end{equation}%
-  \vspace{0pt}\end{minipage}}%
-  \end{center}}
-
-\title{
-  {\Large\bfseries Bell Without Faster Than Light}\\[6pt]
-  {\large Equations of the Time-Phase Clock Interpretation}\\[4pt]
-  {\normalsize\itshape A Radiologist's Toy Theory}
-}
-\author{rayolddog \quad \texttt{github.com/rayolddog/BellWithoutFasterThanLight}}
+\author{}
 \date{}
 
 \begin{document}
 
-\maketitle
-\thispagestyle{fancy}
-
-\begin{abstract}
-The phase of the Schr\"odinger wave function is interpreted as an internal clock carried
-by each particle, oscillating at $\omega = E/\hbar$.  Entanglement is synchronized clocks
-at creation.  Measurement is Kuramoto synchronization with a local detector.
-The wave never collapses.  No faster-than-light signal is required.
-This document collects the key equations developed across the project,
-from the Bell correlation through Dirac spinors, the Higgs mechanism,
-gravity, Penrose objective reduction, twistor theory, thermodynamics,
-Brownian motion, and the Heisenberg uncertainty principle.
-\end{abstract}
-
+{
+\setcounter{tocdepth}{2}
 \tableofcontents
-\vspace{1em}
-\hrule
-\vspace{1em}
-
-% ─── 1 ────────────────────────────────────────────────────────────────────────
-\section{The Time-Phase Wave Function}
-
-The Schr\"odinger equation -- which describes orbitals exactly and never needs to collapse:
-\begin{equation}
-  i\hbar \frac{\partial \psi}{\partial t} = \hat{H}\psi
-\end{equation}
-
-The wave function augmented with an explicit internal clock phase $\varphi$:
-\begin{equation}
-  \psi_A(\mathbf{x}, t)
-  = \sum_s c_s\,|s\rangle \cdot e^{-i\omega t + i\varphi_A(t)}
-\end{equation}
-where $\omega = E/\hbar$ is the particle's clock frequency and $\varphi_A(t)$ is its
-internal clock phase, distinct from the dynamical phase $-i\omega t$.
-
-The probability of detecting a property along axis $\hat{n}$ depends on the
-\textbf{relative phase} between particle clock $\varphi_A$ and detector clock $\Phi_D$:
-\begin{equation}
-  P\!\left(+1\,\middle|\,\hat{n},\,\varphi_A,\,\Phi_D\right)
-  = \cos^2\!\left(\frac{\varphi_A - \Phi_D - \theta_{\hat{n}}}{2}\right)
-\end{equation}
-
-\textbf{Entanglement} is synchronized clocks at the moment of creation:
-\begin{equation}
-  \varphi_A(0) = \varphi_B(0) = \varphi_0
-  \qquad\text{(shared initial phase, one spacetime point)}
-\end{equation}
-
-% ─── 2 ────────────────────────────────────────────────────────────────────────
-\section{Kuramoto Phase Synchronization}
-
-The Kuramoto (1975) equation governs clock synchronization and thereby measurement:
-\beq{
-  \frac{d\varphi}{dt} = \omega + K\sin(\Phi_{\text{bulk}} - \varphi)
-  \label{eq:kuramoto}
 }
+\section{Equation Reference for the Many Clocks
+Interpretation}\label{equation-reference-for-the-many-clocks-interpretation}
 
-\begin{itemize}[nosep]
-  \item Free flight: $K = 0 \;\Rightarrow\; \varphi(t) = \varphi_0 + \omega t$
-  \item At detector: $K > 0 \;\Rightarrow\; \varphi \to \Phi_{\text{bulk}}$ \;(synchronization)
+\emph{Kuramoto synchronization in the Dirac equation --- the equation
+reference accompanying the Many Clocks Interpretation of Quantum
+Mechanics (MCI). See the main paper for the interpretive framework; this
+document is a compact lookup of the key equations and identifications.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{0. Note on Bases}\label{note-on-bases}
+
+Two decompositions of the same 4-component Dirac spinor appear below:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Weyl (chiral) basis} ψ = (ψ\_L, ψ\_R)ᵀ --- used in §§2, 5, 6,
+  8, 16. The mass term is off-diagonal, so K = m reads as a coupling
+  between two chiral clocks.
+\item
+  \textbf{Dirac (standard) basis} ψ = (ψ\_upper, ψ\_lower)ᵀ = (large,
+  small)ᵀ --- used in §4 and the three-term block decomposition E\_LL +
+  E\_SS + E\_LS. The spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives here, with r =
+  p/(E+m).
 \end{itemize}
 
-Synchronization fixed point: $\varphi^\star = \Phi_{\text{bulk}}$.
-Synchronization timescale: $\tau_{\text{sync}} = 1/K$.
+The two are unitarily related. They agree at θ\_rel = 0 (rest: ψ\_L =
+ψ\_R, small = 0) and θ\_rel = π/2 (massless: chiral decoupling =
+large/small decoupling). At intermediate momenta the temporal-phase
+content is a θ\_rel-dependent mixture in either basis. The interpretive
+identifications ``temporal clock'' and ``spatial clock'' are anchored to
+ψ\_L and ψ\_R respectively; the large/small split is the basis the block
+decomposition lives in.
 
-Both detectors are pre-synchronized by thermal equilibration with the macroscopic environment:
-\begin{equation}
-  \Phi_{D_1} = \Phi_{D_2} = \Phi_{\text{bulk}}
-  \qquad\text{(established locally, before the experiment)}
-\end{equation}
+See PAPER\_UNIFIED.md §2.1.1 for the full discussion.
 
-% ─── 3 ────────────────────────────────────────────────────────────────────────
-\section{Bell's Theorem -- Where the Factorization Fails}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-Bell's hidden variable theorem:
-\begin{equation}
-  E(a,b) = \int A(a,\lambda)\,B(b,\lambda)\,\rho(\lambda)\,d\lambda
-  \label{eq:bell}
-\end{equation}
+\subsection{1. The Time-Phase Wave
+Function}\label{the-time-phase-wave-function}
 
-The hidden state in this model is $\lambda = (\varphi_0,\Phi_{\text{bulk}})$.
-Because $\Phi_{\text{bulk}}$ is the \emph{same} variable at both detectors, the joint distribution
-does not factorize:
-\begin{equation}
-  \rho(\varphi_0, \Phi_{\text{bulk}}) \;\neq\; \rho(\varphi_0)\cdot\rho(\Phi_{\text{bulk}})
-\end{equation}
-Bell's integral~\eqref{eq:bell} implicitly assumes independent components.
-This is not a conspiracy: $\Phi_{\text{bulk}}$ is a single shared variable established
-subliminally and locally, long before the measurement.
+The Schrödinger equation --- which never collapses:
 
-\begin{center}
-\begin{tabular}{lp{4cm}p{5cm}}
-\toprule
-Assumption & Standard form & Status in this model \\
-\midrule
-Locality & $A$ depends only on $(a,\lambda)$ & Satisfied --- each detector is local \\
-Measurement independence & $\rho(\lambda\mid a,b)=\rho(\lambda)$ & \textbf{Fails} --- $\Phi_{\text{bulk}}\in\lambda$ is shared \\
-\bottomrule
-\end{tabular}
-\end{center}
+\[i\hbar \frac{\partial \psi}{\partial t} = \hat{H}\psi\]
 
-\subsection{Correlation functions}
+The wave function augmented with an explicit internal clock phase
+\(\varphi\):
 
-\begin{center}
-\begin{tabular}{lcc}
-\toprule
-Model & $E(a,b)$ & $\text{CHSH}_{\max}$ \\
-\midrule
-Classical LHV (deterministic)    & $-\bigl(1 - 2|\Delta|/\pi\bigr)$ & $2.000$ \\
-Phase-clock (Malus law)          & $-\tfrac{1}{2}\cos\Delta$        & $\sqrt{2}\approx 1.414$ \\
-Standard quantum mechanics       & $-\cos\Delta$                    & $2\sqrt{2}\approx 2.828$ \\
-\bottomrule
-\end{tabular}
-\end{center}
+\[\psi_A(\mathbf{x}, t) = \sum_s c_s |s\rangle \cdot e^{-i\omega t + i\varphi_A(t)}\]
 
-% ─── 4 ────────────────────────────────────────────────────────────────────────
-\section{Dirac Spinors as Time-Phase / Property Rotation}
+where \(\omega = E/\hbar\) is the particle's clock frequency and
+\(\varphi_A(t)\) is its internal clock phase --- distinct from the
+dynamical phase \(-i\omega t\).
 
-A positive-energy Dirac spinor with momentum $p$ along $z$ (natural units):
-\begin{equation}
-  u(p,\uparrow) = N\begin{pmatrix}1\\0\\r\\0\end{pmatrix},\qquad
-  u(p,\downarrow) = N\begin{pmatrix}0\\1\\0\\-r\end{pmatrix},\qquad
-  r = \frac{p}{E+m},\quad N = \sqrt{\frac{E+m}{2E}}
-\end{equation}
+The probability of detecting a property along axis \(\hat{n}\) depends
+on the \textbf{relative phase} between particle clock and detector
+clock:
+
+\[P\!\left(+1 \,\middle|\, \hat{n},\, \varphi_A,\, \Phi_D\right) = \cos^2\!\left(\frac{\varphi_A - \Phi_D - \theta_{\hat{n}}}{2}\right)\]
+
+\textbf{Entanglement} is synchronized clocks at creation:
+
+\[\varphi_A(0) = \varphi_B(0) = \varphi_0 \qquad \text{(shared initial phase)}\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{2. Kuramoto Phase
+Synchronization}\label{kuramoto-phase-synchronization}
+
+The equation governing clock synchronization --- the mechanism of
+measurement:
+
+\[\frac{d\varphi}{dt} = \omega + K \sin(\Phi_{\text{bulk}} - \varphi)\]
+
+\begin{itemize}
+\tightlist
+\item
+  Free flight:
+  \(K = 0 \;\Rightarrow\; \varphi(t) = \varphi_0 + \omega t\) (clocks
+  run freely)
+\item
+  At detector: \(K > 0 \;\Rightarrow\; \varphi \to \Phi_{\text{bulk}}\)
+  (synchronization)
+\end{itemize}
+
+Fixed point of synchronization: \(\varphi^\star = \Phi_{\text{bulk}}\).
+Time to lock: \(\tau_{\text{sync}} = 1/K\).
+
+The detector's clock phase is pre-established by thermal equilibration
+with the macroscopic environment:
+
+\[\Phi_{D_1} = \Phi_{D_2} = \Phi_{\text{bulk}} \qquad \text{(both detectors, before the experiment)}\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3. Bell's Theorem --- Where the Factorization
+Fails}\label{bells-theorem-where-the-factorization-fails}
+
+Bell's hidden variable theorem writes:
+
+\[E(a, b) = \int A(a,\lambda)\, B(b,\lambda)\, \rho(\lambda)\, d\lambda\]
+
+with two embedded assumptions:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Assumption
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Standard form
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Status in this model
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Locality & \(A\) depends only on \((a, \lambda)\) & Satisfied --- each
+detector is local \\
+Measurement independence & \(\rho(\lambda \mid a,b) = \rho(\lambda)\) &
+\textbf{Fails} --- \(\Phi_{\text{bulk}} \in \lambda\) is shared \\
+\end{longtable}
+}
+
+The hidden state in this model is
+\(\lambda = (\varphi_0, \Phi_{\text{bulk}})\). Because
+\(\Phi_{\text{bulk}}\) is \textbf{the same variable} at both detectors,
+the joint distribution does not factorize:
+
+\[\rho(\varphi_0, \Phi_{\text{bulk}}) \;\neq\; \rho(\varphi_0) \cdot \rho(\Phi_{\text{bulk}})\]
+
+This is not a conspiracy. It is ordinary thermodynamic equilibration,
+established locally and subliminally before the experiment runs.
+
+\subsubsection{Correlation functions
+compared}\label{correlation-functions-compared}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Model
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(E(a, b)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+CHSH\(_{\max}\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Classical LHV (deterministic) &
+\(-\!\left(1 - \dfrac{2|\Delta|}{\pi}\right)\) & \(2.000\) \\
+Phase-clock (Malus law) & \(-\tfrac{1}{2}\cos\Delta\) &
+\(\sqrt{2} \approx 1.414\) \\
+Standard quantum mechanics & \(-\cos\Delta\) &
+\(2\sqrt{2} \approx 2.828\) \\
+\end{longtable}
+}
+
+where \(\Delta = a - b\). The phase-clock model is sub-classical in
+isolation; the full quantum result requires the Dirac structure below.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4. Dirac Spinors as Time-Phase / Property
+Rotation}\label{dirac-spinors-as-time-phase-property-rotation}
+
+This section uses the Dirac/standard basis (large/small blocks); the
+Weyl-basis description of the same spinor appears in §6. See §0 for the
+relationship between the two bases.
+
+For a particle with 3-momentum \(p\) along \(z\) (natural units
+\(m = c = \hbar = 1\)):
+
+\[u(p, \uparrow) = N \begin{pmatrix} 1 \\ 0 \\ r \\ 0 \end{pmatrix}, \qquad u(p, \downarrow) = N \begin{pmatrix} 0 \\ 1 \\ 0 \\ -r \end{pmatrix}\]
+
+where \(r = \dfrac{p}{E + m}\) and \(N = \sqrt{\dfrac{E+m}{2E}}\).
 
 The \textbf{mixing angle} between temporal and spatial clock vectors:
-\beq{
-  \tan\frac{\theta_{\text{rel}}}{2} = \frac{|\mathbf{p}|}{E+m}
-  \qquad\Longleftrightarrow\qquad
-  \sin\theta_{\text{rel}} = \frac{v}{c}
-}
 
-\noindent Limits:
-\[
-  \theta_{\text{rel}} \xrightarrow{v/c\to 0} 0
-  \quad\text{(NR: Pauli spinor sufficient)},
-  \qquad
-  \theta_{\text{rel}} \xrightarrow{v/c\to 1} \frac{\pi}{2}
-  \quad\text{(massless: permanent orthogonality)}
-\]
+\[\tan\frac{\theta_{\text{rel}}}{2} = \frac{|\mathbf{p}|}{E + m} \qquad \Longleftrightarrow \qquad \sin\theta_{\text{rel}} = \frac{v}{c}\]
 
-\subsection{Three-term decomposition of the Bell correlation}
+Limits:
 
-\begin{equation}
-  \boxed{E(a,b) =
-    \underbrace{E_{LL}}_{\substack{\text{temporal}\\\times\,\text{temporal}}}
-    +\underbrace{E_{SS}}_{\substack{\text{spatial}\\\times\,\text{spatial}}}
-    +\underbrace{E_{LS}}_{\substack{\text{rotation}\\\text{coupling}}}
-    = -\cos(a-b)}
-\end{equation}
+\[\theta_{\text{rel}} \xrightarrow{v/c \to 0} 0 \quad \text{(NR: 2-component Pauli suffices)}\]
 
-The NR clock model retains only $E_{LL}\approx -\tfrac{1}{2}\cos(a-b)$.
-The Dirac small component ($E_{SS}+E_{LS}$) supplies the missing half,
-verified numerically to machine precision ($<10^{-15}$) for all momenta.
+\[\theta_{\text{rel}} \xrightarrow{v/c \to 1} \frac{\pi}{2} \quad \text{(massless: permanent orthogonality)}\]
 
-% ─── 5 ────────────────────────────────────────────────────────────────────────
-\section{Massless Particles -- Permanent Orthogonality}
+\subsubsection{Three-term block decomposition of the Bell
+correlation}\label{three-term-block-decomposition-of-the-bell-correlation}
 
-For $m=0$: $\theta_{\text{rel}} = \pi/2$ always. The Dirac equation decouples:
-\begin{align}
-  i\sigma^\mu\partial_\mu\,\chi_R &= 0
-  \qquad\text{(right-handed Weyl: spatial clock, }h=+\tfrac{1}{2}\text{)}\\
-  i\bar\sigma^\mu\partial_\mu\,\chi_L &= 0
-  \qquad\text{(left-handed Weyl: temporal clock, }h=-\tfrac{1}{2}\text{)}
-\end{align}
+By restricting the Dirac spin operator to the upper (large), lower
+(small), and cross blocks, the singlet correlation partitions as:
 
-The two clocks are permanently orthogonal and never mix.
-This is why photons have exactly \textbf{2} polarization states rather than~4.
+\[E(a, b) = \underbrace{E_{LL}}_{\text{temporal} \times \text{temporal}} + \underbrace{E_{SS}}_{\text{spatial} \times \text{spatial}} + \underbrace{E_{LS}}_{\text{rotation coupling}} = -\cos(a - b)\]
 
-% ─── 6 ────────────────────────────────────────────────────────────────────────
-\section{Higgs Field as Kuramoto Synchronizer}
+The sum is additive by trace linearity --- an identity, not a
+derivation. The mathematical content is the \emph{redistribution} of
+weight among the three blocks as \(\theta_{\text{rel}}\) varies: at
+\(p \to 0\), \(E_{LL} \to -\cos(a-b)\) and \(E_{SS}, E_{LS} \to 0\)
+(recovering the standard Pauli singlet); at
+\(\theta_{\text{rel}} \to 90°\) the three contributions become
+comparable. The Malus-law toy in the table above (CHSH
+\(\leq \sqrt{2}\), returning \(-\tfrac{1}{2}\cos\Delta\)) is a separate
+stochastic-phase model --- it is not the same object as the Dirac
+large-block restriction.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. Massless Spin-½ Fermions --- Permanent Chiral
+Orthogonality}\label{massless-spin-uxbd-fermions-permanent-chiral-orthogonality}
+
+For \(m = 0\) in the Dirac equation: \(\theta_{\text{rel}} = \pi/2\)
+always. The equation splits into two independent Weyl equations:
+
+\[i\sigma^\mu \partial_\mu \chi_R = 0 \qquad \text{(spatial clock: helicity } h = +\tfrac{1}{2}\text{)}\]
+
+\[i\bar{\sigma}^\mu \partial_\mu \chi_L = 0 \qquad \text{(temporal clock: helicity } h = -\tfrac{1}{2}\text{)}\]
+
+The two chiral clocks are permanently orthogonal and never mix. This
+applies to massless spin-½ fermions (idealized neutrinos before mass
+discovery).
+
+\textbf{Photons are not described by this section.} Photons are spin-1
+vector bosons governed by Maxwell's equations, not by the Dirac/Weyl
+equation. Their two polarization states arise from gauge invariance
+reducing the four components of \(A^\mu\) to two transverse degrees of
+freedom --- \emph{not} from chiral Weyl decoupling. The structural
+similarity (two decoupled helicity clocks) does exist when Maxwell is
+rewritten in Riemann--Silberstein form
+\(\mathbf{F} = \mathbf{E} + i\mathbf{B}\); see Paper §5 for the photon
+treatment.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. Higgs Field as Kuramoto
+Synchronizer}\label{higgs-field-as-kuramoto-synchronizer}
 
 The Yukawa interaction written in Weyl (clock) form:
-\beq{
-  \frac{d\varphi_L}{dt} = \omega + K\sin(\varphi_R - \varphi_L + \delta_{\text{CP}}),
-  \qquad
-  \frac{d\varphi_R}{dt} = \omega + K\sin(\varphi_L - \varphi_R - \delta_{\text{CP}})
+
+\[\frac{d\varphi_L}{dt} = \omega + K \sin(\varphi_R - \varphi_L + \delta_{\text{CP}})\]
+
+\[\frac{d\varphi_R}{dt} = \omega + K \sin(\varphi_L - \varphi_R - \delta_{\text{CP}})\]
+
+where the \textbf{Kuramoto coupling constant equals the fermion mass}:
+
+\[\boxed{K = y_f \cdot \frac{v}{\sqrt{2}} = m_f}\]
+
+with \(y_f\) the Yukawa coupling and \(v = 246\,\text{GeV}\) the Higgs
+vacuum expectation value.
+
+\begin{itemize}
+\tightlist
+\item
+  \(K = 0\) (no Higgs): \(\varphi_L\) and \(\varphi_R\) free-run,
+  \(\theta_{\text{rel}} = \pi/2\) --- massless
+\item
+  \(K > 0\) (Higgs): clocks synchronize, \(\theta_{\text{rel}} < \pi/2\)
+  --- massive
+\item
+  Large \(K\) (top quark, \(y_f \approx 1\)): fast sync, tight lock
+\item
+  Small \(K\) (electron, \(y_f \approx 3 \times 10^{-6}\)): slow sync,
+  loose lock
+\end{itemize}
+
+\subsubsection{Pair-sync at gauge
+vertices}\label{pair-sync-at-gauge-vertices}
+
+The Yukawa-style structure extends from intra-spinor (Higgs-mediated,
+\(K = m\)) to inter-spinor (gauge-mediated): a dimensionless gauge
+coupling times the local amplitude of the mediating field gives the
+pair-sync rate at an interaction vertex.
+
+\[\boxed{K_{\text{pair}}^{ab} = g_{\text{int}} \cdot \langle V_{\text{int}} \rangle_{\text{local}}}\]
+
+with \(g_{\text{int}}\) the relevant gauge coupling (\(e\) for EM,
+\(g_w\) for weak) and \(\langle V_{\text{int}} \rangle_{\text{local}}\)
+the gauge-field amplitude at the partner's worldline. For
+photon--electron:
+
+\[K_{\text{pair}}^{\gamma e} = e \cdot |A_\gamma|_e \;\sim\; \hbar\omega\]
+
+(sync timescale \(\tau_1 = \hbar/K_{\text{pair}} \sim 1/\omega\) --- the
+photon's own period).
+
+\textbf{Two-stage measurement Lagrangian.} Combining vertex pair-sync
+(Stage 1) with bulk relaxation (Stage 2):
+
+\[\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stage 2: }e\leftrightarrow\text{lattice}}\]
+
+The framework now carries three Kuramoto couplings, each at a different
+scale:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Coupling
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Origin
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Role
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(K = m\) & Higgs--Yukawa & intra-spinor L--R sync \\
+\(K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle\) &
+gauge interaction & pair-sync at vertex (Stage 1) \\
+\(\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)\) & gravity + atomic &
+bulk re-equilibration (Stage 2) \\
+\end{longtable}
 }
 
-where the \textbf{Kuramoto coupling equals the fermion mass}:
-\begin{equation}
-  \boxed{K = y_f\cdot\frac{v}{\sqrt{2}} = m_f}
-\end{equation}
-$y_f$ is the Yukawa coupling, $v=246\,\text{GeV}$ is the Higgs vacuum expectation value.
-Without the Higgs ($K=0$) all fermions are massless and $\theta_{\text{rel}}=\pi/2$.
+See Paper §3.4 (markdown) / §4.4 (LaTeX) for the full two-stage
+measurement process and its Bell / gravitational consequences.
 
-\subsection{Antiparticles as reversed clocks}
+\subsubsection{Antiparticles as reversed
+clocks}\label{antiparticles-as-reversed-clocks}
 
-\begin{center}
-\begin{tabular}{lcc}
-\toprule
- & Particle $u(p)$ & Antiparticle $v(p)$ \\
-\midrule
-Phase & $e^{-iEt/\hbar}$ & $e^{+iEt/\hbar}$ \\
-Clock direction & Forward ($+E$) & \textbf{Reversed} ($-E$) \\
-Large/small components & Temporal dominant & Spatial dominant (swapped) \\
-Sync equilibrium & $\varphi_L-\varphi_R\to+\delta_{\text{CP}}$ & $\varphi_L-\varphi_R\to-\delta_{\text{CP}}$\\
-\bottomrule
-\end{tabular}
-\end{center}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Particle \(u(p)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Antiparticle \(v(p)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Phase & \(e^{-iEt/\hbar}\) & \(e^{+iEt/\hbar}\) \\
+Clock direction & Forward (\(+E\)) & \textbf{Reversed} (\(-E\)) \\
+Large/small components & Temporal dominant & Spatial dominant
+(swapped) \\
+Sync equilibrium & \(\varphi_L - \varphi_R \to +\delta_{\text{CP}}\) &
+\(\varphi_L - \varphi_R \to -\delta_{\text{CP}}\) \\
+\end{longtable}
+}
 
-Matter-antimatter asymmetry from CP-violating synchronization:
-\begin{equation}
-  \eta = \frac{N_{\text{matter}}-N_{\text{antimatter}}}{N_{\text{total}}}
-  \approx \varepsilon\cdot\sin^2(\delta_{\text{CP}})
-\end{equation}
+The matter-antimatter asymmetry from CP-violating synchronization:
 
-% ─── 7 ────────────────────────────────────────────────────────────────────────
-\section{Gravity as Bulk Clock Synchronization}
+\$\(\eta = \frac{N_{\text{matter}} - N_{\text{antimatter}}}{N_{\text{total}}} \approx \varepsilon \cdot \sin^2(\delta_{\text{CP}})\)
 
-\subsection{Clock rate in a gravitational field}
+\subsubsection{Annihilation cross
+section}\label{annihilation-cross-section}
 
-\begin{equation}
-  \omega(\mathbf{x})
-  = \omega_\infty\sqrt{1+\frac{2\Phi(\mathbf{x})}{c^2}}
-  \approx \omega_\infty\!\left(1+\frac{\Phi}{c^2}\right),
-  \qquad \Phi = -\frac{GM}{r}
-\end{equation}
+The synchronization efficiency between a particle and its antiparticle
+at the moment of encounter depends on their phase mismatch:
 
-\subsection{Poisson equation = Kuramoto field equation}
+\(\sigma_{\text{ann}} \propto |\langle\psi_{\text{particle}}|\psi_{\text{antiparticle}}\rangle|^2 \propto 1 + \varepsilon\cos(\delta_{\text{CP}})\)
 
-\begin{equation}
-  \underbrace{\nabla^2\Phi = 4\pi G\rho}_{\text{Poisson (gravity)}}
-  \qquad\longleftrightarrow\qquad
-  \underbrace{\nabla^2\varphi_{\text{clock}} = -\rho\,K_{\text{grav}}}_{\text{Kuramoto (sync field)}}
-\end{equation}
+The small asymmetry \(\varepsilon\) accumulates over early-universe
+interactions, seeding the observed baryon asymmetry
+\(\eta \sim 10^{-9}\).
 
-The gravitational potential \emph{is} the bulk clock synchronization field.
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. Gravity as Bulk Clock
+Synchronization}\label{gravity-as-bulk-clock-synchronization}
+
+\subsubsection{Clock rate in a gravitational
+field}\label{clock-rate-in-a-gravitational-field}
+
+Gravitational time dilation as clock frequency gradient (Schwarzschild
+weak field):
+
+\[\omega(\mathbf{x}) = \omega_\infty \sqrt{1 + \frac{2\Phi(\mathbf{x})}{c^2}} \approx \omega_\infty\!\left(1 + \frac{\Phi}{c^2}\right)\]
+
+where \(\Phi = -GM/r\) is the Newtonian potential. Clocks run
+\textbf{slower} near mass.
+
+\subsubsection{Poisson equation = Kuramoto field
+equation}\label{poisson-equation-kuramoto-field-equation}
+
+\[\underbrace{\nabla^2 \Phi = 4\pi G \rho}_{\text{Poisson (gravity)}} \qquad \longleftrightarrow \qquad \underbrace{\nabla^2 \varphi_{\text{clock}} = -\rho\, K_{\text{grav}}}_{\text{Kuramoto field}}\]
+
+The gravitational potential \textbf{is} the bulk clock synchronization
+field. Objects fall because their internal clocks drift toward the
+nearest large synchronized cluster.
+
 The clock-synchronization force recovers Newton exactly:
-\begin{equation}
-  a_{\text{clock}} = \frac{d\omega}{dr}\cdot\frac{c^2}{\omega_0} = \frac{GM}{r^2}
-  \qquad\checkmark
-\end{equation}
 
-\subsection{Penrose objective reduction as gravitational clock decoherence}
+\$\(a_{\text{clock}} = \frac{d\omega}{dr} \cdot \frac{c^2}{\omega_0} = \frac{GM}{r^2} \qquad \checkmark\)
 
-Phase difference accumulated by superposition $|x_1\rangle+|x_2\rangle$:
-\begin{equation}
-  \delta\varphi(t) = \bigl[\omega(x_1)-\omega(x_2)\bigr]\cdot t
-\end{equation}
+\subsubsection{Gravitational bulk coupling rate
+(pair-counted)}\label{gravitational-bulk-coupling-rate-pair-counted}
 
-Superposition coherence:
-\begin{equation}
-  \mathcal{C}(t) = \cos\!\left(\frac{\delta\varphi(t)}{2}\right)
-\end{equation}
+For a bulk of mass \(M\) composed of \(N\) atoms (each of mass
+\(m_{\text{atom}} = M/N\)), each pair contributes a Kuramoto rate
+\(K_{aa} \sim G\,m_{\text{atom}}^2/(\hbar\,r_{ij})\) via the framework's
+\(K = E/\hbar\) identification (distinct from the vertex pair-sync
+\(K_{\text{pair}}^{ab}\) of §6: \(K_{aa}\) is the gravitational rate
+between two bulk atoms). Summing over the \(N(N-1)/2 \approx N^2/2\)
+atomic pairs at characteristic internal separation \(\Delta z\):
 
-Collapse when $\mathcal{C}\to 0$ (i.e.\ $\delta\varphi=\pi$):
-\beq{
-  \tau_{\text{collapse}} = \frac{\pi\hbar}{E_G},
-  \qquad
-  E_G = \frac{Gm^2}{\Delta x}
-  \label{eq:penrose}
-}
-Equation~\eqref{eq:penrose} is the Penrose formula, here derived from gravitational
-clock decoherence. No observer is required.
+\[\Gamma_{\text{grav}} \sim \frac{N^2}{2}\cdot \frac{G\,(M/N)^2}{\hbar\,\Delta z} \;\sim\; \boxed{\frac{G M^2}{\hbar\,\Delta z}}\]
 
-% ─── 8 ────────────────────────────────────────────────────────────────────────
-\section{Twistor Theory Connection}
+The \(M^2\) scaling is a consequence of pair counting: each pair
+contributes \(\sim K_{aa}\), there are \(\sim N^2\) pairs, and
+\(m_{\text{atom}} = M/N\) enters quadratically per pair, giving total
+\(\sim N^2 (M/N)^2 = M^2\).
 
-Penrose's twistor $Z^\alpha=(\omega^A,\pi_{A'})$ maps to:
-\[
-  \omega^A \;\longleftrightarrow\; \psi_L\;\text{(temporal clock)},
-  \qquad
-  \pi_{A'} \;\longleftrightarrow\; \psi_R\;\text{(spatial clock)}
-\]
+For macroscopic objects (\(M \sim 1\,\text{kg}\),
+\(\Delta z \sim 1\,\text{m}\)),
+\(\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}\) --- an
+extremely fast coupling rate that explains why macroscopic detectors
+maintain classical coherence. The \(M^2\) scaling ensures bulk objects
+are locked far more strongly than microscopic particles. (See Paper §3.5
+for the full derivation; Paper §5.5 for why \(\Gamma_{\text{grav}} = 0\)
+for photons.)
 
-Null twistor condition (massless):
-\begin{equation}
-  Z\cdot\bar Z = \omega^A\bar\pi_A + \bar\omega^{A'}\pi_{A'} = 0
-  \qquad\Longleftrightarrow\qquad
-  \theta_{\text{rel}} = 90^\circ
-  \qquad\Longleftrightarrow\qquad
-  m = 0
-\end{equation}
+\subsubsection{Penrose objective reduction as gravitational clock
+decoherence}\label{penrose-objective-reduction-as-gravitational-clock-decoherence}
 
-Incidence relation (how spacetime position couples the two clocks):
-\begin{align}
-  \omega^A &= i\,x^{AA'}\pi_{A'}
-  & &\text{(massless)}\\
-  \omega^A &= i\,x^{AA'}\pi_{A'} + m\,\eta^A
-  & &\text{(massive: Higgs coupling term)}
-\end{align}
-The massive incidence relation is the Dirac equation in Weyl form.
-Gravity curves twistor space by deforming the incidence relation.
+A particle in superposition \(|x_1\rangle + |x_2\rangle\) has its clock
+running at two different rates. Accumulated phase difference:
 
-% ─── 9 ────────────────────────────────────────────────────────────────────────
-\section{Temperature as Clock Phase Distribution Width}
+\[\delta\varphi(t) = \bigl[\omega(x_1) - \omega(x_2)\bigr] \cdot t = \delta\omega \cdot t\]
 
-\begin{equation}
-  P(\varphi)
-  \propto \exp\!\left(-\frac{\hbar\omega\,\varphi^2}{2k_BT}\right)
-  \qquad\text{(classical limit }k_BT\gg\hbar\omega\text{)}
-\end{equation}
+Coherence of the superposition:
 
-Clock phase noise standard deviation:
-\begin{equation}
-  \sigma_\varphi(T) = \sqrt{\frac{k_BT}{\hbar\omega}},
-  \qquad
-  \sigma_\varphi(0) = \frac{1}{\sqrt{2}}\;\text{rad}
-  \quad\text{(zero-point floor)}
-\end{equation}
+\[\mathcal{C}(t) = \cos\!\left(\frac{\delta\varphi(t)}{2}\right)\]
 
-Bose-Einstein occupation number:
-\begin{equation}
-  \langle n(\omega)\rangle = \frac{1}{e^{\hbar\omega/k_BT}-1}
-\end{equation}
+Collapse when \(\mathcal{C} \to 0\), i.e., \(\delta\varphi = \pi\):
 
-Planck blackbody spectrum from thermal clock distribution:
-\begin{equation}
-  u(\omega,T) = \frac{\hbar\omega^3}{\pi^2 c^3}\cdot\frac{1}{e^{\hbar\omega/k_BT}-1}
-  + \underbrace{\frac{\hbar\omega^3}{2\pi^2 c^3}}_{\text{zero-point residual}}
-\end{equation}
+\[\boxed{\tau_{\text{collapse}} = \frac{\pi\hbar}{E_G}, \qquad E_G = \frac{Gm^2}{\Delta x}}\]
 
-Absolute zero is unreachable: the zero-point residual field
-($\frac{1}{2}\hbar\omega$ per mode) is the minimum clock noise floor.
+This is the \textbf{Penrose formula}, derived here as gravitational
+clock decoherence. No observer required.
 
-% ─── 10 ───────────────────────────────────────────────────────────────────────
-\section{Brownian Motion from Clock Desynchronization}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-At each molecular collision the momentum impulse is proportional to the clock phase
-difference at contact:
-\begin{equation}
-  \delta p = K\sin(\varphi_i-\varphi_j) \approx K\,\delta\varphi,
-  \qquad
-  \delta\varphi \sim \mathcal{N}\!\left(0,\,\sigma_\varphi^2(T)\right)
-\end{equation}
+\subsection{8. Twistor Theory
+Connection}\label{twistor-theory-connection}
 
-Mean squared impulse per collision:
-\begin{equation}
-  \langle(\delta p)^2\rangle = K^2\sigma_\varphi^2(T) = K^2\frac{k_BT}{\hbar\omega}
-\end{equation}
+Penrose's twistor \(Z^\alpha = (\omega^A,\, \pi_{A'})\) maps to:
 
-The Langevin equation for a Brownian particle:
-\begin{equation}
-  m\ddot x = -\gamma\dot x + \xi(t),
-  \qquad
-  \langle\xi(t)\,\xi(t')\rangle = 2\gamma k_BT\,\delta(t-t')
-\end{equation}
+\[\omega^A \;\longleftrightarrow\; \psi_L \quad \text{(temporal clock)} \qquad \pi_{A'} \;\longleftrightarrow\; \psi_R \quad \text{(spatial clock)}\]
 
-Diffusion coefficient predicted from clock parameters:
-\beq{
-  D_{\text{clock}}
-  = \frac{K^2\,k_BT}{\hbar\omega}\cdot\frac{\tau_{\text{coll}}}{2m^2}
-  \;\propto\; T
-  \label{eq:diffusion}
+The \textbf{null twistor condition} (massless particle):
+
+\[Z \cdot \bar{Z} = \omega^A\bar{\pi}_A + \bar{\omega}^{A'}\pi_{A'} = 0 \qquad \Longleftrightarrow \qquad \theta_{\text{rel}} = 90° \qquad \Longleftrightarrow \qquad m = 0\]
+
+The \textbf{incidence relation} (how spacetime position couples the two
+clocks):
+
+\[\omega^A = i\, x^{AA'}\pi_{A'} \qquad \text{(massless)}\]
+
+\[\omega^A = i\, x^{AA'}\pi_{A'} + m\,\eta^A \qquad \text{(massive: Higgs term)}\]
+
+This is the Dirac equation in Weyl form. Gravity curves twistor space by
+deforming the incidence relation --- changing how the temporal and
+spatial clocks couple through the spacetime position \(x\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{9. Temperature as Clock Phase Distribution
+Width}\label{temperature-as-clock-phase-distribution-width}
+
+At temperature \(T\), atomic clocks have Gaussian phase noise around the
+bulk:
+
+\[P(\varphi) \propto \exp\!\left(-\frac{\hbar\omega\,\varphi^2}{2k_BT}\right) \qquad \text{(classical limit } k_BT \gg \hbar\omega\text{)}\]
+
+Phase noise standard deviation:
+
+\[\sigma_\varphi(T) = \sqrt{\frac{k_B T}{\hbar\omega}} \qquad \text{(classical)}, \qquad \sigma_\varphi(0) = \frac{1}{\sqrt{2}} \; \text{rad} \qquad \text{(zero-point floor)}\]
+
+The \textbf{Planck blackbody spectrum} is the emission spectrum of this
+distribution:
+
+\[\langle n(\omega) \rangle = \frac{1}{e^{\hbar\omega/k_BT} - 1}\]
+
+\[u(\omega, T) = \frac{\hbar\omega^3}{\pi^2 c^3} \cdot \frac{1}{e^{\hbar\omega/k_BT} - 1} + \underbrace{\frac{\hbar\omega^3}{2\pi^2 c^3}}_{\text{zero-point residual}}\]
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Temperature
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Physical meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(T = 0\) & All clocks synchronized --- zero-point residual only
+(\(\sigma_\varphi = 1/\sqrt{2}\) rad) \\
+\(T > 0\) & Clocks desynchronized --- thermal phase noise
+\(\sigma_\varphi \propto \sqrt{T}\) \\
+\(T \to \infty\) & Complete desynchronization \\
+\end{longtable}
 }
 
-Matching Eq.~\eqref{eq:diffusion} to the Stokes-Einstein relation $D=k_BT/(6\pi\eta r)$
-\emph{fixes} the Kuramoto coupling:
-\begin{equation}
-  K = m\sqrt{\frac{\hbar\omega}{3\pi\eta r\,\tau_{\text{coll}}}}
-\end{equation}
+\textbf{Absolute zero is unreachable} because the zero-point residual
+field (\(\frac{1}{2}\hbar\omega\) per mode) prevents complete
+synchronization.
 
-\subsection{New testable prediction}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-Standard Stokes-Einstein has no dependence on molecular vibration frequency~$\omega$.
-The clock model predicts:
-\beq{
-  D \;\propto\; \frac{1}{\sqrt{\omega}}
-  \quad\text{for fixed }\eta,\,r,\,\tau
-}
-Measurable by single-particle tracking across solvents of different molecular mass.
+\subsection{10. Brownian Motion: An Open
+Question}\label{brownian-motion-an-open-question}
 
-% ─── 11 ───────────────────────────────────────────────────────────────────────
-\section{Quantum-Classical Transition}
+Earlier drafts proposed that the Kuramoto framework reproduces the
+Stokes-Einstein diffusion relation \(D = k_BT/(6\pi\eta r)\) by treating
+each molecular collision as a phase-difference impulse
+\(\delta p = K\,\delta\varphi\), summing the random walk, and extracting
+an effective \(K\) by matching to experiment. We have removed that
+derivation. It does not survive scrutiny.
 
-\subsection{Nelson's stochastic mechanics}
+The framework's central identification \(K = m\) (Section 6) gives \(K\)
+the units of frequency (rad/s, Compton frequency \(mc^2/\hbar\)). For a
+Brownian diffusion formula of the form
+\(D = K^2\,\sigma_\varphi^2\,\tau_{\text{coll}}/(2m^2)\) to come out in
+\(\mathrm{m}^2/\mathrm{s}\), \(K\) must enter with units of momentum
+(kg·m/s). The two \(K\)'s are dimensionally distinct objects.
 
-Nelson (1966) proved: Brownian motion in a background field with diffusion
-$\nu=\hbar/2m$ satisfies the Schr\"odinger equation exactly.
-The time-phase model identifies that background field as the zero-point residual wave field.
+Numerical attempts to bridge them by physically motivated guesses for an
+electron in water at 300 K ---
+\(K = p_{\text{thermal}} = \sqrt{2 m k_B T}\), \(K = mc\) (Compton
+momentum), \(K = m\,v_{\text{thermal}}\) --- yield \(D_{\text{clock}}\)
+values that miss the empirical Stokes-Einstein
+\(D \approx 10^{-9}\,\mathrm{m}^2/\mathrm{s}\) by 4 to 50 orders of
+magnitude. There is no principled way for the framework's \(K = m\) to
+reproduce molecular Brownian motion. Earlier drafts solved for \(K\) to
+make the match work, which made the residual ``prediction''
+\(D \propto 1/\sqrt{\omega}\) downstream of the fit rather than
+independent.
+
+The relationship between the framework's chiral phase clocks and
+molecular Brownian motion is therefore an open question. Two routes for
+future work:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Many-body Kuramoto reduction.} Derive an effective collisional
+  coupling for a fermion in a thermal bath from the framework's
+  \(K = m\) via a coarse-graining over many chiral-clock interactions,
+  and check whether it can reproduce the friction coefficient
+  \(\gamma = 6\pi\eta r\).
+\item
+  \textbf{Bound the framework's home regime.} Treat Brownian motion as
+  outside the framework's natural scope (which is fermion chiral
+  synchronization at the Compton scale), and rely on the Nelson
+  stochastic-mechanics connection (Section 11) as the framework's
+  appropriate touch-point with classical diffusion. The zero-point
+  diffusion floor \(\nu_{\text{ZPF}} = \hbar/2m\) remains
+  well-motivated; the molecular Brownian regime does not reduce to it.
+\end{enumerate}
+
+We retain Section 11's quantum-classical crossover discussion, which
+rests on the standard Einstein--Smoluchowski \(D \sim k_B T\,\tau/m\)
+rather than on any clock-fit derivation.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{11. Quantum-Classical
+Transition}\label{quantum-classical-transition}
+
+\subsubsection{Nelson's stochastic
+mechanics}\label{nelsons-stochastic-mechanics}
+
+Nelson (1966) proved that Brownian motion in a background field with
+diffusion coefficient:
+
+\[\nu = \frac{\hbar}{2m}\]
+
+satisfies the \textbf{Schrödinger equation exactly}. The time-phase
+model provides the physical field: the zero-point residual waves, with
+quantum diffusion floor \(\nu_{\text{ZPF}} = \hbar/2m\).
 
 Total diffusion (quantum + thermal):
-\begin{equation}
-  \nu_{\text{total}}
-  = \underbrace{\frac{\hbar}{2m}}_{\text{quantum (ZPF)}}
-  + \underbrace{\frac{k_BT\,\tau}{m}}_{\text{thermal (Brownian)}}
-\end{equation}
 
-The quantum-classical crossover:
-\begin{equation}
-  \frac{k_BT\,\tau}{m} \gg \frac{\hbar}{2m}
-  \;\;\Rightarrow\;\;\text{classical Brownian},
-  \qquad
-  \frac{k_BT\,\tau}{m} \ll \frac{\hbar}{2m}
-  \;\;\Rightarrow\;\;\text{quantum (Schr\"odinger)}
-\end{equation}
+\[\nu_{\text{total}} = \underbrace{\frac{\hbar}{2m}}_{\text{quantum (ZPF)}} + \underbrace{\frac{k_B T\,\tau}{m}}_{\text{thermal (Brownian)}}\]
 
-The Schr\"odinger's cat boundary coincides with the Penrose collapse time equalling
-the thermal decoherence time -- two criteria derived from the same clock model.
+\subsubsection{Quantum-classical
+crossover}\label{quantum-classical-crossover}
 
-\begin{equation}
-  \tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2}
-  \quad\Longleftrightarrow\quad
-  \tau_{\text{thermal}} = \frac{m}{k_BT\,\tau_{\text{coll}}}
-\end{equation}
+The quantum-classical transition occurs when thermal clock noise
+overtakes quantum clock noise:
 
-\begin{center}
-\begin{tabular}{lccc}
-\toprule
-System & $\hbar/2m$ (m$^2$/s) & $k_BT\tau/m$ at 300\,K & Regime \\
-\midrule
-Electron in atom ($\tau\sim 10^{-15}$\,s) & $3\times 10^{-5}$ & $10^{-21}$ & \textbf{Quantum} \\
-Proton ($\tau\sim 10^{-13}$\,s) & $1.7\times 10^{-8}$ & $10^{-18}$ & Quantum \\
-Protein ($10^{-22}$\,kg) & $5\times 10^{-13}$ & $10^{-14}$ & Borderline \\
-1\,$\mu$m dust grain & $10^{-22}$ & $10^{-11}$ & \textbf{Classical} \\
-\bottomrule
-\end{tabular}
-\end{center}
+\[\frac{k_B T\,\tau}{m} \gg \frac{\hbar}{2m} \qquad \Longrightarrow \qquad k_B T \gg \frac{\hbar}{2\tau}\]
 
-% ─── 12 ───────────────────────────────────────────────────────────────────────
-\section{The Born Rule from Synchronization Statistics}
-
-The Born rule --- $P = |\psi|^2$ --- is derived from Kuramoto synchronization
-statistics rather than postulated.
-
-\subsection{The Kuramoto order parameter}
-
-For $N$ coupled oscillators with phases $\varphi_1,\ldots,\varphi_N$, the
-synchronization amplitude is:
-\begin{equation}
-  R\cdot e^{i\Psi} = \frac{1}{N}\sum_{j=1}^{N} e^{i\varphi_j}
-\end{equation}
-The probability that a single oscillator locks to the collective is proportional
-to~$R^2$ --- the squared modulus of the complex order parameter.
-
-\subsection{Application to measurement}
-
-A particle in superposition $\psi = \alpha|0\rangle + \beta|1\rangle$ arrives at
-a detector with bulk phase~$\Phi_{\text{bulk}}$.  The synchronization probability
-for each component depends on its complex coupling amplitude.  Averaging over the
-uniformly distributed bulk phase eliminates cross terms:
-\begin{equation}
-  \langle e^{i(\varphi_0-\varphi_1)}\rangle_{\Phi_{\text{bulk}}} = 0
-\end{equation}
-
-Only the diagonal terms survive:
-\beq{
-  P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2
-  \label{eq:born}
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+System
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\hbar/2m\) (m²/s)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(k_BT\tau/m\) at 300 K
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Regime
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Electron in atom (\(\tau \sim 10^{-15}\) s) & \(3\times 10^{-5}\) &
+\(10^{-21}\) & \textbf{Quantum} \\
+Proton (\(\tau \sim 10^{-13}\) s) & \(1.7\times 10^{-8}\) & \(10^{-18}\)
+& Quantum \\
+Protein (\(10^{-22}\) kg) & \(5\times 10^{-13}\) & \(10^{-14}\) &
+Borderline \\
+1 μm dust grain & \(10^{-22}\) & \(10^{-11}\) & \textbf{Classical} \\
+\end{longtable}
 }
 
-\subsection{Why the squared modulus}
+The Schrödinger's cat boundary falls exactly where the Penrose collapse
+time equals the thermal decoherence time:
 
-The wave function is complex because the internal clock is a phase oscillator
-living on a circle in the complex plane.  The probability of synchronization is
-the squared modulus because:
-\begin{enumerate}[nosep]
-  \item Coupling is linear in the complex amplitude (Kuramoto sine coupling)
-  \item Probability is quadratic in the coupling (energy transfer $\propto$
-        amplitude$^2$)
-  \item The complex phase averages out over the bulk, leaving only
-        $|\text{amplitude}|^2$
-\end{enumerate}
-The Born rule is the statement that quantum probability equals wave intensity ---
-the natural measure for any physical wave coupling to a resonant detector.
+\[\tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2} \quad \Longleftrightarrow \quad \tau_{\text{thermal}} = \frac{m}{k_B T\,\tau_{\text{coll}}}\]
 
-% ─── 13 ───────────────────────────────────────────────────────────────────────
-\section{Heisenberg Uncertainty from Clock Complementarity}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-The uncertainty principle is not an axiom in this framework --- it is a geometric
-consequence of the orthogonality between temporal and spatial clocks.
+\subsection{12. The Born Rule as Energy
+Partition}\label{the-born-rule-as-energy-partition}
 
-\subsection{Position-momentum uncertainty}
+In this framework, \(|\psi|^2\) is not fundamentally a probability ---
+it is the \textbf{energy density} of the real oscillating field
+\(\psi\). The probabilistic appearance of measurement outcomes reflects
+unpredictable interference with the zero-point + thermal background
+field at the moment of synchronization with the detector. The Born rule
+is read as the long-run frequency of energy partition into the available
+detector channels under unbiased stochastic background driving, not as
+an independent probability axiom.
 
-The temporal clock oscillates at frequency $\omega = E/\hbar$; the spatial clock
-oscillates at wavenumber $k = p/\hbar$.  These are coupled by the incidence
-relation (Section~8):
-\begin{equation}
-  \omega^A = i\,x^{AA'}\pi_{A'} + m\,\eta^A
-\end{equation}
+\subsubsection{Wave energy as the primary
+quantity}\label{wave-energy-as-the-primary-quantity}
 
-A sharp position measurement locks the spatial clock phase~$\varphi_R$ to a
-definite value at a point~$x$.  But the incidence relation couples $\varphi_R$
-to~$\varphi_L$ through the spacetime position --- locking one forces the other
-into a superposition of frequencies.  This is the Fourier relationship between
-position and momentum representations, here derived from clock geometry rather
-than postulated.
+For a superposition \(\psi = \alpha|0\rangle + \beta|1\rangle\) in the
+wave-realist reading,
 
-The mixing angle~$\theta_{\text{rel}}$ encodes the tradeoff.
-When $\theta_{\text{rel}}\to 0$ (rest frame), the temporal clock dominates and
-energy is sharp --- but position is maximally uncertain.
-When $\theta_{\text{rel}}\to\pi/2$ (ultrarelativistic), the spatial clock
-dominates and momentum is sharp --- but energy-time is maximally uncertain.
+\[E_0 \propto |\alpha|^2, \qquad E_1 \propto |\beta|^2\]
 
-The minimum uncertainty product follows from the Kuramoto coupling between the
-two clocks.  The synchronization force
-\begin{equation}
-  \frac{d\varphi_L}{dt} = \omega + K\sin(\varphi_R - \varphi_L)
-\end{equation}
-ensures that locking~$\varphi_L$ (energy measurement) introduces noise
-in~$\varphi_R$ (momentum) of order
-$\delta\varphi_R \geq 1/(2\,\delta\varphi_L)$, because the sine coupling
-transfers phase uncertainty bidirectionally.  Converting to physical units
-($\Delta E = \hbar\,\Delta\omega$, $\Delta p = \hbar\,\Delta k$):
-\beq{
-  \Delta x \cdot \Delta p \;\geq\; \frac{\hbar}{2}
-  \label{eq:hup-xp}
-}
+are the \textbf{energy fractions} carried by each channel. This is
+classical wave physics --- no Born postulate is required to write down
+these quantities.
 
-\subsection{Energy-time uncertainty}
+\subsubsection{Energy-partition
+mechanism}\label{energy-partition-mechanism}
 
-The particle clock runs at $\omega = E/\hbar$.  A measurement lasting
-time~$\Delta t$ samples $\Delta t/(2\pi/\omega)$ oscillation cycles.  The
-frequency resolution of any oscillator observed for time~$\Delta t$ is
-$\Delta\omega \geq 1/(2\,\Delta t)$.  Multiplying by~$\hbar$:
-\beq{
-  \Delta E \cdot \Delta t \;\geq\; \frac{\hbar}{2}
-  \label{eq:hup-et}
-}
-This is identical to the Fourier bandwidth theorem --- but here the ``signal''
-is a physical clock, not an abstract wave.
+A Kuramoto re-synchronization event transfers wave energy from the
+particle to one detector channel, raising it to its excited (registered)
+state. A discrete click --- rather than a fractional excitation across
+multiple channels --- arises because each detector channel is itself a
+quantized resonator with a discrete excitation threshold.
 
-\subsection{Zero-point phase noise as the uncertainty floor}
+Which channel receives the quantum in any individual event depends on
+the instantaneous configuration of the background field at the moment of
+contact. Because the background fluctuations are statistically unbiased
+on the channel-selection phase space (zero-point symmetry; unbiased
+thermal noise), long-run frequencies of channel selection converge to
+the energy fractions:
 
-From Section~9, the zero-point phase noise at $T=0$ is
-$\sigma_\varphi(0) = 1/\sqrt{2}$~rad.  This residual prevents perfect phase
-locking of either clock.  The zero-point energy $\frac{1}{2}\hbar\omega$ per
-mode is the energy cost of this minimum phase uncertainty.  The uncertainty
-principle is thus the statement that the zero-point field cannot be removed ---
-complete synchronization of both clocks simultaneously is forbidden by the
-geometry of spinor space.
+\[\boxed{P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2}\]
 
-\subsection{Nyquist--Shannon bandwidth limit}
+read here as long-run \emph{frequencies of energy partition} rather than
+as a probability axiom of quantum theory.
 
-The connection between the zero-point floor and the uncertainty principle can
-be made sharper through a Nyquist--Shannon argument.  A Dirac particle's
-internal clock oscillates at the Compton frequency
-$\omega_C = mc^2/\hbar$.  By the Nyquist sampling theorem, this clock has a
-maximum spatial bandwidth: it can resolve phase structures no finer than the
-Compton wavelength $\lambda_C = h/(mc)$.  This sets an irreducible minimum
-position uncertainty:
-\beq{
-  \Delta x_{\min} \sim \frac{\hbar}{mc}
-  \label{eq:nyquist-dx}
-}
-For a particle with momentum spread~$\Delta p$, the de~Broglie relation gives
-a spatial frequency $k = p/\hbar$ that the clock must resolve.  The Nyquist
-limit requires the clock bandwidth $mc/\hbar$ to exceed~$k$, yielding:
-\beq{
-  \Delta x \cdot \Delta p \;\geq\; \frac{\hbar}{2}
-  \label{eq:nyquist-hup}
-}
-The uncertainty principle is thus a \textbf{bandwidth limitation of the
-particle's own internal clock}.  A heavier particle has a faster clock and
-therefore finer spatial resolution, but the resolution is always finite.  No
-oscillator can resolve frequencies beyond its own Nyquist limit.
+\subsubsection{Connection to Nelson stochastic
+mechanics}\label{connection-to-nelson-stochastic-mechanics}
 
-\subsection{The commutator from clock coupling}
+Nelson (1966) {[}26{]} showed that a real particle undergoing stochastic
+motion in a background field with diffusion coefficient
+\(\nu = \hbar/(2m)\) satisfies the Schrödinger equation. The framework
+supplies a physical identity for that background --- the zero-point
+residual of the chiral phase clocks (Section 9) --- and reads the Born
+rule as the visible energy-partition statistics under that background's
+stochastic driving.
+
+\subsubsection{Honest limitation}\label{honest-limitation}
+
+The reframing replaces the standard Born axiom with a weaker postulate
+set (wave realism + unbiased background) but does not yet derive that
+the bias-free assumption is exact across the channel-selection phase
+space. This is a future-work item, not a settled result. The framework
+is structurally a hidden-variable theory in which the hidden variable is
+the instantaneous background-field configuration; it satisfies Bell's
+theorem because it does not use this story to explain Bell correlations
+(those come from the full Dirac spinor structure, Section 4 of this
+reference).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{13. Heisenberg Uncertainty as the Fourier Bandwidth
+Theorem}\label{heisenberg-uncertainty-as-the-fourier-bandwidth-theorem}
+
+In MCI's wave-realist reading, the wavefunction \(\psi\) is a real
+oscillating field, and conjugate representations are related by Fourier
+transform via the de Broglie/Planck relations \(p = \hbar k\),
+\(E = \hbar\omega\). The \textbf{Fourier bandwidth theorem} of harmonic
+analysis --- rigorous and independent of any quantum interpretation ---
+gives the uncertainty relations directly, with factor of ½ exact.
+
+\subsubsection{Position-momentum}\label{position-momentum}
+
+For \(\psi(x) \in L^2(\mathbb{R})\) with Fourier transform
+\(\varphi(k)\):
+
+\[\sigma_x \cdot \sigma_k \geq \frac{1}{2}\]
+
+Multiplying by \(\hbar\) via \(p = \hbar k\):
+
+\[\boxed{\sigma_x \cdot \sigma_p \geq \frac{\hbar}{2}}\]
+
+Saturated by Gaussian wavepackets. This is the Heisenberg
+position-momentum uncertainty relation derived as a theorem about real
+waves, not postulated as an axiom about operators.
+
+\subsubsection{Energy-time}\label{energy-time}
+
+The same theorem applied to the temporal wavefunction \(\psi(t)\) and
+its Fourier transform in frequency:
+
+\[\sigma_t \cdot \sigma_\omega \geq \frac{1}{2} \;\Longrightarrow\; \boxed{\sigma_E \cdot \sigma_t \geq \frac{\hbar}{2}}\]
+
+via \(E = \hbar\omega\). Same theorem, conjugate variables.
+
+\subsubsection{Zero-point phase floor as the same theorem in chiral
+variables}\label{zero-point-phase-floor-as-the-same-theorem-in-chiral-variables}
+
+The zero-point phase noise (Section 9):
+
+\[\sigma_\varphi(0) = \frac{1}{\sqrt{2}}\;\text{rad}\]
+
+is the Fourier bandwidth theorem applied to the chiral phase clocks
+themselves --- the minimum joint uncertainty in conjugate phase
+variables is ½ in natural units. The zero-point energy
+\(\tfrac{1}{2}\hbar\omega\) per mode is the energy cost of saturating
+this minimum phase uncertainty. The uncertainty principle and the
+zero-point field are the same statement in different variables.
+
+\subsubsection{\texorpdfstring{Mixing angle \(\theta_{\text{rel}}\) as
+which-clock-dominates
+indicator}{Mixing angle \textbackslash theta\_\{\textbackslash text\{rel\}\} as which-clock-dominates indicator}}\label{mixing-angle-theta_textrel-as-which-clock-dominates-indicator}
+
+The Dirac mixing angle satisfies
+
+\[\tan\frac{\theta_{\text{rel}}}{2} = \frac{|\mathbf{p}|}{E + m}\]
+
+At rest (\(\theta_{\text{rel}} \to 0\)) the temporal clock dominates; at
+ultrarelativistic speeds (\(\theta_{\text{rel}} \to \pi/2\)) the spatial
+clock dominates. The two limits are the geometric expression of Fourier
+complementarity in the chiral basis: localizing one clock at the cost of
+the other, with the conjugate uncertainty saturating the universal
+Fourier bound.
+
+\subsubsection{Compton wavelength: a particle-specific scale, NOT the
+source of
+½}\label{compton-wavelength-a-particle-specific-scale-not-the-source-of-uxbd}
+
+The Compton wavelength \(\lambda_C = h/(mc)\) is a particle-specific
+scale at which the two-clock structure becomes manifest (Zitterbewegung,
+pair production, chiral mixing). It is \textbf{not} the source of the
+\(\hbar/2\) in the uncertainty relation --- that \(\hbar/2\) is
+universal, particle-independent, and follows from the Fourier theorem
+alone, applying equally to electrons and to baseballs.
+
+A heavier particle has a faster clock (higher Compton frequency) and
+therefore a smaller characteristic length below which its internal clock
+structure becomes resolvable. But the \emph{uncertainty bound}
+\(\sigma_x \sigma_p \geq \hbar/2\) applies identically to all particles.
+The Compton scale and the Fourier bound are different facts about the
+wavefunction; conflating them was an error in earlier formulations.
+
+\subsubsection{The commutator as the operator-level Fourier
+theorem}\label{the-commutator-as-the-operator-level-fourier-theorem}
 
 The canonical commutation relation
-\begin{equation}
-  [\hat x,\,\hat p\,] = i\hbar
-\end{equation}
-emerges from the non-commutativity of sequential clock measurements.  Measuring
-position (locking~$\varphi_R$, then reading~$\varphi_L$) and measuring momentum
-(locking~$\varphi_L$, then reading~$\varphi_R$) do not commute because the
-Kuramoto sine coupling is nonlinear --- the order of synchronization matters.
-The imaginary unit~$i$ reflects the $\pi/2$ phase shift between the two clocks
-at the point of maximum complementarity ($\theta_{\text{rel}}=\pi/2$).
 
-% ─── 14 ───────────────────────────────────────────────────────────────────────
-\section{Complete Dictionary}
+\[[\hat{x}, \hat{p}] = i\hbar\]
 
-\begin{center}
-\begin{tabular}{p{4.2cm}p{3.8cm}p{4.2cm}}
-\toprule
+is the operator-level expression of the Fourier bandwidth theorem:
+\(\hat{x}\) and \(\hat{p}\) are Fourier-conjugate operators, and the
+imaginary unit reflects the \(\pi/2\) phase shift between conjugate
+Fourier variables. In MCI's chiral picture, this corresponds to the
+maximum complementarity (\(\theta_{\text{rel}} = \pi/2\)) between the
+temporal and spatial clocks --- the geometric expression of the same
+harmonic-analytic content.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{14. Complete Dictionary}\label{complete-dictionary}
+
+\$\(\begin{array}{lll}
 \textbf{Time-phase model} & \textbf{Standard physics} & \textbf{Geometric (Twistor)} \\
-\midrule
-Temporal clock $\psi_L$ & Left Weyl spinor & $\omega^A$ \\
-Spatial clock $\psi_R$ & Right Weyl spinor & $\pi_{A'}$ \\
-L-R coupling $= m$ & Dirac mass term & Non-null: $Z\cdot\bar Z\neq 0$ \\
-$\theta_{\text{rel}}=90^\circ$ & Massless particle & Null twistor \\
-Higgs synchronizer & Yukawa coupling & Twistor cohomology \\
-Gravity $=\nabla^2\varphi$ & Newtonian potential & Twistor space curvature \\
-Penrose collapse & Wavefunction collapse & $\delta\varphi=\pi$ \\
-Temperature & $k_BT$ & $\sigma_\varphi^2 = k_BT/\hbar\omega$ \\
-Brownian motion & Stokes-Einstein & $D=K^2\sigma_\varphi^2\tau/2m^2$ \\
-Zero-point field & $\tfrac{1}{2}\hbar\omega$ per mode & $\sigma_\varphi(0)=1/\sqrt{2}$ \\
-Antiparticle & $e^{+iEt/\hbar}$ & Reversed clock \\
-Matter asymmetry & Baryogenesis & $\eta\approx\varepsilon\sin^2\delta_{\text{CP}}$ \\
-Born rule $P=|\psi|^2$ & Postulated & Sync probability $=|R|^2$ \\
-Uncertainty principle & $\Delta x\,\Delta p\geq\hbar/2$ & Clock orthogonality: $\delta\varphi_L\,\delta\varphi_R\geq\tfrac{1}{2}$ \\
-Measurement & Wavefunction collapse & Kuramoto re-sync to bulk \\
-Entanglement & Non-separable state & Synchronized clocks: $\varphi_A=\varphi_B$ \\
-Bell's theorem & No local HV model & $\Phi_{\text{bulk}}$ shared $\Rightarrow$ factorization fails \\
-Quantum-classical & Decoherence & $k_BT\tau/m \gg \hbar/2m$ \\
-Nelson stochastic QM & $\nu=\hbar/2m$ & Zero-point field diffusion \\
-\bottomrule
-\end{tabular}
-\end{center}
+\hline
+\text{Temporal clock } \psi_L\,^{*} & \text{Left Weyl spinor} & \omega^A \\
+\text{Spatial clock } \psi_R\,^{*} & \text{Right Weyl spinor} & \pi_{A'} \\
+\text{L-R coupling} = m & \text{Dirac mass term} & \text{Non-null: } Z\cdot\bar{Z} \neq 0 \\
+\theta_{\text{rel}} = 90° & \text{Massless particle} & \text{Null twistor} \\
+\text{Higgs synchronizer} & \text{Yukawa coupling} & \text{Twistor cohomology} \\
+\text{Gravity} = \nabla^2\varphi_{\text{clock}} & \text{Newtonian potential} & \text{Twistor space curvature} \\
+\text{Penrose collapse} & \text{Wavefunction collapse} & \delta\varphi = \pi \\
+\text{Temperature} & k_BT & \sigma_\varphi^2 = k_BT/\hbar\omega \\
+\text{Zero-point field} & \tfrac{1}{2}\hbar\omega\text{ per mode} & \sigma_\varphi(0) = 1/\sqrt{2} \\
+\text{Antiparticle} & e^{+iEt/\hbar} & \text{Reversed clock} \\
+\text{Matter asymmetry} & \text{Baryogenesis} & \eta \approx \varepsilon\sin^2\delta_{\text{CP}} \\
+\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background} \\
+\text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Fourier bandwidth theorem on real }\psi\text{; chiral phases }\delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
+\text{Measurement} & \text{Wavefunction collapse} & \text{Kuramoto re-sync to bulk} \\
+\text{Entanglement} & \text{Non-separable state} & \text{Synchronized clocks at creation: } \varphi_A = \varphi_B \\
+\text{Bell's theorem} & \text{No local HV model} & \Phi_{\text{bulk}} \text{ shared} \Rightarrow \text{factorization fails} \\
+\text{Quantum-classical} & \text{Decoherence} & k_BT\tau/m \gg \hbar/2m \\
+\text{Nelson stochastic QM} & \nu = \hbar/2m & \text{Zero-point field diffusion} \\
+\text{Zitterbewegung} & \omega = 2mc^2/\hbar & \text{L-R clock beat frequency} \\
+\text{Spin-statistics sign} & \text{Pauli antisymmetry} & \chi \to -\chi \text{ under } 2\pi \text{ rotation (SU(2) double cover)} \\
+\text{Microcausality} & [\psi(x),\psi(y)]_\pm = 0,\ (x-y)^2<0 & \text{Sync manifold respects the light cone} \\
+\end{array}\)
 
-\vspace{2em}
-\hrule
-\vspace{1em}
-\small\textit{%
-Generated from conversations between a radiologist and Claude~(Anthropic).
-Mathematical framework developed by AI\@; physical intuitions by the author.
-Inspirations: de~Broglie (pilot wave), Bohm (holographic order),
-Penrose (twistors, OR, CCC), Kuramoto (phase synchronization), Nelson (stochastic QM).%
+\emph{* Identification is exact in the Weyl basis. In the Dirac/standard
+basis the temporal-phase content is a θ\_rel-dependent combination of
+upper and lower blocks; see §0.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{15. Zitterbewegung as Clock Beat
+Frequency}\label{zitterbewegung-as-clock-beat-frequency}
+
+Zitterbewegung --- the rapid trembling motion of a free Dirac particle
+--- is the beat note between the temporal and spatial phase clocks.
+
+The temporal clock oscillates at \(\omega_t = E/\hbar\); the spatial
+clock at \(\omega_s = p^2/(m\gamma\hbar)\). Their beat frequency in the
+non-relativistic limit:
+
+\(\boxed{\omega_{\text{Zitter}} \approx \frac{2mc^2}{\hbar}}\)
+
+This is the known Zitterbewegung frequency, here derived as the beat
+note between two coupled oscillators rather than as interference between
+positive- and negative-frequency Dirac solutions.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Mass regime
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(K = m\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Clock behavior
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Zitterbewegung
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Massless (\(m = 0\)) & \(0\) & Permanently decoupled,
+\(\theta_{\text{rel}} = 90°\) & None --- consistent with photons \\
+Light particle (small \(m\)) & Small & Loose synchronization & Large
+amplitude \\
+Heavy particle (large \(m\)) & Large & Fast, tight lock & Small
+amplitude \\
+\end{longtable}
 }
+
+The Zitterbewegung frequency is the Compton frequency
+\(\omega_C = mc^2/\hbar\) --- the same rate that sets the Nyquist
+spatial bandwidth limit in Section 13 and the synchronization timescale
+\(\tau_{\text{sync}} = 1/K = \hbar/mc^2\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{16. Spin-Statistics from the Chiral
+Pair}\label{spin-statistics-from-the-chiral-pair}
+
+The Madelung-style polar decomposition of each Weyl spinor splits the
+wave function into three layers:
+
+\[\boxed{\psi_{L,R} = \rho_{L,R}^{1/2}\, e^{i\phi_{L,R}}\, \chi_{L,R}}\]
+
+with \(\rho_{L,R} \geq 0\) a real amplitude density, \(\phi_{L,R}\) a
+real phase mod \(2\pi\) (the Kuramoto clock variable), and
+\(\chi_{L,R}\) a unit two-spinor frame in the SU(2) representation. Of
+the three, only \(\chi_{L,R}\) lives in a representation where a sign
+can appear under \(2\pi\) rotation.
+
+\subsubsection{Rotation operator}\label{rotation-operator}
+
+For the Dirac 4-spinor in the standard basis with
+\(\Sigma = \mathrm{diag}(\boldsymbol{\sigma},\boldsymbol{\sigma})\):
+
+\[U(\theta,\hat{n}) = \exp\!\left(-i\,\theta\,\boldsymbol{\Sigma}\cdot\hat{n}/2\right), \qquad U(2\pi,\hat{n}) = -\mathbb{1}_{4\times 4}\]
+
+\subsubsection{\texorpdfstring{Sign under \(2\pi\) rotation by
+representation}{Sign under 2\textbackslash pi rotation by representation}}\label{sign-under-2pi-rotation-by-representation}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Object
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Representation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\langle\psi|U(2\pi)|\psi\rangle\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Scalar & trivial & \(+1\) \\
+Vector (spin 1) & SO(3), integer & \(+1\) \\
+Weyl 2-spinor (single chirality) & SU(2), spin-½ & \(-1\) \\
+Dirac 4-spinor (chiral pair) &
+\((\tfrac{1}{2},0)\oplus(0,\tfrac{1}{2})\) & \(-1\) \\
+\end{longtable}
+}
+
+By the Feynman-Finkelstein argument, exchange of two identical particles
+in 3+1D is continuously homotopic to a \(2\pi\) rotation of one of them,
+so the sign of the rotation overlap is the sign of the exchange
+amplitude. The chiral pair the framework already commits to (for
+\(K=m\)) is precisely the spin-½ representation that forces fermion
+antisymmetry. The Kuramoto ODE for \((\phi_L,\phi_R)\) acts on
+real-valued phases and is exchange-symmetric --- the fermion sign is in
+\(\chi_{L,R}\), not in \(\phi_{L,R}\) or \(\rho_{L,R}\).
+
+\subsubsection{Microcausality}\label{microcausality}
+
+For two field events at spacelike separation:
+
+\[\boxed{[\psi(x),\psi(y)]_\pm = 0 \quad \text{for}\quad (x-y)^2 < 0}\]
+
+(commutator for bosons, anticommutator for fermions). MCI reading: no
+chain of Kuramoto sync events has connected the clocks at \(x\) and
+\(y\); their structures are independent in the synchronization manifold.
+The choice of sign in the (anti)commutator is forced by the same SU(2)
+double-cover fact above --- it is one structural fact, not two.
+
+See Appendix D of the main paper and \texttt{spin\_statistics.py} for
+numerical verification (six tests, including a momentum scan over six
+decades that confirms the sign is unaffected by the relativistic
+large/small mixing of Appendix A).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{Generated from conversations between a radiologist and Claude
+(Anthropic). Mathematical framework developed by AI; physical intuitions
+by the author.}
 
 \end{document}

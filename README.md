@@ -33,10 +33,14 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 
 | File | Description |
 |---|---|
-| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | The full paper with all derivations and discussion |
+| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | The full paper with all derivations and discussion (canonical source) |
+| [paper.tex](paper.tex) | LaTeX source for the full paper (regenerated from PAPER_UNIFIED.md) |
+| [paper.pdf](paper.pdf) | Compiled LaTeX PDF of the full paper |
+| [ManyClocks.pdf](ManyClocks.pdf) | Pandoc-rendered PDF of PAPER_UNIFIED.md (alternative format) |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
-| [equations.tex](equations.tex) | LaTeX source for the equation reference |
+| [equations.tex](equations.tex) | LaTeX source for the equation reference (regenerated from EQUATIONS.md) |
 | [equations.pdf](equations.pdf) | Compiled PDF of the equation reference |
+| [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script for ManyClocks.pdf and equations.pdf |
 
 ## Numerical Verification Scripts
 
@@ -55,9 +59,12 @@ Each Python script verifies specific claims made in the paper. They can be run i
 | `everett_thermal.py` | Single-world thermalization of residual wavefunction amplitude |
 | `bell_energy_test.py` | CHSH Bell test at different photon energies under Kuramoto model |
 | `gravitational_bell.py` | Bell correlation degradation from gravitational decoherence |
-| `bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry |
+| `bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry (statevector simulation) |
+| `bulk_sync_hardware.py` | IBM Quantum hardware execution of the bulk-sync circuits with readout mitigation, dynamical decoupling, and zero-noise extrapolation |
 | `resynchronization_calc.py` | Measurement as re-synchronization producing -cos(a-b) |
 | `sg_angular.py` | Stern-Gerlach splitting modulation with gravitational angle |
+| `spin_statistics.py` | Spin-statistics consistency check via the chiral pair structure |
+| `entangled_pair_two_stage.py` | Schematic figure for the two-stage measurement of a polarization-entangled photon pair (Paper §3.4 / §4.4) |
 
 ### Requirements
 

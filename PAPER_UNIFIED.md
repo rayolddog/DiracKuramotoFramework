@@ -1344,7 +1344,7 @@ The parallels with the present work are direct:
 | Zitterbewegung | Fundamental circulatory motion | Beat frequency between temporal and spatial clocks |
 | Spin | Angular momentum of ZBW circulation | Geometric consequence of clock orthogonality (θ_rel = 90°) |
 | Mass | Sets ZBW frequency ω_C = mc²/ℏ | Sets Kuramoto coupling constant K = m |
-| Uncertainty principle | Derived from clock geometry | Derived from clock bandwidth (Section 4.5) |
+| Uncertainty principle | Derived from clock geometry | Derived from clock bandwidth (Section 4.6) |
 
 Both frameworks begin from the same core observation: the complex phase factor
 in the Dirac wave function is not a mathematical convenience but a physical
@@ -1866,7 +1866,7 @@ presented.
   role of gravity/mass in Kuramoto oscillator synchronization
 - The observation that the Heisenberg uncertainty principle has a natural
   interpretation through the time-space spinor structure of Weyl spinors
-  (Section 4.5)
+  (Section 4.6)
 - The proposal that the wave function represents real energy in the QFT of
   electrons, enabling a single-world alternative to Everett's Many Worlds
   interpretation that preserves energy conservation (Section 3.8)
