@@ -428,7 +428,120 @@ asymmetry between particle and detector makes the measurement outcome definite,
 not because of a postulated projection, but because of the dynamical inevitability
 of a small oscillator locking to a massive one.
 
-### 3.4 Gravitational Coherence of the Bulk
+### 3.4 The Two-Stage Process: Pair-Sync and Bulk Relaxation
+
+Sections 3.1–3.3 treated measurement as a single direct lock between the
+incoming particle and the detector bulk. A more faithful picture, consistent
+with the locality of fundamental interactions, separates this into two stages:
+
+- **Stage 1 (Pair-Sync).** The incoming particle phase-couples to a single
+  bulk-bound partner (e.g. a photon to an atomic electron) at the local
+  interaction vertex.
+- **Stage 2 (Bulk Relaxation).** The perturbed partner re-locks to the bulk's
+  collective phase Φ_bulk, shedding its phase mismatch as secondary radiation.
+
+**Yukawa-style identification of the pair coupling.** Equation (3) identified
+the intra-spinor sync coupling as a Higgs-mediated mass, K = y_f ⟨φ⟩ = m. The
+pair-sync coupling at an interaction vertex follows the same structure — a
+dimensionless gauge coupling times the local amplitude of the mediating field:
+
+$$\boxed{K_{\text{pair}}^{ab} = g_{\text{int}} \cdot \langle V_{\text{int}} \rangle_{\text{local}}} \qquad (3')$$
+
+where g_int is the relevant gauge coupling (e for EM, g_w for weak, etc.) and
+⟨V_int⟩_local is the gauge-field amplitude evaluated at the partner's
+worldline. For the photon–electron interaction,
+
+$$K_{\text{pair}}^{\gamma e} = e \cdot |A_\gamma|_{e} \;\sim\; \hbar\omega$$
+
+when the photon is normalized to one excitation in the electron's Compton-scale
+volume. Higher-energy photons couple more strongly to the electron's chiral
+clocks, with sync timescale τ₁ = ℏ/K_pair ~ 1/ω — the photon's own period.
+
+**Hierarchy of couplings.** The framework now carries three distinct Kuramoto
+couplings, each entering at a different stage of measurement:
+
+| Coupling | Origin | Role |
+|---|---|---|
+| K = m | Higgs–Yukawa | intra-spinor L–R sync (Section 2) |
+| K_pair = g_int ⟨V_int⟩ | gauge interaction | pair-sync at vertex (Stage 1) |
+| Γ_bulk = GM²/(ℏΔz) | gravitational + atomic | bulk re-equilibration (Stage 2) |
+
+![Two-stage measurement of an entangled photon pair](entangled_pair_two_stage.png)
+
+**Figure 1.** Schematic of the two-stage measurement of a polarization-
+entangled photon pair (not to scale). All three bulks (Source, Detector A
+bulk, Detector B bulk) contain mini-clocks locked to a universal
+time-phase Φ_bulk (~70° in the figure, with σ ≈ 7° jitter), reflecting
+environmental thermalization across matter sharing a common gravitational
+potential. The entangled photons γ_A, γ_B carry matched chiral-clock
+phases at emission but with K = 0 (dotted L–R link) and propagate freely
+between source and detector. Each polarizer (black aperture with
+double-headed transmission-axis arrow) defines an independently-set basis
+(a, b) on the polarization Hilbert space — a separate degree of freedom
+from Φ_bulk. At each detector, Stage 1 (solid box) is the polarization
+projection onto the polarizer's transmitted-channel eigenstate via
+pair-sync K_pair^{γe} to a bound electron; Stage 2 (dashed box)
+dissipates the projected state into the bulk's Φ_bulk via Γ_bulk,
+releasing secondary radiation. The cos²(θ/2) Bell visibility is set by
+the polarizer-axis difference θ = a − b (standard QED), not by Φ_bulk;
+the framework provides the physical mechanism for the projection, not the
+statistics.
+
+**Stage 1 as polarization projection.** The cos²(θ/2) Bell visibility for
+photons is set by the polarizer-axis difference θ = a − b acting on the
+photon's polarization Hilbert space — standard QED, not a framework
+prediction (see §5.2). The framework's contribution at Stage 1 is the
+*physical mechanism* of projection: the photon couples to a bulk-bound
+electron via K_pair^{γe}, and the polarizer's macroscopic mechanical
+orientation determines which transmitted-channel eigenstate the photon ends
+up in. Φ_bulk, the bulk's collective time-phase, is a separate quantity —
+approximately universal across the source and both detectors when they
+share a similar gravitational environment, set by environmental
+thermalization rather than by the polarizer geometry. The basis lives in
+the polarizer's mechanical configuration; the time-phase lives in Φ_bulk.
+Stage 1 connects the photon to the polarizer's chosen basis; Stage 2
+dissipates the resulting state's energy and phase into Φ_bulk.
+
+**Why Stage 2 is automatic.** After the photon perturbs the electron, φ_e is
+offset from Φ_bulk by some Δφ_e. The mass-asymmetry argument of Section 3.3
+applies directly: the relaxation rate scales as Γ_bulk · (M_bulk/m_e),
+overwhelmingly fast for any macroscopic bulk. The energy released during this
+relaxation appears as secondary radiation, partitioned by the size of the
+mismatch ℏ φ̇_e Δφ_e:
+
+- below optical scale: virtual photon (Coulomb recoil) or phonon
+- optical to 2m_e c²: real photon (fluorescence, bremsstrahlung)
+- ≥ 2m_e c²: $e^+ e^-$ pair
+
+**Gravitational dependence of the two stages.** Because the Bell correlation
+is set by the polarizer-axis difference (standard QED) and polarizer geometry
+is gravitationally invariant at leading order, the visibility cos²(θ/2) is
+itself gravitationally invariant — consistent with the agreement between
+Earth-bound and space-based Bell tests. Gravity enters only at Stage 2,
+through Γ_bulk, with two subleading consequences. First, two detectors at
+gravitational potentials Φ_A ≠ Φ_B have Stage-2 relaxation times that differ by
+ΔΦ/c², producing a correlated timing offset between detection events that
+scales with the altitude split. Second, if the gravitational potential
+difference along the photon paths becomes large enough that the local bulk
+phases drift relative to each other on the Stage-1 timescale τ₁ ~ 1/ω, a
+visibility floor appears at order ΔΦ/c² per optical period — currently far
+below experimental sensitivity but a clean target for satellite-to-ground
+configurations. This locates the Penrose–Diósi mechanism unambiguously at
+Stage 2: gravitational collapse acts on bulk relaxation, never on the pair-sync
+that builds cos²(θ/2).
+
+**What this section does not yet pin down.**
+
+1. The precise normalization of ⟨V_int⟩_local (single-photon plane-wave vs.
+   Compton-volume coherent state).
+2. Whether the Stage 1 / Stage 2 timing offset (τ₁ ~ 1/ω vs.
+   τ₂ ~ ℏ/E_binding) is empirically distinguishable from a single-event
+   detection model.
+3. Extension of K_pair = g_int ⟨V_int⟩ to weak and gluon-mediated pair
+   interactions, where confinement and short-range structure complicate the
+   local-amplitude reading.
+
+### 3.5 Gravitational Coherence of the Bulk
 
 What maintains the coherence of the detector bulk itself? We propose that gravity
 provides this role. The gravitational interaction between the ~10²⁶ atoms in a
@@ -455,7 +568,11 @@ m_atom = M/N. The gravitational potential energy between any pair (i, j) at
 separation r_{ij} is U_pair = G·m_atom²/r_{ij}, which by the framework's
 general K = E/ℏ identification yields a pairwise Kuramoto rate
 
-$$K_{\text{pair}} \sim \frac{G\, m_{\text{atom}}^2}{\hbar\, r_{ij}}$$
+$$K_{aa} \sim \frac{G\, m_{\text{atom}}^2}{\hbar\, r_{ij}}$$
+
+(Distinct from the vertex pair-sync $K_{\text{pair}}^{ab}$ of §3.4: $K_{aa}$ is
+the per-pair gravitational rate between two bulk atoms, summed below to give
+the bulk's collective coherence rate.)
 
 The bulk contains N(N − 1)/2 ≈ N²/2 such pairs. Approximating all pair
 separations by a characteristic internal scale Δz, the aggregate gravitational
@@ -468,7 +585,7 @@ Dropping the order-unity factor of ½ to obtain the characteristic rate:
 $$\boxed{\Gamma_{\text{grav}} \sim \frac{G M^2}{\hbar\, \Delta z}} \qquad (\text{characteristic, pair-counted})$$
 
 The M² scaling is therefore not a numerological coincidence but a consequence
-of pair counting in a many-body sync: each pair contributes ~K_pair, there
+of pair counting in a many-body sync: each pair contributes ~K_aa, there
 are ~N² pairs, and the atomic mass m_atom = M/N enters quadratically per pair,
 so the total aggregate rate scales as N² · (M/N)² = M².
 
@@ -478,7 +595,7 @@ effectively for macroscopic masses. The gravitational synchronization coupling
 grows as M², ensuring that macroscopic objects are locked into collective phase
 coherence far more strongly than microscopic particles.
 
-The relation to Penrose's objective-reduction rate (Section 3.5) is one of
+The relation to Penrose's objective-reduction rate (Section 3.6) is one of
 counting: Penrose's E_G = Gm²/Δx is the gravitational self-energy of a
 *single* mass configuration in superposition with itself displaced; Γ_grav
 here is the aggregate Kuramoto rate over all N²/2 atomic pairs in the
@@ -488,7 +605,7 @@ collapses, Γ_grav asks how fast the unsuperposed bulk maintains internal
 phase coherence — but both follow from the same K = E/ℏ identification
 applied to gravitational pair interactions.
 
-### 3.5 Connection to Penrose-Diósi
+### 3.6 Connection to Penrose-Diósi
 
 This picture has a natural connection to Penrose's proposal [6] that
 gravity causes quantum state reduction. Penrose argues that a superposition of
@@ -521,7 +638,7 @@ of the Dirac equation — converge on mass as the agent of classicalization is
 suggestive that both may be pointing at the same underlying physics, even if
 the full unification is not yet available.
 
-### 3.6 Geometric Picture: The Coherence Sub-Manifold
+### 3.7 Geometric Picture: The Coherence Sub-Manifold
 
 The synchronization, interference, and measurement processes described above
 admit a unified geometric reading. Each Kuramoto phase oscillator carries a
@@ -568,7 +685,7 @@ detector). What standard accounts call "decoherence" is, in this picture, a
 change of which sub-manifold the joint state lives on, not a loss of coherent
 structure as such.
 
-### 3.7 Speculative Outlook: Single-World Energy Accounting
+### 3.8 Speculative Outlook: Single-World Energy Accounting
 
 We note briefly a speculative consequence. If measurement is resonant
 synchronization, then the wavefunction amplitude that does not couple to the
@@ -579,7 +696,7 @@ within a single world without requiring Everettian branching. This proposal
 lacks a first-principles derivation and is offered only as a direction for future
 investigation.
 
-### 3.8 What This Section Does Not Claim
+### 3.9 What This Section Does Not Claim
 
 The re-synchronization picture is interpretive. It does not:
 
@@ -902,9 +1019,13 @@ detectors. Tests are in reach using cavity-filtered narrow-linewidth photons
 at altitude differences of a few km (terrestrial) or with Earth–satellite
 baselines.
 
+The discriminating measurement is the joint linewidth × altitude scan with
+narrow-linewidth photons; photon energy is one knob among three (along with
+linewidth Δν and altitude split ΔΦ_grav), not a discriminator on its own.
+
 ### 5.5 Photons and Penrose Objective Reduction
 
-The gravitational synchronization rate Γ_grav = GM²/(ℏΔz) (Section 3.4)
+The gravitational synchronization rate Γ_grav = GM²/(ℏΔz) (Section 3.5)
 vanishes identically for a massless particle. Equivalently, the Penrose
 objective-reduction timescale τ_OR = πℏ/E_G with E_G = Gm²/Δx becomes
 infinite for m = 0. **The gravitational classicalization channel that drives
@@ -1027,6 +1148,18 @@ decoherence rates for entangled fermion pairs should scale linearly with mass.
 Comparing entanglement decay times for kaon pairs (m_K = 494 MeV) versus B-meson
 pairs (m_B = 5,280 MeV) should show τ_B/τ_K ~ m_K/m_B ≈ 0.094. Existing
 collider data on neutral kaon and B-meson decoherence could be analyzed.
+
+**P5 — Gravitationally-weighted secondary-radiation rate.** The Stage 2 bulk
+relaxation (§3.4) emits secondary radiation (virtual photon, real photon, or
+$e^+ e^-$ pair, depending on the energy mismatch) at a rate set by Γ_bulk. Because
+Γ_bulk depends on the local mass-energy distribution and is therefore subject
+to gravitational redshift, the secondary-emission rate during a detection event
+scales as 1 + Φ_grav/c² at leading order. Two detectors at different
+gravitational potentials should register a fractional rate difference of order
+ΔΦ/c² — roughly 10⁻¹³ for a 1000 km altitude split. This is below current
+sensitivity but a clean signature unique to the two-stage framework: neither
+standard decoherence theory nor Penrose–Diósi predicts gravity-dependent timing
+of detection-induced secondary emission.
 
 ### 6.3 Honest Assessment
 
@@ -1170,7 +1303,7 @@ present paper.
 
 2. **Measurement independence is preserved.** The experimenter's choice of
    detector angle is not constrained by the framework. The gravitational bulk
-   phase Φ_bulk maintains detector coherence (Section 3.4) but does not
+   phase Φ_bulk maintains detector coherence (Section 3.5) but does not
    determine or correlate with measurement settings.
 
 3. **The role of gravity is different.** In superdeterminism, correlations
@@ -1320,13 +1453,13 @@ known conflations:
 | `bulk_sync_asymmetry.py` | **Quantitative prediction** | Single-particle vs bulk phase-rotation scaling (√N vs N) | Tests the measurement asymmetry of §3 |
 | `bulk_sync_hardware.py` | **Consistency check (hardware)** | IBM Quantum execution of the bulk-sync circuits with readout mitigation, DD, and ZNE | Demonstrates digital-hardware reproduction of the simulation (GHZ slope ≈ 1 confirmed; product slope below noise floor at K=0.06); not framework-distinctive |
 | `dirac_extension.py` | **Illustrative** | Three-term Bell decomposition E_LL + E_SS + E_LS | Visualizes the weight redistribution of Appendix A; the sum itself is an identity |
-| `gravity_twistor.py` | **Illustrative** | Poisson ↔ Kuramoto field-equation correspondence; twistor connection | Visualizes §3.4 and EQUATIONS.md §8 |
+| `gravity_twistor.py` | **Illustrative** | Poisson ↔ Kuramoto field-equation correspondence; twistor connection | Visualizes §3.5 and EQUATIONS.md §8 |
 | `bell_phase.py` | **Clarifying** | Establishes Malus-law toy is sub-classical (CHSH ≤ √2), distinct from Dirac large block | Disarms the §A.5 conflation |
 | `local_causality.py` | **Clarifying** | Identifies where Bell's factorization actually breaks in MCI | Disarms the superdeterminism misreading (§7.6) |
 | `kuramoto_sync.py` | **Pedagogical** | Two-oscillator synchronization dynamics under K > 0 | Shows what K = m sync looks like in time |
 | `higgs_clock.py` | **Pedagogical** | K = m identification and antiparticle reverse-clock dynamics | Illustrates EQUATIONS.md §6 |
 | `resynchronization_calc.py` | **Negative result** | Tests whether re-sync alone reproduces −cos(a−b) | Confirms the Dirac spinor structure is necessary; closes a misreading |
-| `everett_thermal.py` | **Speculative** | Implements single-world energy accounting | Illustrates §3.7 (paper marks this speculative) |
+| `everett_thermal.py` | **Speculative** | Implements single-world energy accounting | Illustrates §3.8 (paper marks this speculative) |
 | `vacuum_temperature.py` | **Mixed** | ZPF / temperature / orbitals (claims 1–3); Brownian retracted (claim 4) | Three illustrative claims with one disclosed retraction (see EQUATIONS.md §10) |
 
 Evidential weight rests on `spin_statistics.py` (a non-trivial check that
@@ -1736,7 +1869,7 @@ presented.
   (Section 4.5)
 - The proposal that the wave function represents real energy in the QFT of
   electrons, enabling a single-world alternative to Everett's Many Worlds
-  interpretation that preserves energy conservation (Section 3.7)
+  interpretation that preserves energy conservation (Section 3.8)
 - Suggestions for possible experimental tests involving detectors at different
   gravitational potentials
 

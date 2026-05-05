@@ -150,6 +150,40 @@ with $y_f$ the Yukawa coupling and $v = 246\,\text{GeV}$ the Higgs vacuum expect
 - Large $K$ (top quark, $y_f \approx 1$): fast sync, tight lock
 - Small $K$ (electron, $y_f \approx 3 \times 10^{-6}$): slow sync, loose lock
 
+### Pair-sync at gauge vertices
+
+The Yukawa-style structure extends from intra-spinor (Higgs-mediated, $K = m$)
+to inter-spinor (gauge-mediated): a dimensionless gauge coupling times the
+local amplitude of the mediating field gives the pair-sync rate at an
+interaction vertex.
+
+$$\boxed{K_{\text{pair}}^{ab} = g_{\text{int}} \cdot \langle V_{\text{int}} \rangle_{\text{local}}}$$
+
+with $g_{\text{int}}$ the relevant gauge coupling ($e$ for EM, $g_w$ for
+weak) and $\langle V_{\text{int}} \rangle_{\text{local}}$ the gauge-field
+amplitude at the partner's worldline. For photon–electron:
+
+$$K_{\text{pair}}^{\gamma e} = e \cdot |A_\gamma|_e \;\sim\; \hbar\omega$$
+
+(sync timescale $\tau_1 = \hbar/K_{\text{pair}} \sim 1/\omega$ — the photon's
+own period).
+
+**Two-stage measurement Lagrangian.** Combining vertex pair-sync (Stage 1)
+with bulk relaxation (Stage 2):
+
+$$\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stage 2: }e\leftrightarrow\text{lattice}}$$
+
+The framework now carries three Kuramoto couplings, each at a different scale:
+
+| Coupling | Origin | Role |
+|---|---|---|
+| $K = m$ | Higgs–Yukawa | intra-spinor L–R sync |
+| $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | gauge interaction | pair-sync at vertex (Stage 1) |
+| $\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)$ | gravity + atomic | bulk re-equilibration (Stage 2) |
+
+See Paper §3.4 (markdown) / §4.4 (LaTeX) for the full two-stage measurement
+process and its Bell / gravitational consequences.
+
 ### Antiparticles as reversed clocks
 
 | | Particle $u(p)$ | Antiparticle $v(p)$ |
@@ -195,13 +229,13 @@ $$a_{\text{clock}} = \frac{d\omega}{dr} \cdot \frac{c^2}{\omega_0} = \frac{GM}{r
 
 ### Gravitational bulk coupling rate (pair-counted)
 
-For a bulk of mass $M$ composed of $N$ atoms (each of mass $m_{\text{atom}} = M/N$), each pair contributes a Kuramoto rate $K_{\text{pair}} \sim G\,m_{\text{atom}}^2/(\hbar\,r_{ij})$ via the framework's $K = E/\hbar$ identification. Summing over the $N(N-1)/2 \approx N^2/2$ atomic pairs at characteristic internal separation $\Delta z$:
+For a bulk of mass $M$ composed of $N$ atoms (each of mass $m_{\text{atom}} = M/N$), each pair contributes a Kuramoto rate $K_{aa} \sim G\,m_{\text{atom}}^2/(\hbar\,r_{ij})$ via the framework's $K = E/\hbar$ identification (distinct from the vertex pair-sync $K_{\text{pair}}^{ab}$ of §6: $K_{aa}$ is the gravitational rate between two bulk atoms). Summing over the $N(N-1)/2 \approx N^2/2$ atomic pairs at characteristic internal separation $\Delta z$:
 
 $$\Gamma_{\text{grav}} \sim \frac{N^2}{2}\cdot \frac{G\,(M/N)^2}{\hbar\,\Delta z} \;\sim\; \boxed{\frac{G M^2}{\hbar\,\Delta z}}$$
 
-The $M^2$ scaling is a consequence of pair counting: each pair contributes $\sim K_{\text{pair}}$, there are $\sim N^2$ pairs, and $m_{\text{atom}} = M/N$ enters quadratically per pair, giving total $\sim N^2 (M/N)^2 = M^2$.
+The $M^2$ scaling is a consequence of pair counting: each pair contributes $\sim K_{aa}$, there are $\sim N^2$ pairs, and $m_{\text{atom}} = M/N$ enters quadratically per pair, giving total $\sim N^2 (M/N)^2 = M^2$.
 
-For macroscopic objects ($M \sim 1\,\text{kg}$, $\Delta z \sim 1\,\text{m}$), $\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}$ — an extremely fast coupling rate that explains why macroscopic detectors maintain classical coherence. The $M^2$ scaling ensures bulk objects are locked far more strongly than microscopic particles. (See Paper §3.4 for the full derivation; Paper §5.5 for why $\Gamma_{\text{grav}} = 0$ for photons.)
+For macroscopic objects ($M \sim 1\,\text{kg}$, $\Delta z \sim 1\,\text{m}$), $\Gamma_{\text{grav}} \sim 6\times10^{23}\,\text{rad/s}$ — an extremely fast coupling rate that explains why macroscopic detectors maintain classical coherence. The $M^2$ scaling ensures bulk objects are locked far more strongly than microscopic particles. (See Paper §3.5 for the full derivation; Paper §5.5 for why $\Gamma_{\text{grav}} = 0$ for photons.)
 
 ### Penrose objective reduction as gravitational clock decoherence
 

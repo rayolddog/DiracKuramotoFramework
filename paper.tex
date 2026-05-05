@@ -400,6 +400,150 @@ asymmetry between particle and detector makes the measurement outcome definite,
 not because of a postulated projection, but because of the dynamical inevitability
 of a small oscillator locking to a massive one.
 
+\subsection{The Two-Stage Process: Pair-Sync and Bulk Relaxation}
+
+Sections~4.1--4.3 treated measurement as a single direct lock between the
+incoming particle and the detector bulk. A more faithful picture, consistent
+with the locality of fundamental interactions, separates this into two stages:
+
+\begin{itemize}
+\item \textbf{Stage 1 (Pair-Sync).} The incoming particle phase-couples to a
+  single bulk-bound partner (e.g.\ a photon to an atomic electron) at the
+  local interaction vertex.
+\item \textbf{Stage 2 (Bulk Relaxation).} The perturbed partner re-locks to
+  the bulk's collective phase $\Phi_{\mathrm{bulk}}$, shedding its phase
+  mismatch as secondary radiation.
+\end{itemize}
+
+\paragraph{Yukawa-style identification of the pair coupling.} Equation~(3)
+identified the intra-spinor sync coupling as a Higgs-mediated mass,
+$K = y_f \langle\phi\rangle = m$. The pair-sync coupling at an interaction
+vertex follows the same structure---a dimensionless gauge coupling times the
+local amplitude of the mediating field:
+\begin{equation}
+\boxed{K_{\mathrm{pair}}^{ab} = g_{\mathrm{int}} \cdot
+       \langle V_{\mathrm{int}} \rangle_{\mathrm{local}}}\tag{3$'$}
+\end{equation}
+where $g_{\mathrm{int}}$ is the relevant gauge coupling ($e$ for EM, $g_w$
+for weak, etc.) and $\langle V_{\mathrm{int}}\rangle_{\mathrm{local}}$ is
+the gauge-field amplitude evaluated at the partner's worldline. For the
+photon--electron interaction,
+\begin{equation}
+K_{\mathrm{pair}}^{\gamma e} = e \cdot |A_\gamma|_{e} \;\sim\; \hbar\omega
+\end{equation}
+when the photon is normalized to one excitation in the electron's
+Compton-scale volume. Higher-energy photons couple more strongly to the
+electron's chiral clocks, with sync timescale
+$\tau_1 = \hbar/K_{\mathrm{pair}} \sim 1/\omega$---the photon's own period.
+
+\paragraph{Hierarchy of couplings.} The framework now carries three distinct
+Kuramoto couplings, each entering at a different stage of measurement:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Coupling} & \textbf{Origin} & \textbf{Role} \\
+\midrule
+$K = m$ & Higgs--Yukawa & intra-spinor L--R sync (\S 2) \\
+$K_{\mathrm{pair}} = g_{\mathrm{int}}\langle V_{\mathrm{int}}\rangle$
+  & gauge interaction & pair-sync at vertex (Stage 1) \\
+$\Gamma_{\mathrm{bulk}} = GM^2/(\hbar\Delta z)$
+  & gravitational + atomic & bulk re-equilibration (Stage 2) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{entangled_pair_two_stage.png}
+\caption{Schematic of the two-stage measurement of a polarization-entangled
+photon pair (not to scale). All three bulks (Source, Detector~A bulk,
+Detector~B bulk) contain mini-clocks locked to a universal time-phase
+$\Phi_{\mathrm{bulk}}$ ($\sim 70^\circ$ in the figure, with
+$\sigma \approx 7^\circ$ jitter), reflecting environmental thermalization
+across matter sharing a common gravitational potential. The entangled
+photons $\gamma_A, \gamma_B$ carry matched chiral-clock phases at emission
+but with $K = 0$ (dotted L--R link) and propagate freely between source
+and detector. Each polarizer (black aperture with double-headed
+transmission-axis arrow) defines an independently-set basis ($a$, $b$) on
+the polarization Hilbert space---a separate degree of freedom from
+$\Phi_{\mathrm{bulk}}$. At each detector, Stage~1 (solid box) is the
+polarization projection onto the polarizer's transmitted-channel
+eigenstate via pair-sync $K_{\mathrm{pair}}^{\gamma e}$ to a bound
+electron; Stage~2 (dashed box) dissipates the projected state into the
+bulk's $\Phi_{\mathrm{bulk}}$ via $\Gamma_{\mathrm{bulk}}$, releasing
+secondary radiation. The $\cos^2(\theta/2)$ Bell visibility is set by the
+polarizer-axis difference $\theta = a - b$ (standard QED), not by
+$\Phi_{\mathrm{bulk}}$; the framework provides the physical mechanism for
+the projection, not the statistics.}
+\label{fig:two-stage}
+\end{figure}
+
+\paragraph{Stage 1 as polarization projection.} The $\cos^2(\theta/2)$
+Bell visibility for photons is set by the polarizer-axis difference
+$\theta = a - b$ acting on the photon's polarization Hilbert space---this
+is standard QED, not a framework prediction (see \S 9.2). The framework's
+contribution at Stage~1 is the \emph{physical mechanism} of projection:
+the photon couples to a bulk-bound electron via $K_{\mathrm{pair}}^{\gamma e}$,
+and the polarizer's macroscopic mechanical orientation determines which
+transmitted-channel eigenstate the photon ends up in.
+$\Phi_{\mathrm{bulk}}$, the bulk's collective time-phase, is a separate
+quantity---approximately universal across the source and both detectors
+when they share a similar gravitational environment, set by environmental
+thermalization rather than by the polarizer geometry. The basis lives in
+the polarizer's mechanical configuration; the time-phase lives in
+$\Phi_{\mathrm{bulk}}$. Stage~1 connects the photon to the polarizer's
+chosen basis; Stage~2 dissipates the resulting state's energy and phase
+into $\Phi_{\mathrm{bulk}}$.
+
+\paragraph{Why Stage 2 is automatic.} After the photon perturbs the
+electron, $\phi_e$ is offset from $\Phi_{\mathrm{bulk}}$ by some
+$\Delta\phi_e$. The mass-asymmetry argument of \S 4.3 applies directly:
+the relaxation rate scales as
+$\Gamma_{\mathrm{bulk}}\,(M_{\mathrm{bulk}}/m_e)$, overwhelmingly fast for
+any macroscopic bulk. The energy released during this relaxation appears
+as secondary radiation, partitioned by the size of the mismatch
+$\hbar\dot\phi_e\,\Delta\phi_e$:
+\begin{itemize}
+\item below optical scale: virtual photon (Coulomb recoil) or phonon;
+\item optical to $2m_e c^2$: real photon (fluorescence, bremsstrahlung);
+\item $\geq 2m_e c^2$: $e^+e^-$ pair.
+\end{itemize}
+
+\paragraph{Gravitational dependence of the two stages.} Because the Bell
+correlation is set by the polarizer-axis difference (standard QED) and
+polarizer geometry is gravitationally invariant at leading order, the
+visibility $\cos^2(\theta/2)$ is itself gravitationally invariant---
+consistent with the agreement between Earth-bound and space-based Bell
+tests. Gravity enters only at Stage~2, through
+$\Gamma_{\mathrm{bulk}}$, with two subleading consequences. First, two
+detectors at gravitational potentials $\Phi_A \neq \Phi_B$ have Stage-2
+relaxation times that differ by $\Delta\Phi/c^2$, producing a correlated
+timing offset between detection events that scales with the altitude split.
+Second, if the gravitational potential difference along the photon paths
+becomes large enough that the local bulk phases drift relative to each
+other on the Stage-1 timescale $\tau_1 \sim 1/\omega$, a visibility floor
+appears at order $\Delta\Phi/c^2$ per optical period---currently far below
+experimental sensitivity but a clean target for satellite-to-ground
+configurations. This locates the Penrose--Di\'osi mechanism unambiguously
+at Stage~2: gravitational collapse acts on bulk relaxation, never on the
+pair-sync that builds $\cos^2(\theta/2)$.
+
+\paragraph{What this section does not yet pin down.}
+\begin{enumerate}
+\item The precise normalization of
+  $\langle V_{\mathrm{int}}\rangle_{\mathrm{local}}$ (single-photon
+  plane-wave vs.\ Compton-volume coherent state).
+\item Whether the Stage~1/Stage~2 timing offset
+  ($\tau_1 \sim 1/\omega$ vs.\ $\tau_2 \sim \hbar/E_{\mathrm{binding}}$)
+  is empirically distinguishable from a single-event detection model.
+\item Extension of
+  $K_{\mathrm{pair}} = g_{\mathrm{int}}\langle V_{\mathrm{int}}\rangle$
+  to weak and gluon-mediated pair interactions, where confinement and
+  short-range structure complicate the local-amplitude reading.
+\end{enumerate}
+
 \subsection{Gravitational Coherence of the Bulk}
 
 What maintains the coherence of the detector bulk itself? We propose that gravity
@@ -739,28 +883,203 @@ prediction---a full calculation requires electroweak baryogenesis beyond the sco
 of this paper.
 
 %% ============================================================
-\section{The Massless Limit: An Open Question}
+\section{Extension to Photons via the Riemann--Silberstein Form}
 
-For photons ($m = 0$, $K = 0$), the mixing angle $\theta_{\mathrm{rel}} = 90^\circ$ and the Dirac equation
-decouples into independent Weyl equations. There is no Kuramoto coupling between
-the chiral sectors.
+Photons are not Dirac particles. They are spin-1 vector bosons described by
+Maxwell's equations, with no rest mass to couple chiral sectors. The
+framework's central identification $K = m$ therefore does not apply directly:
+there is no mass term to set a Kuramoto coupling between photon helicities.
+We address this by separating two questions that earlier formulations
+conflated: (i)~where do photon Bell correlations come from? and (ii)~where
+does the framework's measurement mechanism enter for photons?
 
-Yet polarization-entangled photons achieve full Bell violation ($\text{CHSH} = 2\sqrt{2}$). How?
+\subsection{The Riemann--Silberstein Form of Maxwell}
 
-Two possible answers exist within the framework:
+Maxwell's free equations can be written in a Weyl-like first-order form
+using the Riemann--Silberstein vector:
+\begin{equation}
+\mathbf{F} = \mathbf{E} + i\,\mathbf{B}, \qquad
+i\,\partial_t \mathbf{F} = c\,\nabla \times \mathbf{F}, \qquad
+\nabla \cdot \mathbf{F} = 0
+\end{equation}
+The two helicity eigenstates $\mathbf{F}_+$ and $\mathbf{F}_-$ (right- and
+left-circular polarizations) are independent---there is no mass term, and
+the structure mirrors the $m = 0$ chiral limit of the Dirac equation: two
+decoupled clocks, $\theta_{\mathrm{rel}} = \pi/2$ permanently. A Kuramoto
+coupling between $\mathbf{F}_+$ and $\mathbf{F}_-$ of a single photon is
+identically zero in vacuum.
 
-\textbf{Answer A:} For photons, the coupling $K$ is set by energy rather than rest mass:
-$K = \omega = E/\hbar$. Photons synchronize through their oscillation frequency, not rest
-mass. Since photons are always fully relativistic ($\theta_{\mathrm{rel}} = 90^\circ$), all spinor
-components contribute equally.
+\subsection{Where Photon Bell Correlations Come From}
 
-\textbf{Answer B:} The Maxwell equations for polarized light have their own two-sector
-structure (Poincar\'e sphere), and the Kuramoto coupling may be derivable from
-classical electrodynamics directly.
+The polarization Hilbert space of a photon is two-dimensional, spanned by
+any orthogonal pair (H/V, $\pm$, L/R). It is mathematically isomorphic to
+the spin-$\tfrac{1}{2}$ Hilbert space, with the Poincar\'e sphere playing
+the role of the Bloch sphere. For two polarization-entangled photons in
+the singlet state, the standard quantum correlation is
+\begin{equation}
+E_\gamma(a, b) = -\cos\!\bigl(2(a-b)\bigr)
+\end{equation}
+and the CHSH bound saturates at $2\sqrt{2}$. The factor of 2 in the angular
+dependence reflects the $\pi$-periodicity of polarizers (vs.\ $2\pi$
+-periodicity of Stern--Gerlach analyzers).
 
-\textbf{We do not resolve this question here.} The photon--Bell connection requires
-separate treatment. The core claim---that the Dirac mass term is a Kuramoto
-coupling for massive fermions---stands regardless.
+This correlation is a property of the polarization Hilbert space, not of
+any chiral coupling. It is delivered by standard QED---the same way
+standard QM with the Dirac spinor delivers the $-\cos(a-b)$ correlation
+for spin-$\tfrac{1}{2}$ pairs (Section~2). In both cases, the framework
+does not derive the Bell correlations; the underlying Hilbert-space
+structure does. The framework's contribution lies elsewhere.
+
+\subsection{The Measurement Mechanism Transfers to Photons}
+
+The framework's central interpretive claim---measurement is Kuramoto
+re-synchronization to the detector bulk (Section~4)---does not depend on
+the $K = m$ identification for its physical content. It requires only that
+the system being measured carries a phase clock that can be synchronized
+to the detector. Photons satisfy this: each polarization mode carries a
+definite phase, and at detection the photon's polarization clock locks to
+the polarizer's selected channel (transmitted vs.\ rejected).
+
+The Kuramoto coupling for the photon--detector interaction is not zero---it
+is set by the photon's interaction with the detector matter (typically
+dipole coupling $-\mathbf{d}\cdot\mathbf{E}$), not by any vacuum mass term.
+For a photon of energy $E = \hbar\omega$ coupling to a near-resonant
+detector channel, the natural Kuramoto rate scales with the photon's own
+oscillation frequency:
+\begin{equation}
+K_\gamma \sim \omega = \frac{E}{\hbar}, \qquad
+\tau_{\mathrm{sync}} \sim \frac{1}{K_\gamma} = \frac{\hbar}{E} \tag{13}
+\end{equation}
+A 2~eV optical photon synchronizes to its detector in ${\sim}0.3$~fs; a
+10~keV X-ray locks in ${\sim}10^{-19}$~s. Higher-energy photons
+synchronize faster---the Kuramoto rate is set by the photon's energy via
+its interaction with the detector, rather than by any rest mass.
+
+This is the photon analog of $K = m$ for fermions: in both cases, the
+synchronization rate to the detector is set by the energy scale that
+characterizes the system's coupling to its environment. For massive
+fermions at rest that scale is $mc^2$ (the Compton frequency); for photons
+it is $\hbar\omega$ (the photon's own frequency).
+
+\subsection{Gravitational Decoherence and the Linewidth-Dependent Bell Test}
+
+Two photon time scales must be kept distinct:
+\begin{itemize}
+\item $\tau_{\mathrm{sync}} = \hbar/E$---the time for Kuramoto re-sync to
+  the detector to complete (set by photon energy);
+\item $\tau_{\mathrm{coh}} = 1/\Delta\nu$---the photon's coherence time
+  during measurement (set by \emph{linewidth}, independent of central
+  energy).
+\end{itemize}
+
+For a given measurement event, the photon is in coherent superposition
+during the $\tau_{\mathrm{coh}}$ window. If the two detectors A and B in a
+Bell test are at different gravitational potentials, their bulk phases
+$\Phi_{\mathrm{bulk}}(A)$ and $\Phi_{\mathrm{bulk}}(B)$ accumulate a
+relative offset proportional to
+$\omega \cdot \Delta\Phi_{\mathrm{grav}}/c^2 \cdot \tau_{\mathrm{coh}}$.
+When this offset exceeds ${\sim}1$~rad, the singlet correlation degrades.
+
+This is the linewidth-dependent gravitational Bell prediction
+(\texttt{predictions.py} P6b), in self-consistent form:
+\begin{equation}
+\delta\phi_{\mathrm{grav}} = \omega \cdot \frac{\Delta\Phi_{\mathrm{grav}}}{c^2}
+\cdot \tau_{\mathrm{coh}}
+= \frac{\omega \cdot \Delta\Phi_{\mathrm{grav}}}{c^2 \cdot \Delta\nu} \tag{14}
+\end{equation}
+\begin{equation}
+\mathrm{CHSH}(\Delta\nu) = 2\sqrt{2} \cdot
+\exp\!\left(-\frac{\delta\phi_{\mathrm{grav}}^2}{2}\right) \tag{15}
+\end{equation}
+
+Standard QM/QED predicts CHSH is independent of photon linewidth at fixed
+entanglement fidelity. The framework predicts it decreases with narrowing
+linewidth in the presence of a gravitational potential difference between
+the detectors. Tests are in reach using cavity-filtered narrow-linewidth
+photons at altitude differences of a few km (terrestrial) or with
+Earth--satellite baselines.
+
+The discriminating measurement is the joint linewidth $\times$ altitude
+scan with narrow-linewidth photons; photon energy is one knob among three
+(along with linewidth $\Delta\nu$ and altitude split
+$\Delta\Phi_{\mathrm{grav}}$), not a discriminator on its own.
+
+\subsection{Photons and Penrose Objective Reduction}
+
+The gravitational synchronization rate
+$\Gamma_{\mathrm{grav}} = GM^2/(\hbar\Delta z)$ (Section~4.5) vanishes
+identically for a massless particle. Equivalently, the Penrose
+objective-reduction timescale $\tau_{\mathrm{OR}} = \pi\hbar/E_G$ with
+$E_G = Gm^2/\Delta x$ becomes infinite for $m = 0$. \textbf{The
+gravitational classicalization channel that drives massive systems toward
+definite outcomes is silent for photons.}
+
+This matches Penrose's own position. The OR proposal is designed for
+superpositions of macroscopically distinct \emph{mass} configurations
+(mirrors, mesoscopic test masses); Penrose has been explicit that single
+photons fall outside its remit because they have no rest mass to source
+the gravitational self-energy.
+
+In the framework's reading, a photon therefore has only two pathways into
+the classical domain:
+\begin{enumerate}
+\item \textbf{Measurement (active).} Kuramoto re-synchronization to a
+  quantized detector channel (\S 9.3). A single photon hitting a
+  photodetector produces a definite click; this is the only mechanism by
+  which an isolated photon classicalizes.
+\item \textbf{Coherent-state averaging (many-photon).} A macroscopically
+  populated mode (laser light, classical EM) has a positive Wigner
+  function and obeys Maxwell's equations classically. The classical limit
+  emerges through statistical superposition of many photon modes, not
+  through any internal collapse mechanism.
+\end{enumerate}
+
+A single photon in vacuum, between emission and detection, is
+\textbf{perpetually quantum}---it does not gravitationally classicalize,
+and it has no way to do so internally. This is consistent with the
+experimental fact that single-photon Bell tests preserve full coherence
+over kilometer-scale separations and Earth--satellite baselines, where any
+internal classicalization mechanism would have produced observable
+degradation.
+
+One subtlety: photons do follow null geodesics in curved spacetime
+(gravitational lensing, Shapiro delay). This is unitary classical
+evolution of the photon's trajectory, not collapse or decoherence of its
+quantum state---it bends paths without classicalizing states.
+
+The silence of the gravitational channel for photons is consistent with
+the linewidth-dependent prediction in \S 9.4, which attributes the
+gravitational effect not to the photon in flight but to the bulk-phase
+mismatch between detectors A and B at different gravitational potentials.
+The photon is the messenger; the gravitational decoherence is in the
+detectors.
+
+\subsection{What Remains Open}
+
+Two questions are not resolved by this section:
+\begin{enumerate}
+\item \textbf{A first-principles derivation of $K_\gamma$ from QED.} We
+  have asserted $K_\gamma \sim \omega$ as the natural scaling, motivated
+  by photon--detector dipole coupling. A rigorous derivation would relate
+  $K_\gamma$ to the absorption matrix element
+  $\langle e|\mathbf{d}|g\rangle$ for the specific detector channel and
+  compute the actual sync time for realistic photodetectors
+  (photomultipliers, avalanche photodiodes, superconducting nanowire
+  detectors).
+\item \textbf{The microscopic mechanism for the discrete click.}
+  Section~6 attributes discrete clicks to the threshold structure of
+  detector channels. For photons, this corresponds to the photoelectric
+  or photon-counting threshold of the detection element. The framework
+  provides a mechanism (re-sync to a quantized channel) but does not yet
+  derive the threshold from first principles.
+\end{enumerate}
+
+These are tractable extensions, not framework contradictions. The
+photon-coupling problem---flagged in earlier drafts as the framework's
+most serious open question---reduces to a pair of well-defined technical
+issues once the Bell correlations are correctly attributed to the
+polarization Hilbert space rather than to any Kuramoto coupling between
+photon helicities.
 
 %% ============================================================
 \section{Qualitative Predictions and Consistency Checks}
@@ -798,6 +1117,20 @@ decoherence rates for entangled fermion pairs should scale linearly with mass.
 Comparing entanglement decay times for kaon pairs ($m_K = 494$~MeV) versus B-meson
 pairs ($m_B = 5{,}280$~MeV) should show $\tau_B/\tau_K \sim m_K/m_B \approx 0.094$. Existing
 collider data on neutral kaon and B-meson decoherence could be analyzed.
+
+\textbf{P5---Gravitationally-weighted secondary-radiation rate.} The Stage~2
+bulk relaxation (\S 4.4) emits secondary radiation (virtual photon, real
+photon, or $e^+e^-$ pair, depending on the energy mismatch) at a rate set
+by $\Gamma_{\mathrm{bulk}}$. Because $\Gamma_{\mathrm{bulk}}$ depends on
+the local mass--energy distribution and is therefore subject to
+gravitational redshift, the secondary-emission rate during a detection
+event scales as $1 + \Phi_{\mathrm{grav}}/c^2$ at leading order. Two
+detectors at different gravitational potentials should register a
+fractional rate difference of order $\Delta\Phi/c^2$---roughly $10^{-13}$
+for a 1000~km altitude split. This is below current sensitivity but a
+clean signature unique to the two-stage framework: neither standard
+decoherence theory nor Penrose--Di\'osi predicts gravity-dependent timing
+of detection-induced secondary emission.
 
 \subsection{Honest Assessment}
 
