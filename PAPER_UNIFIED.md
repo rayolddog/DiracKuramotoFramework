@@ -1,5 +1,5 @@
-# The Many Clocks Interpretation of Quantum Mechanics
-## The Dirac Equation as a Kuramoto Phase-Synchronization System: Mass as Chiral Coupling, Measurement as Re-Synchronization
+# Many Clocks Interpretation of Quantum Mechanics
+## Mass as Chiral Coupling, Re-synchronization in the Bulk as Measurement
 
 **J. Olddog¹**
 ¹ Independent Research
@@ -16,25 +16,34 @@ bears full responsibility for all content.*
 
 ## Abstract
 
-We demonstrate that the Dirac equation, written in the chiral (Weyl) basis, has the
-mathematical structure of a Kuramoto phase-synchronization system. The left- and
-right-handed chiral sectors act as coupled oscillators, with the mass term playing
-the role of the Kuramoto coupling constant: K = m. For massless particles (K = 0)
+We demonstrate that the Dirac equation has the mathematical structure of a
+Kuramoto phase-synchronization system, made most transparent in the chiral
+(Weyl) basis where the mass term is purely off-diagonal. The left- and
+right-handed chiral sectors act as coupled oscillators, with the mass term
+playing the role of the Kuramoto coupling constant: K = m. For massless particles (K = 0)
 the chiral clocks are permanently decoupled; for massive particles (K > 0) they
 synchronize, and the synchronized state is what we identify as a particle with
 definite rest mass. The Higgs-Yukawa interaction is the mechanism that sets K:
 K = y_f · ⟨φ⟩ = m.
 
 This identification has several consequences. Quantum measurement is re-interpreted
-as Kuramoto re-synchronization: a particle initially synchronized with its entangled
-partner re-synchronizes to the macroscopic detector bulk, whose overwhelmingly
-greater Kuramoto inertia (M_detector >> m_particle) forces conformity. Decoherence
-is not merely loss of phase coherence with the partner — it is the positive process
-of gaining coherence with the bulk. The Born rule P = |ψ|² is reframed as the
-long-run frequency of energy partition: |ψ|² is the energy density of the real
-ψ field, and the apparent stochasticity of measurement outcomes arises from
-unbiased zero-point + thermal background fluctuations at the synchronization
-event, rather than from an independent probability axiom.
+as a *two-stage* Kuramoto re-synchronization process. At **Stage 1 (pair-sync)**
+the incoming particle phase-couples locally to a single bulk-bound partner at the
+interaction vertex, with coupling strength K_pair = g_int·⟨V_int⟩ set by the
+relevant gauge interaction; this is the basis-projection step and carries no
+gravitational dependence. At **Stage 2 (bulk relaxation)** the perturbed partner
+re-locks to the macroscopic detector's collective phase Φ_bulk, shedding its
+mismatch as secondary radiation; this is where gravitational potential and
+detector mass enter. Decoherence is not merely loss of phase coherence with the
+entangled partner — it is the positive process of gaining coherence with the
+bulk, mediated by the detector's overwhelmingly greater Kuramoto inertia
+(M_detector >> m_particle). The localization of gravity to Stage 2 is a
+falsifiable prediction: Earth-bound and space-based Bell tests should agree on
+cos²(θ/2) visibility but differ in Stage-2 relaxation time. The Born rule
+P = |ψ|² is reframed as the long-run frequency of energy partition: |ψ|² is the
+energy density of the real ψ field, and the apparent stochasticity of measurement
+outcomes arises from unbiased zero-point + thermal background fluctuations at the
+synchronization event, rather than from an independent probability axiom.
 The Heisenberg uncertainty principle appears as a bandwidth limitation of the
 particle's internal phase clock.
 
@@ -213,8 +222,8 @@ The coupling strength is exactly *m*.
 ### 2.1.1 Two Bases, One Spinor
 
 The same 4-component Dirac spinor admits two natural decompositions, which the
-framework uses for different purposes. We flag them explicitly to prevent
-conflations that have accumulated in earlier drafts.
+framework uses for different purposes. We flag them explicitly because the
+two bases serve different purposes in the framework and are easily conflated.
 
 - **Weyl (chiral) basis:** ψ = (ψ_L, ψ_R)ᵀ, splitting the spinor by chirality.
   The mass term is purely off-diagonal — m·(ψ̄_L ψ_R + ψ̄_R ψ_L) — which is what
@@ -722,11 +731,11 @@ structure as such.
 
 ### 3.8 Energy Accounting and Scope of the Two-Stage Picture
 
-The two-stage architecture of §3.4 makes the energy accounting more
-transparent than the single-step language of earlier drafts permitted. We
-record three consequences: the Stage 1 / Stage 2 division of labor for
-energy dissipation, how the picture varies across interaction types, and
-what happens when neither party is bulk-bound.
+The two-stage architecture of §3.4 makes the energy accounting transparent
+by separating where each piece of the bookkeeping lives. We record three
+consequences: the Stage 1 / Stage 2 division of labor for energy
+dissipation, how the picture varies across interaction types, and what
+happens when neither party is bulk-bound.
 
 **Stage 1 is energy-conserving; Stage 2 dissipates.** The pair-sync at
 the vertex is a coherent projection onto the polarizer/detector
@@ -743,10 +752,10 @@ the partner and its local Φ_bulk is shed as phonons, fluorescence
 photons, virtual-photon Coulomb recoil, or — at sufficient mismatch —
 real photons or e⁺e⁻ pairs (the hierarchy already tabulated in §3.4).
 This is the only stage at which excess wave energy leaves the projected
-state as broadband residue. The "single-world energy accounting" of
-earlier drafts is therefore Stage-2 dissipation specifically; the worry
-about a "residual amplitude with no resonant absorber" was an artifact
-of the single-step framing, not a real bookkeeping crisis. In any
+state as broadband residue. Single-world energy accounting in this
+framework is therefore Stage-2 dissipation specifically; any concern
+about a "residual amplitude with no resonant absorber" is an artifact
+of single-step framing, not a real bookkeeping crisis. In any
 well-defined detection setup, the channel rejected by Stage 1 has a
 physical destination — a calcite polarizer absorbs the rejected
 polarization in its own bulk, a polarizing beam splitter routes it to
@@ -1002,16 +1011,21 @@ with equality saturated by Gaussian wavepackets. Multiplying both sides by ℏ:
 
 $$\boxed{\sigma_x \cdot \sigma_p \geq \frac{\hbar}{2}} \qquad (8)$$
 
-This is the Heisenberg uncertainty relation, **factor of ½ exact**.
+This is the Heisenberg uncertainty relation, **factor of ½ exact**. The
+rigorous Fourier-analytic derivation goes back to Kennard [41] and Weyl [42]
+in 1927–28; see Folland & Sitaram [43] for a comprehensive survey of the
+broader Fourier-uncertainty literature, and Białynicki-Birula & Mycielski [44]
+for the entropic strengthening (which is strictly tighter than the
+Robertson–Schrödinger form for many states).
 
 The framework's contribution here is interpretive, not derivational. Standard
 QM postulates ΔxΔp ≥ ℏ/2 as a separate axiom (or derives it from the operator
 commutator [x̂, p̂] = iℏ, which is itself a postulate, via the
 Robertson–Schrödinger inequality). MCI reads it as the Fourier bandwidth
-theorem applied to a real wavefunction — a theorem about waves, not an axiom
-about quantum systems. **In the wave-realist reading, the uncertainty principle
-is not a quantum mystery; it is harmonic analysis applied to a real physical
-field.**
+theorem [41–43] applied to a real wavefunction — a theorem about waves, not
+an axiom about quantum systems. **In the wave-realist reading, the uncertainty
+principle is not a quantum mystery; it is harmonic analysis applied to a real
+physical field.**
 
 #### The Compton scale is distinct from the universal floor
 
@@ -1029,8 +1043,8 @@ alone. The two facts are complementary:
 - **Universal floor (Fourier bandwidth, Eq. 8):** σ_x·σ_p ≥ ℏ/2 for any real wavefunction, every particle, every state.
 - **Particle-specific scale (Compton wavelength):** λ_C = h/(mc) is the length below which a single Dirac particle stops behaving as a localized point and begins to display its internal two-clock structure (Zitterbewegung, chiral mixing, pair production at higher energies).
 
-Earlier formulations conflated these — treating the Compton wavelength as the
-*source* of the Heisenberg ½. The corrected separation: the bound comes from
+It is tempting but incorrect to treat the Compton wavelength as the
+*source* of the Heisenberg ½. The clean separation: the bound comes from
 harmonic analysis applied to the wavefunction (universal); the Compton scale
 is a particle-specific length at which the framework's two-clock structure
 (Section 2) becomes manifest.
@@ -1083,7 +1097,7 @@ Photons are not Dirac particles. They are spin-1 vector bosons described by
 Maxwell's equations, with no rest mass to couple chiral sectors. The framework's
 central identification K = m therefore does not apply directly: there is no
 mass term to set a Kuramoto coupling between photon helicities. We address this
-by separating two questions that earlier formulations conflated: (i) where do
+by separating two questions that are easily conflated: (i) where do
 photon Bell correlations come from? and (ii) where does the framework's
 measurement mechanism enter for photons?
 
@@ -1244,8 +1258,8 @@ Two questions are not resolved by this section:
    from first principles.
 
 These are tractable extensions, not framework contradictions. The §5
-photon-coupling problem — flagged in earlier drafts as the framework's most
-serious open question — reduces to a pair of well-defined technical issues
+photon-coupling problem — at first reading the framework's most serious
+open question — reduces to a pair of well-defined technical issues
 once the Bell correlations are correctly attributed to the polarization
 Hilbert space rather than to any Kuramoto coupling between photon helicities.
 
@@ -1294,7 +1308,7 @@ in Appendix D.
 ### 6.2 From the Interpretive Framework
 
 **P3 — Two distinct mass scalings, not to be conflated.** The framework
-carries two timescales that earlier drafts of this prediction ran together.
+carries two timescales that are easily run together.
 The intra-spinor L↔R sync set by K = m has period τ_LR = ℏ/(mc²) — the
 Compton time, ~10⁻²¹ s for an electron, ~10⁻²⁵ s for a top quark — fast
 for every massive particle and well below any direct experimental
@@ -1305,17 +1319,18 @@ governed by Γ_bulk ~ GM²/(ℏΔz) (§3.5) and the vertex coupling K_pair
 (§3.4) — both functions of the *bath/detector*, not of the particle's
 own mass. The familiar fact that macroscopic objects decohere essentially
 instantaneously while electrons retain coherence reflects the M² scaling
-of the bath, not the K = m intra-spinor coupling. Earlier drafts proposed
-a "τ_decoherence ∝ 1/m" sweep across electrons, muons, pions, and kaons;
-we retract that proposal — it conflated the two timescales. The clean
-observational handle on K = m is the Zitterbewegung beat of P2 (trapped-ion
-simulators with tunable effective mass [10]), which probes the intra-spinor
-sync directly rather than via bulk coupling.
+of the bath, not the K = m intra-spinor coupling. A naïve-seeming
+proposal would be a "τ_decoherence ∝ 1/m" sweep across electrons, muons,
+pions, and kaons; we do not pursue it because it conflates the two
+timescales. The clean observational handle on K = m is the
+Zitterbewegung beat of P2 (trapped-ion simulators with tunable effective
+mass [10]), which probes the intra-spinor sync directly rather than via
+bulk coupling.
 
-**P4 — [Retracted as written.] Why hadron-mass scaling does not test K = m.**
-Earlier drafts proposed comparing entanglement decay times for kaon
-(m_K = 494 MeV) versus B-meson (m_B = 5,280 MeV) pairs as a test of
-linear-in-mass sync rates. We retract this as stated. K = y_f ⟨φ⟩ applies
+**P4 — Why hadron-mass scaling does not test K = m.** A natural-seeming
+proposal would be to compare entanglement decay times for kaon (m_K =
+494 MeV) versus B-meson (m_B = 5,280 MeV) pairs as a test of
+linear-in-mass sync rates. This proposal fails. K = y_f ⟨φ⟩ applies
 to elementary fermions with Higgs–Yukawa-derived mass; the masses of
 neutral mesons are dominated by QCD binding and gluon-field energy (the
 "two senses of mass" caveat of §3.5), so τ ~ ℏ/m_meson would mix
@@ -1369,7 +1384,7 @@ against standard quantum metrology, not a test of MCI's distinctive content;
 both standard QM and MCI predict identical scaling. The framework-distinctive
 predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), and `sg_angular.py`;
-P3 and P4 in their hadron-mass-scaling forms are retracted above.
+P3 and P4 in their hadron-mass-scaling forms are addressed above as not viable tests.
 
 ---
 
@@ -1592,7 +1607,7 @@ presented here connects these threads.
 
 Four directions could elevate this from interpretation to testable theory:
 
-1. **A laboratory observable for K = m itself.** The retraction of P3 and
+1. **A laboratory observable for K = m itself.** The discussion of P3 and
    P4 in §6.2 leaves an open question: does the K = m intra-spinor sync
    make any prediction at the elementary-particle level that distinguishes
    the framework from standard QM? The intra-spinor period τ_LR = ℏ/(mc²)
@@ -1617,8 +1632,8 @@ Four directions could elevate this from interpretation to testable theory:
    reproduce known rates the framework gains predictive power; if they
    differ, the difference is a testable prediction. Crucially, this means
    deriving Γ_bulk and K_pair from microscopic models of the relevant bath
-   — not deriving "τ ~ ℏ/m" from K = m, which is what the retracted P3/P4
-   confused.
+   — not deriving "τ ~ ℏ/m" from K = m, which is the conflation P3/P4
+   warn against.
 
 3. **Born rule — closing the unbiased-background assumption.** Section 4
    reads the Born rule as the long-run frequency of energy partition under
@@ -2276,6 +2291,22 @@ https://doi.org/10.1103/PhysRevLett.121.053601
 
 [40] Bialynicki-Birula, I. (1996). Photon wave function. *Progress in Optics*,
 36, 245–294. https://doi.org/10.1016/S0079-6638(08)70316-0
+
+[41] Kennard, E. H. (1927). Zur Quantenmechanik einfacher Bewegungstypen.
+*Zeitschrift für Physik*, 44(4–5), 326–352.
+https://doi.org/10.1007/BF01391200
+
+[42] Weyl, H. (1928). *Gruppentheorie und Quantenmechanik*. Hirzel, Leipzig.
+(English translation: *The Theory of Groups and Quantum Mechanics*, Dover,
+1950.)
+
+[43] Folland, G. B., & Sitaram, A. (1997). The uncertainty principle: a
+mathematical survey. *Journal of Fourier Analysis and Applications*, 3(3),
+207–238. https://doi.org/10.1007/BF02649110
+
+[44] Białynicki-Birula, I., & Mycielski, J. (1975). Uncertainty relations for
+information entropy in wave mechanics. *Communications in Mathematical
+Physics*, 44(2), 129–132. https://doi.org/10.1007/BF01608825
 
 ---
 
