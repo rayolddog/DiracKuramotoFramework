@@ -33,8 +33,12 @@ This program is a CONSISTENCY CHECK and HARDWARE DEMONSTRATION, not an
 experimental validation of MCI's distinctive interpretive content. The
 framework's discriminating predictions live in optical/photonics experiments
 (linewidth-dependent gravitational Bell, §5.4; K(E) photon energy scaling)
-and astrophysical/collider data (kaon vs B-meson decoherence, §6.2 P4),
-none of which a digital quantum computer can perform.
+and the gravitationally-weighted secondary-emission timing of §6.2 P5,
+none of which a digital quantum computer can perform. (The earlier
+hadron-mass-scaling prediction, paper §6.2 P4, has been retracted: meson
+mass is dominated by QCD binding rather than Higgs-Yukawa mass, and the
+intra-spinor K = m sets the Compton time, far below any direct
+experimental time-resolution.)
 
 ═════════════════════════════════════════════════════════════════════════════
 WHAT THIS PROGRAM DEMONSTRATES:
@@ -429,7 +433,8 @@ def report_slopes(results):
     print("  • This is a CONSISTENCY CHECK against standard quantum metrology,")
     print("    not an experimental discrimination of MCI from standard QM.")
     print("  • For framework-distinctive tests, see §5.4 (linewidth gravitational")
-    print("    Bell), §6.2 P4 (kaon/B-meson decoherence), and sg_angular.py.")
+    print("    Bell), §6.2 P5 (gravitationally-weighted secondary emission),")
+    print("    and sg_angular.py. (Paper §6.2 P3/P4 hadron-mass scalings retracted.)")
 
 
 # ─── Main ───────────────────────────────────────────────────────────────────

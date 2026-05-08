@@ -56,6 +56,16 @@ It DEPARTS from standard QM predictions in these scenarios:
       Photons: K = 2πν. Bell threshold at ν_crit ~ 10^14 Hz (~0.49 eV, mid-IR).
       This is consistent with all known Bell tests; testable with mid-IR entangled photons.
 
+      CAVEAT (paper §6.2 P3 retraction): the massive-particle branch τ_sync ~
+      ℏ/(mc²) is the Compton time — 10⁻²¹ s for an electron, 10⁻²⁵ s for a top
+      quark — well below any experimentally accessible time-resolution and NOT
+      the same quantity as observable "decoherence" of an environment-coupled
+      system, which is governed by Γ_bulk ∝ M² (paper §3.5) and K_pair (§3.4).
+      The "heavier particle = faster sync" reading applies to the intra-spinor
+      L↔R coupling only; do NOT read it as a prediction about laboratory
+      decoherence rates. The photon branch (mid-IR threshold) remains a clean
+      open prediction.
+
   P6. GRAVITATIONAL FIELD AS SHARED Φ_BULK — gravitational Bell degradation
       KEY INSIGHT: In this theory, gravity IS the large-scale Kuramoto synchronization
       field (see gravity_twistor.py). Therefore Φ_bulk at any detector location is simply
