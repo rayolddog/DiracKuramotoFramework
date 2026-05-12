@@ -42,6 +42,18 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 | [equations.pdf](equations.pdf) | Compiled PDF of the equation reference |
 | [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script for ManyClocks.pdf and equations.pdf |
 
+### Companion papers (in development)
+
+The following companion papers extend the framework into specific
+experimental and astrophysical regimes. They are **work-in-progress drafts
+not yet ready for journal submission**, posted here for transparency and
+to invite discussion.
+
+| File | Description | Status |
+|---|---|---|
+| [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md) | AB visibility envelope as a test of Dirac–Kuramoto vacuum locking | **Development phase — not for citation** |
+| [AB_visibility.pdf](AB_visibility.pdf) | Pandoc-rendered PDF of the AB companion paper | **Development phase — not for citation** |
+
 ## Numerical Verification Scripts
 
 Each Python script verifies specific claims made in the paper. They can be run independently.

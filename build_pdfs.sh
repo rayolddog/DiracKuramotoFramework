@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# build_pdfs.sh — render PAPER_UNIFIED.md and EQUATIONS.md to PDF
+# build_pdfs.sh — render PAPER_UNIFIED.md, AB_VISIBILITY_PAPER.md, and EQUATIONS.md to PDF
 #
 # Produces:
-#   ManyClocks.pdf — the full paper, with TOC depth 3
-#   equations.pdf  — the equation reference, with TOC depth 2
+#   ManyClocks.pdf       — the full paper, with TOC depth 3
+#   AB_visibility.pdf    — the AB visibility companion paper, with TOC depth 2
+#   equations.pdf        — the equation reference, with TOC depth 2
 #
 # Requires: pandoc, xelatex (TeX Live or MacTeX)
 # Uses: pdf_header.tex (Unicode-to-LaTeX mappings)
@@ -42,6 +43,13 @@ pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
     --toc --toc-depth=3 \
     "${PANDOC_OPTS[@]}"
 
+# Build the AB visibility companion paper
+echo "Building AB_visibility.pdf from AB_VISIBILITY_PAPER.md..."
+pandoc "${REPO_DIR}/AB_VISIBILITY_PAPER.md" \
+    -o "${REPO_DIR}/AB_visibility.pdf" \
+    --toc --toc-depth=2 \
+    "${PANDOC_OPTS[@]}"
+
 # Build the equations reference
 echo "Building equations.pdf from EQUATIONS.md..."
 pandoc "${REPO_DIR}/EQUATIONS.md" \
@@ -52,5 +60,5 @@ pandoc "${REPO_DIR}/EQUATIONS.md" \
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/equations.pdf" \
+ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" "${REPO_DIR}/equations.pdf" \
     | awk '{print "  " $9 ": " $5}'
