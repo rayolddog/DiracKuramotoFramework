@@ -2371,6 +2371,285 @@ reviewed all content for physical plausibility and internal consistency.
 
 ---
 
+## Appendix E: Cochain Ontology of the Wave Function
+
+**Contribution note for this appendix.** The cochain-ontological framing
+developed below — the embedding of the framework's chiral Kuramoto reduction
+into the simplicial Kuramoto formalism of Nurisso et al. (2024) [45], the
+identification of K = m as the edge weight of a 1-simplex, the correspondence
+between the framework's U(1) gauge invariance and the harmonic phase-shift
+symmetry of the simplicial complex, and the cochain reading of the §3.7
+coherence sub-manifold — was developed in collaboration with Claude Opus 4.7
+(Anthropic) and largely reflects its mathematical and expository work. The
+human author's role in this appendix specifically was to surface the Nurisso
+et al. (2024) reference, to set the scope and register of the appendix, to
+validate the mathematical claims against the framework's existing structure,
+and to flag the metaphysical limitations recorded in §E.7. The connection to
+the simplicial Kuramoto literature was not anticipated in the original
+framework and was identified during this collaboration. See `AUTHORSHIP.md`
+for the framework-wide attribution.
+
+### E.1 Motivation
+
+The framework's interpretive content — wave function as a real oscillating
+field, mass as a coupling constant, measurement as Kuramoto re-synchronization
+— fits most naturally into a discrete-geometric setting where the wave
+function is a **cochain** on a simplicial complex rather than a smooth section
+of a spinor bundle. This appendix develops that setting formally. The
+motivation is twofold. First, the Kuramoto reduction of §2.2 is most
+transparent in the discrete language, where phase oscillators live on
+simplices and the L–R coupling is an edge weight on the underlying complex.
+Second, the simplicial formalism of Nurisso et al. [45] supplies a rigorous
+notion of **gauge** (the harmonic phase-shift symmetry of their §III.E) and
+a rigorous notion of **coherence decomposition** (the Hodge theorem on
+cochain spaces) that make the framework's interpretive claims of §1.6 and
+§3.7 into theorems rather than analogies.
+
+We emphasize at the outset that the cochain picture is an *equivalent*
+representation of the wave function in the continuum limit, not a
+modification of standard quantum mechanics. The Dirac equation, the Born
+rule, and Bell's theorem are unchanged. What the cochain picture provides is
+a discrete substrate on which the framework's mechanistic claims — Kuramoto
+coupling K = m, two-stage measurement, harmonic gauge invariance, and the
+coherence sub-manifold of §3.7 — become mathematically natural rather than
+interpretively imposed.
+
+### E.2 Cochains and the Continuum Limit
+
+A **simplicial complex** $\Delta$ is a collection of simplices (0-simplices
+= nodes, 1-simplices = edges, 2-simplices = triangles, ...) closed under face
+inclusion. A **k-cochain** is a function assigning a complex amplitude to
+each oriented k-simplex:
+
+$$\psi^{(k)} : \{\text{k-simplices of } \Delta\} \to \mathbb{C}, \qquad
+\psi^{(k)} \in C^k(\Delta; \mathbb{C}).$$
+
+For a complex with $n_k$ k-simplices, $C^k(\Delta; \mathbb{C}) \cong
+\mathbb{C}^{n_k}$ is a finite-dimensional Hilbert space. With simplex weights
+$w^{(k)}_i > 0$, the inner product takes the Hodge-weighted form
+$\langle \psi, \phi \rangle_{w} = \sum_i (w^{(k)}_i)^{-1} \bar\psi_i \phi_i$.
+
+The **continuum limit** takes the simplicial complex to be a triangulation of
+a smooth manifold $M$ and refines it. As the triangulation becomes
+arbitrarily fine, k-cochains converge under the Whitney embedding to
+differential k-forms on $M$, in the sense that the discrete cochain
+associated to a smooth k-form by integration over each k-simplex reproduces
+the form in the limit. The dictionary is:
+
+| Cochain order | Continuum object | Physical role |
+|---|---|---|
+| 0-cochain | scalar field | wave function $\psi(x)$ |
+| 1-cochain | 1-form | gauge potential $A_\mu$, gradient of scalar |
+| 2-cochain | 2-form | field strength $F_{\mu\nu}$, current density |
+
+The framework's interpretive claim is that the *physical* substrate of the
+wave function is the cochain, not its continuum limit — but for all empirical
+purposes the two are interchangeable, since every experiment probes the
+continuum limit on scales vastly larger than any candidate underlying
+triangulation. The cochain ontology is therefore a metaphysical commitment,
+not a falsifiable prediction (see §E.7).
+
+### E.3 The Hodge–Dirac Operator
+
+The key algebraic structure on cochains is the **coboundary operator**
+$d^k : C^k \to C^{k+1}$ (the discrete exterior derivative), and its formal
+adjoint with respect to the Hodge inner product, the **boundary operator**
+$\delta^k = (d^{k-1})^* : C^k \to C^{k-1}$ (the discrete codifferential).
+These satisfy the fundamental identity
+
+$$d^{k+1} d^k = 0, \qquad \delta^{k-1} \delta^k = 0,$$
+
+(a boundary has no boundary), a linear-algebraic restatement of the
+topological fact that the boundary of a boundary is empty. The **discrete
+Hodge Laplacian** on $C^k$ is
+
+$$\boxed{\Delta^k = d^{k-1}\delta^k + \delta^{k+1}d^k.}$$
+
+The **Hodge–Dirac operator** is the first-order operator
+
+$$\boxed{\mathcal{D} = d + \delta,}$$
+
+acting on the full cochain complex $C^\bullet(\Delta) = \bigoplus_k
+C^k(\Delta)$. Its square is
+
+$$\mathcal{D}^2 = (d + \delta)^2 = d\delta + \delta d = \Delta,$$
+
+since $d^2 = 0$ and $\delta^2 = 0$. **This is the algebraic property that
+justifies the name "Dirac":** $\mathcal{D}$ is the first-order square root of
+the Laplacian, just as Dirac's $i\gamma^\mu \partial_\mu$ is the first-order
+square root of the Klein–Gordon operator $\partial^\mu \partial_\mu + m^2$.
+In the continuum limit on a Riemannian spin manifold, $\mathcal{D}$ reduces
+to the spin-Dirac operator of mathematical physics [47].
+
+The eigenvalues of $\mathcal{D}$ come in $\pm$ pairs, because $\mathcal{D}$
+anticommutes with the **grading operator**
+
+$$\Gamma : \psi^{(k)} \mapsto (-1)^k \psi^{(k)},$$
+
+which is the discrete analog of the chirality matrix $\gamma_5$ in standard
+Dirac theory: $\{\mathcal{D}, \Gamma\} = 0$.
+
+### E.4 Chiral Decomposition and K = m at the Cochain Level
+
+The grading operator $\Gamma$ decomposes $C^\bullet$ into even-grade and
+odd-grade subspaces:
+
+$$C^\bullet = C^+ \oplus C^-, \qquad C^\pm = \{\psi : \Gamma\psi = \pm\psi\}.$$
+
+These are the cochain analogs of the chiral subspaces $\psi_L, \psi_R$ in
+the Weyl decomposition. The Hodge–Dirac operator anticommutes with $\Gamma$,
+so in $C^+ \oplus C^-$ block form it acts purely off-diagonally:
+
+$$\mathcal{D} = \begin{pmatrix} 0 & \mathcal{D}_- \\ \mathcal{D}_+ & 0
+\end{pmatrix},$$
+
+where $\mathcal{D}_\pm : C^\pm \to C^\mp$. The framework's central
+identification (§2.2) reads in this language as follows: **the Dirac mass
+term is an edge weight on the smallest non-trivial cochain complex** — two
+nodes (one in $C^+$, one in $C^-$) and one edge connecting them.
+Quantitatively, identifying the chiral pair $(\psi_L, \psi_R)$ with two
+0-cochains on the two nodes and the mass coupling with the edge weight $m$,
+the rest-frame Dirac equation in Weyl basis reads
+
+$$i\partial_t \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} =
+\begin{pmatrix} 0 & m \\ m & 0 \end{pmatrix}
+\begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix}.$$
+
+Under the Madelung polar decomposition of §2.2, this reduces on the
+synchronized manifold to the Kuramoto sine coupling $K \sin(\phi_R - \phi_L)$,
+with $K = m$. The verification script `tests/simplicial_alignment.py`
+confirms this reduction numerically: the chiral Kuramoto trajectories of
+EQUATIONS §6 and the simplicial Kuramoto of Nurisso et al. (their Eq. 13/15
+at $k = 0$) are bit-identical on the 2-node, 1-edge complex, to numerical
+roundoff.
+
+For multi-flavor extensions (e.g. the CKM and PMNS sectors), the cochain
+picture generalizes naturally: each fermion species contributes its own
+chirality-graded pair, and inter-species mixing becomes a more complex
+pattern of edges and (potentially) higher-order simplices on the extended
+chirality complex. The mass matrix in standard notation becomes the weighted
+incidence operator on this extended complex, and the CKM phase
+$\delta_{CP}$ acquires a cohomological reading as an element of
+$H^1$ of the chirality complex — but the rigorous statement of which
+$H^1$ class corresponds to which physical phase is left for future work
+(see §E.7).
+
+### E.5 Hodge Decomposition as Coherence Structure
+
+The simplicial Hodge decomposition theorem (Nurisso et al. Eq. 28) states
+that every cochain decomposes orthogonally as
+
+$$\boxed{\psi^{(k)} = \psi^{(k)}_{\text{cf}} + \psi^{(k)}_{H} +
+\psi^{(k)}_{\text{df}},}$$
+
+with the three components corresponding to:
+
+- **Curl-free:** $\psi_{\text{cf}} \in \text{Im}\,d^{k-1}$ — locally exact,
+  the "gradient" component
+- **Harmonic:** $\psi_H \in \ker \Delta^k = \ker d^k \cap \ker \delta^k$ —
+  dual to the k-th Betti number of $\Delta$, the topologically non-trivial
+  component
+- **Divergence-free:** $\psi_{\text{df}} \in \text{Im}\,\delta^{k+1}$ —
+  locally co-exact, the "curl" component
+
+This decomposition is orthogonal in the Hodge inner product, and the three
+components evolve *independently* under the simplicial Kuramoto dynamics
+(Nurisso et al. Eq. 30). The harmonic component is dynamically inert: it is
+the cochain analog of the framework's harmonic gauge mode of §1.6 (item 6)
+and the U(1) gauge invariance of the chiral phase difference $\phi_L -
+\phi_R$.
+
+The connection to the framework's **coherence sub-manifold** of §3.7 is now
+sharper than the original presentation. What was there described as "the
+intersection of lock conditions, defining a low-dimensional sub-manifold of
+the joint phase torus" is, in the cochain picture, the **intersection of
+the harmonic subspaces of each Hodge component**. Phase-locking corresponds
+to the dynamics having reached the harmonic component of each subsystem;
+loss of coherence corresponds to the dynamics flowing out of one Hodge
+subspace into another. Decoherence in this language is not randomization but
+a structural transition: a change of which Hodge sub-component carries the
+trajectory.
+
+The two-stage measurement of §3.4 reads in cochain language as:
+
+- **Stage 1 (pair-sync):** A unitary projection of the incoming particle's
+  cochain onto the polarizer's eigenbasis, within a fixed Hodge subspace.
+  Energy-conserving; basis-selecting.
+- **Stage 2 (bulk relaxation):** A dissipative flow of the perturbed cochain
+  toward the bulk's harmonic component, with the off-harmonic energy shed
+  as secondary radiation. The energy taxonomy of §3.8 — phonon vs. photon
+  vs. pair-production — corresponds to which sub-component of the bulk's
+  Hodge decomposition absorbs the shed energy.
+
+The two stages are geometrically distinct: Stage 1 is a rotation within a
+fixed Hodge subspace; Stage 2 is a relaxation toward its harmonic
+sub-component. Penrose's objective reduction (§3.6) is then localized
+unambiguously to Stage 2 — the relaxation toward the gravitationally
+sourced bulk-harmonic mode.
+
+### E.6 Recovery of Standard Continuum QFT
+
+In the continuum limit on a Riemannian spin manifold $M$, the cochain
+complex $C^\bullet(\Delta)$ converges to the de Rham complex
+$\Omega^\bullet(M)$ of differential forms, the Hodge–Dirac operator
+$\mathcal{D}$ converges to the spin-Dirac operator $i\gamma^\mu \nabla_\mu$,
+and the framework's chiral pair $(\psi_L, \psi_R)$ converges to the standard
+Weyl decomposition of the spinor field. The framework's $K = m$
+identification becomes the standard mass term $m\bar\psi\psi$. Standard QFT
+predictions are recovered exactly; this is by construction, since the
+cochain picture is the discretization of standard differential-geometric
+Dirac theory.
+
+The framework's interpretive content lies in the additional claim that the
+cochain substrate is **physical** — that the wave function "really is" a
+discrete oscillating quantity on some underlying simplicial structure, not
+just an integration-theoretic discretization of a smooth field. This is a
+metaphysical commitment, not a falsifiable prediction, and we flag it as
+such (see §E.7).
+
+### E.7 Limitations and Open Questions
+
+We list four explicit limitations of the cochain ontology as developed here,
+to be transparent about scope.
+
+1. **Continuum limit of $K = m$ across refinements.** The framework's claim
+   is $K = m$ on a 1-simplex. The continuum recovery requires showing that
+   this scaling survives as the triangulation is refined — i.e., that the
+   edge weight scales correctly with simplex size under Whitney embedding.
+   A 1+1-D toy-model verification is straightforward but not yet supplied;
+   it is a natural next step for the verification suite.
+
+2. **Multi-flavor extensions.** The cochain picture for the CKM and PMNS
+   sectors is sketched at the end of §E.4 but not developed in detail. A
+   rigorous statement of which $H^1$ obstruction corresponds to which
+   physical CP phase remains for future work. Without this, the framework's
+   reading of $\delta_{CP}$ as cohomological is a structural analogy rather
+   than a derivation.
+
+3. **Cochain ontology vs. computational discretization.** The framework's
+   interpretive claim that the cochain substrate is physical (rather than
+   merely a convenient computational scaffold) is metaphysical and not
+   empirically distinguishable from textbook QFT at any currently accessible
+   scale. Nothing in this appendix depends on the cochain being "really
+   there" rather than being a discretization. The cochain language is used
+   here because it makes the framework's claims transparent, not because we
+   take it to be more fundamental than the continuum description.
+
+4. **Gauge fields and curvature.** This appendix has treated only the matter
+   sector (chiral fermions). The simplicial extension to gauge fields
+   (lattice gauge theory, simplicial $U(1)/SU(N)$) is standard but not
+   developed here. The framework's $K_{\text{pair}} = g_{\text{int}}\langle
+   V_{\text{int}}\rangle$ coupling of §3.4 should embed naturally as a
+   higher-order simplicial interaction, but the explicit construction is
+   left for future work.
+
+*See `tests/simplicial_alignment.py`, `tests/hodge_decomposition.py`, and
+`tests/hodge_dirac.py` for numerical verification of the 1-simplex embedding,
+the Hodge decomposition of edge cochains, and the $\mathcal{D}^2 = \Delta$
+identity, respectively.*
+
+---
+
 ## References
 
 [1] Dirac, P. A. M. (1928). The quantum theory of the electron. *Proc. R. Soc.
@@ -2526,6 +2805,10 @@ Science*, 34(5), 053118. https://doi.org/10.1063/5.0169388
 [46] Penrose, R., & Rindler, W. (1984). *Spinors and Space-Time, Vol. 1:
 Two-Spinor Calculus and Relativistic Fields*. Cambridge University Press.
 https://doi.org/10.1017/CBO9780511564048
+
+[47] Atiyah, M. F., & Singer, I. M. (1963). The index of elliptic operators on
+compact manifolds. *Bulletin of the American Mathematical Society*, 69(3),
+422–433. https://doi.org/10.1090/S0002-9904-1963-10957-X
 
 ---
 
