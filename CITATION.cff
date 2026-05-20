@@ -1,0 +1,107 @@
+# This file is read by GitHub to show a "Cite this repository" prompt,
+# and by Zenodo to populate the DOI record's metadata when the repo is
+# archived. Format: https://citation-file-format.github.io/
+#
+# Fields marked TODO must be filled in by the author before release.
+
+cff-version: 1.2.0
+message: >-
+  If you use this framework in your research, please cite it as below.
+title: >-
+  DiracKuramotoFramework: The Many Clocks Interpretation
+  of Quantum Mechanics
+abstract: >-
+  A theoretical-physics framework identifying the Dirac mass term as a
+  Kuramoto phase-synchronization coupling (K = m) between two chiral
+  phase clocks, with quantum measurement reframed as a two-stage Kuramoto
+  re-synchronization to the macroscopic detector bulk. Develops the Many
+  Clocks Interpretation (MCI) of quantum mechanics, including its
+  consequences for measurement, decoherence, Bell tests, gravitational
+  collapse, baryogenesis, and the Born rule. Includes numerical
+  verification scripts for all central claims and an alignment with the
+  simplicial Kuramoto framework of Nurisso et al. (2024).
+
+authors:
+  - family-names: Bramble
+    given-names: John
+    name-suffix: MD
+    affiliation: Independent Research
+    # TODO: add ORCID if available
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+
+# TODO: fill in once Zenodo assigns the DOI
+# doi: "10.5281/zenodo.XXXXXXX"
+
+repository-code: "https://github.com/rayolddog/DiracKuramotoFramework"
+url: "https://github.com/rayolddog/DiracKuramotoFramework"
+# TODO: add a long-term archival URL once Zenodo is set up
+# repository-artifact: "https://zenodo.org/record/XXXXXXX"
+
+type: software
+# TODO: bump version on each tagged release
+version: "1.0.0"
+# TODO: replace with the actual release date (ISO 8601, YYYY-MM-DD)
+date-released: "2026-05-17"
+
+# TODO: confirm license; common choices for research software:
+#   - MIT  (permissive)
+#   - Apache-2.0  (permissive with patent grant)
+#   - GPL-3.0-or-later  (copyleft)
+#   - CC-BY-4.0  (for the paper text specifically)
+license: MIT
+
+keywords:
+  - quantum-mechanics
+  - foundations-of-physics
+  - dirac-equation
+  - kuramoto-synchronization
+  - measurement-problem
+  - many-clocks-interpretation
+  - simplicial-kuramoto
+  - hodge-dirac-operator
+  - penrose-collapse
+  - bell-tests
+  - decoherence
+
+# When this software is cited in a paper, this is the preferred form.
+# Update once a journal version is available.
+preferred-citation:
+  type: software
+  title: >-
+    DiracKuramotoFramework: The Many Clocks Interpretation
+    of Quantum Mechanics
+  authors:
+    - family-names: Bramble
+      given-names: John
+      name-suffix: MD
+  year: 2026
+  # TODO: add the Zenodo DOI when assigned
+  # doi: "10.5281/zenodo.XXXXXXX"
+  url: "https://github.com/rayolddog/DiracKuramotoFramework"
+
+# Optional: list of references that this work itself builds on. Helpful for
+# bibliographic discovery via Zenodo.
+references:
+  - type: article
+    authors:
+      - family-names: Nurisso
+        given-names: Marco
+      - family-names: Arnaudon
+        given-names: Alexis
+      - family-names: Lucas
+        given-names: Maxime
+      - family-names: Peach
+        given-names: "Robert L."
+      - family-names: Expert
+        given-names: Paul
+      - family-names: Vaccarino
+        given-names: Francesco
+      - family-names: Petri
+        given-names: Giovanni
+    title: A unified framework for simplicial Kuramoto models
+    journal: "Chaos: An Interdisciplinary Journal of Nonlinear Science"
+    year: 2024
+    volume: 34
+    issue: 5
+    start: "053118"
+    doi: 10.1063/5.0169388
