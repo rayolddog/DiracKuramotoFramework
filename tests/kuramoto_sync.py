@@ -19,6 +19,8 @@ Josephson junction equations and Adler's phase-lock equation.
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -129,7 +131,7 @@ def run():
     ax.set_ylabel('Im(e^{iφ})')
 
     plt.tight_layout()
-    plt.savefig('kuramoto_sync.png', dpi=150)
+    plt.savefig(_HERE / 'kuramoto_sync.png', dpi=150)
     print("Saved: kuramoto_sync.png")
     plt.show()
 

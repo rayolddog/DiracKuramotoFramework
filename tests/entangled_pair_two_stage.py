@@ -22,6 +22,8 @@ photon (K=0) adopts that reference at the vertex.
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyBboxPatch
 from matplotlib.lines import Line2D
@@ -307,6 +309,6 @@ ax.legend(handles=legend_elems, loc="lower center",
           frameon=False, fontsize=9)
 
 plt.tight_layout()
-out = "entangled_pair_two_stage.png"
+out = _HERE / "entangled_pair_two_stage.png"
 plt.savefig(out, dpi=170, bbox_inches="tight")
 print(f"saved {out}")

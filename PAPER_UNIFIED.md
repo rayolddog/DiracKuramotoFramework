@@ -235,7 +235,7 @@ two bases serve different purposes in the framework and are easily conflated.
   into a *large* component (the Pauli 2-spinor at rest) and a *small* component
   that vanishes at rest and grows with momentum as r = p/(E+m) = tan(θ_rel/2).
   The block decomposition E_LL + E_SS + E_LS of the Bell correlation
-  (Appendix A; `dirac_extension.py`) is naturally written here, because the
+  (Appendix A; `tests/dirac_extension.py`) is naturally written here, because the
   standard relativistic spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives in this basis.
 
 The two bases are related by a constant unitary 4×4 change of basis and
@@ -1177,7 +1177,7 @@ gravitational potentials, their bulk phases Φ_bulk(A) and Φ_bulk(B) accumulate
 a relative offset proportional to ω·ΔΦ_grav/c² · τ_coh. When this offset
 exceeds ~1 rad, the singlet correlation degrades.
 
-This is the linewidth-dependent gravitational Bell prediction (`predictions.py`
+This is the linewidth-dependent gravitational Bell prediction (`tests/predictions.py`
 P6b), now phrased in self-consistent form:
 
 $$\delta\phi_{\text{grav}} = \omega \cdot \frac{\Delta\Phi_{\text{grav}}}{c^2} \cdot \tau_{\text{coh}} = \frac{\omega \cdot \Delta\Phi_{\text{grav}}}{c^2 \cdot \Delta\nu} \qquad (12)$$
@@ -1343,7 +1343,7 @@ therefore do not at present have a clean experimental observable that
 isolates K = m from mass-independent QED. The framework's distinguishable
 predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), the Zitterbewegung
-consistency check P2, and `sg_angular.py`. Whether any laboratory
+consistency check P2, and `tests/sg_angular.py`. Whether any laboratory
 observable is sensitive to K = m as such, beyond what standard QM already
 predicts at the Compton frequency, is an open question.
 
@@ -1368,7 +1368,7 @@ does not yet make predictions distinguishable from standard decoherence theory.
 This is the main limitation and the main avenue for future work.
 
 **Hardware demonstration of the bulk-sync prediction.** A digital-quantum
-implementation of the bulk-sync circuits (`bulk_sync_hardware.py`, run on
+implementation of the bulk-sync circuits (`tests/bulk_sync_hardware.py`, run on
 `ibm_marrakesh` with readout-error mitigation, XpXm dynamical decoupling, and
 zero-noise extrapolation; N ∈ {2, 4, 8}, K = 0.06 rad, 4096 shots/circuit)
 reproduces the GHZ Heisenberg-scaling prediction cleanly: the log-log slope of
@@ -1383,7 +1383,7 @@ Heisenberg scaling specifically. As stated in §1.4, this is a consistency check
 against standard quantum metrology, not a test of MCI's distinctive content;
 both standard QM and MCI predict identical scaling. The framework-distinctive
 predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
-(gravitationally-weighted secondary-emission timing), and `sg_angular.py`;
+(gravitationally-weighted secondary-emission timing), and `tests/sg_angular.py`;
 P3 and P4 in their hadron-mass-scaling forms are addressed above as not viable tests.
 
 ---
@@ -1613,7 +1613,7 @@ Four directions could elevate this from interpretation to testable theory:
    the framework from standard QM? The intra-spinor period τ_LR = ℏ/(mc²)
    is the Compton time, far below direct time-resolution; the experimentally
    observable decoherence is bath-dominated (Γ_bulk ∝ M²); the bulk-coherence
-   numerics (`bulk_sync_hardware.py`) reproduce standard quantum metrology
+   numerics (`tests/bulk_sync_hardware.py`) reproduce standard quantum metrology
    without distinguishing MCI from QM. Candidates worth exploring: (i) a
    precision Zitterbewegung-amplitude scan in trapped-ion simulators with
    tunable effective mass [10], where a deviation from the QM prediction
@@ -1666,29 +1666,29 @@ known conflations:
 
 | Program | Category | What it does | What is at stake |
 |---|---|---|---|
-| `spin_statistics.py` | **Evidential** | Six tests; fermion antisymmetry sign across 6 decades of v/c | Could have falsified the chiral-pair commitment (Appendix D); did not |
-| `gravitational_bell.py` | **Quantitative prediction** | Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2) | Operationalizes the framework's sharpest distinguishable prediction |
-| `predictions.py` | **Quantitative prediction** | Catalog of P1–P6 testable predictions, with retractions explicitly marked | Maps experimental contact points; documents falsified entries (P1, P3) |
-| `bell_energy_test.py` | **Quantitative prediction** | Qiskit CHSH simulation testing K(E) scalings vs photon energy | Discriminates K∝1/E from K∝ω from null QM |
-| `sg_angular.py` | **Quantitative prediction** | Stern-Gerlach angular dependence on local gravity (~4% effect) | Tests gravitational Kuramoto coupling beyond Bell tests |
-| `bulk_sync_asymmetry.py` | **Quantitative prediction** | Single-particle vs bulk phase-rotation scaling (√N vs N) | Tests the measurement asymmetry of §3 |
-| `bulk_sync_hardware.py` | **Consistency check (hardware)** | IBM Quantum execution of the bulk-sync circuits with readout mitigation, DD, and ZNE | Demonstrates digital-hardware reproduction of the simulation (GHZ slope ≈ 1 confirmed; product slope below noise floor at K=0.06); not framework-distinctive |
-| `dirac_extension.py` | **Illustrative** | Three-term Bell decomposition E_LL + E_SS + E_LS | Visualizes the weight redistribution of Appendix A; the sum itself is an identity |
-| `gravity_twistor.py` | **Illustrative** | Poisson ↔ Kuramoto field-equation correspondence; twistor connection | Visualizes §3.5 and EQUATIONS.md §8 |
-| `bell_phase.py` | **Clarifying** | Establishes Malus-law toy is sub-classical (CHSH ≤ √2), distinct from Dirac large block | Disarms the §A.5 conflation |
-| `local_causality.py` | **Clarifying** | Identifies where Bell's factorization actually breaks in MCI | Disarms the superdeterminism misreading (§7.6) |
-| `kuramoto_sync.py` | **Pedagogical** | Two-oscillator synchronization dynamics under K > 0 | Shows what K = m sync looks like in time |
-| `higgs_clock.py` | **Pedagogical** | K = m identification and antiparticle reverse-clock dynamics | Illustrates EQUATIONS.md §6 |
-| `resynchronization_calc.py` | **Negative result** | Tests whether re-sync alone reproduces −cos(a−b) | Confirms the Dirac spinor structure is necessary; closes a misreading |
-| `everett_thermal.py` | **Speculative** | Implements single-world energy accounting | Illustrates §3.8 (paper marks this speculative) |
-| `vacuum_temperature.py` | **Mixed** | ZPF / temperature / orbitals (claims 1–3); Brownian retracted (claim 4) | Three illustrative claims with one disclosed retraction (see EQUATIONS.md §10) |
+| `tests/spin_statistics.py` | **Evidential** | Six tests; fermion antisymmetry sign across 6 decades of v/c | Could have falsified the chiral-pair commitment (Appendix D); did not |
+| `tests/gravitational_bell.py` | **Quantitative prediction** | Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2) | Operationalizes the framework's sharpest distinguishable prediction |
+| `tests/predictions.py` | **Quantitative prediction** | Catalog of P1–P6 testable predictions, with retractions explicitly marked | Maps experimental contact points; documents falsified entries (P1, P3) |
+| `tests/bell_energy_test.py` | **Quantitative prediction** | Qiskit CHSH simulation testing K(E) scalings vs photon energy | Discriminates K∝1/E from K∝ω from null QM |
+| `tests/sg_angular.py` | **Quantitative prediction** | Stern-Gerlach angular dependence on local gravity (~4% effect) | Tests gravitational Kuramoto coupling beyond Bell tests |
+| `tests/bulk_sync_asymmetry.py` | **Quantitative prediction** | Single-particle vs bulk phase-rotation scaling (√N vs N) | Tests the measurement asymmetry of §3 |
+| `tests/bulk_sync_hardware.py` | **Consistency check (hardware)** | IBM Quantum execution of the bulk-sync circuits with readout mitigation, DD, and ZNE | Demonstrates digital-hardware reproduction of the simulation (GHZ slope ≈ 1 confirmed; product slope below noise floor at K=0.06); not framework-distinctive |
+| `tests/dirac_extension.py` | **Illustrative** | Three-term Bell decomposition E_LL + E_SS + E_LS | Visualizes the weight redistribution of Appendix A; the sum itself is an identity |
+| `tests/gravity_twistor.py` | **Illustrative** | Poisson ↔ Kuramoto field-equation correspondence; twistor connection | Visualizes §3.5 and EQUATIONS.md §8 |
+| `tests/bell_phase.py` | **Clarifying** | Establishes Malus-law toy is sub-classical (CHSH ≤ √2), distinct from Dirac large block | Disarms the §A.5 conflation |
+| `tests/local_causality.py` | **Clarifying** | Identifies where Bell's factorization actually breaks in MCI | Disarms the superdeterminism misreading (§7.6) |
+| `tests/kuramoto_sync.py` | **Pedagogical** | Two-oscillator synchronization dynamics under K > 0 | Shows what K = m sync looks like in time |
+| `tests/higgs_clock.py` | **Pedagogical** | K = m identification and antiparticle reverse-clock dynamics | Illustrates EQUATIONS.md §6 |
+| `tests/resynchronization_calc.py` | **Negative result** | Tests whether re-sync alone reproduces −cos(a−b) | Confirms the Dirac spinor structure is necessary; closes a misreading |
+| `tests/everett_thermal.py` | **Speculative** | Implements single-world energy accounting | Illustrates §3.8 (paper marks this speculative) |
+| `tests/vacuum_temperature.py` | **Mixed** | ZPF / temperature / orbitals (claims 1–3); Brownian retracted (claim 4) | Three illustrative claims with one disclosed retraction (see EQUATIONS.md §10) |
 
-Evidential weight rests on `spin_statistics.py` (a non-trivial check that
+Evidential weight rests on `tests/spin_statistics.py` (a non-trivial check that
 could have failed) and the quantitative-prediction scripts that operationalize
 §5.4, §6.2, and the gravitational-Kuramoto claims. The illustrative and
 pedagogical scripts visualize claims that are mathematically guaranteed by
-construction (trace linearity in `dirac_extension.py`, Kuramoto convergence
-in `kuramoto_sync.py`); they support readability and reproducibility without
+construction (trace linearity in `tests/dirac_extension.py`, Kuramoto convergence
+in `tests/kuramoto_sync.py`); they support readability and reproducibility without
 themselves providing evidence for the framework's interpretive content. The
 clarifying scripts disarm known misreadings. The speculative and negative-result
 scripts are disclosed honestly rather than presented as supporting the framework.
@@ -1794,7 +1794,7 @@ of the spinor.
 
 ### A.4 Block Weights at Finite Momentum
 
-The block contributions were computed with `dirac_extension.py` for the Dirac
+The block contributions were computed with `tests/dirac_extension.py` for the Dirac
 singlet at p = 1.0, m = 1.0 (θ_rel ≈ 53°), a = 0, b = π/4:
 
 | Term | Value | Physical meaning |
@@ -1820,7 +1820,7 @@ initial phase, this stochastic phase-clock model returns the correlation
 
 $$E_{\text{Malus}}(a, b) = -\tfrac{1}{2}\cos(a - b), \qquad \text{CHSH}_{\text{Malus}} \leq \sqrt{2} \approx 1.414$$
 
-(see `bell_phase.py`). This is sub-classical: it falls below even the local
+(see `tests/bell_phase.py`). This is sub-classical: it falls below even the local
 hidden-variable bound of 2 and cannot reproduce the loophole-free Bell
 violations.
 
@@ -1917,7 +1917,7 @@ rotation acquires an overall phase of −1, and a 2π rotation is continuously
 homotopic in 3+1 dimensions to an exchange of two identical particles
 (Finkelstein-Misner [33]; see also Feynman's belt argument). A spinor
 representation therefore forces fermion statistics, and an integer-spin
-representation forces Bose statistics. This is what spin_statistics.py
+representation forces Bose statistics. This is what tests/spin_statistics.py
 verifies in six tests.
 
 ### D.2 What MCI Commits To
@@ -1949,7 +1949,7 @@ already commits to.
 
 ### D.3 Numerical Verification
 
-The script `spin_statistics.py` performs six tests in the Madelung-Kuramoto
+The script `tests/spin_statistics.py` performs six tests in the Madelung-Kuramoto
 language. Selected results (m = 1 natural units; full output in the script):
 
 | Test | Object | Operation | Result |
@@ -1961,7 +1961,7 @@ language. Selected results (m = 1 natural units; full output in the script):
 | E | Scalar pair / symmetric vector pair | Full exchange | +1 |
 | F | Kuramoto (φ_L, φ_R) ODE | Classical relabeling A↔B | invariant; no sign |
 
-Test D is the substantive content. The Dirac singlet of dirac_extension.py
+Test D is the substantive content. The Dirac singlet of tests/dirac_extension.py
 mixes large and small components according to the relativistic angle
 θ_rel = arcsin(v/c) (Appendix A). Across six decades in momentum — from
 v/c ≈ 10⁻⁴ to v/c ≈ 1 − 10⁻⁴ — the spin-exchange amplitude is exactly −1,
@@ -2021,7 +2021,7 @@ Three claims are made in this appendix, in descending order of strength:
 1. **Verified.** The Madelung-Kuramoto decomposition (D1) localizes the
    fermion sign in the spinor-frame factor χ_{L,R} and not in the phase or
    amplitude factors. This is a numerical and structural observation,
-   confirmed in spin_statistics.py.
+   confirmed in tests/spin_statistics.py.
 
 2. **Inherited.** Spin-statistics in MCI follows from the chiral pair
    commitment via the standard 2π-rotation / continuous-deformation argument
@@ -2116,8 +2116,8 @@ presented.
   CHSH statistical results
 - Development of the three-term Bell correlation decomposition
   (Appendix A: E_LL + E_SS + E_LS)
-- Writing of the Python verification programs (`dirac_extension.py`,
-  `higgs_clock.py`, `kuramoto_sync.py`) that numerically confirm the
+- Writing of the Python verification programs (`tests/dirac_extension.py`,
+  `tests/higgs_clock.py`, `tests/kuramoto_sync.py`) that numerically confirm the
   framework's predictions match standard quantum mechanical results
 - Elaboration of the Born rule emergence from synchronization statistics
   (Section 4)
@@ -2314,5 +2314,5 @@ Physics*, 44(2), 129–132. https://doi.org/10.1007/BF01608825
 https://github.com/rayolddog/DiracKuramotoFramework*
 
 *The three-term decomposition (Appendix A) can be reproduced by running
-`dirac_extension.py`. The Kuramoto phase dynamics (Section 2) are demonstrated
-in `higgs_clock.py` and `kuramoto_sync.py`.*
+`tests/dirac_extension.py`. The Kuramoto phase dynamics (Section 2) are demonstrated
+in `tests/higgs_clock.py` and `tests/kuramoto_sync.py`.*

@@ -60,23 +60,23 @@ Each Python script verifies specific claims made in the paper. They can be run i
 
 | Script | Verifies |
 |---|---|
-| `kuramoto_sync.py` | Core Kuramoto phase dynamics --- particles synchronizing to detector bulk |
-| `bell_phase.py` | Bell inequality comparison: LHV vs phase-clock vs QM correlations |
-| `dirac_extension.py` | Three-term Bell decomposition (E_LL + E_SS + E_LS = -cos(a-b)) to machine precision |
-| `higgs_clock.py` | Higgs as Kuramoto synchronizer; antiparticles as reversed clocks; CP violation |
-| `gravity_twistor.py` | Gravity as bulk synchronization; Penrose collapse; twistor connection |
-| `local_causality.py` | Full causal timeline showing no FTL required for Bell correlations |
-| `predictions.py` | Five testable predictions where the framework differs from standard QM |
-| `vacuum_temperature.py` | Temperature as clock phase width; quantum-classical transition. (Note: contains a Brownian-motion section that uses a phenomenological K decoupled from the framework's K = m; see disclaimer in file and EQUATIONS.md §10.) |
-| `everett_thermal.py` | Single-world thermalization of residual wavefunction amplitude |
-| `bell_energy_test.py` | CHSH Bell test at different photon energies under Kuramoto model |
-| `gravitational_bell.py` | Bell correlation degradation from gravitational decoherence |
-| `bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry (statevector simulation) |
-| `bulk_sync_hardware.py` | IBM Quantum hardware execution of the bulk-sync circuits with readout mitigation, dynamical decoupling, and zero-noise extrapolation |
-| `resynchronization_calc.py` | Measurement as re-synchronization producing -cos(a-b) |
-| `sg_angular.py` | Stern-Gerlach splitting modulation with gravitational angle |
-| `spin_statistics.py` | Spin-statistics consistency check via the chiral pair structure |
-| `entangled_pair_two_stage.py` | Schematic figure for the two-stage measurement of a polarization-entangled photon pair (Paper §3.4 / §4.4) |
+| `tests/kuramoto_sync.py` | Core Kuramoto phase dynamics --- particles synchronizing to detector bulk |
+| `tests/bell_phase.py` | Bell inequality comparison: LHV vs phase-clock vs QM correlations |
+| `tests/dirac_extension.py` | Three-term Bell decomposition (E_LL + E_SS + E_LS = -cos(a-b)) to machine precision |
+| `tests/higgs_clock.py` | Higgs as Kuramoto synchronizer; antiparticles as reversed clocks; CP violation |
+| `tests/gravity_twistor.py` | Gravity as bulk synchronization; Penrose collapse; twistor connection |
+| `tests/local_causality.py` | Full causal timeline showing no FTL required for Bell correlations |
+| `tests/predictions.py` | Five testable predictions where the framework differs from standard QM |
+| `tests/vacuum_temperature.py` | Temperature as clock phase width; quantum-classical transition. (Note: contains a Brownian-motion section that uses a phenomenological K decoupled from the framework's K = m; see disclaimer in file and EQUATIONS.md §10.) |
+| `tests/everett_thermal.py` | Single-world thermalization of residual wavefunction amplitude |
+| `tests/bell_energy_test.py` | CHSH Bell test at different photon energies under Kuramoto model |
+| `tests/gravitational_bell.py` | Bell correlation degradation from gravitational decoherence |
+| `tests/bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry (statevector simulation) |
+| `tests/bulk_sync_hardware.py` | IBM Quantum hardware execution of the bulk-sync circuits with readout mitigation, dynamical decoupling, and zero-noise extrapolation |
+| `tests/resynchronization_calc.py` | Measurement as re-synchronization producing -cos(a-b) |
+| `tests/sg_angular.py` | Stern-Gerlach splitting modulation with gravitational angle |
+| `tests/spin_statistics.py` | Spin-statistics consistency check via the chiral pair structure |
+| `tests/entangled_pair_two_stage.py` | Schematic figure for the two-stage measurement of a polarization-entangled photon pair (Paper §3.4 / §4.4) |
 
 ### Requirements
 
@@ -84,16 +84,16 @@ Each Python script verifies specific claims made in the paper. They can be run i
 numpy
 scipy
 matplotlib
-qiskit          # required by bell_energy_test.py and bulk_sync_asymmetry.py
+qiskit          # required by tests/bell_energy_test.py and tests/bulk_sync_asymmetry.py
 ```
 
 ### Running
 
 ```bash
-python dirac_extension.py    # verify three-term decomposition
-python higgs_clock.py         # Higgs-Kuramoto identification
-python gravity_twistor.py     # gravity and Penrose collapse
-python vacuum_temperature.py  # temperature and Brownian motion
+python tests/dirac_extension.py    # verify three-term decomposition
+python tests/higgs_clock.py         # Higgs-Kuramoto identification
+python tests/gravity_twistor.py     # gravity and Penrose collapse
+python tests/vacuum_temperature.py  # temperature and Brownian motion
 ```
 
 ---

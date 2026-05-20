@@ -142,6 +142,8 @@ All predictions are in principle experimentally distinguishable from standard QM
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')   # non-interactive — works headless
 import matplotlib.pyplot as plt
@@ -647,7 +649,7 @@ def run():
                  fontsize=8, pad=10)
 
     plt.tight_layout()
-    plt.savefig('predictions.png', dpi=150, bbox_inches='tight')
+    plt.savefig(_HERE / 'predictions.png', dpi=150, bbox_inches='tight')
     print("\nSaved: predictions.png")
     # plt.show()  # non-interactive
 

@@ -76,6 +76,8 @@ EPR (1935) vs THIS MODEL:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -403,7 +405,7 @@ def run():
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.95))
 
     plt.tight_layout()
-    plt.savefig('local_causality.png', dpi=150)
+    plt.savefig(_HERE / 'local_causality.png', dpi=150)
     print("Saved: local_causality.png")
     plt.show()
 

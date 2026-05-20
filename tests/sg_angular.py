@@ -2,6 +2,8 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 
 """
 sg_angular.py -- Stern-Gerlach Angular Dependence Prediction
@@ -334,7 +336,7 @@ def make_plots():
     )
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plt.savefig('sg_angular.png', dpi=150,
+    plt.savefig(_HERE / 'sg_angular.png', dpi=150,
                 bbox_inches='tight')
     print("Saved sg_angular.png")
 

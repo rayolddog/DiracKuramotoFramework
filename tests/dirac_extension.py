@@ -71,6 +71,8 @@ rate of the property vector relative to the time-phase vector.
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -365,7 +367,7 @@ def run():
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
 
     plt.tight_layout()
-    plt.savefig('dirac_extension.png', dpi=150)
+    plt.savefig(_HERE / 'dirac_extension.png', dpi=150)
     print("\nSaved: dirac_extension.png")
     # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 

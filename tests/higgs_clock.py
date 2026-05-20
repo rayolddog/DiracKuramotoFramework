@@ -65,6 +65,8 @@ EQUATIONS:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -442,7 +444,7 @@ OPEN QUESTION:
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
 
     plt.tight_layout()
-    plt.savefig('higgs_clock.png', dpi=150)
+    plt.savefig(_HERE / 'higgs_clock.png', dpi=150)
     print("\nSaved: higgs_clock.png")
     # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 

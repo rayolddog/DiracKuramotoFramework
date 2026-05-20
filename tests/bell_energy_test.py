@@ -103,6 +103,8 @@ Install: pip install qiskit matplotlib numpy
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')   # non-interactive — works headless
 import matplotlib.pyplot as plt
@@ -470,7 +472,7 @@ def run():
                  fontsize=9, pad=12)
 
     plt.tight_layout()
-    plt.savefig('bell_energy_test.png', dpi=150, bbox_inches='tight')
+    plt.savefig(_HERE / 'bell_energy_test.png', dpi=150, bbox_inches='tight')
     print("\nPlot saved: bell_energy_test.png")
     # plt.show()  # non-interactive; savefig above is sufficient
 

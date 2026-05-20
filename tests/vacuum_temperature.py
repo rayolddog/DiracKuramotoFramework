@@ -77,6 +77,8 @@ CONNECTING TO BOHM:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -430,7 +432,7 @@ Bohm pilot wave    ZPF gradient = quantum
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
 
     plt.tight_layout()
-    plt.savefig('vacuum_temperature.png', dpi=150)
+    plt.savefig(_HERE / 'vacuum_temperature.png', dpi=150)
     print("\nSaved: vacuum_temperature.png")
     plt.show()
 

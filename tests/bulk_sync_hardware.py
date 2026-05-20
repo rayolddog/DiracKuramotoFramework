@@ -102,6 +102,8 @@ SETUP:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -360,7 +362,7 @@ def plot_results(results, title_suffix: str = ""):
     ax.grid(True, which='both', alpha=0.3)
 
     plt.tight_layout()
-    fname = 'bulk_sync_hardware_zne.png'
+    fname = _HERE / 'bulk_sync_hardware_zne.png'
     plt.savefig(fname, dpi=150)
     print(f"\nSaved: {fname}")
 

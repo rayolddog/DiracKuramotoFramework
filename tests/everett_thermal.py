@@ -166,6 +166,8 @@ PREDICTION — MEASUREMENT HEATING:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -466,7 +468,7 @@ Unique predictions:
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.95))
 
     plt.tight_layout()
-    plt.savefig('everett_thermal.png', dpi=150)
+    plt.savefig(_HERE / 'everett_thermal.png', dpi=150)
     print("\nSaved: everett_thermal.png")
     plt.show()
 

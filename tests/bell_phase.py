@@ -64,6 +64,8 @@ synchronization mechanism must be quantum (not classical Kuramoto) in nature.
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -260,7 +262,7 @@ def run():
     ax.grid(True, alpha=0.3, axis='y')
 
     plt.tight_layout()
-    plt.savefig('bell_phase.png', dpi=150)
+    plt.savefig(_HERE / 'bell_phase.png', dpi=150)
     print("\nSaved: bell_phase.png")
     # plt.show()  # non-interactive backend (Agg); savefig above is sufficient
 

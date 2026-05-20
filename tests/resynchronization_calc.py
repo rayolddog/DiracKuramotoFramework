@@ -4,7 +4,7 @@ resynchronization_calc.py — Route A Investigation
 Can measurement-as-re-synchronization reproduce Bell correlations
 E(a,b) = -cos(a-b) without quantum nonlocality?
 
-Investigates J. Olddog's SelfNotes #4:
+Investigates J. Bramble, MD's SelfNotes #4:
   "The particle detector interaction is resulting in the synchronization
    of the wavefunction of the particle with the wavefunction of the bulk.
    The coherence is changing from coherence with an entangled particle to
@@ -26,11 +26,13 @@ HISTORICAL NOTE:
   → The relativistic structure that produces cos(a-b) predates
     the nonlocality debate by 7 years.
 
-Author: Claude, investigating J. Olddog's framework
+Author: John Bramble, MD with Claude Opus 4.6, Anthropic
 Date: 2026-04-08
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -419,7 +421,7 @@ def plot_correlation_comparison():
     ax2.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('bell_gap_analysis.png',
+    plt.savefig(_HERE / 'bell_gap_analysis.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: bell_gap_analysis.png]")
@@ -521,7 +523,7 @@ def simulate_detector_mass_asymmetry():
                  '"More rotation occurs in the particle than the detector"',
                  fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('detector_mass_asymmetry.png',
+    plt.savefig(_HERE / 'detector_mass_asymmetry.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: detector_mass_asymmetry.png]")
@@ -691,7 +693,7 @@ def simulate_dirac_measurement():
                  'L-R Coupling (K=m) vs Measurement Field (B)',
                  fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
-    plt.savefig('dirac_measurement_dynamics.png',
+    plt.savefig(_HERE / 'dirac_measurement_dynamics.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: dirac_measurement_dynamics.png]")
@@ -798,7 +800,7 @@ def investigate_cosine_phase():
                 arrowprops=dict(arrowstyle='->', color='purple', lw=2))
 
     plt.tight_layout()
-    plt.savefig('cosine_phase_analysis.png',
+    plt.savefig(_HERE / 'cosine_phase_analysis.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: cosine_phase_analysis.png]")
@@ -909,7 +911,7 @@ def derive_required_distribution():
                  'it must bias the hidden variable distribution THIS specifically',
                  fontsize=13, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('route_a_requirement.png',
+    plt.savefig(_HERE / 'route_a_requirement.png',
                 dpi=150, bbox_inches='tight')
     plt.close()
     print("\n[Saved: route_a_requirement.png]")

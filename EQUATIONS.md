@@ -524,7 +524,7 @@ $$\boxed{[\psi(x),\psi(y)]_\pm = 0 \quad \text{for}\quad (x-y)^2 < 0}$$
 
 (commutator for bosons, anticommutator for fermions). MCI reading: no chain of Kuramoto sync events has connected the clocks at $x$ and $y$; their structures are independent in the synchronization manifold. The choice of sign in the (anti)commutator is forced by the same SU(2) double-cover fact above — it is one structural fact, not two.
 
-See Appendix D of the main paper and `spin_statistics.py` for numerical verification (six tests, including a momentum scan over six decades that confirms the sign is unaffected by the relativistic large/small mixing of Appendix A).
+See Appendix D of the main paper and `tests/spin_statistics.py` for numerical verification (six tests, including a momentum scan over six decades that confirms the sign is unaffected by the relativistic large/small mixing of Appendix A).
 
 ---
 

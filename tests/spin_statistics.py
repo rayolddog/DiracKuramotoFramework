@@ -43,6 +43,8 @@ structural (the SU(2) rep), not dynamical (the Kuramoto coupling).
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -386,7 +388,7 @@ def make_plots(t_arr, A_traj, B_traj, rA, rB):
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.92))
 
     plt.tight_layout()
-    plt.savefig('spin_statistics.png', dpi=150)
+    plt.savefig(_HERE / 'spin_statistics.png', dpi=150)
     print("\nSaved: spin_statistics.png")
 
 

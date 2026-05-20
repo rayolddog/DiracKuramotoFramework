@@ -32,14 +32,12 @@ TestQiskit.ipynb
 *.txt
 
 # Untracked illustrative/working figures (the tracked ones stay tracked)
-bell_phase.png
-bulk_sync_hardware.png
-bulk_sync_hardware2.png
-dirac_extension.png
-everett_thermal.png
-gravity_twistor.png
-higgs_clock.png
-
-# Allegorical sketch (not referenced in any document)
-penrose_style_qc_mermaid.png
-penrose_style_qc_mermaid.py
+tests/bell_phase.png
+tests/bulk_sync_hardware.png
+tests/bulk_sync_hardware2.png
+tests/dirac_extension.png
+tests/everett_thermal.png
+tests/gravity_twistor.png
+tests/higgs_clock.png
+tests/kuramoto_sync.png
+tests/local_causality.png

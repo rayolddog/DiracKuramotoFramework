@@ -56,6 +56,8 @@ DICTIONARY:
 """
 
 import numpy as np
+from pathlib import Path
+_HERE = Path(__file__).resolve().parent
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -458,7 +460,7 @@ Cosmology     Big Bang            Random initial phases
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
 
     plt.tight_layout()
-    plt.savefig('gravity_twistor.png', dpi=150)
+    plt.savefig(_HERE / 'gravity_twistor.png', dpi=150)
     print("\nSaved: gravity_twistor.png")
     plt.show()
 
