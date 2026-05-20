@@ -166,7 +166,7 @@ discipline throughout the manuscript through subsections that
 explicitly bound scope and acknowledge open questions: §1.5 (What This
 Paper Does Not Claim), §3.4 (limitations of the two-stage picture),
 §3.8 (Stage-2 emission spectra as an open question), §3.9 (what §3
-does not claim), §4.7 (what the Born-rule reframing requires), §5.6
+does not claim), §4.7 (what the Born-rule reframing requires), §5.7
 (what remains open for the photon extension), §6.3 (honest assessment
 of the qualitative predictions), and §E.7 (four limitations of the
 cochain ontology). These limitation subsections are not decoration;
@@ -578,7 +578,7 @@ J. Bramble.*
 **Stage 1 as polarization projection.** The cos²(θ/2) Bell visibility for
 photons is set by the polarizer-axis difference θ = a − b acting on the
 photon's polarization Hilbert space — standard QED, not a framework
-prediction (see §5.2). The framework's contribution at Stage 1 is the
+prediction (see §5.3). The framework's contribution at Stage 1 is the
 *physical mechanism* of projection: the photon couples to a bulk-bound
 electron via K_pair^{γe}, and the polarizer's macroscopic mechanical
 orientation determines which transmitted-channel eigenstate the photon ends
@@ -742,7 +742,7 @@ system loses its quantum independence and becomes bulk-coherent. Whether
 one reads this event as "gravitationally driven self-collapse" (Penrose)
 or as "gravitationally maintained Kuramoto re-locking" (this work),
 **Stage 2 — the bulk re-establishment of coherence — is the candidate
-locus of the quantum-to-classical transition**. §5.4 develops the
+locus of the quantum-to-classical transition**. §5.5 develops the
 linewidth-dependent observable signature this localization implies for
 photonic Bell tests; here the claim is more general — for any field type
 in §3.8's taxonomy where the two-stage picture applies, Stage 2 is the
@@ -1182,7 +1182,148 @@ chiral limit of the Dirac equation: two decoupled clocks, θ_rel = π/2 permanen
 A Kuramoto coupling between F_+ and F_− of a single photon is identically zero
 in vacuum.
 
-### 5.2 Where Photon Bell Correlations Come From
+### 5.2 Photon Polarization as Symmetric Chiral-Clock Pair Structure
+
+The framework's treatment of the electron in §2 identifies the Dirac
+spinor as a chiral clock pair $(\psi_L, \psi_R)$ with the mass term as
+the Kuramoto coupling $K = m$ between them. The Riemann–Silberstein form
+of §5.1 puts the photon in a parallel algebraic register. The standard
+two-spinor formalism of Penrose and Rindler [46] supplies the algebraic
+connection, and it strengthens the framework's central claim that *every
+fundamental field is a composition of chiral-clock pairs*.
+
+#### The two-spinor decomposition of gauge fields
+
+In two-spinor notation, a massless spin-$s$ field is a totally symmetric
+spinor with $2s$ indices,
+
+$$\phi_{AB\cdots K} = \phi_{(AB\cdots K)}, \qquad \text{number of indices} = 2s,$$
+
+satisfying the massless field equation $\nabla^{AA'}\phi_{AB\cdots K} =
+0$. The cases of physical interest in the Standard Model and gravity are:
+
+| Field | Spin | Spinor structure | Number of clock pairs |
+|---|---|---|---|
+| Weyl fermion | $\tfrac{1}{2}$ | $\psi_A$ | 1 |
+| Photon, gluon | $1$ | $\phi_{AB}$ | 2 |
+| Graviton | $2$ | $\phi_{ABCD}$ | 4 |
+
+(Massive Dirac fermions are pairs of Weyl spinors coupled by $K = m$,
+as in §2; the table is for the massless gauge sector.) The number of
+indices is the number of two-component chiral spinors symmetrized
+together. In the framework's language, **the number of chiral-clock
+pairs that compose the field equals twice the spin.**
+
+The photon's electromagnetic spinor $\phi_{AB}$ is constructed as the
+symmetric tensor product of two Weyl spinors:
+
+$$\phi_{AB} = \psi_{(A} \chi_{B)},$$
+
+with the two independent components of $\phi_{AB}$ corresponding to
+the two physical polarization states of the photon. The decomposition
+$\tfrac{1}{2} \otimes \tfrac{1}{2} = 0 \oplus 1$ of standard angular
+momentum theory is in this language the statement that the symmetric
+part is the photon ($\phi_{AB}$, spin 1) and the antisymmetric part is
+a scalar (the inner product $\psi^A \chi_A$, spin 0).
+
+The Riemann–Silberstein vector $\mathbf{F} = \mathbf{E} + i\mathbf{B}$
+of §5.1 is the spatial representation of the symmetric spinor
+$\phi_{AB}$. Its complex conjugate $\mathbf{F}^* = \mathbf{E} -
+i\mathbf{B}$ is the conjugate spinor $\bar\phi_{A'B'}$. The two pieces
+correspond to the two helicity states of the photon: left-circular
+polarization (the $\phi_{AB}$ sector, $+1$ helicity) and right-circular
+polarization (the $\bar\phi_{A'B'}$ sector, $-1$ helicity). In free
+propagation, the two sectors do not couple — this is the spin-1 analog
+of the chirality decoupling that makes massless fermions free in §2.1.
+
+#### Re-reading the photon in framework language
+
+The framework's claim in §2 was that an electron is a *single*
+chiral-clock pair held in coherent Kuramoto lock by the mass coupling
+$K = m$. The corresponding statement for the photon is now sharper:
+
+> **The photon is a symmetric product of two chiral-clock pairs,
+> propagating without coupling between the pairs (massless), and its
+> polarization is the index structure of this symmetric product.**
+
+Concretely:
+
+- A left-circularly polarized photon corresponds to the symmetric
+  product of two left-handed chiral-clock structures — both clock pairs
+  rotating in the same sense, with their helicity content adding
+  coherently.
+- A right-circularly polarized photon is the conjugate construction
+  with two right-handed structures.
+- Linear polarization is a coherent superposition of the two, with the
+  polarization axis set by the relative phase between the two helicity
+  amplitudes.
+
+This reading recovers the standard polarization phenomenology — the
+Stokes parameters, the Poincaré sphere, the selection rules
+$\Delta m = \pm 1$ for circular-polarization absorption — directly from
+the chiral-clock structure rather than treating it as separate
+machinery. The photon is not a new kind of object in the framework: it
+is the structurally simplest composite of chiral-clock pairs that can
+propagate freely (because it is massless) and carry transverse angular
+momentum (because it is symmetric rank-2).
+
+#### Cochain-ontology consistency
+
+The cochain ontology of Appendix E makes this picture especially
+natural. In that language, the electron is a 0-cochain (a node
+amplitude) and the photon is a 1-cochain (an edge amplitude). An edge
+in a simplicial complex is structurally a *symmetric pair of node
+positions* — it has two endpoints, and the edge amplitude transforms as
+a rank-2 symmetric quantity under operations on its endpoints. This is
+the cochain-ontological reason the photon's spinor structure
+$\phi_{AB}$ is symmetric rank-2: the photon lives on the edges of the
+underlying simplicial complex, and edges are intrinsically
+pair-structured. The polarization degree of freedom is the framework's
+geometric expression of "which pair structure the edge carries."
+
+The pattern extends:
+
+- 0-cochains (nodes): spin-$\tfrac{1}{2}$ fermions, single chiral-clock
+  pair
+- 1-cochains (edges): spin-1 gauge bosons, symmetric pair of chiral
+  clock pairs
+- 2-cochains (faces): spin-2 fields (graviton in continuum limit?),
+  symmetric quadruple of chiral-clock pairs
+
+The graviton extension is more speculative — the rank-4 symmetric
+spinor $\phi_{ABCD}$ classifies gravitational radiation via the Petrov
+algebraic classification, and the identification with a 2-cochain on a
+simplicial complex is plausible but not derived in this paper. We flag
+it as a structural pattern worth investigating, not a claim.
+
+#### Limitations of this section
+
+Three honest limitations.
+
+1. **Spinor formalism is well-established.** Nothing in the two-spinor
+   decomposition $\tfrac{1}{2} \otimes \tfrac{1}{2} = 0 \oplus 1$ is
+   original to this paper. The contribution here is the reading of
+   that standard structure through the framework's chiral-clock lens,
+   showing that the framework's photon treatment is consistent with —
+   and clarified by — the two-spinor formalism of Penrose and Rindler.
+
+2. **Massive gauge bosons.** The $W^\pm$ and $Z^0$ bosons are massive
+   and acquire a longitudinal polarization mode. In the framework, this
+   should correspond to a Higgs-induced Kuramoto coupling within the
+   symmetric pair structure, analogous to the $K = m$ coupling for
+   fermions but applied to the photon's internal chiral pairs.
+   Developing this would require a Higgs-mechanism section of the
+   framework and is left for future work.
+
+3. **Cochain dimensionality and physical spin.** The pattern
+   "k-cochain ↔ spin-k/2 field" is suggestive but the precise mapping
+   is non-trivial — most obviously, the standard map between cochains
+   and fields uses *differential form degree*, not spin. The two scale
+   together for the cases tabulated above, but a rigorous statement of
+   the correspondence for the full Standard Model field content is
+   beyond the scope of this paper.
+
+### 5.3 Where Photon Bell Correlations Come From
 
 The polarization Hilbert space of a photon is two-dimensional, spanned by any
 orthogonal pair (H/V, ±, L/R). It is mathematically isomorphic to the spin-½
@@ -1203,7 +1344,7 @@ with the Dirac spinor delivers the −cos(a−b) correlation for spin-½ pairs
 correlations; the underlying Hilbert-space structure does. The framework's
 contribution lies elsewhere.
 
-### 5.3 The Measurement Mechanism Transfers to Photons
+### 5.4 The Measurement Mechanism Transfers to Photons
 
 The framework's central interpretive claim — measurement is Kuramoto
 re-synchronization to the detector bulk (Section 3) — does not depend on the
@@ -1232,7 +1373,7 @@ characterizes the system's coupling to its environment. For massive fermions
 at rest that scale is mc² (the Compton frequency); for photons it is ℏω
 (the photon's own frequency).
 
-### 5.4 Gravitational Decoherence and the Linewidth-Dependent Bell Test
+### 5.5 Gravitational Decoherence and the Linewidth-Dependent Bell Test
 
 Two photon time scales must be kept distinct:
 
@@ -1263,7 +1404,7 @@ The discriminating measurement is the joint linewidth × altitude scan with
 narrow-linewidth photons; photon energy is one knob among three (along with
 linewidth Δν and altitude split ΔΦ_grav), not a discriminator on its own.
 
-### 5.5 Photons and Penrose Objective Reduction
+### 5.6 Photons and Penrose Objective Reduction
 
 The gravitational synchronization rate Γ_grav = GM²/(ℏΔz) (Section 3.5)
 vanishes identically for a massless particle. Equivalently, the Penrose
@@ -1281,7 +1422,7 @@ In the framework's reading, a photon therefore has only two pathways into the
 classical domain:
 
 1. **Measurement (active).** Kuramoto re-synchronization to a quantized
-   detector channel (§5.3). A single photon hitting a photodetector produces
+   detector channel (§5.4). A single photon hitting a photodetector produces
    a definite click; this is the only mechanism by which an isolated photon
    classicalizes.
 2. **Coherent-state averaging (many-photon).** A macroscopically populated
@@ -1303,12 +1444,12 @@ of the photon's trajectory, not collapse or decoherence of its quantum state
 — it bends paths without classicalizing states.
 
 The silence of the gravitational channel for photons is consistent with the
-linewidth-dependent prediction in §5.4, which attributes the gravitational
+linewidth-dependent prediction in §5.5, which attributes the gravitational
 effect not to the photon in flight but to the bulk-phase mismatch between
 detectors A and B at different gravitational potentials. The photon is the
 messenger; the gravitational decoherence is in the detectors.
 
-### 5.6 What Remains Open
+### 5.7 What Remains Open
 
 Two questions are not resolved by this section:
 
@@ -1409,7 +1550,7 @@ obstacle: the K = m intra-spinor period ℏ/(mc²) is the Compton time,
 below any direct time-resolution even for the heaviest lepton. We
 therefore do not at present have a clean experimental observable that
 isolates K = m from mass-independent QED. The framework's distinguishable
-predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
+predictions remain §5.5 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), the Zitterbewegung
 consistency check P2, and `tests/sg_angular.py`. Whether any laboratory
 observable is sensitive to K = m as such, beyond what standard QM already
@@ -1450,7 +1591,7 @@ predicted asymmetry (φ_GHZ > φ_product at every usable N) and with GHZ
 Heisenberg scaling specifically. As stated in §1.5, this is a consistency check
 against standard quantum metrology, not a test of MCI's distinctive content;
 both standard QM and MCI predict identical scaling. The framework-distinctive
-predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
+predictions remain §5.5 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), and `tests/sg_angular.py`;
 P3 and P4 in their hadron-mass-scaling forms are addressed above as not viable tests.
 
@@ -1735,7 +1876,7 @@ known conflations:
 | Program | Category | What it does | What is at stake |
 |---|---|---|---|
 | `tests/spin_statistics.py` | **Evidential** | Six tests; fermion antisymmetry sign across 6 decades of v/c | Could have falsified the chiral-pair commitment (Appendix D); did not |
-| `tests/gravitational_bell.py` | **Quantitative prediction** | Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2) | Operationalizes the framework's sharpest distinguishable prediction |
+| `tests/gravitational_bell.py` | **Quantitative prediction** | Implements §5.5 CHSH(Δν) = 2√2·exp(−δφ²/2) | Operationalizes the framework's sharpest distinguishable prediction |
 | `tests/predictions.py` | **Quantitative prediction** | Catalog of P1–P6 testable predictions, with retractions explicitly marked | Maps experimental contact points; documents falsified entries (P1, P3) |
 | `tests/bell_energy_test.py` | **Quantitative prediction** | Qiskit CHSH simulation testing K(E) scalings vs photon energy | Discriminates K∝1/E from K∝ω from null QM |
 | `tests/sg_angular.py` | **Quantitative prediction** | Stern-Gerlach angular dependence on local gravity (~4% effect) | Tests gravitational Kuramoto coupling beyond Bell tests |
@@ -1753,7 +1894,7 @@ known conflations:
 
 Evidential weight rests on `tests/spin_statistics.py` (a non-trivial check that
 could have failed) and the quantitative-prediction scripts that operationalize
-§5.4, §6.2, and the gravitational-Kuramoto claims. The illustrative and
+§5.5, §6.2, and the gravitational-Kuramoto claims. The illustrative and
 pedagogical scripts visualize claims that are mathematically guaranteed by
 construction (trace linearity in `tests/dirac_extension.py`, Kuramoto convergence
 in `tests/kuramoto_sync.py`); they support readability and reproducibility without
@@ -2381,6 +2522,10 @@ Vaccarino, F., & Petri, G. (2024). A unified framework for simplicial
 Kuramoto models. *Chaos: An Interdisciplinary Journal of Nonlinear
 Science*, 34(5), 053118. https://doi.org/10.1063/5.0169388
 (arXiv:2305.17977)
+
+[46] Penrose, R., & Rindler, W. (1984). *Spinors and Space-Time, Vol. 1:
+Two-Spinor Calculus and Relativistic Fields*. Cambridge University Press.
+https://doi.org/10.1017/CBO9780511564048
 
 ---
 
