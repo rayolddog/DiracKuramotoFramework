@@ -115,7 +115,75 @@ We make three claims, in decreasing order of mathematical rigor:
    as an independent probability axiom. This is an interpretive claim with
    physical motivation, not a complete derivation.
 
-### 1.4 What This Paper Does Not Claim
+### 1.4 On the Structure of the Argument
+
+The breadth of this paper is deliberate, and the argumentative strategy
+warrants explicit naming. The Many Clocks Interpretation is not a single
+calculation or a single derivation. It is a *structural reading* of
+quantum mechanics, and the case for it rests on the convergence of many
+independent prior results onto a common reading in which the wave
+function is a real oscillating cochain-valued field and measurement is
+local Kuramoto re-synchronization. The convergent results include:
+
+- the Dirac equation's chiral decomposition into two coupled sectors
+  that go free in the massless limit (§2.1);
+- Kuramoto synchronization theory in classical and quantum settings,
+  derived from semiclassical limits of quantum master equations in
+  coupled-oscillator systems (as cited in §2.2);
+- the discrete Hodge–Dirac operator on simplicial complexes [45],
+  satisfying $\mathcal{D}^2 = \Delta$ as the algebraic root of the
+  Laplacian (Appendix E);
+- Penrose's objective reduction proposal [6], whose characteristic
+  timescale $\tau \sim \hbar/E_G$ coincides with the gravitational
+  re-synchronization rate $\Gamma_{\mathrm{grav}}$ under the framework's
+  $K = E/\hbar$ identification (§3.6);
+- Nelson stochastic mechanics [26], whose background-field diffusion
+  $\nu = \hbar/2m$ is identified with the zero-point chiral-phase
+  fluctuation amplitude (§4.5);
+- Hestenes' Zitterbewegung interpretation [35], in which the complex
+  phase factor in the Dirac wave function is a physical internal
+  rotation, here identified with the chiral clock pair (§7.7);
+- the Fourier bandwidth theorem applied to real wave fields, recovering
+  the Heisenberg uncertainty principle and the zero-point phase floor
+  as the same statement in conjugate variables (§4.6).
+
+Each of these results is established in its own literature; the paper
+does not claim originality for any of them individually. The claim is
+that they fit together — under the structural reading proposed here —
+in a way that the standard interpretive packages (Copenhagen,
+Many-Worlds, Bohm, environmental decoherence) do not anticipate. **The
+convergence is the argument.**
+
+We are aware of the failure mode this style of argument can produce.
+Frameworks that "feel right" because many disparate pieces appear to
+fit can be either genuine structural insight — Maxwell's unification of
+electricity, magnetism, and optics; Penrose's path from twistors
+through spin networks to objective reduction — or post-hoc construction
+flexible enough to accommodate anything. The discipline that
+distinguishes the two is the willingness to specify limitations and
+falsification conditions honestly. We have tried to maintain that
+discipline throughout the manuscript through subsections that
+explicitly bound scope and acknowledge open questions: §1.5 (What This
+Paper Does Not Claim), §3.4 (limitations of the two-stage picture),
+§3.8 (Stage-2 emission spectra as an open question), §3.9 (what §3
+does not claim), §4.7 (what the Born-rule reframing requires), §5.6
+(what remains open for the photon extension), §6.3 (honest assessment
+of the qualitative predictions), and §E.7 (four limitations of the
+cochain ontology). These limitation subsections are not decoration;
+they are the intended internal discipline of the argument.
+
+Reviewers may reasonably ask whether any single connection could be
+sharpened or removed. We have erred on the side of including
+connections rather than omitting them, because the convergence is the
+case and removing connections weakens that case asymmetrically. We
+welcome targeted criticism of specific connections — "the Nelson
+identification needs more development," "the Hestenes correspondence
+is suggestive but not rigorous" — as the kind of feedback that would
+improve the manuscript. What we would resist is the request to
+compress by category, which would strengthen the prose at the cost of
+weakening the structural argument.
+
+### 1.5 What This Paper Does Not Claim
 
 We state clearly at the outset:
 
@@ -128,7 +196,7 @@ We state clearly at the outset:
   predictions from standard decoherence theory. We are honest about this
   throughout.
 
-### 1.5 Relational Structure: The Many Clocks Interpretation
+### 1.6 Relational Structure: The Many Clocks Interpretation
 
 We name this framework the **Many Clocks Interpretation of Quantum Mechanics
 (MCI)**. The name is a deliberate echo of Many-Worlds, with a sharp contrast:
@@ -1379,7 +1447,7 @@ the per-shot noise floor of the hardware, and ZNE over-corrects at N = 8
 (⟨X_sys⟩ = 1.04 ± 0.04, statistically consistent with theory but unphysical and
 thus unusable in an arccos-based fit). The data are consistent with the
 predicted asymmetry (φ_GHZ > φ_product at every usable N) and with GHZ
-Heisenberg scaling specifically. As stated in §1.4, this is a consistency check
+Heisenberg scaling specifically. As stated in §1.5, this is a consistency check
 against standard quantum metrology, not a test of MCI's distinctive content;
 both standard QM and MCI predict identical scaling. The framework-distinctive
 predictions remain §5.4 (linewidth-dependent gravitational Bell), §6.2 P5
@@ -1404,7 +1472,7 @@ P3 and P4 in their hadron-mass-scaling forms are addressed above as not viable t
 | Born rule | Postulated | Derived (contested) | Derived | Modified | Derived (contested) | **Reframed as energy partition (Section 4)** ᵇ |
 | Uncertainty principle | Postulated | Inherited | Derived (nonlocal) | Inherited | Inherited | **Emergent (Section 4.6)** ᵇ |
 | Observer needed? | Yes | Yes (branch) | No | No | No | **No** ᵃ |
-| Preferred frame? | No | No | Yes (pilot wave) | No | No | **No (relational, §1.5)** ᵃ |
+| Preferred frame? | No | No | Yes (pilot wave) | No | No | **No (relational, §1.6)** ᵃ |
 
 *ᵃ Established within the framework: follows directly from the mathematical
 identification K = m and the re-synchronization interpretation of measurement
@@ -1569,7 +1637,7 @@ Kuramoto synchronization dynamics, respectively.
 
 This paper presents a mathematical identification (Dirac = Kuramoto on the
 synchronized manifold) and a named interpretive framework built on it: the
-**Many Clocks Interpretation of Quantum Mechanics (MCI)**, introduced in §1.5.
+**Many Clocks Interpretation of Quantum Mechanics (MCI)**, introduced in §1.6.
 The mathematical identification is verifiable and, we believe, novel. The
 interpretive framework is physically motivated but not yet quantitatively
 predictive beyond standard decoherence.
@@ -2307,6 +2375,12 @@ mathematical survey. *Journal of Fourier Analysis and Applications*, 3(3),
 [44] Białynicki-Birula, I., & Mycielski, J. (1975). Uncertainty relations for
 information entropy in wave mechanics. *Communications in Mathematical
 Physics*, 44(2), 129–132. https://doi.org/10.1007/BF01608825
+
+[45] Nurisso, M., Arnaudon, A., Lucas, M., Peach, R. L., Expert, P.,
+Vaccarino, F., & Petri, G. (2024). A unified framework for simplicial
+Kuramoto models. *Chaos: An Interdisciplinary Journal of Nonlinear
+Science*, 34(5), 053118. https://doi.org/10.1063/5.0169388
+(arXiv:2305.17977)
 
 ---
 
