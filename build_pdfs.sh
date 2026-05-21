@@ -2,12 +2,15 @@
 # build_pdfs.sh — render PAPER_UNIFIED.md, AB_VISIBILITY_PAPER.md, and EQUATIONS.md to PDF
 #
 # Produces:
-#   ManyClocks.pdf       — the full paper, with TOC depth 3
-#   AB_visibility.pdf    — the AB visibility companion paper, with TOC depth 2
-#   equations.pdf        — the equation reference, with TOC depth 2
+#   ManyClocks.pdf       — pandoc render of PAPER_UNIFIED.md, TOC depth 3
+#   AB_visibility.pdf    — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
+#   equations.pdf        — pandoc render of EQUATIONS.md, TOC depth 2
+#   paper.tex            — pandoc-generated LaTeX source from PAPER_UNIFIED.md
+#   paper.pdf            — two-pass xelatex compile of paper.tex
 #
 # Requires: pandoc, xelatex (TeX Live or MacTeX)
 # Uses: pdf_header.tex (Unicode-to-LaTeX mappings)
+#       tests/ (for figures referenced from PAPER_UNIFIED.md without a path)
 
 set -euo pipefail
 
@@ -57,8 +60,25 @@ pandoc "${REPO_DIR}/EQUATIONS.md" \
     --toc --toc-depth=2 \
     "${PANDOC_OPTS[@]}"
 
+# Regenerate paper.tex from PAPER_UNIFIED.md (standalone LaTeX source)
+echo "Regenerating paper.tex from PAPER_UNIFIED.md..."
+pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
+    -s -o "${REPO_DIR}/paper.tex" \
+    "${PANDOC_OPTS[@]}"
+
+# Compile paper.pdf from paper.tex (two passes for cross-refs / TOC).
+# tests/ is on TEXINPUTS so figures referenced without a path (e.g.
+# entangled_pair_two_stage.png) resolve. Clean stale aux files first so a
+# previous partial compile cannot poison this run.
+echo "Compiling paper.pdf via xelatex (two-pass)..."
+( cd "${REPO_DIR}" \
+    && rm -f paper.aux paper.toc paper.out paper.log \
+    && TEXINPUTS=".:tests:" xelatex -interaction=nonstopmode paper.tex > /dev/null \
+    && TEXINPUTS=".:tests:" xelatex -interaction=nonstopmode paper.tex > /dev/null )
+
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" "${REPO_DIR}/equations.pdf" \
+ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" \
+       "${REPO_DIR}/equations.pdf" "${REPO_DIR}/paper.tex" "${REPO_DIR}/paper.pdf" \
     | awk '{print "  " $9 ": " $5}'

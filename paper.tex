@@ -90,6 +90,8 @@
 \newunicodechar{≥}{\ensuremath{\geq}}
 \newunicodechar{≪}{\ensuremath{\ll}}
 \newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{≲}{\ensuremath{\lesssim}}
+\newunicodechar{≳}{\ensuremath{\gtrsim}}
 \newunicodechar{∝}{\ensuremath{\propto}}
 \newunicodechar{∼}{\ensuremath{\sim}}
 \newunicodechar{√}{\ensuremath{\surd}}
@@ -177,10 +179,6 @@
 
 \begin{document}
 
-{
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
 \section{Many Clocks Interpretation of Quantum
 Mechanics}\label{many-clocks-interpretation-of-quantum-mechanics}
 
@@ -317,7 +315,86 @@ We make three claims, in decreasing order of mathematical rigor:
   motivation, not a complete derivation.
 \end{enumerate}
 
-\subsubsection{1.4 What This Paper Does Not
+\subsubsection{1.4 On the Structure of the
+Argument}\label{on-the-structure-of-the-argument}
+
+The breadth of this paper is deliberate, and the argumentative strategy
+warrants explicit naming. The Many Clocks Interpretation is not a single
+calculation or a single derivation. It is a \emph{structural reading} of
+quantum mechanics, and the case for it rests on the convergence of many
+independent prior results onto a common reading in which the wave
+function is a real oscillating cochain-valued field and measurement is
+local Kuramoto re-synchronization. The convergent results include:
+
+\begin{itemize}
+\tightlist
+\item
+  the Dirac equation's chiral decomposition into two coupled sectors
+  that go free in the massless limit (§2.1);
+\item
+  Kuramoto synchronization theory in classical and quantum settings,
+  derived from semiclassical limits of quantum master equations in
+  coupled-oscillator systems (as cited in §2.2);
+\item
+  the discrete Hodge--Dirac operator on simplicial complexes {[}45{]},
+  satisfying \(\mathcal{D}^2 = \Delta\) as the algebraic root of the
+  Laplacian (Appendix E);
+\item
+  Penrose's objective reduction proposal {[}6{]}, whose characteristic
+  timescale \(\tau \sim \hbar/E_G\) coincides with the gravitational
+  re-synchronization rate \(\Gamma_{\mathrm{grav}}\) under the
+  framework's \(K = E/\hbar\) identification (§3.6);
+\item
+  Nelson stochastic mechanics {[}26{]}, whose background-field diffusion
+  \(\nu = \hbar/2m\) is identified with the zero-point chiral-phase
+  fluctuation amplitude (§4.5);
+\item
+  Hestenes' Zitterbewegung interpretation {[}35{]}, in which the complex
+  phase factor in the Dirac wave function is a physical internal
+  rotation, here identified with the chiral clock pair (§7.7);
+\item
+  the Fourier bandwidth theorem applied to real wave fields, recovering
+  the Heisenberg uncertainty principle and the zero-point phase floor as
+  the same statement in conjugate variables (§4.6).
+\end{itemize}
+
+Each of these results is established in its own literature; the paper
+does not claim originality for any of them individually. The claim is
+that they fit together --- under the structural reading proposed here
+--- in a way that the standard interpretive packages (Copenhagen,
+Many-Worlds, Bohm, environmental decoherence) do not anticipate.
+\textbf{The convergence is the argument.}
+
+We are aware of the failure mode this style of argument can produce.
+Frameworks that ``feel right'' because many disparate pieces appear to
+fit can be either genuine structural insight --- Maxwell's unification
+of electricity, magnetism, and optics; Penrose's path from twistors
+through spin networks to objective reduction --- or post-hoc
+construction flexible enough to accommodate anything. The discipline
+that distinguishes the two is the willingness to specify limitations and
+falsification conditions honestly. We have tried to maintain that
+discipline throughout the manuscript through subsections that explicitly
+bound scope and acknowledge open questions: §1.5 (What This Paper Does
+Not Claim), §3.4 (limitations of the two-stage picture), §3.8 (Stage-2
+emission spectra as an open question), §3.9 (what §3 does not claim),
+§4.7 (what the Born-rule reframing requires), §5.7 (what remains open
+for the photon extension), §6.3 (honest assessment of the qualitative
+predictions), and §E.7 (four limitations of the cochain ontology). These
+limitation subsections are not decoration; they are the intended
+internal discipline of the argument.
+
+Reviewers may reasonably ask whether any single connection could be
+sharpened or removed. We have erred on the side of including connections
+rather than omitting them, because the convergence is the case and
+removing connections weakens that case asymmetrically. We welcome
+targeted criticism of specific connections --- ``the Nelson
+identification needs more development,'' ``the Hestenes correspondence
+is suggestive but not rigorous'' --- as the kind of feedback that would
+improve the manuscript. What we would resist is the request to compress
+by category, which would strengthen the prose at the cost of weakening
+the structural argument.
+
+\subsubsection{1.5 What This Paper Does Not
 Claim}\label{what-this-paper-does-not-claim}
 
 We state clearly at the outset:
@@ -334,12 +411,17 @@ We state clearly at the outset:
   We do not propose new physics. We propose a new \emph{mechanism} for
   known physics.
 \item
-  The framework is an interpretation --- it may or may not generate
-  distinguishable predictions from standard decoherence theory. We are
-  honest about this throughout.
+  The framework proposes several distinguishable predictions (§5.5
+  linewidth-dependent gravitational Bell; §6.2 P5
+  gravitationally-weighted secondary emission; P2 trapped-ion
+  Zitterbewegung), but they are either below current experimental
+  sensitivity or qualitative scaling arguments without computed
+  coefficients. Whether MCI is a genuinely distinguishable theory or an
+  interpretive overlay on standard decoherence is an open question we
+  are honest about throughout.
 \end{itemize}
 
-\subsubsection{1.5 Relational Structure: The Many Clocks
+\subsubsection{1.6 Relational Structure: The Many Clocks
 Interpretation}\label{relational-structure-the-many-clocks-interpretation}
 
 We name this framework the \textbf{Many Clocks Interpretation of Quantum
@@ -462,8 +544,8 @@ easily conflated.
   and a \emph{small} component that vanishes at rest and grows with
   momentum as r = p/(E+m) = tan(θ\_rel/2). The block decomposition E\_LL
   + E\_SS + E\_LS of the Bell correlation (Appendix A;
-  \texttt{dirac\_extension.py}) is naturally written here, because the
-  standard relativistic spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives in this
+  \texttt{tests/dirac\_extension.py}) is naturally written here, because
+  the standard relativistic spinor u(p,↑) = N(1, 0, r, 0)ᵀ lives in this
   basis.
 \end{itemize}
 
@@ -584,6 +666,24 @@ electroweak symmetry breaking (v → 0), K → 0 and all fermions are
 massless --- their chiral clocks are independent. After symmetry
 breaking, K = m and the clocks synchronize.
 
+\textbf{Capture range of the chiral lock.} The Kuramoto identification
+carries a dynamical statement beyond the equilibrium one in (3): two
+oscillators frequency-lock only when their natural-frequency mismatch
+lies within a coupling-set bandwidth --- the Arnold-tongue or
+capture-range condition of the synchronization literature {[}36, 37{]}.
+The chiral pair's locking bandwidth is therefore set by K = m, so the
+L--R lock is robust for any on-shell Dirac particle, whose intrinsic
+L--R frequency mismatch is bounded by the Compton scale by construction.
+The same condition becomes physically active at Stage 2 (§3.4): the
+pair-sync vertex coupling K\_pair sets the analogous bandwidth between
+particle and bulk, and phase mismatches large compared to K\_pair are
+not pulled into the bulk lock --- they are instead shed through
+secondary radiation via the §3.4 hierarchy. The intuition that ``the
+amount a phase can be pulled into synchronization is bounded'' is
+therefore not a soft heuristic but the standard Kuramoto capture-range
+condition \textbar Δω\textbar{} ≲ K\_eff, evaluated separately at Stage
+1 (K = m) and Stage 2 (K\_pair).
+
 \subsubsection{2.3 Two Clocks, Not One}\label{two-clocks-not-one}
 
 The central physical picture is:
@@ -598,6 +698,35 @@ two chiral sectors toward a common phase.
 
 This interpretation does not modify the Dirac equation. It provides an
 ontological reading of its mathematical structure.
+
+\textbf{Normal-mode picture.} Because the mass term K = m couples the
+two clocks, the natural observables are not the individual chiral phases
+but the \emph{normal modes} of the coupled pair: a symmetric (sum) mode
+that propagates as the de Broglie carrier at ω\_dB = E/ℏ --- Feynman's
+``little arrow'' --- and an antisymmetric mode that manifests as the
+Zitterbewegung beat at ω\_Z = 2mc²/ℏ when both positive- and
+negative-energy amplitudes are populated (Appendix B). The ``two
+clocks'' are the underlying chiral oscillators; the familiar single de
+Broglie carrier is their symmetric mode. Counting both together as three
+independent clocks would overcount: the carrier is not a third clock but
+the sum mode of the chiral pair, and the Zitterbewegung beat is the
+framework's empirical signature that the coupling is real --- without K
+= m, ψ\_L and ψ\_R would free-stream independently and no beat could
+form.
+
+\textbf{A structural parallel with special relativity.} This failure of
+additive clock counting has the same algebraic origin as the failure of
+additive coordinate counting in Minkowski spacetime. Just as spacetime
+is not a sum (3 space) + (1 time) but a Lorentzian whole whose normal
+modes (timelike / null / spacelike) carry the physical content, the
+chiral pair (ψ\_L, ψ\_R) is not a sum of two independent clocks but a
+Lorentz-coupled whole whose normal modes (de Broglie carrier,
+Zitterbewegung beat) carry the physical content. The (½, 0) ⊕ (0, ½)
+representation that carries the Dirac spinor is itself a representation
+of the Lorentz group, and the L ↔ R coupling K = m is the
+Lorentz-covariant mass term. The chiral-clock reading is therefore not
+an additive metaphor pasted on top of two oscillators --- it is what
+Lorentz invariance forces the structural count to look like.
 
 \subsubsection{2.4 The Synchronized State}\label{the-synchronized-state}
 
@@ -838,7 +967,7 @@ input from J. Bramble.}
 \textbf{Stage 1 as polarization projection.} The cos²(θ/2) Bell
 visibility for photons is set by the polarizer-axis difference θ = a − b
 acting on the photon's polarization Hilbert space --- standard QED, not
-a framework prediction (see §5.2). The framework's contribution at Stage
+a framework prediction (see §5.3). The framework's contribution at Stage
 1 is the \emph{physical mechanism} of projection: the photon couples to
 a bulk-bound electron via K\_pair\^{}\{γe\}, and the polarizer's
 macroscopic mechanical orientation determines which transmitted-channel
@@ -903,6 +1032,57 @@ relaxation, never on the pair-sync that builds cos²(θ/2).
   interactions, where confinement and short-range structure complicate
   the local-amplitude reading.
 \end{enumerate}
+
+\paragraph{Stern-Gerlach as a single-particle two-stage
+measurement}\label{stern-gerlach-as-a-single-particle-two-stage-measurement}
+
+The two-stage architecture is most often illustrated with
+photon-detector coupling, but the cleanest single-particle case is the
+Stern-Gerlach experiment. A silver atom boiled off a hot filament
+carries an unpaired outer-shell electron whose spin phase has been
+thermally randomized relative to the filament's bulk. Its chiral-pair
+phase relationship to any external reference axis is unconstrained ---
+the textbook ``unpolarized'' state.
+
+\textbf{Stage 1 (gradient interaction).} The atom traverses a magnetic
+field gradient ∇B. The gradient couples the chiral-pair phase to
+translation: a uniform B would only precess the phase coherently (Larmor
+precession), producing no spatial sorting; the \emph{gradient}
+introduces a position- dependent rephasing rate that translates the
+internal phase difference into a transverse force F = ∇(μ·B). The atom's
+trajectory becomes correlated with its chiral-pair configuration. This
+stage is unitary and in principle reversible: the Humpty-Dumpty /
+SG-recombination experiments demonstrate that carefully recombined paths
+recover the original superposition. The gradient creates the
+\emph{correlation}, not the \emph{outcome}.
+
+\textbf{Stage 2 (detector).} When the atom arrives at the screen, the
+mass term couples its full chiral structure to the detector bulk. This
+is the irreversible event --- the rephasing to the local Φ\_bulk
+overwrites the atom's prior phase and produces the recorded position.
+Born statistics for the spin-axis projection cos²(θ/2) emerge here, not
+at the gradient.
+
+\textbf{Why the gradient is the operator the framework needs.} A uniform
+B rotates the chiral-pair phase uniformly relative to a fixed axis but
+generates no observable. A gradient is the operator that converts
+\emph{internal} chiral-phase dynamics into \emph{external} spatial
+trajectory. This is a stronger reading of the textbook ``you need a
+gradient to get a force'': the gradient is what couples the framework's
+internal chiral-clock dynamics to the translational degrees of freedom
+of the detector apparatus.
+
+\textbf{Sequential SG (z then x).} A spin-up atom selected by SG\_z,
+then sent through SG\_x rotated by π/2, splits 50/50. In framework
+terms, the chiral-pair phase that was locked to the z-axis bulk
+reference at the first detector is now asked to rephase to a reference
+rotated by π/2. The π/2 split is the symmetric case: neither chirality
+of the pair is preferred relative to the new reference, so the
+trajectory split is even. The general angle cos²(θ/2) is not derived
+here --- its origin remains the SU(2) double-cover structure of the
+spinor representation (Appendix D); the framework's contribution is the
+physical mechanism of basis-projection via pair-sync, not a new
+derivation of the Born coefficients.
 
 \subsubsection{3.5 Gravitational Coherence of the
 Bulk}\label{gravitational-coherence-of-the-bulk}
@@ -1032,13 +1212,30 @@ independence and becomes bulk-coherent. Whether one reads this event as
 ``gravitationally driven self-collapse'' (Penrose) or as
 ``gravitationally maintained Kuramoto re-locking'' (this work),
 \textbf{Stage 2 --- the bulk re-establishment of coherence --- is the
-candidate locus of the quantum-to-classical transition}. §5.4 develops
+candidate locus of the quantum-to-classical transition}. §5.5 develops
 the linewidth-dependent observable signature this localization implies
 for photonic Bell tests; here the claim is more general --- for any
 field type in §3.8's taxonomy where the two-stage picture applies, Stage
 2 is the event that Penrose's OR proposal aims to describe, and the two
 frameworks differ in dynamical reading rather than in what physical step
 they single out.
+
+The structural agreement masks a difference in form worth flagging.
+Penrose's objective reduction posits a \emph{threshold}: superposition
+is unstable when the gravitational self-energy of the displaced mass
+configuration exceeds ℏ/τ, and collapse is then a discrete event. The
+Kuramoto-bulk picture is \emph{continuous}: bulk re-equilibration via
+the mass term has no critical threshold but a relaxation rate Γ\_bulk
+that scales smoothly with mass coupling and with the bulk's
+gravitational coherence rate. What appears as a sharp collapse in
+Penrose's reading is, in framework terms, a continuous rephasing whose
+timescale becomes effectively instantaneous once Γ\_bulk exceeds any
+experimentally relevant inverse time. The two proposals converge on
+\emph{where} the quantum-classical transition occurs (mass coupling to
+bulk) but differ on \emph{how} it occurs (threshold instability vs.
+continuous rephasing). The framework's continuous reading is what
+permits the §5.5 linewidth-dependent observable --- a threshold model
+has nothing to say about sub-threshold gravitational sensitivity.
 
 \subsubsection{3.7 Geometric Picture: The Coherence
 Sub-Manifold}\label{geometric-picture-the-coherence-sub-manifold}
@@ -1561,7 +1758,198 @@ structure mirrors the m = 0 chiral limit of the Dirac equation: two
 decoupled clocks, θ\_rel = π/2 permanently. A Kuramoto coupling between
 F\_+ and F\_− of a single photon is identically zero in vacuum.
 
-\subsubsection{5.2 Where Photon Bell Correlations Come
+\subsubsection{5.2 Photon Polarization as Symmetric Chiral-Clock Pair
+Structure}\label{photon-polarization-as-symmetric-chiral-clock-pair-structure}
+
+The framework's treatment of the electron in §2 identifies the Dirac
+spinor as a chiral clock pair \((\psi_L, \psi_R)\) with the mass term as
+the Kuramoto coupling \(K = m\) between them. The Riemann--Silberstein
+form of §5.1 puts the photon in a parallel algebraic register. The
+standard two-spinor formalism of Penrose and Rindler {[}46{]} supplies
+the algebraic connection, and it strengthens the framework's central
+claim that \emph{every fundamental field is a composition of
+chiral-clock pairs}.
+
+\paragraph{The two-spinor decomposition of gauge
+fields}\label{the-two-spinor-decomposition-of-gauge-fields}
+
+In two-spinor notation, a massless spin-\(s\) field is a totally
+symmetric spinor with \(2s\) indices,
+
+\[\phi_{AB\cdots K} = \phi_{(AB\cdots K)}, \qquad \text{number of indices} = 2s,\]
+
+satisfying the massless field equation \(\nabla^{AA'}\phi_{AB\cdots K} =
+0\). The cases of physical interest in the Standard Model and gravity
+are:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Field & Spin & Spinor structure & Number of clock pairs \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Weyl fermion & \(\tfrac{1}{2}\) & \(\psi_A\) & 1 \\
+Photon, gluon & \(1\) & \(\phi_{AB}\) & 2 \\
+Graviton & \(2\) & \(\phi_{ABCD}\) & 4 \\
+\end{longtable}
+}
+
+(Massive Dirac fermions are pairs of Weyl spinors coupled by \(K = m\),
+as in §2; the table is for the massless gauge sector.) The number of
+indices is the number of two-component chiral spinors symmetrized
+together. In the framework's language, \textbf{the number of
+chiral-clock pairs that compose the field equals twice the spin.}
+
+The photon's electromagnetic spinor \(\phi_{AB}\) is constructed as the
+symmetric tensor product of two Weyl spinors:
+
+\[\phi_{AB} = \psi_{(A} \chi_{B)},\]
+
+with the two independent components of \(\phi_{AB}\) corresponding to
+the two physical polarization states of the photon. The decomposition
+\(\tfrac{1}{2} \otimes \tfrac{1}{2} = 0 \oplus 1\) of standard angular
+momentum theory is in this language the statement that the symmetric
+part is the photon (\(\phi_{AB}\), spin 1) and the antisymmetric part is
+a scalar (the inner product \(\psi^A \chi_A\), spin 0).
+
+The Riemann--Silberstein vector
+\(\mathbf{F} = \mathbf{E} + i\mathbf{B}\) of §5.1 is the spatial
+representation of the symmetric spinor \(\phi_{AB}\). Its complex
+conjugate \(\mathbf{F}^* = \mathbf{E} -
+i\mathbf{B}\) is the conjugate spinor \(\bar\phi_{A'B'}\). The two
+pieces correspond to the two helicity states of the photon:
+left-circular polarization (the \(\phi_{AB}\) sector, \(+1\) helicity)
+and right-circular polarization (the \(\bar\phi_{A'B'}\) sector, \(-1\)
+helicity). In free propagation, the two sectors do not couple --- this
+is the spin-1 analog of the chirality decoupling that makes massless
+fermions free in §2.1.
+
+\paragraph{Re-reading the photon in framework
+language}\label{re-reading-the-photon-in-framework-language}
+
+The framework's claim in §2 was that an electron is a \emph{single}
+chiral-clock pair held in coherent Kuramoto lock by the mass coupling
+\(K = m\). The corresponding statement for the photon is now sharper:
+
+\begin{quote}
+\textbf{The photon is a symmetric product of two chiral-clock pairs,
+propagating without coupling between the pairs (massless), and its
+polarization is the index structure of this symmetric product.}
+\end{quote}
+
+Concretely:
+
+\begin{itemize}
+\tightlist
+\item
+  A left-circularly polarized photon corresponds to the symmetric
+  product of two left-handed chiral-clock structures --- both clock
+  pairs rotating in the same sense, with their helicity content adding
+  coherently.
+\item
+  A right-circularly polarized photon is the conjugate construction with
+  two right-handed structures.
+\item
+  Linear polarization is a coherent superposition of the two, with the
+  polarization axis set by the relative phase between the two helicity
+  amplitudes.
+\end{itemize}
+
+\textbf{Clock counting for the photon.} The parallel with §2.3 is exact
+in structure but inverted in dynamics. The photon carries two chiral
+clocks (the L and R helicity sectors) plus their symmetric mode --- the
+de Broglie carrier at ω = ck --- the same normal-mode arithmetic as the
+Dirac case. Because the photon is massless, however, K\_LR = 0: there is
+no mass term to phase-lock the chiral pair, so the relative phase
+between L and R is not dynamically pinned but is a \emph{free
+preparation parameter} that labels the polarization state (0 or π →
+linear at some angle; ±π/2 → circular; otherwise elliptical). The Dirac
+and photon cases are therefore the same chiral-pair-with-carrier
+structure under two limits of the mass coupling --- locked (K = m,
+fermion) versus free (K = 0, photon) --- and the polarization degree of
+freedom is what fills in for the missing lock.
+
+This reading recovers the standard polarization phenomenology --- the
+Stokes parameters, the Poincaré sphere, the selection rules
+\(\Delta m = \pm 1\) for circular-polarization absorption --- directly
+from the chiral-clock structure rather than treating it as separate
+machinery. The photon is not a new kind of object in the framework: it
+is the structurally simplest composite of chiral-clock pairs that can
+propagate freely (because it is massless) and carry transverse angular
+momentum (because it is symmetric rank-2).
+
+\paragraph{Cochain-ontology
+consistency}\label{cochain-ontology-consistency}
+
+The cochain ontology of Appendix E makes this picture especially
+natural. In that language, the electron is a 0-cochain (a node
+amplitude) and the photon is a 1-cochain (an edge amplitude). An edge in
+a simplicial complex is structurally a \emph{symmetric pair of node
+positions} --- it has two endpoints, and the edge amplitude transforms
+as a rank-2 symmetric quantity under operations on its endpoints. This
+is the cochain-ontological reason the photon's spinor structure
+\(\phi_{AB}\) is symmetric rank-2: the photon lives on the edges of the
+underlying simplicial complex, and edges are intrinsically
+pair-structured. The polarization degree of freedom is the framework's
+geometric expression of ``which pair structure the edge carries.''
+
+The pattern extends:
+
+\begin{itemize}
+\tightlist
+\item
+  0-cochains (nodes): spin-\(\tfrac{1}{2}\) fermions, single
+  chiral-clock pair
+\item
+  1-cochains (edges): spin-1 gauge bosons, symmetric pair of chiral
+  clock pairs
+\item
+  2-cochains (faces): spin-2 fields (graviton in continuum limit?),
+  symmetric quadruple of chiral-clock pairs
+\end{itemize}
+
+The graviton extension is more speculative --- the rank-4 symmetric
+spinor \(\phi_{ABCD}\) classifies gravitational radiation via the Petrov
+algebraic classification, and the identification with a 2-cochain on a
+simplicial complex is plausible but not derived in this paper. We flag
+it as a structural pattern worth investigating, not a claim.
+
+\paragraph{Limitations of this
+section}\label{limitations-of-this-section}
+
+Three honest limitations.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Spinor formalism is well-established.} Nothing in the
+  two-spinor decomposition
+  \(\tfrac{1}{2} \otimes \tfrac{1}{2} = 0 \oplus 1\) is original to this
+  paper. The contribution here is the reading of that standard structure
+  through the framework's chiral-clock lens, showing that the
+  framework's photon treatment is consistent with --- and clarified by
+  --- the two-spinor formalism of Penrose and Rindler.
+\item
+  \textbf{Massive gauge bosons.} The \(W^\pm\) and \(Z^0\) bosons are
+  massive and acquire a longitudinal polarization mode. In the
+  framework, this should correspond to a Higgs-induced Kuramoto coupling
+  within the symmetric pair structure, analogous to the \(K = m\)
+  coupling for fermions but applied to the photon's internal chiral
+  pairs. Developing this would require a Higgs-mechanism section of the
+  framework and is left for future work.
+\item
+  \textbf{Cochain dimensionality and physical spin.} The pattern
+  ``k-cochain ↔ spin-k/2 field'' is suggestive but the precise mapping
+  is non-trivial --- most obviously, the standard map between cochains
+  and fields uses \emph{differential form degree}, not spin. The two
+  scale together for the cases tabulated above, but a rigorous statement
+  of the correspondence for the full Standard Model field content is
+  beyond the scope of this paper.
+\end{enumerate}
+
+\subsubsection{5.3 Where Photon Bell Correlations Come
 From}\label{where-photon-bell-correlations-come-from}
 
 The polarization Hilbert space of a photon is two-dimensional, spanned
@@ -1583,7 +1971,7 @@ spin-½ pairs (Section 2). In both cases, the framework does not derive
 the Bell correlations; the underlying Hilbert-space structure does. The
 framework's contribution lies elsewhere.
 
-\subsubsection{5.3 The Measurement Mechanism Transfers to
+\subsubsection{5.4 The Measurement Mechanism Transfers to
 Photons}\label{the-measurement-mechanism-transfers-to-photons}
 
 The framework's central interpretive claim --- measurement is Kuramoto
@@ -1616,7 +2004,7 @@ characterizes the system's coupling to its environment. For massive
 fermions at rest that scale is mc² (the Compton frequency); for photons
 it is ℏω (the photon's own frequency).
 
-\subsubsection{5.4 Gravitational Decoherence and the Linewidth-Dependent
+\subsubsection{5.5 Gravitational Decoherence and the Linewidth-Dependent
 Bell
 Test}\label{gravitational-decoherence-and-the-linewidth-dependent-bell-test}
 
@@ -1640,7 +2028,8 @@ and Φ\_bulk(B) accumulate a relative offset proportional to
 the singlet correlation degrades.
 
 This is the linewidth-dependent gravitational Bell prediction
-(\texttt{predictions.py} P6b), now phrased in self-consistent form:
+(\texttt{tests/predictions.py} P6b), now phrased in self-consistent
+form:
 
 \[\delta\phi_{\text{grav}} = \omega \cdot \frac{\Delta\Phi_{\text{grav}}}{c^2} \cdot \tau_{\text{coh}} = \frac{\omega \cdot \Delta\Phi_{\text{grav}}}{c^2 \cdot \Delta\nu} \qquad (12)\]
 
@@ -1658,7 +2047,7 @@ with narrow-linewidth photons; photon energy is one knob among three
 (along with linewidth Δν and altitude split ΔΦ\_grav), not a
 discriminator on its own.
 
-\subsubsection{5.5 Photons and Penrose Objective
+\subsubsection{5.6 Photons and Penrose Objective
 Reduction}\label{photons-and-penrose-objective-reduction}
 
 The gravitational synchronization rate Γ\_grav = GM²/(ℏΔz) (Section 3.5)
@@ -1682,7 +2071,7 @@ into the classical domain:
 \tightlist
 \item
   \textbf{Measurement (active).} Kuramoto re-synchronization to a
-  quantized detector channel (§5.3). A single photon hitting a
+  quantized detector channel (§5.4). A single photon hitting a
   photodetector produces a definite click; this is the only mechanism by
   which an isolated photon classicalizes.
 \item
@@ -1707,13 +2096,13 @@ evolution of the photon's trajectory, not collapse or decoherence of its
 quantum state --- it bends paths without classicalizing states.
 
 The silence of the gravitational channel for photons is consistent with
-the linewidth-dependent prediction in §5.4, which attributes the
+the linewidth-dependent prediction in §5.5, which attributes the
 gravitational effect not to the photon in flight but to the bulk-phase
 mismatch between detectors A and B at different gravitational
 potentials. The photon is the messenger; the gravitational decoherence
 is in the detectors.
 
-\subsubsection{5.6 What Remains Open}\label{what-remains-open}
+\subsubsection{5.7 What Remains Open}\label{what-remains-open}
 
 Two questions are not resolved by this section:
 
@@ -1830,10 +2219,10 @@ fixed kinematics --- runs into the P3 obstacle: the K = m intra-spinor
 period ℏ/(mc²) is the Compton time, below any direct time-resolution
 even for the heaviest lepton. We therefore do not at present have a
 clean experimental observable that isolates K = m from mass-independent
-QED. The framework's distinguishable predictions remain §5.4
+QED. The framework's distinguishable predictions remain §5.5
 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), the Zitterbewegung
-consistency check P2, and \texttt{sg\_angular.py}. Whether any
+consistency check P2, and \texttt{tests/sg\_angular.py}. Whether any
 laboratory observable is sensitive to K = m as such, beyond what
 standard QM already predicts at the Compton frequency, is an open
 question.
@@ -1863,8 +2252,8 @@ the main limitation and the main avenue for future work.
 
 \textbf{Hardware demonstration of the bulk-sync prediction.} A
 digital-quantum implementation of the bulk-sync circuits
-(\texttt{bulk\_sync\_hardware.py}, run on \texttt{ibm\_marrakesh} with
-readout-error mitigation, XpXm dynamical decoupling, and zero-noise
+(\texttt{tests/bulk\_sync\_hardware.py}, run on \texttt{ibm\_marrakesh}
+with readout-error mitigation, XpXm dynamical decoupling, and zero-noise
 extrapolation; N ∈ \{2, 4, 8\}, K = 0.06 rad, 4096 shots/circuit)
 reproduces the GHZ Heisenberg-scaling prediction cleanly: the log-log
 slope of φ\_sys vs N comes out near 1, with measured ⟨X\_sys⟩ within ≈
@@ -1875,14 +2264,14 @@ floor of the hardware, and ZNE over-corrects at N = 8 (⟨X\_sys⟩ = 1.04 ±
 0.04, statistically consistent with theory but unphysical and thus
 unusable in an arccos-based fit). The data are consistent with the
 predicted asymmetry (φ\_GHZ \textgreater{} φ\_product at every usable N)
-and with GHZ Heisenberg scaling specifically. As stated in §1.4, this is
+and with GHZ Heisenberg scaling specifically. As stated in §1.5, this is
 a consistency check against standard quantum metrology, not a test of
 MCI's distinctive content; both standard QM and MCI predict identical
-scaling. The framework-distinctive predictions remain §5.4
+scaling. The framework-distinctive predictions remain §5.5
 (linewidth-dependent gravitational Bell), §6.2 P5
 (gravitationally-weighted secondary-emission timing), and
-\texttt{sg\_angular.py}; P3 and P4 in their hadron-mass-scaling forms
-are addressed above as not viable tests.
+\texttt{tests/sg\_angular.py}; P3 and P4 in their hadron-mass-scaling
+forms are addressed above as not viable tests.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1940,7 +2329,7 @@ Uncertainty principle & Postulated & Inherited & Derived (nonlocal) &
 Inherited & Inherited & \textbf{Emergent (Section 4.6)} ᵇ \\
 Observer needed? & Yes & Yes (branch) & No & No & No & \textbf{No} ᵃ \\
 Preferred frame? & No & No & Yes (pilot wave) & No & No & \textbf{No
-(relational, §1.5)} ᵃ \\
+(relational, §1.6)} ᵃ \\
 \end{longtable}
 }
 
@@ -2082,6 +2471,35 @@ framework says the correlations are quantum, and the Kuramoto mechanism
 explains how they are \emph{revealed} (measurement) and \emph{degraded}
 (decoherence), not how they are \emph{produced}.
 
+\textbf{Φ\_bulk as an ``unhidden'' environmental variable.} The
+framework does add a variable that standard QM treatments leave
+implicit: the gravitationally- maintained coherence Φ\_bulk of the
+detector environment (§3.5). It is worth distinguishing this from a Bell
+hidden variable. Φ\_bulk is a public, macroscopic, environmental
+property --- not carried with the particle and not setting-correlated.
+It does not determine individual measurement outcomes (which remain
+stochastic per §4's zero-point background reading); it provides the
+coherence reference against which local rephasing is meaningful. The
+framework ``unhides'' Φ\_bulk by making explicit what realistic
+descriptions of macroscopic detectors already implicitly assume --- that
+the detector body is phase-coherent --- and identifies the dynamical
+agent (gravity) that maintains that coherence.
+
+The chiral-pair phase φ\_L − φ\_R overwritten at each sync event (§1.6
+commitment 5) is similarly a local property of the detection process,
+not a carrier of the inter-detector correlation. The Bell correlation
+itself is carried by the standard quantum entangled state (Appendix A),
+which the framework leaves unchanged. Bell's theorem constrains
+persistent local variables carried with the particle; the framework's
+machinery --- public environmental coherence plus locally-overwritten
+chiral phase --- sits in the wrong place to engage it. In Bell-test
+geometry, both detectors rephase their arriving particles to a shared
+bulk reference, and the entangled pair shared an initial phase
+relationship at creation; the cos²((a−b)/2) correlation is preserved as
+a relational quantity between two local detection events, with the
+framework supplying the local-rephasing mechanism rather than an
+alternative to nonlocal quantum correlations.
+
 \subsubsection{7.7 The Hestenes Zitterbewegung
 Interpretation}\label{the-hestenes-zitterbewegung-interpretation}
 
@@ -2153,7 +2571,7 @@ Status}\label{the-interpretive-status}
 This paper presents a mathematical identification (Dirac = Kuramoto on
 the synchronized manifold) and a named interpretive framework built on
 it: the \textbf{Many Clocks Interpretation of Quantum Mechanics (MCI)},
-introduced in §1.5. The mathematical identification is verifiable and,
+introduced in §1.6. The mathematical identification is verifiable and,
 we believe, novel. The interpretive framework is physically motivated
 but not yet quantitatively predictive beyond standard decoherence.
 
@@ -2209,20 +2627,20 @@ theory:
   distinguishes the framework from standard QM? The intra-spinor period
   τ\_LR = ℏ/(mc²) is the Compton time, far below direct time-resolution;
   the experimentally observable decoherence is bath-dominated (Γ\_bulk ∝
-  M²); the bulk-coherence numerics (\texttt{bulk\_sync\_hardware.py})
-  reproduce standard quantum metrology without distinguishing MCI from
-  QM. Candidates worth exploring: (i) a precision
-  Zitterbewegung-amplitude scan in trapped-ion simulators with tunable
-  effective mass {[}10{]}, where a deviation from the QM prediction near
-  m\_eff → 0 would test whether K = m differs from standard
-  negative-positive-frequency interference; (ii) muon g − 2 or its
-  analog for τ leptons, looking for any residual term that scales as
-  1/(m·t) at precision frontiers; (iii) ultra-relativistic
-  decay-asymmetry observables sensitive to the small-component spinor
-  weight (cf.~P1, Appendix A). Whether any of these can isolate K = m
-  from mass-independent QED is the sharpest open question for
-  distinguishability and the most natural locus for a falsifying
-  experiment.
+  M²); the bulk-coherence numerics
+  (\texttt{tests/bulk\_sync\_hardware.py}) reproduce standard quantum
+  metrology without distinguishing MCI from QM. Candidates worth
+  exploring: (i) a precision Zitterbewegung-amplitude scan in
+  trapped-ion simulators with tunable effective mass {[}10{]}, where a
+  deviation from the QM prediction near m\_eff → 0 would test whether K
+  = m differs from standard negative-positive-frequency interference;
+  (ii) muon g − 2 or its analog for τ leptons, looking for any residual
+  term that scales as 1/(m·t) at precision frontiers; (iii)
+  ultra-relativistic decay-asymmetry observables sensitive to the
+  small-component spinor weight (cf.~P1, Appendix A). Whether any of
+  these can isolate K = m from mass-independent QED is the sharpest open
+  question for distinguishability and the most natural locus for a
+  falsifying experiment.
 \item
   \textbf{Quantitative decoherence rates from Kuramoto parameters.}
   Derive decoherence timescales from many-body Kuramoto dynamics in
@@ -2256,6 +2674,17 @@ theory:
   superconducting nanowire detectors. Combined with the linewidth-
   dependent gravitational Bell prediction (Section 5.4), this would give
   the framework its sharpest near-term experimental test.
+\item
+  \textbf{A laboratory observable for the continuous-rephasing reading
+  of OR.} Penrose--Diósi predicts a threshold collapse rate; the
+  framework's continuous-rephasing reading (§3.6) predicts smooth
+  gravitational sensitivity of bulk-relaxation timing below the Penrose
+  threshold. Mesoscopic optomechanical experiments designed to test
+  Penrose--Diósi could in principle distinguish the two: a threshold
+  model predicts no sub-threshold gravitational signature, the framework
+  predicts a continuous one scaling with Φ\_grav/c² (cf.~§6.2 P5). This
+  is the most direct experimental handle on the form-difference between
+  the two proposals identified in §3.6.
 \end{enumerate}
 
 \subsubsection{8.4 Categorization of Supporting Numerical
@@ -2286,70 +2715,72 @@ What is at stake
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\texttt{spin\_statistics.py} & \textbf{Evidential} & Six tests; fermion
-antisymmetry sign across 6 decades of v/c & Could have falsified the
-chiral-pair commitment (Appendix D); did not \\
-\texttt{gravitational\_bell.py} & \textbf{Quantitative prediction} &
-Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2) & Operationalizes the
+\texttt{tests/spin\_statistics.py} & \textbf{Evidential} & Six tests;
+fermion antisymmetry sign across 6 decades of v/c & Could have falsified
+the chiral-pair commitment (Appendix D); did not \\
+\texttt{tests/gravitational\_bell.py} & \textbf{Quantitative prediction}
+& Implements §5.5 CHSH(Δν) = 2√2·exp(−δφ²/2) & Operationalizes the
 framework's sharpest distinguishable prediction \\
-\texttt{predictions.py} & \textbf{Quantitative prediction} & Catalog of
-P1--P6 testable predictions, with retractions explicitly marked & Maps
-experimental contact points; documents falsified entries (P1, P3) \\
-\texttt{bell\_energy\_test.py} & \textbf{Quantitative prediction} &
-Qiskit CHSH simulation testing K(E) scalings vs photon energy &
+\texttt{tests/predictions.py} & \textbf{Quantitative prediction} &
+Catalog of P1--P6 testable predictions, with retractions explicitly
+marked & Maps experimental contact points; documents falsified entries
+(P1, P3) \\
+\texttt{tests/bell\_energy\_test.py} & \textbf{Quantitative prediction}
+& Qiskit CHSH simulation testing K(E) scalings vs photon energy &
 Discriminates K∝1/E from K∝ω from null QM \\
-\texttt{sg\_angular.py} & \textbf{Quantitative prediction} &
+\texttt{tests/sg\_angular.py} & \textbf{Quantitative prediction} &
 Stern-Gerlach angular dependence on local gravity (\textasciitilde4\%
 effect) & Tests gravitational Kuramoto coupling beyond Bell tests \\
-\texttt{bulk\_sync\_asymmetry.py} & \textbf{Quantitative prediction} &
-Single-particle vs bulk phase-rotation scaling (√N vs N) & Tests the
-measurement asymmetry of §3 \\
-\texttt{bulk\_sync\_hardware.py} & \textbf{Consistency check (hardware)}
-& IBM Quantum execution of the bulk-sync circuits with readout
-mitigation, DD, and ZNE & Demonstrates digital-hardware reproduction of
-the simulation (GHZ slope ≈ 1 confirmed; product slope below noise floor
-at K=0.06); not framework-distinctive \\
-\texttt{dirac\_extension.py} & \textbf{Illustrative} & Three-term Bell
-decomposition E\_LL + E\_SS + E\_LS & Visualizes the weight
+\texttt{tests/bulk\_sync\_asymmetry.py} & \textbf{Quantitative
+prediction} & Single-particle vs bulk phase-rotation scaling (√N vs N) &
+Tests the measurement asymmetry of §3 \\
+\texttt{tests/bulk\_sync\_hardware.py} & \textbf{Consistency check
+(hardware)} & IBM Quantum execution of the bulk-sync circuits with
+readout mitigation, DD, and ZNE & Demonstrates digital-hardware
+reproduction of the simulation (GHZ slope ≈ 1 confirmed; product slope
+below noise floor at K=0.06); not framework-distinctive \\
+\texttt{tests/dirac\_extension.py} & \textbf{Illustrative} & Three-term
+Bell decomposition E\_LL + E\_SS + E\_LS & Visualizes the weight
 redistribution of Appendix A; the sum itself is an identity \\
-\texttt{gravity\_twistor.py} & \textbf{Illustrative} & Poisson ↔
+\texttt{tests/gravity\_twistor.py} & \textbf{Illustrative} & Poisson ↔
 Kuramoto field-equation correspondence; twistor connection & Visualizes
 §3.5 and EQUATIONS.md §8 \\
-\texttt{bell\_phase.py} & \textbf{Clarifying} & Establishes Malus-law
-toy is sub-classical (CHSH ≤ √2), distinct from Dirac large block &
-Disarms the §A.5 conflation \\
-\texttt{local\_causality.py} & \textbf{Clarifying} & Identifies where
-Bell's factorization actually breaks in MCI & Disarms the
+\texttt{tests/bell\_phase.py} & \textbf{Clarifying} & Establishes
+Malus-law toy is sub-classical (CHSH ≤ √2), distinct from Dirac large
+block & Disarms the §A.5 conflation \\
+\texttt{tests/local\_causality.py} & \textbf{Clarifying} & Identifies
+where Bell's factorization actually breaks in MCI & Disarms the
 superdeterminism misreading (§7.6) \\
-\texttt{kuramoto\_sync.py} & \textbf{Pedagogical} & Two-oscillator
+\texttt{tests/kuramoto\_sync.py} & \textbf{Pedagogical} & Two-oscillator
 synchronization dynamics under K \textgreater{} 0 & Shows what K = m
 sync looks like in time \\
-\texttt{higgs\_clock.py} & \textbf{Pedagogical} & K = m identification
-and antiparticle reverse-clock dynamics & Illustrates EQUATIONS.md §6 \\
-\texttt{resynchronization\_calc.py} & \textbf{Negative result} & Tests
-whether re-sync alone reproduces −cos(a−b) & Confirms the Dirac spinor
-structure is necessary; closes a misreading \\
-\texttt{everett\_thermal.py} & \textbf{Speculative} & Implements
+\texttt{tests/higgs\_clock.py} & \textbf{Pedagogical} & K = m
+identification and antiparticle reverse-clock dynamics & Illustrates
+EQUATIONS.md §6 \\
+\texttt{tests/resynchronization\_calc.py} & \textbf{Negative result} &
+Tests whether re-sync alone reproduces −cos(a−b) & Confirms the Dirac
+spinor structure is necessary; closes a misreading \\
+\texttt{tests/everett\_thermal.py} & \textbf{Speculative} & Implements
 single-world energy accounting & Illustrates §3.8 (paper marks this
 speculative) \\
-\texttt{vacuum\_temperature.py} & \textbf{Mixed} & ZPF / temperature /
-orbitals (claims 1--3); Brownian retracted (claim 4) & Three
-illustrative claims with one disclosed retraction (see EQUATIONS.md
-§10) \\
+\texttt{tests/vacuum\_temperature.py} & \textbf{Mixed} & ZPF /
+temperature / orbitals (claims 1--3); Brownian retracted (claim 4) &
+Three illustrative claims with one disclosed retraction (see
+EQUATIONS.md §10) \\
 \end{longtable}
 }
 
-Evidential weight rests on \texttt{spin\_statistics.py} (a non-trivial
-check that could have failed) and the quantitative-prediction scripts
-that operationalize §5.4, §6.2, and the gravitational-Kuramoto claims.
-The illustrative and pedagogical scripts visualize claims that are
-mathematically guaranteed by construction (trace linearity in
-\texttt{dirac\_extension.py}, Kuramoto convergence in
-\texttt{kuramoto\_sync.py}); they support readability and
-reproducibility without themselves providing evidence for the
-framework's interpretive content. The clarifying scripts disarm known
-misreadings. The speculative and negative-result scripts are disclosed
-honestly rather than presented as supporting the framework.
+Evidential weight rests on \texttt{tests/spin\_statistics.py} (a
+non-trivial check that could have failed) and the
+quantitative-prediction scripts that operationalize §5.5, §6.2, and the
+gravitational-Kuramoto claims. The illustrative and pedagogical scripts
+visualize claims that are mathematically guaranteed by construction
+(trace linearity in \texttt{tests/dirac\_extension.py}, Kuramoto
+convergence in \texttt{tests/kuramoto\_sync.py}); they support
+readability and reproducibility without themselves providing evidence
+for the framework's interpretive content. The clarifying scripts disarm
+known misreadings. The speculative and negative-result scripts are
+disclosed honestly rather than presented as supporting the framework.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -2495,9 +2926,9 @@ appendix performs on the chiral-clock reading of the spinor.
 \subsubsection{A.4 Block Weights at Finite
 Momentum}\label{a.4-block-weights-at-finite-momentum}
 
-The block contributions were computed with \texttt{dirac\_extension.py}
-for the Dirac singlet at p = 1.0, m = 1.0 (θ\_rel ≈ 53°), a = 0, b =
-π/4:
+The block contributions were computed with
+\texttt{tests/dirac\_extension.py} for the Dirac singlet at p = 1.0, m =
+1.0 (θ\_rel ≈ 53°), a = 0, b = π/4:
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}lll@{}}
@@ -2532,8 +2963,8 @@ correlation
 
 \[E_{\text{Malus}}(a, b) = -\tfrac{1}{2}\cos(a - b), \qquad \text{CHSH}_{\text{Malus}} \leq \sqrt{2} \approx 1.414\]
 
-(see \texttt{bell\_phase.py}). This is sub-classical: it falls below
-even the local hidden-variable bound of 2 and cannot reproduce the
+(see \texttt{tests/bell\_phase.py}). This is sub-classical: it falls
+below even the local hidden-variable bound of 2 and cannot reproduce the
 loophole-free Bell violations.
 
 It is important to be precise about what this toy \emph{is not}. The
@@ -2640,7 +3071,7 @@ continuously homotopic in 3+1 dimensions to an exchange of two identical
 particles (Finkelstein-Misner {[}33{]}; see also Feynman's belt
 argument). A spinor representation therefore forces fermion statistics,
 and an integer-spin representation forces Bose statistics. This is what
-spin\_statistics.py verifies in six tests.
+tests/spin\_statistics.py verifies in six tests.
 
 \subsubsection{D.2 What MCI Commits To}\label{d.2-what-mci-commits-to}
 
@@ -2679,7 +3110,7 @@ framework already commits to.
 \subsubsection{D.3 Numerical
 Verification}\label{d.3-numerical-verification}
 
-The script \texttt{spin\_statistics.py} performs six tests in the
+The script \texttt{tests/spin\_statistics.py} performs six tests in the
 Madelung-Kuramoto language. Selected results (m = 1 natural units; full
 output in the script):
 
@@ -2717,12 +3148,13 @@ sign \\
 }
 
 Test D is the substantive content. The Dirac singlet of
-dirac\_extension.py mixes large and small components according to the
-relativistic angle θ\_rel = arcsin(v/c) (Appendix A). Across six decades
-in momentum --- from v/c ≈ 10⁻⁴ to v/c ≈ 1 − 10⁻⁴ --- the spin-exchange
-amplitude is exactly −1, to numerical precision. The redistribution of
-weight among the E\_LL, E\_SS, E\_LS blocks studied in Appendix A does
-not perturb the antisymmetry sign by even one part in 10¹⁰.
+tests/dirac\_extension.py mixes large and small components according to
+the relativistic angle θ\_rel = arcsin(v/c) (Appendix A). Across six
+decades in momentum --- from v/c ≈ 10⁻⁴ to v/c ≈ 1 − 10⁻⁴ --- the
+spin-exchange amplitude is exactly −1, to numerical precision. The
+redistribution of weight among the E\_LL, E\_SS, E\_LS blocks studied in
+Appendix A does not perturb the antisymmetry sign by even one part in
+10¹⁰.
 
 Test F is the negative result. Two classical Kuramoto chiral pairs with
 identical (K, ω) are evolved from random initial conditions; both reach
@@ -2784,7 +3216,7 @@ Three claims are made in this appendix, in descending order of strength:
   \textbf{Verified.} The Madelung-Kuramoto decomposition (D1) localizes
   the fermion sign in the spinor-frame factor χ\_\{L,R\} and not in the
   phase or amplitude factors. This is a numerical and structural
-  observation, confirmed in spin\_statistics.py.
+  observation, confirmed in tests/spin\_statistics.py.
 \item
   \textbf{Inherited.} Spin-statistics in MCI follows from the chiral
   pair commitment via the standard 2π-rotation / continuous-deformation
@@ -2883,11 +3315,12 @@ formulation with the cosine of phase difference in the lower Weyl spinor
 yields the correct Bell and CHSH statistical results - Development of
 the three-term Bell correlation decomposition (Appendix A: E\_LL + E\_SS
 + E\_LS) - Writing of the Python verification programs
-(\texttt{dirac\_extension.py}, \texttt{higgs\_clock.py},
-\texttt{kuramoto\_sync.py}) that numerically confirm the framework's
-predictions match standard quantum mechanical results - Elaboration of
-the Born rule emergence from synchronization statistics (Section 4) -
-Systematic comparison with existing interpretations (Section 7)
+(\texttt{tests/dirac\_extension.py}, \texttt{tests/higgs\_clock.py},
+\texttt{tests/kuramoto\_sync.py}) that numerically confirm the
+framework's predictions match standard quantum mechanical results -
+Elaboration of the Born rule emergence from synchronization statistics
+(Section 4) - Systematic comparison with existing interpretations
+(Section 7)
 
 \textbf{Paper composition (collaborative):} - The paper was written
 collaboratively, with Claude Opus 4.6 producing drafts in a style
@@ -2929,6 +3362,331 @@ against standard quantum mechanics textbooks (Peskin \& Schroeder
 programs were verified to reproduce known quantum mechanical predictions
 to machine precision. The human author reviewed all content for physical
 plausibility and internal consistency.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Appendix E: Cochain Ontology of the Wave
+Function}\label{appendix-e-cochain-ontology-of-the-wave-function}
+
+\textbf{Contribution note for this appendix.} The cochain-ontological
+framing developed below --- the embedding of the framework's chiral
+Kuramoto reduction into the simplicial Kuramoto formalism of Nurisso et
+al.~(2024) {[}45{]}, the identification of K = m as the edge weight of a
+1-simplex, the correspondence between the framework's U(1) gauge
+invariance and the harmonic phase-shift symmetry of the simplicial
+complex, and the cochain reading of the §3.7 coherence sub-manifold ---
+was developed in collaboration with Claude Opus 4.7 (Anthropic) and
+largely reflects its mathematical and expository work. The human
+author's role in this appendix specifically was to surface the Nurisso
+et al.~(2024) reference, to set the scope and register of the appendix,
+to validate the mathematical claims against the framework's existing
+structure, and to flag the metaphysical limitations recorded in §E.7.
+The connection to the simplicial Kuramoto literature was not anticipated
+in the original framework and was identified during this collaboration.
+See \texttt{AUTHORSHIP.md} for the framework-wide attribution.
+
+\subsubsection{E.1 Motivation}\label{e.1-motivation}
+
+The framework's interpretive content --- wave function as a real
+oscillating field, mass as a coupling constant, measurement as Kuramoto
+re-synchronization --- fits most naturally into a discrete-geometric
+setting where the wave function is a \textbf{cochain} on a simplicial
+complex rather than a smooth section of a spinor bundle. This appendix
+develops that setting formally. The motivation is twofold. First, the
+Kuramoto reduction of §2.2 is most transparent in the discrete language,
+where phase oscillators live on simplices and the L--R coupling is an
+edge weight on the underlying complex. Second, the simplicial formalism
+of Nurisso et al.~{[}45{]} supplies a rigorous notion of \textbf{gauge}
+(the harmonic phase-shift symmetry of their §III.E) and a rigorous
+notion of \textbf{coherence decomposition} (the Hodge theorem on cochain
+spaces) that make the framework's interpretive claims of §1.6 and §3.7
+into theorems rather than analogies.
+
+We emphasize at the outset that the cochain picture is an
+\emph{equivalent} representation of the wave function in the continuum
+limit, not a modification of standard quantum mechanics. The Dirac
+equation, the Born rule, and Bell's theorem are unchanged. What the
+cochain picture provides is a discrete substrate on which the
+framework's mechanistic claims --- Kuramoto coupling K = m, two-stage
+measurement, harmonic gauge invariance, and the coherence sub-manifold
+of §3.7 --- become mathematically natural rather than interpretively
+imposed.
+
+\subsubsection{E.2 Cochains and the Continuum
+Limit}\label{e.2-cochains-and-the-continuum-limit}
+
+A \textbf{simplicial complex} \(\Delta\) is a collection of simplices
+(0-simplices = nodes, 1-simplices = edges, 2-simplices = triangles,
+\ldots) closed under face inclusion. A \textbf{k-cochain} is a function
+assigning a complex amplitude to each oriented k-simplex:
+
+\[\psi^{(k)} : \{\text{k-simplices of } \Delta\} \to \mathbb{C}, \qquad
+\psi^{(k)} \in C^k(\Delta; \mathbb{C}).\]
+
+For a complex with \(n_k\) k-simplices, \(C^k(\Delta; \mathbb{C}) \cong
+\mathbb{C}^{n_k}\) is a finite-dimensional Hilbert space. With simplex
+weights \(w^{(k)}_i > 0\), the inner product takes the Hodge-weighted
+form
+\(\langle \psi, \phi \rangle_{w} = \sum_i (w^{(k)}_i)^{-1} \bar\psi_i \phi_i\).
+
+The \textbf{continuum limit} takes the simplicial complex to be a
+triangulation of a smooth manifold \(M\) and refines it. As the
+triangulation becomes arbitrarily fine, k-cochains converge under the
+Whitney embedding to differential k-forms on \(M\), in the sense that
+the discrete cochain associated to a smooth k-form by integration over
+each k-simplex reproduces the form in the limit. The dictionary is:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Cochain order & Continuum object & Physical role \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+0-cochain & scalar field & wave function \(\psi(x)\) \\
+1-cochain & 1-form & gauge potential \(A_\mu\), gradient of scalar \\
+2-cochain & 2-form & field strength \(F_{\mu\nu}\), current density \\
+\end{longtable}
+}
+
+The framework's interpretive claim is that the \emph{physical} substrate
+of the wave function is the cochain, not its continuum limit --- but for
+all empirical purposes the two are interchangeable, since every
+experiment probes the continuum limit on scales vastly larger than any
+candidate underlying triangulation. The cochain ontology is therefore a
+metaphysical commitment, not a falsifiable prediction (see §E.7).
+
+\subsubsection{E.3 The Hodge--Dirac
+Operator}\label{e.3-the-hodgedirac-operator}
+
+The key algebraic structure on cochains is the \textbf{coboundary
+operator} \(d^k : C^k \to C^{k+1}\) (the discrete exterior derivative),
+and its formal adjoint with respect to the Hodge inner product, the
+\textbf{boundary operator} \(\delta^k = (d^{k-1})^* : C^k \to C^{k-1}\)
+(the discrete codifferential). These satisfy the fundamental identity
+
+\[d^{k+1} d^k = 0, \qquad \delta^{k-1} \delta^k = 0,\]
+
+(a boundary has no boundary), a linear-algebraic restatement of the
+topological fact that the boundary of a boundary is empty. The
+\textbf{discrete Hodge Laplacian} on \(C^k\) is
+
+\[\boxed{\Delta^k = d^{k-1}\delta^k + \delta^{k+1}d^k.}\]
+
+The \textbf{Hodge--Dirac operator} is the first-order operator
+
+\[\boxed{\mathcal{D} = d + \delta,}\]
+
+acting on the full cochain complex \(C^\bullet(\Delta) = \bigoplus_k
+C^k(\Delta)\). Its square is
+
+\[\mathcal{D}^2 = (d + \delta)^2 = d\delta + \delta d = \Delta,\]
+
+since \(d^2 = 0\) and \(\delta^2 = 0\). \textbf{This is the algebraic
+property that justifies the name ``Dirac'':} \(\mathcal{D}\) is the
+first-order square root of the Laplacian, just as Dirac's
+\(i\gamma^\mu \partial_\mu\) is the first-order square root of the
+Klein--Gordon operator \(\partial^\mu \partial_\mu + m^2\). In the
+continuum limit on a Riemannian spin manifold, \(\mathcal{D}\) reduces
+to the spin-Dirac operator of mathematical physics {[}47{]}.
+
+The eigenvalues of \(\mathcal{D}\) come in \(\pm\) pairs, because
+\(\mathcal{D}\) anticommutes with the \textbf{grading operator}
+
+\[\Gamma : \psi^{(k)} \mapsto (-1)^k \psi^{(k)},\]
+
+which is the discrete analog of the chirality matrix \(\gamma_5\) in
+standard Dirac theory: \(\{\mathcal{D}, \Gamma\} = 0\).
+
+\subsubsection{E.4 Chiral Decomposition and K = m at the Cochain
+Level}\label{e.4-chiral-decomposition-and-k-m-at-the-cochain-level}
+
+The grading operator \(\Gamma\) decomposes \(C^\bullet\) into even-grade
+and odd-grade subspaces:
+
+\[C^\bullet = C^+ \oplus C^-, \qquad C^\pm = \{\psi : \Gamma\psi = \pm\psi\}.\]
+
+These are the cochain analogs of the chiral subspaces \(\psi_L, \psi_R\)
+in the Weyl decomposition. The Hodge--Dirac operator anticommutes with
+\(\Gamma\), so in \(C^+ \oplus C^-\) block form it acts purely
+off-diagonally:
+
+\[\mathcal{D} = \begin{pmatrix} 0 & \mathcal{D}_- \\ \mathcal{D}_+ & 0
+\end{pmatrix},\]
+
+where \(\mathcal{D}_\pm : C^\pm \to C^\mp\). The framework's central
+identification (§2.2) reads in this language as follows: \textbf{the
+Dirac mass term is an edge weight on the smallest non-trivial cochain
+complex} --- two nodes (one in \(C^+\), one in \(C^-\)) and one edge
+connecting them. Quantitatively, identifying the chiral pair
+\((\psi_L, \psi_R)\) with two 0-cochains on the two nodes and the mass
+coupling with the edge weight \(m\), the rest-frame Dirac equation in
+Weyl basis reads
+
+\[i\partial_t \begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix} =
+\begin{pmatrix} 0 & m \\ m & 0 \end{pmatrix}
+\begin{pmatrix} \psi_L \\ \psi_R \end{pmatrix}.\]
+
+Under the Madelung polar decomposition of §2.2, this reduces on the
+synchronized manifold to the Kuramoto sine coupling
+\(K \sin(\phi_R - \phi_L)\), with \(K = m\). The verification script
+\texttt{tests/simplicial\_alignment.py} confirms this reduction
+numerically: the chiral Kuramoto trajectories of EQUATIONS §6 and the
+simplicial Kuramoto of Nurisso et al.~(their Eq. 13/15 at \(k = 0\)) are
+bit-identical on the 2-node, 1-edge complex, to numerical roundoff.
+
+For multi-flavor extensions (e.g.~the CKM and PMNS sectors), the cochain
+picture generalizes naturally: each fermion species contributes its own
+chirality-graded pair, and inter-species mixing becomes a more complex
+pattern of edges and (potentially) higher-order simplices on the
+extended chirality complex. The mass matrix in standard notation becomes
+the weighted incidence operator on this extended complex, and the CKM
+phase \(\delta_{CP}\) acquires a cohomological reading as an element of
+\(H^1\) of the chirality complex --- but the rigorous statement of which
+\(H^1\) class corresponds to which physical phase is left for future
+work (see §E.7).
+
+\subsubsection{E.5 Hodge Decomposition as Coherence
+Structure}\label{e.5-hodge-decomposition-as-coherence-structure}
+
+The simplicial Hodge decomposition theorem (Nurisso et al.~Eq. 28)
+states that every cochain decomposes orthogonally as
+
+\[\boxed{\psi^{(k)} = \psi^{(k)}_{\text{cf}} + \psi^{(k)}_{H} +
+\psi^{(k)}_{\text{df}},}\]
+
+with the three components corresponding to:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Curl-free:} \(\psi_{\text{cf}} \in \text{Im}\,d^{k-1}\) ---
+  locally exact, the ``gradient'' component
+\item
+  \textbf{Harmonic:}
+  \(\psi_H \in \ker \Delta^k = \ker d^k \cap \ker \delta^k\) --- dual to
+  the k-th Betti number of \(\Delta\), the topologically non-trivial
+  component
+\item
+  \textbf{Divergence-free:}
+  \(\psi_{\text{df}} \in \text{Im}\,\delta^{k+1}\) --- locally co-exact,
+  the ``curl'' component
+\end{itemize}
+
+This decomposition is orthogonal in the Hodge inner product, and the
+three components evolve \emph{independently} under the simplicial
+Kuramoto dynamics (Nurisso et al.~Eq. 30). The harmonic component is
+dynamically inert: it is the cochain analog of the framework's harmonic
+gauge mode of §1.6 (item 6) and the U(1) gauge invariance of the chiral
+phase difference \(\phi_L -
+\phi_R\).
+
+The connection to the framework's \textbf{coherence sub-manifold} of
+§3.7 is now sharper than the original presentation. What was there
+described as ``the intersection of lock conditions, defining a
+low-dimensional sub-manifold of the joint phase torus'' is, in the
+cochain picture, the \textbf{intersection of the harmonic subspaces of
+each Hodge component}. Phase-locking corresponds to the dynamics having
+reached the harmonic component of each subsystem; loss of coherence
+corresponds to the dynamics flowing out of one Hodge subspace into
+another. Decoherence in this language is not randomization but a
+structural transition: a change of which Hodge sub-component carries the
+trajectory.
+
+The two-stage measurement of §3.4 reads in cochain language as:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Stage 1 (pair-sync):} A unitary projection of the incoming
+  particle's cochain onto the polarizer's eigenbasis, within a fixed
+  Hodge subspace. Energy-conserving; basis-selecting.
+\item
+  \textbf{Stage 2 (bulk relaxation):} A dissipative flow of the
+  perturbed cochain toward the bulk's harmonic component, with the
+  off-harmonic energy shed as secondary radiation. The energy taxonomy
+  of §3.8 --- phonon vs.~photon vs.~pair-production --- corresponds to
+  which sub-component of the bulk's Hodge decomposition absorbs the shed
+  energy.
+\end{itemize}
+
+The two stages are geometrically distinct: Stage 1 is a rotation within
+a fixed Hodge subspace; Stage 2 is a relaxation toward its harmonic
+sub-component. Penrose's objective reduction (§3.6) is then localized
+unambiguously to Stage 2 --- the relaxation toward the gravitationally
+sourced bulk-harmonic mode.
+
+\subsubsection{E.6 Recovery of Standard Continuum
+QFT}\label{e.6-recovery-of-standard-continuum-qft}
+
+In the continuum limit on a Riemannian spin manifold \(M\), the cochain
+complex \(C^\bullet(\Delta)\) converges to the de Rham complex
+\(\Omega^\bullet(M)\) of differential forms, the Hodge--Dirac operator
+\(\mathcal{D}\) converges to the spin-Dirac operator
+\(i\gamma^\mu \nabla_\mu\), and the framework's chiral pair
+\((\psi_L, \psi_R)\) converges to the standard Weyl decomposition of the
+spinor field. The framework's \(K = m\) identification becomes the
+standard mass term \(m\bar\psi\psi\). Standard QFT predictions are
+recovered exactly; this is by construction, since the cochain picture is
+the discretization of standard differential-geometric Dirac theory.
+
+The framework's interpretive content lies in the additional claim that
+the cochain substrate is \textbf{physical} --- that the wave function
+``really is'' a discrete oscillating quantity on some underlying
+simplicial structure, not just an integration-theoretic discretization
+of a smooth field. This is a metaphysical commitment, not a falsifiable
+prediction, and we flag it as such (see §E.7).
+
+\subsubsection{E.7 Limitations and Open
+Questions}\label{e.7-limitations-and-open-questions}
+
+We list four explicit limitations of the cochain ontology as developed
+here, to be transparent about scope.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Continuum limit of \(K = m\) across refinements.} The
+  framework's claim is \(K = m\) on a 1-simplex. The continuum recovery
+  requires showing that this scaling survives as the triangulation is
+  refined --- i.e., that the edge weight scales correctly with simplex
+  size under Whitney embedding. A 1+1-D toy-model verification is
+  straightforward but not yet supplied; it is a natural next step for
+  the verification suite.
+\item
+  \textbf{Multi-flavor extensions.} The cochain picture for the CKM and
+  PMNS sectors is sketched at the end of §E.4 but not developed in
+  detail. A rigorous statement of which \(H^1\) obstruction corresponds
+  to which physical CP phase remains for future work. Without this, the
+  framework's reading of \(\delta_{CP}\) as cohomological is a
+  structural analogy rather than a derivation.
+\item
+  \textbf{Cochain ontology vs.~computational discretization.} The
+  framework's interpretive claim that the cochain substrate is physical
+  (rather than merely a convenient computational scaffold) is
+  metaphysical and not empirically distinguishable from textbook QFT at
+  any currently accessible scale. Nothing in this appendix depends on
+  the cochain being ``really there'' rather than being a discretization.
+  The cochain language is used here because it makes the framework's
+  claims transparent, not because we take it to be more fundamental than
+  the continuum description.
+\item
+  \textbf{Gauge fields and curvature.} This appendix has treated only
+  the matter sector (chiral fermions). The simplicial extension to gauge
+  fields (lattice gauge theory, simplicial \(U(1)/SU(N)\)) is standard
+  but not developed here. The framework's
+  \(K_{\text{pair}} = g_{\text{int}}\langle
+  V_{\text{int}}\rangle\) coupling of §3.4 should embed naturally as a
+  higher-order simplicial interaction, but the explicit construction is
+  left for future work.
+\end{enumerate}
+
+\emph{See \texttt{tests/simplicial\_alignment.py},
+\texttt{tests/hodge\_decomposition.py}, and
+\texttt{tests/hodge\_dirac.py} for numerical verification of the
+1-simplex embedding, the Hodge decomposition of edge cochains, and the
+\(\mathcal{D}^2 = \Delta\) identity, respectively.}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -3096,14 +3854,29 @@ relations for information entropy in wave mechanics.
 \emph{Communications in Mathematical Physics}, 44(2), 129--132.
 https://doi.org/10.1007/BF01608825
 
+{[}45{]} Nurisso, M., Arnaudon, A., Lucas, M., Peach, R. L., Expert, P.,
+Vaccarino, F., \& Petri, G. (2024). A unified framework for simplicial
+Kuramoto models. \emph{Chaos: An Interdisciplinary Journal of Nonlinear
+Science}, 34(5), 053118. https://doi.org/10.1063/5.0169388
+(arXiv:2305.17977)
+
+{[}46{]} Penrose, R., \& Rindler, W. (1984). \emph{Spinors and
+Space-Time, Vol. 1: Two-Spinor Calculus and Relativistic Fields}.
+Cambridge University Press. https://doi.org/10.1017/CBO9780511564048
+
+{[}47{]} Atiyah, M. F., \& Singer, I. M. (1963). The index of elliptic
+operators on compact manifolds. \emph{Bulletin of the American
+Mathematical Society}, 69(3), 422--433.
+https://doi.org/10.1090/S0002-9904-1963-10957-X
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \emph{Simulation code and numerical verification available at:
 https://github.com/rayolddog/DiracKuramotoFramework}
 
 \emph{The three-term decomposition (Appendix A) can be reproduced by
-running \texttt{dirac\_extension.py}. The Kuramoto phase dynamics
-(Section 2) are demonstrated in \texttt{higgs\_clock.py} and
-\texttt{kuramoto\_sync.py}.}
+running \texttt{tests/dirac\_extension.py}. The Kuramoto phase dynamics
+(Section 2) are demonstrated in \texttt{tests/higgs\_clock.py} and
+\texttt{tests/kuramoto\_sync.py}.}
 
 \end{document}

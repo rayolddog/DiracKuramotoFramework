@@ -54,6 +54,22 @@ The detector's clock phase is pre-established by thermal equilibration with the 
 
 $$\Phi_{D_1} = \Phi_{D_2} = \Phi_{\text{bulk}} \qquad \text{(both detectors, before the experiment)}$$
 
+### Capture range (Arnold tongue)
+
+Two oscillators phase-lock only if their natural-frequency mismatch lies within the coupling bandwidth:
+
+$$\boxed{|\omega_i - \omega_j| \lesssim K_{\text{eff}}}$$
+
+This is the standard Kuramoto capture-range / Arnold-tongue condition. In the framework it applies at three distinct scales (with the three couplings of §6):
+
+| Scale | $K_{\text{eff}}$ | Capture bandwidth | Outside the window |
+|---|---|---|---|
+| Intra-spinor L–R | $K = m$ | $mc^2/\hbar$ (Compton) | Automatic for on-shell Dirac particles |
+| Vertex pair-sync (Stage 1) | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | $\sim K_{\text{pair}}$ | Shed as secondary radiation, not locked |
+| Bulk relaxation (Stage 2) | $\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
+
+The framework's intuition that "the amount a phase can be pulled into synchronization is bounded" is this condition, evaluated separately at each stage. See Paper §2.2.
+
 ---
 
 ## 3. Bell's Theorem — Where the Factorization Fails
@@ -252,6 +268,8 @@ Collapse when $\mathcal{C} \to 0$, i.e., $\delta\varphi = \pi$:
 $$\boxed{\tau_{\text{collapse}} = \frac{\pi\hbar}{E_G}, \qquad E_G = \frac{Gm^2}{\Delta x}}$$
 
 This is the **Penrose formula**, derived here as gravitational clock decoherence. No observer required.
+
+**Continuous vs threshold form.** $\Gamma_{\text{grav}}$ above is a smooth relaxation rate with no critical value; Penrose's $\tau_{\text{collapse}}$ marks a discrete instability threshold. The two answer the same question — when does coherence die against the bulk? — in different functional forms: continuous Kuramoto rephasing vs threshold gravitational collapse. The framework's continuous form is what permits sub-threshold gravitational sensitivity (Paper §3.6, §5.5, §8.3 #5).
 
 ---
 

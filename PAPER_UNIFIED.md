@@ -192,9 +192,13 @@ We state clearly at the outset:
   standard quantum mechanics.
 - We do not modify the Dirac equation or any of its predictions.
 - We do not propose new physics. We propose a new *mechanism* for known physics.
-- The framework is an interpretation — it may or may not generate distinguishable
-  predictions from standard decoherence theory. We are honest about this
-  throughout.
+- The framework proposes several distinguishable predictions (§5.5
+  linewidth-dependent gravitational Bell; §6.2 P5 gravitationally-weighted
+  secondary emission; P2 trapped-ion Zitterbewegung), but they are either below
+  current experimental sensitivity or qualitative scaling arguments without
+  computed coefficients. Whether MCI is a genuinely distinguishable theory or
+  an interpretive overlay on standard decoherence is an open question we are
+  honest about throughout.
 
 ### 1.6 Relational Structure: The Many Clocks Interpretation
 
@@ -397,6 +401,22 @@ clocks into synchronized oscillation. Before electroweak symmetry breaking (v �
 K → 0 and all fermions are massless — their chiral clocks are independent. After
 symmetry breaking, K = m and the clocks synchronize.
 
+**Capture range of the chiral lock.** The Kuramoto identification carries a
+dynamical statement beyond the equilibrium one in (3): two oscillators
+frequency-lock only when their natural-frequency mismatch lies within a
+coupling-set bandwidth — the Arnold-tongue or capture-range condition of the
+synchronization literature [36, 37]. The chiral pair's locking bandwidth is
+therefore set by K = m, so the L–R lock is robust for any on-shell Dirac
+particle, whose intrinsic L–R frequency mismatch is bounded by the Compton
+scale by construction. The same condition becomes physically active at
+Stage 2 (§3.4): the pair-sync vertex coupling K_pair sets the analogous
+bandwidth between particle and bulk, and phase mismatches large compared
+to K_pair are not pulled into the bulk lock — they are instead shed through
+secondary radiation via the §3.4 hierarchy. The intuition that "the amount
+a phase can be pulled into synchronization is bounded" is therefore not a
+soft heuristic but the standard Kuramoto capture-range condition |Δω| ≲ K_eff,
+evaluated separately at Stage 1 (K = m) and Stage 2 (K_pair).
+
 ### 2.3 Two Clocks, Not One
 
 The central physical picture is:
@@ -408,6 +428,32 @@ The central physical picture is:
 
 This interpretation does not modify the Dirac equation. It provides an ontological
 reading of its mathematical structure.
+
+**Normal-mode picture.** Because the mass term K = m couples the two clocks, the
+natural observables are not the individual chiral phases but the *normal modes*
+of the coupled pair: a symmetric (sum) mode that propagates as the de Broglie
+carrier at ω_dB = E/ℏ — Feynman's "little arrow" — and an antisymmetric mode
+that manifests as the Zitterbewegung beat at ω_Z = 2mc²/ℏ when both positive-
+and negative-energy amplitudes are populated (Appendix B). The "two clocks" are
+the underlying chiral oscillators; the familiar single de Broglie carrier is
+their symmetric mode. Counting both together as three independent clocks would
+overcount: the carrier is not a third clock but the sum mode of the chiral pair,
+and the Zitterbewegung beat is the framework's empirical signature that the
+coupling is real — without K = m, ψ_L and ψ_R would free-stream independently
+and no beat could form.
+
+**A structural parallel with special relativity.** This failure of additive
+clock counting has the same algebraic origin as the failure of additive
+coordinate counting in Minkowski spacetime. Just as spacetime is not a sum
+(3 space) + (1 time) but a Lorentzian whole whose normal modes (timelike /
+null / spacelike) carry the physical content, the chiral pair (ψ_L, ψ_R) is
+not a sum of two independent clocks but a Lorentz-coupled whole whose normal
+modes (de Broglie carrier, Zitterbewegung beat) carry the physical content.
+The (½, 0) ⊕ (0, ½) representation that carries the Dirac spinor is itself a
+representation of the Lorentz group, and the L ↔ R coupling K = m is the
+Lorentz-covariant mass term. The chiral-clock reading is therefore not an
+additive metaphor pasted on top of two oscillators — it is what Lorentz
+invariance forces the structural count to look like.
 
 ### 2.4 The Synchronized State
 
@@ -629,6 +675,54 @@ that builds cos²(θ/2).
    interactions, where confinement and short-range structure complicate the
    local-amplitude reading.
 
+#### Stern-Gerlach as a single-particle two-stage measurement
+
+The two-stage architecture is most often illustrated with photon-detector
+coupling, but the cleanest single-particle case is the Stern-Gerlach
+experiment. A silver atom boiled off a hot filament carries an unpaired
+outer-shell electron whose spin phase has been thermally randomized
+relative to the filament's bulk. Its chiral-pair phase relationship to
+any external reference axis is unconstrained — the textbook "unpolarized"
+state.
+
+**Stage 1 (gradient interaction).** The atom traverses a magnetic field
+gradient ∇B. The gradient couples the chiral-pair phase to translation:
+a uniform B would only precess the phase coherently (Larmor precession),
+producing no spatial sorting; the *gradient* introduces a position-
+dependent rephasing rate that translates the internal phase difference
+into a transverse force F = ∇(μ·B). The atom's trajectory becomes
+correlated with its chiral-pair configuration. This stage is unitary and
+in principle reversible: the Humpty-Dumpty / SG-recombination experiments
+demonstrate that carefully recombined paths recover the original
+superposition. The gradient creates the *correlation*, not the *outcome*.
+
+**Stage 2 (detector).** When the atom arrives at the screen, the mass
+term couples its full chiral structure to the detector bulk. This is the
+irreversible event — the rephasing to the local Φ_bulk overwrites the
+atom's prior phase and produces the recorded position. Born statistics
+for the spin-axis projection cos²(θ/2) emerge here, not at the gradient.
+
+**Why the gradient is the operator the framework needs.** A uniform B
+rotates the chiral-pair phase uniformly relative to a fixed axis but
+generates no observable. A gradient is the operator that converts
+*internal* chiral-phase dynamics into *external* spatial trajectory.
+This is a stronger reading of the textbook "you need a gradient to get
+a force": the gradient is what couples the framework's internal
+chiral-clock dynamics to the translational degrees of freedom of the
+detector apparatus.
+
+**Sequential SG (z then x).** A spin-up atom selected by SG_z, then sent
+through SG_x rotated by π/2, splits 50/50. In framework terms, the
+chiral-pair phase that was locked to the z-axis bulk reference at the
+first detector is now asked to rephase to a reference rotated by π/2.
+The π/2 split is the symmetric case: neither chirality of the pair is
+preferred relative to the new reference, so the trajectory split is
+even. The general angle cos²(θ/2) is not derived here — its origin
+remains the SU(2) double-cover structure of the spinor representation
+(Appendix D); the framework's contribution is the physical mechanism of
+basis-projection via pair-sync, not a new derivation of the Born
+coefficients.
+
 ### 3.5 Gravitational Coherence of the Bulk
 
 What maintains the coherence of the detector bulk itself? We propose that gravity
@@ -749,6 +843,22 @@ in §3.8's taxonomy where the two-stage picture applies, Stage 2 is the
 event that Penrose's OR proposal aims to describe, and the two
 frameworks differ in dynamical reading rather than in what physical step
 they single out.
+
+The structural agreement masks a difference in form worth flagging. Penrose's
+objective reduction posits a *threshold*: superposition is unstable when the
+gravitational self-energy of the displaced mass configuration exceeds ℏ/τ,
+and collapse is then a discrete event. The Kuramoto-bulk picture is
+*continuous*: bulk re-equilibration via the mass term has no critical
+threshold but a relaxation rate Γ_bulk that scales smoothly with mass
+coupling and with the bulk's gravitational coherence rate. What appears as
+a sharp collapse in Penrose's reading is, in framework terms, a continuous
+rephasing whose timescale becomes effectively instantaneous once Γ_bulk
+exceeds any experimentally relevant inverse time. The two proposals
+converge on *where* the quantum-classical transition occurs (mass coupling
+to bulk) but differ on *how* it occurs (threshold instability vs.
+continuous rephasing). The framework's continuous reading is what permits
+the §5.5 linewidth-dependent observable — a threshold model has nothing to
+say about sub-threshold gravitational sensitivity.
 
 ### 3.7 Geometric Picture: The Coherence Sub-Manifold
 
@@ -1258,6 +1368,19 @@ Concretely:
   polarization axis set by the relative phase between the two helicity
   amplitudes.
 
+**Clock counting for the photon.** The parallel with §2.3 is exact in
+structure but inverted in dynamics. The photon carries two chiral clocks
+(the L and R helicity sectors) plus their symmetric mode — the de Broglie
+carrier at ω = ck — the same normal-mode arithmetic as the Dirac case.
+Because the photon is massless, however, K_LR = 0: there is no mass term
+to phase-lock the chiral pair, so the relative phase between L and R is
+not dynamically pinned but is a *free preparation parameter* that labels
+the polarization state (0 or π → linear at some angle; ±π/2 → circular;
+otherwise elliptical). The Dirac and photon cases are therefore the same
+chiral-pair-with-carrier structure under two limits of the mass coupling
+— locked (K = m, fermion) versus free (K = 0, photon) — and the
+polarization degree of freedom is what fills in for the missing lock.
+
 This reading recovers the standard polarization phenomenology — the
 Stokes parameters, the Poincaré sphere, the selection rules
 $\Delta m = \pm 1$ for circular-polarization absorption — directly from
@@ -1734,6 +1857,34 @@ correlations are quantum, and the Kuramoto mechanism explains how they are
 *revealed* (measurement) and *degraded* (decoherence), not how they are
 *produced*.
 
+**Φ_bulk as an "unhidden" environmental variable.** The framework does add
+a variable that standard QM treatments leave implicit: the gravitationally-
+maintained coherence Φ_bulk of the detector environment (§3.5). It is
+worth distinguishing this from a Bell hidden variable. Φ_bulk is a
+public, macroscopic, environmental property — not carried with the
+particle and not setting-correlated. It does not determine individual
+measurement outcomes (which remain stochastic per §4's zero-point
+background reading); it provides the coherence reference against which
+local rephasing is meaningful. The framework "unhides" Φ_bulk by making
+explicit what realistic descriptions of macroscopic detectors already
+implicitly assume — that the detector body is phase-coherent — and
+identifies the dynamical agent (gravity) that maintains that coherence.
+
+The chiral-pair phase φ_L − φ_R overwritten at each sync event (§1.6
+commitment 5) is similarly a local property of the detection process,
+not a carrier of the inter-detector correlation. The Bell correlation
+itself is carried by the standard quantum entangled state (Appendix A),
+which the framework leaves unchanged. Bell's theorem constrains
+persistent local variables carried with the particle; the framework's
+machinery — public environmental coherence plus locally-overwritten
+chiral phase — sits in the wrong place to engage it. In Bell-test
+geometry, both detectors rephase their arriving particles to a shared
+bulk reference, and the entangled pair shared an initial phase
+relationship at creation; the cos²((a−b)/2) correlation is preserved as
+a relational quantity between two local detection events, with the
+framework supplying the local-rephasing mechanism rather than an
+alternative to nonlocal quantum correlations.
+
 ### 7.7 The Hestenes Zitterbewegung Interpretation
 
 The closest precursor to the present framework in the interpretive literature
@@ -1865,6 +2016,17 @@ Four directions could elevate this from interpretation to testable theory:
    and superconducting nanowire detectors. Combined with the linewidth-
    dependent gravitational Bell prediction (Section 5.4), this would give the
    framework its sharpest near-term experimental test.
+
+5. **A laboratory observable for the continuous-rephasing reading of OR.**
+   Penrose–Diósi predicts a threshold collapse rate; the framework's
+   continuous-rephasing reading (§3.6) predicts smooth gravitational
+   sensitivity of bulk-relaxation timing below the Penrose threshold.
+   Mesoscopic optomechanical experiments designed to test Penrose–Diósi
+   could in principle distinguish the two: a threshold model predicts no
+   sub-threshold gravitational signature, the framework predicts a
+   continuous one scaling with Φ_grav/c² (cf. §6.2 P5). This is the most
+   direct experimental handle on the form-difference between the two
+   proposals identified in §3.6.
 
 ### 8.4 Categorization of Supporting Numerical Code
 
