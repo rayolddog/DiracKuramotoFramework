@@ -31,6 +31,9 @@ TestQiskit.ipynb
 # Working notes / external feedback
 *.txt
 
+# Partial bibliography collection (abandoned due to paywalls; kept locally)
+/references/
+
 # Untracked illustrative/working figures (the tracked ones stay tracked)
 tests/bell_phase.png
 tests/bulk_sync_hardware.png
