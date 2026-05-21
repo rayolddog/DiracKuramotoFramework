@@ -777,6 +777,35 @@ effectively for macroscopic masses. The gravitational synchronization coupling
 grows as M², ensuring that macroscopic objects are locked into collective phase
 coherence far more strongly than microscopic particles.
 
+**Bulk coherence as a self-restoring reservoir.** A reader may reasonably
+object: the detector sits in a noisy environment — thermal fluctuations,
+acoustic vibrations, electromagnetic interference, cosmic rays — and is
+constantly perturbed. How can Φ_bulk be maintained under such conditions?
+The framework's answer is that the same Γ_grav that establishes bulk
+coherence also restores it. A perturbation that displaces a bulk atom's
+phase from Φ_bulk creates a phase mismatch that the gravitational Kuramoto
+coupling damps back on a timescale of ~1/Γ_grav ~ 10⁻²³ s for a
+kilogram-scale detector. Compared to typical environmental perturbation
+rates — thermal phonons (~10¹³ Hz), seismic noise (~10² Hz), 60 Hz line
+interference, even atomic transitions in the detector material (~10¹⁵ Hz)
+— all are many orders of magnitude slower than the restoration rate. The
+bulk is therefore not passively coherent but *actively self-restoring*:
+perturbations decay back to the synchronized manifold faster than they can
+accumulate. This is the structural asymmetry between bulk and small system
+— a perturbed qubit decoheres one-way; a perturbed bulk atom rephases
+back — and it is what makes detector coherence robust to ordinary
+laboratory conditions.
+
+Two caveats. First, the claim is specifically about quantum phase
+coherence; classical mechanical vibrations in the detector body
+(acoustic phonons, structural ringing) are damped by electromagnetic
+material properties (viscoelasticity, phonon-phonon scattering), not by
+gravitational coupling. Second, the 1/Γ_grav restoration time is a
+characteristic rate from the pair-counting derivation above; a
+first-principles restoration calculation for specific perturbation
+modes (a propagating phonon, a coherent EM pulse) would refine this
+bound and is left for future work.
+
 The relation to Penrose's objective-reduction rate (Section 3.6) is one of
 counting: Penrose's E_G = Gm²/Δx is the gravitational self-energy of a
 *single* mass configuration in superposition with itself displaced; Γ_grav
