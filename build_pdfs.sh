@@ -5,6 +5,7 @@
 #   ManyClocks.pdf       — pandoc render of PAPER_UNIFIED.md, TOC depth 3
 #   AB_visibility.pdf    — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
 #   equations.pdf        — pandoc render of EQUATIONS.md, TOC depth 2
+#   equations.tex        — pandoc-generated LaTeX source from EQUATIONS.md
 #   paper.tex            — pandoc-generated LaTeX source from PAPER_UNIFIED.md
 #   paper.pdf            — two-pass xelatex compile of paper.tex
 #
@@ -60,6 +61,13 @@ pandoc "${REPO_DIR}/EQUATIONS.md" \
     --toc --toc-depth=2 \
     "${PANDOC_OPTS[@]}"
 
+# Regenerate equations.tex from EQUATIONS.md (standalone LaTeX source)
+echo "Regenerating equations.tex from EQUATIONS.md..."
+pandoc "${REPO_DIR}/EQUATIONS.md" \
+    -s -o "${REPO_DIR}/equations.tex" \
+    --toc --toc-depth=2 \
+    "${PANDOC_OPTS[@]}"
+
 # Regenerate paper.tex from PAPER_UNIFIED.md (standalone LaTeX source)
 echo "Regenerating paper.tex from PAPER_UNIFIED.md..."
 pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
@@ -80,5 +88,6 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 echo
 echo "Done:"
 ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" \
-       "${REPO_DIR}/equations.pdf" "${REPO_DIR}/paper.tex" "${REPO_DIR}/paper.pdf" \
+       "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \
+       "${REPO_DIR}/paper.tex" "${REPO_DIR}/paper.pdf" \
     | awk '{print "  " $9 ": " $5}'
