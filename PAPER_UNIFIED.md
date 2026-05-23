@@ -1177,6 +1177,22 @@ background field. It is not a separate postulate of quantum mechanics; it is
 the law of energy partition under unbiased background driving, observed as
 frequency statistics because the background is unobserved.
 
+**Environmental noise as a reducible third source.** Real laboratory
+measurements contain a third stochastic input alongside vacuum and thermal:
+environmental noise — electromagnetic interference, vibration, seismic
+motion, cosmic-ray events. Unlike the first two, environmental noise is
+*not* fundamentally unbiased; it reflects contingent features of the lab
+(60 Hz line pickup, building sway, local geology, atmospheric activity).
+Laboratory measurements behave well precisely because lab design suppresses
+these biases — shielding, isolation, cooling, deep-underground siting — to
+where they fall below the universal vacuum-plus-thermal floor. The
+framework's prediction is correspondingly sharper: as environmental
+shielding improves, observed outcome statistics should *converge to*
+Born-rule frequencies, not deviate from them. The Born rule is the
+asymptotic statistics of the irreducible part. Persistent systematic
+deviation from |α|² that survived progressive shielding would put the
+framework under pressure; the empirical record does the opposite.
+
 ### 4.5 Connection to Nelson's Stochastic Mechanics
 
 Nelson [26] showed that a real particle undergoing stochastic motion in a
