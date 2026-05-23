@@ -75,6 +75,8 @@
 \newunicodechar{≥}{\ensuremath{\geq}}
 \newunicodechar{≪}{\ensuremath{\ll}}
 \newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{≲}{\ensuremath{\lesssim}}
+\newunicodechar{≳}{\ensuremath{\gtrsim}}
 \newunicodechar{∝}{\ensuremath{\propto}}
 \newunicodechar{∼}{\ensuremath{\sim}}
 \newunicodechar{√}{\ensuremath{\surd}}
@@ -259,6 +261,54 @@ The detector's clock phase is pre-established by thermal equilibration
 with the macroscopic environment:
 
 \[\Phi_{D_1} = \Phi_{D_2} = \Phi_{\text{bulk}} \qquad \text{(both detectors, before the experiment)}\]
+
+\subsubsection{Capture range (Arnold
+tongue)}\label{capture-range-arnold-tongue}
+
+Two oscillators phase-lock only if their natural-frequency mismatch lies
+within the coupling bandwidth:
+
+\[\boxed{|\omega_i - \omega_j| \lesssim K_{\text{eff}}}\]
+
+This is the standard Kuramoto capture-range / Arnold-tongue condition.
+In the framework it applies at three distinct scales (with the three
+couplings of §6):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Scale
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(K_{\text{eff}}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Capture bandwidth
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Outside the window
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Intra-spinor L--R & \(K = m\) & \(mc^2/\hbar\) (Compton) & Automatic for
+on-shell Dirac particles \\
+Vertex pair-sync (Stage 1) &
+\(K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle\) &
+\(\sim K_{\text{pair}}\) & Shed as secondary radiation, not locked \\
+Bulk relaxation (Stage 2) &
+\(\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)\) &
+\(\sim \Gamma_{\text{bulk}}\) & Decoheres without bulk-coherent
+absorption \\
+\end{longtable}
+}
+
+The framework's intuition that ``the amount a phase can be pulled into
+synchronization is bounded'' is this condition, evaluated separately at
+each stage. See Paper §2.2.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -615,6 +665,15 @@ Collapse when \(\mathcal{C} \to 0\), i.e., \(\delta\varphi = \pi\):
 
 This is the \textbf{Penrose formula}, derived here as gravitational
 clock decoherence. No observer required.
+
+\textbf{Continuous vs threshold form.} \(\Gamma_{\text{grav}}\) above is
+a smooth relaxation rate with no critical value; Penrose's
+\(\tau_{\text{collapse}}\) marks a discrete instability threshold. The
+two answer the same question --- when does coherence die against the
+bulk? --- in different functional forms: continuous Kuramoto rephasing
+vs threshold gravitational collapse. The framework's continuous form is
+what permits sub-threshold gravitational sensitivity (Paper §3.6, §5.5,
+§8.3 \#5).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1135,9 +1194,9 @@ chain of Kuramoto sync events has connected the clocks at \(x\) and
 The choice of sign in the (anti)commutator is forced by the same SU(2)
 double-cover fact above --- it is one structural fact, not two.
 
-See Appendix D of the main paper and \texttt{spin\_statistics.py} for
-numerical verification (six tests, including a momentum scan over six
-decades that confirms the sign is unaffected by the relativistic
+See Appendix D of the main paper and \texttt{tests/spin\_statistics.py}
+for numerical verification (six tests, including a momentum scan over
+six decades that confirms the sign is unaffected by the relativistic
 large/small mixing of Appendix A).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
