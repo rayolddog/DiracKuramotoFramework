@@ -66,7 +66,7 @@ This is the standard Kuramoto capture-range / Arnold-tongue condition. In the fr
 |---|---|---|---|
 | Intra-spinor L–R | $K = m$ | $mc^2/\hbar$ (Compton) | Automatic for on-shell Dirac particles |
 | Vertex pair-sync (Stage 1) | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | $\sim K_{\text{pair}}$ | Shed as secondary radiation, not locked |
-| Bulk relaxation (Stage 2) | $\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
+| Bulk relaxation (Stage 2) | $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
 
 The framework's intuition that "the amount a phase can be pulled into synchronization is bounded" is this condition, evaluated separately at each stage. See Paper §2.2.
 
@@ -195,7 +195,7 @@ The framework now carries three Kuramoto couplings, each at a different scale:
 |---|---|---|
 | $K = m$ | Higgs–Yukawa | intra-spinor L–R sync |
 | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | gauge interaction | pair-sync at vertex (Stage 1) |
-| $\Gamma_{\text{bulk}} = GM^2/(\hbar\Delta z)$ | gravity + atomic | bulk re-equilibration (Stage 2) |
+| $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | environmental + gravitational | bulk re-equilibration (Stage 2); see §7 below |
 
 See Paper §3.4 for the full two-stage measurement process and its Bell /
 gravitational consequences.
@@ -270,6 +270,27 @@ $$\boxed{\tau_{\text{collapse}} = \frac{\pi\hbar}{E_G}, \qquad E_G = \frac{Gm^2}
 This is the **Penrose formula**, derived here as gravitational clock decoherence. No observer required.
 
 **Continuous vs threshold form.** $\Gamma_{\text{grav}}$ above is a smooth relaxation rate with no critical value; Penrose's $\tau_{\text{collapse}}$ marks a discrete instability threshold. The two answer the same question — when does coherence die against the bulk? — in different functional forms: continuous Kuramoto rephasing vs threshold gravitational collapse. The framework's continuous form is what permits sub-threshold gravitational sensitivity (Paper §3.6, §5.5, §8.3 #5).
+
+### Total Stage-2 rate: environmental + gravitational
+
+$\Gamma_{\text{grav}}$ is the bulk's *internal* gravitational coherence rate. The rate that controls Stage 2 of measurement (the perturbed partner re-equilibrating to $\Phi_{\text{bulk}}$) has an additional, usually dominant, environmental component:
+
+$$\boxed{\Gamma_{\text{Stage 2}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\,J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)}$$
+
+The environmental term takes the standard quantum-optics form
+
+$$\Gamma_{\text{env}}(\omega,\,T) \;\sim\; J(\omega)\bigl[\,1 + 2\,n_{\text{th}}(\omega,\,T)\bigr], \qquad n_{\text{th}}(\omega,\,T) = \frac{1}{e^{\hbar\omega/k_BT}-1}$$
+
+with $J(\omega)$ the bath spectral density at the partner's transition frequency. Two limits:
+
+| Regime | $\Gamma_{\text{env}}$ scaling | Comment |
+|---|---|---|
+| High $T$, $k_BT \gg \hbar\omega$ | $\sim J(\omega) \cdot 2k_BT/(\hbar\omega)$ | linear in $T$; room-temperature photodetector limit |
+| Low $T$, $k_BT \ll \hbar\omega$ | $\to J(\omega)$ | saturates at the spontaneous-emission / vacuum floor |
+
+In ordinary matter at room $T$, $\Gamma_{\text{env}}$ is $\sim10^{12}\text{–}10^{15}$ Hz on phononic-to-optical channels — orders of magnitude faster than the partner-to-bulk component of $\Gamma_{\text{grav}}$ — so $\Gamma_{\text{grav}}$ is empirically inert. In engineered systems (cryogenic, cavity-detuned, gap-protected, weakly coupled by design) $\Gamma_{\text{env}}$ can be suppressed below experimentally resolvable rates, and the underlying unitary slide becomes visible. Minev et al. [49] catch-and-reverse experiment is the cleanest case: dark-state $\chi_D \ll \kappa$ (cavity non-resolving), $T = 15$ mK, $k_BT/\hbar\omega \sim 10^{-7}$, microsecond reversibility window. The regime where $\Gamma_{\text{env}}(T) \approx \Gamma_{\text{grav}}$ is where mesoscopic Penrose–Diósi collapse experiments operate. See Paper §3.5 for full discussion.
+
+(Note: $\sigma_\varphi(T)$ in §9 below is the equilibrium *width* of the bulk's phase distribution; $\Gamma_{\text{env}}(T)$ here is the *rate* at which a perturbed partner returns to that distribution. The two are related — both vanish at $T \to 0$ up to zero-point floors — but they are distinct quantities entering at different points in the measurement process.)
 
 ---
 

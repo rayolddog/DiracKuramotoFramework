@@ -34,6 +34,9 @@ TestQiskit.ipynb
 # Partial bibliography collection (abandoned due to paywalls; kept locally)
 /references/
 
+# Local proposal/working files (drafts for review before paper edits, kept local)
+*_PROPOSALS.md
+
 # Untracked illustrative/working figures (the tracked ones stay tracked)
 tests/bell_phase.png
 tests/bulk_sync_hardware.png

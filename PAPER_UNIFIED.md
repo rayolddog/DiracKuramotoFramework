@@ -192,6 +192,13 @@ We state clearly at the outset:
   standard quantum mechanics.
 - We do not modify the Dirac equation or any of its predictions.
 - We do not propose new physics. We propose a new *mechanism* for known physics.
+- We do not claim a rigorous derivation of the Born rule. Section 4
+  offers a wave-realist *reading* — |ψ|² as the energy density of a real
+  oscillating field, outcome statistics as energy partition under
+  background-fluctuation stochasticity — but the convergence of long-run
+  frequencies to exactly |amplitude|² requires an unbiased-background
+  assumption we explicitly flag as unproven (§4.7, §8.3 item 3). Section 4
+  is interpretive corollary, not a load-bearing pillar of the framework.
 - The framework proposes several distinguishable predictions (§5.5
   linewidth-dependent gravitational Bell; §6.2 P5 gravitationally-weighted
   secondary emission; P2 trapped-ion Zitterbewegung), but they are either below
@@ -417,7 +424,7 @@ a phase can be pulled into synchronization is bounded" is therefore not a
 soft heuristic but the standard Kuramoto capture-range condition |Δω| ≲ K_eff,
 evaluated separately at Stage 1 (K = m) and Stage 2 (K_pair).
 
-### 2.3 Two Clocks, Not One
+### 2.3 The Chiral Pair as a Lorentz-Coupled Whole
 
 The central physical picture is:
 
@@ -573,6 +580,24 @@ with the locality of fundamental interactions, separates this into two stages:
 - **Stage 2 (Bulk Relaxation).** The perturbed partner re-locks to the bulk's
   collective phase Φ_bulk, shedding its phase mismatch as secondary radiation.
 
+**Relation to Smolin & Verde's "quantum mechanics of the present".** This
+two-stage picture has a precursor in Smolin & Verde [48], who identify the
+measurement event with the *transition between indefinite and definite* and
+locate the present moment in that transition itself, rather than in an
+external observer or in a branching of worlds. Their proposal stays at the
+phenomenological level: an event is defined as an instance of indefinite-to-
+definite transition, but the microphysics of how that transition is realized
+in matter is left open. The Kuramoto framework supplies a candidate
+mechanism. The indefinite-to-definite arrow is the Kuramoto synchronization
+arrow, realized at Stage 1 by K_pair (the incoming particle locking to a
+single bulk-bound partner) and at Stage 2 by Γ_bulk (the partner re-locking
+to Φ_bulk). Where standard environmental-decoherence accounts have the
+wavefunction's information propagating outward through entanglement with the
+environment, here the phase mismatch is dissipated locally — partly as
+secondary radiation (see below) and partly as fine-scale phase choppiness in
+the bulk's coherence manifold, which settles into Φ_bulk on the timescale
+set by Γ_bulk (§3.5).
+
 **Yukawa-style identification of the pair coupling.** Equation (3) identified
 the intra-spinor sync coupling as a Higgs-mediated mass, K = y_f ⟨φ⟩ = m. The
 pair-sync coupling at an interaction vertex follows the same structure — a
@@ -597,7 +622,7 @@ couplings, each entering at a different stage of measurement:
 |---|---|---|
 | K = m | Higgs–Yukawa | intra-spinor L–R sync (Section 2) |
 | K_pair = g_int ⟨V_int⟩ | gauge interaction | pair-sync at vertex (Stage 1) |
-| Γ_bulk = GM²/(ℏΔz) | gravitational + atomic | bulk re-equilibration (Stage 2) |
+| Γ_bulk = Γ_env(T) + Γ_grav(M) | environmental + gravitational | bulk re-equilibration (Stage 2); see §3.5 |
 
 ![Two-stage measurement of an entangled photon pair](entangled_pair_two_stage.png)
 
@@ -663,6 +688,29 @@ below experimental sensitivity but a clean target for satellite-to-ground
 configurations. This locates the Penrose–Diósi mechanism unambiguously at
 Stage 2: gravitational collapse acts on bulk relaxation, never on the pair-sync
 that builds cos²(θ/2).
+
+**Empirical anchor: catching the jump mid-flight (Minev et al.).** A direct
+experimental signature of the two-stage decomposition appears in Minev et
+al. [49], who track a quantum jump in a three-level superconducting transmon
+(ground |G⟩, dark |D⟩, bright |B⟩) by *indirectly* monitoring it through
+fluorescence on the G↔B transition. During a "no-click" window, when
+bright-channel fluorescence has paused, the wavefunction's slide from |G⟩
+toward |D⟩ is found to be continuous, coherent, and deterministic — and
+reversible by a unitary pulse applied mid-flight, with fidelity ~82%. In
+framework language, the dark transition has no pair-sync coupling to any
+bulk-bound partner during this window (K_pair ≈ 0 on the G↔D channel; the
+cavity is engineered to be non-resolving for |D⟩, with χ_D ≈ −0.33 MHz
+against a cavity linewidth κ/2π ≈ 3.62 MHz [49]), so no Stage-1 event has
+fired on that channel and no Stage-2 relaxation has occurred. The slide is
+therefore Stage-1-free unitary evolution. Stage 1 fires only when the dark
+state actually decays back to |G⟩ by spontaneous emission — a real photon
+at a real time — at which point the jump becomes irreversible. The bright
+channel, meanwhile, runs continuous Stage-1+Stage-2 events at ~ns timescale
+and supplies the indirect record. Minev et al. thus exhibit the two-stage
+structure in a setting where Stage 1 has been deliberately suppressed on
+one transition: the result is exactly the continuous, reversible, coherent
+jump dynamics the two-stage picture predicts, with irreversibility arriving
+precisely when the first real pair-sync event occurs.
 
 **What this section does not yet pin down.**
 
@@ -805,6 +853,109 @@ characteristic rate from the pair-counting derivation above; a
 first-principles restoration calculation for specific perturbation
 modes (a propagating phonon, a coherent EM pulse) would refine this
 bound and is left for future work.
+
+**The non-gravitational floor: Γ_env(T) as the dominant Stage-2 rate in
+ordinary matter.** The Γ_grav derived above is the bulk's *internal*
+coherence rate — the rate at which an already-bulk-bound atom re-locks
+to Φ_bulk after a perturbation. The rate that controls Stage-2 in §3.4,
+by contrast, is the rate at which an *external* perturbed partner (the
+kicked electron, the absorbing photodetector dipole, the qubit) re-
+equilibrates *to* the bulk. That rate is set by the partner's coupling
+channel into the bulk — overwhelmingly electromagnetic and phononic for
+ordinary matter — not by direct gravitational pair-attraction to each
+of the bulk's constituent atoms. The two contributions are therefore
+additive,
+
+$$\boxed{\;\Gamma_{\text{Stage 2}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\, J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)\;} \qquad (3.5')$$
+
+with Γ_grav as the irreducible gravitational floor and Γ_env as the
+temperature- and design-dependent dominant term. The standard quantum-
+optics form for the latter is
+
+$$\Gamma_{\text{env}}(\omega,\, T) \;\sim\; J(\omega)\bigl[\,1 + 2\, n_{\text{th}}(\omega,\, T)\bigr], \qquad n_{\text{th}}(\omega,\, T) = \frac{1}{e^{\hbar\omega/k_B T} - 1}$$
+
+where J(ω) is the bath spectral density at the partner's transition
+frequency. At high temperature (k_B T ≫ ℏω) the thermal occupation is
+large and Γ_env ∼ J(ω)·2k_B T/(ℏω) is linear in T — the room-temperature
+photodetector regime, where phonon and EM relaxation channels make Stage 2
+effectively instantaneous. At low temperature (k_B T ≪ ℏω) the thermal
+occupation falls exponentially and Γ_env saturates at the spontaneous-
+emission floor J(ω), set by the residual vacuum coupling of the partner.
+In ordinary matter at room T, Γ_env is ~10¹² – 10¹⁵ Hz on phononic-to-
+optical channels — orders of magnitude faster than the partner-to-bulk
+component of Γ_grav, so the Penrose-Diósi gravitational contribution is
+empirically inert except in carefully engineered systems.
+
+**The engineered-suppression regime.** Modern cavity-QED and super-
+conducting-qubit experiments deliberately push Γ_env(T) down on selected
+channels by orders of magnitude. The Minev et al. catch-and-reverse
+experiment [49] (§3.4) is the cleanest example: a transmon's dark
+transition is engineered to be non-resolving on the readout cavity (the
+dispersive shift χ_D is smaller than the cavity linewidth κ), and the
+cryostat at 15 mK satisfies k_B T ≪ ℏω at the qubit frequency, so the
+thermal photon occupation there is ~10⁻⁷. The result is that on the
+protected channel Γ_env collapses to its J(ω)-suppressed vacuum floor,
+while the partner's mass is microscopic, so Γ_grav is also negligible.
+The window of unitary, reversible evolution before *any* Stage-2 event
+fires opens to ~μs — exactly the regime where the continuous coherent
+jump dynamics observed in [49] become visible. The two-stage picture is
+consistent in both extremes — fast irreversible Stage 2 in room-temperature
+matter (Γ_env-dominated) and engineered-reversible Stage 2 in cryogenic
+protected channels (Γ_env suppressed below experimentally resolvable
+rates) — without any change in the underlying mechanism.
+
+**Two senses of bulk: thermal vs. condensed.** The discussion above
+implicitly treats the bulk as a *thermalized* macroscopic body — atoms
+gravitationally locked into Φ_bulk with a residual thermal jitter
+σ_φ(T) (EQUATIONS.md §9). This is the appropriate picture for a lattice
+photodetector, a cryogenic mass, or a polarizer: bulks whose collective
+phase is a statistical equilibrium maintained by Γ_grav against thermal
+disorder. A second class of bulks behaves differently. Superconducting
+condensates, Bose–Einstein condensates, and other macroscopically
+coherent reservoirs carry a single broken-U(1) order parameter — a real
+macroscopic quantum phase, not a statistical average. The condensate's
+"Φ_bulk" is its order-parameter phase, established by symmetry breaking
+rather than by Γ_grav-mediated pair coupling across N² atomic
+constituents. The framework's bulk concept covers both, but the two
+behave differently under Stage 2.
+
+**Why this matters for the Minev case.** When a perturbed partner
+re-equilibrates to a *thermalized* bulk, it sheds its phase mismatch
+into the bulk's thermal-noise channels — the standard Stage-2 picture
+of §3.4, with secondary radiation as the energy receipt. When the
+partner lives *inside* a condensed quantum bulk — as the transmon's
+qubit excitation lives inside the Cooper-pair condensate — Stage 2 has
+no entropic destination: the condensate has no thermal-noise floor to
+classicalize into, because the condensate is itself a coherent
+macroscopic quantum state. The Minev experiment is in this regime. The
+qubit excitation is dispersed across the condensate as a collective
+phase mode of the broken-U(1) order parameter, with no localized
+atomic orbital to collapse onto and no thermal environment mode
+available for pair-sync (those are engineered away by the cavity
+detuning and the cryogenic temperature). Stage 1 therefore cannot fire
+on the protected dark channel: there is nothing for the excitation to
+pair-sync *to*. The reversibility window observed in [49] reflects not
+just the engineered smallness of Γ_env(T) but also that the natural
+bulk for a superconducting qubit is itself quantum-coherent rather
+than thermal. The framework's "bulk" concept therefore admits two
+empirically distinct realizations — thermal-statistical and
+condensate-coherent — with qualitatively different Stage-2
+phenomenology in each.
+
+**The regime crossover and Penrose–Diósi.** The intermediate regime
+where Γ_env(T) and Γ_grav are comparable is where gravitational-collapse
+experiments must operate. To resolve a gravitationally-driven Stage-2
+event one needs Γ_env(T) engineered below Γ_grav at the target mass
+scale — massive enough that GM²/(ℏΔz) is non-negligible, cold and
+isolated enough that thermal and EM relaxation channels do not overwrite
+the gravitational signal. This is the design principle behind mesoscopic
+optomechanical Penrose–Diósi tests (§3.6): increase M into the
+~10⁻¹¹ – 10⁻⁹ kg range while pushing T into the mK range and the cavity
+Q-factor into the millions, until the Γ_env(T)-suppressed floor falls
+below the predicted Γ_grav. The framework's prediction is that the
+experimentally observed Stage-2 rate in such systems is the *sum* of the
+two terms, with Γ_grav being the new contribution that the engineering
+is designed to expose.
 
 The relation to Penrose's objective-reduction rate (Section 3.6) is one of
 counting: Penrose's E_G = Gm²/Δx is the gravitational self-energy of a
@@ -1082,7 +1233,26 @@ The re-synchronization picture is interpretive. It does not:
 
 ---
 
-## 4. The Born Rule as Energy Partition under Background-Fluctuation Stochasticity
+## 4. A Wave-Realist Reading of the Born Rule
+
+This section offers a wave-realist reading of the Born rule consistent
+with the framework's ontology. Two claims should be distinguished:
+
+- The **interpretive claim** — that |ψ|² is the energy density of a real
+  oscillating field rather than a probability axiom of quantum theory —
+  is what the rest of the paper relies on (§3.8 energy accounting, §6
+  qualitative predictions, §7 comparison with PBR). It is argued for in
+  §4.2–§4.3.
+- The **technical claim** — that the long-run frequencies of measurement
+  outcomes converge *exactly* to amplitudes-squared — is sketched in §4.3
+  but requires the unbiased-background assumption discussed in §4.7 and is
+  not rigorously proven here. Closing this gap is listed as an open
+  direction in §8.3 item 3.
+
+Removing the technical claim would leave the rest of the paper intact;
+removing the interpretive claim would orphan §3.8, §6, and §7's
+comparison with PBR. The section as a whole is interpretive corollary,
+not load-bearing pillar.
 
 ### 4.1 The Problem and the Reframing
 
@@ -1382,14 +1552,19 @@ part is the photon ($\phi_{AB}$, spin 1) and the antisymmetric part is
 a scalar (the inner product $\psi^A \chi_A$, spin 0).
 
 The Riemann–Silberstein vector $\mathbf{F} = \mathbf{E} + i\mathbf{B}$
-of §5.1 is the spatial representation of the symmetric spinor
-$\phi_{AB}$. Its complex conjugate $\mathbf{F}^* = \mathbf{E} -
-i\mathbf{B}$ is the conjugate spinor $\bar\phi_{A'B'}$. The two pieces
-correspond to the two helicity states of the photon: left-circular
-polarization (the $\phi_{AB}$ sector, $+1$ helicity) and right-circular
-polarization (the $\bar\phi_{A'B'}$ sector, $-1$ helicity). In free
-propagation, the two sectors do not couple — this is the spin-1 analog
-of the chirality decoupling that makes massless fermions free in §2.1.
+of §5.1 is the spatial representation of the conjugate symmetric spinor
+$\bar\phi_{A'B'}$ (the self-dual, primed-index sector). Its complex
+conjugate $\mathbf{F}^* = \mathbf{E} - i\mathbf{B}$ is the unprimed
+spinor $\phi_{AB}$ (the anti-self-dual sector). The two pieces
+correspond to the two helicity states of the photon: right-circular
+polarization (the $\bar\phi_{A'B'}$ sector, $+1$ helicity, identified
+with $\mathbf{F}_+$ in §5.1) and left-circular polarization (the
+$\phi_{AB}$ sector, $-1$ helicity, identified with $\mathbf{F}_-$).
+This is the standard Penrose–Rindler [46] / Bialynicki-Birula [40]
+convention in which unprimed spinors are anti-self-dual / negative
+helicity. In free propagation, the two sectors do not couple — this is
+the spin-1 analog of the chirality decoupling that makes massless
+fermions free in §2.1.
 
 #### Re-reading the photon in framework language
 
@@ -1413,27 +1588,71 @@ Concretely:
   polarization axis set by the relative phase between the two helicity
   amplitudes.
 
-**Clock counting for the photon.** The parallel with §2.3 is exact in
-structure but inverted in dynamics. The photon carries two chiral clocks
-(the L and R helicity sectors) plus their symmetric mode — the de Broglie
-carrier at ω = ck — the same normal-mode arithmetic as the Dirac case.
-Because the photon is massless, however, K_LR = 0: there is no mass term
-to phase-lock the chiral pair, so the relative phase between L and R is
-not dynamically pinned but is a *free preparation parameter* that labels
-the polarization state (0 or π → linear at some angle; ±π/2 → circular;
-otherwise elliptical). The Dirac and photon cases are therefore the same
-chiral-pair-with-carrier structure under two limits of the mass coupling
-— locked (K = m, fermion) versus free (K = 0, photon) — and the
+**Clock counting for the photon.** The parallel with §2.3 is structural
+rather than arithmetic. The photon's spin-1 character comes from *two
+chiral pairs* symmetrized together ($\phi_{AB} = \psi_{(A}\chi_{B)}$),
+each pair being one Lorentz-coupled whole — not a sum of L + R clocks
+— in the sense of §2.3 and the orthogonality discussion just above.
+The de Broglie carrier at $\omega = ck$ is the symmetric propagating
+mode of this construction. Because the photon is massless, the chiral
+coupling *within* each pair is zero ($K_{LR} = 0$): there is no mass
+term to phase-lock L and R, and the relative phase between the
+photon's two helicity sectors ($\phi_{AB}$ vs. $\bar\phi_{A'B'}$) is
+not dynamically pinned but is a *free preparation parameter* that
+labels the polarization state (0 or $\pi$ → linear at some angle;
+$\pm\pi/2$ → circular; otherwise elliptical). The Dirac and photon
+cases are therefore the same chiral-pair structure under two limits of
+the mass coupling — locked ($K = m$, one pair, fermion) versus free
+($K = 0$, symmetric product of two pairs, photon) — and the
 polarization degree of freedom is what fills in for the missing lock.
 
 This reading recovers the standard polarization phenomenology — the
 Stokes parameters, the Poincaré sphere, the selection rules
 $\Delta m = \pm 1$ for circular-polarization absorption — directly from
-the chiral-clock structure rather than treating it as separate
+the chiral-pair structure rather than treating it as separate
 machinery. The photon is not a new kind of object in the framework: it
-is the structurally simplest composite of chiral-clock pairs that can
+is the structurally simplest composite of chiral pairs that can
 propagate freely (because it is massless) and carry transverse angular
 momentum (because it is symmetric rank-2).
+
+#### Orthogonality of the chiral pair, and what it does not say about spin
+
+It is tempting to read the spin-1 vs. spin-1/2 distinction as a
+statement about the orthogonality of the chiral phase difference
+*within* a single pair — photons being spin-1 because L and R are
+"orthogonal" / decoupled, fermions being spin-1/2 because they are
+coupled by $K = m$. This is not what the structure actually says. Three
+different senses of orthogonality are easily collapsed:
+
+(i) **Basis-vector** orthogonality of $\psi_L$ and $\psi_R$ in the
+4-dim Dirac space — always true, no dynamical content;
+
+(ii) **Dynamical decoupling** of the chiral Dirac equations (1a, 1b) —
+true only at $m = 0$;
+
+(iii) **Kuramoto phase-orthogonality** at $\theta_{rel} = \pi/2$
+(§2.1.1) — true for massless fields, and approached in the
+ultrarelativistic limit of a massive one.
+
+These three coincide only when $m = 0$ and are otherwise distinct
+statements about the same configuration. None of them produces the
+spin label: a massless Weyl fermion (the neutrino, in its idealized
+massless limit) is "decoupled within its chiral pair" in exactly the
+same dynamical sense as a photon, yet it is spin-1/2, not spin-1.
+
+What actually differentiates spin in the framework's language is the
+*symmetric-spinor rank* of the field — the table above ("number of
+chiral pairs = $2s$") is the careful count. Spin-1/2 fermions carry
+one chiral pair; spin-1 photons carry two such pairs symmetrized
+together; spin-2 gravitons carry four. The L–R structure *inside* each
+pair is the same across all cases (decoupled when massless, K-coupled
+when massive). The spin label tracks how many indivisible chiral-pair
+units are bundled into one totally symmetric object, not how
+orthogonal L and R are within any one of them. This is also the
+careful version of the §2.3 spacetime parallel: each chiral pair is
+*one* Lorentz-coupled whole — not a sum of two independent clocks —
+exactly as Minkowski spacetime is one Lorentz-coupled whole rather
+than $(3\text{ space} + 1\text{ time})$.
 
 #### Cochain-ontology consistency
 
@@ -2010,7 +2229,7 @@ presented here connects these threads.
 
 ### 8.3 Future Directions
 
-Four directions could elevate this from interpretation to testable theory:
+Several directions could elevate this from interpretation to testable theory:
 
 1. **A laboratory observable for K = m itself.** The discussion of P3 and
    P4 in §6.2 leaves an open question: does the K = m intra-spinor sync
@@ -2038,7 +2257,16 @@ Four directions could elevate this from interpretation to testable theory:
    differ, the difference is a testable prediction. Crucially, this means
    deriving Γ_bulk and K_pair from microscopic models of the relevant bath
    — not deriving "τ ~ ℏ/m" from K = m, which is the conflation P3/P4
-   warn against.
+   warn against. Specifically: §3.5 now decomposes the Stage-2 rate as
+   Γ_bulk = Γ_env(T, J(ω)) + Γ_grav(M, Δz) (eq. 3.5'), with the
+   environmental term inherited from the standard quantum-optics
+   system-bath result Γ_env ∼ J(ω)[1 + 2 n_th(ω, T)]. A Kuramoto-native
+   derivation that treats each bath mode as a pair-sync partner — and
+   recovers the spontaneous-emission floor at low T and the linear-in-T
+   scaling at high T from K_aa pair-counting alone — would close the
+   corresponding theoretical gap and confirm that the additive form is
+   not just a phenomenological splice but a consequence of the same
+   K = E/ℏ identification used elsewhere in the framework.
 
 3. **Born rule — closing the unbiased-background assumption.** Section 4
    reads the Born rule as the long-run frequency of energy partition under
@@ -2072,6 +2300,30 @@ Four directions could elevate this from interpretation to testable theory:
    continuous one scaling with Φ_grav/c² (cf. §6.2 P5). This is the most
    direct experimental handle on the form-difference between the two
    proposals identified in §3.6.
+
+6. **Two senses of bulk: thermal vs. condensed quantum reservoirs.**
+   Section 3.5 distinguishes two empirically distinct realizations of the
+   framework's Φ_bulk — thermalized macroscopic bodies maintained by
+   Γ_grav against thermal disorder, and condensed quantum reservoirs
+   (superconducting condensates, BECs, optomechanical modes prepared in
+   their motional ground states) carrying a single broken-U(1) order
+   parameter. Each yields qualitatively different Stage-2 phenomenology,
+   and the Minev et al. catch-and-reverse result [49] is interpreted as
+   the condensate-bulk case. Open questions: (i) does the framework
+   predict measurably different decoherence signatures for a partner
+   embedded in a condensate-bound bulk vs. one coupled to a thermalized
+   lattice bulk, beyond what standard quantum optics already captures;
+   (ii) where exactly is the boundary — do cooled optomechanical
+   membranes and levitated nanoparticles in their motional ground states
+   count as "condensed" in the framework's sense, or only systems with a
+   literal broken U(1) symmetry; (iii) what is the framework's reading of
+   cross-regime experiments (a condensate-bound qubit coupled to a
+   thermal bath, e.g., a superconducting qubit with engineered residual
+   phonon coupling), where Stage 2 partitions between coherent-into-
+   condensate and incoherent-into-thermal channels? Settling these would
+   convert the bulk distinction in §3.5 from a recognition of two
+   empirical cases into a source of testable phenomenology, and would
+   tell us whether condensed-vs-thermal is a binary or a continuum.
 
 ### 8.4 Categorization of Supporting Numerical Code
 
@@ -3016,6 +3268,15 @@ https://doi.org/10.1017/CBO9780511564048
 [47] Atiyah, M. F., & Singer, I. M. (1963). The index of elliptic operators on
 compact manifolds. *Bulletin of the American Mathematical Society*, 69(3),
 422–433. https://doi.org/10.1090/S0002-9904-1963-10957-X
+
+[48] Smolin, L., & Verde, C. (2021). The quantum mechanics of the present.
+arXiv preprint arXiv:2104.09945. https://arxiv.org/abs/2104.09945
+
+[49] Minev, Z. K., Mundhada, S. O., Shankar, S., Reinhold, P.,
+Gutiérrez-Jáuregui, R., Schoelkopf, R. J., Mirrahimi, M., Carmichael, H. J.,
+& Devoret, M. H. (2019). To catch and reverse a quantum jump mid-flight.
+*Nature*, 570, 200–204. https://doi.org/10.1038/s41586-019-1287-z
+(arXiv:1803.00545)
 
 ---
 
