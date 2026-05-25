@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
-# build_pdfs.sh — render PAPER_UNIFIED.md, AB_VISIBILITY_PAPER.md, and EQUATIONS.md to PDF
+# build_pdfs.sh — render PAPER_UNIFIED.md, AB_VISIBILITY_PAPER.md,
+# COSMIC_EXPANSION_PAPER.md, and EQUATIONS.md to PDF
 #
 # Produces:
-#   ManyClocks.pdf       — pandoc render of PAPER_UNIFIED.md, TOC depth 3
-#   AB_visibility.pdf    — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
-#   equations.pdf        — pandoc render of EQUATIONS.md, TOC depth 2
-#   equations.tex        — pandoc-generated LaTeX source from EQUATIONS.md
-#   paper.tex            — pandoc-generated LaTeX source from PAPER_UNIFIED.md
-#   paper.pdf            — two-pass xelatex compile of paper.tex
+#   ManyClocks.pdf         — pandoc render of PAPER_UNIFIED.md, TOC depth 3
+#   AB_visibility.pdf      — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
+#   CosmicExpansion.pdf    — pandoc render of COSMIC_EXPANSION_PAPER.md, TOC depth 2
+#   CosmicExpansion.tex    — pandoc-generated LaTeX source from COSMIC_EXPANSION_PAPER.md
+#   equations.pdf          — pandoc render of EQUATIONS.md, TOC depth 2
+#   equations.tex          — pandoc-generated LaTeX source from EQUATIONS.md
+#   paper.tex              — pandoc-generated LaTeX source from PAPER_UNIFIED.md
+#   paper.pdf              — two-pass xelatex compile of paper.tex
 #
 # Requires: pandoc, xelatex (TeX Live or MacTeX)
 # Uses: pdf_header.tex (Unicode-to-LaTeX mappings)
@@ -54,6 +57,20 @@ pandoc "${REPO_DIR}/AB_VISIBILITY_PAPER.md" \
     --toc --toc-depth=2 \
     "${PANDOC_OPTS[@]}"
 
+# Build the cosmic expansion companion paper
+echo "Building CosmicExpansion.pdf from COSMIC_EXPANSION_PAPER.md..."
+pandoc "${REPO_DIR}/COSMIC_EXPANSION_PAPER.md" \
+    -o "${REPO_DIR}/CosmicExpansion.pdf" \
+    --toc --toc-depth=2 \
+    "${PANDOC_OPTS[@]}"
+
+# Regenerate CosmicExpansion.tex from COSMIC_EXPANSION_PAPER.md (standalone LaTeX source)
+echo "Regenerating CosmicExpansion.tex from COSMIC_EXPANSION_PAPER.md..."
+pandoc "${REPO_DIR}/COSMIC_EXPANSION_PAPER.md" \
+    -s -o "${REPO_DIR}/CosmicExpansion.tex" \
+    --toc --toc-depth=2 \
+    "${PANDOC_OPTS[@]}"
+
 # Build the equations reference
 echo "Building equations.pdf from EQUATIONS.md..."
 pandoc "${REPO_DIR}/EQUATIONS.md" \
@@ -88,6 +105,7 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 echo
 echo "Done:"
 ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" \
+       "${REPO_DIR}/CosmicExpansion.pdf" "${REPO_DIR}/CosmicExpansion.tex" \
        "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \
        "${REPO_DIR}/paper.tex" "${REPO_DIR}/paper.pdf" \
     | awk '{print "  " $9 ": " $5}'

@@ -1,0 +1,945 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% pdf_header.tex — Unicode-to-LaTeX mappings for pandoc/xelatex builds
+% Used by build_pdfs.sh for ManyClocks.pdf and Equations.pdf.
+% Maps prose-mode Unicode characters (Greek letters, math symbols, arrows,
+% blackboard bold, etc.) to LaTeX commands so they render correctly in
+% paragraphs, captions, and tables — outside of $...$ math mode where
+% the math font would normally handle them.
+
+\usepackage{newunicodechar}
+\usepackage{amsmath,amssymb}
+\newunicodechar{ℏ}{\ensuremath{\hbar}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≪}{\ensuremath{\ll}}
+\newunicodechar{≫}{\ensuremath{\gg}}
+\newunicodechar{≲}{\ensuremath{\lesssim}}
+\newunicodechar{≳}{\ensuremath{\gtrsim}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{∫}{\ensuremath{\int}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{·}{\ensuremath{\cdot}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{±}{\ensuremath{\pm}}
+\newunicodechar{✓}{\ensuremath{\checkmark}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{ξ}{\ensuremath{\xi}}
+\newunicodechar{ζ}{\ensuremath{\zeta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ℓ}{\ensuremath{\ell}}
+\newunicodechar{ℝ}{\ensuremath{\mathbb{R}}}
+\newunicodechar{ℂ}{\ensuremath{\mathbb{C}}}
+\newunicodechar{ℕ}{\ensuremath{\mathbb{N}}}
+\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{²}{\textsuperscript{2}}
+\newunicodechar{³}{\textsuperscript{3}}
+\newunicodechar{¹}{\textsuperscript{1}}
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{⁻}{\textsuperscript{-}}
+\newunicodechar{⁰}{\textsuperscript{0}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁵}{\textsuperscript{5}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\newunicodechar{⁹}{\textsuperscript{9}}
+\newunicodechar{ᵃ}{\textsuperscript{a}}
+\newunicodechar{ᵇ}{\textsuperscript{b}}
+\newunicodechar{−}{$-$}
+\newunicodechar{—}{---}
+\newunicodechar{–}{--}
+\newunicodechar{…}{\ldots}
+\newunicodechar{′}{\ensuremath{'}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Cosmic Expansion as Surface-Area Particle Creation in a Dirac--Kuramoto Substrate},
+  pdfauthor={John Bramble, MD},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Cosmic Expansion as Surface-Area Particle Creation in a
+Dirac--Kuramoto Substrate}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A Coherence-Based Reframing of the FRW Universe and the
+Cosmological Constant}
+\author{John Bramble, MD}
+\date{May 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\textbf{John Bramble, MD¹}
+
+¹ Independent Research
+
+\emph{Correspondence: rayolddog (GitHub)}
+
+\emph{Preprint --- not yet peer reviewed}
+
+\emph{AI Disclosure: This work was developed in collaboration with
+Claude Opus 4.7 (Anthropic), as described in the Author Contributions
+section. Per current journal guidelines, LLMs do not satisfy authorship
+criteria; the human author bears full responsibility for all content.}
+
+\emph{Companion paper to: Bramble, J. (2026), ``Many Clocks
+Interpretation of Quantum Mechanics: Mass as Chiral Coupling,
+Re-synchronization in the Bulk as Measurement'' {[}PAPER\_UNIFIED, under
+review{]}.}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Abstract}\label{abstract}
+
+The standard Friedmann--Robertson--Walker (FRW) cosmology treats
+expansion as a geometric property of spacetime sourced by a cosmological
+constant Λ inserted by hand into Einstein's field equations. Λ
+originated as Einstein's 1917 patch to recover a \emph{static} universe
+--- a Newtonian-era prejudice --- and was later resurrected as ``dark
+energy'' to fit accelerating expansion. In both incarnations, Λ enters
+the framework axiomatically rather than emergently.
+
+This paper proposes a reframing in which cosmic expansion is \emph{not}
+a property of an underlying expanding spacetime, but instead the
+dynamical growth of a finite \emph{populated region} embedded in an
+infinite, static quantum-field substrate. Expansion proceeds via
+real-particle creation from vacuum fluctuations in regions of low
+temperature and low gravitational density --- the regime in which the
+Dirac--Kuramoto (DK) decoherence rates Γ\_env(T) and Γ\_grav(M) both
+vanish. Because creation occurs preferentially at the boundary of the
+populated region, the rate of expansion is proportional to the
+\textbf{surface area} of the universe rather than its volume, naturally
+producing a Hubble rate that scales as H ∝ 1/R and an effective
+cosmological term Λ\_eff ∝ 1/R² --- matching the observed Λ
+\textasciitilde{} 1/L\_H² without postulation.
+
+The framework predicts three observational signatures distinct from
+ΛCDM: (1) the local Hubble rate should anti-correlate with local matter
+density, yielding the observed H₀ tension between CMB and
+local-distance-ladder measurements; (2) cosmic voids should expand
+faster than virialized structures by a measurable margin; (3) the
+surface-area scaling implies an ``emergent FRW metric'' inside the
+populated region that preserves Tolman (1+z)⁴ dimming and CMB blackbody
+structure, while the underlying substrate remains Minkowski. The
+proposal is presented as a working-paper sketch, not a fully derived
+theory; the load-bearing assumption --- that excitations of the
+bulk-coherence order parameter Φ\_bulk inherit equation of state w = −1
+through their Goldstone-mode character --- is identified as the next
+required derivation.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. Introduction}\label{introduction}
+
+\subsubsection{1.1 The framework problem with
+Λ}\label{the-framework-problem-with-ux3bb}
+
+Modern cosmology rests on the Friedmann--Robertson--Walker (FRW) metric,
+an exact solution of Einstein's field equations under the
+\emph{Cosmological Principle} --- the assumption that the universe is
+homogeneous and isotropic at large scales. The Friedmann equations
+governing the time evolution of the FRW scale factor a(t) take the form:
+
+\[H^2 \equiv \left(\frac{\dot a}{a}\right)^2 = \frac{8 \pi G}{3} \rho - \frac{k c^2}{a^2} + \frac{\Lambda c^2}{3} \qquad (\text{Friedmann I})\]
+
+\[\frac{\ddot a}{a} = -\frac{4 \pi G}{3}\left(\rho + \frac{3 p}{c^2}\right) + \frac{\Lambda c^2}{3} \qquad (\text{Friedmann II})\]
+
+where ρ is the total energy density, p its pressure, k ∈ \{−1, 0, +1\}
+the spatial-curvature index, and Λ the cosmological constant. The
+framework is extraordinarily successful: it reproduces Hubble's law
+(recession velocity proportional to distance), predicts the cosmic
+microwave background (CMB) and its near-perfect blackbody spectrum,
+accounts for primordial nucleosynthesis, and --- with the addition of a
+positive Λ --- fits the accelerating expansion measured by Type Ia
+supernovae from 1998 onward.
+
+The framework's success does not, however, dissolve the conceptual
+problem with Λ itself. Λ enters Einstein's equations as a free parameter
+chosen to match observation. Its origin is unspecified by the theory.
+Three distinct unsolved problems attach to it:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{The cosmological-constant problem proper.} Quantum field
+  theory predicts a vacuum energy density of order
+  \(\rho_{\text{vac}} \sim M_{\text{Pl}}^4\), roughly 120 orders of
+  magnitude larger than the observed
+  \(\rho_\Lambda \sim 10^{-47}\ \text{GeV}^4\). Why these two quantities
+  differ so radically is the largest known discrepancy between theory
+  and observation in all of physics.
+\item
+  \textbf{The coincidence problem.} Why is \(\rho_\Lambda\) comparable
+  in magnitude to \(\rho_{\text{matter}}\) in the current cosmic epoch,
+  given that the two have entirely different scaling with \(a(t)\)?
+\item
+  \textbf{The H₀ tension.} Independent measurements of the current
+  expansion rate disagree at \textasciitilde5σ. CMB-anchored
+  measurements (Planck) give \(H_0 \approx 67.4\ \text{km/s/Mpc}\);
+  local distance-ladder measurements (SH0ES) give
+  \(H_0 \approx 73.0\ \text{km/s/Mpc}\). ΛCDM with a single, uniform Λ
+  cannot accommodate both.
+\end{enumerate}
+
+Each of these problems suggests that Λ is \emph{not} the right primitive
+--- that expansion ought to emerge from some deeper dynamics, not be
+postulated.
+
+\subsubsection{1.2 The Dirac--Kuramoto framework: what is already
+available}\label{the-dirackuramoto-framework-what-is-already-available}
+
+The DK framework {[}companion paper, PAPER\_UNIFIED{]} proposes that
+quantum measurement consists of two stages: (Stage 1)
+pair-synchronization of a perturbed partner with a macroscopic
+\emph{bulk} characterized by an order-parameter phase
+\(\Phi_{\text{bulk}}\), followed by (Stage 2) irreversible
+re-equilibration of the partner to the bulk via two parallel rate
+channels,
+
+\[\Gamma_{\text{Stage 2}}^{\text{total}} = \Gamma_{\text{env}}(T,\, J(\omega)) + \Gamma_{\text{grav}}(M,\, \Delta z) \qquad (3.5')\]
+
+where \(\Gamma_{\text{env}}\) is the environmental (thermal +
+bath-mediated) relaxation rate and \(\Gamma_{\text{grav}}\) is the
+gravitational self-relocking rate of the bulk. Stage-2 events are the
+rare bath-coupling moments that produce classical, irreversible
+measurement records.
+
+Both rates vanish in the limit of low temperature and low gravitational
+density: \(\Gamma_{\text{env}} \to J(\omega)\) as \(T \to 0\) (the
+spontaneous-emission floor), and \(\Gamma_{\text{grav}} \to 0\) as the
+local matter density goes to zero. The DK framework therefore already
+specifies the conditions under which bulk-coherence-mediated decoherence
+ceases to act.
+
+The proposal of this paper is that \emph{exactly those conditions} ---
+low T and low gravity --- define the regime in which the cosmological
+substrate converts vacuum fluctuations into real particles, and that
+this conversion is the physical source of cosmic expansion.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{2. A Brief History of FRW
+Cosmology}\label{a-brief-history-of-frw-cosmology}
+
+\subsubsection{2.1 Einstein's static universe
+(1917)}\label{einsteins-static-universe-1917}
+
+Einstein applied his newly completed field equations of general
+relativity to the universe as a whole and found that no static solution
+existed for a homogeneous matter distribution under attractive gravity
+alone --- the universe would either expand or contract. Believing on
+philosophical grounds that the universe must be eternal and static,
+Einstein modified his equations by adding a term \(\Lambda g_{\mu\nu}\),
+
+\[G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8 \pi G}{c^4} T_{\mu\nu},\]
+
+where \(\Lambda\) was tuned to exactly balance gravitational attraction
+at cosmic scales. The resulting ``Einstein static universe'' was a
+closed 3-sphere of fixed radius.
+
+\subsubsection{2.2 Friedmann and Lemaître (1922,
+1927)}\label{friedmann-and-lemauxeetre-1922-1927}
+
+The Russian mathematician Alexander Friedmann (1922), and independently
+the Belgian priest-physicist Georges Lemaître (1927), solved Einstein's
+equations under the assumptions of homogeneity and isotropy
+\emph{without} demanding stasis. They found that the universe must in
+general expand or contract, with the dynamics governed by Friedmann I
+(above). Lemaître went further, connecting the expanding solutions to
+observational redshift data and proposing what would later be called the
+Big Bang. Einstein famously rejected Lemaître's physics --- ``your
+calculations are correct, but your physics is abominable'' --- before
+reversing himself after Hubble's 1929 observations.
+
+\subsubsection{2.3 Hubble's law (1929)}\label{hubbles-law-1929}
+
+Edwin Hubble's observation that galactic recession velocity is
+proportional to distance,
+
+\[v = H_0 \, d \qquad (\text{Hubble's law})\]
+
+established expansion empirically. Einstein subsequently called his
+introduction of \(\Lambda\) his ``greatest blunder.''
+
+\subsubsection{2.4 Robertson and Walker (1935--36); FRW
+metric}\label{robertson-and-walker-193536-frw-metric}
+
+Howard Robertson and Arthur Walker independently proved that the most
+general metric consistent with homogeneity and isotropy takes the form
+
+\[ds^2 = -c^2 dt^2 + a(t)^2 \left[ \frac{dr^2}{1 - k r^2} + r^2 \left(d\theta^2 + \sin^2\theta\, d\phi^2 \right) \right] \qquad (\text{FRW metric})\]
+
+where \(a(t)\) is the scale factor encoding all time evolution and
+\(k \in \{-1, 0, +1\}\) labels open, flat, and closed spatial geometries
+respectively. Observations of CMB power-spectrum peaks indicate
+\(k = 0\) to within a fraction of a percent.
+
+\subsubsection{2.5 The accelerating universe (1998) and Λ's
+return}\label{the-accelerating-universe-1998-and-ux3bbs-return}
+
+Type Ia supernova surveys (Riess et al.~1998; Perlmutter et al.~1999)
+showed that the universe's expansion is \emph{accelerating}. Within FRW,
+only a component with sufficiently negative pressure --- equation of
+state \(w < -1/3\) --- can drive acceleration. The simplest such
+component is a positive cosmological constant (\(w = -1\)), and ``ΛCDM''
+became the standard cosmological model. The dark-energy term thereby
+resurrected was mathematically Einstein's original \(\Lambda\) but with
+no static-universe motivation --- purely an empirical fit.
+
+\subsubsection{2.6 The standing question}\label{the-standing-question}
+
+In its modern form, Λ is a single number tuned to one observation
+(acceleration) that fits a wide range of others (CMB, large-scale
+structure, BAO) --- but with the three open problems noted in §1.1. The
+framework proposed below leaves the FRW machinery intact as an
+\emph{effective} description of expansion inside the populated region,
+while replacing the fundamental ontology with one in which Λ is
+emergent.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{3. The Substrate--Population
+Distinction}\label{the-substratepopulation-distinction}
+
+\subsubsection{3.1 The standard fusion}\label{the-standard-fusion}
+
+In standard FRW cosmology, two distinct ontological commitments are
+fused:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Spacetime is the universe.} The FRW metric describes the
+  entirety of physical space; there is no ``outside'' of the universe in
+  the framework.
+\item
+  \textbf{The metric itself expands.} The scale factor \(a(t)\)
+  describes expansion of space, not just motion of matter through space.
+\end{itemize}
+
+These commitments are taken together as a single package, and the
+cosmological-constant problem inherits both: \(\Lambda\) is both the
+energy density of spacetime itself and the agent of its expansion.
+
+\subsubsection{3.2 The DK ontology}\label{the-dk-ontology}
+
+The DK framework suggests a separation:
+
+\begin{itemize}
+\item
+  \textbf{The substrate}: an infinite, eternal quantum-field structure
+  (the vacuum and its fluctuations). The substrate has no privileged
+  scale, no boundary, and is not itself expanding. Its metric, in the
+  absence of coherent excitation, is Minkowski.
+\item
+  \textbf{The populated region}: the finite, growing subset of the
+  substrate in which real-particle excitations exist and are
+  bulk-coherent in the DK sense. This is what we call ``the universe.''
+  It has a boundary, a scale, and a dynamical evolution.
+\end{itemize}
+
+Cosmic expansion, on this view, is \textbf{not} the metric of the
+substrate stretching. It is the \emph{boundary of the populated region
+advancing into the substrate} as vacuum fluctuations cross a coherence
+threshold and become real excitations.
+
+\subsubsection{3.3 Why the substrate metric remains
+Minkowski}\label{why-the-substrate-metric-remains-minkowski}
+
+The substrate is the unexcited vacuum of quantum field theory. QFT
+vacuum states are Lorentz invariant --- they look the same in every
+inertial frame. The unique Lorentz-invariant metric is Minkowski. So the
+substrate, by its Lorentz symmetry alone, has no expansion to speak of:
+there is no scale factor in Minkowski space because there is no scale at
+all.
+
+What we observe as ``expansion'' must therefore be a property of the
+populated region's internal structure, not of the substrate.
+
+\subsubsection{3.4 The effective FRW metric inside the populated
+region}\label{the-effective-frw-metric-inside-the-populated-region}
+
+Within the populated region, \(\Phi_{\text{bulk}}\) is established and
+matter-energy is present at non-zero density. The DK framework already
+predicts that bulk coherence determines an effective metric on the
+coherent region: the order-parameter phase \(\Phi_{\text{bulk}}\)
+couples to local proper-time evolution and to gravitational
+pair-locking. Internally, observers measure an effective metric that ---
+by symmetry, since the populated region is homogeneous and isotropic on
+average --- takes FRW form. The scale factor \(a(t)\) that appears in
+this effective metric is determined by the dynamics of the populated
+region itself, not by any property of the substrate.
+
+This is structurally analogous to \emph{analogue gravity} in
+condensed-matter systems: phonons propagating in a Bose--Einstein
+condensate experience an effective Lorentzian metric set by the
+condensate density and flow {[}Unruh 1981, Barceló--Liberati--Visser
+2005{]}. The analogue metric is real for its internal excitations even
+though the underlying atoms live in flat lab space. Likewise, the
+effective FRW metric is real for matter inside the cosmological
+populated region, even though the underlying QFT substrate is Minkowski.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{4. The Creation Mechanism: Low Γ as the
+Threshold}\label{the-creation-mechanism-low-ux3b3-as-the-threshold}
+
+\subsubsection{4.1 Vacuum fluctuations and the virtual--real
+distinction}\label{vacuum-fluctuations-and-the-virtualreal-distinction}
+
+Quantum field theory predicts continuous vacuum fluctuations: pairs of
+virtual particles appearing and annihilating on timescales bounded by
+the energy--time uncertainty relation
+\(\Delta E \cdot \Delta t \sim \hbar\). Under ordinary conditions,
+virtual pairs annihilate before they can be detected or do measurable
+work.
+
+Several known mechanisms convert virtual pairs into \emph{real}
+particles by preventing the annihilation:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Mechanism & Trigger & Conversion source \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Schwinger pair production & Strong electric field & Field energy \\
+Hawking radiation & Event horizon & Horizon geometry \\
+Unruh effect & Acceleration & Kinetic energy of accelerated observer \\
+Parker cosmological creation & Expanding metric & Metric work \\
+Dynamical Casimir effect & Moving boundary & Boundary kinetic energy \\
+\end{longtable}
+}
+
+Each of these mechanisms identifies a \emph{separation} of the virtual
+pair before they recombine. The energy that becomes the real particles'
+rest-mass-equivalent is supplied by the external agent (field, horizon,
+acceleration, expansion, boundary motion).
+
+\subsubsection{4.2 The DK threshold: low Γ as a fifth conversion
+mechanism}\label{the-dk-threshold-low-ux3b3-as-a-fifth-conversion-mechanism}
+
+The DK framework specifies a different conversion mechanism. In ordinary
+matter, virtual pairs are re-absorbed because the bulk's coherence
+dynamics --- specifically \(\Gamma_{\text{env}}(T)\) and
+\(\Gamma_{\text{grav}}(M, \Delta z)\) --- quickly damp any fluctuation
+back into the bulk-coherent state before it can become a
+measurement-relevant real excitation. Bulk coherence acts as an active
+\emph{suppressor} of vacuum fluctuations.
+
+In regions of low temperature and low gravitational density, both rates
+vanish:
+
+\[\Gamma_{\text{env}}(T) \to J(\omega) \cdot [1 + 2 n_{\text{th}}(\omega, T)] \xrightarrow{T \to 0} J(\omega)\]
+
+\[\Gamma_{\text{grav}}(M, \Delta z) \to 0 \quad \text{as} \quad M_{\text{local}} \to 0\]
+
+When both rates fall below the inverse lifetime of a virtual
+fluctuation, the fluctuation is no longer re-absorbed in time. It
+survives long enough to become a real excitation of the field --- a real
+particle. The suppression mechanism has failed.
+
+\textbf{The proposal:} \emph{cosmic expansion is sourced by the failure
+of bulk- coherence suppression in low-Γ regions of the substrate.} The
+same vacuum fluctuations that occur ubiquitously become real only where
+Γ\_env(T) and Γ\_grav(M) cannot damp them in time. These regions are:
+(i) cosmic voids, (ii) the cold dark sky between galaxies and clusters,
+and (iii) most critically, the \emph{boundary} of the populated region
+itself, where the density of pre-existing matter is by definition
+lowest.
+
+\subsubsection{4.3 Where the energy comes
+from}\label{where-the-energy-comes-from}
+
+The energy budget for new particles must come from somewhere. The DK
+framework points to a natural source: the \textbf{incompleteness of bulk
+coherence at horizon scales}. Φ\_bulk cannot complete its sync beyond
+the causal horizon; the residual coherence deficit is an energy
+reservoir analogous to the spontaneous-emission floor \(J(\omega)\) in
+the Stage-2 environmental term. When a virtual pair near the horizon
+fails to be reabsorbed, it draws on this reservoir to upgrade to real-
+particle status. The expansion of the populated region thereby converts
+horizon-incomplete-coherence energy into new real-particle excitations.
+
+\subsubsection{4.4 The equation-of-state
+problem}\label{the-equation-of-state-problem}
+
+A standing technical problem remains: \emph{real particles created from
+the vacuum carry positive energy density, which gravitates, producing
+contraction rather than expansion}. For the mechanism to drive
+expansion, the created excitations must inherit an equation of state
+\(w \approx -1\) (the cosmological-constant equation of state) rather
+than \(w = 0\) (cold matter) or \(w = 1/3\) (radiation).
+
+The DK framework provides a natural candidate: the created excitations
+are not localized matter quanta but \textbf{collective phase modes
+(Goldstone modes) of the broken-U(1) order parameter Φ\_bulk}. Goldstone
+modes of a condensate are massless by Goldstone's theorem, propagate
+relativistically in the absence of a preferred frame, and --- in
+Lorentz-covariant formulations --- carry vacuum-like equation of state
+\(w = -1\). The created excitations are thereby identified with
+\emph{expansion-driving} quanta, not gravitating matter.
+
+This identification is the load-bearing assumption of the proposal and
+the next step in its derivation. A complete treatment must show, from
+the broken-U(1) structure of cosmological Φ\_bulk, that its Goldstone
+modes carry \(w = -1\) to the required precision and that their creation
+rate at low Γ reproduces the observed expansion history.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{5. The Surface-Area Scaling}\label{the-surface-area-scaling}
+
+\subsubsection{5.1 The geometric
+observation}\label{the-geometric-observation}
+
+Real-particle creation occurs preferentially where Γ\_env and Γ\_grav
+are smallest. Within the populated region, both rates are non-zero
+(matter is present, and the CMB sets a non-zero temperature floor). At
+the \emph{boundary} of the populated region, however, both rates vanish
+--- by definition, this is where the matter density of the populated
+region goes to zero.
+
+The boundary is approximately a 2-sphere of radius \(R(t)\) (set by the
+extent of the populated region in cosmic time), with surface area
+
+\[A(t) = 4 \pi R(t)^2.\]
+
+The rate of real-particle creation at the boundary is proportional to
+the area of the boundary times a per-area creation rate
+\(\sigma_{\text{c}}\) set by the strength of vacuum fluctuations and the
+relevant coupling:
+
+\[\frac{dN}{dt} = \sigma_{\text{c}} \cdot A(t) = 4 \pi \sigma_{\text{c}} R(t)^2 \qquad (5.1)\]
+
+\subsubsection{5.2 The Hubble rate as a function of
+R}\label{the-hubble-rate-as-a-function-of-r}
+
+If the rate of \emph{volume} growth of the populated region is
+proportional to its surface area times a characteristic ``creation-front
+speed'' \(v_{\text{c}}\),
+
+\[\frac{dV}{dt} = v_{\text{c}} \cdot A(t),\]
+
+then for a spherical region \(V = \frac{4}{3} \pi R^3\), we have
+\(\frac{dV}{dt} = 4 \pi R^2 \dot R\), giving
+
+\[\dot R = v_{\text{c}} \qquad (5.2)\]
+
+--- the \emph{boundary advances at constant speed} \(v_{\text{c}}\).
+Identifying the scale factor \(a(t) \propto R(t)\), the effective Hubble
+rate is
+
+\[H = \frac{\dot a}{a} = \frac{\dot R}{R} = \frac{v_{\text{c}}}{R(t)} \qquad (5.3)\]
+
+The Hubble rate naturally \textbf{decreases as \(1/R\)} as the universe
+grows. At fixed \(v_{\text{c}}\), an older, larger universe expands more
+slowly in fractional terms even as its boundary advances at constant
+absolute speed.
+
+\subsubsection{5.3 The effective cosmological
+constant}\label{the-effective-cosmological-constant}
+
+Comparing (5.3) with the Λ-dominated form of Friedmann I,
+
+\[H^2 = \frac{\Lambda c^2}{3} \implies \Lambda_{\text{eff}} = \frac{3 H^2}{c^2} = \frac{3 v_{\text{c}}^2}{c^2 R^2} \qquad (5.4)\]
+
+so the effective cosmological constant scales as \textbf{1/R²}, matching
+the observed scaling \(\Lambda \sim 1/L_H^2\) where
+\(L_H \approx c/H_0\) is the Hubble length.
+
+This is, at the order-of-magnitude level, the correct value for the
+observed Λ --- without postulating Λ at all. The framework produces a
+dynamically generated cosmological term whose magnitude is set by the
+size of the populated region.
+
+\subsubsection{5.4 Connection to the holographic
+principle}\label{connection-to-the-holographic-principle}
+
+The surface-area scaling has a deep precedent in physics: the
+\textbf{holographic principle} (Bekenstein, 't Hooft, Susskind,
+Verlinde), which holds that the maximum entropy enclosable in a region
+is bounded not by its volume but by its surface area in Planck units,
+
+\[S \leq \frac{A}{4 \ell_P^2}.\]
+
+Verlinde's \emph{entropic gravity} and related proposals extend the
+holographic principle to suggest that gravity itself, and possibly the
+cosmological constant, arise from entropy gradients at boundaries.
+
+The DK proposal is in the same family: expansion is sourced at the
+horizon, with rate proportional to horizon area, and the effective Λ is
+set by the inverse-area scale of the horizon. The DK framework differs
+from entropic gravity in providing a \emph{physical mechanism} (low-Γ
+vacuum-fluctuation conversion) rather than a purely thermodynamic
+argument --- but the geometric scaling is the same.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. Testable Predictions}\label{testable-predictions}
+
+\subsubsection{6.1 The H₀ tension}\label{the-hux2080-tension}
+
+In standard ΛCDM, the present-day Hubble rate \(H_0\) is a single number
+characterizing a uniform expansion. The measured tension between
+CMB-derived (Planck: \(H_0 \approx 67.4\) km/s/Mpc) and
+local-distance-ladder (SH0ES: \(H_0 \approx 73.0\) km/s/Mpc) values
+represents a \textasciitilde5σ disagreement that ΛCDM cannot accommodate
+without modification.
+
+The DK framework predicts that \(H_{\text{local}}\) should depend on the
+local matter density along the line of sight. The local distance ladder
+samples regions inside our cosmic neighborhood, including the local void
+(``KBC void'') in which the Milky Way may sit. CMB measurements average
+over the entire observable horizon, sampling cosmic-mean density.
+
+If expansion is sourced preferentially in low-density regions, then a
+local probe biased toward void regions will measure a \emph{higher}
+effective \(H_0\) than a global probe --- qualitatively matching the
+observed tension.
+
+\textbf{Quantitative prediction}: \(H_{\text{local}}/H_{\text{global}}\)
+should correlate with the ratio of local-mean-density to
+cosmic-mean-density, with the correlation function determined by the
+relative weights of \(\Gamma_{\text{env}}\) and \(\Gamma_{\text{grav}}\)
+suppression in the two density regimes. A first-order estimate predicts
+a tension of order
+\(\Delta H_0 / H_0 \sim (\rho_{\text{cosmic}} - \rho_{\text{local}}) / \rho_{\text{cosmic}}\);
+the observed tension of \(\Delta H_0 / H_0 \approx 0.08\) is consistent
+with the void underdensities of order \textasciitilde10\% inferred from
+galaxy surveys.
+
+\subsubsection{6.2 Void expansion rates}\label{void-expansion-rates}
+
+ΛCDM predicts that cosmic voids expand at the same Hubble rate as the
+surrounding universe, modified only by the local gravitational deficit
+(which slightly \emph{enhances} recession). The DK framework predicts an
+\emph{additional} contribution: voids should expand faster because real-
+particle creation is actively occurring within them, sourcing additional
+expansion not present in dense regions.
+
+\textbf{Quantitative prediction}: the void expansion velocity excess
+over ΛCDM should scale with the void's emptiness --- deeper voids expand
+faster, with the excess vanishing as the void's mean density approaches
+the cosmic mean.
+
+This is in principle measurable through redshift-space distortions in
+galaxy surveys around well-characterized voids (BOSS, eBOSS, DESI). A
+positive detection would constitute direct evidence for the proposed
+mechanism; a null result at the predicted level would falsify it.
+
+\subsubsection{6.3 The CMB-anisotropy / structure
+correlation}\label{the-cmb-anisotropy-structure-correlation}
+
+If the surface-area mechanism is correct, then the rate of expansion
+should track the surface area of the populated region's structure at all
+scales --- not just the cosmological horizon. The cosmic web of voids
+and filaments exposes substantial \emph{internal} surface area, and
+creation should occur on these internal void surfaces in proportion.
+
+\textbf{Quantitative prediction}: small-scale CMB anisotropies should
+show a slight excess in regions of the sky where galaxy surveys reveal
+greater total void-surface area along the line of sight. The signal
+would be small but, in principle, distinguishable from the standard ISW
+(integrated Sachs--Wolfe) signal because it would correlate with the
+\emph{surface area} of intervening voids rather than their gravitational
+potential alone.
+
+\subsubsection{6.4 The Tolman test as a consistency
+check}\label{the-tolman-test-as-a-consistency-check}
+
+Tolman dimming --- the prediction that surface brightness of standard
+sources falls as \((1+z)^4\) --- is a robust prediction of metric
+expansion that distinguishes it from non-metric alternatives. The
+proposed framework \emph{preserves} this prediction: although the
+substrate is Minkowski, the \emph{effective} metric inside the populated
+region (§3.4) is FRW, and observers using the effective metric see
+standard \((1+z)^4\) dimming. A null result on Tolman dimming would have
+falsified the framework; the observed \((1+z)^4\) scaling is consistent
+with it.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{7. Open Questions and Required
+Derivations}\label{open-questions-and-required-derivations}
+
+\subsubsection{7.1 The Goldstone-mode
+identification}\label{the-goldstone-mode-identification}
+
+The load-bearing assumption is that excitations of cosmological Φ\_bulk
+inherit equation of state \(w = -1\). This requires showing:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  That cosmological Φ\_bulk has a broken-U(1) (or analogous) structure
+  capable of supporting Goldstone modes.
+\item
+  That those Goldstone modes are massless (Goldstone's theorem
+  guarantees this if exact U(1) symmetry is spontaneously broken).
+\item
+  That their effective stress-energy tensor takes the
+  pressure-equals-negative-density form \(p = -\rho\) characteristic of
+  \(w = -1\).
+\end{enumerate}
+
+A full derivation would proceed from an effective Lagrangian
+\(\mathcal{L}[\Phi_{\text{bulk}}]\) written in covariant form on the
+substrate Minkowski background, with cosmological symmetry breaking
+producing the order-parameter phase.
+
+\subsubsection{7.2 The creation-front speed
+v\_c}\label{the-creation-front-speed-v_c}
+
+The framework introduces a single dimensional parameter \(v_c\) --- the
+speed at which the boundary of the populated region advances into the
+substrate. Observationally, the relation \(H_0 = v_c / R_0\) with
+\(R_0 \approx c/H_0\) implies \(v_c \approx c\). A first-principles
+derivation of \(v_c\) from the vacuum-fluctuation lifetime and the DK
+Γ-suppression structure is needed.
+
+\subsubsection{7.3 The smooth-universe
+assumption}\label{the-smooth-universe-assumption}
+
+Equation (5.2) assumed a spherical populated region with a single
+boundary. A realistic population would have a fractal-like boundary
+(cosmic web), with internal void surfaces contributing to the total
+creation rate. A more complete treatment must compute the total surface
+area integrated over all scales and check whether the dominant
+contribution comes from the cosmological horizon or from internal void
+surfaces.
+
+\subsubsection{7.4 Reconciliation with primordial nucleosynthesis and
+CMB}\label{reconciliation-with-primordial-nucleosynthesis-and-cmb}
+
+Standard ΛCDM successfully predicts the abundance of light elements (Big
+Bang nucleosynthesis) and the CMB power spectrum from a hot early
+universe. The DK framework, if it claims to replace Λ rather than
+supplement it, must reproduce these successes. The proposal here is that
+BBN and CMB physics occur \emph{inside} the populated region under the
+effective FRW metric, and so the standard predictions are preserved by
+construction --- but this needs explicit verification, particularly
+during the radiation-dominated early epoch when the Γ-suppression
+mechanism would be deeply in the high-Γ regime and thus inactive.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{8. Conclusion}\label{conclusion}
+
+The standard FRW framework treats cosmic expansion as a geometric
+property of spacetime sourced by an axiomatic cosmological constant Λ.
+This works, but at the cost of three unresolved problems: the
+120-order-of-magnitude vacuum-energy discrepancy, the coincidence
+problem, and the H₀ tension.
+
+The Dirac--Kuramoto framework already provides the conceptual machinery
+to reframe Λ as emergent: an infinite quantum-field substrate; a finite
+populated region characterized by bulk coherence Φ\_bulk; and explicit
+Stage-2 relaxation rates Γ\_env(T) and Γ\_grav(M) that vanish in
+low-temperature, low-gravitational-density regions. The proposal
+advanced here is that cosmic expansion is the dynamical growth of the
+populated region into the substrate, driven by real-particle creation in
+low-Γ regions where bulk coherence cannot suppress vacuum fluctuations
+in time.
+
+The mechanism naturally produces an expansion rate proportional to the
+\emph{surface area} of the populated region, yielding \(H \propto 1/R\)
+and an effective \(\Lambda_{\text{eff}} \propto 1/R^2\) that matches the
+observed \(\Lambda \sim 1/L_H^2\) without postulation. It predicts three
+observable distinctions from ΛCDM: a void-correlated H₀ tension,
+anomalously fast void expansion, and a small CMB-anisotropy correlation
+with intervening void-surface area. It preserves Tolman \((1+z)^4\)
+dimming and the CMB power spectrum through the effective-FRW-metric
+construction inside the populated region.
+
+The framework is presented here as a working-paper sketch. Its
+load-bearing assumption --- that Goldstone modes of cosmological Φ\_bulk
+carry equation of state \(w = -1\) --- is identified as the next
+required derivation. If that identification can be made rigorous, the
+cosmological-constant problem dissolves: Λ is no longer an arbitrary
+input but the emergent ground-state property of bulk-coherence
+incompleteness at horizon scales, with magnitude set dynamically by the
+size of the universe.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Author Contributions}\label{author-contributions}
+
+JB conceived the substrate--population distinction, the connection
+between DK Γ-suppression and vacuum-fluctuation conversion, and the
+surface-area scaling. Claude Opus 4.7 (Anthropic) contributed
+mathematical and historical structure, the connection to existing
+mechanisms (Parker, Schwinger, Hawking, dynamical Casimir, holographic
+principle), the Goldstone-mode equation-of-state argument, and the
+manuscript drafting. Per current journal authorship guidelines, LLMs do
+not satisfy authorship criteria; the human author bears full
+responsibility for all scientific content. Were such policies not in
+force, Claude would be listed as co-first author.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{References}\label{references}
+
+{[}Placeholder reference list --- to be populated.{]}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Einstein, A. (1917). \emph{Kosmologische Betrachtungen zur allgemeinen
+  Relativitätstheorie.} Sitzungsber. Preuss. Akad. Wiss. Berlin (Math.
+  Phys.), 142--152.
+\item
+  Friedmann, A. (1922). \emph{Über die Krümmung des Raumes.} Z. Phys.
+  10, 377--386.
+\item
+  Lemaître, G. (1927). \emph{Un univers homogène de masse
+  constante\ldots{}} Ann. Soc. Sci. Bruxelles 47, 49.
+\item
+  Hubble, E. (1929). \emph{A relation between distance and radial
+  velocity\ldots{}} Proc. Natl. Acad. Sci. 15, 168--173.
+\item
+  Robertson, H. P. (1935). \emph{Kinematics and world-structure.}
+  Astrophys. J. 82, 284.
+\item
+  Walker, A. G. (1937). \emph{On Milne's theory of world-structure.}
+  Proc. London Math. Soc. 42, 90.
+\item
+  Riess, A. G. et al.~(1998). \emph{Observational evidence from
+  supernovae\ldots{}} Astron. J. 116, 1009.
+\item
+  Perlmutter, S. et al.~(1999). \emph{Measurements of Ω and Λ from 42
+  high-redshift supernovae.} Astrophys. J. 517, 565.
+\item
+  Unruh, W. G. (1981). \emph{Experimental black-hole evaporation?} Phys.
+  Rev.~Lett. 46, 1351.
+\item
+  Barceló, C., Liberati, S., Visser, M. (2005). \emph{Analogue gravity.}
+  Living Rev.~Relativity 8, 12.
+\item
+  Verlinde, E. (2011). \emph{On the origin of gravity and the laws of
+  Newton.} J. High Energy Phys. 04, 029.
+\item
+  Bekenstein, J. D. (1981). \emph{Universal upper bound on the entropy-
+  to-energy ratio for bounded systems.} Phys. Rev.~D 23, 287.
+\item
+  Bramble, J. (2026). \emph{Many Clocks Interpretation of Quantum
+  Mechanics\ldots{}} {[}companion paper, PAPER\_UNIFIED.md, under
+  review{]}.
+\end{enumerate}
+
+\end{document}
