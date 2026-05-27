@@ -1176,8 +1176,12 @@ interaction classes:
   pieces simultaneously: pair-sync to the bulk via QED *and* the
   intra-spinor K = m sync between ψ_L and ψ_R, which runs throughout the
   trajectory rather than only at the vertex. The Stage 1 / Stage 2
-  boundary is less sharp than for photons. Stage 2 dissipation involves
-  bremsstrahlung and ionization cascades in the detector medium.
+  boundary is less sharp than for photons. Stage 2 dissipation takes
+  different forms depending on detector architecture — a single
+  electronic avalanche from one Stage 1 vertex in a discrete-event
+  detector, or a chain of separate thermodynamic nucleation events along
+  the trajectory in a track-recording medium; see "Scope across detector
+  architectures" below.
 - *Weak interactions (neutrino capture, β decay).* The vertex itself is
   a discrete final-state event with definite outgoing particles
   (e.g., ν_e + n → p + e⁻). Stage 1 and Stage 2 barely separate: the
@@ -1192,6 +1196,119 @@ interaction classes:
   chains involve QCD cascades the two-stage picture has not yet been
   adapted to handle. We do not attempt the extension here and flag this
   as an open boundary of the framework's applicability.
+
+**Scope across detector architectures.** A complementary axis to the
+field-type breakdown above is the *architecture* of the detector
+itself. The two-stage postulate covers both major families, but Stage 2
+takes qualitatively different forms in each:
+
+- *Discrete-event detectors* (photomultipliers, CCD/SPAD pixels,
+  transmon readout chains, scintillators with light-pulse extraction).
+  A single Stage 1 vertex fires, then a single Stage 2 amplification
+  produces one localized macroscopic record. The amplification is
+  **electronic** — photoelectron emission, charge avalanche, transmon
+  cavity ringdown — internal to one detector element. The
+  photon-on-polarizer worked example of §3.4 generalizes to this family
+  unchanged: one quantum, one Stage 1, one Stage 2, one click.
+- *Track-recording media* (cloud chambers, bubble chambers, nuclear
+  emulsions, gas-filled time-projection chambers). The charged particle
+  traverses a metastable medium and triggers a *sequence* of Stage 1
+  vertices along its trajectory, surviving each (losing ~10s of eV per
+  ionization while continuing). Each Stage 1 ion seeds a local Stage 2
+  amplification, but the amplification is **thermodynamic**, not
+  electronic: a phase transition of supersaturated vapor (cloud) or
+  superheated liquid (bubble) nucleating around the ion. One quantum
+  produces many records, distributed along a line. The collinearity of
+  the records is the Mott (1929) correlation: after the first Stage 1
+  vertex partially localizes position, the spinor's momentum direction
+  is Fourier-sharpened along the line of flight, so subsequent Stage 1
+  vertices fire preferentially on that line. The track is an
+  *autocorrelation* of Stage 1 events, not a single localization.
+
+In both families the two-stage decomposition is intact; what changes is
+the Stage 2 physics — electronic gain at one site versus distributed
+thermodynamic nucleation at many. This is why the same incoming
+charged fermion can leave a single click in a silicon pixel and a
+millimeter-long droplet trail in a chamber: the difference is
+architectural, not in the underlying field-theoretic vertex.
+
+**Partial entanglement as a defining feature of track-recording media.**
+The track-recording architecture is not merely *compatible with* partial
+entanglement at each Stage 1 vertex — it *requires* it. If each
+ionization fully entangled the incoming particle with the ionized atom
+(i.e., fully localized the particle's position at that atom), the
+position–momentum uncertainty bound would maximally re-randomize the
+particle's momentum direction after the first event, and subsequent
+ionizations would be isotropic — there would be no track. The observed
+collinearity (Mott 1929 [50]) is therefore a direct measurement of the
+per-event entanglement budget: each Stage 1 fires with a K_pair in the
+small-relative-to-capture-window regime, transferring ~10s of eV out of
+the particle's MeV–GeV kinetic energy and partially sharpening — but not
+fully localizing — its momentum direction. The cumulative effect of
+many such partial events on one common line of flight produces the
+observed thin straight track. In Schmidt-decomposition language, each
+event leaves the joint (particle + atom) state at low entanglement
+entropy, far from the maximally entangled Bell-like regime; in the
+framework's language, each Stage 1 is a partial pair-sync, with most
+of the particle's chiral-phase information surviving into the next
+vertex.
+
+The Bethe–Bloch dE/dx scaling is the empirical handle on this per-event
+budget. Heavier slow particles (low velocity, high charge, large dE/dx)
+transfer more energy per ionization, entangle more strongly per event,
+and leave fatter scattered tracks; faster light particles in the
+minimum-ionizing regime leave thin straight tracks. The framework's
+reading: dE/dx is the per-event Stage 1 coupling strength integrated
+over the trajectory, and the track width is the cumulative residual
+momentum spread after many partial entanglements.
+
+This makes the track-recording-medium architecture an experimental
+probe of the partial-entanglement regime in a way single-shot detectors
+cannot match. A discrete-event detector fully entangles its quantum at
+one Stage 1, by design; a cloud or bubble chamber, by contrast, can
+only function *because* each Stage 1 is partial. The two architectures
+are therefore complementary tests of the two-stage postulate — the
+discrete-event detector exercises the full-projection limit of Stage 1,
+the track-recording medium exercises the partial-projection subregime
+where K_pair sits inside the Arnold-tongue capture window rather than
+saturating it.
+
+**Operating temperature and the visibility of Stage 1 dynamics.** A
+natural worry about the track-recording case is that the medium's
+temperature might be high enough for thermal relaxation (Stage 2) to
+swamp the resync (Stage 1) signal. It does not, but the reasons are
+worth making explicit because they refine the picture of when Stage 1
+is *resolvable* versus merely *operative*. Cloud chambers run with their
+active supersaturated layer at ~200–250 K (cold gradient near a dry-ice
+or LN₂ baseplate); bubble chambers run colder still (~30 K for liquid
+hydrogen). These temperatures are engineered not to suppress Stage 2
+but to maintain the metastability of the supersaturation/superheating
+without which there would be no thermodynamic amplification to see in
+the first place. At ~200 K, the per-event ionization energy (~10 eV)
+exceeds the thermal scale k_BT (~17 meV) by roughly three orders of
+magnitude, so the per-vertex signal beats thermal noise cleanly; and
+Stage 1 (~10⁻¹⁸ s) precedes Stage 2 phonon/atomic relaxation
+(~10⁻¹²–10⁻⁹ s) by another six orders, with macroscopic bubble
+nucleation (~10⁻⁶–10⁻³ s) lagging by yet three more. Thermalization
+*follows* resync; it does not compete with it.
+
+What warm-medium operation does sacrifice is direct *temporal*
+resolution of the Stage 1 unitary slide: by the time anything is
+imaged, Stage 2 has long since completed, and only the outcome (a
+bubble, a click) is observable. Resolving the Stage 1 dynamics on its
+own timescale requires cryogenic suppression of Γ_env(T) — the regime
+of the Minev et al. catch-and-reverse experiment [49] at 15 mK (§3.5),
+where the unitary precursor to a quantum jump is reversible on
+microsecond timescales. The track-recording chamber and the
+Minev-style cryogenic detector are therefore complementary tests of
+Stage 1: the chamber probes its *partial-entanglement geometry* via
+Mott collinearity and dE/dx-driven track width; the cryogenic detector
+probes its *unitary dynamics* via direct time resolution. Neither
+alone is sufficient. The framework's two-stage postulate predicts
+both: a partial Stage 1 projection that imprints geometric structure
+on a sequence of vertex events, *and* a coherent unitary precursor to
+each individual Stage 1 event that becomes reversible when Stage 2 is
+slowed enough to resolve it.
 
 **Magnetic resonance as a clean Stage-2 instantiation.** Among the
 classes above, the photonic and charged-fermion cases find an unusually
@@ -3314,6 +3431,9 @@ Gutiérrez-Jáuregui, R., Schoelkopf, R. J., Mirrahimi, M., Carmichael, H. J.,
 & Devoret, M. H. (2019). To catch and reverse a quantum jump mid-flight.
 *Nature*, 570, 200–204. https://doi.org/10.1038/s41586-019-1287-z
 (arXiv:1803.00545)
+
+[50] Mott, N. F. (1929). The wave mechanics of α-ray tracks. *Proc. R. Soc.
+London A*, 126(800), 79–84.
 
 ---
 
