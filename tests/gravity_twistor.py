@@ -474,8 +474,8 @@ CONNECTION TO PENROSE'S TWISTOR PROGRAMME:
     → Penrose collapse = gravitational clock decoherence
 
   Penrose's 'conformal cyclic cosmology' (CCC) may also connect:
-  each aeon ends when all massive particles (synchronized clocks)
-  lose their mass (clocks decouple), reverting to θ_rel=90° — a
+  each aeon ends when all massive particles (chiral clock pairs coupled
+  by K = m) lose their mass (K = m → 0, clocks decouple), reverting to θ_rel=90° — a
   universe of massless particles — which is conformally equivalent
   to the beginning of the next aeon's Big Bang.
 

@@ -51,20 +51,23 @@ It DEPARTS from standard QM predictions in these scenarios:
 
   P5. MASS / ENERGY DEPENDENCE (energy-mass equivalence: K = ω = E/ℏ)
       K = ω = E/ℏ = mc²/ℏ for massive particles at rest.
-      Prediction: heavier / higher-energy particles synchronize faster.
-      Massive particles (electrons, protons, kaons): K ≈ mc²/ℏ → F ≈ 1 always.
+      Closed-system note: the unitary ZBW/Compton beat 2K = 2mc²/ℏ is faster
+      for heavier particles — a coherent oscillation, NOT a sync/relaxation
+      rate. Measurement note: massive particles (electrons, protons, kaons)
+      have K ≈ mc²/ℏ → measurement fidelity F ≈ 1 always.
       Photons: K = 2πν. Bell threshold at ν_crit ~ 10^14 Hz (~0.49 eV, mid-IR).
       This is consistent with all known Bell tests; testable with mid-IR entangled photons.
 
-      CAVEAT (paper §6.2 P3 retraction): the massive-particle branch τ_sync ~
-      ℏ/(mc²) is the Compton time — 10⁻²¹ s for an electron, 10⁻²⁵ s for a top
-      quark — well below any experimentally accessible time-resolution and NOT
-      the same quantity as observable "decoherence" of an environment-coupled
-      system, which is governed by Γ_bulk ∝ M² (paper §3.5) and K_pair (§3.4).
-      The "heavier particle = faster sync" reading applies to the intra-spinor
-      L↔R coupling only; do NOT read it as a prediction about laboratory
-      decoherence rates. The photon branch (mid-IR threshold) remains a clean
-      open prediction.
+      CAVEAT (paper §6.2 P3 retraction): the massive-particle branch τ_ZBW ~
+      ℏ/(2mc²) is the Compton/Zitterbewegung time — 10⁻²¹ s for an electron,
+      10⁻²⁵ s for a top quark — well below any experimentally accessible
+      time-resolution and NOT the same quantity as observable "decoherence" of
+      an environment-coupled system, which is governed by Γ_bulk ∝ M²
+      (paper §3.5) and K_pair (§3.4). The "heavier = faster" reading applies to
+      the intra-spinor L↔R coupling as a UNITARY ZBW beat (not a sync or
+      relaxation); do NOT read it as a prediction about laboratory decoherence
+      rates. The photon branch (mid-IR threshold) remains a clean open
+      prediction.
 
   P6. GRAVITATIONAL FIELD AS SHARED Φ_BULK — gravitational Bell degradation
       KEY INSIGHT: In this theory, gravity IS the large-scale Kuramoto synchronization
@@ -270,24 +273,25 @@ def sync_fidelity_vs_K(K_arr, interaction_time=0.1, phi_mismatch=np.pi/3):
     return amplitude
 
 
-# ─── P5: Mass / Frequency Dependence ─────────────────────────────────────────
+# ─── P5: Zitterbewegung / Compton beat period ────────────────────────────────
 
-def sync_time_vs_mass(mass_arr, K_base=1e10, hbar=1.055e-34, c=3e8):
+def zitterbewegung_period_vs_mass(mass_arr, hbar=1.055e-34, c=3e8):
     """
-    Synchronization timescale τ_sync ~ 1/K where K ∝ interaction energy.
-    For a massive particle: E = mc² → ω = mc²/ℏ
+    Closed-system (unitary) Zitterbewegung / Compton beat period.
 
-    If K ∝ ω (coupling proportional to energy):
-      τ_sync(m) ~ ℏ / (coupling · mc²)  →  heavier = faster sync
-                                            (counter-intuitive vs decoherence)
+    The off-diagonal chiral coupling K = m drives coherent normal-mode
+    precession at frequency 2K = 2mc²/ℏ (PAPER §2.2). The corresponding
+    period is
 
-    Standard decoherence: τ_decohere ~ ℏ / (kT) — independent of mass.
-    This model: τ_sync ~ 1/m — heavier particles synchronize faster.
+        τ_ZBW = ℏ / (2 m c²)   →   heavier = faster internal beat.
+
+    NOTE: this is a *unitary* coherent oscillation period — NOT a
+    synchronization or relaxation timescale, and NOT a particle lifetime.
+    It is simply the rest-frame ZBW/Compton relation. (An earlier reading of
+    this quantity as a "synchronization time ~ 1/m → shorter lifetime" was
+    abandoned; the physical lifetime scaling is Sargent's Q⁵, not m.)
     """
-    omega = mass_arr * c**2 / hbar
-    K = K_base * omega           # K scales with ω
-    tau_sync = 1.0 / K
-    return tau_sync
+    return hbar / (2.0 * mass_arr * c**2)
 
 
 # ─── P6 / P6b: Gravitational Bell Degradation & Linewidth Test ───────────────
@@ -489,19 +493,16 @@ def run():
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
-    # ── P5: Mass dependence ───────────────────────────────────────────────
+    # ── P5: Zitterbewegung / Compton beat period ──────────────────────────
     ax = axes[1, 1]
     mass_arr = np.logspace(-31, -26, 400)   # electron mass to proton mass range
-    tau_sync = sync_time_vs_mass(mass_arr)
-    ax.loglog(mass_arr / 9.109e-31, tau_sync, color='purple', linewidth=2,
-              label='Time-phase model')
-    # Standard decoherence: roughly flat (thermal, independent of mass)
-    tau_decohere = np.full_like(mass_arr, 1e-12)   # ~1 ps at room temp
-    ax.loglog(mass_arr / 9.109e-31, tau_decohere, 'k--', linewidth=1.5,
-              label='Thermal decoherence (flat)')
+    tau_zbw = zitterbewegung_period_vs_mass(mass_arr)
+    ax.loglog(mass_arr / 9.109e-31, tau_zbw, color='purple', linewidth=2,
+              label='τ_ZBW = ℏ/(2mc²)')
     ax.set_xlabel('Mass (in electron masses)')
-    ax.set_ylabel('Synchronization timescale (s)')
-    ax.set_title('P5: Mass dependence\n(heavier particle = faster sync, ≠ decoherence)')
+    ax.set_ylabel('Zitterbewegung period τ_ZBW (s)')
+    ax.set_title('P5: ZBW/Compton beat period (unitary)\n'
+                 '(heavier = faster internal beat; not a sync/relaxation time)')
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3, which='both')
 

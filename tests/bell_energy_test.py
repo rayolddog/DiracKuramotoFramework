@@ -33,8 +33,10 @@ THREE COMPETING MODELS:
 
 USER NOTE (session insight):
   "Maybe this is where the energy-mass equivalence enters the equation."
-  E = mc² is the bridge: for massive particles K ∝ mc²/ℏ (rest-mass clock),
-  giving τ_sync ~ ℏ/mc² → heavier particles sync FASTER (see predictions.py P5).
+  E = mc² is the bridge: for massive particles the measurement coupling
+  K_eff ∝ mc²/ℏ, so heavier particles lock to the detector bulk FASTER.
+  (The closed-system ZBW/Compton beat ℏ/(2mc²) of predictions.py P5 is a
+  separate, unitary quantity — not this measurement-sync rate.)
   For photons: K ∝ hν/ℏ = 2πν → higher-frequency photons sync faster (Model B).
   The two models differ in the sign of the slope: experiments can distinguish them.
 

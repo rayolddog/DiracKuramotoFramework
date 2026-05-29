@@ -18,19 +18,29 @@ THREE CONNECTED IDEAS:
      See Paper §5 for the photon treatment via Riemann-Silberstein
      F = E + iB.
 
-  2. HIGGS FIELD AS KURAMOTO SYNCHRONIZER
+  2. HIGGS FIELD AS THE OFF-DIAGONAL CHIRAL COUPLING
      The Dirac mass term -m(ψ̄_L ψ_R + h.c.) is the COUPLING between
      the left-handed (spatial) clock and the right-handed (temporal) clock.
      Without the Higgs: clocks are decoupled, θ_rel = 90° for all particles.
-     With the Higgs VEV ⟨φ⟩ = v/√2: Kuramoto coupling K = y_f · v/√2
-     drives the two clocks toward synchronization.
-     Mass = the equilibrium synchronization rate = y_f · v/√2.
+     With the Higgs VEV ⟨φ⟩ = v/√2: the off-diagonal coupling K = y_f · v/√2
+     mixes the two clocks. In the CLOSED system this coupling is UNITARY: it
+     drives coherent normal-mode (Rabi / Zitterbewegung) precession at
+     frequency 2K, with NO attractor and no relaxation (PAPER §2.2).
+     Mass = the off-diagonal coupling strength K = y_f · v/√2 — it sets the
+     ZBW beat and the dispersion relation, NOT a synchronization rate.
+
+     Genuine phase-locking (an attractor) is a DISSIPATIVE, open-system
+     effect. The sine/Adler simulations below are that dissipative form;
+     they are physically appropriate for the early-universe electroweak
+     phase transition (a finite-temperature, out-of-equilibrium process)
+     where the CP-violating lock seeds the matter/antimatter asymmetry —
+     but they are NOT the closed-system origin of mass.
 
   3. ANTIPARTICLES AS REVERSED CLOCKS → MATTER/ANTIMATTER ASYMMETRY
      The Dirac negative-energy solution v(p,s) has phase e^{+iEt/ℏ}:
      the time-phase clock runs BACKWARD.
      CP violation in the Higgs-Yukawa coupling: y_f is complex
-     y_f = |y_f| e^{iδ_CP}. This shifts the synchronization equilibrium
+     y_f = |y_f| e^{iδ_CP}. This shifts the dissipative-lock equilibrium
      for particles and antiparticles in opposite directions.
      Particles synchronize to offset +δ_CP; antiparticles to -δ_CP.
      When they meet, clock mismatch → slightly different annihilation
@@ -50,13 +60,16 @@ EQUATIONS:
 
    Writing clock phases φ_L, φ_R for ψ_L = ρ_L^½ e^{iφ_L} χ_L, etc.:
 
-   dφ_L/dt = ω_L + K sin(φ_R − φ_L + δ_CP)   ← Kuramoto
-   dφ_R/dt = ω_R + K sin(φ_L − φ_R − δ_CP)   ← Kuramoto
+   dφ_L/dt = ω_L + K sin(φ_R − φ_L + δ_CP)   ← dissipative Adler form
+   dφ_R/dt = ω_R + K sin(φ_L − φ_R − δ_CP)   ← (open-system; early universe)
 
    where K = y_f · |⟨φ⟩| = y_f v/√2 = mass m.
 
-   Synchronized equilibrium:  φ_L − φ_R = δ_CP  (particle)
-                               φ_L − φ_R = −δ_CP (antiparticle, reversed clock)
+   Dissipative-lock equilibrium:  φ_L − φ_R = δ_CP  (particle)
+                                  φ_L − φ_R = −δ_CP (antiparticle, reversed clock)
+
+   (The closed, unitary coupling has no such equilibrium — it precesses
+    coherently forever; see unitary_LR_rabi() below and PAPER §2.2.)
 
 3. Annihilation cross-section asymmetry (schematic):
    σ(particle) ∝ 1 + ε cos(δ_CP)
@@ -130,11 +143,16 @@ def print_massless_limit():
     print(f"  → Two equal, decoupled Weyl spinors (helicity eigenstates)")
 
 
-# ─── 2. Higgs as Kuramoto Synchronizer ───────────────────────────────────────
+# ─── 2a. Higgs coupling: dissipative (Adler) form ────────────────────────────
+#
+# The sine-coupled form below is the OPEN-system / dissipative dynamics. It has
+# an attractor and is appropriate for the early-universe electroweak transition
+# (where it seeds the CP asymmetry), NOT for the closed-system mass coupling,
+# which is unitary (see unitary_LR_rabi in section 2b and PAPER §2.2).
 
 def kuramoto_L_R(t, phi, omega_L, omega_R, K, delta_CP):
     """
-    L-R clock synchronization through Higgs field.
+    L-R clock coupling, dissipative (Adler) form — has an attractor.
     phi = [φ_L, φ_R]
     dφ_L/dt = ω_L + K·sin(φ_R − φ_L + δ_CP)
     dφ_R/dt = ω_R + K·sin(φ_L − φ_R − δ_CP)
@@ -148,7 +166,9 @@ def kuramoto_L_R(t, phi, omega_L, omega_R, K, delta_CP):
 def simulate_higgs_sync(K, delta_CP=0.0, omega_L=1.0, omega_R=1.0,
                         phi_L0=0.8, phi_R0=0.0, t_end=20.0):
     """
-    Simulate the L and R clocks synchronizing through Higgs coupling K.
+    Simulate the L and R clocks under the DISSIPATIVE (Adler) form of the
+    Higgs coupling K. Open-system / early-universe dynamics; the closed
+    coupling is unitary (see unitary_LR_rabi).
     K = y_f · v/√2 = mass
     delta_CP = CP-violating phase in Yukawa coupling
     """
@@ -169,6 +189,38 @@ def equilibrium_offset(K, delta_CP, omega_L=1.0, omega_R=1.0):
     """
     t, pL, pR = simulate_higgs_sync(K, delta_CP, omega_L, omega_R, t_end=50.0)
     return (pL[-1] - pR[-1]) % (2 * np.pi)
+
+
+# ─── 2b. Higgs coupling: closed (unitary) form — the actual mass term ─────────
+#
+# The closed chiral mass coupling is the Hamiltonian H = K·σ_x (rest frame),
+# K = m. This is UNITARY: it produces coherent normal-mode (Rabi /
+# Zitterbewegung) exchange between L and R at frequency 2K, with no attractor
+# and no relaxation. This — not the dissipative lock above — is what "mass" is
+# in the framework (it sets the ZBW beat and the dispersion). See PAPER §2.2.
+
+def unitary_LR_rabi(K, t_end=30.0, psi_L0=1.0, psi_R0=0.0):
+    """
+    Closed-system (unitary) chiral mass coupling, rest frame:
+        i dψ/dt = H ψ,   H = K·σ_x,   K = m,   ψ = (ψ_L, ψ_R)
+
+    Integrated as the real 4-vector y = [Re ψ_L, Re ψ_R, Im ψ_L, Im ψ_R].
+    Returns (t, |ψ_L|², |ψ_R|²): the chiral populations oscillate coherently
+    (Rabi/ZBW beat at 2K) FOREVER — there is no attractor, no equilibration.
+    Contrast simulate_higgs_sync (dissipative sine form), whose phase
+    difference relaxes to a fixed offset.
+    """
+    def rhs(t, y):
+        re_L, re_R, im_L, im_R = y
+        # dψ/dt = -i K σ_x ψ  ⇒  componentwise:
+        return [K * im_R, K * im_L, -K * re_R, -K * re_L]
+
+    t_eval = np.linspace(0.0, t_end, 2000)
+    y0 = [psi_L0, psi_R0, 0.0, 0.0]
+    sol = solve_ivp(rhs, (0.0, t_end), y0, t_eval=t_eval, rtol=1e-9, atol=1e-12)
+    psi_L = sol.y[0] + 1j * sol.y[2]
+    psi_R = sol.y[1] + 1j * sol.y[3]
+    return sol.t, np.abs(psi_L)**2, np.abs(psi_R)**2
 
 
 # ─── 3. Antiparticles as Reversed Clocks ─────────────────────────────────────
@@ -231,20 +283,25 @@ def run():
     print_massless_limit()
 
     print("\n\n" + "═" * 68)
-    print("2. HIGGS FIELD AS KURAMOTO CLOCK SYNCHRONIZER")
+    print("2. HIGGS COUPLING: UNITARY MASS vs DISSIPATIVE LOCK")
     print("═" * 68)
 
     print("""
-  The Yukawa interaction in Weyl form:
+  The Yukawa interaction in Weyl form gives the off-diagonal coupling K=m.
+  In the CLOSED system it is the Hamiltonian term H = K·σ_x (unitary):
+    i dψ/dt = K·σ_x ψ  →  coherent Rabi/ZBW beat at 2K, NO attractor
+
+  In the OPEN / early-universe (dissipative) form it has an attractor:
     dφ_L/dt = ω_L + K·sin(φ_R − φ_L + δ_CP)
     dφ_R/dt = ω_R + K·sin(φ_L − φ_R − δ_CP)
     K = y_f · v/√2 = fermion mass
 
   Without Higgs (K=0):  clocks free-run independently, θ_rel = 90°
-  With Higgs (K>0):     clocks synchronize, θ_rel → equilibrium
-  Large K (heavy top):  fast synchronization, tight lock
-  Small K (light e⁻):   slow synchronization, looser lock
-  K=0 (photon):         no synchronization, permanently decoupled
+  With Higgs (K>0):     closed → unitary normal-mode (ZBW) precession, 2K
+                        open/early-universe → dissipative Adler lock to δ_CP
+  Large K (heavy top):  fast ZBW beat / fast dissipative lock
+  Small K (light e⁻):   slow ZBW beat / slow dissipative lock
+  K=0 (photon):         no coupling, permanently decoupled
 """)
 
     print("  Fermion   Yukawa y_f     Mass (GeV)   Sync rate K/ω")
@@ -263,8 +320,8 @@ def run():
         print(f"  {name:<12}  y={y:.1e}   m={m_gev:.4f} GeV   K/ω={K/m_gev:.3f}")
 
     print("\n  K/ω ≈ 1 for all fermions (self-consistent: K = m by construction)")
-    print("  The Higgs VEV v=246 GeV sets the SCALE of synchronization.")
-    print("  Different Yukawa couplings → different sync strengths → different masses.")
+    print("  The Higgs VEV v=246 GeV sets the SCALE of the coupling.")
+    print("  Different Yukawa couplings → different coupling strengths → different masses.")
 
     print("\n\n" + "═" * 68)
     print("3. ANTIPARTICLES: REVERSED CLOCKS → MATTER ASYMMETRY")
@@ -300,13 +357,26 @@ def run():
     print(f"  Antiparticle spinor v(p=1,↑):  {np.round(sa,3)}")
     print(f"  Particle clock frequency:  +E = +{E_p:.4f}")
     print(f"  Antiparticle clock freq.:  -E = {E_a:.4f}")
-    print(f"\n  Overlap ⟨particle|antiparticle⟩ = {np.abs(sp.conj() @ sa):.6f}")
-    print(f"  (Zero overlap confirms reversed clocks are orthogonal states)")
+    # Same-momentum u†(p)v(p) is NOT zero — the naive bra-ket overlap of a
+    # particle and antiparticle at the same p does not vanish.
+    print(f"\n  u†(p)·v(p)  (same momentum)        = {np.abs(sp.conj() @ sa):.6f}"
+          f"   ← NOT zero")
+    # Genuine Dirac orthogonality #1: opposite 3-momentum, u†(p,s) v(-p,s') = 0.
+    sa_negp, _ = dirac_spinor_antiparticle(-p_val, True, m_val)
+    print(f"  u†(p)·v(-p) (opposite momentum)   = {np.abs(sp.conj() @ sa_negp):.6f}"
+          f"   ← zero (Dirac orthogonality)")
+    # Genuine Dirac orthogonality #2: relativistic inner product ū(p)v(p)=u†γ⁰v=0.
+    g0 = np.diag([1.0, 1.0, -1.0, -1.0]).astype(complex)  # γ⁰ (Dirac basis)
+    print(f"  ū(p)·v(p)   = u†γ⁰v                = {np.abs(sp.conj() @ (g0 @ sa)):.6f}"
+          f"   ← zero (Dirac orthogonality)")
+    print(f"  (The reversed clocks are orthogonal in the Dirac inner product"
+          f" ū v and at\n   opposite momentum — NOT in the naive u†v at the"
+          f" same momentum.)")
 
     # ── Plots ──────────────────────────────────────────────────────────────
-    fig, axes = plt.subplots(2, 3, figsize=(16, 9))
-    fig.suptitle('Higgs as Clock Synchronizer — Antiparticles as Reversed Clocks',
-                 fontsize=13)
+    fig, axes = plt.subplots(2, 4, figsize=(21, 9))
+    fig.suptitle('Higgs Coupling K=m: Unitary Mass vs Dissipative Lock — '
+                 'Antiparticles as Reversed Clocks', fontsize=13)
 
     # ── A: Massless limit — helicity fractions vs p/m ─────────────────────
     ax = axes[0, 0]
@@ -323,7 +393,7 @@ def run():
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
-    # ── B: Higgs Kuramoto synchronization for different masses ────────────
+    # ── B: dissipative (Adler) form — L-R lock for different K ────────────
     ax = axes[0, 1]
     t_end = 30.0
     for K, col, lbl in [(0.0, 'gray', 'K=0 (massless)'),
@@ -338,12 +408,24 @@ def run():
     ax.axhline(0, color='k', linestyle=':', lw=1)
     ax.set_xlabel('Time')
     ax.set_ylabel('φ_L − φ_R (clock offset, rad)')
-    ax.set_title('Higgs-Kuramoto: L-R clock synchronization\nK = y_f·v/√2 = mass')
+    ax.set_title('Dissipative (Adler) form: L-R lock to δ_CP\n(open-system / early universe)')
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
 
-    # ── C: CP violation — asymmetric synchronization ──────────────────────
+    # ── C: closed-system UNITARY coupling — normal-mode (ZBW) precession ──
     ax = axes[0, 2]
+    t_u, pop_L, pop_R = unitary_LR_rabi(K=1.0, t_end=30.0)
+    ax.plot(t_u, pop_L, color='seagreen', lw=1.8, label='|ψ_L|² (left clock)')
+    ax.plot(t_u, pop_R, color='mediumpurple', lw=1.8, label='|ψ_R|² (right clock)')
+    ax.axhline(0.5, color='k', linestyle=':', lw=1)
+    ax.set_xlabel('Time')
+    ax.set_ylabel('Chiral population')
+    ax.set_title('Closed coupling K=m: UNITARY\nnormal-mode (Rabi/ZBW) beat — no attractor')
+    ax.legend(fontsize=8)
+    ax.grid(True, alpha=0.3)
+
+    # ── D: CP violation — asymmetric dissipative lock ─────────────────────
+    ax = axes[0, 3]
     t_end = 40.0
     K = 2.0
     for d_CP, col, lbl in [(0.0,     'gray',      'δ_CP=0 (no CP viol.)'),
@@ -442,6 +524,36 @@ OPEN QUESTION:
     ax.text(0.05, 0.92, summary, ha='left', va='top', fontsize=8.5,
             transform=ax.transAxes, family='monospace',
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
+
+    # ── H: one coupling, two regimes ──────────────────────────────────────
+    ax = axes[1, 3]
+    ax.axis('off')
+    ax.text(0.5, 0.98, 'ONE COUPLING, TWO REGIMES', ha='center', va='top',
+            fontsize=11, fontweight='bold', transform=ax.transAxes)
+    regimes = """
+CLOSED (unitary) — Panel C:
+  i dψ/dt = K·σ_x ψ,  K = m
+  → coherent Rabi/ZBW beat at 2K
+  → NO attractor, never relaxes
+  → THIS is what "mass" is: it sets
+     the ZBW beat and the dispersion.
+
+OPEN (dissipative) — Panels B, D:
+  dφ/dt = ω + K·sin(Δφ ± δ_CP)
+  → Adler lock to a fixed offset
+  → appropriate for the finite-T
+     electroweak phase transition,
+     where it seeds the matter/
+     antimatter asymmetry.
+
+The closed mass term does NOT
+synchronize the clocks; the lock is
+a separate dissipative phenomenon.
+(PAPER §2.2)
+"""
+    ax.text(0.03, 0.92, regimes, ha='left', va='top', fontsize=8,
+            transform=ax.transAxes, family='monospace',
+            bbox=dict(boxstyle='round', facecolor='honeydew', alpha=0.9))
 
     plt.tight_layout()
     plt.savefig(_HERE / 'higgs_clock.png', dpi=150)

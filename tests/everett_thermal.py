@@ -96,8 +96,8 @@ THE ANTIGRAVITY UNIVERSE:
   ─────────────────────────
   From higgs_clock.py:
     Antiparticle = reversed clock (φ → −φ, time-reversed phase)
-    Mass = Kuramoto sync rate with the Higgs field
-    Negative mass = clock that opposes Higgs synchronization
+    Mass = the off-diagonal chiral coupling K = m to the Higgs field
+    Negative mass = sign-reversed coupling (K < 0)
 
   If a sector exists where all clocks run in reverse:
     • Matter has negative mass → antigravity
@@ -247,10 +247,10 @@ def cosmological_vacuum_estimate(
 def clock_phase_sectors(phi_arr):
     """
     Two sectors from the clock model:
-      Sector A (our world):   φ > 0, mass = sync rate > 0, gravity attractive
-      Sector B (mirror):      φ < 0, reversed clock, mass < 0, gravity repulsive
+      Sector A (our world):   φ > 0, mass = K > 0, gravity attractive
+      Sector B (mirror):      φ < 0, reversed clock, mass = K < 0, gravity repulsive
 
-    The Higgs sync rate K(φ):
+    The Higgs chiral coupling K(φ):
       K(φ) = K_0 · cos(φ)   — positive for |φ| < π/2  (normal matter)
                              — negative for |φ| > π/2  (reversed clock = antimatter)
 

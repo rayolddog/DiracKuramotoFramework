@@ -58,9 +58,10 @@ makes the prediction strikingly clean.
 
 Any reinterpretation of quantum mechanics that touches the electron's phase
 dynamics must reproduce this result with no fit parameter. The Dirac–Kuramoto
-framework [2], which identifies the chiral structure of the Dirac equation as
-a phase-synchronization system with coupling constant K = m, naturally extends
-to a picture in which the electron's phase couples to a vacuum mode background.
+framework [2], which identifies the fermion mass as the off-diagonal chiral
+coupling (K = m) and reads dissipative phase synchronization as the open-system
+mechanism behind measurement, naturally extends to a picture in which the
+electron's phase locks to a vacuum-mode background.
 The AB effect provides the cleanest place to test whether this extension can
 reproduce a known coefficient (e/ℏ) and, separately, whether it predicts
 anything experimentally distinct from standard QED.

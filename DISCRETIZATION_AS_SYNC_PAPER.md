@@ -47,9 +47,9 @@ reading is correct, the manifold of general relativity need not be
 quantized — and the GR/QM conflict, as traditionally posed, dissolves.
 
 The proposal builds on the Dirac–Kuramoto (DK) framework developed in the
-companion paper [1], which identifies the chiral structure of the Dirac
-equation as a phase-synchronization system and re-interprets measurement as
-a two-stage re-synchronization process. Here we extract the broader
+companion paper [1], which identifies the fermion mass as the off-diagonal
+chiral coupling and re-interprets measurement as a two-stage dissipative
+re-synchronization process. Here we extract the broader
 consequence: that the mechanism developed there for measurement generalizes
 to a *uniform mechanism for QM discreteness*, of which the standard examples
 (Bohr–Sommerfeld quantization, spin multiplets, atomic line spectra,
@@ -253,11 +253,15 @@ spectrum is *derived* from the bifurcation structure, not stipulated.
 ### 2.2 The DK identification
 
 The DK framework [1] identifies the chiral pair of the Dirac equation —
-the left- and right-handed Weyl components $\psi_L, \psi_R$ — as a
-two-clock Kuramoto system with coupling $K = m$ (the mass) and mismatch
-frequencies set by the kinematic terms. The chiral pair locks on the
-synchronized manifold $\psi_L \approx \psi_R$; this locked configuration
-is what one identifies as a particle of definite mass and four-momentum.
+the left- and right-handed Weyl components $\psi_L, \psi_R$ — as two phase
+clocks coupled by the off-diagonal mass term $K = m$, with mismatch
+frequencies set by the kinematic terms. In the closed system this coupling is
+unitary: it does not lock the two phases but sets their normal modes, and a
+particle of definite mass and four-momentum is the symmetric normal mode of
+the pair (the de Broglie carrier), not a synchronized configuration. Genuine
+phase-locking — and with it the bifurcation structure that yields a discrete
+locked-mode spectrum — appears only in the dissipative, open-system regime
+that the next paragraph identifies with measurement.
 
 Measurement, in [1], is the re-synchronization of an external system's
 chiral pair with the chiral pair of a detector. The two-stage process
@@ -793,9 +797,9 @@ Born-derivative one — still informative but less complete.
 
 QM admits not only discrete spectra (bound states) but also continuous
 ones (scattering states, free particles, plane-wave bases). The DK
-reading must accommodate these naturally: free particles are
-unsynchronized chiral pairs whose locked manifold is parametrized
-continuously by momentum, with no closure condition forcing discreteness.
+reading must accommodate these naturally: free particles are the unitary
+normal-mode states of the chiral pair, parametrized continuously by momentum,
+with no closure condition forcing discreteness.
 
 The proposed picture is that the bound/scattering distinction
 corresponds to the closed/open topology of the orbital phase space: a

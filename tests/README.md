@@ -123,9 +123,10 @@ arXiv:2305.17977).
 
 **Verifies §B.4** (K = m at the cochain level).
 
-Demonstrates that the chiral L-R Kuramoto reduction (`EQUATIONS.md` §6)
-embeds as the manifold-like simple simplicial Kuramoto model on a
-1-simplex, per Theorem 1 of Nurisso et al. Three sub-tests:
+Demonstrates that the chiral-pair Kuramoto *model* (K = m; the dissipative
+measurement-level Adler form of `EQUATIONS.md` §6, not a reduction of the
+closed Dirac equation) embeds as the manifold-like simple simplicial Kuramoto
+model on a 1-simplex, per Theorem 1 of Nurisso et al. Three sub-tests:
 
 1. **Trajectory equivalence.** The framework's chiral form and Nurisso's
    incidence-matrix form integrate to bit-identical trajectories at

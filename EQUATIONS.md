@@ -1,6 +1,6 @@
 # Equation Reference for the Many Clocks Interpretation
 
-*Kuramoto synchronization in the Dirac equation — the equation reference accompanying the Many Clocks Interpretation of Quantum Mechanics (MCI). See the main paper for the interpretive framework; this document is a compact lookup of the key equations and identifications.*
+*Chiral coupling and Kuramoto re-synchronization in the Dirac equation — the equation reference accompanying the Many Clocks Interpretation of Quantum Mechanics (MCI). See the main paper for the interpretive framework; this document is a compact lookup of the key equations and identifications.*
 
 ---
 
@@ -60,11 +60,10 @@ Two oscillators phase-lock only if their natural-frequency mismatch lies within 
 
 $$\boxed{|\omega_i - \omega_j| \lesssim K_{\text{eff}}}$$
 
-This is the standard Kuramoto capture-range / Arnold-tongue condition. In the framework it applies at three distinct scales (with the three couplings of §6):
+This is the standard Kuramoto capture-range / Arnold-tongue condition. It is a property of the *dissipative* Adler coupling, so in the framework it applies at the two open-system measurement scales of §6 (the intra-spinor $K = m$ coupling is unitary and sets the normal modes / dispersion, not a capture threshold):
 
 | Scale | $K_{\text{eff}}$ | Capture bandwidth | Outside the window |
 |---|---|---|---|
-| Intra-spinor L–R | $K = m$ | $mc^2/\hbar$ (Compton) | Automatic for on-shell Dirac particles |
 | Vertex pair-sync (Stage 1) | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | $\sim K_{\text{pair}}$ | Shed as secondary radiation, not locked |
 | Bulk relaxation (Stage 2) | $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
 
@@ -147,24 +146,34 @@ The two chiral clocks are permanently orthogonal and never mix. This applies to 
 
 ---
 
-## 6. Higgs Field as Kuramoto Synchronizer
+## 6. Higgs Field as the Chiral Coupling
 
-The Yukawa interaction written in Weyl (clock) form:
+The Yukawa interaction makes the mass the off-diagonal coupling between the two
+chiral clocks. The Madelung reduction of the rest-frame Dirac equation gives
+(Paper §2.2, Appendix F)
 
-$$\frac{d\varphi_L}{dt} = \omega + K \sin(\varphi_R - \varphi_L + \delta_{\text{CP}})$$
+$$\frac{d\varphi_L}{dt} = -\,K\sqrt{\rho_R/\rho_L}\,\cos(\varphi_R - \varphi_L), \qquad \frac{d\rho_L}{dt} = +\,2K\sqrt{\rho_L\rho_R}\,\sin(\varphi_R - \varphi_L)$$
 
-$$\frac{d\varphi_R}{dt} = \omega + K \sin(\varphi_L - \varphi_R - \delta_{\text{CP}})$$
-
-where the **Kuramoto coupling constant equals the fermion mass**:
+with coupling strength equal to the fermion mass:
 
 $$\boxed{K = y_f \cdot \frac{v}{\sqrt{2}} = m_f}$$
 
 with $y_f$ the Yukawa coupling and $v = 246\,\text{GeV}$ the Higgs vacuum expectation value.
 
+The coupling is *cosine* in the phase equation and *sine* in the amplitude
+equation — the reverse of the Adler/Kuramoto bath form of §2 — so on the
+symmetric manifold $\rho_L = \rho_R$ the phase difference obeys $d\Delta/dt = 0$
+for all $\Delta$: **the closed system has no attractor.** The dynamics are
+unitary normal-mode (Rabi) precession; diagonalizing the coupling gives the
+eigenfrequencies $\pm\sqrt{k^2+m^2} = \pm E$ (the dispersion relation), whose
+symmetric and antisymmetric modes are the de Broglie carrier and the
+Zitterbewegung beat (§15). Genuine phase-locking is the dissipative,
+open-system process of §2 (measurement).
+
 - $K = 0$ (no Higgs): $\varphi_L$ and $\varphi_R$ free-run, $\theta_{\text{rel}} = \pi/2$ — massless
-- $K > 0$ (Higgs): clocks synchronize, $\theta_{\text{rel}} < \pi/2$ — massive
-- Large $K$ (top quark, $y_f \approx 1$): fast sync, tight lock
-- Small $K$ (electron, $y_f \approx 3 \times 10^{-6}$): slow sync, loose lock
+- $K > 0$ (Higgs): the chiral sectors couple, $\theta_{\text{rel}} < \pi/2$ — massive; rest-frame beat $2K = 2mc^2/\hbar$
+- Large $K$ (top quark, $y_f \approx 1$): tight coupling, fast beat
+- Small $K$ (electron, $y_f \approx 3 \times 10^{-6}$): weak coupling, slow beat
 
 ### Pair-sync at gauge vertices
 
@@ -189,11 +198,13 @@ with bulk relaxation (Stage 2):
 
 $$\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stage 2: }e\leftrightarrow\text{lattice}}$$
 
-The framework now carries three Kuramoto couplings, each at a different scale:
+The framework carries three couplings, each at a different scale (only the
+latter two are dissipative Adler/Kuramoto couplings with an attractor; $K = m$
+is the unitary chiral coupling that sets the normal modes):
 
 | Coupling | Origin | Role |
 |---|---|---|
-| $K = m$ | Higgs–Yukawa | intra-spinor L–R sync |
+| $K = m$ | Higgs–Yukawa | intra-spinor L–R coupling (unitary; sets normal modes / dispersion) |
 | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | gauge interaction | pair-sync at vertex (Stage 1) |
 | $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | environmental + gravitational | bulk re-equilibration (Stage 2); see §7 below |
 
@@ -392,25 +403,25 @@ $$\tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2} \quad \Longleftrightar
 
 ## 12. The Born Rule as Energy Partition
 
-In this framework, $|\psi|^2$ is not fundamentally a probability — it is the **energy density** of the real oscillating field $\psi$. The probabilistic appearance of measurement outcomes reflects unpredictable interference with the zero-point + thermal background field at the moment of synchronization with the detector. The Born rule is read as the long-run frequency of energy partition into the available detector channels under unbiased stochastic background driving, not as an independent probability axiom.
+In this framework, $|\psi|^2$ is not fundamentally a probability — it is the **energy density** of the real oscillating field $\psi$. The probabilistic appearance of measurement outcomes reflects unpredictable interference with the zero-point + thermal background field at the moment of synchronization with the detector. For outcome channels of **equal energy per quantum** (spin, polarization, fixed-frequency detector clicks — the framework's use cases), the Born rule is read as the long-run frequency of quantum-number partition into the available detector channels under unbiased stochastic background driving, not as an independent probability axiom. The reading does not extend to non-degenerate energy measurements (see the limitation below).
 
 ### Wave energy as the primary quantity
 
-For a superposition $\psi = \alpha|0\rangle + \beta|1\rangle$ in the wave-realist reading,
+For a superposition $\psi = \alpha|0\rangle + \beta|1\rangle$ whose channels carry the **same energy per quantum**,
 
 $$E_0 \propto |\alpha|^2, \qquad E_1 \propto |\beta|^2$$
 
-are the **energy fractions** carried by each channel. This is classical wave physics — no Born postulate is required to write down these quantities.
+are the **energy fractions** carried by each channel. This is classical wave physics — no Born postulate is required to write down these quantities. If instead $|0\rangle, |1\rangle$ are energy eigenstates with $E_0 \neq E_1$, the energy fraction in channel 0 is $|\alpha|^2 E_0/(|\alpha|^2 E_0 + |\beta|^2 E_1) \neq |\alpha|^2$; the Born weight is the *quantum-number* fraction $|\alpha|^2$, which equals the energy fraction only at degeneracy.
 
 ### Energy-partition mechanism
 
 A Kuramoto re-synchronization event transfers wave energy from the particle to one detector channel, raising it to its excited (registered) state. A discrete click — rather than a fractional excitation across multiple channels — arises because each detector channel is itself a quantized resonator with a discrete excitation threshold.
 
-Which channel receives the quantum in any individual event depends on the instantaneous configuration of the background field at the moment of contact. Because the background fluctuations are statistically unbiased on the channel-selection phase space (zero-point symmetry; unbiased thermal noise), long-run frequencies of channel selection converge to the energy fractions:
+Which channel receives the quantum in any individual event depends on the instantaneous configuration of the background field at the moment of contact. Because the background fluctuations are statistically unbiased on the channel-selection phase space (zero-point symmetry; unbiased thermal noise), long-run frequencies of channel selection converge — for equal-energy channels — to the quantum-number fractions:
 
 $$\boxed{P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2}$$
 
-read here as long-run *frequencies of energy partition* rather than as a probability axiom of quantum theory.
+read here as long-run *frequencies of quantum-number partition among equal-energy channels* rather than as a probability axiom of quantum theory. That the converged law is amplitude-*squared* (rather than some other symmetric function of $\alpha, \beta$) is an assumption of the channel-selection competition, not derived from the background symmetry alone.
 
 ### Connection to Nelson stochastic mechanics
 
@@ -418,7 +429,13 @@ Nelson (1966) [26] showed that a real particle undergoing stochastic motion in a
 
 ### Honest limitation
 
-The reframing replaces the standard Born axiom with a weaker postulate set (wave realism + unbiased background) but does not yet derive that the bias-free assumption is exact across the channel-selection phase space. This is a future-work item, not a settled result. The framework is structurally a hidden-variable theory in which the hidden variable is the instantaneous background-field configuration; it satisfies Bell's theorem because it does not use this story to explain Bell correlations (those come from the full Dirac spinor structure, Section 4 of this reference).
+The reframing replaces the standard Born axiom with a narrower postulate set (wave realism + equal-energy channels + unbiased background) and leaves two gaps explicitly open:
+
+1. **Scope.** The energy-partition reading reproduces $|\alpha|^2$ only when the outcome channels carry the same energy per quantum (spin, polarization, fixed-frequency detector clicks). For channels of unequal energy the energy fraction $|\alpha|^2 E_0/(|\alpha|^2 E_0 + |\beta|^2 E_1)$ diverges from $|\alpha|^2$ — e.g. $E_1 = 100\,E_0$ gives an energy fraction $1/101$ against a Born weight $\tfrac12$ — so the mechanism must be read as partitioning *quantum-number occupation*, not raw energy, and the equal-energy condition is a genuine restriction rather than a convenience.
+
+2. **Why squared.** Even within the equal-energy regime, the unbiased-background assumption does not by itself fix the *squared* functional form; some symmetry of the channel-selection competition must single out $|\alpha|^2$ over other symmetric functions of $(\alpha,\beta)$. This is the same residual gap that contested branch-counting (Deutsch–Wallace) derivations face, not a feature unique to this framework.
+
+Neither gap is a settled result; both are future-work items. The framework is structurally a hidden-variable theory in which the hidden variable is the instantaneous background-field configuration; it satisfies Bell's theorem because it does not use this story to explain Bell correlations (those come from the full Dirac spinor structure, Section 4 of this reference).
 
 ---
 
@@ -487,7 +504,7 @@ $$\begin{array}{lll}
 \text{Spatial clock } \psi_R\,^{*} & \text{Right Weyl spinor} & \pi_{A'} \\
 \text{L-R coupling} = m & \text{Dirac mass term} & \text{Non-null: } Z\cdot\bar{Z} \neq 0 \\
 \theta_{\text{rel}} = 90° & \text{Massless particle} & \text{Null twistor} \\
-\text{Higgs synchronizer} & \text{Yukawa coupling} & \text{Twistor cohomology} \\
+\text{Higgs chiral coupling} & \text{Yukawa coupling} & \text{Twistor cohomology} \\
 \text{Gravity} = \nabla^2\varphi_{\text{clock}} & \text{Newtonian potential} & \text{Twistor space curvature} \\
 \text{Penrose collapse} & \text{Wavefunction collapse} & \delta\varphi = \pi \\
 \text{Temperature} & k_BT & \sigma_\varphi^2 = k_BT/\hbar\omega \\

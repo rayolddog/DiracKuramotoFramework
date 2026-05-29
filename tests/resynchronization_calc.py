@@ -554,7 +554,7 @@ def simulate_dirac_measurement():
     For a particle at rest (p=0), in chiral basis:
       H = m*σ_x ⊗ I_spin + B*I_chiral ⊗ σ_z
 
-    where σ_x ⊗ I couples L↔R (mass term = Kuramoto K)
+    where σ_x ⊗ I couples L↔R (the off-diagonal chiral mass coupling K = m)
     and I ⊗ σ_z is the measurement field.
 
     We start with spin along direction θ from z-axis and track
@@ -572,10 +572,10 @@ def simulate_dirac_measurement():
         4x4 Dirac Hamiltonian (rest frame, chiral basis).
         Basis: |L↑⟩, |L↓⟩, |R↑⟩, |R↓⟩
 
-        Mass term: m * (σ_x ⊗ I) — couples L and R (Kuramoto!)
+        Mass term: m * (σ_x ⊗ I) — the unitary off-diagonal coupling of L and R
         Measurement: B * (I ⊗ σ_z) — splits spin along z
         """
-        H_mass = m * np.kron(sx, I2)        # L-R coupling (Kuramoto K=m)
+        H_mass = m * np.kron(sx, I2)        # off-diagonal chiral coupling K=m (unitary)
         H_meas = B * np.kron(I2, sz)        # Measurement field
         return H_mass + H_meas
 

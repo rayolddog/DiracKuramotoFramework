@@ -1,15 +1,22 @@
 """
 simplicial_alignment.py
 
-Verification that the chiral L-R Kuramoto reduction (K = m) of the Dirac
-equation embeds as the manifold-like simple simplicial Kuramoto model
-on a 1-simplex.
+Verification that the chiral-pair Kuramoto *model* (K = m) embeds as the
+manifold-like simple simplicial Kuramoto model on a 1-simplex.
+
+SCOPE: this test compares two *Kuramoto formulations* and shows they are
+equivalent on the 2-node, 1-edge complex. It does NOT show that the closed
+Dirac equation reduces to a Kuramoto attractor -- it does not. The Madelung
+reduction of the closed chiral Dirac equation gives cosine-in-phase /
+sine-in-amplitude with no attractor on rho_L = rho_R (see PAPER_UNIFIED.md
+sec 2.2 and Appendix F). The sine-coupled Kuramoto/Adler form with K = m as a
+coupling is the framework's *measurement* (open-system) dynamics
+(EQUATIONS.md sec 2); the intra-spinor K = m is otherwise the unitary
+off-diagonal coupling that sets the normal modes and the dispersion relation.
 
 Tests the alignment between:
-  (A) The DiracKuramotoFramework's claim that the synchronized-manifold
-      reduction of the chiral Dirac equation produces a pairwise Kuramoto
-      coupling with K = m (EQUATIONS.md sec 2.2, sec 6;
-      PAPER_UNIFIED.md sec 2.2).
+  (A) The chiral-pair Kuramoto model used in the framework's measurement
+      dynamics (EQUATIONS.md sec 2; PAPER_UNIFIED.md sec 3.4), with K = m.
   (B) Theorem 1 of Nurisso et al. (2024, arXiv:2305.17977), which states
       that the simple simplicial Kuramoto model on a manifold-like
       simplicial complex reduces to the standard node Kuramoto on the
@@ -18,7 +25,7 @@ Tests the alignment between:
 The test: build a 2-node simplicial complex (nodes = chiral sectors L, R;
 single edge = mass coupling). Integrate two systems from the same initial
 condition:
-  (A) The chiral pairwise Kuramoto from EQUATIONS.md sec 6.
+  (A) The chiral-pair Kuramoto model (sine/Adler form, EQUATIONS.md sec 2).
   (B) The simplicial Kuramoto in Nurisso et al.'s incidence-matrix form
       (their Eq. 13/15, for k=0, i.e. node Kuramoto in matrix form).
 Verify they produce identical trajectories within numerical tolerance.
@@ -45,15 +52,17 @@ from scipy.integrate import solve_ivp
 
 def chiral_lr_kuramoto(t, phi, omega, K, delta_CP=0.0):
     """
-    The framework's chiral phase dynamics (EQUATIONS.md sec 6).
-
-    On the synchronized manifold rho_L = rho_R, the Madelung reduction of
-    the chiral Dirac equation yields:
+    The chiral-pair Kuramoto model (the open-system / measurement-level
+    Adler form, EQUATIONS.md sec 2):
 
         dphi_L/dt = omega + K sin(phi_R - phi_L + delta_CP)
         dphi_R/dt = omega + K sin(phi_L - phi_R - delta_CP)
 
-    where K = m (the central identification: Kuramoto coupling = mass).
+    with coupling K = m. NOTE: this is the dissipative Kuramoto/Adler form,
+    not the closed-system Madelung reduction of the Dirac equation -- the
+    latter gives cosine-in-phase with no attractor (PAPER_UNIFIED.md sec 2.2,
+    Appendix F). This function exists to check equivalence with the simplicial
+    Kuramoto form below, not to assert a closed-Dirac reduction.
     """
     phi_L, phi_R = phi
     dphi_L = omega + K * np.sin(phi_R - phi_L + delta_CP)
@@ -251,9 +260,10 @@ if __name__ == "__main__":
     print("\n" + "=" * 72)
     print("Summary")
     print("=" * 72)
-    print("  The chiral L-R Kuramoto reduction of the Dirac equation embeds")
-    print("  as the manifold-like simple simplicial Kuramoto model on a")
-    print("  1-simplex. K = m is the edge coupling of this 1-simplex. The")
-    print("  U(1) gauge invariance is the harmonic phase-shift symmetry of")
-    print("  Nurisso et al. Theorem 1.")
+    print("  The chiral-pair Kuramoto model (K = m) embeds as the")
+    print("  manifold-like simple simplicial Kuramoto model on a 1-simplex;")
+    print("  K = m is the edge coupling of this 1-simplex, and the U(1) gauge")
+    print("  invariance is the harmonic phase-shift symmetry of Nurisso et al.")
+    print("  Theorem 1. (Equivalence of two Kuramoto forms -- NOT a reduction")
+    print("  of the closed Dirac equation; see PAPER sec 2.2 / Appendix F.)")
     print("=" * 72)

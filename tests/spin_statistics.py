@@ -5,18 +5,18 @@ spin_statistics.py — Spin-Statistics Within the Many Clocks Framework
 QUESTION:
 ─────────
 Can the Many Clocks Interpretation (MCI) of the Dirac equation, with its
-chiral clock pair (ψ_L, ψ_R) coupled by Kuramoto-form synchronization
+chiral clock pair (ψ_L, ψ_R) coupled by the off-diagonal chiral coupling
 K = m (Eq. 3 of PAPER_UNIFIED.md), reproduce the spin-statistics theorem?
 And if so, where does the fermion sign live in its mathematical structure?
 
 CLAIM TESTED:
 ─────────────
 The −1 phase under fermion exchange comes from the SU(2) representation
-each chiral spinor carries — NOT from the Kuramoto synchronization dynamics.
+each chiral spinor carries — NOT from the chiral-pair phase dynamics.
 MCI reproduces spin-statistics geometrically (via the 2π = −1 fact for
 spinors plus the Feynman/Finkelstein continuous-deformation argument that
 exchange ≃ 2π rotation in 3+1D), but it does not derive it from the
-sync ODEs alone.
+phase ODEs alone.
 
 This is a CONSISTENCY CHECK, not a new theorem. MCI is already committed
 to the chiral clock pair through the mass coupling K = m. Given that
@@ -206,11 +206,14 @@ def test_e_scalar_and_vector():
     print(f"  Symmetric 2-vector state:  ⟨ψ|P|ψ⟩ = {sign:+.6f}  (expect +1, Bose)")
 
 
-# ─── Test F: Kuramoto dynamics carry no sign ──────────────────────────
+# ─── Test F: the chiral-pair phase dynamics carry no sign ─────────────
 
 def kuramoto_evolve(phi0, K, omega, t_arr, delta_CP=0.0):
-    """Two coupled chiral phases (φ_L, φ_R) under Kuramoto-form coupling.
-    Eqs. 2a,b of PAPER_UNIFIED.md, on the synchronized manifold ρ_L ≈ ρ_R."""
+    """Two coupled chiral phases (φ_L, φ_R). This integrates the dissipative
+    Adler/sine form for illustration; the point of Test F — that the phase
+    dynamics carry no fermion sign — is independent of whether one uses the
+    closed (cosine-in-phase, unitary, no attractor) or open (sine,
+    dissipative) form. The −1 lives in the spinor frames χ_{L,R}, not φ_{L,R}."""
     phi = np.array(phi0, dtype=float)
     out = np.zeros((len(t_arr), 2))
     out[0] = phi

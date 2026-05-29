@@ -1,12 +1,12 @@
 # The Many Clocks Interpretation of Quantum Mechanics
 
-**Every particle carries an internal phase clock. Interactions synchronize them locally. No observer is needed; no branching occurs. The Dirac mass term is the Kuramoto coupling constant: K = m.**
+**Every particle carries an internal phase clock. Measurement is dissipative re-synchronization to a macroscopic bulk. No observer is needed; no branching occurs. The Dirac mass term is the off-diagonal chiral coupling: K = m.**
 
 ---
 
 ## Overview
 
-This repository presents the **Many Clocks Interpretation of Quantum Mechanics (MCI)**: an interpretive framework in which the Dirac equation, written in the chiral (Weyl) basis, has the mathematical structure of the Kuramoto phase-synchronization model. The left- and right-handed chiral sectors act as coupled oscillators --- a temporal clock and a spatial clock --- with the fermion mass playing the role of the Kuramoto coupling constant on the synchronized manifold: **K = m**.
+This repository presents the **Many Clocks Interpretation of Quantum Mechanics (MCI)**: an interpretive framework in which the Dirac equation, written in the chiral (Weyl) basis, exposes the fermion mass as the off-diagonal coupling between two chiral phase clocks --- a temporal clock and a spatial clock --- with coupling strength **K = m**. In the closed system this coupling is unitary: diagonalizing it reproduces E = √(p²+m²), with the de Broglie carrier and the Zitterbewegung beat as its normal modes. Phase-locking proper is a dissipative, open-system phenomenon, and in this framework it is what measurement is.
 
 The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by branching the universe at each measurement, MCI preserves a single world by treating each particle as carrying its own physical phase clock, with measurement as local synchronization between clocks. The interpretation is *relational* --- no global preferred reference frame and no observer required --- and it offers a positive dynamical mechanism for decoherence: phase overwriting at each interaction event.
 
@@ -14,18 +14,18 @@ From this single identification, the framework derives or reinterprets:
 
 - **Bell correlations** via the standard Dirac spinor structure (block decomposition E = E_LL + E_SS + E_LS = -cos(a-b) is a consistency check, not a derivation)
 - **Quantum measurement** as Kuramoto re-synchronization to a macroscopic detector bulk
-- **The Born rule** (P = |psi|^2) reframed as energy partition: |psi|^2 is the energy density of the real psi field, with stochasticity from unbiased background fluctuations at the synchronization event
+- **The Born rule** (P = |psi|^2) reframed, for outcome channels of equal energy per quantum, as quantum-number partition: |psi|^2 is the energy density of the real psi field, with stochasticity from unbiased background fluctuations at the synchronization event (does not extend to unequal-energy channels; see Paper §4)
 - **The Heisenberg uncertainty principle** from the geometric orthogonality of the two clocks (bandwidth limitation of the internal clock)
 - **Zitterbewegung** as the beat frequency between temporal and spatial clocks
 - **The Higgs mechanism** as the process that sets K: K = y_f * v/sqrt(2) = m
-- **Antiparticles** as time-reversed phase clocks, with CP violation as synchronization asymmetry
+- **Antiparticles** as time-reversed phase clocks, with CP violation as a chiral phase asymmetry
 - **Gravity** as bulk clock synchronization (recovers Newton exactly; pair-counted Γ_grav = GM²/(ℏΔz))
 - **Penrose objective reduction** as gravitational clock decoherence (tau = pi*hbar/E_G)
 - **Photons** treated via Riemann–Silberstein form (F = E + iB), with K_γ ~ ω = E/ℏ for photon-detector sync; gravitational classicalization channel silent for photons (perpetually quantum until measured)
 - **Temperature** as clock phase distribution width
 - **The quantum-classical transition** via Nelson's stochastic mechanics with a physical zero-point field (the molecular Brownian extension is an open question; see EQUATIONS.md §10)
 
-The framework does not modify the Dirac equation or challenge Bell's theorem. It provides a physical mechanism --- phase synchronization --- for processes that standard quantum mechanics describes but does not mechanistically explain.
+The framework does not modify the Dirac equation or challenge Bell's theorem. It reads mass as the off-diagonal chiral coupling and supplies a physical mechanism --- dissipative phase synchronization to a bulk --- for the measurement and decoherence processes that standard quantum mechanics describes but does not mechanistically explain.
 
 ---
 
@@ -63,7 +63,7 @@ Each Python script verifies specific claims made in the paper. They can be run i
 | `tests/kuramoto_sync.py` | Core Kuramoto phase dynamics --- particles synchronizing to detector bulk |
 | `tests/bell_phase.py` | Bell inequality comparison: LHV vs phase-clock vs QM correlations |
 | `tests/dirac_extension.py` | Three-term Bell decomposition (E_LL + E_SS + E_LS = -cos(a-b)) to machine precision |
-| `tests/higgs_clock.py` | Higgs as Kuramoto synchronizer; antiparticles as reversed clocks; CP violation |
+| `tests/higgs_clock.py` | Higgs as the chiral coupling (K = m); antiparticles as reversed clocks; CP violation |
 | `tests/gravity_twistor.py` | Gravity as bulk synchronization; Penrose collapse; twistor connection |
 | `tests/local_causality.py` | Full causal timeline showing no FTL required for Bell correlations |
 | `tests/predictions.py` | Five testable predictions where the framework differs from standard QM |
@@ -107,17 +107,17 @@ i * sigma-bar^mu * d_mu * psi_L = m * psi_R
 i * sigma^mu * d_mu * psi_R = m * psi_L
 ```
 
-Writing psi_L and psi_R as amplitude-phase oscillators (Madelung-type polar decomposition) and reducing to the synchronized manifold (rho_L ≈ rho_R), the phase dynamics are:
+The mass is the single off-diagonal entry of the Dirac Hamiltonian in this basis --- the coupling K = m between the two chiral clocks. Writing psi_L and psi_R as amplitude-phase oscillators (Madelung-type polar decomposition) in the rest frame, the reduction is:
 
 ```
-d(phi_L)/dt = omega_L + K * sin(phi_R - phi_L)
-d(phi_R)/dt = omega_R + K * sin(phi_L - phi_R)
+d(phi_L)/dt = -K * sqrt(rho_R/rho_L) * cos(phi_R - phi_L)
+d(rho_L)/dt = +2K * sqrt(rho_L * rho_R) * sin(phi_R - phi_L)
 ```
 
-where **K = m** (the fermion mass). This is the Kuramoto synchronization equation for two coupled oscillators. The sine coupling is emergent on the synchronized subspace, not present in the linear chiral Dirac equation at the operator level (see Paper §2.2).
+where **K = m** (the fermion mass). The coupling appears as a *cosine in the phase equation* --- the reverse of the Kuramoto model --- and the phase difference has no attractor: on the symmetric manifold rho_L = rho_R it is stationary for every phase difference, as must hold for closed unitary evolution. The motion is coherent normal-mode precession, not phase-locking. Diagonalizing the coupling gives eigenfrequencies ±√(k²+m²) = ±E (the relativistic dispersion); the normal modes are the de Broglie carrier and the Zitterbewegung beat (rest-frame beat 2m = 2mc²/ℏ). Genuine Kuramoto/Adler phase-locking enters only when the system is opened to a dissipative bulk --- that is the measurement step (Paper §2.2, §3.4, Appendix F).
 
-- **K = 0 (massless spin-½):** Chiral clocks decouple --- idealized massless neutrinos.
-- **K > 0 (massive):** Clocks synchronize. The synchronized state is a particle with definite rest mass.
+- **K = 0 (massless spin-½):** Chiral sectors decouple --- idealized massless neutrinos.
+- **K > 0 (massive):** The chiral clocks couple; the symmetric normal mode is a particle with definite rest mass.
 - **K = y_f * v/sqrt(2):** The Higgs vacuum expectation value sets K for each fermion species.
 - **Photons (spin-1):** Not Dirac particles. Treated separately via Riemann–Silberstein form, with K_γ ~ ω = E/ℏ for photon-detector sync (Paper §5).
 
@@ -125,9 +125,9 @@ where **K = m** (the fermion mass). This is the Kuramoto synchronization equatio
 
 ## Key Predictions and Consequences
 
-### Born Rule (reframed as energy partition)
+### Born Rule (reframed as quantum-number partition, equal-energy channels)
 
-|psi|^2 is the energy density of the real psi field --- not a probability postulate. The synchronization event transfers wave energy from the particle to one detector channel. Which channel wins in any individual event depends on the unbiased zero-point + thermal background fluctuations at the moment of contact. Long-run frequencies of channel selection therefore converge to the energy fractions: P(channel) = |amplitude|^2, read as a frequentist statement about energy partition rather than as an independent probability axiom (Paper §4).
+|psi|^2 is the energy density of the real psi field --- not a probability postulate. The synchronization event transfers wave energy from the particle to one detector channel. Which channel wins in any individual event depends on the unbiased zero-point + thermal background fluctuations at the moment of contact. For outcome channels carrying equal energy per quantum (spin, polarization, fixed-frequency detector clicks), long-run frequencies of channel selection converge to P(channel) = |amplitude|^2, read as a frequentist statement about quantum-number partition rather than as an independent probability axiom. The reading does not extend to channels of unequal energy, and does not by itself fix the squared functional form (Paper §4).
 
 ### Heisenberg Uncertainty (derived from clock geometry)
 
