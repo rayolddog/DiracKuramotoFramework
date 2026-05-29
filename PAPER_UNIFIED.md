@@ -97,9 +97,13 @@ environmental degrees of freedom.
 
 Yet decoherence theory describes *what happens* without specifying the dynamical
 mechanism by which it happens. The environment is treated as an abstract bath
-with many degrees of freedom. This paper proposes that the Kuramoto
-phase-synchronization model — specifically, as it appears in the structure of the
-Dirac equation itself — provides this missing mechanism.
+with many degrees of freedom. This paper proposes that dissipative Adler/Kuramoto
+phase-synchronization — a small system re-locking its intrinsic phase clock to a
+macroscopic coherent bulk — provides this missing mechanism. The clocks are not
+added by hand: they are the chiral phase sectors already present in the Dirac
+equation (Section 2), whose closed, unitary coupling is the mass; the
+synchronization that drives decoherence is the separate, open-system coupling of
+those clocks to the bulk (Section 3).
 
 ### 1.3 The Proposal in Brief
 
@@ -248,8 +252,10 @@ following structural commitments:
    but the physics of each interaction is invariant.
 
 3. **Synchronization is a local, objective, physical event.** When two
-   clock-carrying systems interact, their clocks synchronize via Kuramoto
-   coupling at the interaction event. The synchronization is objective:
+   clock-carrying systems interact dissipatively (coupling one of them to a
+   bulk), their clocks synchronize via Kuramoto coupling at the interaction
+   event; a closed, unitary interaction instead gives coherent normal-mode
+   exchange with no attractor (§2.2). The synchronization is objective:
    distant observers in other frames may disagree about the ordering of
    spacelike-separated events elsewhere, but the two parties to a specific
    interaction always agree on what happened locally between them. This is
