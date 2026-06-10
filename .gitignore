@@ -43,7 +43,5 @@ tests/bulk_sync_hardware.png
 tests/bulk_sync_hardware2.png
 tests/dirac_extension.png
 tests/everett_thermal.png
-tests/gravity_twistor.png
 tests/higgs_clock.png
 tests/kuramoto_sync.png
-tests/local_causality.png
