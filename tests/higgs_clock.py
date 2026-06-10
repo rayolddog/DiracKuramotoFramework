@@ -2,6 +2,15 @@
 higgs_clock.py — Higgs as Clock Synchronizer, Antiparticles as Reversed Clocks
 ================================================================================
 
+SCOPE NOTE (consistency with PAPER_REVISED.md, "Two Regimes of the Chiral Mass
+Coupling"): The paper-relevant content here is the massless (Weyl) limit and —
+above all — the CLOSED unitary normal-mode (Rabi/ZBW) precession of the mass
+coupling K = m versus the OPEN dissipative Adler lock (§2.2–2.3). The
+CP-violation / matter–antimatter-asymmetry (baryogenesis) material in idea (3)
+below — and the "CP violation" and "survival fraction" panels — is EXPLORATORY
+and is NOT part of the revised paper (CP/baryogenesis was cut from it). It is
+retained from the earlier unified draft and is not a framework claim.
+
 THREE CONNECTED IDEAS:
 
   1. MASSLESS SPIN-1/2 FERMIONS (idealized massless neutrinos)
@@ -15,7 +24,7 @@ THREE CONNECTED IDEAS:
      the Dirac/Weyl equation. Their two polarization states come
      from gauge invariance reducing the four components of A^μ to
      two transverse degrees of freedom, not from chiral decoupling.
-     See Paper §5 for the photon treatment via Riemann-Silberstein
+     See PAPER_REVISED.md for the photon treatment via Riemann-Silberstein
      F = E + iB.
 
   2. HIGGS FIELD AS THE OFF-DIAGONAL CHIRAL COUPLING
@@ -25,7 +34,7 @@ THREE CONNECTED IDEAS:
      With the Higgs VEV ⟨φ⟩ = v/√2: the off-diagonal coupling K = y_f · v/√2
      mixes the two clocks. In the CLOSED system this coupling is UNITARY: it
      drives coherent normal-mode (Rabi / Zitterbewegung) precession at
-     frequency 2K, with NO attractor and no relaxation (PAPER §2.2).
+     frequency 2K, with NO attractor and no relaxation (PAPER_REVISED.md §2.2).
      Mass = the off-diagonal coupling strength K = y_f · v/√2 — it sets the
      ZBW beat and the dispersion relation, NOT a synchronization rate.
 
@@ -69,7 +78,7 @@ EQUATIONS:
                                   φ_L − φ_R = −δ_CP (antiparticle, reversed clock)
 
    (The closed, unitary coupling has no such equilibrium — it precesses
-    coherently forever; see unitary_LR_rabi() below and PAPER §2.2.)
+    coherently forever; see unitary_LR_rabi() below and PAPER_REVISED.md §2.2.)
 
 3. Annihilation cross-section asymmetry (schematic):
    σ(particle) ∝ 1 + ε cos(δ_CP)
@@ -148,7 +157,7 @@ def print_massless_limit():
 # The sine-coupled form below is the OPEN-system / dissipative dynamics. It has
 # an attractor and is appropriate for the early-universe electroweak transition
 # (where it seeds the CP asymmetry), NOT for the closed-system mass coupling,
-# which is unitary (see unitary_LR_rabi in section 2b and PAPER §2.2).
+# which is unitary (see unitary_LR_rabi in section 2b and PAPER_REVISED.md §2.2).
 
 def kuramoto_L_R(t, phi, omega_L, omega_R, K, delta_CP):
     """
@@ -197,7 +206,7 @@ def equilibrium_offset(K, delta_CP, omega_L=1.0, omega_R=1.0):
 # K = m. This is UNITARY: it produces coherent normal-mode (Rabi /
 # Zitterbewegung) exchange between L and R at frequency 2K, with no attractor
 # and no relaxation. This — not the dissipative lock above — is what "mass" is
-# in the framework (it sets the ZBW beat and the dispersion). See PAPER §2.2.
+# in the framework (it sets the ZBW beat and the dispersion). See PAPER_REVISED.md §2.2.
 
 def unitary_LR_rabi(K, t_end=30.0, psi_L0=1.0, psi_R0=0.0):
     """
@@ -442,7 +451,7 @@ def run():
         ax.plot(t, offset_a, color=col, lw=1.5, linestyle='--')
     ax.set_xlabel('Time')
     ax.set_ylabel('Phase offset from equilibrium (rad)')
-    ax.set_title('CP violation: asymmetric lock\n(solid=particle, dashed=antiparticle)')
+    ax.set_title('CP violation: asymmetric lock (EXPLORATORY —\nnot in revised paper; solid=particle, dashed=antiparticle)')
     ax.legend(fontsize=7)
     ax.grid(True, alpha=0.3)
 
@@ -477,7 +486,7 @@ def run():
     ax.axhline(6e-10, color='k', linestyle='--', lw=1, label='Observed η ~ 6×10⁻¹⁰')
     ax.set_xlabel('δ_CP (degrees)')
     ax.set_ylabel('η = (N_matter − N_anti) / N_total')
-    ax.set_title('Matter survival fraction vs CP phase\nη ~ ε·sin²(δ_CP)')
+    ax.set_title('Matter survival fraction vs CP phase (EXPLORATORY)\nη ~ ε·sin²(δ_CP) — not in revised paper')
     ax.set_yscale('log')
     ax.legend(fontsize=8)
     ax.grid(True, alpha=0.3)
@@ -495,7 +504,7 @@ MASSLESS SPIN-1/2 FERMION (idealized massless ν):
   L and R clocks permanently orthogonal
   → 2 Weyl spinors, 2 helicity states only
   → No rest frame possible
-  (Photons are spin-1 vector bosons; see Paper §5)
+  (Photons are spin-1 vector bosons; see PAPER_REVISED.md)
 
 MASSIVE PARTICLE:
   Higgs gives K = y_f · v/√2 = m
@@ -549,7 +558,7 @@ OPEN (dissipative) — Panels B, D:
 The closed mass term does NOT
 synchronize the clocks; the lock is
 a separate dissipative phenomenon.
-(PAPER §2.2)
+(PAPER_REVISED.md §2.2)
 """
     ax.text(0.03, 0.92, regimes, ha='left', va='top', fontsize=8,
             transform=ax.transAxes, family='monospace',

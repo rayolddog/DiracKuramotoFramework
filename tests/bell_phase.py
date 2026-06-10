@@ -17,50 +17,24 @@ The time-phase model (as formulated below) IS a local hidden variable theory:
 So by Bell's theorem it cannot exceed CHSH = 2.  In fact model 2 achieves
 only CHSH ≈ √2 ≈ 1.41 — LESS than the classical bound.
 
-WHERE THE USER'S INSIGHT APPLIES:
-──────────────────────────────────
-Bell's factorization assumption is:
-    P(A,B | a,b,λ) = P_A(a | λ) · P_B(b | λ)
+WHAT THIS ESTABLISHES (PAPER_REVISED.md §1.3, §7.5, Appendix A):
+─────────────────────────────────────────────────────────────────
+This sub-classical result is the formal justification for confining the
+framework to the local MEASUREMENT MECHANISM and taking the Bell correlations
+from standard quantum mechanics. A model in which a local clock phase (shared
+at creation) determines the outcomes is, by Bell's theorem, a local
+hidden-variable model; model 2 shows it reaches only CHSH ≤ √2 — below even the
+classical bound of 2, and far below the quantum 2√2. The clock therefore CANNOT
+be the source of the correlations: the full spinor/polarization structure of
+standard QM is required to reach −cos(a−b).
 
-The user proposes that the DETECTOR PHASES Φ_D1, Φ_D2 are also hidden
-variables (entangled with the bulk), so the full hidden state is:
-    Λ = (φ_0, Φ_bulk)     with Φ_D1 = Φ_D2 = Φ_bulk (detector entanglement)
-
-If the synchronization process produces NON-LOCAL correlations between
-the particle's outcome and the detector's phase state, the factorization
-can fail. This is related to the "measurement-independence loophole":
-Bell requires P(λ | a,b) = P(λ) — that the hidden variable is independent
-of the measurement choice. In this model the clock synchronization couples
-λ to the measurement context.
-
-The correlation function below formally shows exactly where the factorization
-assumption enters and what extra term the time-phase model introduces.
-
-FORMAL DERIVATION:
-──────────────────
-Bell writes:
-    E(a,b) = ∫ A(a,λ) · B(b,λ) · ρ(λ) dλ
-
-Time-phase extension with detector entanglement:
-    E(a,b) = ∫∫ A(a,φ_0,Φ) · B(b,φ_0,Φ) · ρ(φ_0) · ρ_D(Φ) dφ_0 dΦ
-
-If Φ is SHARED (D1 and D2 both see same Φ_bulk), the integral does NOT
-factorize as P_A(a|φ_0) · P_B(b|φ_0) because the synchronization couples
-outcome probabilities to the SAME Φ, introducing a non-trivial cross-term:
-
-    E(a,b) = ∫∫ cos(a − φ_0 + Φ) · (−cos(b − φ_0 + Φ)) ρ dφ_0 dΦ
-           = −(1/2) cos(a−b)          [still -(1/2)cos with uniform Φ]
-
-To obtain the FULL quantum result −cos(a−b), the effective marginals must
-be super-classical — requiring |⟨A⟩| > 1/√2 for some measurement contexts.
-This can only occur if the synchronization introduces genuine contextuality
-(i.e., the outcome of A depends on what is being measured at B through the
-shared Φ). That would require the detector phases to be quantum-entangled
-resources, not just classical shared variables.
-
-CONCLUSION: The model correctly identifies WHERE Bell's proof breaks down
-(the detector-phase entanglement), but to reproduce full QM correlations the
-synchronization mechanism must be quantum (not classical Kuramoto) in nature.
+The framework's bulk reference is accordingly a PUBLIC, setting-independent
+common-cause variable that Bell's theorem permits and that does NOT relax any
+Bell assumption: the framework is not superdeterministic, detector settings are
+free, and no-signaling is preserved (§7.5). An earlier reading — that
+detector-phase entanglement with the bulk could open a "measurement-
+independence loophole" and let a clock model reproduce the quantum correlation
+— is withdrawn; the numerics below are precisely the evidence against it.
 """
 
 import numpy as np

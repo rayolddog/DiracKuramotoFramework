@@ -10,11 +10,11 @@ EVERETT'S CLAIM (1957):
 
   THE BRANCHING PROBLEM:
     • Where does the energy go when a branch becomes "inaccessible"?
-    • The vacuum energy of ~10^122 J/m³ (cosmological constant problem)
-      may be the accumulated energy of all "unrealized" branches never
-      accounting for their thermal fate.
     • Branches are not predicted to be observed — but neither are they
       predicted to disappear. The theory is silent on dissipation.
+    (The earlier draft's cosmological-constant speculation — that the
+     ~10^122 J/m³ vacuum energy is unrealized-branch energy — is NOT part
+     of PAPER_REVISED.md and is dropped; the accounting below is local, §3.1.)
 
 THIS MODEL — THERMALLY ABSORPTIVE SINGLE WORLD:
   Everett was right that ψ is real and persists.

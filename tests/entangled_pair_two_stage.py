@@ -266,7 +266,7 @@ def stage2_box(x_left, x_right, y, color):
                                  lw=1.0, linestyle="--"))
     ax.text((x_left + x_right) / 2, y,
             "Stage 2  $e\\leftrightarrow$ bulk  relax\n"
-            r"$\Gamma_{\rm bulk}=GM^2/(\hbar\Delta z)$"
+            r"$\Gamma_{\rm cap}\sim K_{\rm eff}$  (EM relaxation, T1/T2)"
             "\n(secondary radiation)",
             ha="center", va="center", fontsize=7.5, color=color)
 

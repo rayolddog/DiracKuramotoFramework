@@ -44,12 +44,15 @@ def gamma_pd(m_kg, dz_m):
     return G * m_kg**2 / (hbar * dz_m)
 
 def gamma_kps(m_kg, dPhi_Jkg):
-    """KPS source-mass-driven rate Gamma = m * dPhi / hbar.  rad/s."""
+    """Source-mass-driven gravitational-redshift phase rate Gamma = m*dPhi/hbar (rad/s).
+    (Per PAPER_REVISED.md §4.4/§6 this is the redshift of the local reference, not a
+    framework 'KPS' synchronization rate.)"""
     return m_kg * dPhi_Jkg / hbar
 
 def visibility(m_kg, dz_m, t_s, dPhi=None):
-    """DK fringe-contrast prediction. If dPhi is given, uses Gamma_KPS;
-    otherwise uses Gamma_PD. Returns V/V0 in [0, 1]."""
+    """Companion-[26] fringe-contrast estimate. If dPhi is given, uses the
+    gravitational-redshift phase rate; otherwise the Penrose–Diósi self-gravity
+    rate. Returns V/V0 in [0, 1]."""
     Gamma = gamma_kps(m_kg, dPhi) if dPhi else gamma_pd(m_kg, dz_m)
     dphi = Gamma * t_s
     return np.exp(-dphi**2 / 2.0)
@@ -161,7 +164,7 @@ def report():
     print()
     print("How to read m_falsify:")
     print("  This is the smallest test-particle mass at which the experiment's")
-    print("  visibility resolution sigma_V equals DK's predicted loss exp(-(Gm^2 t/hbar dz)^2 / 2).")
+    print("  visibility resolution sigma_V equals the Penrose-Diosi predicted loss exp(-(Gm^2 t/hbar dz)^2 / 2).")
     print("  It scales as (sigma_V * dz / t)^(1/4), so longer coherence time and ")
     print("  smaller superposition separation tighten the bound (smaller m_falsify).")
     print("  Note dz appears in the numerator: a larger superposition makes self-gravity")
@@ -169,7 +172,7 @@ def report():
     print()
     print("Caveats:")
     print("  - Uses Penrose-Diosi self-gravity branch (no external source mass).")
-    print("    Source-mass-driven experiments (Overstreet) feed Gamma_KPS, which")
+    print("    Source-mass-driven experiments (Overstreet) feed the redshift rate, which")
     print("    is mass-linear, not mass-quadratic.")
     print("  - sigma_V is the *visibility* resolution, not the phase resolution.")
     print("    For an interferometer where you only get a phase readout, convert")

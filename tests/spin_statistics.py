@@ -6,7 +6,7 @@ QUESTION:
 ─────────
 Can the Many Clocks Interpretation (MCI) of the Dirac equation, with its
 chiral clock pair (ψ_L, ψ_R) coupled by the off-diagonal chiral coupling
-K = m (Eq. 3 of PAPER_UNIFIED.md), reproduce the spin-statistics theorem?
+K = m (§2.1 of PAPER_REVISED.md), reproduce the spin-statistics theorem?
 And if so, where does the fermion sign live in its mathematical structure?
 
 CLAIM TESTED:
@@ -49,7 +49,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-from dirac_extension import (
+from spinor_utils import (
     σ1, σ2, σ3, I2, O2,
     dirac_spinor, singlet_dirac, singlet_pauli,
     energy, mixing_angle,
@@ -439,7 +439,7 @@ def run():
 ║                                                                      ║
 ║   INTERPRETIVE TAKE:                                                 ║
 ║     MCI commits to the chiral pair (ψ_L, ψ_R) to give mass via       ║
-║     K = m (Eq. 3 of PAPER_UNIFIED.md). The same chiral pair carries  ║
+║     K = m (§2.1 of PAPER_REVISED.md). The same chiral pair carries  ║
 ║     the spin-1/2 representation, and that representation is what     ║
 ║     forces 2π rotation to give −1 — which by Feynman/Finkelstein     ║
 ║     continuous deformation forces fermion antisymmetry under         ║

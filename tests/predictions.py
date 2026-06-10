@@ -69,16 +69,17 @@ It DEPARTS from standard QM predictions in these scenarios:
       rates. The photon branch (mid-IR threshold) remains a clean open
       prediction.
 
-  P6. GRAVITATIONAL FIELD AS SHARED Φ_BULK — gravitational Bell degradation
-      KEY INSIGHT: In this theory, gravity IS the large-scale Kuramoto synchronization
-      field (see gravity_twistor.py). Therefore Φ_bulk at any detector location is simply
-      the local gravitational phase:
-          Φ_bulk(x, t) = ω₀ · t · √(1 + 2Φ_grav(x)/c²)
-      Both detectors D1 and D2 independently couple to the SAME gravitational field —
-      they need not communicate. The Earth (Sun, Galaxy) is one coherent classical field
-      that pre-establishes Φ_bulk everywhere, at subluminal speed, before any experiment.
-      This resolves the question: "How does Φ_bulk stay coherent across km without FTL?"
-      Answer: The gravitational field IS the coherence mechanism.
+  P6. GRAVITATIONAL REDSHIFT OF THE LOCAL REFERENCE — gravitational Bell degradation
+      SCOPE (PAPER_REVISED.md §6.2, §4.4): the framework does NOT assert a
+      gravitational Kuramoto/synchronization rate — the Γ_grav ~ Gm²/(ℏΔz) form is
+      repudiated in §4.4 as a dimensional artifact, not a rate. The candidate effect
+      instead comes from the ordinary gravitational REDSHIFT of the electromagnetically-
+      maintained reference clocks at detectors held at different potentials Φ_A ≠ Φ_B,
+      AND it requires an extra, non-covariant postulate H' that does NOT follow from
+      standard QED (under QED the redshift cancels as a common-mode phase, Appendix C).
+      It is therefore a falsification test of that postulate, not a clean consequence of
+      the framework. The corrected, linewidth-set form is P6b below; the τ_sync (energy-
+      set) version here is superseded by τ_coh = 1/Δν.
 
       PREDICTION: Bell violation degrades when detectors are at different gravitational
       potentials ΔΦ_grav, because Φ_bulk(D1) ≠ Φ_bulk(D2):
@@ -106,7 +107,7 @@ It DEPARTS from standard QM predictions in these scenarios:
       conspiracy but by the ordinary fact that the gravitational field is pre-shared.
 
   P6b. LINEWIDTH-DEPENDENT GRAVITATIONAL BELL TEST (near-term experimental design)
-      KEY INSIGHT: Two photon time scales are distinct (see Paper §5.4):
+      KEY INSIGHT: Two photon time scales are distinct (see PAPER_REVISED.md §6.1):
           τ_sync = ℏ/E   (Kuramoto re-sync to detector; set by photon energy)
           τ_coh  = 1/Δν  (photon coherence time; set by linewidth, not energy)
       For the gravitational decoherence prediction, what matters is τ_coh:
@@ -141,7 +142,13 @@ It DEPARTS from standard QM predictions in these scenarios:
         4. Measure CHSH vs Δν
         5. QM predicts flat line. This theory predicts CHSH ∝ exp(−(ω₀·ΔΦ/c²/Δν)²/2)
 
-All predictions are in principle experimentally distinguishable from standard QM.
+SCOPE (PAPER_REVISED.md §1.3, §8): the framework does not aim to make novel
+predictions. P1–P5 demonstrate CONSISTENCY with standard QM — they are not
+distinctive signatures (P1 and P3 are explicitly reconciled with the km-scale
+and satellite Bell tests). The one candidate departure is the gravitational
+case (P6/P6b), and even it tests the additional, non-covariant postulate H' of
+§6.2 — not the framework's core. Read this script as "consistency catalog +
+one postulate test," not "six ways to beat standard QM."
 """
 
 import numpy as np

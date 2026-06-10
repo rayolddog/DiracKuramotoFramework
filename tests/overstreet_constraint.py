@@ -1,15 +1,23 @@
 """
-overstreet_constraint.py — DK framework prediction vs Overstreet et al. 2022
-=============================================================================
+overstreet_constraint.py — AB-visibility companion check vs Overstreet et al. 2022
+==================================================================================
 
-Drops the Overstreet/Kasevich gravitational AB measurement (Science 375, 226)
-onto the DK predicted phase + visibility curves to ask: does their result
-already constrain Gamma_bulk / K_pair?
+Companion-paper [26] (Aharonov–Bohm Visibility Envelope) material: drops the
+Overstreet/Kasevich gravitational AB measurement (Science 375, 226) onto the
+predicted phase + visibility curves to ask whether their result already
+constrains the gravitational-visibility coefficient.
+
+SCOPE (PAPER_REVISED.md §4.4): the quantity Gamma_bulk = G·M²/(ℏ·Δz) used below
+as an order-of-magnitude scale is the Penrose–Diósi gravitational self-energy
+rate, NOT a framework-derived rate — the main paper explicitly repudiates
+asserting a gravitational coherence rate of that form (a dimensional artifact
+from an unnormalized pairwise sum). It is retained here only as a
+back-of-envelope sensitivity scale for the companion AB-visibility analysis.
 
 Three checks:
-  1. Does DK reproduce the measured AB phase (m * Phi * t / hbar) ?
-  2. If we naively apply the gravitational_bell.py decoherence envelope
-     exp(-dphi^2 / 2) to the AB phase, what visibility loss is predicted?
+  1. Does the framework reproduce the measured AB/COW phase (m·Φ·t/ℏ)?  [standard]
+  2. Applying a Gaussian phase-noise envelope exp(-dφ²/2) to the AB phase,
+     what visibility loss is implied?
   3. What would Overstreet's *visibility* sensitivity allow us to constrain?
 """
 
@@ -43,10 +51,10 @@ dPhi_peak = abs(Phi_close - Phi_far)
 duty = 0.3   # rough fraction; the actual time profile is non-trivial (Eq. 1 in paper)
 dPhi_eff = duty * dPhi_peak
 
-# 2. DK prediction: phi_DK = m * dPhi * T / hbar  (KPS coupling, gravitational_bell.py:119)
+# 2. AB/COW phase: phi_DK = m * dPhi * T / hbar  (standard interferometer phase; companion [26])
 phi_DK = m_Rb87 * dPhi_eff * T_tot / hbar
 
-# 3. Naive visibility envelope from gravitational_bell.py:120
+# 3. Naive Gaussian phase-noise visibility envelope
 #    S = 2sqrt(2) * exp(-dphi^2 / 2)  -> visibility V/V0 = exp(-dphi^2 / 2)
 V_loss_naive = 1 - np.exp(-phi_meas**2 / 2)
 
@@ -67,10 +75,12 @@ alpha_bound = eta_bound / (abs(Phi_close) / c**2)
 #    K_pair ~ hbar * omega_imaging for Rb D2 line (780 nm)
 omega_imaging = 2*np.pi * c / 780e-9
 K_pair_natural = omega_imaging                  # rad/s
-# Gamma_bulk for the apparatus (M ~ 100 kg of vacuum chamber, Delta z ~ 1 m)
+# Penrose–Diósi self-energy scale for the apparatus (M ~ 100 kg, Delta z ~ 1 m).
+# NOTE (PAPER_REVISED.md §4.4): this G*M^2/(hbar*Dz) form is NOT a framework rate —
+# it is repudiated there as a dimensional artifact and used here only as a scale.
 M_app = 100.0
 Dz_app = 1.0
-Gamma_bulk_natural = G * M_app**2 / (hbar * Dz_app)
+Gamma_bulk_natural = G * M_app**2 / (hbar * Dz_app)   # Penrose–Diósi scale only
 ratio_natural = Gamma_bulk_natural / K_pair_natural
 
 print("="*72)
@@ -84,7 +94,7 @@ print(f"Measured |phi_DS| (Rx=9 cm):                   {phi_meas:.3f} +/- {phi_m
 print(f"  -> agreement: DK reproduces COW/AB phase to within geometric duty cycle.")
 print()
 print("Visibility-loss prediction:")
-print(f"  Naive Gaussian envelope from chsh_gravitational(): {V_loss_naive*100:.2f}%")
+print(f"  Naive Gaussian phase-noise envelope:               {V_loss_naive*100:.2f}%")
 print(f"  (NOTE: this formula treats dphi as stochastic; here it's deterministic,")
 print(f"   so the actual DK prediction for *coherent* AB phase is zero visibility loss.)")
 print()

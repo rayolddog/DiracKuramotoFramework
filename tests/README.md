@@ -1,220 +1,116 @@
 # Tests for the DiracKuramotoFramework
 
-This directory contains numerical verification scripts for the claims in
-`PAPER_UNIFIED.md` and `EQUATIONS.md`. Each script verifies a specific
-claim, prints a pass/fail summary, and exits with status code 0 on
+Numerical verification scripts for **`PAPER_REVISED.md`** — *"Two Regimes of
+the Chiral Mass Coupling: Quantum Measurement as Bath-Induced Synchronization."*
+Each script runs in a few seconds, prints its own summary, and exits 0 on
 success.
 
-The tests are organized by which section of the paper they verify, so a
-reviewer can locate the corresponding numerical evidence for any
-particular claim in the manuscript.
+> **Scope discipline (why this suite is small).** The revised paper concedes
+> Stage 1 (resonant capture) to **standard QED** and the Bell correlations to
+> **standard QM** (adopted, not derived; Appendix A shows a clock-as-local-
+> variable model is sub-classical). A script therefore earns its place only if
+> it probes something framework-*specific*: the closed→open boundary (§2.2–2.3),
+> the sub-classical no-go (App A), the honest Born-rule negative (§3.3/§7.3),
+> the spin-statistics consistency check (App B), or the one candidate signature
+> (§6). Scripts that merely reproduced a standard QED/QM result, or supported
+> sections cut from the revised paper, were removed (see *Removed in this
+> revision* below).
 
 ## Quick start
 
 ```bash
-# Run a specific test
-python tests/simplicial_alignment.py
-
-# Run all tests in sequence
-for f in tests/*.py; do
-    echo "===== $f ====="
-    python "$f"
+export MPLBACKEND=Agg          # headless figure backend
+python tests/bell_phase.py     # run one script
+for f in tests/*.py; do        # run all (skips the hardware script below)
+    [ "$(basename "$f")" = bulk_sync_hardware.py ] && continue
+    [ "$(basename "$f")" = spinor_utils.py ] && continue
+    echo "===== $f ====="; python "$f"
 done
 ```
 
-Each script runs in a few seconds on a modern laptop. No GPU is required.
-The framework's main applications (e.g., `ich-maxvit`) require heavier
-infrastructure, but verification of the theoretical claims does not.
-
 ## Dependencies
 
-- Python 3.10 or newer
-- numpy
-- scipy
-- matplotlib (for the figure-producing scripts)
-- qiskit (only for `bell_energy_test.py`, `bulk_sync_asymmetry.py`, `bulk_sync_hardware.py`)
+- Python 3.10+
+- numpy, scipy, matplotlib
+- qiskit — only for `bulk_sync_asymmetry.py` and `bulk_sync_hardware.py`
+- `bulk_sync_hardware.py` additionally needs live IBM Quantum credentials and
+  is **not** part of the offline suite.
 
-The simplicial-Kuramoto tests in this directory do not depend on the
-`simplicial-kuramoto` package of Arnaudon et al. — the relevant incidence
-matrices and operators are constructed from first principles for
-transparency. Reviewers can independently verify the constructions against
-Nurisso et al. (2024) without installing additional packages.
+## Shared module
+
+| File | Role |
+|---|---|
+| `spinor_utils.py` | Pauli/Dirac spinor primitives (σ-matrices, `dirac_spinor`, `mixing_angle`, the singlets, 4×4 spin operators). Imported by `dirac_extension.py` and `spin_statistics.py` so they share one source of truth. Not a test. |
 
 ## Test catalog
 
-The classification below follows `PAPER_UNIFIED.md` §8.4 ("Categorization
-of Supporting Numerical Code"). Categories are: **Evidential** (could have
-falsified a central claim), **Quantitative prediction** (operationalizes a
-testable claim), **Consistency check**, **Illustrative**, **Clarifying**
-(disarms a misreading), **Pedagogical**, **Negative result**,
-**Speculative**, **Mixed**.
+### Framework-distinctive core
 
-### Evidential
-
-| Script | What it does |
+| Script | Verifies |
 |---|---|
-| `spin_statistics.py` | Six tests; fermion antisymmetry sign across 6 decades of v/c. Could have falsified the chiral-pair commitment (Appendix D); did not. |
+| `bell_phase.py` | **Appendix A.** The clock-as-local-variable (Malus) model gives `E = −½cos(Δ)`, CHSH ≤ √2 — *sub-classical*. This is the load-bearing no-go: the correlations must come from standard QM, so synchronization is confined to the local measurement mechanism. |
+| `resynchronization_calc.py` | **§3.3 / §7.3 (negative result).** The Dirac/Kuramoto dynamics do **not** reproduce the Born rule `cos²` — definiteness only, "why squared" left open. Confirms the paper's honest scoping. |
+| `higgs_clock.py` | **§2.2–2.4.** `K = m`; the *closed* coupling is unitary normal-mode (Rabi/ZBW) precession with no attractor, vs the *open* dissipative Adler lock. (CP-violation / baryogenesis panels are marked **exploratory — not in the revised paper**.) |
+| `kuramoto_sync.py` | **§2.3.** The dissipative Adler/Kuramoto lock itself — what `K = m` synchronization looks like in time once a bath is present. |
+| `spin_statistics.py` | **Appendix B (consistency check).** Fermion exchange sign = −1 across six decades in momentum; the Kuramoto phase ODE alone is sign-free. Confirms the chiral-pair reframing does not break spin-statistics. |
 
-### Quantitative prediction
+### The one candidate signature
 
-| Script | What it does |
+| Script | Verifies |
 |---|---|
-| `gravitational_bell.py` | Implements §5.4 CHSH(Δν) = 2√2·exp(−δφ²/2). The framework's sharpest distinguishable prediction. |
-| `predictions.py` | Catalog of P1–P6 testable predictions, with retractions explicitly marked (P1, P3 falsified by km-scale Bell tests). |
-| `bell_energy_test.py` | Qiskit CHSH simulation testing K(E) scalings vs photon energy; discriminates K∝1/E from K∝ω from null QM. |
-| `sg_angular.py` | Stern-Gerlach angular dependence on local gravity (~4% effect). Tests gravitational Kuramoto coupling beyond Bell tests. |
-| `bulk_sync_asymmetry.py` | Single-particle vs bulk phase-rotation scaling (√N vs N). Tests the measurement asymmetry of §3. |
-| `predict_visibility_vs_mass.py` | Threshold-mass curve for a proposed matter-wave interferometer test of DK; companion figure `predict_visibility_vs_mass.png`. |
+| `predictions.py` | **§6.** P1–P5 are framed as *consistency with standard QM*; P6/P6b are the linewidth-dependent gravitational Bell effect, `δφ = ω·ΔΦ/(c²·Δν)`, `CHSH = 2√2·exp(−δφ²/2)` — explicitly a test of the **non-covariant postulate H′ of §6.2**, not the framework's core. |
 
-### Consistency check
+### Stage-2 measurement asymmetry (incl. hardware)
 
-| Script | What it does |
+| Script | Verifies |
 |---|---|
-| `bulk_sync_hardware.py` | IBM Quantum hardware execution of the bulk-sync circuits with readout mitigation, dynamical decoupling, and ZNE. GHZ slope ≈ 1 confirmed; product slope below noise floor at K=0.06. Not framework-distinctive, but demonstrates digital-hardware reproduction of the simulation. |
-| `overstreet_constraint.py` | Drops the Overstreet/Kasevich 2022 atom-interferometer result (Science 375, 226) onto the DK predicted phase + visibility curves. Verdict: Overstreet's sensitivity is ~10⁻¹⁴× too coarse to constrain DK's natural Γ_bulk/K_pair. |
+| `bulk_sync_asymmetry.py` | **§3.3.** Single-particle vs bulk phase-rotation scaling (√N vs N) — the M ≫ m inertia asymmetry that delivers one definite outcome. Discriminating variable is circuit structure (hardware-testable), not photon energy. |
+| `bulk_sync_hardware.py` | IBM Quantum execution of the bulk-sync circuits (readout mitigation, dynamical decoupling, ZNE). Demonstrates digital-hardware reproduction of the simulation. Needs live hardware. |
 
 ### Illustrative
 
-| Script | What it does |
+| Script | Verifies |
 |---|---|
-| `dirac_extension.py` | Three-term Bell decomposition E_LL + E_SS + E_LS = −cos(a−b) to machine precision; visualizes the weight redistribution of Appendix A. |
-| `gravity_twistor.py` | Poisson ↔ Kuramoto field-equation correspondence; twistor connection. Visualizes §3.5 and `EQUATIONS.md` §8. |
-| `entangled_pair_two_stage.py` | Schematic figure for the two-stage measurement of a polarization-entangled photon pair (§3.4 / §4.4). |
+| `dirac_extension.py` | The three-term block decomposition `E_LL + E_SS + E_LS = −cos(a−b)` — *an identity, not a discovery*; visualizes how the block weights redistribute with v/c. ZBW described as the ±E normal-mode splitting (§2.4). |
+| `entangled_pair_two_stage.py` | Schematic of the two-stage (capture → bulk relaxation) measurement of a polarization-entangled pair (§3.1, §5). Stage-2 relaxation labeled as EM-mediated (Γ_cap ~ K_eff, T1/T2). |
 
-### Clarifying
+### Companion paper [26] (AB-Visibility Envelope)
 
-| Script | What it does |
+These support the cited companion preprint, *not* the main paper's claims.
+
+| Script | Verifies |
 |---|---|
-| `bell_phase.py` | Establishes that the Malus-law toy is sub-classical (CHSH ≤ √2), distinct from the Dirac large block. Disarms the §A.5 conflation. |
-| `local_causality.py` | Identifies where Bell's factorization actually breaks in MCI. Disarms the superdeterminism misreading (§7.6). |
+| `overstreet_constraint.py` | Whether Overstreet/Kasevich 2022 already constrains the gravitational-visibility coefficient. Uses the Penrose–Diósi self-energy scale as an order-of-magnitude reference only (the `Gm²/ℏΔz` form is **not** a framework rate; §4.4). |
+| `predict_visibility_vs_mass.py` | Threshold-mass curve for a matter-wave interferometer test, via the Penrose–Diósi branch. |
 
-### Pedagogical
+### Mixed / with disclosed caveats
 
-| Script | What it does |
+| Script | Verifies |
 |---|---|
-| `kuramoto_sync.py` | Two-oscillator synchronization dynamics under K > 0. Shows what K = m sync looks like in time. |
-| `higgs_clock.py` | K = m identification and antiparticle reverse-clock dynamics. Illustrates `EQUATIONS.md` §6. |
+| `everett_thermal.py` | Single-world energy accounting (§3.1): residual amplitude thermalizes rather than branching. Local accounting only; the earlier cosmological-constant speculation is dropped. |
+| `vacuum_temperature.py` | ZPF / temperature / orbitals (§4.3). The Brownian-motion section uses a phenomenological `K` decoupled from `K = m` and is flagged in-file (see `EQUATIONS.md` §10). |
 
-### Negative result
+## Removed in this revision
 
-| Script | What it does |
-|---|---|
-| `resynchronization_calc.py` | Tests whether re-synchronization alone reproduces −cos(a−b). Confirms the Dirac spinor structure is necessary; closes a misreading. |
+Eight scripts were deleted to keep the suite aligned with the revised paper:
 
-### Speculative
+- **Redundant with / repudiated by the revised paper:** `local_causality.py`
+  (argued the abandoned *local* explanation of Bell correlations — the framework
+  is single-world but **nonlocal**, §7.2/§7.5); `bell_energy_test.py`
+  (CHSH-vs-photon-**energy**, but §6.4 makes linewidth, not energy, the
+  discriminator); `gravitational_bell.py` (gravity-as-Kuramoto-sync, repudiated
+  in §4.4; the correct effect lives in `predictions.py` P6b).
+- **Repudiated gravitational rate `Γ ~ Gm²/(ℏΔz)`:** `gravity_twistor.py`,
+  `sg_angular.py` (§4.4 calls this a dimensional artifact, not a rate).
+- **Supported the cut cochain Appendix:** `hodge_decomposition.py`,
+  `hodge_dirac.py`, `simplicial_alignment.py` (cochain ontology moved to a
+  separate note).
 
-| Script | What it does |
-|---|---|
-| `everett_thermal.py` | Single-world energy accounting (paper marks this speculative). Illustrates §3.8. |
-
-### Mixed
-
-| Script | What it does |
-|---|---|
-| `vacuum_temperature.py` | ZPF / temperature / orbitals (claims 1–3); Brownian retracted (claim 4). Three illustrative claims with one disclosed retraction (see `EQUATIONS.md` §10). |
-
-### Appendix B: Cochain Ontology (simplicial Kuramoto alignment)
-
-These three scripts support Appendix B and the alignment with the
-simplicial Kuramoto framework of Nurisso et al. (Chaos 2024,
-arXiv:2305.17977).
-
-#### `simplicial_alignment.py`
-
-**Verifies §B.4** (K = m at the cochain level).
-
-Demonstrates that the chiral-pair Kuramoto *model* (K = m; the dissipative
-measurement-level Adler form of `EQUATIONS.md` §6, not a reduction of the
-closed Dirac equation) embeds as the manifold-like simple simplicial Kuramoto
-model on a 1-simplex, per Theorem 1 of Nurisso et al. Three sub-tests:
-
-1. **Trajectory equivalence.** The framework's chiral form and Nurisso's
-   incidence-matrix form integrate to bit-identical trajectories at
-   δ_CP = 0. (Result: ~0 residual at machine precision.)
-2. **Harmonic gauge mode.** U(1) phase shifts of the framework (`PAPER`
-   §1.5 item 6) are equivalent to the harmonic phase-shift symmetry of
-   Nurisso §III.E. (Result: ~1e-12 invariance.)
-3. **Synchronization timescale.** τ_sync = 1/(2K) for the two-clock case
-   across four decades of K. (Result: 0.4% accuracy in the linear
-   regime, exactly matching the analytical correction at d₀ = 0.1.)
-
-Runtime: ~1 second.
-
-#### `hodge_decomposition.py`
-
-**Verifies §B.5** (Hodge decomposition as coherence structure).
-
-Demonstrates the orthogonal decomposition of edge cochains into
-curl-free, harmonic, and divergence-free components, and the
-independent evolution of each component under simplicial Kuramoto
-dynamics. On a 4-node, 5-edge, 1-face simplicial complex (the smallest
-with all three components nontrivial). Five sub-tests:
-
-1. **Projector orthogonality.** P_cf, P_h, P_df are mutually orthogonal
-   and sum to the identity. (Result: ~1e-16.)
-2. **Component-norm evolution.** Visual confirmation that the curl-free
-   and divergence-free components synchronize while the harmonic
-   component is frozen.
-3. **Harmonic inertness.** With ω = 0, the harmonic component drifts by
-   less than 1e-15 over the full integration window.
-4. **Orthogonality preservation.** The three Hodge subspaces stay
-   orthogonal throughout evolution.
-5. **Structural confinement.** The Kuramoto vector field never produces
-   a harmonic component.
-
-Runtime: ~1 second.
-
-#### `hodge_dirac.py`
-
-**Verifies §B.3** (the Hodge-Dirac operator) and **§B.4** (chiral
-decomposition at the cochain level).
-
-Demonstrates the central algebraic property that justifies the name
-"Dirac" for the operator 𝒟 = d + δ: it is the first-order square root
-of the Laplacian. Six sub-tests:
-
-1. **𝒟² = Δ exactly.** The defining algebraic identity. (Result: 0.)
-2. **{𝒟, Γ} = 0 exactly.** Anticommutation with the chirality grading
-   Γ: ψ⁽ᵏ⁾ ↦ (−1)ᵏ ψ⁽ᵏ⁾, the discrete analog of γ₅. (Result: 0.)
-3. **𝒟 = 𝒟ᵀ.** Symmetry (Hermiticity for real complexes). (Result: 0.)
-4. **Spectrum symmetric about zero.** 4 positive, 4 negative, 2 zero
-   eigenvalues — with the zero eigenvalues corresponding to harmonic
-   modes (dim ker 𝒟 = β₀ + β₁ + β₂ = 1 + 1 + 0 = 2).
-5. **Grade-pure harmonic basis.** Harmonic modes are computed
-   separately for ker Δ⁰ (the constant function on nodes) and ker Δ¹
-   (the open loop on edges), confirming the Hodge theorem.
-6. **Γ maps ±λ eigenspaces.** For each positive eigenvalue λ, Γψ is
-   verified to be an eigenvector with eigenvalue −λ. (Result: ~1e-15.)
-
-Runtime: ~1 second.
-
-## Continuous integration
-
-*[Optional: add a GitHub Actions workflow that runs all tests on push.
-Sample `.github/workflows/tests.yml`:]*
-
-```yaml
-name: Verification tests
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
-      - run: pip install numpy scipy matplotlib qiskit
-      - run: |
-          for f in tests/*.py; do
-              echo "===== $f ====="
-              python "$f"
-          done
-```
+These remain recoverable from git history.
 
 ## Citing the test suite
 
-When citing these tests in a publication, please cite the framework
-itself via the Zenodo DOI in `CITATION.cff` at the repository root.
+Cite the framework via the Zenodo DOI in `CITATION.cff` at the repository root.
 
 ## License
 

@@ -61,13 +61,14 @@ trace linearity), not a derivation. What varies with momentum is the
                     distinct and should not be conflated.
   At v/c → 1:  the three blocks contribute comparably.
 
-CONNECTION TO ZITTERBEWEGUNG:
+CONNECTION TO ZITTERBEWEGUNG (PAPER_REVISED.md §2.4):
 ───────────────────────────────
-Zitterbewegung is the interference between positive and negative frequency
-components — large and small Dirac spinors oscillating at 2mc²/ℏ.
-In the time-phase language: it is the beat frequency between the temporal
-clock (ω_t = E/ℏ) and the spatial clock (ω_s = p·v/ℏ), i.e., the rotation
-rate of the property vector relative to the time-phase vector.
+Zitterbewegung is the interference between the positive- and negative-energy
+normal modes (+E and −E) — the large and small Dirac components — whose
+splitting is 2E, equal to 2mc²/ℏ at rest. This ±E normal-mode splitting IS
+the beat; it is NOT the difference of a "temporal clock" ω_t = E/ℏ and a
+"spatial clock" ω_s = p·v/ℏ (that difference tends to mc²/ℏ at rest, not
+2mc²/ℏ). The de Broglie carrier is their symmetric mode at ω = E/ℏ.
 """
 
 import numpy as np
@@ -78,96 +79,16 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 
-# ─── Pauli matrices ───────────────────────────────────────────────────────────
-
-σ1 = np.array([[0, 1], [1, 0]], dtype=complex)
-σ2 = np.array([[0, -1j], [1j, 0]], dtype=complex)
-σ3 = np.array([[1, 0], [0, -1]], dtype=complex)
-I2 = np.eye(2, dtype=complex)
-O2 = np.zeros((2, 2), dtype=complex)
-
-
-def spin_op_2(angle):
-    """2×2 spin operator for measurement along (sin θ, 0, cos θ)."""
-    return np.cos(angle) * σ3 + np.sin(angle) * σ1
-
-
-# ─── Dirac spinors (natural units: m = c = ℏ = 1) ───────────────────────────
-
-def energy(p, m=1.0):
-    return np.sqrt(p**2 + m**2)
-
-
-def dirac_spinor(p_z, spin_up: bool, m=1.0):
-    """
-    Positive-energy Dirac spinor for momentum p_z along z.
-    u(p, ↑) = N · [1, 0,  r, 0]^T
-    u(p, ↓) = N · [0, 1,  0,-r]^T
-    where r = p/(E+m) = tan(θ_rel/2),  N = √((E+m)/(2E))
-    """
-    E = energy(p_z, m)
-    r = p_z / (E + m)                         # small/large ratio
-    N = np.sqrt((E + m) / (2 * E))            # normalisation
-    if spin_up:
-        return N * np.array([1, 0, r, 0], dtype=complex)
-    else:
-        return N * np.array([0, 1, 0, -r], dtype=complex)
-
-
-def mixing_angle(p_z, m=1.0):
-    """
-    θ_rel: the rotation angle between time-phase and property vectors.
-    tan(θ/2) = |p|/(E+m)  →  θ = 2·arctan(|p|/(E+m))
-    """
-    E = energy(p_z, m)
-    return 2 * np.arctan(abs(p_z) / (E + m))
-
-
-# ─── Singlet state (8-component: two 4-component Dirac spinors) ───────────────
-
-def singlet_dirac(p, m=1.0):
-    """
-    Singlet of two spin-1/2 Dirac particles:
-      A with momentum +p along z
-      B with momentum -p along z
-
-    |Ψ⟩ = (u_A(+p,↑) ⊗ u_B(−p,↓) − u_A(+p,↓) ⊗ u_B(−p,↑)) / √2
-    """
-    uA_up = dirac_spinor(+p, True,  m)
-    uA_dn = dirac_spinor(+p, False, m)
-    uB_up = dirac_spinor(-p, True,  m)
-    uB_dn = dirac_spinor(-p, False, m)
-    return (np.kron(uA_up, uB_dn) - np.kron(uA_dn, uB_up)) / np.sqrt(2)
-
-
-def singlet_pauli():
-    """Standard NR 4-component singlet (2×2)."""
-    up = np.array([1, 0], dtype=complex)
-    dn = np.array([0, 1], dtype=complex)
-    return (np.kron(up, dn) - np.kron(dn, up)) / np.sqrt(2)
-
-
-# ─── Measurement operators ────────────────────────────────────────────────────
-
-def spin_op_4(angle):
-    """
-    4×4 Dirac spin operator: Σ·n̂ = [[σ·n̂, 0], [0, σ·n̂]]
-    Measures spin in BOTH large and small subspaces.
-    """
-    s = spin_op_2(angle)
-    return np.block([[s, O2], [O2, s]])
-
-
-def spin_op_large_only(angle):
-    """4×4 operator that measures only the large (upper) component."""
-    s = spin_op_2(angle)
-    return np.block([[s, O2], [O2, O2]])
-
-
-def spin_op_small_only(angle):
-    """4×4 operator that measures only the small (lower) component."""
-    s = spin_op_2(angle)
-    return np.block([[O2, O2], [O2, s]])
+# ─── Spinor utilities (shared; see spinor_utils.py) ──────────────────────────
+# Pauli matrices, Dirac spinors, the mixing angle, the singlets, and the 4×4
+# spin operators were factored out into spinor_utils.py so that this script and
+# spin_statistics.py share a single source of truth.
+from spinor_utils import (
+    σ1, σ2, σ3, I2, O2,
+    spin_op_2, energy, dirac_spinor, mixing_angle,
+    singlet_dirac, singlet_pauli,
+    spin_op_4, spin_op_large_only, spin_op_small_only,
+)
 
 
 # ─── Correlation computation ──────────────────────────────────────────────────
@@ -394,10 +315,10 @@ def run():
 ║    Sum = -cos(a-b) is an identity, not a discovery                   ║
 ║    Block weights redistribute with v/c (the substantive content)     ║
 ║                                                                      ║
-║  ZITTERBEWEGUNG CONNECTION:                                          ║
-║    Zbw oscillation = beat between ω_t = E/ℏ and ω_s = p·v/ℏ        ║
-║    = rotation rate of property vector around time-phase vector       ║
-║    Zbw frequency = 2mc²/ℏ = ω_t − ω_s (at rest)                   ║
+║  ZITTERBEWEGUNG (PAPER_REVISED.md §2.4):                             ║
+║    Zbw beat = ±E normal-mode splitting (+E, −E), 2E = 2mc²/ℏ        ║
+║    at rest.  NOT ω_t − ω_s (that gives mc²/ℏ at rest, not 2mc²/ℏ).  ║
+║    de Broglie carrier = symmetric mode at ω = E/ℏ.                   ║
 ╚══════════════════════════════════════════════════════════════════════╝
 """)
 

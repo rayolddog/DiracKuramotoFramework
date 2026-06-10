@@ -16,7 +16,10 @@ QUBIT ↔ CLOCK MAPPING:
   - Qubit in |+⟩ = clock at phase θ=0 (X eigenstate)
   - Rzz(K) gate  = Kuramoto phase coupling, strength K
   - ⟨X_i⟩       = cos(accumulated phase φ_i)
-  - K ∝ 1/E      = inverse energy (higher energy → smaller phase rotation per hit)
+  - K ∝ 1/E      = inverse energy (a per-circuit coupling knob here, NOT a claim
+                   that observable CHSH depends on photon energy — that energy-
+                   dependence reading is repudiated; PAPER_REVISED.md §6.4. The
+                   √N-vs-N scaling below is the actual, energy-independent test.)
 
 PREDICTIONS:
   Product bulk  → ⟨X_single⟩ = cos^N(K),  φ_s ≈ sqrt(N)·K
