@@ -11,9 +11,9 @@
 journal guidelines, LLMs do not satisfy authorship criteria; the human author
 bears full responsibility for all content.*
 
-*Companion paper to: Bramble, J. (2026), "Many Clocks Interpretation of Quantum
-Mechanics: Mass as Chiral Coupling, Re-synchronization in the Bulk as
-Measurement" [PAPER_UNIFIED, under review].*
+*Companion paper to: Bramble, J. (2026), "Two Regimes of the Chiral Mass
+Coupling: Quantum Measurement as Bath-Induced Synchronization" (the Many Clocks
+Interpretation; companion preprint, under review).*
 
 ---
 
@@ -109,6 +109,21 @@ on the grounds that ω_Z is the gap between positive- and negative-energy
 solutions of the Dirac equation [3], and that the lowest-lying vacuum excitation
 coupling to a charged particle is a virtual electron–positron pair with
 energy gap 2m_ec². Both clocks therefore tick at the same intrinsic rate.
+
+**On the factor of two.** It is essential to be explicit about *which* electron
+clock locks here, because the Dirac electron carries two distinct frequencies:
+the rest-frame wavefunction phase advances at m_ec²/ℏ, while the zitterbewegung
+beat — the interference of positive- and negative-energy amplitudes — runs at
+2m_ec²/ℏ. The locking posited in this paper is between the electron's
+*zitterbewegung beat* and the vacuum's *virtual-pair oscillation*, both of which
+sit at 2m_ec²/ℏ; it is **not** a locking of the bare rest-phase clock at m_ec²/ℏ.
+Committing to the pair/zitterbewegung frequency on both sides is what makes the
+zero-mismatch condition Δω = 0 exact rather than approximate, and it fixes the
+quantitative scale of the envelope below: ω_Z = 2m_ec²/ℏ enters the prefactor
+(ω_Z/K)² of Eq. 13, so the factor of two is not cosmetic — using m_ec²/ℏ instead
+would change the predicted visibility deficit by a factor of four. The
+deterministic AB phase eΦ/ℏ (§2.4) is unaffected by the choice, since its
+coefficient comes from minimal coupling on the virtual pair, not from ω_Z.
 
 The coupling is taken to have the Kuramoto form:
 
@@ -208,7 +223,8 @@ is at ω_Z and so is the Dirac clock. Δω = 0 in any frame, locking is perfect,
 and the visibility envelope is γ-independent. The framework reduces to standard
 QED on AB.
 
-**Fork B — preferred-frame locking.** If the vacuum oscillator has a definite
+**Fork B — preferred-frame locking (the Vacuum Preferred-Frame Hypothesis, VPFH;
+companion [2] §8).** If the vacuum oscillator has a definite
 frequency in the lab frame (the rest frame of the apparatus, or more generally
 the local mass–energy rest frame), then a moving electron sees the vacuum's
 natural frequency Lorentz-boosted to ω_Z/γ in its own rest frame. The Dirac
@@ -400,9 +416,10 @@ systematics provided enough voltage points are taken.
 - **Null result (V flat with γ within stated systematics).** Falsifies
   strong-coupling Dirac–Kuramoto under Fork B. The framework reduces to the
   Lorentz-covariant Fork A reading, which is interpretationally distinct from
-  standard QED but experimentally equivalent on AB. The unified-paper
-  predictions remain (Bell-timing differences, gravitational decoherence
-  scaling), but AB loses its role as a test.
+  standard QED but experimentally equivalent on AB. The companion paper's
+  predictions remain (the linewidth-dependent gravitational Bell test, itself
+  contingent on the postulate stated there; gravitational decoherence scaling),
+  but AB loses its role as a test.
 - **Positive result, (1 − 1/γ)² scaling confirmed.** Pins K to a specific
   value within a factor of a few. Opens a quantitative spectroscopy of the
   vacuum-locking parameter. Provides the first measurement-level handle on the
@@ -416,47 +433,50 @@ systematics provided enough voltage points are taken.
 
 ## 6. Discussion
 
-### 6.1 Why the framework requires strong coupling
+### 6.1 The status of the coupling K: an empirical parameter, not a derived one
 
-The most uncomfortable commitment of Fork B as developed here is that K must
-lie near ω_Z rather than at the perturbative-QED-natural scale α·ω_Z. We
-sketch why this is defensible.
+The framework's distinctive prediction is non-trivial only in a window around
+K ~ ω_Z, and we must be candid that the framework does not derive this value.
+Two scales bracket the question. The perturbative-QED-natural rate at which a
+free electron exchanges *single* photons with the vacuum is α·ω_Z; as §3.4 and
+§4 show, that value is excluded by existing AB data by a factor of order 30 in
+K. The framework therefore needs a genuinely non-perturbative coupling,
+K ~ ω_Z, roughly two orders of magnitude above the single-photon rate.
 
-In standard radiative-reaction language, α·ω_Z is the rate at which a free
-electron exchanges *single* photons with the vacuum. In the Dirac–Kuramoto
-picture, K is not a single-photon coupling but a *synchronization rate* — the
-rate at which the electron's phase locks to a collective vacuum oscillator that
-is itself the superposition of many virtual-pair fluctuations. In a Kuramoto
-network, the locking rate scales with the *effective network coupling*, not
-with the elementary coupling per oscillator pair; for a fully connected
-oscillator field with N coupled vacuum modes within a coherence volume, the
-collective locking rate can be parametrically enhanced by √N or by N depending
-on the network topology [12].
+We resist the temptation to manufacture this enhancement from oscillator-network
+counting. One might argue that K is not a single-photon coupling but a
+collective *synchronization rate* over N vacuum modes within a coherence volume,
+and that the network coupling grows as √N or N. That argument does not survive
+scrutiny: a collective synchronization rate is not the unnormalized sum of
+pairwise couplings. The mean-field Kuramoto coupling is *intensive* — the
+standard model normalizes the per-pair coupling by the number of oscillators
+precisely so that the collective field stays finite as N → ∞ — so a naive
+mode-sum does not legitimately enhance K to ω_Z. (This is the same
+normalization error that would otherwise inflate the gravitational coherence
+rate in the companion framework, flagged here to avoid it in both places.)
 
-This is not a derivation of K ~ ω_Z, but it is a plausibility argument that
-K need not be α-suppressed. A first-principles derivation of K from the
-Dirac–Kuramoto field theory would require summing the vacuum oscillator
-network density at zitterbewegung frequency — a calculation we do not attempt
-here, but which is a natural follow-up.
+We therefore treat K honestly as a **free parameter, bounded by experiment and
+not derived by the present model.** Existing AB data require K ≳ ω_Z/5 (§4); the
+strong-coupling regime K ~ ω_Z in which the framework is testable is an
+empirical hypothesis, falsifiable by the V-vs-γ scan of §5, not a result we can
+presently compute. If the true coupling is the perturbative α·ω_Z, the framework
+is already excluded; if K → ∞, it reduces to standard QED. The experiment
+determines which.
 
-### 6.2 Connection to gravitational-coherence damping
+### 6.2 Why there is no gravitational K-modulation channel
 
-The unified paper [2] develops a separate prediction in which gravitational
-potential damps vacuum-mode coherence during Stage 2 (bulk relaxation) of
-measurement. The natural translation in the present framework is that
-*gravity reduces K*. Under Fork B, this would predict that AB visibility
-envelopes should *broaden* in strong gravitational potentials, even at fixed γ.
-
-Quantitatively, if K depends on local gravitational potential through some
-function K(Φ_g)/K_∞ → 1 as Φ_g → 0, then a precision AB visibility
-measurement at high altitude (or in orbit) at fixed γ vs at sea level would
-test the K(Φ_g) dependence. This is a second, independent experimental
-channel beyond the γ-scan, and the two together pin down the framework's
-parameters along two orthogonal directions.
-
-This connects directly to the NS-EOS spinoff: at neutron-star surface
-potentials, K is predicted to be substantially reduced, with consequences for
-chiral-condensate damping that are explored elsewhere.
+An earlier version of this analysis posited a second channel in which gravity
+*modulates* the locking rate, K → K(Φ_g), predicting AB-visibility broadening at
+high gravitational potential (with a neutron-star-EOS spinoff). We do not pursue
+it. In the framework's settled form the chiral coupling K = m is a **fixed
+constant**, set once by the Higgs vacuum expectation value (a Lorentz scalar):
+gravity *reads* the chiral register — the mass term $\bar\psi\psi$ to which the
+stress tensor couples — but does not *modulate* K (companion [2] §8, the Vacuum
+Preferred-Frame Hypothesis and its K-fixed scope item). Fixing K removes the
+K(Φ_g) channel and, with it, the equivalence-principle exposure that a
+potential-dependent K would have carried; the framework's only new-physics
+liability is the preferred-frame (Lorentz) one that the γ-scan tests. The V-vs-γ
+scan of §5 is therefore the single differentiating channel.
 
 ### 6.3 What this paper does and does not establish
 
@@ -476,23 +496,38 @@ Dirac–Kuramoto locking parameter.
 
 ### 6.4 Open questions
 
-1. **Derivation of K from first principles.** The strong-coupling estimate
-   K ~ ω_Z is plausibility-based, not derived. A first-principles calculation
-   from the Dirac–Kuramoto network would be highly desirable.
-2. **The factor-of-two question on clock matching.** The zitterbewegung gap
-   2m_ec²/ℏ is the energy difference between positive- and negative-energy
-   Dirac solutions, while the wavefunction phase advances at m_ec²/ℏ at rest.
-   We have used ω_Z = 2m_ec²/ℏ on both sides of the locking equation; a
-   careful derivation should establish whether this factor-of-two
-   identification survives a proper Dirac-field treatment.
-3. **Noise structure.** We have assumed white-noise vacuum forcing (Markovian
-   OU dynamics). Colored noise from the QED vacuum mode density spectrum
-   would modify Eq. 12 and change the visibility envelope's γ-dependence.
-4. **Lorentz-covariance status.** Fork B explicitly breaks Lorentz invariance
-   by privileging the local mass–energy rest frame. The framework owes the
-   reader an account of which experimental tests of Lorentz invariance
-   constrain (or accommodate) this choice. Cosmological electron-coherence
-   bounds on preferred-frame physics are a natural place to look.
+1. **Derivation of K from first principles.** As §6.1 makes explicit, K is
+   currently an empirical parameter, not a derived one: the perturbative value
+   α·ω_Z is excluded by data, and the oscillator-network enhancement that might
+   appear to supply K ~ ω_Z does not survive the intensive-coupling
+   normalization. A genuine first-principles calculation of K from the
+   Dirac–Kuramoto field theory remains open, and the framework's
+   non-falsification rests on that value lying in the K ~ ω_Z window.
+2. **Noise structure.** We have assumed white-noise vacuum forcing (Markovian
+   OU dynamics). Colored noise from the QED vacuum mode-density spectrum would
+   modify Eq. 12 and change the visibility envelope's γ-dependence.
+3. **Lorentz-covariance status — the central liability.** Fork B explicitly
+   breaks Lorentz invariance by privileging the local mass–energy rest frame,
+   and this is the framework's most serious commitment, not a footnote.
+   Preferred-frame physics is constrained by some of the most precise
+   experiments in physics (clock-comparison, modern Michelson–Morley analogs,
+   and cosmological electron-coherence bounds), and the framework owes a
+   quantitative account of why a vacuum-locking anisotropy at the zitterbewegung
+   scale would evade them. The relationship to the companion paper [2] has been settled by its
+   revision: that paper now *openly carries* a preferred frame — the bulk/vacuum
+   rest frame — which it confines to the Stage-2 (dissipative, measurement) step
+   while keeping the unitary Stage-1 dynamics exactly Lorentz covariant, and it
+   names the velocity-dependent vacuum-locking of Fork B as the *stronger,
+   non-gravitationally-suppressed* form of that same commitment — explicitly a
+   claim of this analysis rather than of the companion. Fork B is therefore no
+   longer in tension with the companion; it is its more aggressive extension. The
+   two readings differ only in *where* the frame acts: the companion's
+   conservative version restricts it to Stage-2 registration, whereas Fork B
+   places it in the coherent, in-flight propagation that controls fringe
+   visibility. The V-vs-γ scan of §5 is precisely the arbiter — a null result
+   confines the frame to Stage-2 (the conservative companion commitment,
+   equivalent to Fork A on AB), a positive result promotes it to a
+   laboratory-velocity effect in coherent propagation.
 
 ---
 
@@ -555,8 +590,8 @@ https://github.com/rayolddog/DiracKuramotoFramework.
 potentials in the quantum theory. *Phys. Rev.*, 115(3), 485–491.
 https://doi.org/10.1103/PhysRev.115.485
 
-[2] Bramble, J. (2026). Many Clocks Interpretation of Quantum Mechanics: Mass
-as Chiral Coupling, Re-synchronization in the Bulk as Measurement.
+[2] Bramble, J. (2026). Two Regimes of the Chiral Mass Coupling: Quantum
+Measurement as Bath-Induced Synchronization (the Many Clocks Interpretation).
 *Companion preprint, under review.*
 
 [3] Schrödinger, E. (1930). Über die kräftefreie Bewegung in der relativistischen
@@ -611,7 +646,7 @@ https://doi.org/10.1088/0034-4885/71/1/016102
 
 ---
 
-*Companion paper to: Bramble, J. (2026), "Many Clocks Interpretation of
-Quantum Mechanics: Mass as Chiral Coupling, Re-synchronization in the Bulk as
-Measurement." Preprint repository:
+*Companion paper to: Bramble, J. (2026), "Two Regimes of the Chiral Mass
+Coupling: Quantum Measurement as Bath-Induced Synchronization" (the Many Clocks
+Interpretation). Preprint repository:
 https://github.com/rayolddog/DiracKuramotoFramework*

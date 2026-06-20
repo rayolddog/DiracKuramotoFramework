@@ -37,6 +37,9 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 | [paper.tex](paper.tex) | LaTeX source for the full paper (regenerated from PAPER_UNIFIED.md) |
 | [paper.pdf](paper.pdf) | Compiled LaTeX PDF of the full paper |
 | [ManyClocks.pdf](ManyClocks.pdf) | Pandoc-rendered PDF of PAPER_UNIFIED.md (alternative format) |
+| [PAPER_REVISED.md](PAPER_REVISED.md) | "Two Regimes of the Chiral Mass Coupling" — the revised, more conservative single-paper manuscript (under review) |
+| [PaperRevised.pdf](PaperRevised.pdf) | Compiled PDF of PAPER_REVISED.md |
+| [PaperRevised.tex](PaperRevised.tex) | LaTeX source (for arXiv) regenerated from PAPER_REVISED.md |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
 | [equations.tex](equations.tex) | LaTeX source for the equation reference (regenerated from EQUATIONS.md) |
 | [equations.pdf](equations.pdf) | Compiled PDF of the equation reference |
@@ -53,6 +56,10 @@ to invite discussion.
 |---|---|---|
 | [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md) | AB visibility envelope as a test of Dirac–Kuramoto vacuum locking | **Development phase — not for citation** |
 | [AB_visibility.pdf](AB_visibility.pdf) | Pandoc-rendered PDF of the AB companion paper | **Development phase — not for citation** |
+| [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
+| [DiscretizationAsSync.pdf](DiscretizationAsSync.pdf) | Pandoc-rendered PDF of the discretization companion paper | **Development phase — not for citation** |
+| [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis | **Working note** |
+| [RESULTS_EMERGENT_FIELDS.md](RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
 
 ## Numerical Verification Scripts
 

@@ -284,6 +284,24 @@ following structural commitments:
    "which clock dominates" is a frame-relative description of an invariant
    structure.
 
+**Many clocks, not many times.** The clocks invoked here are *internal phase
+oscillators* — dynamical degrees of freedom with a definite rate (the rest-frame
+Compton/Zitterbewegung frequency ω_C = mc²/ℏ = 2K; Appendix B) — and should not
+be conflated with the per-particle *coordinate times* of Dirac's many-time
+formalism [52, 53]. There, each particle carries its own time *argument* t_i in
+the N-body wavefunction ψ(x₁, t₁; …; x_N, t_N) purely to keep the theory
+manifestly Lorentz-covariant: the t_i are kinematic labels with no rate, carry no
+internal degree of freedom, and collapse to ordinary single-time quantum
+mechanics on the diagonal t₁ = … = t_N. The Many Clocks of MCI are the converse
+object — each is a physical oscillator that *ticks* at the Compton rate,
+precesses, dissipates, and phase-locks, and whose synchronization is the
+measurement event. The lineage of the internal clock is de Broglie's 1924
+"periodic phenomenon" (mc²/h) [54] — the rest-frame clock probed by the
+electron-channeling experiments [55] and developed in Hestenes' Zitterbewegung
+program (§7.7) — not Dirac's many-time. The Lorentz-covariance role that Dirac's
+many times played is taken over in MCI not by multiplying time arguments but by
+the *foliation-independence* of the synchronization condition (Appendix G).
+
 The Many Clocks Interpretation has affinities with Hestenes' Zitterbewegung
 interpretation (Section 7.7) — both treat the complex phase factor in the
 Dirac wave function as a physical clock — and with Rovelli's relational
@@ -824,6 +842,12 @@ remains the SU(2) double-cover structure of the spinor representation
 (Appendix D); the framework's contribution is the physical mechanism of
 basis-projection via pair-sync, not a new derivation of the Born
 coefficients.
+
+The synchronization dynamics of this section are written with a single global
+time. Their manifestly covariant, foliation-independent restatement — in which
+the role played in Dirac's many-time theory by per-particle coordinate times is
+taken over by the choice of spacelike hypersurface on which Φ_bulk is read — is
+given in Appendix G.
 
 ### 3.5 Gravitational Coherence of the Bulk
 
@@ -3515,6 +3539,97 @@ coupling to the bulk, where the attractor and the capture-range condition
 
 ---
 
+## Appendix G: Foliation-Independent (Tomonaga–Schwinger) Form of the Synchronization Condition
+
+Sections 3.4–3.5 wrote the synchronization dynamics with a single global time,
+φ̇_i = dφ_i/dt and Φ̇_bulk. That form privileges a frame's simultaneity surface
+t = const, which sits uneasily with the relational commitment of §1.6 (no global
+preferred frame put in by hand). We give here the manifestly covariant
+restatement. The role played in Dirac's many-time theory [52, 53] by per-particle
+coordinate times is played here instead by the freedom to choose the spacelike
+hypersurface σ on which the bulk phase is read — a single foliation freedom for
+the whole field, not one time argument per particle.
+
+**The clock as a Lorentz scalar field.** Promote the worldline phase φ_i of §3.4
+to a scalar field θ(x), the local clock phase. For a free clock of 4-velocity u^μ
+(u^μ u_μ = c²), the rest-frame ticking is the proper-time statement
+
+$$\frac{d\theta}{d\tau} = u^\mu \partial_\mu \theta = \omega_C = \frac{mc^2}{\hbar}, \qquad (\mathrm{G1})$$
+
+which is exactly de Broglie's internal clock [54] — manifestly covariant, and
+with a *rate*, in pointed contrast to a Dirac coordinate time (§1.6).
+
+**Bulk order parameter as a hypersurface functional.** On a spacelike leaf σ with
+future-directed unit normal n^μ(x) and invariant 3-volume element dΣ(y), define
+the local bulk order parameter by a causally-weighted average of the bulk clocks,
+
+$$R(x)\,e^{i\Phi_{\text{bulk}}(x)} = \int_\sigma d\Sigma(y)\,\rho_{\text{bulk}}(y)\,W(x,y)\,e^{i\theta(y)}, \qquad (\mathrm{G2})$$
+
+with W(x,y) a normalized scalar kernel supported only on the causal past of x
+(W = 0 whenever (x − y)² < 0). The synchronization equation on the leaf is then
+the covariant Adler/Kuramoto form
+
+$$n^\mu(x)\,\partial_\mu \theta(x) = \omega_C(x) + K_{\text{eff}}\,R(x)\,\sin\!\big[\Phi_{\text{bulk}}(x) - \theta(x)\big], \qquad (\mathrm{G3})$$
+
+the normal derivative n^μ ∂_μ replacing d/dt. Aligning n^μ with the bulk
+4-velocity u^μ_bulk — the "local frame jointly defined by the interacting parties"
+of commitment 2 — reduces (G3) on the bulk worldlines to the §3.4 Adler equation.
+
+**The lock condition is a scalar.** A clock locks to the bulk iff the coupling
+exceeds the detuning measured in the bulk rest frame,
+
+$$\big|K_{\text{eff}}\,R(x)\big| \;\ge\; \big|\,u^\mu_{\text{bulk}}\,\partial_\mu(\theta - \Phi_{\text{bulk}})\,\big|_{\text{free}} = |\Delta\omega|_{\text{proper}}. \qquad (\mathrm{G4})$$
+
+Both sides are Lorentz scalars, so lock/no-lock is an invariant fact about the
+interaction. Energy-based detuning ΔE/ℏ is frame-dependent; the proper detuning
+in (G4) is the invariant that replaces it.
+
+**Foliation independence = microcausality.** The physical content of a
+measurement must not depend on *which* leaf σ through the interaction vertex one
+reads Φ_bulk on. This is the Tomonaga–Schwinger integrability condition [56, 57].
+Writing $\mathcal{G}(x)$ for the closed-system interaction density whose partial trace over
+radiation yields the dissipative term in (G3), leaf-independence requires
+
+$$\big[\,\mathcal{G}(x),\,\mathcal{G}(y)\,\big] = 0 \quad \text{for } (x-y)^2 < 0. \qquad (\mathrm{G5})$$
+
+But (G5) is precisely the microcausality condition of Appendix D.4, Eq. (D2). The
+spacelike vanishing of the kernel W in (G2) is therefore not an extra postulate —
+it is what (G5) demands. Three commitments of §1.6 collapse into one statement:
+*no global preferred frame put in by hand* (commitment 2), *synchronization is
+local and objective* (commitment 3), and the *microcausality reading*
+(Appendix D.4) are all the single requirement that the synchronization dynamics
+be foliation-independent in the Tomonaga–Schwinger sense.
+
+**What this does and does not remove.** Foliation-independence is a statement
+about the *laws*, not a denial that any frame is dynamically singled out. The bulk
+order parameter (G2) still selects a physically preferred reference — the leaf
+comoving with the thermal bulk, in whose rest frame the detuning (G4) is naturally
+read. This is the ordinary way a thermal state breaks boost invariance: a heat
+bath, like the CMB, has a rest frame. That frame is *dynamically selected*, not
+postulated into the laws — which is the precise content of commitment 2's "no
+global preferred frame put in by hand," while the bulk supplies a physical,
+locally-defined reference at each interaction.
+
+**Status (descending strength).**
+
+1. **Kinematic / established.** Eq. (G1) is de Broglie's clock written
+   covariantly; nothing new.
+2. **Structural.** Casting the Kuramoto coupling as a causally-weighted
+   hypersurface integral (G2)–(G3) makes the lock condition (G4) manifestly
+   scalar and identifies the consistency condition (G5) with microcausality
+   (Appendix D.4). This is the appendix's contribution: the framework's
+   relational and causal commitments are one condition, not three.
+3. **Open.** Tomonaga–Schwinger integrability is, in its standard form, a
+   statement about *unitary* closed-system evolution; the dissipative Adler
+   equation (G3) is a reduced, open-system description obtained by tracing out
+   radiation on the leaf. Showing that this reduction itself commutes with a
+   change of foliation — that the *master equation*, not just the underlying
+   unitary generator, is foliation-independent — is the nontrivial step, and is
+   not carried out here. It is the natural target for the formal development of
+   §8.3.
+
+---
+
 ## References
 
 [1] Dirac, P. A. M. (1928). The quantum theory of the electron. *Proc. R. Soc.
@@ -3689,6 +3804,25 @@ London A*, 126(800), 79–84.
 
 [51] Adler, R. (1946). A study of locking phenomena in oscillators. *Proc.
 IRE*, 34(6), 351–357.
+
+[52] Dirac, P. A. M. (1932). Relativistic quantum mechanics. *Proc. R. Soc.
+Lond. A*, 136(829), 453–464.
+
+[53] Dirac, P. A. M., Fock, V. A., & Podolsky, B. (1932). On quantum
+electrodynamics. *Phys. Z. Sowjetunion*, 2, 468–479.
+
+[54] de Broglie, L. (1924). *Recherches sur la théorie des quanta*. Doctoral
+thesis, University of Paris.
+
+[55] Catillon, P., Cue, N., Gaillard, M. J., et al. (2008). A search for the
+de Broglie particle internal clock by means of electron channeling. *Found.
+Phys.*, 38(7), 659–664.
+
+[56] Tomonaga, S. (1946). On a relativistically invariant formulation of the
+quantum theory of wave fields. *Prog. Theor. Phys.*, 1(2), 27–42.
+
+[57] Schwinger, J. (1948). Quantum electrodynamics. I. A covariant
+formulation. *Phys. Rev.*, 74(10), 1439–1461.
 
 ---
 
