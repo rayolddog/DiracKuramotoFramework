@@ -79,7 +79,7 @@
 \newunicodechar{≳}{\ensuremath{\gtrsim}}
 \newunicodechar{∝}{\ensuremath{\propto}}
 \newunicodechar{∼}{\ensuremath{\sim}}
-\newunicodechar{√}{\ensuremath{\surd}}
+\newunicodechar{√}{\ensuremath{\sqrt{}}}
 \newunicodechar{∞}{\ensuremath{\infty}}
 \newunicodechar{∂}{\ensuremath{\partial}}
 \newunicodechar{∇}{\ensuremath{\nabla}}
@@ -216,19 +216,19 @@ MRI) on an overwhelmingly thermal reservoir, not a coherent macrostate.
 We are explicit about scope. The framework does not modify quantum
 mechanics: it accepts Bell's theorem, takes the correlations from the
 entangled state (a clock-as-local-variable model is sub-classical, CHSH
-≤ √2; Appendix A), and preserves no-signaling --- confining its
-contribution to the local measurement mechanism. It carries a physical
-preferred frame that enters only through Stage 2. Two problems separate
-it from a complete theory and are stated as such: a derivation of the
-Born measure, and an explicit dynamical law for the background-field
-selection --- which is also the locus of the framework's nonlocality.
-Its one candidate signature, a linewidth-dependent gravitational Bell
-effect (§6), does \emph{not} follow from the framework plus standard QED
-but requires an additional, non-covariant postulate (§6.2, Appendix C);
-that experiment therefore tests the postulate, not the framework's core.
-We present MCI as a physically-motivated single-world
-\emph{interpretation} with a concrete measurement mechanism --- not as a
-theory making novel predictions.
+≤ \(\sqrt{2}\); Appendix A), and preserves no-signaling --- confining
+its contribution to the local measurement mechanism. It carries a
+physical preferred frame that enters only through Stage 2. Two problems
+separate it from a complete theory and are stated as such: a derivation
+of the Born measure, and an explicit dynamical law for the
+background-field selection --- which is also the locus of the
+framework's nonlocality. Its one candidate signature, a
+linewidth-dependent gravitational Bell effect (§6), does \emph{not}
+follow from the framework plus standard QED but requires an additional,
+non-covariant postulate (§6.2, Appendix C); that experiment therefore
+tests the postulate, not the framework's core. We present MCI as a
+physically-motivated single-world \emph{interpretation} with a concrete
+measurement mechanism --- not as a theory making novel predictions.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -292,7 +292,7 @@ than distributing them through the paper:
   framework.} Bell correlations {[}6{]} come from the entangled state
   and the full spinor (or polarization) Hilbert space. We show in
   Appendix A that a clock-as-hidden- variable model of the
-  \emph{outcomes} gives CHSH ≤ √2 --- sub-classical --- so the
+  \emph{outcomes} gives CHSH ≤ \(\sqrt{2}\) --- sub-classical --- so the
   correlation \emph{must} come from the standard structure, and the
   framework's contribution is confined to the local measurement
   mechanism.
@@ -357,11 +357,11 @@ mass coupling is \emph{not} itself a synchronization attractor.
 \subsubsection{2.2 The closed system: unitary precession, no
 attractor}\label{the-closed-system-unitary-precession-no-attractor}
 
-Apply the polar (Madelung) decomposition ψ\_X = √ρ\_X · e\^{}\{iφ\_X\} ·
-χ\_X (X = L, R), with ρ\_X ≥ 0 a real amplitude density, φ\_X a real
-phase, and χ\_X a unit two-spinor carrying the spin orientation. In the
-rest frame (∇ → 0, χ constant), separating real and imaginary parts of
-the coupled equations gives
+Apply the polar (Madelung) decomposition ψ\_X = \(\sqrt{\rho_X}\) ·
+e\^{}\{iφ\_X\} · χ\_X (X = L, R), with ρ\_X ≥ 0 a real amplitude
+density, φ\_X a real phase, and χ\_X a unit two-spinor carrying the spin
+orientation. In the rest frame (∇ → 0, χ constant), separating real and
+imaginary parts of the coupled equations gives
 
 \[\dot\phi_L = -\,m\sqrt{\rho_R/\rho_L}\,\cos\Delta, \qquad \dot\rho_L = +\,2m\sqrt{\rho_L\rho_R}\,\sin\Delta, \qquad \Delta \equiv \phi_R - \phi_L,\]
 
@@ -376,8 +376,9 @@ in the phase equation. Second, the phase-difference dynamics
 vanish on the symmetric manifold ρ\_L = ρ\_R for \emph{every} Δ. There
 is no restoring force and no preferred phase difference --- a marginal
 line of fixed points, not a basin. The motion is normal-mode (Rabi)
-precession: defining ψ\_± = (ψ\_L ± ψ\_R)/√2 gives i∂\emph{t ψ}± = ±m
-ψ\_±, so the chiral populations flop coherently at beat frequency 2m.
+precession: defining ψ\_± = (ψ\_L ± ψ\_R)/\(\sqrt{2}\) gives i∂\emph{t
+ψ}± = ±m ψ\_±, so the chiral populations flop coherently at beat
+frequency 2m.
 
 It is worth making explicit \emph{why} the absence of a basin protects
 superposition, because the two statements are one fact in different
@@ -405,10 +406,10 @@ order parameter to climb --- Liouville's theorem makes the flow
 volume-preserving, so it has no attractors of any kind. The chiral
 phases can only precess, never settle. No relabeling rescues an
 attractor: redefining ψ\_R → iψ\_R moves the sine into the phase
-equation, but its prefactor {[}√(ρ\_L/ρ\_R) − √(ρ\_R/ρ\_L){]} is odd
-under L ↔ R and vanishes on ρ\_L = ρ\_R, so no single-signed K sin Δ
-term survives. An attractor cannot arise from unitary evolution; a bath
-must be traced out.
+equation, but its prefactor {[}\(\sqrt{\rho_L/\rho_R}\) −
+\(\sqrt{\rho_R/\rho_L}\){]} is odd under L ↔ R and vanishes on ρ\_L =
+ρ\_R, so no single-signed K sin Δ term survives. An attractor cannot
+arise from unitary evolution; a bath must be traced out.
 
 We are careful about what this establishes. That an \emph{isolated}
 system preserves superposition is, on its own, just unitarity --- true
@@ -499,9 +500,9 @@ dissipative sense.
 beat}\label{normal-modes-and-the-zitterbewegung-beat}
 
 Reinstating the kinetic term, diagonalizing H on a helicity block gives
-eigenvalues ±√(k² + m²) = ±E: the relativistic dispersion. The
-normal-mode splitting is 2E, equal to 2m at rest, and this is the
-Zitterbewegung beat.
+eigenvalues \(\pm\sqrt{k^2 + m^2} = \pm E\): the relativistic
+dispersion. The normal-mode splitting is 2E, equal to 2m at rest, and
+this is the Zitterbewegung beat.
 
 We are explicit about a factor of two that is easily blurred. The
 Zitterbewegung beat is the splitting between the \textbf{positive- and
@@ -538,6 +539,63 @@ Measurement = dissipative Adler/Kuramoto lock to a bulk & This work
 (interpretive; §3) \\
 \end{longtable}
 }
+
+\subsubsection{2.5 When the open regime engages: free flight,
+boundaries, and
+gradients}\label{when-the-open-regime-engages-free-flight-boundaries-and-gradients}
+
+The two regimes raise a question §2.2--2.3 leave open: at any given
+moment, which one is acting? The answer is set not by time but by
+\emph{place}. The open, dissipative regime --- the only one we call
+synchronization --- engages only where an external structure
+\textbf{deforms the wave's amplitude}: a material boundary (an aperture
+edge, a detector surface), a field gradient (Stern--Gerlach, MRI), or
+spacetime curvature (a tidal gradient). In free flight through an
+unbiased, gradient-free vacuum, only the closed regime runs, and the
+particle stays coherent.
+
+This is not a postulate but a consequence of what decoherence requires.
+A freely propagating \emph{inertial} particle does not radiate; it
+deposits no real quantum in the vacuum, so there is no record to carry
+away which-path information and nothing to decohere it --- which is why
+interferometers hold coherence over macroscopic paths. The one vacuum
+interaction always present in flight, the self-energy dressing that
+renormalizes the mass, is coherent and non-recording: it
+\emph{maintains} \(K=m\) rather than reading it. A record --- and
+therefore a measurement --- forms only where the particle accelerates or
+scatters, that is, at a boundary.
+
+In flight, then, the dynamics is the closed-regime guidance already
+contained in the Madelung decomposition of §2.2, now read ontologically:
+the phase guides through \(\mathbf{v} = \nabla\varphi/m\), with the
+amplitude entering through the quantum-potential term (§7.3). We adopt
+this guidance law --- it is the dynamical guiding law §7.3 records as
+owed --- but locate the \emph{outcome-selecting} randomness not in
+flight but in the unbiased background sampled \textbf{at the boundary}
+(§3.3); the \(|\psi|^2\) form of that selection remains open (§8), with
+relaxation to quantum equilibrium {[}42, 43{]} the candidate route. One
+caution against a hidden assumption: the in-flight guidance phase and
+the internal Zitterbewegung clock are not independent factors but the
+two normal modes of the \(K=m\) coupling (§2.4) --- the de Broglie
+carrier and the \(\pm E\) beat. Treating their rates as decoupled is a
+rest-frame approximation, not a separate premise.
+
+Boundaries come in two kinds, distinguished by whether a record is
+taken. A \textbf{coherent} boundary --- an aperture, or a Stern--Gerlach
+gradient --- reshapes or splits the wave while taking no which-path
+record; it stays in the closed regime, which is exactly why two-slit
+interference survives the slits and a Stern--Gerlach beam can be
+recombined. A \textbf{recording} boundary --- a detector surface, an
+absorbing screen, a readout coil --- exchanges real quanta and fires the
+open regime. A field gradient (Stern--Gerlach, MRI) is a \emph{biased}
+boundary: an applied field, not the unbiased vacuum, sets the reference
+axis, yet the irreversible record still forms only at the screen or
+coil. Gravity sits at the far weak end: a uniform potential is removable
+by the equivalence principle and does nothing in flight, and only a
+curvature/tidal gradient is a genuine in-flight gravitational
+deformation --- equivalence-principle-safe, since it does not modulate
+the fixed \(K\) (§1.3), but negligible in the laboratory and relevant
+only in strong-field astrophysics.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1341,14 +1399,15 @@ Two consistency notes survive the demotion. First, even under \(H'\) the
 clock phase enters only as a multiplicative visibility envelope (a
 contribution to the \(\mathrm{Im}\,\Phi\) decoherence functional of
 §3.5, present only under \(H'\)); it does \textbf{not} generate the
-correlation. Standard QM supplies both −cos2(a−b) and the 2√2 ceiling
---- the clock-as-hidden-variable model alone is sub-classical (Appendix
-A) --- so the framework never double-counts the clock as the source of
-the correlation. Second, the established gravitational-time-dilation
-visibility effects {[}24, 25{]} do not apply here: they require a real
-internal clock in a spatial superposition straddling both potentials,
-which the Bell photons lack --- which is precisely why an extra
-postulate is needed rather than an existing mechanism.
+correlation. Standard QM supplies both −cos2(a−b) and the \(2\sqrt{2}\)
+ceiling --- the clock-as-hidden-variable model alone is sub-classical
+(Appendix A) --- so the framework never double-counts the clock as the
+source of the correlation. Second, the established
+gravitational-time-dilation visibility effects {[}24, 25{]} do not apply
+here: they require a real internal clock in a spatial superposition
+straddling both potentials, which the Bell photons lack --- which is
+precisely why an extra postulate is needed rather than an existing
+mechanism.
 
 \subsubsection{6.3 Consistency with existing satellite
 tests}\label{consistency-with-existing-satellite-tests}
@@ -1446,17 +1505,20 @@ owes}\label{against-bohm-and-nelson-what-mci-still-owes}
 Within its own family MCI is currently the least complete member, and
 honesty requires saying so. Bohm has an explicit dynamical law (the
 guidance equation) and a clean account of the Born measure (quantum
-equilibrium, \textbar ψ\textbar²). MCI has neither: no specified
-equation for \emph{how} the background configuration selects the basin
-(the \emph{dynamical} locus of its nonlocality, though the
-\emph{ontological} locus is identified in §7.5), and an incomplete Born
-account. Reading \textbar ψ\textbar² as the energy density of a real
-field is true but, for the equal-energy channels the framework treats,
-coincides with the occupation fraction by normalization and so explains
-nothing about outcome statistics; and a genuinely unbiased background
-would, without further input, weight basins by their measure (tending to
-equal odds) rather than by \textbar α\textbar² --- the ``why squared''
-gap that contested branch-counting derivations also face.
+equilibrium, \textbar ψ\textbar²). MCI now adopts the first --- the
+coherent guiding law is the Madelung velocity
+\(\mathbf{v}=\nabla\varphi/m\) of §2.2, read ontologically (§2.5) ---
+but still owes the rest: no specified equation for \emph{how} the
+background configuration selects the basin (the \emph{dynamical} locus
+of its nonlocality, though the \emph{ontological} locus is identified in
+§7.5), and an incomplete Born account. Reading \textbar ψ\textbar² as
+the energy density of a real field is true but, for the equal-energy
+channels the framework treats, coincides with the occupation fraction by
+normalization and so explains nothing about outcome statistics; and a
+genuinely unbiased background would, without further input, weight
+basins by their measure (tending to equal odds) rather than by
+\textbar α\textbar² --- the ``why squared'' gap that contested
+branch-counting derivations also face.
 
 This recasting also fixes what a superposition \emph{is}, and the point
 is worth making because the careless version invites a hidden-variable
@@ -1616,14 +1678,14 @@ excluded:
   outcome. It is established in the common past of both wings and is
   independent of the analyzer settings, so it is exactly a Bell
   common-cause variable; by the theorem (and quantitatively by Appendix
-  A, CHSH ≤ √2) it \emph{cannot} be the source of the correlations. Its
-  coherence magnitude is irrelevant to this --- a more coherent common
-  cause is still bounded by CHSH ≤ 2 --- so the smallness of the ppm
-  bias is not the obstacle and additional coherence is not the cure.
-  Cooling a detector lowers \(D \propto k_BT\) (§4.3), raises \(r\), and
-  thereby sharpens the \emph{visibility} of an entanglement-sourced
-  violation; it does not, and cannot, convert this local reference into
-  a nonlocal channel.
+  A, CHSH ≤ \(\sqrt{2}\)) it \emph{cannot} be the source of the
+  correlations. Its coherence magnitude is irrelevant to this --- a more
+  coherent common cause is still bounded by CHSH ≤ 2 --- so the
+  smallness of the ppm bias is not the obstacle and additional coherence
+  is not the cure. Cooling a detector lowers \(D \propto k_BT\) (§4.3),
+  raises \(r\), and thereby sharpens the \emph{visibility} of an
+  entanglement-sourced violation; it does not, and cannot, convert this
+  local reference into a nonlocal channel.
 \item
   \textbf{The extended, non-separable field configuration} carrying the
   entangled two-particle mode across both wings. This is not a
@@ -1758,7 +1820,16 @@ Two problems separate a single-world \emph{picture} from a single-world
   {[}19{]}); we flag that the latter carries a known obstruction (the
   Wallstrom single-valuedness condition) and that stochastic
   electrodynamics has historically reproduced only part of quantum
-  mechanics.
+  mechanics. A further route is \emph{relaxation to quantum
+  equilibrium}: under a suitably mixing sub-quantum dynamics an
+  arbitrary initial distribution coarse-grains toward
+  \textbar ψ\textbar², so the Born measure becomes an equilibrium rather
+  than a postulate {[}42, 43{]}. This is the natural reading of the
+  framework's serial background-scrambling --- each boundary interaction
+  resamples the unbiased background --- but it has been shown for
+  standard Bohmian dynamics, not for MCI's dissipative,
+  boundary-localized selection, so whether the same H-theorem holds
+  here, and with what coarse-graining, remains open.
 \item
   \textbf{A dynamical law for the selection.} An explicit equation by
   which the background-field configuration drives the basin selection
@@ -1795,27 +1866,35 @@ imposes on ordinary, non-gravitational particle interactions is
 suppressed in proportion --- which is why the precise clock-comparison
 and Michelson--Morley-type bounds have not registered it.
 
-Two caveats keep this honest. First, the \emph{stronger} coupling to the
-same frame --- a velocity-dependent, zitterbewegung-scale vacuum-locking
-effect, which is \textbf{not} gravitationally suppressed --- is a
-separate and more aggressive hypothesis, the \textbf{Vacuum
-Preferred-Frame Hypothesis (VPFH)}: that the quantum vacuum carries a
-physical rest frame (plausibly the cosmic/CMB frame) whose effect acts
-in coherent, in-flight propagation as a \emph{decoherence} --- a loss of
-fringe visibility or squeezing, a second-moment effect --- not as a
+Two caveats keep this honest. First, the \emph{locus} of the vacuum
+coupling is itself a hypothesis --- the \textbf{Vacuum Preferred-Frame
+Hypothesis (VPFH)}: that the quantum vacuum carries a physical rest
+frame (plausibly the cosmic/CMB frame) and that its coupling to matter
+is \emph{anisotropic} in that frame. By §2.5 this coupling acts at
+boundaries, not in free flight, so its signature is a \textbf{sidereal
+modulation of the Stage-2 (boundary) coupling} as the apparatus
+orientation sweeps past the frame's axis (the CMB apex) --- a
+second-moment effect, a loss of fringe visibility or squeezing, never a
 coherent phase shift, which the Michelson--Morley bounds already
-exclude. The VPFH is not a commitment of this paper but of the companion
-analyses: the fringe-visibility-versus-\(\gamma\) proposal {[}26{]} and
-the LIGO sidereal-anisotropy proposal are its two direct tests. A null
-result leaves MCI with only the weak gravitational coupling; a positive
-result promotes the preferred frame to a laboratory-velocity effect.
-Second, a \emph{quantitative} demonstration that the surviving
-gravitational-strength anisotropy lies below the established
-preferred-frame bounds is still owed: we have given the reason it should
-be suppressed, not a proof that it clears every constraint. A fully
-Lorentz-covariant formulation of the Stage-2 selection --- the explicit
-covariant locus of the nonlocality --- therefore remains a third open
-problem, alongside the Born measure and the dynamical selection law.
+exclude. Whether the coupling additionally reaches into \emph{coherent,
+in-flight propagation} --- a stronger, velocity-dependent,
+zitterbewegung-scale form that is \textbf{not} gravitationally
+suppressed --- is a further and more aggressive claim. The VPFH is not a
+commitment of this paper but of the companion analyses, which supply its
+two tests: the LIGO sidereal-anisotropy proposal probes the boundary
+anisotropy directly, and the fringe-visibility-versus-\(\gamma\)
+proposal {[}26{]} probes the stronger in-flight form (and reads null if
+the coupling is confined to boundaries). A null in both leaves MCI with
+only the weak gravitational coupling; a positive result promotes the
+preferred frame to a boundary anisotropy, and in the in-flight case to a
+laboratory-velocity effect. Second, a \emph{quantitative} demonstration
+that the surviving gravitational-strength anisotropy lies below the
+established preferred-frame bounds is still owed: we have given the
+reason it should be suppressed, not a proof that it clears every
+constraint. A fully Lorentz-covariant formulation of the Stage-2
+selection --- the explicit covariant locus of the nonlocality ---
+therefore remains a third open problem, alongside the Born measure and
+the dynamical selection law.
 
 This also locates the §6.2 gap precisely. The polarization-dependent
 coupling of measurement to the local reference, on which the one
@@ -1844,15 +1923,15 @@ Evaluated for an EPR pair with a shared initial phase
 \[E_{\text{Malus}}(a, b) = -\tfrac{1}{2}\cos(a - b), \qquad \text{CHSH}_{\text{Malus}} \leq \sqrt{2} \approx 1.414.\]
 
 This is \textbf{sub-classical}: it falls below even the
-local-hidden-variable bound of 2, and far below the quantum value 2√2. A
-phase-clock model that treats the clock as a local variable determining
-the outcome therefore cannot reproduce --- cannot even reach the
-classical bound for --- the observed Bell violations. The full spinor
-(or polarization) structure of standard quantum mechanics is required to
-recover −cos(a − b). This is why the framework attributes the
-correlations to standard quantum mechanics and reserves synchronization
-for the local measurement mechanism: the alternative is provably ruled
-out by the framework's own numerics.
+local-hidden-variable bound of 2, and far below the quantum value
+\(2\sqrt{2}\). A phase-clock model that treats the clock as a local
+variable determining the outcome therefore cannot reproduce --- cannot
+even reach the classical bound for --- the observed Bell violations. The
+full spinor (or polarization) structure of standard quantum mechanics is
+required to recover −cos(a − b). This is why the framework attributes
+the correlations to standard quantum mechanics and reserves
+synchronization for the local measurement mechanism: the alternative is
+provably ruled out by the framework's own numerics.
 
 \subsection{Appendix B: Spin-statistics (consistency
 check)}\label{appendix-b-spin-statistics-consistency-check}
@@ -1862,16 +1941,16 @@ Dirac theory and shows where the fermion sign lives. The chiral pair is,
 as a representation, the (½,0) ⊕ (0,½) Lorentz representation; under 2π
 rotation each Weyl half acquires −1, and by the standard
 continuous-deformation argument exchange inherits the same sign. In the
-Madelung decomposition ψ\_X = √ρ\_X e\^{}\{iφ\_X\} χ\_X, the amplitude
-ρ\_X (real, ≥ 0) and the phase φ\_X (a real ODE variable, symmetric
-under particle exchange) carry no sign; only the spinor frame χ\_X does.
-\texttt{tests/spin\_statistics.py} verifies that the exchange amplitude
-is −1 to numerical precision across six decades in v/c, and that the
-Kuramoto phase ODE alone is exchange-symmetric and sign-free. This is a
-\textbf{consistency check} --- it confirms the framework's chiral-pair
-commitment is compatible with the standard theorem; it could have
-exposed an internal inconsistency in the reframing but is not, and could
-not be, an independent derivation.
+Madelung decomposition ψ\_X = \(\sqrt{\rho_X}\) e\^{}\{iφ\_X\} χ\_X, the
+amplitude ρ\_X (real, ≥ 0) and the phase φ\_X (a real ODE variable,
+symmetric under particle exchange) carry no sign; only the spinor frame
+χ\_X does. \texttt{tests/spin\_statistics.py} verifies that the exchange
+amplitude is −1 to numerical precision across six decades in v/c, and
+that the Kuramoto phase ODE alone is exchange-symmetric and sign-free.
+This is a \textbf{consistency check} --- it confirms the framework's
+chiral-pair commitment is compatible with the standard theorem; it could
+have exposed an internal inconsistency in the reframing but is not, and
+could not be, an independent derivation.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1913,8 +1992,8 @@ so the coincidence probability is
 
 The phases φ\_A, φ\_B --- hence δφ\_grav --- appear only inside the
 angle-independent prefactor \(|T_A|^2|T_B|^2\) and drop out of the
-normalized correlation. CHSH = 2√2, independent of Δν and ΔΦ. This is
-the null of §6.2.
+normalized correlation. CHSH = \(2\sqrt{2}\), independent of Δν and ΔΦ.
+This is the null of §6.2.
 
 \textbf{What would be needed.} A surviving effect requires the HH and VV
 amplitudes to carry \emph{different} phases, \(\phi_{HH}\neq\phi_{VV}\)
@@ -2060,5 +2139,11 @@ of the electron. \emph{Proc. R. Soc. London A}, 118(780), 654--680.
 {[}41{]} Bjorken, J. D., \& Drell, S. D. (1964). \emph{Relativistic
 Quantum Mechanics}. McGraw-Hill. (Gordon decomposition and the exact
 Dirac--Coulomb spectrum.)
+
+{[}42{]} Valentini, A. (1991). Signal-locality, uncertainty, and the
+subquantum H-theorem. I. \emph{Physics Letters A}, 156(1--2), 5--11.
+
+{[}43{]} Valentini, A., \& Westman, H. (2005). Dynamical origin of
+quantum probabilities. \emph{Proc. R. Soc. A}, 461(2053), 253--272.
 
 \end{document}

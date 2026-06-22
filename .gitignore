@@ -45,3 +45,8 @@ tests/dirac_extension.png
 tests/everett_thermal.png
 tests/higgs_clock.png
 tests/kuramoto_sync.png
+
+# WIP: Zitterbewegung-synchronization numerics, figures & session notes
+# (moved here 2026-06-15; un-ignore once §2.5 / the open-system study is finalized)
+ZBW_synchronization/
+PAPER_REVISED_v2_backup_*.md

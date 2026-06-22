@@ -71,6 +71,16 @@ state during continuous capture. Write the total quantum-noise-limiting decohere
   the sidereal time dependence. Differs between Hanford, Livingston, Virgo, KAGRA by their
   known orientations — this is the multi-detector discriminant.
 
+**Why this is a boundary coupling, consistent with the companion.** The anomalous
+loss L_DK acts during *continuous measurement* — the optical readout is an unbroken
+Stage-2 boundary interaction — not on a freely-propagating mirror in isolation.
+This matches the companion's stance that the vacuum's preferred-frame coupling
+engages only at boundaries, never in free flight (PAPER_REVISED §2.5): the
+gravitational-wave phase is accumulated coherently in flight (standard GR,
+frame-independent), while the frame-dependent *decoherence* tested here is a
+property of the measurement boundary, modulated sidereally by the readout-axis
+orientation g(n_hat, t).
+
 ### 2.2 The frame scale (identical to T2/T4 — set by velocity, not potential)
 
 A preferred frame supplies three candidate small parameters; only the anisotropic ones

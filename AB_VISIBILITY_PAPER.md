@@ -26,7 +26,7 @@ scale ω_Z = 2m_ec²/ℏ. The deterministic phase Δφ = eΦ/ℏ falls out of th
 zero-mismatch locking limit; the same calculation, carried to second order in
 the locking fluctuation, predicts a γ-dependent visibility envelope:
 
-V(γ) = V₀ · exp[−(ω_Z/2K)²(1 − 1/γ)²]
+V(γ) = V₀ · exp[−(1/2)(ω_Z/K)²(1 − 1/γ)²]
 
 where γ is the electron Lorentz factor and K is a locking-rate parameter
 characterizing the strength of the electron–vacuum phase coupling. The
@@ -37,6 +37,14 @@ and predicts a measurable (1–15%) visibility deficit between γ = 1.05 and
 γ = 3, which has never been directly tested. A calibrated V-vs-γ scan on a
 modern variable-voltage electron-holography column would either pin K to a
 specific value or falsify the strong-coupling Dirac–Kuramoto interpretation.
+
+This envelope tests the *stronger, in-flight* form of the companion's Vacuum
+Preferred-Frame Hypothesis [2, §8] — whether the vacuum's preferred-frame coupling
+reaches into coherent propagation. Under the companion's default reading, in which
+that coupling engages only at measurement boundaries (its §2.5), the envelope
+vanishes and the AB scan returns a null — consistent with the framework, not a
+falsification of it. A positive result is the strong claim; a null leaves the
+framework's conservative, boundary-only form intact.
 
 ---
 
@@ -446,7 +454,7 @@ K ~ ω_Z, roughly two orders of magnitude above the single-photon rate.
 We resist the temptation to manufacture this enhancement from oscillator-network
 counting. One might argue that K is not a single-photon coupling but a
 collective *synchronization rate* over N vacuum modes within a coherence volume,
-and that the network coupling grows as √N or N. That argument does not survive
+and that the network coupling grows as $\sqrt{N}$ or N. That argument does not survive
 scrutiny: a collective synchronization rate is not the unnormalized sum of
 pairwise couplings. The mean-field Kuramoto coupling is *intensive* — the
 standard model normalizes the per-pair coupling by the number of oscillators
@@ -522,7 +530,7 @@ Dirac–Kuramoto locking parameter.
    claim of this analysis rather than of the companion. Fork B is therefore no
    longer in tension with the companion; it is its more aggressive extension. The
    two readings differ only in *where* the frame acts: the companion's
-   conservative version restricts it to Stage-2 registration, whereas Fork B
+   conservative version restricts it to the measurement boundary (Stage-2; its §2.5), whereas Fork B
    places it in the coherent, in-flight propagation that controls fringe
    visibility. The V-vs-γ scan of §5 is precisely the arbiter — a null result
    confines the frame to Stage-2 (the conservative companion commitment,

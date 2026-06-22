@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-# build_pdfs.sh — render PAPER_UNIFIED.md, AB_VISIBILITY_PAPER.md,
-# COSMIC_EXPANSION_PAPER.md, DISCRETIZATION_AS_SYNC_PAPER.md, and EQUATIONS.md to PDF
+# build_pdfs.sh — render PAPER_UNIFIED.md, PAPER_REVISED.md, COVER_LETTER.md,
+# AB_VISIBILITY_PAPER.md, COSMIC_EXPANSION_PAPER.md, DISCRETIZATION_AS_SYNC_PAPER.md,
+# and EQUATIONS.md to PDF
 #
 # Produces:
 #   ManyClocks.pdf         — pandoc render of PAPER_UNIFIED.md, TOC depth 3
+#   PaperRevised.pdf       — pandoc render of PAPER_REVISED.md, TOC depth 3
+#   COVER_LETTER.pdf       — pandoc render of COVER_LETTER.md (cover letter, no TOC)
 #   AB_visibility.pdf      — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
 #   CosmicExpansion.pdf    — pandoc render of COSMIC_EXPANSION_PAPER.md, TOC depth 2
 #   CosmicExpansion.tex    — pandoc-generated LaTeX source from COSMIC_EXPANSION_PAPER.md
@@ -49,6 +52,26 @@ echo "Building ManyClocks.pdf from PAPER_UNIFIED.md..."
 pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
     -o "${REPO_DIR}/ManyClocks.pdf" \
     --toc --toc-depth=3 \
+    "${PANDOC_OPTS[@]}"
+
+# Build the revised single-paper manuscript (submission version)
+echo "Building PaperRevised.pdf from PAPER_REVISED.md..."
+pandoc "${REPO_DIR}/PAPER_REVISED.md" \
+    -o "${REPO_DIR}/PaperRevised.pdf" \
+    --toc --toc-depth=3 \
+    "${PANDOC_OPTS[@]}"
+
+# Regenerate PaperRevised.tex from PAPER_REVISED.md (standalone LaTeX source, for arXiv)
+echo "Regenerating PaperRevised.tex from PAPER_REVISED.md..."
+pandoc "${REPO_DIR}/PAPER_REVISED.md" \
+    -s -o "${REPO_DIR}/PaperRevised.tex" \
+    --toc --toc-depth=3 \
+    "${PANDOC_OPTS[@]}"
+
+# Build the submission cover letter (no TOC)
+echo "Building COVER_LETTER.pdf from COVER_LETTER.md..."
+pandoc "${REPO_DIR}/COVER_LETTER.md" \
+    -o "${REPO_DIR}/COVER_LETTER.pdf" \
     "${PANDOC_OPTS[@]}"
 
 # Build the AB visibility companion paper
@@ -112,7 +135,7 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/AB_visibility.pdf" \
+ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/PaperRevised.pdf" "${REPO_DIR}/PaperRevised.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
        "${REPO_DIR}/CosmicExpansion.pdf" "${REPO_DIR}/CosmicExpansion.tex" \
        "${REPO_DIR}/DiscretizationAsSync.pdf" \
        "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \
