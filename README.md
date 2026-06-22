@@ -8,7 +8,9 @@
 
 This repository presents the **Many Clocks Interpretation of Quantum Mechanics (MCI)**: an interpretive framework in which the Dirac equation, written in the chiral (Weyl) basis, exposes the fermion mass as the off-diagonal coupling between two chiral phase clocks --- a temporal clock and a spatial clock --- with coupling strength **K = m**. In the closed system this coupling is unitary: diagonalizing it reproduces E = √(p²+m²), with the de Broglie carrier and the Zitterbewegung beat as its normal modes. Phase-locking proper is a dissipative, open-system phenomenon, and in this framework it is what measurement is.
 
-The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by branching the universe at each measurement, MCI preserves a single world by treating each particle as carrying its own physical phase clock, with measurement as local synchronization between clocks. The interpretation is *relational* --- no global preferred reference frame and no observer required --- and it offers a positive dynamical mechanism for decoherence: phase overwriting at each interaction event.
+The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by branching the universe at each measurement, MCI preserves a single world by treating each particle as carrying its own physical phase clock, with measurement as local synchronization between clocks. No observer and no branching are required, and the framework offers a positive dynamical mechanism for decoherence: phase overwriting at each interaction event. The current manuscript is candid that the framework carries a *physical preferred frame* --- the rest frame of the bulk/vacuum reference --- entering only through measurement (Stage 2), while the unitary dynamics stays exactly Lorentz covariant.
+
+**The current paper is _"Two Regimes of the Chiral Mass Coupling"_ ([PAPER_REVISED.md](PAPER_REVISED.md)) --- the more conservative and more rigorous statement of the framework, and the one to read first.** Beyond the closed/open (two-regimes) core, it now makes explicit *when* the dissipative regime engages: a new **§2.5** establishes that the vacuum coupling acts only where an external structure deforms the wave's amplitude --- a material boundary, a field gradient, or spacetime curvature --- while a freely propagating particle stays coherent under the Madelung (pilot-wave) guidance law the framework adopts in that limit. For the Born measure, the revised paper identifies a candidate route --- *relaxation to quantum equilibrium* in the sense of Valentini's subquantum H-theorem --- while remaining explicit that it is not yet derived. ([PAPER_UNIFIED.md](PAPER_UNIFIED.md) is the earlier, longer, now-superseded version, retained for reference.)
 
 From this single identification, the framework derives or reinterprets:
 
@@ -19,7 +21,7 @@ From this single identification, the framework derives or reinterprets:
 - **Zitterbewegung** as the beat frequency between temporal and spatial clocks
 - **The Higgs mechanism** as the process that sets K: K = y_f * v/sqrt(2) = m
 - **Antiparticles** as time-reversed phase clocks, with CP violation as a chiral phase asymmetry
-- **Gravity** as bulk clock synchronization (recovers Newton exactly; pair-counted Γ_grav = GM²/(ℏΔz))
+- **Gravity** as bulk clock synchronization (recovers Newton exactly; note the naive pair-counted rate Γ_grav = GM²/(ℏΔz) is **retracted as a dimensional artifact** in the revised paper, §4.4)
 - **Penrose objective reduction** as gravitational clock decoherence (tau = pi*hbar/E_G)
 - **Photons** treated via Riemann–Silberstein form (F = E + iB), with K_γ ~ ω = E/ℏ for photon-detector sync; gravitational classicalization channel silent for photons (perpetually quantum until measured)
 - **Temperature** as clock phase distribution width
@@ -33,17 +35,15 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 
 | File | Description |
 |---|---|
-| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | The full paper with all derivations and discussion (canonical source) |
-| [paper.tex](paper.tex) | LaTeX source for the full paper (regenerated from PAPER_UNIFIED.md) |
-| [paper.pdf](paper.pdf) | Compiled LaTeX PDF of the full paper |
-| [ManyClocks.pdf](ManyClocks.pdf) | Pandoc-rendered PDF of PAPER_UNIFIED.md (alternative format) |
-| [PAPER_REVISED.md](PAPER_REVISED.md) | "Two Regimes of the Chiral Mass Coupling" — the revised, more conservative single-paper manuscript (under review) |
+| [PAPER_REVISED.md](PAPER_REVISED.md) | **"Two Regimes of the Chiral Mass Coupling" — the current, canonical manuscript** (more conservative and more rigorous; start here) |
 | [PaperRevised.pdf](PaperRevised.pdf) | Compiled PDF of PAPER_REVISED.md |
-| [PaperRevised.tex](PaperRevised.tex) | LaTeX source (for arXiv) regenerated from PAPER_REVISED.md |
+| [PaperRevised.tex](PaperRevised.tex) | LaTeX source regenerated from PAPER_REVISED.md |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
-| [equations.tex](equations.tex) | LaTeX source for the equation reference (regenerated from EQUATIONS.md) |
-| [equations.pdf](equations.pdf) | Compiled PDF of the equation reference |
-| [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script for ManyClocks.pdf and equations.pdf |
+| [equations.pdf](equations.pdf) / [equations.tex](equations.tex) | Compiled PDF / LaTeX of the equation reference |
+| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by PAPER_REVISED; retained for reference* |
+| [paper.pdf](paper.pdf) / [paper.tex](paper.tex) | Compiled PDF / LaTeX of the earlier unified paper |
+| [ManyClocks.pdf](ManyClocks.pdf) | Pandoc-rendered PDF of PAPER_UNIFIED.md |
+| [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script |
 
 ### Companion papers (in development)
 
