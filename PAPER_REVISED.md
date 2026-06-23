@@ -534,10 +534,21 @@ reversible→irreversible boundary of §3.2 from a set of demonstrations into a
 condition with an explicit order parameter: the record probability
 $2\,\mathrm{Im}\,W$, gated by the bath lock $\Gamma_{\text{cap}}$.
 
+Read this way, the detector is a *condensed-matter* system and the pointer is a
+collective degree of freedom of it: the record probability $2\,\mathrm{Im}\,W$ is
+its order parameter, and the Heisenberg cut is the driven–dissipative locking
+transition at which that order parameter becomes nonzero — a transition of the same
+family as quantum synchronization [10–13] and dissipative phase transitions more
+broadly, not a new postulate. The collectivity resides in the detector's bath
+coupling $\Gamma_{\text{cap}}$, consistent with the einselection of pointer states
+[4, 5] that §3.4 supplies dynamically.
+
 ### 3.6 The single-fermion cut: the dressed Dirac mass
 
-The order parameter of §3.5 has a one-particle form, and writing it collapses §2.2,
-§2.3, and §3.5 into a single statement about where the Dirac mass pole sits. Couple
+The collective order parameter of §3.5 admits a one-particle *reduction* — the
+many-body content sits in the bath coupling $\Gamma_{\text{cap}}$ that is traced out
+below, not in $\psi$ — and writing it in that form collapses §2.2, §2.3, and §3.5
+into a single statement about where the Dirac mass pole sits. Couple
 the fermion to the bulk and trace the bath out; the propagator acquires a
 self-energy $\Sigma$, and the pole — the physical mass — moves:
 

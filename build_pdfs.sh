@@ -5,7 +5,7 @@
 #
 # Produces:
 #   ManyClocks.pdf         — pandoc render of PAPER_UNIFIED.md, TOC depth 3
-#   PaperRevised.pdf       — pandoc render of PAPER_REVISED.md, TOC depth 3
+#   Two_Regimes_of_Chiral_Mass_Coupling.pdf       — pandoc render of PAPER_REVISED.md, TOC depth 3
 #   COVER_LETTER.pdf       — pandoc render of COVER_LETTER.md (cover letter, no TOC)
 #   AB_visibility.pdf      — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
 #   CosmicExpansion.pdf    — pandoc render of COSMIC_EXPANSION_PAPER.md, TOC depth 2
@@ -55,16 +55,16 @@ pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
     "${PANDOC_OPTS[@]}"
 
 # Build the revised single-paper manuscript (submission version)
-echo "Building PaperRevised.pdf from PAPER_REVISED.md..."
+echo "Building Two_Regimes_of_Chiral_Mass_Coupling.pdf from PAPER_REVISED.md..."
 pandoc "${REPO_DIR}/PAPER_REVISED.md" \
-    -o "${REPO_DIR}/PaperRevised.pdf" \
+    -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" \
     --toc --toc-depth=3 \
     "${PANDOC_OPTS[@]}"
 
-# Regenerate PaperRevised.tex from PAPER_REVISED.md (standalone LaTeX source, for arXiv)
-echo "Regenerating PaperRevised.tex from PAPER_REVISED.md..."
+# Regenerate Two_Regimes_of_Chiral_Mass_Coupling.tex from PAPER_REVISED.md (standalone LaTeX source, for arXiv)
+echo "Regenerating Two_Regimes_of_Chiral_Mass_Coupling.tex from PAPER_REVISED.md..."
 pandoc "${REPO_DIR}/PAPER_REVISED.md" \
-    -s -o "${REPO_DIR}/PaperRevised.tex" \
+    -s -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" \
     --toc --toc-depth=3 \
     "${PANDOC_OPTS[@]}"
 
@@ -135,7 +135,7 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/PaperRevised.pdf" "${REPO_DIR}/PaperRevised.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
+ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
        "${REPO_DIR}/CosmicExpansion.pdf" "${REPO_DIR}/CosmicExpansion.tex" \
        "${REPO_DIR}/DiscretizationAsSync.pdf" \
        "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \

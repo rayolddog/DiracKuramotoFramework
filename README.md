@@ -36,8 +36,8 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 | File | Description |
 |---|---|
 | [PAPER_REVISED.md](PAPER_REVISED.md) | **"Two Regimes of the Chiral Mass Coupling" — the current, canonical manuscript** (more conservative and more rigorous; start here) |
-| [PaperRevised.pdf](PaperRevised.pdf) | Compiled PDF of PAPER_REVISED.md |
-| [PaperRevised.tex](PaperRevised.tex) | LaTeX source regenerated from PAPER_REVISED.md |
+| [Two_Regimes_of_Chiral_Mass_Coupling.pdf](Two_Regimes_of_Chiral_Mass_Coupling.pdf) | Compiled PDF of PAPER_REVISED.md |
+| [Two_Regimes_of_Chiral_Mass_Coupling.tex](Two_Regimes_of_Chiral_Mass_Coupling.tex) | LaTeX source regenerated from PAPER_REVISED.md |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
 | [equations.pdf](equations.pdf) / [equations.tex](equations.tex) | Compiled PDF / LaTeX of the equation reference |
 | [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by PAPER_REVISED; retained for reference* |
