@@ -308,7 +308,8 @@ $K=m$ rather than reading it. A record — and therefore a measurement — forms
 where the particle accelerates or scatters, that is, at a boundary.
 
 In flight, then, the dynamics is the closed-regime guidance already contained in
-the Madelung decomposition of §2.2, now read ontologically: the phase guides
+the Madelung decomposition of §2.2, now read ontologically — the spatial gradient set
+aside in §2.2's rest-frame reduction is restored here, and the phase guides
 through $\mathbf{v} = \nabla\varphi/m$, with the amplitude entering through the
 quantum-potential term (§7.3). We adopt this guidance law — it is the dynamical
 guiding law §7.3 records as owed — but locate the *outcome-selecting* randomness
@@ -431,6 +432,19 @@ there is exactly **one** outcome per run; it does not explain why the long-run
 **frequency** of each basin is |α|². That is the Born measure, isolated as an
 open problem in §7.3 and §8. Conflating the two — treating "definite outcome" and
 "correct weight" as one result — is the error we most want to avoid.
+
+Stated as the fork it forces: *either* the basin weights are **derived** from the
+synchronization dynamics — in which case the minimal two-outcome model settles it, and
+its locking basins have area 50/50, flat in |α|² (the attractor geometry carries no
+amplitude information about the prepared state) — *or* |α|² is **imported** as the
+measure on the per-run background, a quantum-equilibrium postulate of exactly Bohm's
+status. The framework takes the **second horn**, and we state it plainly: the dissipative
+lock supplies *registration* (one definite outcome, §3.1–3.5) and, where the Stage-2
+coupling is non-demolition, *equivariance* (a measure granted at preparation is carried
+intact to the outcome, §3.7); it does **not** supply the weights, which enter as the
+measure placed on the selecting ensemble (§7.3, §8). MCI is therefore
+Born-*compatible*, never Born-*derivative* — the same status the other ψ-ontic
+single-world readings occupy, and an open problem we neither hide nor claim to solve.
 
 ### 3.4 Decoherence as synchronization to the bulk
 
@@ -601,8 +615,11 @@ We are explicit about provenance and scope, as in §3.5. The self-energy and pol
 structure, the golden rule, Kramers–Kronig, and the Adler linearization are
 standard; the framework's content is the *identification*
 $\mathrm{Im}\,\Sigma = -\tfrac12 K_{\text{eff}}\cos\Delta_*$ — that the bath coupling
-entering as $\mathrm{Im}\,\Sigma$ is the Adler lock rate — which we state as an
-identification, not a derivation. We also keep $\Sigma$ to its dominant scalar
+entering as $\mathrm{Im}\,\Sigma$ is the Adler lock rate. Appendix D realizes this in a
+standard driven–dissipative (circuit-QED) model, deriving the reduction to the Adler
+equation and computing $K_{\text{eff}} = 4\chi^2\bar n/\kappa$ from the dispersive shift
+$\chi$, readout occupation $\bar n$, and linewidth $\kappa$ — so the identification is
+exhibited concretely in a specific model, not left as a bare assertion. We also keep $\Sigma$ to its dominant scalar
 (mass-dressing) channel; the full self-energy is a $4\times4$ matrix with additional
 Lorentz structure, and we do not claim that general decomposition here; §3.7 makes
 that restriction precise, and shows it runs the wrong way for the electromagnetic
@@ -644,8 +661,16 @@ the input weight is erased, the opposite of equivariance. The electromagnetic co
 thus non-demolition for the charge/position/chirality pointer basis (ordinary which-path
 einselection, §3.4, which we keep) but *not* for the chiral interference channel. The
 two-basin $\sigma_x$ structure is, on this analysis, a feature of the Stage-1 internal
-clock — the zitterbewegung beat of §2.4 and [26] — rather than the pointer basis the
-environment selects.
+clock — the zitterbewegung beat of §2.4 — rather than the pointer basis the
+environment selects. We therefore do not treat the chiral 0/π binary as the universal
+measurement register. In ordinary detectors the environment selects the
+**charge/position (which-path) basis** — the basis the electromagnetic coupling *is*
+non-demolition for, and the one a cloud-chamber track or a calorimeter actually records;
+the chiral interference $\sigma_x$ is internal-clock dynamics the environment does not
+monitor. The two-stage account of registration and irreversibility (§3.1–3.6) therefore
+rests on the which-path basis and does **not** require the chiral binary to be the
+pointer — the binary is the framework's internal-clock structure, not its claim about
+what detectors record.
 
 The single coupling that *is* non-demolition for $\bar\psi\psi$ is one that couples to
 the scalar/mass density directly — a Yukawa scalar, or gravity, since $\bar\psi\psi$ is
@@ -926,7 +951,14 @@ term is (a) absent from standard QED; (b) non-covariant — it singles out the
 analyzer axis and so breaks the rotational symmetry of the dipole interaction; and
 (c) tied to the absolute bulk phase, and hence to the physical preferred frame
 the framework openly carries (§8), whose Lorentz-covariant formulation remains
-open.
+open. We are specific about the defect and its repair: coupling to the *absolute*
+phase $\phi_{\text{bulk}}$ violates the $U(1)$/shift symmetry under which only the
+gradient $\partial_\mu\theta$ of a phase is physical; a gauge-legal form couples
+instead to that **gradient** — a physical Goldstone current of the bulk order
+parameter — rather than to the bare phase. Whether the gradient coupling reproduces
+the same $1/\Delta\nu^2$ visibility scaling is a question for the test design; either
+way $H'$ is presented as a deliberately symmetry-reduced *falsification term*, not a
+natural consequence of the framework.
 
 **What the experiment tests.** Because the effect does not follow from the
 framework plus standard optics, the experiment is a clean falsification test *of
@@ -1066,11 +1098,12 @@ the fact; it has no source of its own and no dynamics independent of the
 wavefunction it is extracted from. In MCI the analogous guidance is *inherited
 from the vacuum the particle traverses*: minimal coupling is carried not by the
 bare particle wavefunction but by the vacuum's virtual-pair fluctuations, to which
-the particle phase-locks, so the particle's phase is the vacuum phase it tracks
-[26]. We are precise about which half of Bohm's amplitude–phase split this
+the particle phase-locks, so the particle's phase is the vacuum phase it tracks.
+We are precise about which half of Bohm's amplitude–phase split this
 captures. The directly physicalized quantity is the *phase* — the Hamilton–Jacobi
-$S$, exhibited cleanly as the Aharonov–Bohm phase $e\Phi/\hbar$ recovered from
-zero-frequency locking [26] — not literally the amplitude-side $Q$. The amplitude
+$S$ — not literally the amplitude-side $Q$. (That this phase appears as the
+Aharonov–Bohm phase $e\Phi/\hbar$ recovered from zero-frequency locking is developed
+in separate work [26], and is not relied on here.) The amplitude
 side enters through the *same* coupling's fluctuations: the variance
 $\langle\delta^2\rangle$ of the residual phase mismatch about the locked solution
 damps fringe contrast, and that loss of $R$-coherence is the decoherence
@@ -1095,15 +1128,18 @@ and the vacuum beable, not the relativistic single-particle law itself.)
 Third — the sharpest contrast — **Bohm's preferred frame is undetectable; MCI's is
 physical.** The foliation Bohm needs is, by construction, empirically inaccessible.
 MCI's nonlocality is instead anchored to a *physical* preferred frame, the
-bulk/vacuum rest frame (§8), whose effects are in principle observable. We take the
-conservative reading: ordinary matter couples to that frame, beyond the
-electromagnetic Stage-2 locking, only gravitationally, so the residual anisotropy
-in everyday particle physics is gravitationally weak (§8). The companion analysis
-[26] develops the stronger, *kinematic* coupling to the same frame — a
-velocity-dependent vacuum-locking envelope — and proposes a
-fringe-visibility-versus-$\gamma$ scan as its direct test; that experiment is what
-would decide whether Bohm's hidden foliation has, in this framework, become a
-measurable physical frame.
+bulk/vacuum rest frame (§8), whose effects are in principle observable. The handle
+this paper carries is the gravitational channel of §6 — contingent on the §6.2
+postulate, and weak, but self-contained: unlike Bohm's frame, MCI's is the *kind* of
+object that can leave an imprint. We take the conservative reading: ordinary matter
+couples to that frame, beyond the electromagnetic Stage-2 locking, only
+gravitationally, so the residual anisotropy in everyday particle physics is
+gravitationally weak (§8). A stronger, *kinematic* coupling to the same frame — a
+velocity-dependent vacuum-locking envelope, with a fringe-visibility-versus-$\gamma$
+scan as its direct test — is developed in separate work [26] and is *not* relied on
+here; the in-paper contrast with Bohm stands on the §6 channel alone. Whether that
+channel suffices is what would decide whether Bohm's hidden foliation has, in this
+framework, become a measurable physical frame.
 
 The distinctive debt remains the two items above. The distinctive appeal is now
 stronger than a slogan about beables: the beable, the guidance, and the locus of
@@ -1143,9 +1179,10 @@ but that the gravity-dominated regime is exactly where MCI's dissipative mechani
 runs out of bath while Penrose's intrinsic one does not — which makes that regime
 the arbiter between them: a continuous, no-collapse reading (a gravitational
 coupling that damps coherence smoothly, *below* any Penrose threshold) and an
-objective collapse predict different things there, and the companion analysis [26]
-pursues the continuous branch as a gravitational reduction of the vacuum-locking
-rate.
+objective collapse predict different things there. That the two readings diverge
+in this regime is the point made here; the continuous branch — a gravitational
+reduction of the vacuum-locking rate — is pursued in separate work [26], on which
+nothing above depends.
 
 ### 7.5 Bell, no-signaling, and the "unhidden variable"
 
@@ -1154,9 +1191,10 @@ settings are free; the shared bulk environment is a *public, setting-independent
 variable that Bell's theorem permits and that does nothing to relax any Bell
 assumption. There is no faster-than-light signaling — Bell nonlocality is not
 signaling, and MCI, reproducing standard quantum statistics, inherits the
-no-signaling theorem exactly as Bohm and ordinary QM do. The bulk reference is an
-"unhidden" variable only in the benign sense: it makes explicit the phase
-coherence that realistic descriptions of macroscopic detectors already assume. It
+no-signaling theorem exactly as Bohm and ordinary QM do. The bulk reference — a *local macroscopic reference*, to use a less provocative
+name for the same object — is an "unhidden" variable only in the benign sense: it makes
+explicit the phase coherence that realistic descriptions of macroscopic detectors
+already assume. It
 is not a Bell-relevant hidden variable, and it is not a route around nonlocality.
 
 It is worth being precise about *which* bulk this denies and which it does not,
@@ -1266,7 +1304,7 @@ the shared anti-anthropocentrism but claim no kinship beyond it.
 Two problems separate a single-world *picture* from a single-world *theory*, and
 the framework's status depends entirely on them:
 
-1. **The Born measure.** A derivation that the long-run basin frequencies are
+1. **The Born measure** (the open *second horn* of §3.3). A derivation that the long-run basin frequencies are
    |α|² — closing both the equal-energy restriction and the "why squared" gap.
    The missing piece is specifically *typicality*, not basin geometry: the
    dissipative lock supplies *equivariance* — the weight of the measured projector
@@ -1292,7 +1330,10 @@ the framework's status depends entirely on them:
    serial background-scrambling — each boundary interaction resamples the
    unbiased background — but it has been shown for standard Bohmian dynamics, not
    for MCI's dissipative, boundary-localized selection, so whether the same
-   H-theorem holds here, and with what coarse-graining, remains open.
+   H-theorem holds here, and with what coarse-graining, remains open. Absent that proof,
+the $|\psi|^2$ measure is adopted as a **postulate** — Bohm's quantum-equilibrium
+hypothesis in this framework's setting (the second horn of §3.3) — not as a derived
+result; the relaxation route is a research program, not a discharge of the Born debt.
 2. **A dynamical law for the selection.** An explicit equation by which the
    background-field configuration drives the basin selection — Bohm's analog is
    the guidance equation. The *ontological* locus of the nonlocality is now
@@ -1312,9 +1353,14 @@ testable question: only a cosmic frame produces a sidereal signature, and the
 LIGO sidereal companion test is designed to discriminate the two. We do not
 pretend the framework is fully relational. What disciplines the commitment is *where* the frame enters. The
 Stage-1 chiral dynamics is exactly Lorentz covariant; the preferred frame appears
-only through Stage-2, the dissipative lock to the bulk — so Lorentz invariance is
-not broken fundamentally but **spontaneously, by the measurement event**, which
-selects the bulk frame. Away from measurement, ordinary matter couples to that
+only through Stage-2, the dissipative lock to the bulk. We are careful with the
+terminology: as written — a fixed bulk/vacuum frame entering the Stage-2 interaction —
+this is **explicit, low-energy Lorentz violation confined to the measurement sector**,
+*not* spontaneous symmetry breaking. It would become genuinely *spontaneous* only if the
+preferred frame were the vacuum expectation value of a dynamical field with a
+Lorentz-covariant action (the Einstein-aether / khronometric construction, with the
+bulk-phase gradient $\partial_\mu\theta$ as the Goldstone/khronon) — a construction we
+do not carry out here. Away from measurement, ordinary matter couples to that
 frame, beyond the electromagnetic locking itself, only **gravitationally** —
 through the potential differences that produce the redshift channel of §6. Because
 gravity is weaker than the electromagnetic, strong, and weak interactions that
@@ -1334,9 +1380,10 @@ squeezing, never a coherent phase shift, which the Michelson–Morley bounds alr
 exclude. Whether the coupling additionally reaches into *coherent, in-flight
 propagation* — a stronger, velocity-dependent, zitterbewegung-scale form that is
 **not** gravitationally suppressed — is a further and more aggressive claim. The
-VPFH is not a commitment of this paper but of the companion analyses, which supply
-its two tests: the LIGO sidereal-anisotropy proposal probes the boundary anisotropy
-directly, and the fringe-visibility-versus-$\gamma$ proposal [26] probes the
+VPFH is not a commitment of this paper but of the companion analyses (developed
+separately, and not load-bearing for anything claimed here), which supply its two
+tests: the LIGO sidereal-anisotropy proposal probes the boundary anisotropy
+directly, and a fringe-visibility-versus-$\gamma$ proposal [26] probes the
 stronger in-flight form (and reads null if the coupling is confined to boundaries).
 A null in both leaves MCI with only the weak gravitational coupling; a positive
 result promotes the preferred frame to a boundary anisotropy, and in the in-flight
@@ -1482,6 +1529,71 @@ in the derivations or interpretations.
 
 Simulation code and numerical verification:
 https://github.com/rayolddog/DiracKuramotoFramework
+
+---
+
+## Appendix D: A concrete realization of the Stage-2 lock rate $K_{\text{eff}}$
+
+This appendix supports §3.6 and §3.7: it derives the Adler/Kuramoto reduction of the
+Stage-2 lock from a standard open-system model, so that the identification
+$\mathrm{Im}\,\Sigma = -\tfrac12 K_{\text{eff}}\cos\Delta_*$ is *realized* rather than
+only asserted, with $K_{\text{eff}}$ computed from microscopic parameters.
+
+**Model.** Take the chiral pair as a qubit whose measured pointer observable is the
+interference channel $\sigma_x = \bar\psi\psi$ (§3.7). Couple $\sigma_x$ dispersively to a
+damped pointer mode $a$ — a readout cavity standing in for the bulk's collective
+coordinate — through $H_{\rm int} = \chi\,\sigma_x\, a^\dagger a$, with the mode driven to
+mean occupation $\bar n$ and decaying at rate $\kappa$. This is the minimal
+driven–dissipative model of a continuous measurement of $\sigma_x$.
+
+**Adiabatic elimination $\to$ measurement dissipator.** In the fast-mode regime
+$\kappa \gg \chi$ the pointer reaches a qubit-conditioned steady state and is eliminated;
+tracing it out leaves a Lindblad dephasing term in the measured basis,
+
+$$\dot\rho \supset \gamma\,(\sigma_x\rho\,\sigma_x - \rho),\qquad
+\gamma = \tfrac12\Gamma_\phi,\qquad \Gamma_\phi = \frac{8\chi^2\bar n}{\kappa},$$
+
+where $\Gamma_\phi$ is the standard dispersive measurement-induced dephasing rate and the
+dissipator rate is $\gamma=\Gamma_\phi/2$ (the transverse Bloch components decay at
+$2\gamma=\Gamma_\phi$).
+
+**Reduction to Adler.** Writing the residual precession in the measured plane — the
+detuning between the internal clock and the bulk reference — as $H=\tfrac12\Omega\sigma_z$,
+the Bloch equations are
+
+$$\dot x = -\Omega y,\qquad \dot y = \Omega x - 2\gamma y,\qquad \dot z = -2\gamma z,$$
+
+so the equator $z=0$ is attracting, and on it the relative-phase azimuth
+$\phi=\operatorname{atan2}(\langle\sigma_y\rangle,\langle\sigma_x\rangle)$ obeys, exactly
+and with no other harmonic,
+
+$$\dot\phi = \Omega - K_{\text{eff}}\sin 2\phi,\qquad
+K_{\text{eff}} = \gamma = \frac{4\chi^2\bar n}{\kappa}.$$
+
+This is the second-harmonic Adler equation of §3.7 (bistable at the pointer phases
+$0,\pi$), now with its coupling constant a function of the dispersive shift $\chi$, the
+readout occupation $\bar n$, and the linewidth $\kappa$. It realizes §3.6's
+identification: the absorptive coupling $\mathrm{Im}\,\Sigma\propto K_{\text{eff}}$ *is*
+the Adler lock rate, computed.
+
+**The cut as a power threshold, with critical signatures.** A locked fixed point
+$\sin 2\phi_* = \Omega/K_{\text{eff}}$ exists iff $|\Omega|\le K_{\text{eff}}$ — i.e. iff
+the readout power exceeds
+
+$$\bar n \ge \bar n_{\text{crit}} = \frac{\kappa\,|\Omega|}{4\chi^2}.$$
+
+The Heisenberg cut is this threshold. Approaching it from the locked side the
+lock-relaxation rate $\Gamma_{\text{lock}} = 2\sqrt{K_{\text{eff}}^2-\Omega^2}$ vanishes
+with critical exponent $\tfrac12$ (a saddle-node-on-invariant-circle bifurcation); just
+past it the phase winds with mean slip rate
+$\langle\dot\phi\rangle = \sqrt{\Omega^2-K_{\text{eff}}^2}$, again vanishing as a square
+root. Numerical integration of the full master equation confirms the reduction (the
+fitted flow is pure second harmonic, $K_{\text{eff}}=\gamma$ to within numerics) and the
+exponents. These are the falsifiable signatures a continuous-measurement (circuit-QED)
+test would target — so the cut is a *measurable locking transition*, not a fixed scale.
+The derivation establishes the form and coupling of the reduction; it does not, by
+itself, privilege the framework's interpretation, since the same dynamics follows from
+standard open-system theory.
 
 ---
 
