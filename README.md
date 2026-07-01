@@ -10,7 +10,7 @@ This repository presents the **Many Clocks Interpretation of Quantum Mechanics (
 
 The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by branching the universe at each measurement, MCI preserves a single world by treating each particle as carrying its own physical phase clock, with measurement as local synchronization between clocks. No observer and no branching are required, and the framework offers a positive dynamical mechanism for decoherence: phase overwriting at each interaction event. The current manuscript is candid that the framework carries a *physical preferred frame* --- the rest frame of the bulk/vacuum reference --- entering only through measurement (Stage 2), while the unitary dynamics stays exactly Lorentz covariant.
 
-**The current paper is _"Two Regimes of the Chiral Mass Coupling"_ ([PAPER_REVISED.md](PAPER_REVISED.md)) --- the more conservative and more rigorous statement of the framework, and the one to read first.** Beyond the closed/open (two-regimes) core, it now makes explicit *when* the dissipative regime engages: a new **§2.5** establishes that the vacuum coupling acts only where an external structure deforms the wave's amplitude --- a material boundary, a field gradient, or spacetime curvature --- while a freely propagating particle stays coherent under the Madelung (pilot-wave) guidance law the framework adopts in that limit. For the Born measure, the revised paper identifies a candidate route --- *relaxation to quantum equilibrium* in the sense of Valentini's subquantum H-theorem --- while remaining explicit that it is not yet derived. ([PAPER_UNIFIED.md](PAPER_UNIFIED.md) is the earlier, longer, now-superseded version, retained for reference.)
+**The current paper is _"Two Regimes of the Chiral Mass Coupling"_ ([current_revision_DK_paper.md](current_revision_DK_paper.md)) --- the more conservative and more rigorous statement of the framework, and the one to read first.** Beyond the closed/open (two-regimes) core, it now makes explicit *when* the dissipative regime engages: a new **§2.5** establishes that the vacuum coupling acts only where an external structure deforms the wave's amplitude --- a material boundary, a field gradient, or spacetime curvature --- while a freely propagating particle stays coherent under the Madelung (pilot-wave) guidance law the framework adopts in that limit. For the Born measure, the revised paper identifies a candidate route --- *relaxation to quantum equilibrium* in the sense of Valentini's subquantum H-theorem --- while remaining explicit that it is not yet derived. ([PAPER_UNIFIED.md](PAPER_UNIFIED.md) is the earlier, longer, now-superseded version, retained for reference.)
 
 From this single identification, the framework derives or reinterprets:
 
@@ -35,15 +35,15 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 
 | File | Description |
 |---|---|
-| [PAPER_REVISED.md](PAPER_REVISED.md) | **"Two Regimes of the Chiral Mass Coupling" — the current, canonical manuscript** (more conservative and more rigorous; start here) |
-| [Two_Regimes_of_Chiral_Mass_Coupling.pdf](Two_Regimes_of_Chiral_Mass_Coupling.pdf) | Compiled PDF of PAPER_REVISED.md |
-| [Two_Regimes_of_Chiral_Mass_Coupling.tex](Two_Regimes_of_Chiral_Mass_Coupling.tex) | LaTeX source regenerated from PAPER_REVISED.md |
+| [current_revision_DK_paper.md](current_revision_DK_paper.md) | **"Two Regimes of the Chiral Mass Coupling" — the current, canonical manuscript** (the living working copy; start here) |
+| [Two_Regimes_of_Chiral_Mass_Coupling.tex](Two_Regimes_of_Chiral_Mass_Coupling.tex) | LaTeX build source for the "Two Regimes" paper |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
-| [equations.pdf](equations.pdf) / [equations.tex](equations.tex) | Compiled PDF / LaTeX of the equation reference |
-| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by PAPER_REVISED; retained for reference* |
-| [paper.pdf](paper.pdf) / [paper.tex](paper.tex) | Compiled PDF / LaTeX of the earlier unified paper |
-| [ManyClocks.pdf](ManyClocks.pdf) | Pandoc-rendered PDF of PAPER_UNIFIED.md |
+| [equations.tex](equations.tex) | LaTeX source of the equation reference |
+| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by the current revision; retained as the first-version record* |
+| [paper.pdf](paper.pdf) / [paper.tex](paper.tex) | First-version "Many Clocks" paper — compiled PDF (submission-of-record) / LaTeX |
 | [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script |
+
+*Equation rendering: to read the LaTeX in a browser without building a PDF, open any `.md` with the local MathJax viewer at `~/Desktop/Tools/equation-preview.html`.*
 
 ### Companion papers (in development)
 
@@ -55,9 +55,8 @@ to invite discussion.
 | File | Description | Status |
 |---|---|---|
 | [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md) | AB visibility envelope as a test of Dirac–Kuramoto vacuum locking | **Development phase — not for citation** |
-| [AB_visibility.pdf](AB_visibility.pdf) | Pandoc-rendered PDF of the AB companion paper | **Development phase — not for citation** |
 | [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
-| [DiscretizationAsSync.pdf](DiscretizationAsSync.pdf) | Pandoc-rendered PDF of the discretization companion paper | **Development phase — not for citation** |
+| [COSMIC_EXPANSION_PAPER.md](COSMIC_EXPANSION_PAPER.md) | Cosmic-expansion companion (bulk-sync cosmology) | **Development phase — not for citation** |
 | [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis | **Working note** |
 | [RESULTS_EMERGENT_FIELDS.md](results/RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
 

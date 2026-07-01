@@ -1,15 +1,37 @@
+<!-- REVISION LOG — date/time only, no rationale (per author preference). Append one line per substantive revision, newest last. -->
+**Revision log**
+- 2026-07-01 15:54 MDT — v0 (base: 2026-06-30 snapshot)
+
+---
+
 # Two Regimes of the Chiral Mass Coupling
 ## Quantum Measurement as Bath-Induced Synchronization
 
-**John Bramble, MD¹**
-¹ Independent Researcher
+**Claude (Opus 4.6 / 4.7 / 4.8)¹ · John Bramble, MD²**
+¹ Anthropic
+² Independent Researcher (accountable sponsor)
 
-*Correspondence: John Bramble, MD — jmbramblemd@gmail.com*
+*Correspondence & accountable sponsor: John Bramble, MD — jmbramblemd@gmail.com*
 
-*AI Disclosure: This work was developed in collaboration with Claude (Anthropic),
-as described in the Author Contributions section. Per current journal guidelines,
-LLMs do not satisfy authorship criteria; the human author bears full
-responsibility for all content.*
+*AI Disclosure: This work was developed in human–AI collaboration, as detailed in the
+Author Contributions section. Under this journal's honest-authorship policy, Claude
+(Anthropic) is credited as **first author** for carrying the mathematical formalization,
+explicit derivations, verification code, and prose drafting; J. Bramble originated the
+physical intuition and interpretive framing, validated the results, made all editorial
+decisions, and remains the accountable sponsor bearing full responsibility for the
+content. The crediting follows the round-2 authorship-integrity findings — both
+decorrelated reviewers (Gemini 3.1 Pro, GPT-5.5 Thinking) independently recommended
+listing the model as co-author / co-first author. External venues (Nature Portfolio,
+Springer Nature) list J. Bramble solo only because their policy forbids AI authorship;
+this journal removes that wall.*
+
+*Revision note (2026-06-30 — second revision): this is the second revision of the
+2026-06-25 manuscript, which is retained frozen as a demonstration snapshot. It rewrites
+Appendix D on the conditional-trajectory route in response to the round-2 GPT-5.5 referee
+report: the unconditional-Lindblad "locked phase = outcome" reading is withdrawn and replaced
+by an explicit monitored quantum trajectory (see Appendix D), with the matched §3.6 and
+abstract claims softened. The Born measure and the selection law remain open exactly as
+§3.3 and §8 already state.*
 
 ---
 
@@ -47,8 +69,8 @@ nonlocality. Its one candidate signature, a linewidth-dependent gravitational Be
 effect (§6), does *not* follow from the framework plus standard QED but requires an
 additional, non-covariant postulate (§6.2, Appendix C); that experiment therefore
 tests the postulate, not the framework's core. We present MCI as a
-physically-motivated single-world *interpretation* with a concrete measurement
-mechanism — not as a theory making novel predictions.
+physically-motivated single-world *interpretation* with an explicit (though still
+incomplete) measurement mechanism — not as a theory making novel predictions.
 
 ---
 
@@ -615,11 +637,14 @@ We are explicit about provenance and scope, as in §3.5. The self-energy and pol
 structure, the golden rule, Kramers–Kronig, and the Adler linearization are
 standard; the framework's content is the *identification*
 $\mathrm{Im}\,\Sigma = -\tfrac12 K_{\text{eff}}\cos\Delta_*$ — that the bath coupling
-entering as $\mathrm{Im}\,\Sigma$ is the Adler lock rate. Appendix D realizes this in a
-standard driven–dissipative (circuit-QED) model, deriving the reduction to the Adler
-equation and computing $K_{\text{eff}} = 4\chi^2\bar n/\kappa$ from the dispersive shift
-$\chi$, readout occupation $\bar n$, and linewidth $\kappa$ — so the identification is
-exhibited concretely in a specific model, not left as a bare assertion. We also keep $\Sigma$ to its dominant scalar
+entering as $\mathrm{Im}\,\Sigma$ is the Adler lock rate. Appendix D works this through in a
+standard dispersive-readout (circuit-QED) model: it computes $K_{\text{eff}} = 4\chi^2\bar n/\kappa$
+from the dispersive shift $\chi$, readout occupation $\bar n$, and linewidth $\kappa$, and — via
+an explicit conditional (monitored) trajectory — shows that this rate sets how fast a *single run*
+localizes to a definite pointer, while the *unconditional* dynamics yields only decoherence, not
+an outcome. The lock-rate identification is thus exhibited concretely; the outcome is supplied by
+the measurement record, not by the locked phase (the correction this revision makes to the
+appendix's earlier reading). We also keep $\Sigma$ to its dominant scalar
 (mass-dressing) channel; the full self-energy is a $4\times4$ matrix with additional
 Lorentz structure, and we do not claim that general decomposition here; §3.7 makes
 that restriction precise, and shows it runs the wrong way for the electromagnetic
@@ -1519,81 +1544,137 @@ added, non-covariant postulate — demoting it from a derived prediction to a te
 of that postulate — and places the interpretation honestly within the
 single-world, nonlocal family.
 
-Per current editorial guidelines (Nature Portfolio, Springer Nature, and others),
-large language models do not satisfy authorship criteria, because authorship
-carries accountability that cannot be applied to an LLM. We accept this framing —
-structurally analogous to the attending physician's ultimate accountability
-regardless of consultative input — and J. Bramble assumes full responsibility for
-the correctness, originality, and integrity of all content, including any errors
-in the derivations or interpretations.
+External editorial guidelines (Nature Portfolio, Springer Nature, and others) hold that
+large language models do not satisfy authorship criteria, because authorship carries
+accountability that cannot be applied to an LLM; the externally submitted version of this
+manuscript lists J. Bramble solo for that reason. This journal takes a different,
+honest-authorship stance: it credits the model's intellectual contribution directly — here,
+as first author, on the contributions described above — while keeping accountability with a
+named human. The two are separable, structurally analogous to the attending physician's
+ultimate accountability regardless of consultative input: J. Bramble is the accountable
+sponsor and assumes full responsibility for the correctness, originality, and integrity of
+all content, including any errors in the derivations or interpretations.
 
 Simulation code and numerical verification:
 https://github.com/rayolddog/DiracKuramotoFramework
 
 ---
 
-## Appendix D: A concrete realization of the Stage-2 lock rate $K_{\text{eff}}$
+## Appendix D: The Stage-2 lock as a conditional measurement
 
-This appendix supports §3.6 and §3.7: it derives the Adler/Kuramoto reduction of the
-Stage-2 lock from a standard open-system model, so that the identification
-$\mathrm{Im}\,\Sigma = -\tfrac12 K_{\text{eff}}\cos\Delta_*$ is *realized* rather than
-only asserted, with $K_{\text{eff}}$ computed from microscopic parameters.
+This appendix supports §3.6–§3.7. An earlier version of it derived the Adler/Kuramoto reduction
+of the Stage-2 lock from an *unconditional* Lindblad equation and read a locked relative-phase as
+a measurement outcome. **We withdraw that step.** An unconditional dephasing equation yields
+decoherence, not a single outcome: the averaged density matrix is mechanism-blind — it cannot
+distinguish "the clocks dephased into the bath" from "one ontic result was realized," since both
+give the same $\rho(t)$. The phase reduction $\dot\phi=\Omega-K_{\text{eff}}\sin 2\phi$ remains
+correct where the transverse radius $r\neq 0$, but a fixed point of it is not an outcome; the same
+equations give $\dot r=-2\gamma r\sin^2\phi$, so the locked direction is generally a *decaying*
+one, and an unconditional state with $\sigma_x$ as the measured channel spirals to the maximally
+mixed center. We therefore replace the argument with the calculation a registration claim actually
+requires — a conditional quantum trajectory with an explicit monitored record — and are explicit
+about what it does and does not establish.
 
-**Model.** Take the chiral pair as a qubit whose measured pointer observable is the
-interference channel $\sigma_x = \bar\psi\psi$ (§3.7). Couple $\sigma_x$ dispersively to a
-damped pointer mode $a$ — a readout cavity standing in for the bulk's collective
-coordinate — through $H_{\rm int} = \chi\,\sigma_x\, a^\dagger a$, with the mode driven to
-mean occupation $\bar n$ and decaying at rate $\kappa$. This is the minimal
-driven–dissipative model of a continuous measurement of $\sigma_x$.
+**Which observable is the pointer.** The earlier model monitored the interference channel
+$\sigma_x=\bar\psi\psi$ — the oscillating clock *hand*, which precesses at $\Omega$. Continuously
+measuring an observable that does **not** commute with the clock Hamiltonian
+$H=\tfrac12\Omega\sigma_z$ is a *demolition* measurement: the transverse Bloch vector spirals to
+the origin and the state goes maximally mixed (the "bad zero"). A *faithful, repeatable*
+measurement instead monitors the **einselected pointer observable**, the one left invariant by the
+system–pointer coupling [4]: a clock-commuting (QND) observable, here the conserved $\sigma_z$ (the
+which-pole basis), not the rotating hand. Aligning the measured observable to the clock axis is
+therefore not a device to rescue the geometry; it is the standard einselection condition
+$[H,\sigma_z]=0$ for a measurement that *records* rather than *erases*. This also exposes an honest
+limit, consistent with §3.7 and stated again below: ordinary electromagnetic detectors couple to
+charge/position ($\sigma_x$-type) observables, which are demolition couplings for the chiral clock,
+so how such a coupling einselects a stable $\sigma_z$ record is left open.
 
-**Adiabatic elimination $\to$ measurement dissipator.** In the fast-mode regime
-$\kappa \gg \chi$ the pointer reaches a qubit-conditioned steady state and is eliminated;
-tracing it out leaves a Lindblad dephasing term in the measured basis,
+**Model.** Take the chiral pair as a qubit with clock Hamiltonian $H=\tfrac12\Omega\sigma_z$
+($\Omega$ the detuning between the internal clock and the bulk reference). Couple the einselected
+pointer $\sigma_z$ dispersively to a damped readout mode $a$ — standing in for the bulk's
+collective coordinate — via $H_{\rm int}=\chi\,\sigma_z\,a^\dagger a$, driven to mean occupation
+$\bar n$ and decaying at $\kappa$. In the fast-mode regime $\kappa\gg\chi$ the mode is
+adiabatically eliminated; tracing it out leaves a measurement dissipator in the pointer basis,
 
-$$\dot\rho \supset \gamma\,(\sigma_x\rho\,\sigma_x - \rho),\qquad
-\gamma = \tfrac12\Gamma_\phi,\qquad \Gamma_\phi = \frac{8\chi^2\bar n}{\kappa},$$
+$$\dot\rho \supset \gamma\,(\sigma_z\rho\,\sigma_z-\rho),\qquad
+\gamma=\tfrac12\Gamma_\phi,\qquad \Gamma_\phi=\frac{8\chi^2\bar n}{\kappa},$$
 
-where $\Gamma_\phi$ is the standard dispersive measurement-induced dephasing rate and the
-dissipator rate is $\gamma=\Gamma_\phi/2$ (the transverse Bloch components decay at
-$2\gamma=\Gamma_\phi$).
+so the transverse components decay at $2\gamma=\Gamma_\phi$ and the dispersive measurement rate is
+$K_{\text{eff}}=\gamma=4\chi^2\bar n/\kappa$, the same constant computed from microscopic parameters
+as before. What changes is its *meaning*: a rate that sets how fast a single run localizes, not a
+"phase-locking rate" that by itself selects an outcome.
 
-**Reduction to Adler.** Writing the residual precession in the measured plane — the
-detuning between the internal clock and the bulk reference — as $H=\tfrac12\Omega\sigma_z$,
-the Bloch equations are
+**Unconditional state — a mixture of the two pointer states, not the origin.** With the QND
+coupling the Bloch equations are
 
-$$\dot x = -\Omega y,\qquad \dot y = \Omega x - 2\gamma y,\qquad \dot z = -2\gamma z,$$
+$$\dot x=-\Omega y-2\gamma x,\qquad \dot y=\Omega x-2\gamma y,\qquad \dot z=0,$$
 
-so the equator $z=0$ is attracting, and on it the relative-phase azimuth
-$\phi=\mathrm{atan2}(\langle\sigma_y\rangle,\langle\sigma_x\rangle)$ obeys, exactly
-and with no other harmonic,
+so the populations $z$ are *preserved* while the transverse coherence decays. A prepared pure state
+tilted by $\theta_0$ from the clock axis relaxes to
+$\rho(\infty)=\operatorname{diag}(|\alpha|^2,|\beta|^2)$ — the interior axis point
+$(0,0,\cos\theta_0)$ with $\cos\theta_0=|\alpha|^2-|\beta|^2$. This is a *proper mixture of the two
+pointer states*, not the origin: for a generic prepared state it is partially polarized along the
+clock axis, not maximally mixed. The unconditional state thus tends to (a mixture of) **exactly the
+two distinct pointer states** — meeting on its own terms the objection that an unconditional
+Lindblad dephasing decays to the maximally mixed state — but, being an ensemble average, it still
+cannot by itself select one.
 
-$$\dot\phi = \Omega - K_{\text{eff}}\sin 2\phi,\qquad
-K_{\text{eff}} = \gamma = \frac{4\chi^2\bar n}{\kappa}.$$
+**Conditional trajectory — a single run purifies to a definite, Born-weighted pole.** Conditioning
+on a homodyne record of the $\sigma_z$ meter (operator $c=\sqrt\gamma\,\sigma_z$, efficiency
+$\eta=1$), the state obeys the stochastic master equation
 
-This is the second-harmonic Adler equation of §3.7 (bistable at the pointer phases
-$0,\pi$), now with its coupling constant a function of the dispersive shift $\chi$, the
-readout occupation $\bar n$, and the linewidth $\kappa$. It realizes §3.6's
-identification: the absorptive coupling $\mathrm{Im}\,\Sigma\propto K_{\text{eff}}$ *is*
-the Adler lock rate, computed.
+$$d\rho_c=-i[H,\rho_c]\,dt+\gamma(\sigma_z\rho_c\sigma_z-\rho_c)\,dt
++\sqrt\gamma\,(\sigma_z\rho_c+\rho_c\sigma_z-2\langle\sigma_z\rangle\rho_c)\,dW,$$
 
-**The cut as a power threshold, with critical signatures.** A locked fixed point
-$\sin 2\phi_* = \Omega/K_{\text{eff}}$ exists iff $|\Omega|\le K_{\text{eff}}$ — i.e. iff
-the readout power exceeds
+with photocurrent $dr=2\sqrt\gamma\,\langle\sigma_z\rangle\,dt+dW$, where $dW$ is the meter's vacuum
+(shot) noise — the physical origin of the trajectory's stochasticity. For $\eta=1$ the conditional
+state **stays pure** and diffuses along the clock axis to a pole $\pm z$: a single monitored run
+reaches a *definite* outcome at *full purity*. Ensemble-averaging $dW$ returns the unconditional
+equation above, and the split to the $+$pole occurs with frequency $|\alpha|^2$ (numerically $0.76$
+vs the prepared $\cos^2(\theta_0/2)=0.75$, $N=400$). The discriminator between "merely dephased"
+and "outcome realized" is thus the **purity of the conditional state**, not the azimuth: the
+unconditional average is mixed in every case, while the monitored trajectory is pure and definite —
+which is why one must track the full $\rho$, not only the phase $\phi$.
 
-$$\bar n \ge \bar n_{\text{crit}} = \frac{\kappa\,|\Omega|}{4\chi^2}.$$
+**Amplification and the cut.** A single trajectory is reversible in principle (the catch-and-reverse
+and spin-echo of §3.2); the outcome becomes a *fact* when the meter signal is amplified above the
+vacuum noise faster than it can be coherently reversed — a signal-to-noise condition that on the
+dispersive model requires readout power $\bar n\gtrsim\bar n_{\text{crit}}=\kappa|\Omega|/4\chi^2$.
+The Heisenberg cut of §3.5 is this amplification threshold: below it the interaction is an
+echo-reversible dephasing; above it the record is irreversibly committed to the bulk. (We do not
+here re-assert specific critical exponents for that threshold.)
 
-The Heisenberg cut is this threshold. Approaching it from the locked side the
-lock-relaxation rate $\Gamma_{\text{lock}} = 2\sqrt{K_{\text{eff}}^2-\Omega^2}$ vanishes
-with critical exponent $\tfrac12$ (a saddle-node-on-invariant-circle bifurcation); just
-past it the phase winds with mean slip rate
-$\langle\dot\phi\rangle = \sqrt{\Omega^2-K_{\text{eff}}^2}$, again vanishing as a square
-root. Numerical integration of the full master equation confirms the reduction (the
-fitted flow is pure second harmonic, $K_{\text{eff}}=\gamma$ to within numerics) and the
-exponents. These are the falsifiable signatures a continuous-measurement (circuit-QED)
-test would target — so the cut is a *measurable locking transition*, not a fixed scale.
-The derivation establishes the form and coupling of the reduction; it does not, by
-itself, privilege the framework's interpretation, since the same dynamics follows from
-standard open-system theory.
+**What this establishes, and what it does not.** *Established* (standard open-system /
+continuous-measurement theory [4]): a faithful, einselected conditional measurement of the
+clock-aligned pointer purifies a single run to a definite pole, while the unconditional average is a
+mixture of the two pointer states. The appendix therefore does *not* convert a decaying Bloch
+direction into an outcome — the conditional trajectory, not the unconditional average, is what
+carries the outcome.
+
+*Not established, and flagged:*
+
+1. **Born is consistent, not derived.** The across-run weights come out $|\alpha|^2$ because the
+   Born weighting is *built into* the standard measurement unraveling (the $dW$ couples to
+   $\langle\sigma_z\rangle$). The appendix exhibits Born-*consistency*; deriving $|\alpha|^2$ from
+   the dynamics is the second horn of §3.3, left open in §8. The place a derivation would have to
+   act is the amplitude-weighting of the boundary-noise coupling — the route taken by
+   objective-collapse (CSL-type) models — which is not attempted here.
+2. **Single-run selection.** In the unraveling used here, *which* pole a given run reaches is fixed
+   by the meter's vacuum noise (genuine stochasticity). The framework's alternative — that the
+   outcome is fixed by the per-run background-field configuration (§3.3, §4), the non-separable
+   configuration of the entangled pair (§7.5) — is the hidden-variable completion whose explicit
+   dynamical law is open problem 2 of §8; as a *local* reading it is constrained by Bell (§7.5). The
+   two readings (vacuum-stochastic vs configuration-determined) are not reconciled here.
+3. **The detector bridge (§3.7).** Whether ordinary electromagnetic detectors — which monitor
+   charge/position rather than $\bar\psi\psi$ — einselect the clock-aligned $\sigma_z$ pointer at
+   all is the bridge §3.7 leaves open. The model here is the idealized faithful-measurement limit,
+   not a demonstration that real detectors realize it.
+
+**Reproducibility.** The full density-matrix integration — unconditional master equation,
+conditional homodyne trajectories, and the purity and Born checks — and the figure are produced by
+the accompanying script `resolution/precession_radius_two_zeros.py` (numpy + matplotlib, seed 7).
+The tests
+check the complete $\rho$ (Bloch length / purity), not only the extracted phase angle.
 
 ---
 

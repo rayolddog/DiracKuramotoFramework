@@ -269,6 +269,128 @@ They are the same wall as `project_born_measure_status`, but relocated from
 
 ---
 
+## 7½. Progress (2026-07-01): a numerical Born test and the Lagrangian grounding of (A)
+
+First concrete attempts at §7's two computations. Neither closes the program; both
+move the honest line, and both hand back **falsifiable** deviation regimes.
+
+### 7½.a Numerical test of the Born mechanism — `code/born_substrate_sampling.py` **[fw, proof-of-mechanism]**
+
+The §3 mechanism was made into a runnable stochastic model, to check that the squaring
+**emerges** rather than being inserted. Each detector atom is a threshold-escape clock
+(Kramers rate `r₀·exp(ε/D)`) driven by a **linear** real oscillation
+`ε_i(t) = a|ψ_i|cos(ωt+φ_i)`, embedded in the disordered bulk = a bath of noise `D`
+and **uniformly random phase** (the "mostly disorganised, tiny-coherent" bulk).
+
+- **The squaring is generated.** Averaging over the random bulk phase,
+  `⟨r_i⟩ = r₀ I₀(a|ψ_i|/D)`; the **linear term cancels** (`⟨cos⟩=0` — §2's positivity,
+  made dynamical) and the leading survivor is `Δr_i ∝ |ψ_i|²`. Verified: the excess rate
+  tracks `A²/4` to <2% for `A = a|ψ|/D ≲ 0.5`. The input was **linear** in ψ; the `|ψ|²`
+  came out — so the golden-rule circularity (`project_born_rule_derivation`) is
+  **avoided**, not repeated.
+- **Born recovered.** Winner-take-all among indivisible-quantum competition gives
+  `P(i) = Δr_i / Σ_j Δr_j → |ψ_i|²`: TVD from Born = **0.0008** (4-channel discrete),
+  **0.0037** (240-site interference pattern — the winner histogram traces the `|ψ(x)|²`
+  fringes, the hologram tie-in).
+- **It breaks where the physics says it must** (so it is falsifiable, not tautological):
+  **strong signal** `a|ψ|/D ≳ 1` → `I₀−1` outruns `A²/4` → bright channels over-weighted
+  (TVD 0.031, 40× the weak value); **coherent bulk** (von-Mises phase, concentration
+  `κ>0`) → the linear term survives → equal-`|ψ|` channels of different `arg ψ` skew from
+  50/50 (→0.95 as `κ→4`). Born is blind to `arg ψ`; a coherent bath is not.
+
+**What this establishes:** *given* (A) a real oscillation driving detectors **linearly**
+and (B) a **random-phase, homogeneous** bulk, the `|ψ|²` weighting and Born frequencies
+follow, and the squaring is not smuggled. **(B) is the relocated Born postulate** —
+precisely Valentini quantum-equilibrium, now a *bath condition* with **non-equilibrium
+Born-deviation signatures** (strong-signal, bulk-coherence, and non-uniform `a`/`D`).
+This is a **proof of mechanism, not of nature**: it verifies the internal logic, not (A)
+or (B).
+
+### 7½.b Open computation #1, attempted — the Lagrangian grounding of (A) **[std result, two honest seams]**
+
+Does the Dirac Lagrangian *give* "energy density ∝ |ψ|²", or must it be posited?
+Partial answer: the **form is Noether-derived for equal-energy states.**
+
+- **Number/charge density [std].** The global-U(1) symmetry of
+  `L = ψ̄(iγ^μ∂_μ − m)ψ` gives the conserved current `j^μ = ψ̄γ^μψ`; its time component
+  `j⁰ = ψ†ψ = |ψ|²` is the **unique positive-definite conserved density**
+  (`∂_μ j^μ = 0`). This is §2's positivity/bilinearity argument at the Lagrangian level —
+  `|ψ|²` is *forced* as "how much is here."
+- **Energy density [std].** Time-translation gives `T⁰⁰ = ψ†H_D ψ`,
+  `H_D = α·(−i∇)+βm`. For a stationary state (`H_Dψ = Eψ`), **`T⁰⁰ = E|ψ|²`**. So
+  **energy density ∝ |ψ|² whenever the compared channels share one energy `E`** — exactly
+  the "equal-energy channels" regime the framework already restricts Born-consistency to.
+  Assumption (A)'s *form* is therefore standard Dirac field theory in that sector, not a
+  bare posit.
+
+Two seams, stated honestly:
+
+1. **`E|ψ|²` vs `|ψ|²` — the equal-energy boundary — CLOSED (2026-07-01, `code/detector_resonance_selection.py`).**
+   Born weights by `|ψ|²` regardless of channel energy; the energy density weights by
+   `E|ψ|²`; they differ only for genuinely energy-superposed channels. Two independent
+   facts remove the discrepancy for all realistic detection:
+   - **Resonance = energy selection.** A threshold detector of transition `ℏω_d` is a
+     narrow filter `L(ω_n−ω_d) = γ²/[(ω_n−ω_d)²+γ²] → δ` as its linewidth `γ→0` (energy
+     conservation at the absorption vertex). Each detector sees ONE energy; with `E`
+     pinned to `ℏω_d`, `E|ψ|² ∝ |ψ|²` — Born, exact as `γ→0` (finite-`γ` off-resonant leak
+     `~ (γ/Δ)²`; numerically TVD(charge readout, Born) = 0.004 at `γ/Δ = 0.1`).
+   - **Charge, not energy, is what an ordinary detector couples to.** The two Noether
+     densities couple *differently*: `j⁰ = |ψ|²` (CHARGE → `A_μ`, electromagnetic) and
+     `T⁰⁰ = E|ψ|²` (ENERGY → `g_μν`, gravitational). Every real detector is an EM device
+     (QED current coupling `e j^μ A_μ`), so it reads the **charge density `|ψ|²` → Born,
+     `E`-independent.** Verified: an unequal-energy superposition
+     `E_n=[1,1.5,2,2.5]`, `|c_n|²=[.4,.3,.2,.1]` is read out as `[.40,.30,.20,.10]`
+     (Born, TVD 0.004) by a charge-coupled bank; only an ENERGY-coupled (gravitational)
+     bank returns the skewed `E_n|c_n|²=[.27,.30,.27,.17]` (TVD 0.13).
+
+   **Net: the `E|ψ|²` weighting is *gravitational only*.** For all electromagnetic (i.e.
+   all practical) measurement, resonance pins `E` and charge-coupling gives `|ψ|²` — Born,
+   no `E`-weighting. The unequal-energy deviation survives *solely* for a device coupling
+   to `T⁰⁰` (gravity) — precisely the framework's existing gravitational/preferred-frame
+   sector, not a new liability. This uses only standard QED (the EM coupling is to the
+   current `j^μ`), so it adds **no** assumption.
+2. **Linear vs. bilinear coupling — the Lagrangian does not settle the ontology.** The
+   numerical test needed a **linear** drive (a real field couples to a probe like `qE`),
+   from which the square was *derived*. But the standard Dirac field couples through the
+   **bilinear current** `A_μ j^μ ∝ |ψ|²` — where the square is already *in the coupling*
+   (= golden rule = Born assumed). The Lagrangian is **consistent with both**:
+   ψ-as-real-field (linear coupling, square *derived*) and ψ-as-amplitude (current
+   coupling, square *is* Born). It *permits* the energy reading; it does not *compel* it.
+   That permission is the most field theory gives; the choice is the ontological fork (A).
+
+**Net of 7½.b:** open computation #1 is **largely discharged.** The `|ψ|²` *form* of the
+energy density is Noether-derived (equal-energy), and **seam 1 is now closed** — resonance
++ charge-coupling give Born for all EM detection, with the `E|ψ|²` weighting confined to
+gravitational coupling. So (A) drops from "bare postulate" to a **single** residual: the
+ontology fork of **seam 2** (is `ψ` a real field, licensing the linear coupling that lets
+§7½.a derive the square — or a probability amplitude, in which case the bilinear current
+coupling makes the square Born by fiat?). The Lagrangian permits the real-field reading
+but does not compel it; that is the one genuinely open hinge.
+
+### 7½.c On Occam's razor (energy vs. probability)
+
+The **strong** form of the parsimony intuition is sound and has precedent: replacing a
+*primitive* Born postulate with the *derived equilibrium statistics of a real substrate*
+is the **Boltzmann move** (thermodynamics ← statistical mechanics), and it buys
+**unification** — one ontological lever (A) dissolves the Born *form*, the `∫|ψ|²=1`
+normalization (§4.5), non-normalizable states, and Heisenberg (§5) together. Fewer
+*independent* postulates explaining more is a genuine Occam virtue.
+
+Two caveats keep it honest:
+- **The raw assumption-count may not drop.** You trade "Born postulate" for "substrate is
+  real **+** the bulk is in random-phase equilibrium (B)," and equilibrium is itself a
+  statistical posit — the Bohm/Valentini niche, which faces the same "why equilibrium?"
+  question. Naive counting is a wash.
+- **Occam only adjudicates *empirically-equivalent* theories — and these are not.** 7½.a
+  and 7½.b show the energy reading predicts **Born deviations** (strong-signal,
+  coherent-bulk, unequal-energy). So the honest reason to prefer it is **not** that it is
+  simpler (contestable) but that it is **falsifiable where the probability postulate is
+  silent**: it converts an untestable axiom into physics with specific deviation regimes.
+  *Popper before Occam* — keep the energy reading for its testability, and let the
+  deviation regimes, not parsimony, decide.
+
+---
+
 ## 8. What NOT to claim (and the paper question)
 
 - **Do not claim Born is derived.** §2–§3 derive the *form*; the probability identity
