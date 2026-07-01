@@ -59,7 +59,7 @@ to invite discussion.
 | [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
 | [DiscretizationAsSync.pdf](DiscretizationAsSync.pdf) | Pandoc-rendered PDF of the discretization companion paper | **Development phase — not for citation** |
 | [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis | **Working note** |
-| [RESULTS_EMERGENT_FIELDS.md](RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
+| [RESULTS_EMERGENT_FIELDS.md](results/RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
 
 ## Numerical Verification Scripts
 

@@ -50,3 +50,12 @@ tests/kuramoto_sync.png
 # (moved here 2026-06-15; un-ignore once §2.5 / the open-system study is finalized)
 ZBW_synchronization/
 PAPER_REVISED_v2_backup_*.md
+
+# External submission correspondence + cover letter — kept LOCAL.
+# Repo is public and the endorsement drafts name third parties.
+/submission/
+/COVER_LETTER.md
+/COVER_LETTER.pdf
+
+# Incoming external research bundle (zip + notes) — kept local
+/Research/

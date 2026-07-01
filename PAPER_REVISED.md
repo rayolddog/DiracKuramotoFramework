@@ -1564,7 +1564,7 @@ the Bloch equations are
 $$\dot x = -\Omega y,\qquad \dot y = \Omega x - 2\gamma y,\qquad \dot z = -2\gamma z,$$
 
 so the equator $z=0$ is attracting, and on it the relative-phase azimuth
-$\phi=\operatorname{atan2}(\langle\sigma_y\rangle,\langle\sigma_x\rangle)$ obeys, exactly
+$\phi=\mathrm{atan2}(\langle\sigma_y\rangle,\langle\sigma_x\rangle)$ obeys, exactly
 and with no other harmonic,
 
 $$\dot\phi = \Omega - K_{\text{eff}}\sin 2\phi,\qquad
