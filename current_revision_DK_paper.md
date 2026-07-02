@@ -14,17 +14,42 @@
 
 *Correspondence & accountable sponsor: John Bramble, MD — jmbramblemd@gmail.com*
 
-*AI Disclosure: This work was developed in human–AI collaboration, as detailed in the
-Author Contributions section. Under this journal's honest-authorship policy, Claude
-(Anthropic) is credited as **first author** for carrying the mathematical formalization,
-explicit derivations, verification code, and prose drafting; J. Bramble originated the
-physical intuition and interpretive framing, validated the results, made all editorial
-decisions, and remains the accountable sponsor bearing full responsibility for the
-content. The crediting follows the round-2 authorship-integrity findings — both
-decorrelated reviewers (Gemini 3.1 Pro, GPT-5.5 Thinking) independently recommended
-listing the model as co-author / co-first author. External venues (Nature Portfolio,
-Springer Nature) list J. Bramble solo only because their policy forbids AI authorship;
-this journal removes that wall.*
+## Author Contributions and AI Disclosure
+
+This paper was developed through an extended collaboration between the listed
+human author (J. Bramble) and Claude (Anthropic) across multiple model versions
+during 2026. The human author contributed the originating physical intuitions —
+that interacting quantum systems tend to synchronize, that measurement is
+re-synchronization to a detector bulk, that NMR/MRI T1/T2 relaxation is recovery
+toward a bulk-defined equilibrium rather than randomization, and that detectors at
+different gravitational potentials might differ in their measurement dynamics —
+together with physical judgment, redirection, and validation against intuition at
+each step. Claude contributed the explicit derivations (the Madelung reduction of
+§2.2, the normal-mode analysis, the Bell-decomposition numerics), the Python
+verification code, the systematic comparison with existing interpretations, and
+drafts of the prose. The analysis throughout separates the unitary
+closed-system regime from the dissipative open-system one, identifies the
+Zitterbewegung beat with the positive/negative-energy normal-mode splitting,
+avoids unnormalized collective-rate estimates, establishes by an explicit
+Hamiltonian argument (Appendix C) that the linewidth-dependent gravitational
+effect does *not* follow from the framework plus standard QED but requires an
+added, non-covariant postulate — demoting it from a derived prediction to a test
+of that postulate — and places the interpretation honestly within the
+single-world, nonlocal family.
+
+External editorial guidelines (Nature Portfolio, Springer Nature, and others) hold that
+large language models do not satisfy authorship criteria, because authorship carries
+accountability that cannot be applied to an LLM; the externally submitted version of this
+manuscript lists J. Bramble solo for that reason. This journal takes a different,
+honest-authorship stance: it credits the model's intellectual contribution directly — here,
+as first author, on the contributions described above — while keeping accountability with a
+named human. The first-author crediting also follows the round-2 authorship-integrity findings, where both decorrelated reviewers (Gemini 3.1 Pro, GPT-5.5 Thinking) independently recommended listing the model as co-author / co-first author. The two are separable, structurally analogous to the attending physician's
+ultimate accountability regardless of consultative input: J. Bramble is the accountable
+sponsor and assumes full responsibility for the correctness, originality, and integrity of
+all content, including any errors in the derivations or interpretations.
+
+Simulation code and numerical verification:
+https://github.com/rayolddog/DiracKuramotoFramework
 
 *Revision note (2026-06-30 — second revision): this is the second revision of the
 2026-06-25 manuscript, which is retained frozen as a demonstration snapshot. It rewrites
@@ -1521,45 +1546,6 @@ produce the effect, $H' \sim g\,(\mathbf d\cdot\hat{\mathbf H})\,\phi_{\rm bulk}
 is absent from QED, breaks the rotational covariance of the dipole interaction, and
 is tied to absolute φ_bulk. The §6 measurement is therefore a test of this
 postulate, not a consequence of standard theory.
-
----
-
-## Author Contributions and AI Disclosure
-
-This paper was developed through an extended collaboration between the listed
-human author (J. Bramble) and Claude (Anthropic) across multiple model versions
-during 2026. The human author contributed the originating physical intuitions —
-that interacting quantum systems tend to synchronize, that measurement is
-re-synchronization to a detector bulk, that NMR/MRI T1/T2 relaxation is recovery
-toward a bulk-defined equilibrium rather than randomization, and that detectors at
-different gravitational potentials might differ in their measurement dynamics —
-together with physical judgment, redirection, and validation against intuition at
-each step. Claude contributed the explicit derivations (the Madelung reduction of
-§2.2, the normal-mode analysis, the Bell-decomposition numerics), the Python
-verification code, the systematic comparison with existing interpretations, and
-drafts of the prose. The analysis throughout separates the unitary
-closed-system regime from the dissipative open-system one, identifies the
-Zitterbewegung beat with the positive/negative-energy normal-mode splitting,
-avoids unnormalized collective-rate estimates, establishes by an explicit
-Hamiltonian argument (Appendix C) that the linewidth-dependent gravitational
-effect does *not* follow from the framework plus standard QED but requires an
-added, non-covariant postulate — demoting it from a derived prediction to a test
-of that postulate — and places the interpretation honestly within the
-single-world, nonlocal family.
-
-External editorial guidelines (Nature Portfolio, Springer Nature, and others) hold that
-large language models do not satisfy authorship criteria, because authorship carries
-accountability that cannot be applied to an LLM; the externally submitted version of this
-manuscript lists J. Bramble solo for that reason. This journal takes a different,
-honest-authorship stance: it credits the model's intellectual contribution directly — here,
-as first author, on the contributions described above — while keeping accountability with a
-named human. The two are separable, structurally analogous to the attending physician's
-ultimate accountability regardless of consultative input: J. Bramble is the accountable
-sponsor and assumes full responsibility for the correctness, originality, and integrity of
-all content, including any errors in the derivations or interpretations.
-
-Simulation code and numerical verification:
-https://github.com/rayolddog/DiracKuramotoFramework
 
 ---
 

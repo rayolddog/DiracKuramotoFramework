@@ -35,3 +35,17 @@ Born's *squaring* is off the assumption list (earned twice: Noether form + power
 **Decision on the paper:** keep the Aperture demonstration **frozen**; continue physics here in DiracKuramotoFramework. The living manuscript is `current_revision_DK_paper.md` (copied from the 06-30 Aperture snapshot). A short, honestly-bounded revision incorporating these results — the substrate outcome-selection mechanism as a *candidate* completion of Appendix D, plus the "difference is gravitational-only" structural result strengthening §6 — is planned, **not yet written** (stance stays "Born-compatible, not Born-derivative").
 
 **Open next:** (1) draft that bounded revision plan; (2) quantify the gravitational `E`-weighting / BMV discriminator; (3) Heisenberg computation #2 (substrate phase-space cell = `h`); (4) which side investigations (AB, discretization, cosmic-expansion) need updating in light of the above.
+
+---
+
+## Late addendum (same night) — Born from the *curvature* of the capture threshold?
+
+Musing while reading: assuming the locking basins are round (2D), should there be a *threshold* for being trapped, and does it vary radially?
+
+**Yes, and it's already latent.** The dissipative Adler flow `φ̇ = Ω − K_eff·sin 2φ` is gradient descent in a tilted "washboard" potential; the basins are wells, and the barriers between them *are* the Kramers capture threshold. Under the "threshold to *irreversibly commit*" reading, the radial picture is: **low at the well center** (strong restoring force → fast, robust lock) rising to **high at the separatrix edge** (critical slowing — the deterministic force → 0 at the saddle, noise decides, and you need stronger amplification to commit before a fluctuation tips you into the other basin). That edge is the **reversibility boundary** (catch-and-reverse / spin-echo — the Heisenberg cut of Appendix D) and the **SNIC bifurcation** (critical exponent ½, dispute-002). *(Note: the energy direction was inverted in the asking — the potential `V` is lowest at the center; it is the commit-threshold, read as "how much amplification to lock in," that runs low-center/high-edge.)*
+
+**The hypothesis (John):** that Born `|α|²` might be derivable from the *curvature* of that round-basin capture threshold.
+
+**Honest status.** A symmetric two-well washboard keeps the basin *volume* 50/50 (`code/born_weights_check.py`), so threshold curvature *alone* does not manufacture `|α|²`. It yields Born only if the *rate* of committing to a basin scales with the amplitude/power delivered to that channel (`∝ |ψ|²`) — at which point it merges with the substrate-sampling mechanism above: **the threshold supplies the discreteness (one committed outcome); the amplitude-weighted crossing supplies the weights.** So it is an appealing *unifying picture*, not a derivation — same imported-`|α|²` (assumed-equilibrium) status.
+
+**To try:** a concrete round-basin model — capture threshold `∝ r²` (paraboloid) from each well center, with landings/barrier-crossing driven by the channel amplitude — and check whether the committed-outcome frequencies come out `|α|²` or stay 50/50. That calculation is what would tell whether "Born from threshold curvature" is real or just pretty.
