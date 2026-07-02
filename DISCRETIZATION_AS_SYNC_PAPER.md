@@ -990,6 +990,20 @@ Born exactly from sync dynamics; if it fails, the framework reduces to a
 Born-compatible interpretation rather than a Born-derivative one — still informative
 but less complete.
 
+A concrete candidate for that missing *typicality* half is now in hand
+(`code/born_substrate_sampling.py`; companion [1] §8). If selection is not basin-volume
+flow but *competition among threshold detectors*, each driven **linearly** by the local
+wave amplitude, then a random-phase (equilibrium) bulk makes the per-detector firing rate
+go as the delivered **power**, $|\psi|^2$ — the squaring appearing as the first
+non-cancelling term of the phase average, not inserted as a golden-rule postulate. This
+*sharpens* the gap rather than closing it: it locates the weight in the drive **amplitude**
+rather than the basin **geometry**, so the "an unbiased background would give equal odds"
+objection above — a statement about basin *volume* — does not apply to the
+detector-competition channel; but it still **assumes** the bulk's random-phase equilibrium
+(Bohm's quantum-equilibrium in this setting) and **breaks** Born predictably once that
+equilibrium is spoiled (strong drive, or a coherent bulk). It is a candidate for
+typicality, not a proof that the sync dynamics relaxes to it.
+
 ### 6.2 Continuous spectra
 
 QM admits not only discrete spectra (bound states) but also continuous

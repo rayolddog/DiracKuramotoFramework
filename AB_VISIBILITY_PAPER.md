@@ -480,7 +480,14 @@ it. In the framework's settled form the chiral coupling K = m is a **fixed
 constant**, set once by the Higgs vacuum expectation value (a Lorentz scalar):
 gravity *reads* the chiral register — the mass term $\bar\psi\psi$ to which the
 stress tensor couples — but does not *modulate* K (companion [2] §8, the Vacuum
-Preferred-Frame Hypothesis and its K-fixed scope item). Fixing K removes the
+Preferred-Frame Hypothesis and its K-fixed scope item). The companion's §3.7 now makes
+this "reads, not modulates" split precise and demonstrable: electromagnetism couples to the
+vector current (charge density $j^0=|\psi|^2$), whereas $\bar\psi\psi=T^\mu{}_\mu$ is the
+trace of the stress tensor, so *only* gravity couples to it — verified numerically in the
+companion's `code/detector_resonance_selection.py`, where a charge-coupled detector reads
+$|\psi|^2$ energy-independently and the energy-weighted reading appears only under a
+gravitational coupling. This is consistent with a fixed $K=m$: gravity registers the
+mass channel without setting its rate. Fixing K removes the
 K(Φ_g) channel and, with it, the equivalence-principle exposure that a
 potential-dependent K would have carried; the framework's only new-physics
 liability is the preferred-frame (Lorentz) one that the γ-scan tests. The V-vs-γ
