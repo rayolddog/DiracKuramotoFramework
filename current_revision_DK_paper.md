@@ -1,6 +1,7 @@
 <!-- REVISION LOG — date/time only, no rationale (per author preference). Append one line per substantive revision, newest last. -->
 **Revision log**
 - 2026-07-01 15:54 MDT — v0 (base: 2026-06-30 snapshot)
+- 2026-07-01 20:04 MDT — v1
 
 ---
 
@@ -710,7 +711,7 @@ the framework's coupling supplies the measured channel equivariance needs: the
 electromagnetic interaction supplies a different one, and the coupling that would supply
 it is gravitational, rate-suppressed, and no better off than Penrose–Diósi on the weights
 themselves. The Born measure (§8) is, on this analysis, uniformly open across the
-synchronization and gravitational-reduction readings alike.
+synchronization and gravitational-reduction readings alike. (Numerically, `code/detector_resonance_selection.py` bears out this charge-versus-mass split: a resonant charge-coupled detector reads the charge density $j^0=|\psi|^2$ — Born weights, *independent* of the channel energy — while the energy-weighted density $T^{00}=E|\psi|^2$ is recovered only by a gravitational, energy-coupled readout. The equal-energy restriction on the Born reading is thus a *consequence* of measurement being electromagnetic, not a separate limitation to be lifted.)
 
 ---
 
@@ -1028,6 +1029,8 @@ calibrated scan at fixed entanglement fidelity that holds CHSH flat across
 linewidth would disconfirm the postulate $H'$ of §6.2 (and confirm standard QED); a
 degradation scaling as 1/Δν², present only with an altitude split, would be
 evidence for it.
+
+A second, independent gravitational handle targets the *ontology* rather than the $H'$ postulate: reading $|\psi|^2$ as a real energy density makes a delocalized mass source a mean field $\propto E|\psi(x)|^2$ (semiclassical, Møller–Rosenfeld), so it would *not* gravitationally entangle two masses — a null in the Bose–Marletto–Vedral tabletop test, where quantized gravity predicts entanglement. This is a far-future test that inherits the known difficulties of semiclassical gravity (it plausibly requires a Diósi–Penrose-type collapse, already constrained by matter-wave and spontaneous-radiation bounds), and is noted here as a discriminator of the wave-energy *reading*, not as a prediction the framework's core requires.
 
 ---
 
@@ -1355,7 +1358,7 @@ the framework's status depends entirely on them:
    serial background-scrambling — each boundary interaction resamples the
    unbiased background — but it has been shown for standard Bohmian dynamics, not
    for MCI's dissipative, boundary-localized selection, so whether the same
-   H-theorem holds here, and with what coarse-graining, remains open. Absent that proof,
+   H-theorem holds here, and with what coarse-graining, remains open. A minimal toy model of this route is now in hand (`code/born_substrate_sampling.py`): threshold-clock detectors driven by a *linear* real coupling in a random-phase (equilibrium) bulk reproduce Born weights by winner-take-all selection, with the squared measure arising from the delivered *power* — the linear drive's phase average, the first surviving term once the sign-alternating linear part cancels — rather than an assumed rate law, so the route does not smuggle in the $|\cdot|^2$ it must explain; and the same model *breaks* Born predictably away from equilibrium (strong drive, or a coherent bulk), i.e. it carries the non-equilibrium signatures a genuine relaxation account would. It illustrates the relaxation route without proving MCI's dissipative, boundary-localized selection relaxes; the bulk's equilibrium remains assumed. Absent that proof,
 the $|\psi|^2$ measure is adopted as a **postulate** — Bohm's quantum-equilibrium
 hypothesis in this framework's setting (the second horn of §3.3) — not as a derived
 result; the relaxation route is a research program, not a discharge of the Born debt.
@@ -1658,7 +1661,7 @@ carries the outcome.
    $\langle\sigma_z\rangle$). The appendix exhibits Born-*consistency*; deriving $|\alpha|^2$ from
    the dynamics is the second horn of §3.3, left open in §8. The place a derivation would have to
    act is the amplitude-weighting of the boundary-noise coupling — the route taken by
-   objective-collapse (CSL-type) models — which is not attempted here.
+   objective-collapse (CSL-type) models — which is not attempted here. (A separate candidate for the *weight* — that it is the equilibrium statistics of a random-phase bulk, §8, illustrated by `code/born_substrate_sampling.py` — likewise supplies a mechanism given an *assumed* equilibrium, not a derivation.)
 2. **Single-run selection.** In the unraveling used here, *which* pole a given run reaches is fixed
    by the meter's vacuum noise (genuine stochasticity). The framework's alternative — that the
    outcome is fixed by the per-run background-field configuration (§3.3, §4), the non-separable
@@ -1668,7 +1671,7 @@ carries the outcome.
 3. **The detector bridge (§3.7).** Whether ordinary electromagnetic detectors — which monitor
    charge/position rather than $\bar\psi\psi$ — einselect the clock-aligned $\sigma_z$ pointer at
    all is the bridge §3.7 leaves open. The model here is the idealized faithful-measurement limit,
-   not a demonstration that real detectors realize it.
+   not a demonstration that real detectors realize it. For the charge/which-path basis that ordinary detectors *do* einselect (§3.7), a resonant charge-coupled readout reproduces the Born weights $|\psi|^2$ energy-independently (`code/detector_resonance_selection.py`); the open bridge is specifically to the chiral $\sigma_z$ pointer, not to which-path registration.
 
 **Reproducibility.** The full density-matrix integration — unconditional master equation,
 conditional homodyne trajectories, and the purity and Born checks — and the figure are produced by
