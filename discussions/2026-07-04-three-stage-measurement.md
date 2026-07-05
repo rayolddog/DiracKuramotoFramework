@@ -282,3 +282,55 @@ memorylessness), and the Bragg shape. Exclusivity generalized as one record per 
 (per-event E–p budget), sequential events allowed — completing the §5 taxonomy in code:
 photodetector (k=1, β→1), cloud chamber (β→0, one particle/many sites), film (parent
 script's k≥2, many quanta/one site), all one capture→commit→closure mechanism.
+
+---
+
+## Closing stocktake (22:46) — John's summary, corrected and agreed
+
+John's end-of-session summary of the framework, with the corrections that survived
+discussion:
+
+1. **"Extends QED" → *supplements* QED** with a measurement mechanism (the step QED
+   describes but does not mechanize); it *extends* only where postulates are explicitly
+   added (H′ of §6, VPFH, the foliation-synchronized budget). The distinction is armor.
+2. **"The wave evolves but does not disappear" — right, precisely:** nothing
+   discontinuous ever happens to the field; globally unitary, history scrambled into the
+   bulk; in recoil channels the wave literally persists, evolved. But a full-capture
+   closure leaves the mode in vacuum *exactly* — persistence ≠ residue (the retracted
+   claim stays retracted).
+3. **MWI:** a costed alternative (§7.2's trade — single world at the price of
+   nonlocality + frame vs locality at the price of branches), not a refutation.
+4. **Born:** form earned (Noether + §3.7 charge-coupling), measure imported (second horn
+   of §3.3). **Hinge ≠ chiral representation:** three complex rotations stay distinct —
+   α (correlation), η (boost), θ_E (measurement progress); hinge–chiral unification is
+   open, and blurring them is how Born-from-geometry gets claimed by accident.
+5. **Success criterion — agreed:** no deviation from QED's predictions is the right
+   standard; consistency currently demonstrated in toys, with two proofs owed
+   (no-signalling for the explicit selection dynamics; the §3.7 detector bridge).
+6. **Experiments:** all test *named postulates*, never the core (H′ / reservoir-correlated
+   latency / fixed-POVM Born deviations / BMV / VPFH-sidereal).
+7. **The ½-bit claim, corrected twice and landed (John's final form):** the split is
+   between the FIRST particle's reading and the second's. The hinge rotation transmits
+   the conditioning *phase/orientation* — real, nonlocal — but it is an **absolute**
+   orientation, which is *gauge* from the far wing (§4.2: only differences are physical;
+   Bob holds neither a nor A). So the first reading signals **exactly zero bits** (flat
+   marginal), not "less than one"; the ½-bit language belongs to the *resource* split
+   (rotation = ebit, comparison = cbit, neither alone a message), not the signal
+   accounting. Bonus: "first" is only well-defined because the framework carries a
+   foliation; the order-symmetry of the statistics is what keeps that foliation
+   invisible (Salart-consistent). The earlier Re/Im-halves version is withdrawn — Re/Im
+   is a *reversibility* split at one detector, not an information split between wings.
+8. **Nonlocal synchronization — yes, with the locus precise:** the non-separable field
+   configuration (§7.5), enforced on the foliation; never the local thermal bulk
+   (CHSH ≤ √2); and after the optical theorem, downstream depletion is causal — only
+   cross-arm exclusivity remains nonlocal. Correlations, never signalling.
+
+Agreed one-paragraph form: *a single-world, ψ-ontic interpretation that supplements QED
+with a three-stage measurement mechanism (capture, selection, registration) in which the
+wave evolves continuously and is never discontinuously destroyed; it earns the Born form
+(not the measure) from energy/charge structure; models entanglement geometrically as
+hinge rotation (chiral unification open); keeps no-signalling because the nonlocal
+rotation transmits only a gauge (absolute) phase, the physical relative angle existing
+only at classical comparison; pays for its single world with an explicitly nonlocal,
+foliation-synchronized selection; and is deliberately indistinguishable from QED except
+through its named postulates, each carrying a designed falsification test.*
