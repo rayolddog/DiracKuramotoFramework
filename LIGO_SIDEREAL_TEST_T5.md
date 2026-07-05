@@ -119,6 +119,18 @@ where sigma_1 is the per-sample fractional PSD/squeezing scatter.
 
 Take sigma_1 ~ 2e-2 (≈0.1 dB squeezing precision per ~100 s segment), tau_sample = 100 s:
 
+> **[Measured, 2026-07-05 — see t5_pilot/PILOT_RESULTS.md]** A pilot reduction of
+> the first 4 days of O3b H1 open data (2,060 × 128-s chunks, 1200–1450 Hz
+> band-median PSD) gives **sigma_1(raw) = 6.5e-2**, i.e. 3.3x the assumption —
+> but with zero cleaning (no aux-channel regression, no DQ cuts, no line
+> handling), so 2e-2 stands as the post-regression target and 6.5e-2 as the
+> no-effort floor. The pilot also measures the diurnal classical systematic
+> directly: A1 ≈ 8e-2 at both solar and sidereal periods (indistinguishable
+> over 4 days), 40x the statistical floor — confirming §4's premise that the
+> search is systematics-limited and the solar/sidereal separation + regression
+> ARE the analysis. Reach rows below scale by 3.3x under raw noise; the vector
+> target stays reachable, the tensor verdict is unchanged.
+
 | Live time | M (independent samples) | 5-sigma fractional floor |
 |---|---|---|
 | 6 months (1 detector) | ~1.5e5 | ~3e-4 |

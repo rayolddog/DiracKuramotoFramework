@@ -90,6 +90,28 @@ def main():
         print(f"[fold] {name:8s}: A1 = {f['amp1']:.3e} +- {f['err1']:.1e} "
               f"(phase {np.degrees(f['ph1']):5.1f} deg) | "
               f"A2 = {f['amp2']:.3e} +- {f['err2']:.1e}")
+
+    # joint fit: both periods simultaneously (the discriminating fit once the
+    # span exceeds ~2-3 weeks; heavily covariant on short baselines)
+    A = np.column_stack([np.ones_like(x),
+                         np.cos(ph_sid), np.sin(ph_sid),
+                         np.cos(2 * ph_sid), np.sin(2 * ph_sid),
+                         np.cos(ph_sol), np.sin(ph_sol),
+                         np.cos(2 * ph_sol), np.sin(2 * ph_sol)])
+    coef, *_ = np.linalg.lstsq(A, x, rcond=None)
+    resid = x - A @ coef
+    cov = np.linalg.inv(A.T @ A) * np.var(resid)
+    err = np.sqrt(np.diag(cov))
+    names = ["sid A1", "sid A2", "sol A1", "sol A2"]
+    for lab, (ic, isn) in zip(names, [(1, 2), (3, 4), (5, 6), (7, 8)]):
+        amp = np.hypot(coef[ic], coef[isn])
+        e = np.hypot(coef[ic] * err[ic], coef[isn] * err[isn]) / max(amp, 1e-30)
+        ph_deg = np.degrees(np.arctan2(-coef[isn], coef[ic]) % (2 * np.pi))
+        print(f"[fold] joint {lab}: {amp:.3e} +- {e:.1e}  "
+              f"(phase {ph_deg:5.1f} deg)")
+    # condition number diagnostic: >> 1 means the periods are not yet separable
+    print(f"[fold] joint-fit design condition number = "
+          f"{np.linalg.cond(A.T @ A):.1f}")
     n_eff = len(x)
     print(f"[fold] statistical floor ~ sigma1*sqrt(2/M) = "
           f"{sigma1*np.sqrt(2/n_eff):.2e} (M = {n_eff})")
