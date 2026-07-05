@@ -60,6 +60,7 @@ to invite discussion.
 | File | Description | Status |
 |---|---|---|
 | [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md) | AB visibility envelope as a test of Dirac–Kuramoto vacuum locking | **Development phase — not for citation** |
+| [EMERGENT_FIELDS_PAPER.md](EMERGENT_FIELDS_PAPER.md) | Synchronization arrays as an analog-simulation platform for chiral fermions, topological mass, and fermionization | **Development phase — not for citation** |
 | [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
 | [COSMIC_EXPANSION_PAPER.md](COSMIC_EXPANSION_PAPER.md) | Cosmic-expansion companion (bulk-sync cosmology) | **Development phase — not for citation** |
 | [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis | **Working note** |
