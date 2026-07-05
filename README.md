@@ -12,18 +12,22 @@ The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preser
 
 **The current paper is _"Two Regimes of the Chiral Mass Coupling"_ ([current_revision_DK_paper.md](current_revision_DK_paper.md)) --- the more conservative and more rigorous statement of the framework, and the one to read first.** Beyond the closed/open (two-regimes) core, it now makes explicit *when* the dissipative regime engages: a new **§2.5** establishes that the vacuum coupling acts only where an external structure deforms the wave's amplitude --- a material boundary, a field gradient, or spacetime curvature --- while a freely propagating particle stays coherent under the Madelung (pilot-wave) guidance law the framework adopts in that limit. For the Born measure, the revised paper identifies a candidate route --- *relaxation to quantum equilibrium* in the sense of Valentini's subquantum H-theorem --- while remaining explicit that it is not yet derived. ([PAPER_UNIFIED.md](PAPER_UNIFIED.md) is the earlier, longer, now-superseded version, retained for reference.)
 
-From this single identification, the framework derives or reinterprets:
+From this single identification, the framework derives or reinterprets the items
+below. *(Note: some entries record first-version results retained for the
+historical record; the current revision is more conservative, and where the two
+differ the bullet says so. The paper itself is the authority on what is currently
+asserted.)*
 
 - **Bell correlations** via the standard Dirac spinor structure (block decomposition E = E_LL + E_SS + E_LS = -cos(a-b) is a consistency check, not a derivation)
 - **Quantum measurement** as Kuramoto re-synchronization to a macroscopic detector bulk
-- **The Born rule** (P = |psi|^2) reframed, for outcome channels of equal energy per quantum, as quantum-number partition: |psi|^2 is the energy density of the real psi field, with stochasticity from unbiased background fluctuations at the synchronization event (does not extend to unequal-energy channels; see Paper §4)
-- **The Heisenberg uncertainty principle** from the geometric orthogonality of the two clocks (bandwidth limitation of the internal clock)
+- **The Born rule** (P = |psi|^2) reframed, for outcome channels of equal energy per quantum, as quantum-number partition: |psi|^2 is the energy density of the real psi field, with stochasticity from unbiased background fluctuations at the synchronization event (the unequal-energy restriction is itself explained in the current revision, §3.7: electromagnetic detectors couple to the charge density j⁰ = |ψ|², so Born weights are energy-independent, and only gravity reads E|ψ|²)
+- **The Heisenberg uncertainty principle** reframed as the Fourier/Gabor bandwidth theorem for a real wave (the first version's clock-geometry/twistor derivation is superseded and not asserted by the current paper)
 - **Zitterbewegung** as the beat frequency between temporal and spatial clocks
 - **The Higgs mechanism** as the process that sets K: K = y_f * v/sqrt(2) = m
 - **Antiparticles** as time-reversed phase clocks, with CP violation as a chiral phase asymmetry
-- **Gravity** as bulk clock synchronization (recovers Newton exactly; note the naive pair-counted rate Γ_grav = GM²/(ℏΔz) is **retracted as a dimensional artifact** in the revised paper, §4.4)
+- **Gravity** confined to two honest roles in the current paper (§4.4): the ordinary redshift of the detectors' reference clocks (basis of the §6 candidate test) and the electromagnetically-quiet Penrose–Diósi regime — the first-version "gravity as bulk synchronization, recovering Newton" reading is superseded, and the naive pair-counted rate Γ_grav = GM²/(ℏΔz) is **retracted as a dimensional artifact** (§4.4)
 - **Penrose objective reduction** as gravitational clock decoherence (tau = pi*hbar/E_G)
-- **Photons** treated via Riemann–Silberstein form (F = E + iB), with K_γ ~ ω = E/ℏ for photon-detector sync; gravitational classicalization channel silent for photons (perpetually quantum until measured)
+- **Photons** treated via Riemann–Silberstein form (F = E + iB), with K_γ ~ ω = E/ℏ for photon-detector sync; gravitational classicalization channel silent for photons (perpetually quantum until measured) — *first-version material; not carried in the current revision*
 - **Temperature** as clock phase distribution width
 - **The quantum-classical transition** via Nelson's stochastic mechanics with a physical zero-point field (the molecular Brownian extension is an open question; see EQUATIONS.md §10)
 
@@ -39,6 +43,7 @@ The framework does not modify the Dirac equation or challenge Bell's theorem. It
 | [Two_Regimes_of_Chiral_Mass_Coupling.tex](Two_Regimes_of_Chiral_Mass_Coupling.tex) | LaTeX build source for the "Two Regimes" paper |
 | [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
 | [equations.tex](equations.tex) | LaTeX source of the equation reference |
+| `resolution/` | Referee-dispute resolution artifacts and the Appendix D reproduction script (`precession_radius_two_zeros.py`) |
 | [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by the current revision; retained as the first-version record* |
 | [paper.pdf](paper.pdf) / [paper.tex](paper.tex) | First-version "Many Clocks" paper — compiled PDF (submission-of-record) / LaTeX |
 | [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script |
@@ -120,7 +125,7 @@ d(phi_L)/dt = -K * sqrt(rho_R/rho_L) * cos(phi_R - phi_L)
 d(rho_L)/dt = +2K * sqrt(rho_L * rho_R) * sin(phi_R - phi_L)
 ```
 
-where **K = m** (the fermion mass). The coupling appears as a *cosine in the phase equation* --- the reverse of the Kuramoto model --- and the phase difference has no attractor: on the symmetric manifold rho_L = rho_R it is stationary for every phase difference, as must hold for closed unitary evolution. The motion is coherent normal-mode precession, not phase-locking. Diagonalizing the coupling gives eigenfrequencies ±√(k²+m²) = ±E (the relativistic dispersion); the normal modes are the de Broglie carrier and the Zitterbewegung beat (rest-frame beat 2m = 2mc²/ℏ). Genuine Kuramoto/Adler phase-locking enters only when the system is opened to a dissipative bulk --- that is the measurement step (Paper §2.2, §3.4, Appendix F).
+where **K = m** (the fermion mass). The coupling appears as a *cosine in the phase equation* --- the reverse of the Kuramoto model --- and the phase difference has no attractor: on the symmetric manifold rho_L = rho_R it is stationary for every phase difference, as must hold for closed unitary evolution. The motion is coherent normal-mode precession, not phase-locking. Diagonalizing the coupling gives eigenfrequencies ±√(k²+m²) = ±E (the relativistic dispersion); the normal modes are the de Broglie carrier and the Zitterbewegung beat (rest-frame beat 2m = 2mc²/ℏ). Genuine Kuramoto/Adler phase-locking enters only when the system is opened to a dissipative bulk --- that is the measurement step (Paper §2.2, §2.3, §3, Appendix D).
 
 - **K = 0 (massless spin-½):** Chiral sectors decouple --- idealized massless neutrinos.
 - **K > 0 (massive):** The chiral clocks couple; the symmetric normal mode is a particle with definite rest mass.
@@ -135,17 +140,17 @@ where **K = m** (the fermion mass). The coupling appears as a *cosine in the pha
 
 |psi|^2 is the energy density of the real psi field --- not a probability postulate. The synchronization event transfers wave energy from the particle to one detector channel. Which channel wins in any individual event depends on the unbiased zero-point + thermal background fluctuations at the moment of contact. For outcome channels carrying equal energy per quantum (spin, polarization, fixed-frequency detector clicks), long-run frequencies of channel selection converge to P(channel) = |amplitude|^2, read as a frequentist statement about quantum-number partition rather than as an independent probability axiom. The reading does not extend to channels of unequal energy, and does not by itself fix the squared functional form (Paper §4).
 
-### Heisenberg Uncertainty (derived from clock geometry)
+### Heisenberg Uncertainty (reframed as wave bandwidth)
 
-The position-momentum uncertainty relation Delta(x) * Delta(p) >= hbar/2 follows from the geometric orthogonality of temporal and spatial clocks. Locking one clock's phase forces the other into a frequency superposition via the twistor incidence relation. The zero-point phase noise sigma_phi(0) = 1/sqrt(2) rad is the irreducible floor.
+For a real wave, Delta(x) * Delta(p) >= hbar/2 is the Fourier/Gabor bandwidth theorem — a property of any wave ontology rather than a separate quantum postulate. The first version's stronger claim (a derivation from the geometric orthogonality of temporal and spatial clocks via the twistor incidence relation, with a sigma_phi(0) = 1/sqrt(2) rad floor) is superseded and not asserted by the current paper.
 
 ### Measurement
 
 A particle initially synchronized with its entangled partner re-synchronizes to the macroscopic detector bulk. The detector's overwhelming Kuramoto inertia (M_detector >> m_particle) forces conformity. Decoherence is not merely loss of phase coherence --- it is the positive process of gaining coherence with the bulk.
 
-### Single-World Energy Accounting
+### Single-World Accounting
 
-Residual wavefunction amplitude that does not couple to the detector thermalizes into the electromagnetic vacuum as low-frequency radiation. No branches are created. Energy is conserved within a single world.
+Residual coherence that does not couple to the detector is scrambled into the bulk's uncontrolled modes — globally unitary, locally irreversible (current paper §3.1). No branches are created; one world suffices. The first version's more specific claim (residual amplitude thermalizing into the electromagnetic vacuum as low-frequency radiation) is superseded.
 
 ---
 

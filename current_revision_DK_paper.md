@@ -2,6 +2,10 @@
 **Revision log**
 - 2026-07-01 15:54 MDT — v0 (base: 2026-06-30 snapshot)
 - 2026-07-01 20:04 MDT — v1
+- 2026-07-04 18:30 MDT — v2
+- 2026-07-04 18:38 MDT — v3
+- 2026-07-04 19:05 MDT — v4
+- 2026-07-04 19:36 MDT — v5
 
 ---
 
@@ -76,8 +80,11 @@ coupling that superficially resembles a Kuramoto synchronizer is shown to have a
 off-switch, and that switch is the closed/open boundary. An attractor appears only
 when the system is *opened* to a dissipative bulk and the bath is traced out,
 where the reduced phase obeys an Adler/Kuramoto equation [9]. Measurement is that
-opening: a fast resonant capture (Stage 1) followed by irreversible equilibration
-to the bulk's collective reference (Stage 2). The reversible→irreversible boundary
+opening, in three stages: a resonant capture at the detector surface (Stage 1), a
+stochastic commit in which the local background configuration selects the basin
+(Stage 2 — where the outcome weights are set), and a reservoir-powered,
+energy-blind amplification that registers the committed outcome (Stage 3). The
+reversible→irreversible boundary
 is exhibited directly by the nuclear-spin echo, the catch-and-reverse of a
 superconducting qubit [14], and Stern–Gerlach recombination. We model the bulk
 reference honestly as a *faint* statistical bias (parts per million, as in MRI) on
@@ -132,8 +139,8 @@ behaves in two sharply different ways depending on boundary conditions: closed
 and unitary, it precesses as coherent normal modes and protects superposition
 (§2.2); opened to a dissipative bulk, it acquires an Adler/Kuramoto attractor and
 locks (§2.3). Measurement is the transition from the first regime to the second —
-a resonant capture followed by irreversible equilibration to a macroscopic
-reference (§3). We call the resulting reading the **Many Clocks Interpretation
+a resonant capture, a surface selection, and an irreversible registration to a
+macroscopic reference (§3). We call the resulting reading the **Many Clocks Interpretation
 (MCI)**: every particle carries an internal phase clock, dissipative
 interactions synchronize clocks locally, no observer is required, and no
 branching occurs.
@@ -154,8 +161,9 @@ distributing them through the paper:
 - **We accept Bell and preserve no-signaling.** The framework is not
   superdeterministic; detector settings are free, and nothing in it permits
   faster-than-light signaling (§7.5).
-- **The Born rule is reframed, not derived.** §7.3 and §8 isolate the two gaps
-  honestly.
+- **The Born rule is reframed, not derived.** The gap is stated once, in full,
+  as the fork of §3.3 and carried as open problem 1 of §8; later mentions refer
+  back to it rather than restate it.
 - **One candidate prediction, contingent on a postulate.** A linewidth-dependent
   gravitational Bell effect (§6). We show it does *not* follow from the framework
   plus standard QED (§6.2, Appendix C); it requires an additional, non-covariant
@@ -297,9 +305,17 @@ for a *faint* bias ($\epsilon\ll\gamma$ — the ppm thermal bias of §4.1) the l
 deepening one well; for a *dominant* bias ($\epsilon>2\gamma$) it collapses to the
 monostable first-harmonic lock. Both are limits of one equation. The two-outcome
 structure of a measurement is thus the symmetric (measurement) part of the bulk
-coupling; the bias selects among the basins but does not create them. This
-*stabilizes* a binary but fixes neither its cardinality (set by the measured
-observable's spectrum) nor the Born weights (§8), both of which remain open.
+coupling; the bias selects among the basins but does not create them. Two limits
+on this claim must not be overdrawn, and Appendix D is the control on both.
+First, the bistability *stabilizes* a binary but fixes neither its cardinality
+(set by the measured observable's spectrum) nor the Born weights (§8), both of
+which remain open. Second, a bistable phase flow supplies *structure*, not
+*registration*: a fixed point of the reduced phase equation is not an outcome —
+the same dissipator that locks the phase decays the transverse coherence carrying
+it, and an outcome is realized only along a conditional (monitored) trajectory in
+the einselected pointer basis, not in the phase variable alone (Appendix D). The
+antipodal basins are therefore the two-outcome *geometry* the chiral clock makes
+available (§3.8); the registered outcome lives in the conditioned pointer record.
 
 This — not the closed mass term
 — is the framework's synchronization step, and it places the picture within the
@@ -387,62 +403,99 @@ negligible in the laboratory and relevant only in strong-field astrophysics.
 
 ## 3. Measurement as resonant capture and bulk re-synchronization
 
-### 3.1 Two stages
+### 3.1 Three stages: capture, selection, registration
 
-A measurement separates cleanly into two steps, consistent with the locality of
-fundamental interactions:
+A measurement separates into three steps, consistent with the locality of
+fundamental interactions. (Earlier versions of this paper, and the frozen
+demonstration snapshot, used a two-stage division; the present form splits the
+old Stage 2 at a boundary the formalism already carried — the two clauses of
+§3.5's joint condition, and the amplification threshold of Appendix D. Where
+companion documents say "Stage 2," read Stages 2–3 below.)
 
-- **Stage 1 — resonant capture.** The incoming system phase-couples to a single
-  bulk-bound partner at the interaction vertex (a photon to a bound electron, a
-  spin to a detector dipole). Crucially, the partner is *never a closed system* —
-  it is coupled to its host atom and the surrounding material — so Stage 1
-  carries a weak dissipative component from the outset. This is the regime of
-  injection locking and of the laser: constructive (resonant) interaction
-  selects which mode the system locks to, and the weak dissipation lets a locked
-  state begin to form. The capture is governed by the Arnold-tongue condition
-  |Δω| ≲ K_pair: mismatches large compared to the coupling are not pulled in.
-- **Stage 2 — bulk equilibration.** The perturbed partner re-locks to the bulk's
-  collective reference by *dissipating* its phase mismatch into the local
-  environment. The dissipation, not any amplifier, is what makes this step a
-  lock; it is present in every interaction with an open environment, with or
-  without a detector. The physical channel, however, differs by system. In an
-  ordinary (non-recording) interaction it is **relaxation toward local
-  equilibrium** — fluorescence, phonon emission, the bound electron settling back
-  toward the bulk average exactly as a spin relaxes toward B₀ in NMR (T1/T2). In a
-  detector built to *record*, it is **amplification** of the single excitation
-  into a macroscopic cascade (avalanche, PMT gain). Both are dissipative and
-  one-way, but they are not the same physics: amplification only renders the
-  already-dissipated event a permanent, readable record. Irreversibility in either
-  case is the mismatch escaping into a continuum of environmental modes from which
-  it does not recur — relaxation into a genuine bath achieves this, amplification
-  guarantees it. That non-recurrence is irreversibility read as *erasure*: the phase
-  mismatch carrying the system's prior coherence is scattered into the bulk's
-  uncontrolled modes beyond practical recall, so the system cannot recohere and the
-  locked state is stable. The erasure is *effective*, not fundamental — consistent
-  with the no-collapse commitment the global evolution remains unitary and the
-  history is scrambled into the bulk rather than destroyed; what is gone is the
-  system's *locally recoverable* history, the irreversible T1/T2 side of §3.2 and not
-  the refocusable T2\* side. Three things are therefore distinct and should not be
-  run together: this *erasure* (irreversibility, which makes the record stable), the
-  *decoherence* it accompanies (the dissipative step yields a *decohered* (mixed)
-  reduced state), and the *selection* of a single definite outcome from that state —
-  the last being the separate role of the background configuration (§3.3), not of the
-  dissipation itself. That an *irreversible act of amplification* is what closes a measurement
-  is an old observation — it is Bohr's irreversibility requirement [21] and the
-  Bohr–Wheeler dictum that "no elementary phenomenon is a phenomenon until it is a
-  registered phenomenon, brought to a close by an irreversible act of
-  amplification" [22] — and the macroscopic-equilibration mechanism we invoke for
-  Stage 2 is closely modeled on the ergodic apparatus-relaxation account of Daneri,
-  Loinger, and Prosperi [23]. Our contribution is not the irreversibility, which is
-  standard, but its identification with a dissipative phase-locking (Adler) step
-  and its separation from the outcome-*selection* role of §3.3.
+- **Stage 1 — resonant capture (reversible).** The incoming system
+  phase-couples to a single bulk-bound partner at the interaction vertex (a
+  photon to a bound electron, a spin to a detector dipole). The vertex is
+  electromagnetic — a charge-current coupling, with energy entering as a
+  *selection rule* rather than as a coupled density (§3.7): the capture rate is
+  the cross-section times the local intensity,
+  $r \propto \sigma(\omega)\,|\psi|^2$, so the resonance filter $\sigma(\omega)$
+  makes the step energy-selective while the drive is amplitude- (hence
+  interference-) sensitive. This is the regime of injection locking and of the
+  laser: constructive (resonant) interaction selects which mode the system
+  couples to, governed by the Arnold-tongue condition |Δω| ≲ K_pair —
+  mismatches large compared to the coupling are not pulled in. Capture shapes
+  which outcome channels participate — the measured basis — and records
+  nothing; while only this stage operates ($\mathrm{Re}\,W$ alone, §3.5), the
+  evolution is reversible and any dephasing refocusable.
+- **Stage 2 — selection (the surface commit).** The capture partner is *never a
+  closed system*, and its dissipation begins with an interaction that accounts
+  of measurement routinely pass over: the excited electron's continuing coupling
+  to its own parent atom. A photoelectron is not born free. It leaves an ion
+  whose Coulomb field it still feels; the ion recoils and takes up momentum; the
+  atom's remaining electrons rearrange (shake-up, Auger); and atom and electron
+  sit in a lattice that absorbs the difference as phonons. That
+  excited-electron–host-atom interaction is the first dissipative channel — the
+  door through which the local environment's fluctuations act on the
+  near-threshold dynamics — and it is here, still at the surface, that the run
+  is committed: the one actual background configuration (§3.3, §4) tips the flow
+  into a single basin. Formally this is the onset of the absorptive part
+  ($\mathrm{Im}\,W \neq 0$, §3.5): a real, on-shell excitation now exists. But
+  selection-in-progress is not yet a fact. Within this window the dynamics
+  remains reversible in principle — the catch-and-reverse regime [14], the
+  refocusable side of §3.2, the decay of sub-threshold latent-image specks
+  (§5). The Born weights are *set* by the Stage-2 dynamics; they become *final*
+  only at Stage 3.
+- **Stage 3 — registration (reservoir-powered closure).** The committed
+  excitation is closed out by dissipation into a continuum of environmental
+  modes from which it does not recur. In an ordinary, non-recording interaction
+  this is plain **relaxation toward local equilibrium** — fluorescence, phonon
+  emission, the electron settling back toward the bulk average exactly as a spin
+  relaxes toward B₀ in NMR (T1/T2). In a detector built to *record*, it is
+  **amplification**: the event triggers a pre-loaded free-energy reservoir — the
+  dynode chain's applied voltage, a developer bath's chemical potential, a cloud
+  chamber's supersaturation — which blows the single excitation up into a
+  macroscopic, readable record. Both are dissipative and one-way; amplification
+  only renders the already-committed event permanent and readable. The
+  registration step is *charge-triggered and energy-blind*: a photomultiplier
+  delivers the same $10^6$-electron pulse whether the photon that started the
+  cascade carried 2 eV or 3 eV, because the amplifier couples to the presence of
+  liberated charge ($j^0$, §3.7), not to the energy that liberated it.
+  Registration is therefore equivariant by design — it copies whichever outcome
+  Stage 2 committed and contributes no statistics of its own. Its
+  irreversibility is *erasure*: the phase mismatch carrying the system's prior
+  coherence is scattered into the bulk's uncontrolled modes beyond practical
+  recall, so the system cannot recohere and the record is stable. The erasure is
+  *effective*, not fundamental — consistent with the no-collapse commitment the
+  global evolution remains unitary and the history is scrambled into the bulk
+  rather than destroyed; what is gone is the system's *locally recoverable*
+  history, the irreversible T1/T2 side of §3.2 and not the refocusable T2\*
+  side.
 
-Both stages are dissipative, separated by a *hierarchy of timescales* — a fast
-resonant capture and a slower bulk equilibration — rather than by a sharp
-unitary/dissipative ontological boundary. One might be tempted to treat Stage 1
-as strictly unitary and confine all dissipation to Stage 2, but the capture
-partner is never truly closed; the honest statement is a separation of rates,
-not of kinds.
+Three things are therefore distinct and should not be run together, and the
+three stages give each its own address: the *selection* of a single definite
+outcome (Stage 2 — the role of the background configuration, §3.3, not of the
+dissipation itself); the *decoherence* the dissipative coupling produces along
+the way (a decohered, mixed reduced state); and the *erasure* that stabilizes
+the record (Stage 3). That an *irreversible act of amplification* is what closes
+a measurement is an old observation — it is Bohr's irreversibility requirement
+[21] and the Bohr–Wheeler dictum that "no elementary phenomenon is a phenomenon
+until it is a registered phenomenon, brought to a close by an irreversible act
+of amplification" [22] — and the macroscopic-equilibration mechanism we invoke
+for Stage 3 is closely modeled on the ergodic apparatus-relaxation account of
+Daneri, Loinger, and Prosperi [23]. Our contribution is not the
+irreversibility, which is standard, but its identification with a dissipative
+phase-locking (Adler) step and the separation of the *selecting* (Stage 2) from
+the *registering* (Stage 3) role — a separation Bohr's dictum runs together.
+
+All three stages are dissipative in different degrees, separated by hierarchies
+of *timescale and threshold* rather than by a sharp unitary/dissipative
+ontological boundary: the capture partner is never truly closed, so Stage 1
+carries a weak dissipative component from the outset; Stage 2 is the absorptive
+onset; Stage 3 is the point of no return. The honest statement remains a
+separation of rates, not of kinds — now with the two boundaries between the
+stages identified with the two clauses of §3.5's joint condition
+($\mathrm{Im}\,W \neq 0$; $\Gamma_{\text{cap}} > 0$, above the amplification
+threshold of Appendix D).
 
 ### 3.2 The reversible→irreversible boundary is demonstrable
 
@@ -459,8 +512,9 @@ This is not a metaphor; three independent systems exhibit it directly:
 - **Catch-and-reverse of a qubit.** Minev et al. [14] track a quantum jump in a
   superconducting transmon and reverse it mid-flight with ~82% fidelity, in a
   regime where the dissipative readout channel has been engineered to near-zero.
-  In framework terms: with the Stage-2 coupling suppressed, no attractor forms
-  and evolution stays reversible until the first real dissipative event.
+  In framework terms: with the Stage-3 (readout) coupling suppressed, no record
+  forms and the Stage-2 window stays open — evolution reversible until the first
+  real dissipative event.
 - **Stern–Gerlach recombination.** Carefully recombined SG paths recover the
   original superposition: the gradient creates the correlation, not the outcome;
   the outcome arrives only at the irreversible detection.
@@ -473,21 +527,61 @@ conforms; the reverse is suppressed by m/M. A single experimental run carries on
 actual configuration of the background field (§4), and the dissipative flow
 carries that configuration into exactly one attracting basin. There is then one
 ψ, one background, one outcome, one world — no branching, no projection
-postulate, no observer.
+postulate, no observer. (This background-configuration reading of single-run
+selection is one of two readings the paper carries: in the standard
+conditional-trajectory unraveling of Appendix D, the selecting stochasticity is
+the meter's vacuum noise $dW$, and the background configuration is the
+framework's hidden-variable completion of that noise, whose explicit dynamical
+law is open problem 2 of §8. The two readings are not yet reconciled — Appendix
+D, point 2 — and the sentence above states the conjecture, not the established
+half.)
 
 We are deliberate about what this does *not* settle. The attractor explains why
 there is exactly **one** outcome per run; it does not explain why the long-run
-**frequency** of each basin is |α|². That is the Born measure, isolated as an
-open problem in §7.3 and §8. Conflating the two — treating "definite outcome" and
-"correct weight" as one result — is the error we most want to avoid.
+**frequency** of each basin is |α|². That is the Born measure, stated in full
+here and carried as open problem 1 of §8. Conflating the two — treating "definite
+outcome" and "correct weight" as one result — is the error we most want to avoid.
 
-Stated as the fork it forces: *either* the basin weights are **derived** from the
+The *oneness* half of definiteness — exactly one outcome across an extended
+detector, however many sites the wave reaches — now carries a candidate
+mechanism rather than a stipulation: **conservation-enforced winner-take-all.**
+The packet carries one quantum; a site's threshold requires the whole quantum; a
+completed absorption therefore *is* the depletion of the budget, and no second
+site can close. Three qualifications keep this honest. (i) The depletion is
+**nonlocal**: the packet's remote amplitude — which can be half the norm in a
+spacelike-separated interferometer arm — must be drained on the preferred-frame
+foliation (§8). The mechanism thus *physicalizes* the collapse as a real,
+foliation-synchronized energy transfer rather than eliminating it;
+single-photon anticorrelation persists at spacelike detector separation [45], so
+the enforcement is superluminal, and the framework's existing nonlocality (§7.5)
+is restated, not removed — with one structural gain: the preferred frame,
+elsewhere carried as a cost, here does necessary work. (ii) The local step is a
+**rate, not an accumulation**: the commit probability per site goes as the
+locally delivered power (§3.1), while the budget decides how many commits can
+close; a local energy-accumulation reading would predict intensity-dependent
+first-click latency, excluded since the earliest fast-timing photoemission
+measurements [46]. (iii) The drain is **provisional at Stage 2 and final at
+Stage 3**: a committed excitation can still re-emit (resonance fluorescence;
+radiation trapping in dense media) and return the loan — absorption is not yet
+detection — and a completed drain leaves the field mode in the vacuum state
+*exactly*, with no sub-threshold real residue (any energy mismatch departs as
+real, local quanta at the winning site — photoelectron kinetic energy, phonons —
+never as a lingering field remainder; the first version's residual-thermalization
+claim stays retracted). The recorded statistics are therefore first-*closure*,
+not first-touch, statistics — Born-weighted provided registration is
+equivariant (§3.1). For the ledger of §8's substrate-sampling model, this is an
+upgrade: winner-take-all is no longer imported by fiat; its residue is the
+foliation-synchronized budget — the nonlocality already owned, given a physical
+carrier.
+
+Stated once, as the fork it forces — the canonical form to which every later
+mention of the "Born gap" refers back: *either* the basin weights are **derived** from the
 synchronization dynamics — in which case the minimal two-outcome model settles it, and
 its locking basins have area 50/50, flat in |α|² (the attractor geometry carries no
 amplitude information about the prepared state) — *or* |α|² is **imported** as the
 measure on the per-run background, a quantum-equilibrium postulate of exactly Bohm's
 status. The framework takes the **second horn**, and we state it plainly: the dissipative
-lock supplies *registration* (one definite outcome, §3.1–3.5) and, where the Stage-2
+lock supplies *registration* (one definite outcome, §3.1–3.5) and, where the Stage-2/3
 coupling is non-demolition, *equivariance* (a measure granted at preparation is carried
 intact to the outcome, §3.7); it does **not** supply the weights, which enter as the
 measure placed on the selecting ensemble (§7.3, §8). MCI is therefore
@@ -513,7 +607,7 @@ survive: they are the states that can entrain to the bulk.
 
 ### 3.5 The reversible→irreversible boundary, formally: Re W and Im W
 
-The two stages of §3.1 and the demonstrations of §3.2 have a compact formal
+The three stages of §3.1 and the demonstrations of §3.2 have a compact formal
 counterpart. Integrating out the Dirac field in the presence of a background — an
 external field together with the conductor's boundary conditions — yields the
 vacuum persistence amplitude
@@ -534,7 +628,7 @@ $W$ into real and imaginary parts is the reversible→irreversible boundary:
   the catch-and-reverse window of §3.2: a fluctuation that borrows energy $\Delta E$
   and repays it within $\hbar/\Delta E$. While only $\mathrm{Re}\,W$ operates, the
   evolution is unitary and any dephasing is refocusable.
-- **$\mathrm{Im}\,W$ — Stage 2, irreversible.** The imaginary, absorptive part is
+- **$\mathrm{Im}\,W$ — Stages 2–3, absorptive.** The imaginary, absorptive part is
   nonzero *only* when a channel can go on-shell, and it *is* the rate at which real
   quanta appear — the decay rate of the in-state; it is odd under time reversal. For
   a constant field it is the Schwinger result,
@@ -548,7 +642,8 @@ $E_{\text{crit}}$ is set by the mass.
 
 Producing a real pair is necessary but not sufficient for a record; the record is
 *completed* when the on-shell quantum couples dissipatively to the bulk — the
-Adler/Stage-2 lock of §2.3. The electron relaxes into the conductor's electron sea
+Adler lock of §2.3, which in the three-stage division of §3.1 is precisely the
+Stage 2 → Stage 3 passage. The electron relaxes into the conductor's electron sea
 at a capture rate $\Gamma_{\text{cap}}\sim K_{\text{eff}}$, the positron annihilates
 at $\Gamma_{\text{ann}}\propto n_e|\psi(0)|^2$ (overlap with the electron density),
 and the available final states are restricted by Pauli blocking through the Fermi
@@ -578,9 +673,13 @@ is *not* a fixed length, mass, or location; it is the joint condition
 $$\mathrm{Im}\,W \;(\text{or}\;\mathrm{Im}\,\Phi)\neq 0 \quad\text{and}\quad \Gamma_{\text{cap}}>0,$$
 
 an on-shell channel open *and* the resulting quantum dissipatively coupled to the
-bulk. Either condition alone leaves the evolution reversible: an on-shell quantum
+bulk. The conjunction resolves the three stages of §3.1: $\mathrm{Re}\,W$ only —
+Stage 1; $\mathrm{Im}\,W \neq 0$ with the bath decoupled — Stage 2, the
+catch-and-reverse window; both clauses — Stage 3, the record. Either condition
+alone leaves the evolution reversible: an on-shell quantum
 with the bath removed ($\Gamma_{\text{cap}}\to 0$) is the engineered
-catch-and-reverse regime [14], where $\mathrm{Im}\,W$ may be nonzero yet no record
+catch-and-reverse regime [14] — Stage 2 without Stage 3 — where $\mathrm{Im}\,W$
+may be nonzero yet no record
 forms; and a state dressed only by $\mathrm{Re}\,W$ never leaves the reversible
 window. Isolating or cooling the system *recedes* the cut; bringing a dense bulk to
 the interaction vertex *snaps* it there. The cut is thus the dynamical onset of
@@ -590,7 +689,8 @@ We are explicit about provenance. $\mathrm{Re}\,W$, $\mathrm{Im}\,W$, the Schwin
 rate, the influence functional, and the Lindblad capture are standard results of
 quantum electrodynamics and open-system theory; the framework adopts them rather
 than deriving them. Its content here is the *identification* — Stage 1
-$=\mathrm{Re}\,W$, Stage 2 $=\mathrm{Im}\,W$ gated by $\Gamma_{\text{cap}}$, the
+$=\mathrm{Re}\,W$, Stage 2 $=$ the onset of $\mathrm{Im}\,W$, Stage 3
+$=\mathrm{Im}\,W$ gated by $\Gamma_{\text{cap}}$, the
 Heisenberg cut as the onset of absorptive bath coupling — which turns the
 reversible→irreversible boundary of §3.2 from a set of demonstrations into a
 condition with an explicit order parameter: the record probability
@@ -616,14 +716,15 @@ self-energy $\Sigma$, and the pole — the physical mass — moves:
 
 $$S(p) = \frac{i}{\not p - m - \Sigma(p)}, \qquad \Sigma(p) = \mathrm{Re}\,\Sigma - \tfrac{i}{2}\,\Gamma, \qquad m_{\text{eff}} = m + \mathrm{Re}\,\Sigma - \tfrac{i}{2}\Gamma.$$
 
-That single complex number carries both stages:
+That single complex number carries the reversible and absorptive sides of the
+three stages:
 
 - **$\mathrm{Re}\,\Sigma$ — Stage 1, reversible.** A shift of the mass, hence of the
   zitterbewegung beat frequency $2m_{\text{eff}}c^2/\hbar$. The fermion is *dressed*
   — its clock redialed — but undamped: the §2.2 regime of a real mass, with the
   chiral L↔R Bloch vector precessing on the surface of the sphere at conserved
   purity.
-- **$\mathrm{Im}\,\Sigma = -\Gamma/2$ — Stage 2, irreversible.** The pole leaves the
+- **$\mathrm{Im}\,\Sigma = -\Gamma/2$ — Stages 2–3, absorptive.** The pole leaves the
   real axis. In the chiral/Bloch picture $m\to m-\tfrac{i}{2}\Gamma$ is
   non-Hermitian: the precession no longer circles the sphere but **spirals inward at
   rate $\Gamma/2$** — exactly the inward spiral §2.2 identified as the signature of
@@ -653,7 +754,7 @@ $$\text{cut crossed} \;\Longleftrightarrow\; \Gamma = -2\,\mathrm{Im}\,\Sigma > 
 
 Closed or off-resonance, the pole stays on the real axis: real $m_{\text{eff}}$,
 reversible chiral precession (Stage 1). Opened and resonant, the pole moves off-axis:
-complex $m_{\text{eff}}$, the precession spirals into the lock (Stage 2). Because
+complex $m_{\text{eff}}$, the precession spirals into the lock (Stages 2–3). Because
 $\Sigma$ is causal, $\mathrm{Re}\,\Sigma$ and $\mathrm{Im}\,\Sigma$ are
 Kramers–Kronig partners — the reversible redialing of the clock and its irreversible
 damping are two faces of one analytic object. The **Heisenberg cut is the dressed
@@ -678,8 +779,8 @@ coupling.
 
 ### 3.7 What the measurement coupling can and cannot supply
 
-The equivariance step that §8 will ask of Stage 2 — that the lock carry the prepared
-$|\cdot|^2$ weight intact to the outcome — presupposes that the Stage-2 coupling is
+The equivariance step that §8 will ask of Stages 2–3 — that the lock carry the prepared
+$|\cdot|^2$ weight intact to the outcome — presupposes that the Stage-2/3 coupling is
 *non-demolition* for the measured observable: the dissipator must preserve the
 populations of the measured projector while scrambling its phase. It is worth stating
 which observable the framework's own coupling actually treats this way, because the
@@ -736,7 +837,62 @@ the framework's coupling supplies the measured channel equivariance needs: the
 electromagnetic interaction supplies a different one, and the coupling that would supply
 it is gravitational, rate-suppressed, and no better off than Penrose–Diósi on the weights
 themselves. The Born measure (§8) is, on this analysis, uniformly open across the
-synchronization and gravitational-reduction readings alike. (Numerically, `code/detector_resonance_selection.py` bears out this charge-versus-mass split: a resonant charge-coupled detector reads the charge density $j^0=|\psi|^2$ — Born weights, *independent* of the channel energy — while the energy-weighted density $T^{00}=E|\psi|^2$ is recovered only by a gravitational, energy-coupled readout. The equal-energy restriction on the Born reading is thus a *consequence* of measurement being electromagnetic, not a separate limitation to be lifted.)
+synchronization and gravitational-reduction readings alike.
+
+One consequence of the charge-versus-mass split deserves statement as a result
+rather than an aside, because it converts a limitation into an explanation.
+**Every Standard-Model detection channel couples to a conserved current
+proportional to $|\psi|^2$; only gravity reads the energy-weighted density
+$T^{00}=E|\psi|^2$.** A charge-coupled detector therefore reports Born weights
+$|\psi|^2$ *independently of the channel energy* — verified numerically in
+`code/detector_resonance_selection.py`, where a charge readout of an
+unequal-energy superposition returns the Born distribution while an
+energy-coupled readout returns $E_n|c_n|^2$. The equal-energy restriction on the
+wave-energy reading of the Born rule (§7.3, §8) is thus a *consequence* of
+measurement being electromagnetic, not a separate limitation awaiting removal —
+and it explains structurally why the framework's one ontological discriminator
+(§6.4) is gravitational: gravity is the only interaction for which the
+real-field and probability-amplitude readings differ.
+
+### 3.8 What the chiral coupling still does — and what it does not
+
+Taken together, §3.7 and Appendix D force a conclusion better stated than left
+implicit: **the chiral mass coupling is not the engine of measurement in real
+detectors.** The Stage-2/3 mechanics — the dissipative Adler lock, the conditional
+selection, the amplification threshold — is generic open-system physics: any
+two-level pointer dispersively coupled to a damped mode exhibits it (Appendix D
+is, deliberately, a standard circuit-QED model), and the basis it runs in is the
+charge/which-path basis the electromagnetic coupling einselects (§3.7), which
+requires no Dirac structure at all. What, then, does $K = m$ still buy? Four
+things, in descending order of load borne:
+
+1. **The two-regime no-go (§2.2).** The demonstration that the mass term — the
+   one coupling that superficially resembles a built-in synchronizer — provably
+   cannot lock in a closed system is a statement *about the chiral coupling
+   itself*, and it is what licenses the framework's central claim that locking
+   is exclusively an open-system, boundary phenomenon (§2.5).
+2. **The physical clock (§2.4).** The internal phase whose entrainment the
+   interpretation is named for is not postulated: it is the $\pm E$ normal-mode
+   beat of the chiral coupling — the Zitterbewegung — with its rate set by
+   $K = m$. The ontology (a real field carrying a real clock) comes from the
+   Dirac structure even where the detector dynamics does not.
+3. **The binary geometry (§2.3).** The second-harmonic (apolar) structure of the
+   chiral interference channel supplies a natural antipodal two-outcome geometry
+   — available to a coupling that reads the scalar density $\bar\psi\psi$, i.e.
+   a Yukawa or gravitational measurement (§3.7), but not exercised by
+   electromagnetic detectors.
+4. **The dressed-mass form of the cut (§3.6).** The identification of the
+   Heisenberg cut with the Dirac mass pole leaving the real axis is stated in
+   chiral variables; its content — $\mathrm{Im}\,\Sigma$ as the Adler lock rate
+   — transfers to any pointer, the chiral form being the fermionic instance.
+
+The two halves of this paper's title therefore stand in an asymmetric relation,
+and we state it plainly. The *two regimes* are regimes of the chiral coupling —
+that analysis (§2) is the framework's own. The *measurement mechanism* runs, in
+every laboratory detector, on the electromagnetically-einselected which-path
+basis (§3.7), where the chiral register is a passenger. The chiral coupling
+supplies the framework's ontology, its clock, and its no-go discipline — not
+its pointer.
 
 ---
 
@@ -847,7 +1003,19 @@ restoring force and does not move. "Temperature randomizes the phase" means exac
 this: it inflates $\langle\delta^2\rangle$, lowering the amplitude, not rotating the
 axis. The amplitude does depend on the *ratio* $D/K$, so it is tied to the lock
 rate; the equilibrium polarization of §4.1 and the axis are the quantities that
-vary independently of it. This thermal half of the envelope is not just a model: it is the measured
+vary independently of it.
+
+Which fluctuations dominate the forcing $\eta$ is set by where the relevant
+transition sits relative to the thermal scale: the thermal occupation of a mode
+at frequency $\omega$ is $\bar n = (e^{\hbar\omega/k_BT}-1)^{-1}$, so for optical
+transitions ($\hbar\omega \sim 2\,$eV $\gg k_BT \sim 0.025\,$eV) the zero-point
+(vacuum) fluctuations dominate the selecting noise and the thermal contribution
+is negligible, while for radio-frequency systems ($\hbar\omega \ll k_BT$, NMR)
+the forcing is thermal, $D \propto k_BT$ as written above. The noise that
+selects at an optical photodetector surface is thus vacuum-dominated; at an NMR
+coil, thermal — one envelope, two regimes of its source.
+
+This thermal half of the envelope is not just a model: it is the measured
 behaviour of matter-wave interference. Heating C₇₀ fullerenes until they emit
 thermal photons reduces the fringe visibility in quantitative agreement with
 decoherence theory [28] — temperature damps the amplitude, not the fringe
@@ -881,45 +1049,72 @@ new gravitational coherence mechanism.
 
 ---
 
-## 5. Three regimes of capture
+## 5. One mechanism, many detectors: capture strength and commit threshold
 
-A single mechanism — resonant capture (Stage 1) followed by bulk equilibration
-(Stage 2) — spans measurements that look very different, distinguished only by
-the *capture strength per event* and the *number of events*. The unifying axis is
-how deep inside the Arnold-tongue locking range each capture sits.
+A single mechanism — capture, selection, registration (§3.1) — spans
+measurements that look very different. Two numbers characterize a detector
+architecture along it: the **per-event capture rate**
+$r \propto \sigma(\omega)\,|\psi|^2$ (Stage 1 — the energy selectivity lives in
+the cross-section $\sigma(\omega)$, which *multiplies* the local intensity, so
+resonance acts as a rate factor rather than a gate), and the **commit
+threshold** $k$ — how many captures must accumulate at one site, within that
+site's memory time $\tau_{\text{mem}}$, before Stage 2 commits and Stage 3 can
+fire. The older unifying axis — how deep inside the Arnold-tongue locking range
+each capture sits — is the first number; the second is orthogonal to it.
 
-| | Stage-1 capture | Reversible window | Stage-2 irreversibility | Reference maintained by |
-|---|---|---|---|---|
-| **Bell/photon detector** | photon resonantly absorbed by a bound electron | brief (resonance fluorescence) | electronic **amplification** (avalanche, PMT gain) | EM lattice binding |
-| **NMR / MRI** | RF pulse tips M coherently | **T2\* — refocusable by spin echo** | T1/T2 relaxation to lattice | **B₀ (applied EM field)** |
-| **Cloud / bubble chamber** | a *sequence* of weak partial ionizations | partial, per event | stepwise droplet/bubble nucleation | EM (metastable supersaturation) |
+| | Stage-1 capture | Reversible window (Stage 2) | Stage-3 registration (reservoir) | Commit threshold $k$ | Reference maintained by |
+|---|---|---|---|---|---|
+| **Bell/photon detector** | photon resonantly absorbed by a bound electron | brief (resonance fluorescence) | electronic **amplification** (avalanche, PMT gain; applied voltage) | 1 | EM lattice binding |
+| **NMR / MRI** | RF pulse tips M coherently | **T2\* — refocusable by spin echo** | T1/T2 relaxation to lattice | — (ensemble, continuous) | **B₀ (applied EM field)** |
+| **Cloud / bubble chamber** | a *sequence* of weak partial ionizations | partial, per event | stepwise droplet/bubble nucleation (supersaturation) | 1 per vertex, many vertices | EM (metastable supersaturation) |
+| **Photographic emulsion / hologram plate** | photolysis in a silver-halide grain | **sub-latent-image speck — decays if not reinforced** | chemical development (developer reservoir) | ≈ 3–4 per grain [44] | EM (grain chemistry; developer metastability) |
 
-Three readings of the same structure:
+Four readings of the same structure:
 
 - **Bell detector — the strong/projective limit.** One event saturates the
   locking range; the irreversibility is the amplification, not the bare
   excitation (a single excited electron can re-emit; the avalanche cannot be
-  undone). One quantum, one Stage 1, one Stage 2, one click.
-- **MRI — isolated, deliberately-triggered Stage 2.** Here B₀ sets the reference
+  undone). One quantum, one capture, one commit, one registration, one click.
+  Because $k = 1$ — every capture commits — the per-event statistics are the
+  outcome statistics directly: this is the detector class for which per-event
+  Born claims are properly made.
+- **MRI — isolated, deliberately-triggered Stages 2–3.** Here B₀ sets the reference
   axis and Larmor frequency ω₀ = γB₀ (the role of "Φ_bulk"); the *gradient* coils
   are not the reference but the spatial encoder, the direct analog of the
   Stern–Gerlach gradient that converts internal phase into a position/frequency
-  label. The RF pulse is the coherent capture; relaxation is Stage 2, watched
-  directly. Every free-induction decay is, in framework terms, a Stage-2
-  emission measurement.
+  label. The RF pulse is the coherent capture; relaxation is Stages 2–3, watched
+  directly. Every free-induction decay is, in framework terms, a Stage-2/3
+  emission measurement — and the ensemble character of the readout means no
+  single-quantum commit threshold applies.
 - **Cloud chamber — the weak/repeated limit.** The charged particle undergoes a
   *sequence* of distinct vertices, each a weak partial capture (removing tens of
-  eV from a MeV–GeV particle) seeding a local Stage-2 nucleation. It is not one
-  drawn-out Stage 2 but many partial (Stage 1 + Stage 2) pairs. The collinearity
+  eV from a MeV–GeV particle) seeding a local commit and nucleation. It is not
+  one drawn-out measurement but many partial capture–commit–register triplets:
+  one particle, many sites — $k = 1$ per vertex, with the number of *vertices*
+  the large number. The collinearity
   of the track (Mott 1929 [16]) measures the per-event partiality: each capture
   only partially sharpens the momentum, so the next fires preferentially along
   the line of flight. dE/dx is the per-event coupling strength integrated over
   the trajectory.
+- **Photographic emulsion — the integrating limit.** Many quanta, one site: a
+  grain commits only after $k \approx 3$–$4$ photolysis events build a stable
+  latent-image speck (Gurney–Mott [44]), and a sub-threshold speck *decays* if
+  the next capture does not arrive within its memory time. That decay is
+  **reciprocity failure** — the photographic fact that a total exposure
+  delivered slowly records less than the same exposure delivered fast — and in
+  the present division it is direct, everyday evidence that Stage 2 and Stage 3
+  are physically distinct: Stage-2 progress can be made and then lost without
+  ever reaching registration. An integrating detector reports a *nonlinear
+  functional* of $|\psi|^2$ (the Hurter–Driffield response), which is why
+  per-event Born statistics is a $k = 1$ claim, and the emulsion — including the
+  hologram plate — is the wrong exemplar for it.
 
 The same incoming fermion leaves a single click in a silicon pixel and a
 millimeter trail in a chamber because the two architectures exercise opposite
 ends of the capture-strength axis — projective saturation versus near-threshold
-partial capture — not because the underlying vertex differs.
+partial capture — not because the underlying vertex differs. The emulsion adds
+the orthogonal axis: commit threshold and memory time — one site integrating
+many quanta, versus one quantum committing at one site.
 
 ---
 
@@ -1006,10 +1201,24 @@ open. We are specific about the defect and its repair: coupling to the *absolute
 phase $\phi_{\text{bulk}}$ violates the $U(1)$/shift symmetry under which only the
 gradient $\partial_\mu\theta$ of a phase is physical; a gauge-legal form couples
 instead to that **gradient** — a physical Goldstone current of the bulk order
-parameter — rather than to the bare phase. Whether the gradient coupling reproduces
-the same $1/\Delta\nu^2$ visibility scaling is a question for the test design; either
-way $H'$ is presented as a deliberately symmetry-reduced *falsification term*, not a
-natural consequence of the framework.
+parameter — rather than to the bare phase. The $1/\Delta\nu^2$ scaling survives
+this repair, for a simple reason: the observable content of the postulate was
+never the absolute phase but the local *rate* of the reference, and that rate is
+the temporal component of the gradient, $\partial_t\theta = \omega_{\text{ref}}(\Phi)$
+— precisely the quantity gravitational redshift shifts,
+$\omega_{\text{ref}}(\Phi_A)-\omega_{\text{ref}}(\Phi_B) = \omega\,\Delta\Phi/c^2$. A
+gauge-legal coupling $H'' \sim g\,(\mathbf{d}\cdot\hat{\mathbf{H}})\,\partial_t\theta$
+therefore still enters as a steady, deterministic, polarization-differential
+frequency offset between the wings, accumulating phase linearly over
+$\tau_{\text{coh}} = 1/\Delta\nu$; the $\delta\phi_{\text{grav}}\propto 1/\Delta\nu$
+accumulation, and hence the $1/\Delta\nu^2$ visibility exponent of §6.1, carry over
+unchanged, while only the physically-empty absolute offset drops out. (This is the
+qualitative argument; a full re-derivation with the gradient coupling is not carried
+out here.) What the repair changes is the postulate's status, not the signature:
+$H''$ is shift-symmetric but remains non-covariant — it still singles out the
+analyzer axis — and absent from QED. Either way the term is presented as a
+deliberately symmetry-reduced *falsification term*, not a natural consequence of the
+framework.
 
 **What the experiment tests.** Because the effect does not follow from the
 framework plus standard optics, the experiment is a clean falsification test *of
@@ -1115,12 +1324,15 @@ the first — the coherent guiding law is the Madelung velocity $\mathbf{v}=\nab
 of §2.2, read ontologically (§2.5) — but still owes the rest: no specified equation
 for *how* the background configuration selects the basin (the *dynamical* locus of
 its nonlocality, though the *ontological* locus is identified in §7.5), and an
-incomplete Born account. Reading |ψ|² as the energy density of a real field is true but, for the
-equal-energy channels the framework treats, coincides with the occupation
-fraction by normalization and so explains nothing about outcome statistics; and a
-genuinely unbiased background would, without further input, weight basins by their
-measure (tending to equal odds) rather than by |α|² — the "why squared" gap that
-contested branch-counting derivations also face.
+incomplete Born account — the fork of §3.3, not restated here. What this section
+adds is the comparative point: reading |ψ|² as the energy density of a real field
+is true but, for the equal-energy channels the framework treats, coincides with
+the occupation fraction by normalization and so explains nothing about outcome
+statistics — leaving MCI without Bohm's clean quantum-equilibrium answer. (The
+substrate-sampling model of §8 is the candidate mechanism-level refinement — an
+equilibrium bath converting a linear real-field drive into $|\psi|^2$-weighted
+selection — but it relocates the postulate rather than removing it, so the debt
+stands.)
 
 This recasting also fixes what a superposition *is*, and the point is worth
 making because the careless version invites a hidden-variable misreading. What is
@@ -1138,9 +1350,7 @@ background-sensitive exactly when ψ is not its eigenstate, so "superposition wi
 respect to A" *is* the condition that the Stage-2 selection depends on the
 background, and the Born weight |⟨a|ψ⟩|² is, on this reading, the measure of those
 backgrounds that select basin a. Why that measure takes the squared-overlap value
-rather than another is then the "why squared" gap restated — the framework's
-counterpart of Bohm's quantum-equilibrium |ψ|² over position — and is carried as an
-open problem in §8.
+is the §3.3 fork again, carried in §8.
 
 Against these debts stand three distinctions, and they are sharper than "a more
 physically-motivated beable."
@@ -1150,8 +1360,11 @@ potential $Q = -\hbar^2\nabla^2 R / 2mR$ is read off the amplitude of $\psi$ aft
 the fact; it has no source of its own and no dynamics independent of the
 wavefunction it is extracted from. In MCI the analogous guidance is *inherited
 from the vacuum the particle traverses*: minimal coupling is carried not by the
-bare particle wavefunction but by the vacuum's virtual-pair fluctuations, to which
-the particle phase-locks, so the particle's phase is the vacuum phase it tracks.
+bare particle wavefunction but by the vacuum's virtual-pair fluctuations, which
+coherently *dress* the particle's phase — the reversible $\mathrm{Re}\,\Sigma$
+dressing of §2.5 and §3.6, not a dissipative lock; §2.3 reserves "locking" for
+the open regime, and in free flight only the closed regime runs (§2.5) — so the
+particle's phase is the vacuum phase it tracks.
 We are precise about which half of Bohm's amplitude–phase split this
 captures. The directly physicalized quantity is the *phase* — the Hamilton–Jacobi
 $S$ — not literally the amplitude-side $Q$. (That this phase appears as the
@@ -1162,9 +1375,9 @@ $\langle\delta^2\rangle$ of the residual phase mismatch about the locked solutio
 damps fringe contrast, and that loss of $R$-coherence is the decoherence
 (amplitude) physics. Where Bohm carries two formally separate objects — a guidance
 equation acting on $S$ and a quantum potential built from $R$ — MCI traces both to
-one mechanism, the particle's locking to the fluctuating vacuum: the deterministic
-lock supplies the guidance, its fluctuation variance supplies the
-amplitude/decoherence side. We present this as a structural correspondence, not an
+one mechanism, the particle's coupling to the fluctuating vacuum: the coherent
+dressing supplies the guidance; its fluctuation variance — sampled dissipatively
+only at boundaries (§2.5) — supplies the amplitude/decoherence side. We present this as a structural correspondence, not an
 identity $\langle\delta^2\rangle = Q$.
 
 Second, **it is relativistic from the start.** Textbook Bohm begins from the
@@ -1203,7 +1416,7 @@ than three independent postulates.
 
 Both this framework and Penrose–Diósi [15, 20] cast gravity as an agent of
 classicalization. We localize that role precisely: gravity acts at the
-electromagnetically-suppressed regime (Stage 2 in cold, isolated, mesoscopic
+electromagnetically-suppressed regime (Stages 2–3 in cold, isolated, mesoscopic
 systems), never on the basis selection that builds the correlation. Penrose's
 objective reduction is a candidate description of exactly that regime; the two
 proposals single out the same physical step (bulk re-establishment of coherence)
@@ -1215,7 +1428,7 @@ First, the divergence runs deeper than threshold-versus-continuous: Penrose–Di
 is a *collapse* theory — it modifies Schrödinger evolution and the superposition is
 objectively destroyed — whereas MCI is no-collapse, the global evolution staying
 unitary with the coherence scrambled into the bulk (§3.1). Second, the two
-mechanisms ask opposite things of the environment: MCI's Stage-2 lock is
+mechanisms ask opposite things of the environment: MCI's Stage-2/3 lock is
 *dissipative* and needs a bath to carry the phase mismatch into a continuum (§3.5),
 while Penrose's reduction is *intrinsic* and needs none, being a property the
 superposed mass distribution carries on its own. In the deep Penrose regime —
@@ -1257,7 +1470,7 @@ setting-independent common cause just excluded:
 
 - **The local thermal reference** at each detector — the faint, ppm bias of §4
   (B₀ in MRI, lattice and Coulomb binding in a solid-state detector). This
-  performs the local Stage-2 lock, the registration, and — through its coherence
+  performs the local Stage-2 selection and Stage-3 registration, and — through its coherence
   amplitude $r = e^{-\langle\delta^2\rangle/2}$ (§4.3) — the visibility of the
   outcome. It is established in the common past of both wings and is independent
   of the analyzer settings, so it is exactly a Bell common-cause variable; by the
@@ -1357,20 +1570,15 @@ the shared anti-anthropocentrism but claim no kinship beyond it.
 Two problems separate a single-world *picture* from a single-world *theory*, and
 the framework's status depends entirely on them:
 
-1. **The Born measure** (the open *second horn* of §3.3). A derivation that the long-run basin frequencies are
-   |α|² — closing both the equal-energy restriction and the "why squared" gap.
-   The missing piece is specifically *typicality*, not basin geometry: the
-   dissipative lock supplies *equivariance* — the weight of the measured projector
-   is conserved, so a |·|² measure granted at preparation is carried intact to the
-   outcome (Bohm's quantum-equilibrium status) — but the *geometric* basin volume is
-   50/50, independent of |α|², so Born cannot come from the attractor geometry and
-   must instead be carried by the measure placed on the selecting ensemble.
-   Equivariance itself, moreover, is not automatic: it requires the Stage-2 coupling
-   to be non-demolition for the *measured* observable, and §3.7 shows the
-   electromagnetic coupling is non-demolition for the charge/position pointer basis
-   but *not* for the chiral interference channel — there it relaxes and erases the
-   prepared weight, so the only coupling that would make the equivariance step hold for
-   the chiral binary is gravitational (§3.7, §7.4).
+1. **The Born measure** — the second horn of the §3.3 fork, which states the gap
+   in full; this entry records only what a derivation must supply, and the routes
+   tried. It must supply *typicality*: the basin geometry is 50/50, flat in |α|²
+   (§3.3), so the weight has to be carried by the measure on the selecting
+   ensemble; and the equivariance that would carry such a measure intact to the
+   outcome holds only where the Stage-2/3 coupling is non-demolition for the
+   measured observable — which, by §3.7, the electromagnetic coupling is for the
+   which-path basis but not for the chiral channel (there only a gravitational
+   coupling would serve; §7.4).
    Candidate routes include deriving the relevant symmetry from the U(1)
    invariance of the chiral phase under global phase redefinition, and the
    stochastic-mechanics tradition (Nelson [19]); we flag that the latter carries
@@ -1383,10 +1591,26 @@ the framework's status depends entirely on them:
    serial background-scrambling — each boundary interaction resamples the
    unbiased background — but it has been shown for standard Bohmian dynamics, not
    for MCI's dissipative, boundary-localized selection, so whether the same
-   H-theorem holds here, and with what coarse-graining, remains open. A minimal toy model of this route is now in hand (`code/born_substrate_sampling.py`): threshold-clock detectors driven by a *linear* real coupling in a random-phase (equilibrium) bulk reproduce Born weights by winner-take-all selection, with the squared measure arising from the delivered *power* — the linear drive's phase average, the first surviving term once the sign-alternating linear part cancels — rather than an assumed rate law, so the route does not smuggle in the $|\cdot|^2$ it must explain; and the same model *breaks* Born predictably away from equilibrium (strong drive, or a coherent bulk), i.e. it carries the non-equilibrium signatures a genuine relaxation account would. It illustrates the relaxation route without proving MCI's dissipative, boundary-localized selection relaxes; the bulk's equilibrium remains assumed. Absent that proof,
-the $|\psi|^2$ measure is adopted as a **postulate** — Bohm's quantum-equilibrium
-hypothesis in this framework's setting (the second horn of §3.3) — not as a derived
-result; the relaxation route is a research program, not a discharge of the Born debt.
+   H-theorem holds here, and with what coarse-graining, remains open.
+
+   A minimal toy model of this route is now in hand
+   (`code/born_substrate_sampling.py`). Threshold-clock detectors driven by a
+   *linear* real coupling in a random-phase (equilibrium) bulk reproduce Born
+   weights by winner-take-all selection. The squared measure arises from the
+   delivered *power*: the sign-alternating linear term averages to zero over the
+   bath phase, and the first surviving term is quadratic — so the route does not
+   smuggle in, through an assumed rate law, the $|\cdot|^2$ it must explain. The
+   same model *breaks* Born predictably away from equilibrium (strong drive, or
+   a coherent bulk), so it carries the non-equilibrium signatures a genuine
+   relaxation account would. What it does not do is prove that MCI's
+   dissipative, boundary-localized selection *relaxes* to that equilibrium: the
+   bulk's random-phase condition is assumed, and it is exactly the relocated
+   postulate.
+
+   Absent that proof, the $|\psi|^2$ measure is adopted as a **postulate** —
+   Bohm's quantum-equilibrium hypothesis in this framework's setting (the second
+   horn of §3.3) — not as a derived result; the relaxation route is a research
+   program, not a discharge of the Born debt.
 2. **A dynamical law for the selection.** An explicit equation by which the
    background-field configuration drives the basin selection — Bohm's analog is
    the guidance equation. The *ontological* locus of the nonlocality is now
@@ -1629,7 +1853,8 @@ which is why one must track the full $\rho$, not only the phase $\phi$.
 and spin-echo of §3.2); the outcome becomes a *fact* when the meter signal is amplified above the
 vacuum noise faster than it can be coherently reversed — a signal-to-noise condition that on the
 dispersive model requires readout power $\bar n\gtrsim\bar n_{\text{crit}}=\kappa|\Omega|/4\chi^2$.
-The Heisenberg cut of §3.5 is this amplification threshold: below it the interaction is an
+The Heisenberg cut of §3.5 is this amplification threshold — the Stage 2 → Stage 3 boundary
+of §3.1: below it the interaction is an
 echo-reversible dephasing; above it the record is irreversibly committed to the bulk. (We do not
 here re-assert specific critical exponents for that threshold.)
 
@@ -1694,7 +1919,7 @@ check the complete $\rho$ (Bloch length / purity), not only the extracted phase 
 [23] Daneri, A., Loinger, A., & Prosperi, G. M. (1962). Quantum theory of measurement and ergodicity conditions. *Nuclear Physics*, 33, 297–319.
 [24] Zych, M., Costa, F., Pikovski, I., & Brukner, Č. (2011). Quantum interferometric visibility as a witness of general relativistic proper time. *Nature Communications*, 2, 505.
 [25] Pikovski, I., Zych, M., Costa, F., & Brukner, Č. (2015). Universal decoherence due to gravitational time dilation. *Nature Physics*, 11(8), 668–672.
-[26] Bramble, J. (2026). Aharonov–Bohm Visibility Envelope as a Test of Dirac–Kuramoto Vacuum Locking. Companion preprint.
+[26] Bramble, J. (2026). Aharonov–Bohm Visibility Envelope as a Test of Dirac–Kuramoto Vacuum Locking. Companion draft in development (`AB_VISIBILITY_PAPER.md` in the repository); cited as work in progress, not as an established result.
 [27] Dürr, D., Goldstein, S., Norsen, T., Struyve, W., & Zanghì, N. (2014). Can Bohmian mechanics be made relativistic? *Proc. R. Soc. A*, 470(2162), 20130699.
 [28] Hackermüller, L., Hornberger, K., Brezger, B., Zeilinger, A., & Arndt, M. (2004). Decoherence of matter waves by thermal emission of radiation. *Nature*, 427(6976), 711–714.
 [29] Page, D. N., & Wootters, W. K. (1983). Evolution without evolution: Dynamics described by stationary observables. *Phys. Rev. D*, 27(12), 2885–2892.
@@ -1714,3 +1939,9 @@ check the complete $\rho$ (Bloch length / purity), not only the extracted phase 
 [42] Valentini, A. (1991). Signal-locality, uncertainty, and the subquantum H-theorem. I. *Physics Letters A*, 156(1–2), 5–11.
 
 [43] Valentini, A., & Westman, H. (2005). Dynamical origin of quantum probabilities. *Proc. R. Soc. A*, 461(2053), 253–272.
+
+[44] Gurney, R. W., & Mott, N. F. (1938). The theory of the photolysis of silver bromide and the photographic latent image. *Proc. R. Soc. London A*, 164(917), 151–167.
+
+[45] Guerreiro, T., Sanguinetti, B., Zbinden, H., Gisin, N., & Suarez, A. (2012). Single-photon space-like antibunching. *Physics Letters A*, 376(32), 2174–2177.
+
+[46] Lawrence, E. O., & Beams, J. W. (1928). The element of time in the photoelectric effect. *Phys. Rev.*, 32(3), 478–485.
