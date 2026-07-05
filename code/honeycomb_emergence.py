@@ -29,6 +29,20 @@ SUBSTRATE  ⟷  EMERGENT (graphene/Haldane) DICTIONARY:
     next-nearest sync          —        ⟷   NNN hopping                 t₂
     inertia / coupling         m, K     ⟷   emergent light-speed        c
 
+CORRECTION / SCOPE NOTE (2026-07-05): this script studies the target Bloch
+Hamiltonian (Haldane model with φ = α) written from the dictionary — it does
+NOT linearize the oscillator equations. The honest linearization is done in
+stuartlandau_haldane_check.py, with three qualifications derived there:
+(1) NO phase-only model (first-order or inertial) carries the flux at linear
+order — the coupling linearizes to a real symmetric cos α-weighted Laplacian;
+the flux lives in the limit-cycle (amplitude+phase, Stuart–Landau)
+linearization, whose particle-conserving block is exactly the H(k) below;
+(2) the lag pattern must be ANTISYMMETRIC (α_ij = −α_ji, Haldane orientation
+= a DMI in magnet language); (3) the coupling needs a REACTIVE component —
+purely dissipative coupling obeys an exact no-go (particle-hole shadow band
+restores the K-point degeneracy). See
+drafts/DERIVATION_lag_flux_linearization.md.
+
 WHAT EACH MASS MEANS:
 ─────────────────────────────────────────────────────────────────────────
   • Semenoff  (Δ ≠ 0, φ = 0): sublattice A/B pinning asymmetry. Opens the

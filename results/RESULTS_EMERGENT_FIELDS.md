@@ -42,7 +42,12 @@ linearize the fluctuation about the ordered ground state. The envelope obeys the
 
 **Takeaway:** one scalar-ish phase field yields a 4-component chiral object (2
 sublattice × 2 valley), two distinct mass mechanisms, and a quantized `U(1)`
-response. The Sakaguchi lag literally *is* a Berry flux. **Caveat (2D-specific):**
+response. The Sakaguchi lag literally *is* a Berry flux. **[Update 2026-07-05:
+qualified — the flux is real but lives in the limit-cycle (amplitude+phase)
+linearization with an antisymmetric lag pattern and a reactive coupling
+component; phase-only models and purely dissipative coupling obey exact
+no-gos. Derivation: `drafts/DERIVATION_lag_flux_linearization.md`; honest
+verification: `code/stuartlandau_haldane_check.py`.]** **Caveat (2D-specific):**
 2+1D has no real γ⁵, so "valley" is only a chirality proxy and the L↔R Dirac mass
 is faked as inter-valley scattering — fixed in §2.
 
