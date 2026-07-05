@@ -229,3 +229,56 @@ is the conservation postulate, enforced nonlocally (§3.3 wall i). What the run
 establishes: the rotation+drain mechanism is *internally consistent* (Born, antibunching
 survive), its Stage-2/3 split is *operationally meaningful* (E1b, E4), and its only new
 observable is the latency convolution (E3).
+
+**Follow-up 5 (22:17) — scattering amplitudes (John: can the model handle partial,
+non-absorptive interaction?).** Answer: scattering theory is the *native home* of the
+complex-rotation formalism. Dictionary: `S_ℓ = η_ℓ e^{2iδ_ℓ}` — phase shift δ = the
+reversible rotation (Re Σ, Stage 1–2, no record); inelasticity η < 1 = the drain (Im,
+closure probability; `1−η²` ↔ §3.5's `1−e^{−2Im W}`); Breit–Wigner resonance = the same
+pole displacement E_R − iΓ/2; **Wigner time delay 2ℏ dδ/dE = the measured duration of the
+Stage-2 window** (scattering theory has been clocking the provisional commit for a
+century); Rayleigh scattering = commit-and-revert (pure rotation, no closure). Kinematic
+gem: a **free electron cannot absorb a photon** (E–p conservation) — absorption needs the
+host atom to take recoil, so the "forgotten atom" of Stage 2 is what makes a closure
+channel *exist*, not just the first dissipative contact. **Optical theorem refines Wall 1:**
+σ_tot = (4π/k) Im f(0) — downstream depletion is *causal* destructive interference with
+the forward-scattered wave (the shadow); the nonlocal residue shrinks to exclusivity
+across separated arms only (= §7.5's non-separable configuration, nothing extra). Honest
+ledger: the framework adopts, doesn't re-derive, amplitudes; dσ/dΩ = |f|² is the same
+imported Born squaring in the same place. Framework-specific adds: time-domain reading
+(delay = window), channel classification by stages (elastic / recoil-record = track
+regime, one closure per event with sequential events = Mott / full capture), and the
+noticed coincidence that the sim's sterility S(δ,Γ) is already a Breit–Wigner overlap.
+**Possible sim extension:** add a recoil channel (closure that registers E–p transfer
+without consuming the quantum) → §5's whole capture-strength axis in one simulation.
+
+**BUILT AND RUN (22:30)** — `code/recoil_channel_tracks.py` (seed 7, ~18 s), figure
+alongside. Closure now branches: CAPTURE (prob β, consumes the budget, run ends — the
+photodetector limit) vs RECOIL (prob 1−β, registers a droplet costing ε ≪ E₀, quantum
+survives — the track limit). Direction handled as Mott-in-POVM-language: amplitude p(θ)
+starts uniform (spherical wave); each recoil event draws its angle from p⊛K (Born-weighted
+overlap with a site acceptance of width σ_meas) and applies the Kraus update p ← p·K —
+§5's "each capture only partially sharpens the momentum" made executable. Results:
+
+- **E1 click↔track axis:** mean registrations interpolate 1.00 (β=1) → 60.9 (β=0,
+  = E₀/ε), matching the truncated-geometric prediction across the whole sweep; the
+  capture-ended fraction falls 100% → 0. One mechanism, both §5 architectures.
+- **E2 Mott gallery:** isotropic source → straight dotted tracks radiating in random
+  directions (first-event angle uniform, TVD 0.043) — the spherical wave chooses once,
+  then keeps its choice. Visually a cloud-chamber star.
+- **E3 The Mott content quantified:** with amplitude conditioning the angular deviation
+  *plateaus* at ~σ_meas (5.7°/17.5°/45.8° for σ = 5°/15°/40° at k=60); memoryless
+  scattering with the same per-event width diffuses as σ√k (32°/96°/246°). The
+  plateau-vs-diffusion contrast is why tracks are straight.
+- **E4 Emergent Bragg curve:** with Bethe-inspired event spacing (ℓ ∝ E), deposition
+  density shows the clinical shape — flat entrance, peak (~3× plateau) at 93% of mean
+  range, sharp distal falloff; range straggling ±5.9 on mean 51.2 from stochastic
+  per-event loss. Proton-therapy depth-dose from the recoil channel of a measurement
+  toy model.
+
+Ledger: per-event Born weighting, σ_meas (per-event partiality), and ℓ ∝ E are inputs;
+emergent are the click↔track interpolation, the straightness (conditioning, not
+memorylessness), and the Bragg shape. Exclusivity generalized as one record per *event*
+(per-event E–p budget), sequential events allowed — completing the §5 taxonomy in code:
+photodetector (k=1, β→1), cloud chamber (β→0, one particle/many sites), film (parent
+script's k≥2, many quanta/one site), all one capture→commit→closure mechanism.
