@@ -144,6 +144,34 @@ def main():
     tmax_utc = (np.degrees(np.arctan2(ct[2], ct[1])) % 360) / 360 * 24
     print(f"[fold] solar-daily maximum at {tmax_utc:.1f} h UTC "
           f"= {(tmax_utc - 8) % 24:.1f} h local (PST)")
+
+    # autocorrelation-honest errors: adjacent 128-s chunks of a drifting PSD
+    # are NOT independent. Estimate the integrated autocorrelation time of
+    # the tidal-fit residuals and rescale every quoted sigma by sqrt(tau).
+    r_ord = rt  # already in gps order
+    r_ord = r_ord - r_ord.mean()
+    var0 = float(np.dot(r_ord, r_ord)) / len(r_ord)
+    tau = 1.0
+    for k in range(1, min(2000, len(r_ord) // 10)):
+        rho = float(np.dot(r_ord[:-k], r_ord[k:])) / \
+            ((len(r_ord) - k) * var0)
+        if rho < 0.02:
+            break
+        tau += 2 * rho
+    neff = len(x) / tau
+    print(f"[fold] integrated autocorrelation time tau = {tau:.1f} chunks "
+          f"({tau * 128 / 60:.0f} min); N_eff = {neff:.0f} of {len(x)}")
+    print(f"[fold] ALL sigmas above are inflated by sqrt(tau) = "
+          f"{np.sqrt(tau):.2f}; autocorrelation-corrected significances:")
+    for lab, (ic, isn) in [("solar S1 (24h)   ", (1, 2)),
+                           ("solar S2 (12h)   ", (3, 4)),
+                           ("lunar M2 (12.42h)", (5, 6)),
+                           ("lunar O1 (25.82h)", (7, 8))]:
+        amp = np.hypot(ct[ic], ct[isn])
+        e = np.hypot(ct[ic] * et[ic], ct[isn] * et[isn]) / max(amp, 1e-30)
+        print(f"[fold]   {lab}: {amp/max(e*np.sqrt(tau),1e-30):.1f} sigma")
+    print(f"[fold] corrected statistical floor ~ sigma1*sqrt(2/N_eff) = "
+          f"{sigma1*np.sqrt(2/neff):.2e}")
     n_eff = len(x)
     print(f"[fold] statistical floor ~ sigma1*sqrt(2/M) = "
           f"{sigma1*np.sqrt(2/n_eff):.2e} (M = {n_eff})")

@@ -43,23 +43,34 @@ floor of gravitational-wave interferometers — a ~10 kg continuously monitored
 quantum system with years of GPS-timed public data and, uniquely, a
 multi-detector geometric phase discriminant no tabletop test possesses. A
 pilot reanalysis of 20.6 days of public LIGO O3b Hanford strain (11,003
-independent 128-s estimates of a band-limited quantum-noise proxy) measures
-the raw per-sample scatter σ₁ = 2.7 × 10⁻², within 1.3× of our design
-assumption before any auxiliary-channel regression; decomposes the ~2%
-diurnal systematic into a solar-locked anthropogenic component (S1, peaking at
-08:42 local time) and a genuinely tidal lunar component (M2 at 9σ, O1 at 13σ);
-and identifies the K1 tidal constituent — whose period is exactly one sidereal
-day — as the search's principal confound, together with its remedy: the
-measured M2/O1 admittance predicts the K1 tidal contribution through fixed
-potential ratios, allowing subtraction. With full multi-detector O3–O5 data
-the search reaches fractional modulations of a few × 10⁻⁴, sufficient to
-detect or exclude a vector (first-harmonic) frame coupling at the natural CMB
-velocity scale β ≈ 1.2 × 10⁻³ down to ~10% of natural strength (a few percent
-after regression); the quadratic tensor scale β² is out of reach, which we
+128-s estimates of a band-limited quantum-noise proxy) delivers the search's
+design inputs as measurements: the raw per-sample scatter is σ₁ = 2.7 × 10⁻²,
+within 1.3× of our design assumption before any auxiliary-channel regression;
+the ~2% diurnal systematic decomposes into a solar-locked component peaking at
+workday onset (08:42 local) plus lunar constituents (M2, O1) whose point
+amplitudes suggest a genuinely tidal share — though with red-noise-honest
+error bars (residual autocorrelation time ≈ 5.5 h, N_eff ≈ 70) no constituent
+exceeds 2.2σ at this baseline, so the attribution is suggestive rather than
+established, and the pilot sets **no sidereal bound** (the solar and sidereal
+regressors remain collinear over 20 days by design). The pilot's structural
+lesson is thus quantitative: the analysis is red-noise limited, and
+auxiliary-channel whitening is a precondition, not a refinement. We identify
+the K1 tidal constituent — whose period is exactly one sidereal day — as the
+search's principal confound, note that the adjacent P1 constituent gives the
+diurnal tidal line a natural annual envelope that partially mimics the
+CMB-orbital key, and specify the required treatment: a joint diurnal-band
+admittance fit (K1, P1, S1, O1) with free-core-nutation-aware priors, rather
+than naive potential-ratio subtraction. With full multi-detector O3–O5 data
+and demonstrated whitening, the search reaches 5σ fractional modulations of
+~1.7 × 10⁻⁴ (raw-noise scaling; ~1.2 × 10⁻⁴ at the post-regression target),
+i.e. a vector (first-harmonic) frame coupling at the natural CMB velocity
+scale β ≈ 1.2 × 10⁻³ is detectable or excludable down to ~10–15% of natural
+strength, with a few percent reachable only under an optimistic coherent
+multi-detector stack; the quadratic tensor scale β² is out of reach, which we
 state plainly. Amplitude, sidereal phase (CMB apex), inter-detector phase
-offsets, and an 8% annual envelope are all fixed in advance: the search has no
-free parameters to retune, and a null result cleanly bounds an otherwise
-unprobed sector.
+offsets, and the annual envelope are fixed in advance: the search has no free
+parameters to retune, and a null result cleanly bounds an otherwise unprobed
+sector.
 
 ---
 
@@ -87,8 +98,11 @@ collapse-rate bounds from GW detectors (λ < 3 × 10⁻⁸ s⁻¹, LISA Pathfind
 constrain a universal anomalous decoherence source acting in free propagation.
 A coupling that *multiplicatively modulates environment-induced dissipation at
 the measurement boundary* is invisible to all of them unless the ordinary
-decoherence budget is itself resolved and sidereally binned — which has not
-been done, anywhere. The KLOE ω-effect bound (|ω| ≲ 10⁻⁴), numerically below
+decoherence budget is itself resolved and sidereally binned — which, to the
+best of our knowledge after a dedicated literature search across the SME
+tables, the open-system LV literature, sidereal entanglement/coherence
+analyses, LIGO instrumental analyses, and collapse-model bounds, has not been
+done anywhere (`drafts/T5_CONSTRAINTS_CHECK.md` documents the search). The KLOE ω-effect bound (|ω| ≲ 10⁻⁴), numerically below
 our target, constrains an anomaly *in the preparation of an entangled state*;
 the coupling searched for here acts *at detection* and does not feed ω.
 
@@ -118,10 +132,29 @@ CMB}/c = 1.23\times10^{-3}$ (first sidereal harmonic), and **tensor**,
 $\varepsilon = \beta^2 \approx 1.5\times10^{-6}$ (second harmonic). The
 isotropic scalar $\Phi/c^2$ is absorbable and not a target.
 
-The search is model-independent: any theory in which decoherence rates carry a
-cosmic frame — anisotropic collapse models, Lindblad-sector Lorentz violation,
-or measurement-sector preferred-frame proposals — populates $\varepsilon,
-\xi$. One of us has developed a synchronization-based measurement framework
+**What "decoherence" means here, operationally.** A quantum-noise referee
+will correctly note that at kilohertz frequencies reduced squeezing is
+bookkept as *optical loss and phase noise on the light* — a beamsplitter
+vacuum admixture — not as decoherence of the mirror mode, and that the ~10 kg
+differential arm mode is quantum-radiation-pressure-relevant below ~100 Hz
+(the regime of Yu et al. 2020 and Whittle et al. 2021), not in our band. We
+accept both points and define the observable accordingly: the target is an
+**anomalous, sidereally modulated loss channel in the squeezed-state budget**
+of a continuously monitored interferometer — "decoherence" in the operational
+sense of unaccounted vacuum admixture into a macroscopic apparatus's quantum
+readout. The macroscopic-mass significance is then indirect but real: the
+squeezed field is entangled with a 10 kg mechanical system under continuous
+measurement, and an anomalous measurement-sector coupling anywhere in that
+loop modulates the recorded noise floor. We also restore here the structural
+sensitivity fact the working note carried: the differential arm mode is a
+*single collective coordinate* — effectively N = 1, with no GHZ-type coherent
+amplifier — which is precisely why the tensor (β²) target is unreachable by
+brute statistics and the vector target is the honest ceiling of this method.
+
+The search is model-independent: any theory in which measurement-sector
+dissipation carries a cosmic frame — anisotropic collapse models,
+Lindblad-sector Lorentz violation, or measurement-sector preferred-frame
+proposals — populates $\varepsilon, \xi$. One of us has developed a synchronization-based measurement framework
 [companion: *Two Regimes of the Chiral Mass Coupling*] whose one added
 postulate is exactly such a coupling, dormant in unitary evolution and active
 only in the dissipative measurement stages; it motivated this search, and a
@@ -129,60 +162,101 @@ null bounds it. Nothing below depends on that framework's correctness.
 
 ## 3. Observable, statistics, and the pilot's measured inputs
 
-The cleanest observable is the high-frequency, shot-noise-limited,
-squeezing-enhanced strain PSD — purely quantum, cleanly modeled, and directly
-degraded by any excess decoherence. A sinusoidal amplitude over $M$
-independent samples resolves to $\sigma_1\sqrt{2/M}$.
+The observable is the high-frequency, shot-noise-limited, squeezing-enhanced
+strain PSD, reduced to a band statistic. The pilot's band-median proxy is
+*not* purely quantum — its measured 2% diurnal modulation is classical
+non-stationarity leaking into the band — which is exactly why the analysis
+plan treats auxiliary-channel regression as a precondition (§4–5). A
+sinusoidal amplitude over $M_{\rm eff}$ *effectively independent* samples
+resolves to $\sigma_1\sqrt{2/M_{\rm eff}}$; the distinction between raw and
+effective sample counts is load-bearing (below).
 
 **Pilot (this work; code public).** 20.59 days of O3b H1 public strain
 (GWOSC), reduced to 11,003 band-median PSD estimates (1200–1450 Hz, 128 s
-each, 79% duty), 3-day rolling-median detrend:
+each, 79% duty), 3-day rolling-median detrend. Methods for the reproducer:
+GPS window 1256655618 + 30 d (166 four-ks file-blocks unavailable
+server-side, 2019-11-21→12-01, skipped); 4-s median-Welch PSDs; σ₁ is the
+MAD-robust scatter of the fractional band-median deviation;
+science-flag-only selection. Results:
 
 - **σ₁(raw) = 2.66 × 10⁻²** per 128-s sample — with *no* data-quality cuts
   beyond the science flag, no auxiliary-channel regression, no line handling.
   Design assumption 2 × 10⁻² (≈ 0.1 dB squeezing precision) is thus the
   post-regression target, and the raw number the demonstrated floor.
-- Statistical floor after 20.6 detector-days: 3.6 × 10⁻⁴ (1σ).
+- **Residual autocorrelation is severe and quantified**: integrated
+  autocorrelation time τ ≈ 156 samples (≈ 5.5 h), so the pilot's N_eff ≈ 70
+  of 11,003, and its unwhitened statistical floor is 4.5 × 10⁻³ — not the
+  naive 3.6 × 10⁻⁴. Whitening (regression to near-white residuals) is what
+  converts calendar time into sensitivity; demonstrating it on auxiliary
+  channels is the first task of the full analysis.
 - The systematic budget is *measured*, not assumed — next section.
+- **No sidereal bound is claimed from the pilot**: over 20 days the solar and
+  sidereal first harmonics are collinear (joint-fit condition number 470);
+  their separation was never the pilot's deliverable.
 
-Reach at 5σ, scaling from the raw σ₁ (post-regression values in parentheses):
-6 months one detector ~1.3 × 10⁻³ (1 × 10⁻³); O4+O5 multi-detector, ~4
-detector-years, ~5 × 10⁻⁴ (~1.5 × 10⁻⁴); optimistic coherent multi-detector
-stack, ~10⁻⁴ range. Against the targets: the **vector** channel (signal
-$\beta\,\kappa\xi \sim 1.2\times10^{-3}\,\kappa\xi$) is detectable or
-excludable down to $\kappa\xi \sim 0.1$ raw, few × 10⁻² post-regression. The
-**tensor** channel at β² is one to two orders below any achievable floor:
-**out of reach, stated plainly.** The value of the search is the unprobed
-channel and the macroscopic mass scale, not tensor-level sensitivity.
+Reach at 5σ, assuming whitened residuals (so M_eff → M), from
+σ₁ = 2.66 × 10⁻² raw (post-regression target σ₁ = 2 × 10⁻² in parentheses):
+6 months one detector, M ≈ 1.5 × 10⁵: **4.9 × 10⁻⁴** (3.7 × 10⁻⁴); O4+O5
+multi-detector, ~4 detector-years, M ≈ 1.3 × 10⁶: **1.7 × 10⁻⁴**
+(1.2 × 10⁻⁴); optimistic coherent multi-detector stack: few × 10⁻⁵. Against
+the targets: the **vector** channel (signal $\beta\,\kappa\xi \sim
+1.2\times10^{-3}\,\kappa\xi$) is detectable or excludable down to $\kappa\xi
+\approx 0.14$ raw / $0.10$ at the regression target, reaching a few percent
+only under the coherent-stack assumption. The **tensor** channel at β² is one
+to two orders below any achievable floor: **out of reach, stated plainly** —
+the structural reason being the N = 1 absence of a coherent amplifier (§2).
+The value of the search is the unprobed channel, not tensor-level
+sensitivity.
 
 ## 4. The systematic budget, measured
 
 The pilot's diurnal systematic decomposes into named constituents (tidal-check
-fit, condition number 3.1; 20.6 d separates lunar from solar lines via the
-spring–neap beat):
+fit over the full 20.59-d span; design condition number 3.1 — lunar and solar
+lines separate via the ~15-d spring–neap beat). Significances are given both
+naively (white-residual assumption) and corrected for the measured residual
+autocorrelation (τ ≈ 156 samples ⇒ every σ inflates by √τ ≈ 12.5):
 
-| Constituent | Period | Amplitude | Significance | Origin |
-|---|---|---|---|---|
-| S1 (solar) | 24 h | 2.5 × 10⁻² | 27σ | anthropogenic/thermal (peaks 08:42 local) |
-| S2 (solar) | 12 h | 1.6 × 10⁻² | 17σ | thermal harmonic + solar tide |
-| M2 (lunar) | 12.421 h | 0.8 × 10⁻² | 9σ | **tidal** |
-| O1 (lunar) | 25.819 h | 1.1 × 10⁻² | 13σ | **tidal** |
+| Constituent | Period | Amplitude (point est.) | Naive | **Corrected** | Candidate origin |
+|---|---|---|---|---|---|
+| S1 (solar) | 24 h | 2.5 × 10⁻² | 27σ | **2.2σ** | anthropogenic/thermal (peaks 08:42 local) |
+| S2 (solar) | 12 h | 1.6 × 10⁻² | 17σ | **1.4σ** | thermal harmonic + solar tide |
+| M2 (lunar) | 12.421 h | 0.8 × 10⁻² | 9σ | **0.7σ** | tidal |
+| O1 (lunar) | 25.819 h | 1.1 × 10⁻² | 13σ | **1.0σ** | tidal |
 
-Two structural conclusions:
+With honest error bars, **no constituent is individually established at this
+baseline**: the residuals are red (5.5-h correlation time), and against red
+noise a 20-day record cannot certify even the 2.5% daily line, let alone the
+lunar share. We present the decomposition as what it is — point estimates
+whose pattern (workday-onset solar phase; nonzero lunar-period amplitudes) is
+*consistent with* a mixed anthropogenic + tidal origin — and as a
+demonstration that the constituent-fitting machinery works. Certifying the
+decomposition requires whitening; that is the same precondition the reach
+table already carries, arrived at independently.
 
-1. **The search is systematics-limited, and the limiting systematic is
-   ~50× the statistical floor.** Solar/sidereal separation plus
-   auxiliary-channel regression are the analysis, not refinements.
-2. **K1 is the principal confound.** The lunisolar diurnal constituent K1 has
-   period 23.9345 h — *exactly one sidereal day* — so a K1 tidal coupling
-   cannot be separated from a true sidereal signal by period. The remedy is
-   in the data: tidal constituents stand in fixed potential-amplitude ratios
-   (K1/O1 ≈ 1.41 in the diurnal band), so the measured M2/O1 response
-   calibrates the site's tidal admittance and *predicts* the K1 tidal
-   amplitude for subtraction. The 9–13σ pilot detections of M2/O1 demonstrate
-   this calibration is available. Residual-K1 discrimination then falls to
-   the geometric keys below (K1 phase is set by local geography; its slow
-   modulation is the 18.6-yr nodal cycle, not an annual envelope).
+Two structural conclusions survive unchanged:
+
+1. **The search is red-noise/systematics-limited.** Whitening via
+   auxiliary-channel regression is the analysis, not a refinement — the
+   pilot now states this as a measured fact (τ, N_eff), not a caution.
+2. **K1 is the principal confound, and its treatment must be a joint fit,
+   not a ratio subtraction.** The lunisolar diurnal constituent K1 has period
+   23.9345 h — *exactly one sidereal day* — so a K1 tidal coupling cannot be
+   separated from a true sidereal signal by period. We do **not** propose
+   predicting K1 from other constituents by bare potential ratios: (i) the
+   free-core-nutation resonance sits in the diurnal band adjacent to K1,
+   making its admittance anomalous relative to O1 (Wahr); (ii) M2 is
+   semidiurnal — different Love numbers and ocean loading — and cannot
+   calibrate the diurnal band; (iii) instrumental coupling paths (e.g.,
+   tidal-actuator activity into alignment) need not be linear in the
+   potential. The required treatment is an **empirical joint fit of the
+   diurnal-band family (K1, P1, S1, O1) with FCN-aware admittance priors**,
+   over baselines long enough to separate the family members. P1 matters
+   doubly: the K1+P1 beat (2 cycles/yr, potential ratio ≈ 0.33) endows the
+   diurnal tidal line with a natural ~±30% annual envelope — so an annual
+   envelope alone does *not* certify the CMB-orbital origin (key 4 below is
+   correspondingly weakened from "unfakeable" to "distinguishing in
+   conjunction with phase and geometry": the CMB envelope has a specific
+   phase date and the same amplitude at every site, the K1/P1 beat does not).
 
 ## 5. Design: the four pre-registered keys
 
@@ -192,16 +266,29 @@ A real frame signal must show, with **no free parameters**:
 2. **Sidereal phase locked to the CMB apex** (RA 11h12m, Dec −7°), not to any
    local or solar reference;
 3. **Inter-detector phase offsets** fixed by the known orientations of H1, L1,
-   Virgo, KAGRA — the discriminant no tabletop test has, and one no local
-   systematic (including K1 tides, whose site phases follow the geoid rather
-   than detector orientation) can mimic;
-4. **An ~8% annual envelope** from Earth's 30 km/s orbital velocity adding
-   vectorially to the 369 km/s CMB velocity, peaking on a fixed date.
+   Virgo, KAGRA — the discriminant no tabletop test has. For a projection
+   ansatz $g(\hat n, t) = (\hat n \cdot \hat u_{\rm apex}(t))^2$, with $\hat
+   n$ the coupling's sensitive axis in the local frame, the sidereal phase at
+   each site is set by its latitude and the axis azimuth, whereas the K1
+   body-tide phase follows site *longitude* (Greenwich phase lag) — two
+   different, computable phase patterns across the network. **Honesty note:
+   the sensitive axis $\hat n$ for a squeezing-loss coupling (arm bisector?
+   squeezer injection path?) is not yet derived from any microscopic model;
+   producing $g$ and the predicted four-site phase table is a prerequisite
+   for the full analysis and is listed in §7.** Until then this key is a
+   design requirement, not a computed prediction;
+4. **An annual envelope** from Earth's 30 km/s orbital velocity adding
+   vectorially to the 369 km/s CMB velocity: ±8%, peaking on a fixed date,
+   *identical at every site*. As §4 notes, the K1+P1 tidal beat also produces
+   an annual envelope (~±30%, site-dependent, different phase date), so key 4
+   discriminates only jointly with keys 2–3 — the fixed date and the
+   site-universality are the operative content.
 
 Analysis protocol: segment PSDs in the squeezing-dominated band → quantum-noise
 estimator per ~100 s → regress known classical contributions on
 detector-characterization auxiliary channels → fit solar + sidereal + tidal
-(M2, O1, with K1 predicted-and-subtracted) harmonic families jointly over
+(the diurnal family K1, P1, S1, O1 fit jointly with FCN-aware admittance
+priors, plus M2) harmonic families over
 full observing runs → demand keys 2–4. Blind injection-and-recovery of
 CMB-locked templates throughout. The "cheapest first look" — checking existing
 LIGO spectral-line and stochastic-search sidereal products for an unexplained
@@ -233,18 +320,37 @@ coherence of the anomalous channel across the measurement band is assumed.
 These are framework debts, stated so the search's model-independent value is
 not confused with the framework's current standing.
 
+For the search itself, two analysis debts stand between this proposal and a
+collaboration-ready method paper: (v) the coupling's sensitive axis $\hat n$
+and hence the explicit $g(\hat n, t)$ with its predicted four-site sidereal
+phase table (§5, key 3); and (vi) a demonstration, on real auxiliary-channel
+data, that regression whitens the band statistic to near-independence at the
+128-s scale — the pilot's measured τ ≈ 5.5 h is the number this must beat,
+and every reach figure in §3 is conditional on it.
+
 ## 8. Conclusion
 
 There is an entire sector — dissipative, non-unitary Lorentz violation — in
-which no experiment has ever looked for sidereal structure, and a free,
-GPS-timed, multi-detector dataset in which to look. The pilot presented here
-shows the noise is 1.3× the design assumption before any cleaning, measures
-the systematic budget it must defeat, and converts this proposal's principal
-confound into a calibrated subtraction. The search costs no new hardware,
-carries four pre-registered keys and no tunable parameters, and its null is as
-publishable as its signal.
+which, to our knowledge, no experiment has ever looked for sidereal
+structure, and a free, GPS-timed, multi-detector dataset in which to look.
+The pilot presented here shows the noise is 1.3× the design assumption before
+any cleaning; measures, with red-noise-corrected error bars, the systematic
+budget the search must defeat and the whitening requirement that defines the
+analysis; and names the principal confound (K1, with its P1 annual beat)
+together with the joint-fit treatment it requires. The search costs no new
+hardware, carries four pre-registered keys and no tunable parameters, and its
+null is as publishable as its signal.
 
 ---
+
+## Figures
+
+Working figures accompany the pilot code: `t5_pilot/figures/timeseries.png`
+(fractional band-PSD deviation over the 20.6-d span),
+`t5_pilot/figures/fold_sidereal.png` and `fold_solar.png` (binned folds with
+harmonic fits — visually near-identical, the collinearity statement in
+pictures). Publication figures (constituent decomposition with corrected
+error bars; reach-vs-baseline) are a packaging task on existing outputs.
 
 ## References (draft placeholders — to be completed)
 
@@ -255,6 +361,7 @@ publishable as its signal.
 - M. Carlesso et al., PRD 94, 124036 (2016); LISA Pathfinder, PRD 95, 084054 (2017).
 - F. Allmendinger et al., PRL 112, 110801 (2014).
 - H. Yu, L. McCuller et al., Nature 583, 43 (2020); C. Whittle et al., Science 372, 1333 (2021).
+- M. Tse et al., *Quantum-Enhanced Advanced LIGO Detectors in the Era of Gravitational-Wave Astronomy*, PRL 123, 231107 (2019) — squeezing operational in O3. L. McCuller et al., PRD 104, 062006 (2021) — O3 squeezing/loss budget.
 - GWOSC open data: R. Abbott et al., ApJS 267, 29 (2023).
-- Tidal harmonics: A. T. Doodson, Proc. R. Soc. A 100, 305 (1921).
+- Tidal harmonics: A. T. Doodson, Proc. R. Soc. A 100, 305 (1921); J. M. Wahr, Geophys. J. R. astr. Soc. 64, 677 (1981) — FCN resonance in the diurnal admittance.
 - [Companion framework paper: current_revision_DK_paper.md — "Two Regimes of the Chiral Mass Coupling."]

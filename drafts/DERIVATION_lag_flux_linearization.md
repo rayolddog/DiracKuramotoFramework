@@ -18,7 +18,10 @@ conditions, all now derived and verified:
    the flux at linear order (Lemma 1). And even with amplitude dynamics, the
    topological gap dies when the amplitude stiffness $r_0^2$ is taken to
    infinity (the phase-reduction limit): verified, $C: +1 \to 0$ between
-   $r_0^2 = 7$ and $19$ at our parameters.
+   $r_0^2 = 4$ and $16$ at our parameters. [Correction 2026-07-06: at
+   $\beta=\pi/2,\ \alpha=\pi/2$ the fixed point gives $r_0^2=\mu$ exactly
+   (χ is imaginary); values first quoted here used $r_0^2=\mu+3g_1$, a
+   labeling error — the swept parameters are unchanged.]
 2. **The lag pattern must be antisymmetric** ($\alpha_{ij}=-\alpha_{ji}$, the
    Haldane orientation on NNN bonds) — this is exactly a Dzyaloshinskii–Moriya
    structure in oscillator language. The symmetric (uniform-delay) Sakaguchi
@@ -124,7 +127,7 @@ $\alpha=\pm\pi/2$, $\mu=0.5$:
 |---|---|
 | Chern number of upper positive-frequency band | $C = \pm 1 = \mathrm{sign}(\alpha)$ |
 | minimum band-pair gap | $2.04$ |
-| robustness | $C=+1$ at $r_0^2 = 3.2,\,4,\,7$; $C\to0$ by $r_0^2=19$ |
+| robustness | $C=+1$ at $r_0^2 = 0.2,\,1,\,4$; $C\to0$ by $r_0^2=16$ |
 
 The last line is the quantitative form of "phase reduction kills the flux":
 increasing amplitude stiffness drives the system toward the phase-only limit

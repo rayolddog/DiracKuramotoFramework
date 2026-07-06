@@ -215,7 +215,9 @@ def main():
     print("    robustness across amplitude stiffness (alpha=+pi/2):")
     for mu in (0.2, 1.0, 4.0, 16.0):
         C, gap = chern_posfreq(mu, ALPHA, np.pi / 2, n=30)
-        r2 = mu + 3 * G1C
+        # at beta=pi/2, alpha=pi/2: chi = 3i*g1 is imaginary => r0^2 = mu
+        chi = (3 * G1C + 6 * G2C * np.cos(ALPHA)) * np.exp(1j * np.pi / 2)
+        r2 = mu + chi.real
         print(f"    r0^2 = {r2:6.2f}:  C = {C:+d}   (min pair gap {gap:.4f})")
 
     print("(3b) K-point gap vs dissipative/reactive mixing angle beta:")

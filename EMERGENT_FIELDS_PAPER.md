@@ -37,13 +37,15 @@ work performed.
 
 Analog quantum simulation of relativistic matter has been realized in cold
 atoms, photonic lattices, and superconducting circuits. We show that a fourth,
-largely unexploited class of platform — lattices of coupled *phase oscillators*
-with inertial Kuramoto–Sakaguchi/Josephson dynamics — natively carries the full
-kinematic content of chiral relativistic fermions, and that the standard knobs
-of synchronization physics map one-to-one onto the ingredients of emergent
-Dirac structure. Specifically: (i) on a honeycomb lattice, linearized phase
+largely unexploited class of platform — lattices of coupled *limit-cycle
+oscillators* (Stuart–Landau dynamics, whose phase reduction is the standard
+Kuramoto–Sakaguchi/Josephson model) — natively carries the full kinematic
+content of chiral relativistic fermions, and that the standard knobs of
+synchronization physics map one-to-one onto the ingredients of emergent Dirac
+structure. Specifically: (i) on a honeycomb lattice, linearized phase
 fluctuations about the synchronized state obey the (2+1)D Weyl equation with an
-emergent light-cone $c=(v/2)\sqrt{K/3m}$, chirality arising from the two
+emergent light-cone speed set by $a\sqrt{K/m}$ ($a$ the lattice constant),
+chirality arising from the two
 Brillouin-zone valleys without being inserted by hand; (ii) an **antisymmetric
 Sakaguchi phase-lag $\alpha$ acts as a Haldane flux** — the complex hopping
 $g\,e^{i\alpha_{ij}}$ survives in the linearized limit-cycle (Stuart–Landau)
@@ -54,8 +56,13 @@ dynamics alive, DMI-like antisymmetric lag pattern, and a *reactive* coupling
 component — including a no-go theorem for purely dissipative (standard
 Kuramoto) coupling, where a particle–hole shadow band restores the Dirac
 degeneracy exactly; sublattice pinning asymmetry independently supplies the
-trivial (Semenoff) mass, so *both* known Dirac mass mechanisms are sync
-parameters;
+trivial (Semenoff) mass — realized in the limit-cycle model as a sublattice
+frequency detuning, with the Semenoff–Haldane phase boundary verified *within
+the honest linearization* at its dictionary value ($\delta_c = 1.50$–$1.75$
+vs. bare $3\sqrt3\,g_2\sin\alpha = 1.56$) — so *both* known Dirac mass
+mechanisms are sync parameters; a strip-geometry calculation exhibits the
+in-gap, edge-localized chiral branch directly, with no non-Hermitian
+skin-effect pileup;
 (iii) in a 3D chiral-basis Wilson–Dirac realization, the two chiralities are
 genuine Weyl nodes of opposite Berry-monopole charge, and the Dirac mass is
 literally the off-diagonal L↔R coupling — the gap opens only when the coupling
@@ -97,8 +104,8 @@ engineered fine-tuning:
 
 | Sync parameter (standard) | Emergent object |
 |---|---|
-| nearest-neighbour coupling $K$, inertia $m$ | Dirac cones; emergent light-speed $c=(v/2)\sqrt{K/3m}$ |
-| **Sakaguchi phase-lag $\alpha$** | **Berry flux / Haldane topological mass, $C=\pm1$** |
+| nearest-neighbour coupling $K$, inertia $m$ | Dirac cones; emergent light-speed $c \sim a\sqrt{K/m}$ ($v_F = 3Ka/2$ verified) |
+| **Sakaguchi phase-lag $\alpha$** | **Berry flux / Haldane topological mass, $C=\pm1$** *(requires: amplitude dynamics + antisymmetric lag pattern + reactive coupling — §7)* |
 | on-site pinning asymmetry $\kappa_A\neq\kappa_B$ | Semenoff (trivial) mass |
 | off-diagonal chiral coupling $M\tau_x$ (3D) | Dirac mass $m(\bar\psi_L\psi_R+\bar\psi_R\psi_L)$ |
 | zone-boundary (Wilson) coupling | Nielsen–Ninomiya doubler removal |
@@ -137,10 +144,15 @@ mixing angle $\beta$ and the amplitude stiffness $r_0^2$. Along both we find
 sharp structure (§7; derivation in `drafts/DERIVATION_lag_flux_linearization.md`,
 verified in `code/stuartlandau_haldane_check.py`): purely dissipative coupling
 obeys an exact no-go (the Bogoliubov shadow band restores the Dirac
-degeneracy at $K$ for every stiffness), the topological gap switches on
-$\propto\sin\beta$, and the phase-only limit $r_0^2\to\infty$ closes it again.
-The magnon Haldane system is recovered as the $\beta=\pi/2$, rigid-amplitude
-corner of this larger phase diagram.
+degeneracy at $K$ for every stiffness), the K-point sector splitting switches
+on $\propto\sin\beta$ (the full spectral gap is non-monotonic through the
+dissipative→reactive crossover), and the phase-only limit $r_0^2\to\infty$
+closes the topological gap again. The magnon Haldane system is recovered as
+the corner with Hamiltonian ($\beta=\pi/2$) coupling and **no anomalous
+sector**: ferromagnetic magnons conserve quanta, so the Bogoliubov shadow that
+drives our no-go is absent there — the magnon limit is the
+vanishing-anomalous-coupling corner, not the stiff-amplitude one (which is
+trivial).
 
 The paper is organized as a chain of three verified numerical results of
 increasing dimensionality and depth (§3–§5), preceded by the model (§2) and
@@ -149,23 +161,30 @@ followed by experimental signatures (§6) and honest limits of the construction
 
 ## 2. The substrate
 
-All results use one medium: phase oscillators $\theta_i$ on a lattice with
-inertial Kuramoto–Sakaguchi dynamics
+All results use one medium: **limit-cycle oscillators** $z_i \in \mathbb C$ on
+a lattice with Stuart–Landau dynamics and complex coupling,
 
 $$
-m\,\ddot\theta_i + \gamma\,\dot\theta_i
- = \omega_i - K\sum_{j\in\langle i\rangle}\sin(\theta_i-\theta_j+\alpha_{ij})
- - \kappa_i\sin\theta_i .
+\dot z_i = (\mu + i\omega)\,z_i - |z_i|^2 z_i
+ + e^{i\beta}\sum_{j\in\langle i\rangle} g_{ij}\,e^{i\alpha_{ij}}\, z_j ,
 $$
 
-This is simultaneously the equation of a Josephson-junction array (capacitive
-$m$, resistive $\gamma$, Josephson $K$) and the standard inertial Kuramoto
-model. We work in the synchronized phase and linearize: $\theta_i =
-\bar\theta + \varphi_i$, keeping the fluctuation field $\varphi$. The claim
-throughout is *not* that new physics appears at this step — linearized lattice
-dynamics is textbook — but that the resulting fluctuation theories are exactly
-the canonical models of emergent relativistic matter, with sync parameters in
-the driver's seat.
+whose phase reduction (amplitude adiabatically eliminated) is the standard
+Kuramoto–Sakaguchi model $\dot\theta_i = \omega + \sum_j g_{ij}
+\sin(\theta_j-\theta_i+\alpha_{ij}+\beta')$ familiar from Josephson arrays and
+laser arrays. The order of presentation matters, and we state the scope rule
+up front, because it is itself one of this paper's results (§7): **the Dirac
+cones of §3 survive the phase reduction; the topological (flux) structure
+does not.** Any phase-only model — first-order or inertial — linearizes about
+the uniform synchronized state to a real symmetric $\cos\alpha$-weighted
+Laplacian, which carries Dirac cones but provably no Berry flux. The flux
+lives in the full complex (amplitude + phase) linearization. Accordingly, §3's
+kinematics may be read in either picture; every topological statement refers
+to the Stuart–Landau substrate. We work about the synchronized state and
+linearize; the claim throughout is *not* that new physics appears at this
+step — linearized lattice dynamics is textbook — but that the resulting
+fluctuation theories are exactly the canonical models of emergent
+relativistic matter, with sync parameters in the driver's seat.
 
 *(Terminology: "synchronized state" here is the closed-system ordered ground
 state — the condensed-matter usage — not the dissipative measurement locking of
@@ -179,19 +198,30 @@ $\mathbf K,\mathbf K'$ obeys the (2+1)D Weyl equation
 
 $$
 i\,\partial_t\chi = c\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf p}\,\chi ,
-\qquad c=(v/2)\sqrt{K/3m},
 $$
 
-with chirality *derived*: the two valleys wind oppositely. Verified:
-$|f(\mathbf K)|\approx10^{-15}$ (exact cone location), Dirac slope $v_F=3ta/2
-=1.50$ in lattice units.
+with chirality *derived*: the two valleys wind oppositely. (The underlying
+inertial equation is second order; the Weyl form describes the envelope of
+its positive-frequency branch, with the weak on-site damping $\gamma$
+contributing an overall decay that is dropped. The cone speed $c$ is set by
+the coupling-to-inertia ratio and the lattice constant $a$; in the script's
+units, $a = K = 1$, the verified Dirac slope is $v_F = 3Ka/2 = 1.50$.)
+Verified: $|f(\mathbf K)|\approx10^{-15}$ (exact cone location). Notation:
+bold $\mathbf K, \mathbf K'$ are Brillouin-zone corners; plain $K$ (also
+written $t$ in dictionary rows) is the nearest-neighbour coupling, $t_2 =
+g_2$ the next-nearest.
 
 Two independent sync parameters then generate the two known Dirac mass
 mechanisms:
 
-- **Semenoff mass** — sublattice pinning asymmetry $\kappa_A\neq\kappa_B$ opens
-  a same-sign gap at both valleys: trivial insulator, Chern number $C=0$
-  (computed).
+- **Semenoff mass** — sublattice asymmetry opens a same-sign gap at both
+  valleys: trivial insulator, Chern number $C=0$ (computed). In the
+  Stuart–Landau substrate this is realized as a **sublattice frequency
+  detuning** $\pm\delta$ (the oscillator-native form of "pinning asymmetry"),
+  and the Semenoff–Haldane competition survives the honest linearization: the
+  computed $C=+1\to0$ boundary lies at $\delta_c = 1.50$–$1.75$, bracketing
+  the bare dictionary value $3\sqrt3\,g_2\sin\alpha = 1.56$
+  (`stuartlandau_phase_diagram.py`).
 - **Haldane mass** — an *antisymmetric* Sakaguchi lag $\alpha_{ij}=-\alpha_{ji}$
   on next-nearest-neighbour couplings (the Haldane orientation pattern — in
   magnet language, exactly a DMI) opens an opposite-sign gap:
@@ -229,7 +259,7 @@ Verified content:
 |---|---|
 | two genuine Weyl nodes (L, R) separated in $k_z$ | nodes at $k_z=\pm0.609$ (Wilson-shifted from $\pm\arcsin b$) |
 | opposite Berry-monopole charges | slice Chern number $C(k_z)=-1$ between nodes, $0$ outside |
-| Dirac mass = off-diagonal L↔R coupling | gap opens only for $|M|>|b|$; $M=0.8,b=0.6\Rightarrow$ gap $0.40=2\sqrt{M^2-b^2}/2$ |
+| Dirac mass = off-diagonal L↔R coupling | gap opens only for $|M|>|b|$; $M=0.8,b=0.6\Rightarrow$ gap $0.40=2(|M|-|b|)$ |
 | chiral protection of a lone node | nodes merge and annihilate exactly at $M=b$ |
 | Nielsen–Ninomiya doubling and its Wilson cure | $r=0$: 8 nodes; $r=1$: corner gaps $4/8/12$, $\Gamma$ node stays $0$ |
 
@@ -261,8 +291,10 @@ $c_i = \big(\prod_{j<i}\sigma^z_j\big)S^-_i$ are canonical fermions:
 The physical content: statistics is carried by the **nonlocal string** — a sync
 dressing counting excited oscillators to one side — not by any local property
 of the oscillator. In 2+1D the string generalizes to flux attachment, and the
-substrate *natively supplies the flux* (the Berry curvature of §3); what fixes
-the attached flux at the fermionic value $\theta=\pi$ is an energetic/dynamical
+substrate *natively supplies a natural flux candidate* (the Berry curvature of
+§3 — though band Berry curvature and the statistical Chern–Simons flux are
+distinct objects, and the identification is a conjecture); what fixes the
+attached flux at the fermionic value $\theta=\pi$ is an energetic/dynamical
 question this construction does not answer (§7).
 
 ## 6. Experimental signatures and platforms
@@ -285,9 +317,19 @@ magnon precedent lives at this end. Purely resistively coupled (overdamped)
 arrays are excluded at linear order. In all cases the lag is not exotic — it
 is usually the *nuisance parameter* of the synchronization literature. Here it
 is promoted to the topological drive, and the dissipative/reactive mixing
-angle $\beta$ becomes a second drive: sweeping it through the crossover should
-switch the chiral edge mode on and off — a falsifiable hardware signature this
-paper adds beyond the magnon realization.
+angle $\beta$ becomes a second drive: sweeping it from the dissipative side
+through the crossover should switch the chiral edge mode on and off — a
+falsifiable hardware signature this paper adds beyond the magnon realization.
+(Caveat carried from §7: the crossover region itself is non-monotonic and its
+$C(\beta)$ boundary is not yet mapped; the clean prediction is the contrast
+between the two endpoint regimes, which are established.)
+
+**Figures.** Working figures for all quantitative claims accompany the code:
+`code/honeycomb_emergence.png` (cones, masses, Berry curvature, Haldane
+lobes), `code/stuartlandau_haldane_check.png` (gap vs $\beta$; reactive-limit
+band structure), `code/stuartlandau_phase_diagram.png` (ribbon spectrum with
+edge coloring; grid summary). Publication figures are a packaging task, not
+new computation.
 
 **Signatures, in increasing ambition:**
 
@@ -298,8 +340,16 @@ paper adds beyond the magnon realization.
 2. **Chiral edge transport** — in the Haldane phase, a boundary supports a
    unidirectional edge mode: inject a phase perturbation at an edge site and
    observe one-way propagation, reversing with $\mathrm{sign}(\alpha)$. This is
-   the oscillator-array analogue of topological photonics' hallmark experiment,
-   and would constitute a direct observation of a sync-driven Chern phase.
+   the oscillator-array analogue of topological photonics' hallmark experiment.
+   Because the linearized generator is non-normal, bulk–boundary
+   correspondence is not automatic for driven-dissipative lattices
+   [Yao & Wang 2018; Kawabata et al. 2019]; we therefore checked it directly:
+   a strip-geometry calculation ($W=24$, $\beta=\pi/2$;
+   `stuartlandau_phase_diagram.py`) exhibits an in-gap branch localized on
+   the boundary rows (edge weight $>0.6$) across the gap's momentum extent,
+   with **no skin-effect pileup** (median state localization at the
+   open-boundary baseline). The edge channel is a computed property of the
+   platform, not an inference from the bulk invariant.
 3. **Phase-boundary mapping** — sweep $(\kappa_A-\kappa_B)$ against $\alpha$
    and map the gap closure along $|\Delta|=3\sqrt3\,t_2|\sin\alpha|$.
 4. **(3D, harder)** — layered arrays realizing §4's axial term $b$ (a chirality-
@@ -322,16 +372,27 @@ We state the limits plainly.
    active matter [Zhu & Zheng 2026] (§1). The contributions here are (a) the
    *dictionary*: all of these structures generated jointly by the standard sync
    parameters of one substrate, with the lattice Sakaguchi-lag ⇒ Haldane-flux ⇒
-   $C=\pm1=\mathrm{sign}(\alpha)$ identification derived, not assumed, in the
-   Kuramoto/Stuart–Landau setting; (b) the *conditions*: a no-go theorem for
+   $C=\pm1=\mathrm{sign}(\alpha)$ chain established in the Stuart–Landau
+   setting (the gap opening and its conditions are *derived*; the Chern
+   quantization is *verified numerically* by Berry-curvature integration);
+   (b) the *conditions*: a no-go theorem for
    purely dissipative coupling (the Bogoliubov shadow band carries the
    opposite-mass Haldane copy and restores the $K$-point degeneracy exactly,
-   for every amplitude stiffness — verified to $10^{-15}$), a gap opening
-   $\propto\sin\beta$ in the reactive mixing angle, and closure of the
+   for every amplitude stiffness — verified to $10^{-15}$), a K-point sector
+   splitting $\propto\sin\beta$ in the reactive mixing angle (the full gap is
+   non-monotonic through the crossover), and closure of the
    topological gap in the phase-only limit $r_0^2\to\infty$ (any phase-only
    Kuramoto model, inertial or not, linearizes to a real symmetric
    $\cos\alpha$-weighted Laplacian: no flux at linear order); and (c) the
-   *platform claim* with its entry requirements. Full derivation:
+   *platform claim* with its entry requirements. A complete quantitative
+   $C(\beta, r_0^2)$ phase diagram remains open for a technical reason worth
+   stating: at intermediate $\beta$ and large stiffness the positive-frequency
+   band pair loses spectral separation and Fukui–Hatsugai–Suzuki band-tracking
+   fails (our grid returns non-quantized artifacts there, which we do not
+   report); a non-Hermitian band-tracking method robust through exceptional
+   points is required. The trusted results are the exact $\beta=0$ no-go, the
+   $\beta=\pi/2$ topological phase at small-to-moderate stiffness, its death
+   by $r_0^2\sim16$, and the Semenoff boundary of §3. Full derivation:
    `drafts/DERIVATION_lag_flux_linearization.md`; honest-linearization
    verification against the brute-force Jacobian of the nonlinear dynamics:
    `code/stuartlandau_haldane_check.py`.
@@ -392,6 +453,7 @@ things, a machine for studying that question experimentally.
 - Zhu & Zheng, *Minimal Active-Particle Realization of Non-Hermitian Chern Bulk-Boundary Correspondence*, arXiv:2606.24926 (2026).
 - K. Sone, Y. Ashida, T. Sagawa, *Topological synchronization of coupled nonlinear oscillators*, Phys. Rev. Research 4, 023211 (2022); K. Sone et al., Nat. Phys. 20, 1164 (2024); C. W. Wächtler & G. Platero, Phys. Rev. Research 5, 023021 (2023).
 - M. Fruchart, R. Hanai, P. B. Littlewood, V. Vitelli, *Non-reciprocal phase transitions*, Nature 592, 363 (2021).
+- S. Yao & Z. Wang, *Edge States and Topological Invariants of Non-Hermitian Systems*, PRL 121, 086803 (2018); K. Kawabata, K. Shiozaki, M. Ueda, M. Sato, *Symmetry and Topology in Non-Hermitian Physics*, PRX 9, 041015 (2019).
 - Torres-Hugas, Duch, Gómez, Arenas, arXiv:2604.19682 (2026) — Sakaguchi lags as a gauge field with loop holonomy.
 - L. M. Nash et al., *Topological mechanics of gyroscopic metamaterials*, PNAS 112, 14495 (2015).
 - [Companion framework paper: current_revision_DK_paper.md — "Two Regimes of the Chiral Mass Coupling."]

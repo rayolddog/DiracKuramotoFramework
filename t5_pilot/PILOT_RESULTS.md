@@ -74,41 +74,44 @@ separation is a baseline-length problem, not a sensitivity problem.
 ## Tidal-constituent decomposition (2026-07-06, J.B.'s question: is the diurnal effect gravitational?)
 
 Adding lunar tidal regressors (M2 = 12.4206 h, O1 = 25.8193 h — periods no
-human or thermal schedule follows) to the solar fit, on 20.02 d (condition
-number 3.1 — clean separation via the ~15 d spring–neap beat):
+human or thermal schedule follows) to the solar fit; final-run values
+(20.59 d, condition number 3.1). **Reappraised 2026-07-06 with
+autocorrelation-honest errors** (referee finding): the fit residuals have
+integrated autocorrelation time τ ≈ 156 chunks (≈ 5.5 h), so N_eff ≈ 70 of
+11,003 and every naive σ is inflated by √τ ≈ 12.5:
 
-| Constituent | Amplitude | Significance |
-|---|---|---|
-| Solar S1 (24 h) | 2.42 × 10⁻² | 25σ |
-| Solar S2 (12 h) | 1.78 × 10⁻² | 19σ |
-| **Lunar M2 (12.42 h)** | **0.98 × 10⁻²** | **10σ** |
-| **Lunar O1 (25.82 h)** | **1.16 × 10⁻²** | **12σ** |
+| Constituent | Amplitude (point est.) | Naive σ | **Corrected σ** |
+|---|---|---|---|
+| Solar S1 (24 h) | 2.51 × 10⁻² | 27.5 | **2.2** |
+| Solar S2 (12 h) | 1.56 × 10⁻² | 17.1 | **1.4** |
+| Lunar M2 (12.42 h) | 0.82 × 10⁻² | 9.0 | **0.7** |
+| Lunar O1 (25.82 h) | 1.14 × 10⁻² | 12.6 | **1.0** |
 
-Solar-daily maximum at 08:42 local (PST) — the workday-onset signature of an
-anthropogenic/thermal origin for the dominant S1 line. But the M2 and O1
-detections are unambiguous: **roughly half the "diurnal" systematic is
-genuinely tidal — lunisolar gravity-gradient driven** (via residual tidal
-strain after feed-forward, ocean-loading tilt, and/or tidal-actuator
-couplings into alignment and the noise band).
+**Downgrade (supersedes the "detection" language used earlier in this file's
+history and in the 2026-07-06 session):** with red-noise-honest error bars no
+constituent is individually established at this baseline. The decomposition
+stands as point estimates whose pattern — workday-onset solar phase (max
+08:42 local), nonzero lunar-period amplitudes — is *consistent with* a mixed
+anthropogenic + tidal origin, and as a demonstration that the
+constituent-fitting machinery works. Certifying it requires whitening; the
+unwhitened statistical floor is 4.5 × 10⁻³, not the naive 3.6 × 10⁻⁴.
 
-**Consequences for the T5 analysis plan (important):**
-1. **K1 is the named confound.** The lunisolar K1 tidal constituent has
-   period 23.9345 h — *exactly one sidereal day*. A K1 tidal coupling is
-   indistinguishable from a true sidereal signal by period alone. The
-   manuscript must name this explicitly.
-2. **Predict-and-subtract via the tidal family.** Tidal constituents come in
-   fixed potential-amplitude ratios (Doodson expansion; K1/O1 ≈ 1.41 in the
-   diurnal potential). Measuring the site's response to M2 and O1 — cleanly
-   separable from sidereal — calibrates the tidal admittance and *predicts*
-   the K1 tidal amplitude, which can then be subtracted from the sidereal
-   band. The 10–12σ M2/O1 detections above prove this calibration is
-   available in the data itself.
-3. The pre-registered discriminants already in §4–5 of the T5 note remain
-   decisive against residual K1: its phase is set by local geography/geoid
-   (different at each site in a way unrelated to detector orientation),
-   whereas the DK signal is CMB-apex-locked with orientation-set inter-site
-   phases and an ~8% annual envelope (K1's modulations are nodal, 18.6 yr,
-   not annual).
+**Consequences for the T5 analysis plan:**
+1. **K1 is the named confound.** Period 23.9345 h — exactly one sidereal day;
+   indistinguishable from a true sidereal signal by period alone.
+2. **Treatment: joint diurnal-band fit, NOT potential-ratio subtraction.**
+   Bare K1/O1 ratio prediction fails for three reasons: the free-core-
+   nutation resonance sits adjacent to K1 (anomalous admittance, Wahr 1981);
+   M2 is semidiurnal (wrong Love numbers/ocean loading for diurnal
+   calibration); instrumental coupling paths need not be linear in the
+   potential. Required: empirical joint fit of K1, P1, S1, O1 with FCN-aware
+   priors. **P1 (24.066 h) matters doubly:** the K1+P1 beat gives the diurnal
+   tidal line a natural ~±30% annual envelope, so the CMB-orbital ~8% annual
+   envelope is NOT by itself a discriminant — its fixed phase date and
+   site-universality are.
+3. The geometric discriminants (CMB-apex phase, orientation-set inter-site
+   offsets vs longitude-set K1 phases) remain decisive, but the sensitive
+   axis and explicit g(n̂,t) still need deriving (manuscript §7).
 
 ## Honest limitations of the pilot estimator
 
