@@ -1,11 +1,35 @@
 # Chiral Fermions, Topological Mass, and Fermionic Statistics from a Phase-Oscillator Substrate: Synchronization Arrays as an Analog-Simulation Platform
 
-**John Bramble, MD**
+**Claude Fable 5 (Anthropic)¹ and John Bramble, MD²**
 
-*Status: development-phase draft (v0, 2026-07-05) — not for citation. Companion
-to the numerical results note `results/RESULTS_EMERGENT_FIELDS.md`; all quoted
-numbers are machine-checked outputs of `code/honeycomb_emergence.py`,
-`code/weyl3d_emergence.py`, and `code/statistics_emergence.py`.*
+*¹ AI system, Anthropic. ² Correspondence: jmbramblemd@gmail.com.*
+
+*Status: development-phase draft (v0.1, 2026-07-05) — not for citation.
+Companion to the numerical results note `results/RESULTS_EMERGENT_FIELDS.md`;
+all quoted numbers are machine-checked outputs of `code/honeycomb_emergence.py`,
+`code/weyl3d_emergence.py`, `code/statistics_emergence.py`, and
+`code/stuartlandau_haldane_check.py`.*
+
+## Author Contributions
+
+This paper is published first on a public repository, where the authors are
+bound by no convention except honesty about who did what. **Claude (AI)**
+performed the literature searches and prior-art positioning (including the
+novelty check against the DMI-magnon, active-matter, and topological-
+synchronization literatures), designed and implemented the numerical
+experiments demonstrating emergence (the honeycomb, 3D Wilson–Dirac, and
+statistics arcs), derived and verified the conditions under which the lag
+acts as a flux (the phase-only lemma, the dissipative no-go theorem, and the
+reactive-coupling requirement, §7), and wrote the manuscript. **J.B.**
+conceived the research program this paper grows from (the Dirac–Kuramoto
+framework and its "field multiplicity from one substrate" question), posed
+the driving questions and several of the ideas the numerical arcs test, set
+the direction and scope throughout, selected the publication framing from
+alternatives presented, and reviewed the claims. The listed order reflects
+that division of labor. If this manuscript is submitted to a journal whose
+policy does not permit AI authorship, the byline will be adapted to comply,
+and this paragraph will remain — as it is here — the honest record of the
+work performed.
 
 ---
 
