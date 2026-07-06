@@ -6,6 +6,7 @@
 - 2026-07-04 18:38 MDT — v3
 - 2026-07-04 19:05 MDT — v4
 - 2026-07-04 19:36 MDT — v5
+- 2026-07-05 18:30 MDT — v6
 
 ---
 
@@ -44,7 +45,9 @@ single-world, nonlocal family.
 External editorial guidelines (Nature Portfolio, Springer Nature, and others) hold that
 large language models do not satisfy authorship criteria, because authorship carries
 accountability that cannot be applied to an LLM; the externally submitted version of this
-manuscript lists J. Bramble solo for that reason. This journal takes a different,
+manuscript listed J. Bramble solo for that reason. That external submission (Foundations
+of Physics) was declined in July 2026, closing the solo-byline track; the present
+honest-authorship version is now the canonical public record of this work. This journal takes a different,
 honest-authorship stance: it credits the model's intellectual contribution directly — here,
 as first author, on the contributions described above — while keeping accountability with a
 named human. The first-author crediting also follows the round-2 authorship-integrity findings, where both decorrelated reviewers (Gemini 3.1 Pro, GPT-5.5 Thinking) independently recommended listing the model as co-author / co-first author. The two are separable, structurally analogous to the attending physician's
