@@ -38,14 +38,33 @@ limited, not statistics-limited, exactly as the note's §4 assumed.** The
 solar-vs-sidereal discrimination + auxiliary-channel regression are not
 refinements — they are the analysis.
 
-## Stage 2 (running): 30-day reduction
+## Stage 2 (interim, 2026-07-06): 20 of 30 days banked
 
-Extending the same CSV to the first 30 days of O3b H1 (~25–30 GB streamed,
-nothing stored; ~11 h wall-clock). Goals: (i) separate the solar and sidereal
-first harmonics (30 days ≈ 2 full cycle slips), (ii) report the residual
-sidereal A₁ after fitting both periods jointly, (iii) recompute σ₁ on the
-longer baseline. A joint solar+sidereal fit should be added to `fold.py`
-before reading stage-2 results (the current fits are single-period).
+The 30-day reduction completed with the final ~10 days lost to 204 consecutive
+GWOSC fetch failures (server-side/transient; retry running — the reducer only
+re-attempts missing chunks). Interim numbers on 9,942 chunks / 20.02 d span
+(74% duty):
+
+- **σ₁(raw) = 3.1 × 10⁻²** — stable from the 16-day snapshot and half the
+  4-day value: the longer baseline lets the 3-day rolling detrend work. Raw,
+  uncleaned scatter is now within 1.5× of the note's assumed 2 × 10⁻². The
+  statistical floor is 4.4 × 10⁻⁴ (1σ) and still integrating down.
+- **Diurnal systematic**: A₁ ≈ 2.2 × 10⁻² at both solar (phase 101°) and
+  sidereal (phase 178°) single-period fits — unchanged interpretation: one
+  daily classical signal read at two nearly-identical periods.
+- **Joint two-period fit: not yet valid.** Design condition number 552 (805 at
+  16 d); the joint amplitudes (~0.22) are the collinearity artifact of
+  splitting one daily signal into two nearly-degenerate regressors — not
+  physics. Over T days the two periods separate by ~T/365 cycles; 20 d ≈ 0.055
+  cycles is not enough. The full 30-day window improves this; a genuinely
+  clean separation wants months (full O3b = 147 d — available to the real
+  analysis, out of scope for the pilot).
+
+**No sidereal verdict yet** — by design the pilot's deliverables were the
+machinery, σ₁, and the systematics picture, all delivered. The honest
+statement for the manuscript: any pilot-scale sidereal residual is bounded by
+the diurnal systematic (~2 × 10⁻²) until the two periods decorrelate;
+separation is a baseline-length problem, not a sensitivity problem.
 
 ## Honest limitations of the pilot estimator
 
