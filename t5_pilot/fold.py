@@ -112,6 +112,38 @@ def main():
     # condition number diagnostic: >> 1 means the periods are not yet separable
     print(f"[fold] joint-fit design condition number = "
           f"{np.linalg.cond(A.T @ A):.1f}")
+
+    # tidal-constituent check: is the daily signal gravitational (tidal) or
+    # solar-locked (anthropogenic/thermal)? Lunar constituents M2 (12.4206 h)
+    # and O1 (25.8193 h) separate from the solar S1/S2 lines in ~15 d (the
+    # spring-neap beat). NB the K1 constituent (23.9345 h) IS the sidereal
+    # period - it cannot be separated by period alone; that is the tidal
+    # confound the multi-detector phase + annual envelope must handle.
+    M2_H, O1_H = 12.4206012, 25.81933871
+    ph_m2 = 2 * np.pi * ((t.unix / 3600.0 / M2_H) % 1.0)
+    ph_o1 = 2 * np.pi * ((t.unix / 3600.0 / O1_H) % 1.0)
+    At = np.column_stack([np.ones_like(x),
+                          np.cos(ph_sol), np.sin(ph_sol),
+                          np.cos(2 * ph_sol), np.sin(2 * ph_sol),
+                          np.cos(ph_m2), np.sin(ph_m2),
+                          np.cos(ph_o1), np.sin(ph_o1)])
+    ct, *_ = np.linalg.lstsq(At, x, rcond=None)
+    rt = x - At @ ct
+    covt = np.linalg.inv(At.T @ At) * np.var(rt)
+    et = np.sqrt(np.diag(covt))
+    for lab, (ic, isn) in [("solar S1 (24h)   ", (1, 2)),
+                           ("solar S2 (12h)   ", (3, 4)),
+                           ("lunar M2 (12.42h)", (5, 6)),
+                           ("lunar O1 (25.82h)", (7, 8))]:
+        amp = np.hypot(ct[ic], ct[isn])
+        e = np.hypot(ct[ic] * et[ic], ct[isn] * et[isn]) / max(amp, 1e-30)
+        print(f"[fold] tidal check {lab}: {amp:.3e} +- {e:.1e}"
+              f"  ({amp/max(e,1e-30):.1f} sigma)")
+    print(f"[fold] tidal-check condition number = {np.linalg.cond(At.T @ At):.1f}")
+    # local solar time of the daily maximum (H1 is UTC-8 in winter)
+    tmax_utc = (np.degrees(np.arctan2(ct[2], ct[1])) % 360) / 360 * 24
+    print(f"[fold] solar-daily maximum at {tmax_utc:.1f} h UTC "
+          f"= {(tmax_utc - 8) % 24:.1f} h local (PST)")
     n_eff = len(x)
     print(f"[fold] statistical floor ~ sigma1*sqrt(2/M) = "
           f"{sigma1*np.sqrt(2/n_eff):.2e} (M = {n_eff})")

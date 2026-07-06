@@ -66,6 +66,45 @@ statement for the manuscript: any pilot-scale sidereal residual is bounded by
 the diurnal systematic (~2 × 10⁻²) until the two periods decorrelate;
 separation is a baseline-length problem, not a sensitivity problem.
 
+## Tidal-constituent decomposition (2026-07-06, J.B.'s question: is the diurnal effect gravitational?)
+
+Adding lunar tidal regressors (M2 = 12.4206 h, O1 = 25.8193 h — periods no
+human or thermal schedule follows) to the solar fit, on 20.02 d (condition
+number 3.1 — clean separation via the ~15 d spring–neap beat):
+
+| Constituent | Amplitude | Significance |
+|---|---|---|
+| Solar S1 (24 h) | 2.42 × 10⁻² | 25σ |
+| Solar S2 (12 h) | 1.78 × 10⁻² | 19σ |
+| **Lunar M2 (12.42 h)** | **0.98 × 10⁻²** | **10σ** |
+| **Lunar O1 (25.82 h)** | **1.16 × 10⁻²** | **12σ** |
+
+Solar-daily maximum at 08:42 local (PST) — the workday-onset signature of an
+anthropogenic/thermal origin for the dominant S1 line. But the M2 and O1
+detections are unambiguous: **roughly half the "diurnal" systematic is
+genuinely tidal — lunisolar gravity-gradient driven** (via residual tidal
+strain after feed-forward, ocean-loading tilt, and/or tidal-actuator
+couplings into alignment and the noise band).
+
+**Consequences for the T5 analysis plan (important):**
+1. **K1 is the named confound.** The lunisolar K1 tidal constituent has
+   period 23.9345 h — *exactly one sidereal day*. A K1 tidal coupling is
+   indistinguishable from a true sidereal signal by period alone. The
+   manuscript must name this explicitly.
+2. **Predict-and-subtract via the tidal family.** Tidal constituents come in
+   fixed potential-amplitude ratios (Doodson expansion; K1/O1 ≈ 1.41 in the
+   diurnal potential). Measuring the site's response to M2 and O1 — cleanly
+   separable from sidereal — calibrates the tidal admittance and *predicts*
+   the K1 tidal amplitude, which can then be subtracted from the sidereal
+   band. The 10–12σ M2/O1 detections above prove this calibration is
+   available in the data itself.
+3. The pre-registered discriminants already in §4–5 of the T5 note remain
+   decisive against residual K1: its phase is set by local geography/geoid
+   (different at each site in a way unrelated to detector orientation),
+   whereas the DK signal is CMB-apex-locked with orientation-set inter-site
+   phases and an ~8% annual envelope (K1's modulations are nodal, 18.6 yr,
+   not annual).
+
 ## Honest limitations of the pilot estimator
 
 Single detector (no coincidence/phase discriminant yet); no aux-channel
