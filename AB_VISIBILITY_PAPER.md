@@ -530,17 +530,19 @@ Dirac–Kuramoto locking parameter.
    quantitative account of why a vacuum-locking anisotropy at the zitterbewegung
    scale would evade them. The relationship to the companion paper [2] has been settled by its
    revision: that paper now *openly carries* a preferred frame — the bulk/vacuum
-   rest frame — which it confines to the Stage-2 (dissipative, measurement) step
-   while keeping the unitary Stage-1 dynamics exactly Lorentz covariant, and it
+   rest frame — which it confines to the dissipative measurement steps, Stages 2–3
+   (selection + registration) of its three-stage division [2, §3.1] (the "Stage 2"
+   of its earlier two-stage form), while keeping the unitary dynamics — free
+   propagation and the reversible Stage-1 capture — exactly Lorentz covariant, and it
    names the velocity-dependent vacuum-locking of Fork B as the *stronger,
    non-gravitationally-suppressed* form of that same commitment — explicitly a
    claim of this analysis rather than of the companion. Fork B is therefore no
    longer in tension with the companion; it is its more aggressive extension. The
    two readings differ only in *where* the frame acts: the companion's
-   conservative version restricts it to the measurement boundary (Stage-2; its §2.5), whereas Fork B
+   conservative version restricts it to the measurement boundary (Stages 2–3; its §2.5), whereas Fork B
    places it in the coherent, in-flight propagation that controls fringe
    visibility. The V-vs-γ scan of §5 is precisely the arbiter — a null result
-   confines the frame to Stage-2 (the conservative companion commitment,
+   confines the frame to the measurement stages 2–3 (the conservative companion commitment,
    equivalent to Fork A on AB), a positive result promotes it to a
    laboratory-velocity effect in coherent propagation.
 

@@ -65,7 +65,7 @@ This is the standard Kuramoto capture-range / Arnold-tongue condition. It is a p
 | Scale | $K_{\text{eff}}$ | Capture bandwidth | Outside the window |
 |---|---|---|---|
 | Vertex pair-sync (Stage 1) | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | $\sim K_{\text{pair}}$ | Shed as secondary radiation, not locked |
-| Bulk relaxation (Stage 2) | $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
+| Bulk relaxation (Stages 2–3) | $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | $\sim \Gamma_{\text{bulk}}$ | Decoheres without bulk-coherent absorption |
 
 The framework's intuition that "the amount a phase can be pulled into synchronization is bounded" is this condition, evaluated separately at each stage. See Paper §2.2.
 
@@ -193,10 +193,12 @@ $$K_{\text{pair}}^{\gamma e} = e \cdot |A_\gamma|_e \;\sim\; \hbar\omega$$
 (sync timescale $\tau_1 = \hbar/K_{\text{pair}} \sim 1/\omega$ — the photon's
 own period).
 
-**Two-stage measurement Lagrangian.** Combining vertex pair-sync (Stage 1)
-with bulk relaxation (Stage 2):
+**Staged measurement Lagrangian.** Combining vertex pair-sync (Stage 1)
+with bulk relaxation (Stages 2–3 — selection then registration; the "Stage 2"
+of the paper's earlier two-stage division, split at §3.1 of the current
+revision):
 
-$$\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stage 2: }e\leftrightarrow\text{lattice}}$$
+$$\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stages 2–3: }e\leftrightarrow\text{lattice}}$$
 
 The framework carries three couplings, each at a different scale (only the
 latter two are dissipative Adler/Kuramoto couplings with an attractor; $K = m$
@@ -206,9 +208,9 @@ is the unitary chiral coupling that sets the normal modes):
 |---|---|---|
 | $K = m$ | Higgs–Yukawa | intra-spinor L–R coupling (unitary; sets normal modes / dispersion) |
 | $K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle$ | gauge interaction | pair-sync at vertex (Stage 1) |
-| $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | environmental + gravitational | bulk re-equilibration (Stage 2); see §7 below |
+| $\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)$ | environmental + gravitational | bulk re-equilibration (Stages 2–3); see §7 below |
 
-See Paper §3.4 for the full two-stage measurement process and its Bell /
+See Paper §3.1/§3.4 for the full three-stage measurement process and its Bell /
 gravitational consequences.
 
 ### Antiparticles as reversed clocks
@@ -282,11 +284,11 @@ This is the **Penrose formula**, derived here as gravitational clock decoherence
 
 **Continuous vs threshold form.** $\Gamma_{\text{grav}}$ above is a smooth relaxation rate with no critical value; Penrose's $\tau_{\text{collapse}}$ marks a discrete instability threshold. The two answer the same question — when does coherence die against the bulk? — in different functional forms: continuous Kuramoto rephasing vs threshold gravitational collapse. The framework's continuous form is what permits sub-threshold gravitational sensitivity (Paper §3.6, §5.5, §8.3 #5).
 
-### Total Stage-2 rate: environmental + gravitational
+### Total Stages-2–3 rate: environmental + gravitational
 
-$\Gamma_{\text{grav}}$ is the bulk's *internal* gravitational coherence rate. The rate that controls Stage 2 of measurement (the perturbed partner re-equilibrating to $\Phi_{\text{bulk}}$) has an additional, usually dominant, environmental component:
+$\Gamma_{\text{grav}}$ is the bulk's *internal* gravitational coherence rate. The rate that controls the dissipative closure of measurement (Stages 2–3: the perturbed partner re-equilibrating to $\Phi_{\text{bulk}}$) has an additional, usually dominant, environmental component:
 
-$$\boxed{\Gamma_{\text{Stage 2}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\,J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)}$$
+$$\boxed{\Gamma_{\text{2–3}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\,J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)}$$
 
 The environmental term takes the standard quantum-optics form
 

@@ -7,6 +7,7 @@
 - 2026-07-04 19:05 MDT — v4
 - 2026-07-04 19:36 MDT — v5
 - 2026-07-05 18:30 MDT — v6
+- 2026-07-05 18:42 MDT — v7
 
 ---
 
@@ -822,7 +823,7 @@ measurement register. In ordinary detectors the environment selects the
 **charge/position (which-path) basis** — the basis the electromagnetic coupling *is*
 non-demolition for, and the one a cloud-chamber track or a calorimeter actually records;
 the chiral interference $\sigma_x$ is internal-clock dynamics the environment does not
-monitor. The two-stage account of registration and irreversibility (§3.1–3.6) therefore
+monitor. The three-stage account of selection, registration, and irreversibility (§3.1–3.6) therefore
 rests on the which-path basis and does **not** require the chiral binary to be the
 pointer — the binary is the framework's internal-clock structure, not its claim about
 what detectors record.

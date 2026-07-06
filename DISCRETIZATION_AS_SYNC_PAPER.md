@@ -303,9 +303,11 @@ locked-mode spectrum — appears only in the dissipative, open-system regime
 that the next paragraph identifies with measurement.
 
 Measurement, in [1], is the re-synchronization of an external system's
-chiral pair with that of a detector. The two-stage process (Stage 1: fast
+chiral pair with that of a detector. The three-stage process (Stage 1: fast
 resonant capture by a bulk-bound partner — injection locking, an Adler
-attractor; Stage 2: irreversible relaxation to the detector's bulk reference)
+attractor; Stage 2: selection, the surface commit that sets the outcome
+weights; Stage 3: irreversible registration against the detector's bulk
+reference)
 reproduces the phenomenology of "collapse" without a non-unitary axiom: the
 system's locked configuration is driven into a new basin of attraction, the wave
 function re-merged with the bulk rather than destroyed. We follow the companion's
@@ -459,8 +461,8 @@ yields one basin, not two.
 Two features of the companion framework could supply that structure, which is what
 makes this a test rather than a hope. The zitterbewegung interference of the chiral
 pair beats at $2m_ec^2/\hbar$ — the second harmonic of the rest-phase clock [1] —
-and a coupling to it is $\cos 2\phi$ by construction; and the Stage-2 dissipative
-rate is second order in the coupling (the golden-rule $\mathrm{Im}\,\Sigma\propto
+and a coupling to it is $\cos 2\phi$ by construction; and the Stage-2 (absorptive-onset)
+dissipative rate is second order in the coupling (the golden-rule $\mathrm{Im}\,\Sigma\propto
 |V|^2$ of [1]), hence even in the field, so the irreversible side of measurement is
 exactly where an apolar term would live. This obligation can be discharged, and the
 answer is a conditional *yes*. Reducing the chiral pair to a two-level system whose
@@ -1060,13 +1062,15 @@ The framework's falsifiable content is concentrated in three places:
    stated. The challenge is that no such measurement is currently
    feasible.
 
-2. **A measurable sync timescale in measurement.** The DK two-stage
+2. **A measurable sync timescale in measurement.** The DK three-stage
    process [1, §3.1, §3.2] predicts a non-zero, calculable timescale between
-   the fast Stage-1 resonant capture and the slower Stage-2 bulk relaxation.
+   the fast Stage-1 resonant capture and the slower dissipative closure
+   (Stage-2 selection, then Stage-3 registration).
    Standard QM has no analog (collapse is instantaneous). Quantum eraser experiments
    probe exactly this timescale: erasure should succeed iff intervention
-   is faster than the Stage-2 bulk-resync time, and the framework
-   predicts a specific value for that time as a function of the
+   lands while the Stage-2 selection window is still open — before Stage-3
+   registration closes the record [1, §3.1] — and the framework
+   predicts a specific value for that window as a function of the
    detector–bulk coupling. Current quantum-eraser experiments are
    consistent with both pictures; a high-time-resolution test would
    discriminate.
@@ -1272,10 +1276,10 @@ https://github.com/rayolddog/DiracKuramotoFramework.
 
 ## References
 
-[1] Bramble, J. (2026). Two Regimes of the Chiral Mass Coupling: Quantum
-Measurement as Bath-Induced Synchronization. *Companion preprint, under review.*
+[1] Claude & Bramble, J. (2026). Two Regimes of the Chiral Mass Coupling: Quantum
+Measurement as Bath-Induced Synchronization. *Companion preprint.*
 (Section references in this paper are to this revised companion: §2.2 closed
-precession / §2.3 open Adler lock; §3.1–§3.2 the two-stage process; §3.4
+precession / §2.3 open Adler lock; §3.1 the three-stage process; §3.4
 decoherence as synchronization to the bulk; §3.6 the dressed Dirac mass; §4.1 the
 faint thermal bulk; §4.4 gravity stated honestly; §7.3/§8 the Born measure as an
 open problem; §7.4 Penrose–Diósi.)

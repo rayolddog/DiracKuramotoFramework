@@ -109,19 +109,21 @@ expansion ought to emerge from some deeper dynamics, not be postulated.
 
 ### 1.2 The Dirac–Kuramoto framework: what is already available
 
-The DK framework [companion paper, PAPER_UNIFIED] proposes that quantum
-measurement consists of two stages: (Stage 1) pair-synchronization of a
-perturbed partner with a macroscopic *bulk* characterized by an
-order-parameter phase $\Phi_{\text{bulk}}$, followed by (Stage 2)
-irreversible re-equilibration of the partner to the bulk via two parallel
-rate channels,
+The DK framework [companion paper] proposes that quantum
+measurement consists of three stages: (Stage 1) resonant pair-capture of a
+perturbed partner by a macroscopic *bulk* characterized by an
+order-parameter phase $\Phi_{\text{bulk}}$; (Stage 2) selection — the
+surface commit that sets the outcome weights; and (Stage 3) irreversible
+registration of the partner against the bulk. The dissipative
+re-equilibration (Stages 2–3; the "Stage 2" of the framework's earlier
+two-stage form) proceeds via two parallel rate channels,
 
-$$\Gamma_{\text{Stage 2}}^{\text{total}} = \Gamma_{\text{env}}(T,\, J(\omega)) + \Gamma_{\text{grav}}(M,\, \Delta z) \qquad (3.5')$$
+$$\Gamma_{\text{2–3}}^{\text{total}} = \Gamma_{\text{env}}(T,\, J(\omega)) + \Gamma_{\text{grav}}(M,\, \Delta z) \qquad (3.5')$$
 
 where $\Gamma_{\text{env}}$ is the environmental (thermal + bath-mediated)
 relaxation rate and $\Gamma_{\text{grav}}$ is the gravitational
-self-relocking rate of the bulk. Stage-2 events are the rare bath-coupling
-moments that produce classical, irreversible measurement records.
+self-relocking rate of the bulk. Stage-3 registration events are the rare
+bath-coupling moments that produce classical, irreversible measurement records.
 
 Both rates vanish in the limit of low temperature and low gravitational
 density: $\Gamma_{\text{env}} \to J(\omega)$ as $T \to 0$ (the
@@ -348,7 +350,7 @@ framework points to a natural source: the **incompleteness of bulk
 coherence at horizon scales**. Φ_bulk cannot complete its sync beyond
 the causal horizon; the residual coherence deficit is an energy
 reservoir analogous to the spontaneous-emission floor $J(\omega)$ in
-the Stage-2 environmental term. When a virtual pair near the horizon
+the Stages-2–3 environmental term. When a virtual pair near the horizon
 fails to be reabsorbed, it draws on this reservoir to upgrade to real-
 particle status. The expansion of the populated region thereby converts
 horizon-incomplete-coherence energy into new real-particle excitations.
@@ -601,7 +603,7 @@ problem, and the H₀ tension.
 The Dirac–Kuramoto framework already provides the conceptual machinery
 to reframe Λ as emergent: an infinite quantum-field substrate; a finite
 populated region characterized by bulk coherence Φ_bulk; and explicit
-Stage-2 relaxation rates Γ_env(T) and Γ_grav(M) that vanish in
+Stages-2–3 relaxation rates Γ_env(T) and Γ_grav(M) that vanish in
 low-temperature, low-gravitational-density regions. The proposal
 advanced here is that cosmic expansion is the dynamical growth of the
 populated region into the substrate, driven by real-particle creation

@@ -2,15 +2,17 @@
 
 *A macroscopic-mass test of the same preferred-frame measurement coupling probed by T2
 (Suggested_experiment.md) and T4 (MRI/NMR surface relaxation). Where T2 reads the
-**coherent** first step of Stage 2 on a GHZ probe, T5 reads the **dissipative** channel —
-the anomalous, anisotropic decoherence of a continuously-measured macroscopic quantum
-state — using LIGO/Virgo/KAGRA. Companion to PAPER_REVISED.md §3 (two-stage measurement),
+**coherent** selection window (Stage 2 of the three-stage division) on a GHZ probe, T5
+reads the **dissipative registration** channel (Stage 3) — the anomalous, anisotropic
+decoherence of a continuously-measured macroscopic quantum state — using
+LIGO/Virgo/KAGRA. Companion to current_revision_DK_paper.md §3 (three-stage measurement:
+capture/selection/registration; the "Stage 2" of the earlier two-stage form = Stages 2–3),
 §6 (candidate signature), and the open dissipation-channel loophole identified in the T4
 literature check.*
 
 Status: design + a-priori estimate. Numbers are order-of-magnitude; every assumption is
 flagged. The postulate being tested (a frame-bearing vacuum/dissipation coupling, active
-only in Stage 2) is NOT assumed true — the experiment bounds or detects it. **T5 is
+only in the measurement stages 2–3) is NOT assumed true — the experiment bounds or detects it. **T5 is
 weaker in raw sensitivity than T2 and shares T4's fatal caveat (no coherent amplifier),
 but it has three things no tabletop test has: (i) months-to-years of GPS-timed continuous
 data already on disk — zero new hardware; (ii) two-plus detectors at different
@@ -23,7 +25,8 @@ boundary the paper flags (paper.tex §, "do cooled optomechanical membranes coun
 ## 1. What this tests
 
 The framework's one new ingredient is a **non-covariant coupling dormant during free
-(unitary) evolution that switches on only during measurement capture** (Stage 2). The
+(unitary) evolution that switches on only during measurement** (Stages 2–3: selection +
+registration; free flight and the reversible Stage-1 capture stay covariant). The
 free-propagation channel for this coupling is closed brutally tight — sidereal Larmor
 bounds give b_n < 6.7e-34 GeV (Allmendinger/Heil 2014) — so the effect *must* live in the
 measurement/dissipation sector. T4's literature check established that the **dissipation
@@ -73,7 +76,7 @@ state during continuous capture. Write the total quantum-noise-limiting decohere
 
 **Why this is a boundary coupling, consistent with the companion.** The anomalous
 loss L_DK acts during *continuous measurement* — the optical readout is an unbroken
-Stage-2 boundary interaction — not on a freely-propagating mirror in isolation.
+Stage-2–3 boundary interaction — not on a freely-propagating mirror in isolation.
 This matches the companion's stance that the vacuum's preferred-frame coupling
 engages only at boundaries, never in free flight (PAPER_REVISED §2.5): the
 gravitational-wave phase is accumulated coherently in flight (standard GR,
@@ -186,7 +189,7 @@ Whittle et al., Science 372, 1333 (2021). NB both are light–mirror correlation
 NOT mirror–mirror entanglement (see §6.1).
 
 **The "measurement" being probed.** The interferometer *is* a continuous, repeatable
-Stage-2 capture: the optical field continuously monitors the mirror motion and the readout
+capture–selection–registration cycle (Stages 1–3): the optical field continuously monitors the mirror motion and the readout
 is irreversibly recorded. The anomalous frame-dependent decoherence, if present,
 accumulates continuously and shows up in the quantum-noise floor.
 
@@ -254,8 +257,8 @@ No knob to retune: amplitude and phase are fixed by known quantities.
 
 ## 6. Relation to the framework
 
-- T5 probes the **dissipative tail** of Stage 2 (a variance/rate), where T2 probes the
-  **coherent first step** (a mean phase). They are the two channels named in the T4
+- T5 probes the **dissipative registration channel** (Stage 3; a variance/rate), where T2
+  probes the **coherent selection window** (Stage 2; a mean phase). They are the two channels named in the T4
   literature note; running both at different mass scales and with orthogonal systematics is
   the strongest combined statement the program can make.
 - T5 is the first test at the **macroscopic** end of the Heisenberg cut. PAPER_REVISED/
@@ -280,7 +283,7 @@ No knob to retune: amplitude and phase are fixed by known quantities.
   (B) is purely aspirational: the picogram→10 kg gap is enormous, AND it inherits T1's verdict
   (flagship, hardest, rests on the **underived** term H' ~ g(d·H_hat)phi_bulk). The
   *light–mirror* correlation that HAS been realized is, by contrast, exactly the continuous
-  Stage-2 capture that the primary T5 test (§1) reads — which is why T5 uses the quantum-noise
+  Stage-2–3 boundary interaction that the primary T5 test (§1) reads — which is why T5 uses the quantum-noise
   floor, not a two-mirror Bell pair.
 - **(C) The gravitational wave itself as a substrate perturbation — DEAD END.** Reading a
   passing GW as a coherent oscillation of the vacuum substrate that modulates the sync rate
@@ -293,7 +296,7 @@ No knob to retune: amplitude and phase are fixed by known quantities.
 
 ## 7. What must still be derived (do not skip)
 
-1. **Stage-2-only selectivity.** Same linchpin as T2/T4: derive why the coupling is dormant
+1. **Measurement-only (Stages 2–3) selectivity.** Same linchpin as T2/T4: derive why the coupling is dormant
    in free evolution (else excluded by b_n < 6.7e-34). Decisive.
 2. **Vector vs tensor.** The whole feasibility (beta ~ 1e-3 reachable vs beta^2 ~ 1e-6 out
    of reach) hinges on the coupling's symmetry. Derive which the chiral-mass/dissipation
