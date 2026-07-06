@@ -63,7 +63,8 @@ to invite discussion.
 | [EMERGENT_FIELDS_PAPER.md](EMERGENT_FIELDS_PAPER.md) | Synchronization arrays as an analog-simulation platform for chiral fermions, topological mass, and fermionization | **Development phase — not for citation** |
 | [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
 | [COSMIC_EXPANSION_PAPER.md](COSMIC_EXPANSION_PAPER.md) | Cosmic-expansion companion (bulk-sync cosmology) | **Development phase — not for citation** |
-| [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis | **Working note** |
+| [SIDEREAL_DECOHERENCE_PAPER.md](SIDEREAL_DECOHERENCE_PAPER.md) | Sidereal search for frame-dependent decoherence in GW-interferometer quantum noise (manuscript form of T5, with pilot analysis) | **Development phase — not for citation** |
+| [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis (working note behind the manuscript above) | **Working note** |
 | [RESULTS_EMERGENT_FIELDS.md](results/RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
 
 ## Numerical Verification Scripts

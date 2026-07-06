@@ -38,12 +38,17 @@ limited, not statistics-limited, exactly as the note's §4 assumed.** The
 solar-vs-sidereal discrimination + auxiliary-channel regression are not
 refinements — they are the analysis.
 
-## Stage 2 (interim, 2026-07-06): 20 of 30 days banked
+## Stage 2 (FINAL, 2026-07-06): 20.6 of 30 days banked — pilot complete
 
-The 30-day reduction completed with the final ~10 days lost to 204 consecutive
-GWOSC fetch failures (server-side/transient; retry running — the reducer only
-re-attempts missing chunks). Interim numbers on 9,942 chunks / 20.02 d span
-(74% duty):
+The 30-day reduction plus one retry banked 11,003 chunks over a 20.59-d span
+(79% duty). The remaining ~10 days (166 file-blocks, 2019-11-21 → 12-01) fail
+persistently across two attempts — server-side unavailability, accepted as-is.
+**Final headline numbers: σ₁(raw) = 2.66 × 10⁻²** (within 1.3× of the note's
+assumed 2 × 10⁻², with zero cleaning), statistical floor 3.6 × 10⁻⁴ (1σ),
+diurnal systematic decomposed below. Joint solar/sidereal fit remains
+collinear at this baseline (condition 470) — as designed, the sidereal verdict
+belongs to the full-O3b multi-detector analysis, not the pilot. Interim
+history follows.
 
 - **σ₁(raw) = 3.1 × 10⁻²** — stable from the 16-day snapshot and half the
   4-day value: the longer baseline lets the 3-day rolling detrend work. Raw,
