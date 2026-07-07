@@ -154,7 +154,15 @@ brute statistics and the vector target is the honest ceiling of this method.
 The search is model-independent: any theory in which measurement-sector
 dissipation carries a cosmic frame — anisotropic collapse models,
 Lindblad-sector Lorentz violation, or measurement-sector preferred-frame
-proposals — populates $\varepsilon, \xi$. One of us has developed a synchronization-based measurement framework
+proposals — populates $\varepsilon, \xi$. One clarification to preempt a
+natural misreading: the CMB *radiation* plays no dynamical role here. The
+hypothesis is that the vacuum possesses a rest frame; the CMB dipole serves
+only as the best available **marker** of that frame (matter, radiation, and
+any substrate co-moved through cosmic history). Accordingly, a detection
+would not merely confirm a frame — it would *measure the frame's actual
+apex*, with the CMB dipole direction as prior rather than definition; a small
+offset would itself be physics (substrate drag by local bulk flows, or an
+intrinsic dipole component). One of us has developed a synchronization-based measurement framework
 [companion: *Two Regimes of the Chiral Mass Coupling*] whose one added
 postulate is exactly such a coupling, dormant in unitary evolution and active
 only in the dissipative measurement stages; it motivated this search, and a
