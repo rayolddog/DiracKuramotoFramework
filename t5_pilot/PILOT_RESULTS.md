@@ -1,4 +1,50 @@
-# T5 pilot results — stage 1 (first 4 days of O3b, H1)
+# T5 pilot results — stages 1–3 (O3 H1)
+
+## Stage 3 (2026-07-07): 8.5 months — first valid solar/sidereal separation
+
+108,810 chunks spanning 256.8 d (O3a complete + O3b through 2019-12-14; the
+Dec–Mar tail hit 2,014 consecutive fetch failures — likely rate-limiting after
+~150 GB overnight — and is retryable). Joint-fit condition number **3.4**: the
+two periods are now fully decorrelated. Autocorrelation on this baseline:
+τ = 95 chunks (3.4 h), N_eff = 1,145; corrected errors = naive × 9.75.
+
+| Quantity | Value | Corrected significance |
+|---|---|---|
+| σ₁(raw) | **2.04 × 10⁻²** | — (matches the design assumption 2 × 10⁻²) |
+| joint solar A₁ | 6.43 × 10⁻³ (phase → max 07:06 local) | 3.1σ |
+| joint sidereal A₁ | **2.41 × 10⁻³ ± 2.05 × 10⁻³** | **1.2σ — consistent with zero** |
+| solar S1 (tidal fit) | 5.83 × 10⁻³ | 3.0σ |
+| S2 / M2 / O1 | 2.6 / 1.8 / 1.2 × 10⁻³ | 1.3σ / 0.9σ / 0.6σ |
+
+**First bound in the channel (weak but real):** the sidereal-period amplitude
+is consistent with zero; the one-sided 95% upper limit is A₁(sid) < 5.8 × 10⁻³,
+i.e. **κξ < ~4.7 of natural vector strength** (taking g ~ 1; note this
+sidereal-period band *includes* any K1 tidal coupling, so it is conservative).
+Not yet at natural strength (κξ = 1) — the unwhitened corrected floor is
+8.5 × 10⁻⁴ vs the naive 8.7 × 10⁻⁵: **whitening is worth a factor ~10 in
+N_eff (√ → ~3 in amplitude) and remains the gate.** With demonstrated
+whitening this same dataset would probe κξ ≈ 0.2–0.4.
+
+Phase note, stated with appropriate flatness: the measured sidereal phase
+(187° ± ~49°) is 19° from the CMB-apex transit prediction (168°). At 1.2σ
+amplitude this is uninformative — recorded only as a demonstration that the
+apex-phase key is now a computable check in the pipeline.
+
+Diurnal picture at this baseline: the systematic is dominantly solar
+(6.4 × 10⁻³, max at 07:06 local — workday onset), the lunar constituents
+remain individually unestablished (<1σ corrected), and the amplitudes are ~4×
+smaller than the 20-d estimates — consistent with partial seasonal averaging
+of a non-stationary daily systematic.
+
+Next: (i) retry the Dec–Mar tail; (ii) add P1 + apex-locked template to the
+constituent fit; (iii) whitening attempt — requires multi-band re-reduction
+(regressor bands were not stored in v1; a v2 reducer storing 3–4 auxiliary
+bands per chunk would enable strain-derived proxy regression at the cost of
+re-streaming, ~2–3 apartment nights).
+
+---
+
+# Stage 1 (first 4 days of O3b, H1)
 
 *Date: 2026-07-05. Pipeline: `reduce.py` → `results_H1.csv` → `fold.py`.
 2,060 chunks × 128 s (73 h live, 78% duty), band 1200–1450 Hz, 11 fetch
