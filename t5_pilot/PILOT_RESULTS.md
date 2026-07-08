@@ -1,5 +1,46 @@
 # T5 pilot results — stages 1–3 (O3 H1)
 
+## Definitive diurnal-band fit (2026-07-07, `fold_diurnal.py`) — the pilot's scientific bound
+
+Full solar + lunar-tidal family fit on the 256.8-d dataset (108,810 chunks),
+well-conditioned (design condition 5.4 — the lines separate over 8.5 months),
+red-noise-honest errors (τ = 3.3 h, N_eff = 1163). σ₁ = 1.98×10⁻² (= design
+assumption). Constituents (amplitude, red-noise σ):
+
+| Line | Period | Amplitude | Significance |
+|---|---|---|---|
+| **sidereal 1st (= K1, vector target)** | 23.9345 h | 2.9 × 10⁻³ ± 2.2 × 10⁻³ | **1.3σ** |
+| sidereal 2nd (tensor) | 11.967 h | 0.9 × 10⁻³ | 0.5σ |
+| S1 solar | 24.000 h | 5.2 × 10⁻³ | 2.2σ |
+| S2 solar | 12.000 h | 2.5 × 10⁻³ | 1.3σ |
+| P1 (K1's annual-beat partner) | 24.066 h | 2.2 × 10⁻³ | 1.0σ |
+| O1 / M2 (lunar) | 25.82 / 12.42 h | 1.3 / 1.6 × 10⁻³ | 0.7 / 0.9σ |
+
+**The bound:** the sidereal line is consistent with zero (1.3σ); one-sided 95%
+UL = 6.5 × 10⁻³ → **κξ (vector) < 5.3 of natural strength**. This is *the*
+defensible pilot number — slightly weaker than the stage-3 quick-fit value
+(~4.7) because the full tidal family (P1, O1, M2), being partially correlated
+with the sidereal line, is now properly de-confounded, and because it is
+conservative by construction (the sidereal line still *contains* any K1 tide,
+period-degenerate with it). Nothing is significantly detected; even the
+anthropogenic solar S1 is only 2.2σ once red noise is honored.
+
+**Phase curiosity, flagged and quarantined:** the sidereal fold peaks at
+LST ≈ 10.2 h, ~1 h from the CMB apex transit (11.2 h) — visually the maximum
+sits near the apex line (see `plots/sidereal_diurnal_fit.png`). This is *not
+significant*: at 1.3σ the phase uncertainty is ±several hours, and noise peaks
+somewhere. Recorded only because it is exactly the coincidence whitening must
+test — if the peak survives real error bars at the apex phase, it becomes
+interesting; today it is noise that happens to land near the apex.
+
+**Status vs the framework:** κξ < 5.3 is still *above* natural (κξ = 1), so the
+VPFH is neither supported nor constrained. The gap is red noise: N_eff is 1163
+of 108,810 (τ = 3.3 h). Whitening (stage 4) is the only lever that closes it —
+the sensitivity is limited by residual autocorrelation, not by calendar time.
+
+---
+
+
 ## Stage 3 (2026-07-07): 8.5 months — first valid solar/sidereal separation
 
 108,810 chunks spanning 256.8 d (O3a complete + O3b through 2019-12-14; the
