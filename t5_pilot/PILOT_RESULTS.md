@@ -1,4 +1,40 @@
-# T5 pilot results — stages 1–3 (O3 H1)
+# T5 pilot results — stages 1–4 (O3 H1)
+
+## Stage 4 (2026-07-08): multi-band data + whitening proof-of-concept — PARTIAL
+
+The 8-band re-stream reached **48.3 d (20,344 chunks)** before GWOSC returned
+5,211 consecutive fetch failures for the bulk of the later window (server-side;
+resumable — needs unmetered wifi, not the data-capped hotspot). Enough to answer
+the **gating question** with zero further streaming (`whiten_test.py`): does
+regressing the quantum band (b7, 1200–1450 Hz) on the six auxiliary bands
+(b1–b6, 25–950 Hz) whiten the red noise?
+
+| quantity | raw b7 | whitened (b7 − regression on b1–b6) |
+|---|---|---|
+| σ₁ | 2.12 × 10⁻² | **1.57 × 10⁻²** (−26%) |
+| autocorrelation time τ | 3.5 h | **2.2 h** |
+| N_eff (of 20,344) | 209 | **322** |
+
+- Classical variance removed by the b1–b6 regression: **70%**.
+- N_eff gain **×1.5 → amplitude reach improves ×1.2** — *not* the ~×3 the
+  manuscript's reach table optimistically assumed for "fully whitened."
+- b7–b8 quantum-band correlation **+0.85** (sanity: a real modulation must
+  appear in both quantum bands; they track together).
+
+**Honest implication.** Simple *instantaneous linear* proxy whitening from
+strain bands removes most of the classical *power* but only partly shortens the
+*correlation time* — residual red noise (2.2 h) survives, so the reach gain is
+modest. Closing the rest likely needs either (i) time-lagged / spectral
+whitening rather than instantaneous regression, or (ii) the collaboration's
+internal detector-characterization auxiliary channels (not available in public
+GWOSC strain). **The manuscript's reach numbers that assumed M_eff → M under
+whitening should be softened**: realistic proxy whitening buys ~×1.2–1.5 in
+N_eff on this baseline, so κξ likely settles nearer the current ~5 than the
+projected ~0.2–0.4 until better whitening or real aux channels are brought in.
+(48 d is a method test only — too short to separate solar from sidereal.)
+
+---
+
 
 ## Definitive diurnal-band fit (2026-07-07, `fold_diurnal.py`) — the pilot's scientific bound
 
