@@ -72,11 +72,54 @@ long record (months+).
    sources; T6 borrows the *instrument*, not that science case. Frame it as
    a decoherence-anisotropy bound, never as GW detection.
 
+## A-priori estimate (added same evening — NEXT STEP #1 done)
+
+T5 §2 methodology transplanted. Observable: fractional modulation of the
+resonator's loss/linewidth (the dissipation channel; frequency stability is
+deliberately NOT the signal channel — it is unitary-sector, already bounded
+brutally by cryo-BAW Lorentz-invariance work, and serves as the built-in
+null/control). Reach: 5σ floor = 5·σ₁·√(2/M), M = live time / τ_sample at
+70% duty, τ_sample = 100 s (T5 convention; see mode caveat below).
+
+| σ₁ (per-100-s loss scatter) | live | 5σ floor | vector β margin | tensor β² margin |
+|---|---|---|---|---|
+| 6.5e-2 (T5's raw floor)   | 2 yr | 6.9e-4 | 1.7× | 0.002× |
+| 1e-2 (plausible: ~1% per-ring-down Q metrology) | 6 mo | 2.1e-4 | 5.6× | 0.007× |
+| 1e-2                      | 2 yr | 1.1e-4 | 11×  | 0.014× |
+| 2e-3 (post-regression, optimistic) | 2 yr | 2.1e-5 | 56× | 0.07× |
+| 1e-4 (implausible today)  | 2 yr | 1.1e-6 | 1128× | 1.4× |
+
+**Verdict — same shape as T5, shifted mass/frequency point:**
+- **Vector channel (β = 1.2e-3): reachable**, margin ~5–50× at plausible σ₁.
+  A months-long cryo-BAW loss record can bound κ·ξ_DK in the vector channel
+  at the few-percent-of-natural level, at ~mg effective mass and MHz–GHz —
+  a new point on the exclusion map, orthogonal systematics to LIGO.
+- **Tensor channel (β² = 1.5e-6): out of reach** — needs σ₁ ≲ 1e-4 per
+  100 s (two orders beyond current loss metrology). Same no-coherent-
+  amplifier verdict as T4/T5. N-phonon Fock states from quantum acoustics
+  (N ~ 10 demonstrated) amplify the *phase* channel T2-style, not the
+  fractional *dissipation* modulation — noted, not a rescue.
+
+Mode-choice caveat: τ_sample = 100 s requires ring-down time ≪ 100 s for
+sample independence. Q/(πf): 5 MHz @ Q=1e10 → 637 s (samples NOT
+independent at 100 s; M drops ~6×, floor worsens ~2.5×); 100 MHz @ Q=1e9 →
+3.2 s (fine); GHz @ Q=1e8 → ms (fine). **Prefer ≳100 MHz overtones.**
+
+Single-device weakness vs T5: one crystal = one sensitive axis = no
+multi-detector sidereal-phase discriminant. Cheap fix worth noting in any
+design doc: **two crystals, orthogonal axes, one cryostat** — common-mode
+thermal/TLS systematics, opposite-sign geometric factor g(n̂,t).
+
+ξ_DK ceiling remark (speculative, VERIFY): LIGO's loss budget is
+characterized to a few percent, capping ξ_DK small; cryogenic quartz
+acoustic loss at 4 K is *less* completely budgeted (Landau–Rumer vs TLS vs
+anchoring attribution is partly model-based), so the excludable ξ_DK
+fraction may actually be more generous here. Needs a literature number.
+
 ## Next steps (in order, all cheap)
 
-1. Order-of-magnitude a-priori estimate, T5 §3 style: what dissipation-sector
-   coupling would a Q ~ 10¹⁰, months-long BAW record bound? Compare T5's
-   reach.
+1. ~~Order-of-magnitude a-priori estimate~~ **DONE above** — vector
+   reachable (5–50× margin), tensor out of reach; prefer ≳100 MHz modes.
 2. Literature/data check: are BAW noise time series public (Tobar group,
    UWA; any LIGO-adjacent acoustic-mode archives)? Email-able ask if not.
 3. If (1) and (2) survive: promote to `LIGO_SIDEREAL_TEST_T5.md`-style design
