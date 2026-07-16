@@ -1,18 +1,31 @@
-# Suggested Experiment (T5): A Sidereal Search for Frame-Dependent Quantum-Noise Decoherence in a Gravitational-Wave Interferometer
+# Suggested Experiment (T5): A Sidereal Search for Frame-Dependent Quantum-Noise Anisotropy in a Gravitational-Wave Interferometer
 
 *A macroscopic-mass test of the same preferred-frame measurement coupling probed by T2
-(Suggested_experiment.md) and T4 (MRI/NMR surface relaxation). Where T2 reads the
-**coherent** selection window (Stage 2 of the three-stage division) on a GHZ probe, T5
-reads the **dissipative registration** channel (Stage 3) — the anomalous, anisotropic
-decoherence of a continuously-measured macroscopic quantum state — using
-LIGO/Virgo/KAGRA. Companion to current_revision_DK_paper.md §3 (three-stage measurement:
-capture/selection/registration; the "Stage 2" of the earlier two-stage form = Stages 2–3),
-§6 (candidate signature), and the open dissipation-channel loophole identified in the T4
-literature check.*
+(Suggested_experiment.md) and T4 (MRI/NMR surface relaxation). Both read the frame-dependent
+part of the **Stage-2 selection background** (§3.1) — the unbiased vacuum background sampled
+at the boundary, whose cosmic-frame anisotropy is the effect sought — but at different moments
+of it: T2 reads its **mean** (a coherent phase bias, amplified on a GHZ probe), T5 reads its
+**variance** (the anisotropic quantum-noise floor of a continuously-measured macroscopic
+state), using LIGO/Virgo/KAGRA. The **Stage-3 dissipative registration** is the
+frame-independent, mass-set closure: §3.1 makes it equivariant and states it "contributes no
+statistics of its own," so the sidereal modulation cannot originate there — it must live in
+the Stage-2 selection background. Companion to current_revision_DK_paper.md §3 (three-stage
+measurement: capture/selection/registration; the "Stage 2" of the earlier two-stage form =
+Stages 2–3), §3.3 (the boundary background as the seat of outcome randomness), §6 (candidate
+signature), and the open selection-background (open/non-unitary measurement-sector) loophole
+identified in the T4 literature check.*
+
+> *Reconciliation note (2026-07-16): this revision re-homes the frame-dependent effect from
+> the Stage-3 dissipative registration channel to the Stage-2 selection background, per
+> current_revision_DK_paper.md §3.1 — which makes registration equivariant and states it
+> "contributes no statistics of its own," so a sidereal statistic cannot originate there. The
+> observable (a sidereal modulation of the quantum-noise floor), the reach estimates, the
+> pilot results, and the vector/tensor verdicts are all unchanged; only the theoretical seat
+> of the effect moves.*
 
 Status: design + a-priori estimate. Numbers are order-of-magnitude; every assumption is
-flagged. The postulate being tested (a frame-bearing vacuum/dissipation coupling, active
-only in the measurement stages 2–3) is NOT assumed true — the experiment bounds or detects it. **T5 is
+flagged. The postulate being tested (a frame-bearing vacuum coupling carried by the Stage-2
+selection background, active only at measurement boundaries) is NOT assumed true — the experiment bounds or detects it. **T5 is
 weaker in raw sensitivity than T2 and shares T4's fatal caveat (no coherent amplifier),
 but it has three things no tabletop test has: (i) months-to-years of GPS-timed continuous
 data already on disk — zero new hardware; (ii) two-plus detectors at different
@@ -25,21 +38,23 @@ boundary the paper flags (paper.tex §, "do cooled optomechanical membranes coun
 ## 1. What this tests
 
 The framework's one new ingredient is a **non-covariant coupling dormant during free
-(unitary) evolution that switches on only during measurement** (Stages 2–3: selection +
-registration; free flight and the reversible Stage-1 capture stay covariant). The
-free-propagation channel for this coupling is closed brutally tight — sidereal Larmor
-bounds give b_n < 6.7e-34 GeV (Allmendinger/Heil 2014) — so the effect *must* live in the
-measurement/dissipation sector. T4's literature check established that the **dissipation
-channel itself is untabulated**: the minimal SME is a unitary EFT, and non-unitary
-(Lindblad) Lorentz violation has never been ported to a continuously-monitored
-macroscopic oscillator.
+(unitary) evolution that switches on only at measurement boundaries** — carried by the
+**Stage-2 selection background** (the unbiased vacuum sampled where the wave's amplitude is
+deformed), while the Stage-3 dissipative registration is frame-independent; free flight and
+the reversible Stage-1 capture stay covariant. The free-propagation channel for this coupling
+is closed brutally tight — sidereal Larmor bounds give b_n < 6.7e-34 GeV (Allmendinger/Heil
+2014) — so the effect *must* live in the measurement sector, and per §3.1 specifically in the
+selection background, not in the dissipation (which §3.1 makes statistics-free). T4's
+literature check established that this open, non-unitary measurement channel is
+**untabulated**: the minimal SME is a unitary EFT, and non-unitary (stochastic/Lindblad)
+Lorentz violation has never been ported to a continuously-monitored macroscopic oscillator.
 
 A LIGO interferometer is exactly such an oscillator. Its differential arm mode (~10 kg
 effective mass) is continuously measured at and below the standard quantum limit (SQL),
 with squeezed vacuum injected to push the quantum-noise floor down. The *measured*
-squeezing level is capped by optical loss and quantum decoherence. So T5 asks:
+squeezing level is capped by optical loss and quantum noise. So T5 asks:
 
-**Does the anomalous decoherence of a macroscopic, continuously-measured quantum state
+**Does the anomalous quantum noise of a macroscopic, continuously-measured state
 carry an anisotropic component locked to the cosmic (CMB) rest frame, modulating the
 quantum-noise floor at the sidereal period?** Standard QM + GR says no — local quantum
 noise cannot depend on the absolute frame. A CMB-apex-locked sidereal modulation of the
@@ -50,8 +65,9 @@ the framework's conservative form, since the effect is contingent on that postul
 value is that, *if* present, it tracks the sky, not the lab or the Sun, and so cannot be
 calibrated away as a local systematic.
 
-This is the **dissipation-sector** sibling of T2's coherent-phase test, at a mass scale
-~10^27 times a single ion.
+This is the **variance** sibling of T2's coherent-phase (mean) test — the same Stage-2
+selection background read at second moment instead of first — at a mass scale ~10^27 times a
+single ion.
 
 ---
 
@@ -59,30 +75,33 @@ This is the **dissipation-sector** sibling of T2's coherent-phase test, at a mas
 
 ### 2.1 Coupling ansatz
 
-The DK dissipation coupling adds an anomalous decoherence rate to the measured quantum
-state during continuous capture. Write the total quantum-noise-limiting decoherence
-("loss") as
+The DK coupling makes the Stage-2 selection background — the unbiased vacuum sampled at the
+boundary — slightly anisotropic in the cosmic frame, so the quantum noise it injects into the
+continuous readout acquires a sidereal modulation. Write the total quantum-noise-limiting
+term ("loss/noise") as
 
     L_total(t) = L_known + L_DK * [1 + eps_frame * g(n_hat, t)]
 
 - `L_known` — the characterized loss budget (optical losses, phase noise, mode mismatch).
-- `L_DK`    — the anomalous (DK) contribution, a fraction xi_DK = L_DK / L_total of the
-  total. UNKNOWN; could be zero. What a null bounds is the product kappa * xi_DK.
+- `L_DK`    — the anomalous (DK) contribution: the anisotropic part of the selection-background
+  noise, a fraction xi_DK = L_DK / L_total of the total. UNKNOWN; could be zero. What a null
+  bounds is the product kappa * xi_DK.
 - `eps_frame` — the intrinsic frame scale (below).
 - `g(n_hat, t)` — O(1) geometric factor: projection of the detector's sensitive axis
   `n_hat` (arm/squeezing-quadrature orientation) onto the CMB velocity direction; carries
   the sidereal time dependence. Differs between Hanford, Livingston, Virgo, KAGRA by their
   known orientations — this is the multi-detector discriminant.
 
-**Why this is a boundary coupling, consistent with the companion.** The anomalous
-loss L_DK acts during *continuous measurement* — the optical readout is an unbroken
-Stage-2–3 boundary interaction — not on a freely-propagating mirror in isolation.
-This matches the companion's stance that the vacuum's preferred-frame coupling
-engages only at boundaries, never in free flight (PAPER_REVISED §2.5): the
-gravitational-wave phase is accumulated coherently in flight (standard GR,
-frame-independent), while the frame-dependent *decoherence* tested here is a
-property of the measurement boundary, modulated sidereally by the readout-axis
-orientation g(n_hat, t).
+**Why this is a boundary coupling, consistent with the companion.** L_DK acts during
+*continuous measurement* — the optical readout continuously samples the vacuum background at
+the boundary (a Stage-2 selection interaction) — not on a freely-propagating mirror in
+isolation. This matches §2.5's stance that the vacuum's preferred-frame coupling engages only
+where the wave's amplitude is deformed, never in free flight: the gravitational-wave phase is
+accumulated coherently in flight (standard GR, frame-independent), while the frame-dependent
+effect tested here is the anisotropy of the *selection background* sampled at the readout
+boundary, modulated sidereally by the readout-axis orientation g(n_hat, t). The Stage-3
+dissipation that closes each readout is frame-independent — set by the mirror–bath mass ratio
+— and contributes no sidereal statistic, consistent with §3.1.
 
 ### 2.2 The frame scale (identical to T2/T4 — set by velocity, not potential)
 
@@ -103,16 +122,16 @@ postulate, not the platform.
 
 T2 wins a factor of N because a GHZ state turns a single-particle phase into a collective
 phase N times larger. **LIGO's differential arm mode is a single collective coordinate —
-effectively N = 1.** Like T4, the large mass amplifies the *magnitude* of the dissipative
-term (a 10 kg mode couples to the vacuum far more strongly than one ion) but NOT the
-*fractional* sidereal modulation, which stays at the bare beta or beta^2. This is the
-load-bearing weakness; see §7.
+effectively N = 1.** Like T4, the large mass amplifies the *magnitude* of the vacuum coupling
+(a 10 kg mode samples the boundary background far more strongly than one ion) but NOT the
+*fractional* sidereal modulation, which stays at the bare beta or beta^2 set by the
+selection-background anisotropy. This is the load-bearing weakness; see §7.
 
 ### 2.4 The observable and required statistics
 
 The cleanest observable is the **high-frequency, shot-noise-limited, squeezing-enhanced
 strain PSD** (equivalently the measured squeezing level in dB) — it is purely quantum,
-cleanly modeled, and any excess/modulated decoherence appears directly as reduced
+cleanly modeled, and any excess/modulated quantum noise appears directly as reduced
 squeezing. The predicted fractional modulation of this PSD is
 
     delta_PSD / PSD  ~  kappa * xi_DK * eps_frame * g(n_hat, t)
@@ -142,8 +161,8 @@ Take sigma_1 ~ 2e-2 (≈0.1 dB squeezing precision per ~100 s segment), tau_samp
 
 ### 2.5 Predicted modulation vs reach — the targets
 
-Setting kappa = 1 and the optimistic xi_DK ~ 1 (DK decoherence saturates the unexplained
-loss budget; realistically xi_DK < 1, scaling the reach down):
+Setting kappa = 1 and the optimistic xi_DK ~ 1 (DK selection-background noise saturates the
+unexplained loss budget; realistically xi_DK < 1, scaling the reach down):
 
 **Vector coupling (eps = beta = 1.2e-3):**
 the predicted modulation sits ~10x–50x ABOVE the achievable floor (1e-4 to few e-5).
@@ -190,7 +209,7 @@ NOT mirror–mirror entanglement (see §6.1).
 
 **The "measurement" being probed.** The interferometer *is* a continuous, repeatable
 capture–selection–registration cycle (Stages 1–3): the optical field continuously monitors the mirror motion and the readout
-is irreversibly recorded. The anomalous frame-dependent decoherence, if present,
+is irreversibly recorded. The anomalous frame-dependent quantum noise, if present,
 accumulates continuously and shows up in the quantum-noise floor.
 
 **This is a reanalysis, not a new build.** Steps:
@@ -257,10 +276,15 @@ No knob to retune: amplitude and phase are fixed by known quantities.
 
 ## 6. Relation to the framework
 
-- T5 probes the **dissipative registration channel** (Stage 3; a variance/rate), where T2
-  probes the **coherent selection window** (Stage 2; a mean phase). They are the two channels named in the T4
-  literature note; running both at different mass scales and with orthogonal systematics is
-  the strongest combined statement the program can make.
+- T5 and T2 both probe the **Stage-2 selection background** (§3.1) — the frame-dependent
+  vacuum configuration sampled at the boundary — but at different moments: T2 reads its
+  **mean** (a coherent phase, GHZ-amplified), T5 reads its **variance** (the anisotropic
+  quantum-noise floor). The **Stage-3 dissipative registration** hosts neither: §3.1 makes it
+  equivariant and statistics-free, so it cannot carry a sidereal signal. (Earlier drafts filed
+  T5 under Stage-3 "dissipative registration"; §3.1's separation of selection from
+  registration corrects this — the observable is unchanged, only its theoretical seat moves.)
+  Running the mean and variance channels at different mass scales, with orthogonal
+  systematics, is the strongest combined statement the program can make.
 - T5 is the first test at the **macroscopic** end of the Heisenberg cut. PAPER_REVISED/
   paper.tex explicitly leave open "where exactly is the boundary — do cooled optomechanical
   membranes count?" A 10 kg differential mode near its ground state is squarely in that
@@ -283,7 +307,7 @@ No knob to retune: amplitude and phase are fixed by known quantities.
   (B) is purely aspirational: the picogram→10 kg gap is enormous, AND it inherits T1's verdict
   (flagship, hardest, rests on the **underived** term H' ~ g(d·H_hat)phi_bulk). The
   *light–mirror* correlation that HAS been realized is, by contrast, exactly the continuous
-  Stage-2–3 boundary interaction that the primary T5 test (§1) reads — which is why T5 uses the quantum-noise
+  Stage-2 selection-background sampling that the primary T5 test (§1) reads — which is why T5 uses the quantum-noise
   floor, not a two-mirror Bell pair.
 - **(C) The gravitational wave itself as a substrate perturbation — DEAD END.** Reading a
   passing GW as a coherent oscillation of the vacuum substrate that modulates the sync rate
@@ -296,17 +320,20 @@ No knob to retune: amplitude and phase are fixed by known quantities.
 
 ## 7. What must still be derived (do not skip)
 
-1. **Measurement-only (Stages 2–3) selectivity.** Same linchpin as T2/T4: derive why the coupling is dormant
-   in free evolution (else excluded by b_n < 6.7e-34). Decisive.
+1. **Boundary-only selectivity.** Same linchpin as T2/T4: derive why the selection background
+   couples only where the wave's amplitude is deformed and is zero-mean (hence dormant) in
+   free evolution (else excluded by b_n < 6.7e-34). On the §3.1 reading this is cleaner — the
+   vacuum fluctuation is always present but nets to zero except at a boundary that breaks the
+   symmetry — but it still must be shown. Decisive.
 2. **Vector vs tensor.** The whole feasibility (beta ~ 1e-3 reachable vs beta^2 ~ 1e-6 out
-   of reach) hinges on the coupling's symmetry. Derive which the chiral-mass/dissipation
+   of reach) hinges on the coupling's symmetry. Derive which the chiral-mass/selection-background
    coupling produces.
 3. **kappa AND xi_DK from first principles.** T5 bounds the *product* kappa*xi_DK. Without a
    predicted DK fraction of the loss budget, a null bounds a product, not kappa alone —
    weaker than T2, where the GHZ phase isolates kappa.
-4. **Is the dissipative channel even sidereally coherent over the band?** If the anomalous
-   decoherence has no stable phase relationship to the apex across the measurement band, the
-   signal smears and the (already marginal) reach collapses. This is the dissipation-channel
+4. **Is the selection background even sidereally coherent over the band?** If the anisotropic
+   vacuum noise has no stable phase relationship to the apex across the measurement band, the
+   signal smears and the (already marginal) reach collapses. This is the selection-channel
    analogue of T2's coherent-first-step linchpin.
 
 ---
