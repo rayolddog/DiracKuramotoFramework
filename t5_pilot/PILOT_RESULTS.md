@@ -1,5 +1,55 @@
 # T5 pilot results — stages 1–4 (O3 H1)
 
+## Stage 4 completion (2026-07-16): whitened sidereal fit on the full v2 baseline
+
+The 8-band re-stream on disk had grown past the 48.3 d documented below to
+**85.9 d (39,653 chunks**, GPS 1238166082→1245589440) before the GWOSC fetch
+failures stopped it — but the analysis was never re-run on the fuller set, and
+the data sat uncommitted. This section completes stage 4 on the data already on
+disk (no new streaming): re-run the whitening on the full v2 baseline, then run
+the sidereal + solar/lunar-tidal fit on **both** raw and whitened b7, so the
+whitening is measured at the level of the actual κξ bound, not just N_eff.
+Script: `whiten_fold.py` (combines `whiten_test.py` whitening with the
+`fold_diurnal.py` constituent fit); plot `plots/sidereal_whitened_fit.png`.
+
+**Whitening on 85.9 d** (was 48.3 d): b1–b6 regression removes **66%** of b7's
+classical variance; autocorrelation τ **3.5 h → 2.0 h**, N_eff **406 → 706
+(×1.7)** → amplitude reach ×1.3. Consistent with the 48-d method test, slightly
+better with the longer baseline.
+
+**The new result — whitening improves the sidereal bound itself, matched fit:**
+
+| b7 on the same 85.9 d | sidereal 1st amp | significance | 95% UL | κξ (vector) UL |
+|---|---|---|---|---|
+| raw | 1.67 × 10⁻² | 1.1σ | 4.20 × 10⁻² | **34.2** of natural |
+| whitened (− regression on b1–b6) | 0.86 × 10⁻² | 1.3σ | 1.98 × 10⁻² | **16.1** of natural |
+
+**Whitening tightens the bound ×2.1** on identical data/baseline/fit. That is
+*more* than the ×1.3 the √N_eff error-shrink alone predicts, because whitening
+also **halves the sidereal amplitude point estimate** (1.67 → 0.86 × 10⁻²): it
+removes classical power that was sitting in the sidereal band, not just noise
+around it — exactly the desired behaviour, since a genuine DK quantum-noise
+modulation lives in b7/b8 (correlation +0.83) and not in the classical
+regressors b1–b6. Both fits remain non-detections consistent with zero, and the
+fold peaks ~9 h from the CMB apex (LST 19.9 h raw / 20.5 h whitened vs apex
+11.2 h) — noise phase at this significance, not apex-locked.
+
+**Honest caveat — this does NOT supersede the pilot bound.** Over 85.9 d the
+design condition number is **653** (raw and whitened alike — whitening changes
+the data, not the design matrix): solar, sidereal, and P1 are still collinear at
+this baseline, so κξ < 16 is *not* competitive with the definitive 256.8-d v1
+fit (condition 5.4, **κξ < 5.3**, the "Definitive diurnal-band fit" section
+below). The v2 result is a **method result**: it demonstrates the whitening
+propagates through to the bound at ~×2. Projecting that factor onto the v1
+baseline suggests a whitened full-baseline bound near **κξ ~ 2–3** — an
+improvement on 5.3 but still *above* natural (κξ = 1), consistent with stage 4's
+softened expectation (nearer 5/2 than the old optimistic 0.2–0.4). Reaching
+natural strength still needs the full 256.8-d baseline re-streamed in 8-band
+form (blocked on unmetered bandwidth) or the collaboration's internal aux
+channels — unchanged from below.
+
+---
+
 ## Stage 4 (2026-07-08): multi-band data + whitening proof-of-concept — PARTIAL
 
 The 8-band re-stream reached **48.3 d (20,344 chunks)** before GWOSC returned
