@@ -120,8 +120,25 @@ fraction may actually be more generous here. Needs a literature number.
 
 1. ~~Order-of-magnitude a-priori estimate~~ **DONE above** — vector
    reachable (5–50× margin), tensor out of reach; prefer ≳100 MHz modes.
-2. Literature/data check: are BAW noise time series public (Tobar group,
-   UWA; any LIGO-adjacent acoustic-mode archives)? Email-able ask if not.
+2. ~~Literature/data check~~ **DONE 2026-07-15 (web check):**
+   - **The data exist and the format is right, but they are NOT public.**
+     The GEN 1/2 runs (the "rare events" PRL 127, 071102 (2021),
+     arXiv:2102.05859) logged **153 days over two runs**, acquiring
+     lock-in amplitude at each quartz mode frequency **digitized at
+     100 Hz** — mode-amplitude time series, exactly what a loss/noise
+     sidereal fold consumes. MAGE (Scientific Reports 13 (2023),
+     arXiv:2307.00715) has been "actively taking data intermittently as
+     of early 2023" with multiple modes per crystal continuously
+     monitored — likely years of records by now.
+   - **Access:** "available from the corresponding author on reasonable
+     request" (MAGE paper) — no GWOSC-style archive. So T6 is NOT a
+     zero-ask analysis like T5; it requires a data-sharing request to
+     the UWA QDM lab (Tobar/Goryachev). Downgrade "zero new hardware"
+     to "zero new hardware, one email."
+   - **Bonus:** MAGE already runs **two near-identical quartz BAW
+     resonators** — the two-crystal discriminant configuration proposed
+     above may physically exist; their relative orientation is not
+     stated in the paper (ask in the same email).
 3. If (1) and (2) survive: promote to `LIGO_SIDEREAL_TEST_T5.md`-style design
    doc (T6), with the mass–frequency plane figure updated to show T2/T4/T5/T6
    coverage.
