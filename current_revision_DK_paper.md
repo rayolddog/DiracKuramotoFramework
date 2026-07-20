@@ -74,7 +74,12 @@ abstract claims softened. The Born measure and the selection law remain open exa
 We read quantum measurement as a synchronization process and place the reading
 squarely in the single-world, ψ-ontic, nonlocal family of interpretations —
 alongside Bohmian [2, 3] and Nelsonian [19] mechanics, and in the lineage of
-relational-clock approaches to quantum time [29, 36]. The mechanism is grounded
+relational-clock approaches to quantum time [29, 36]. The interpretive
+through-line is a single commitment — **the wavefunction does not collapse, it
+evolves**: what appears as collapse is the *effective* dispersal of the
+wavefunction's information into the detector's many particles, local entropy
+production under globally unitary evolution, not a physical destruction of the
+state (§3.1). The mechanism is grounded
 in the Dirac equation: in the chiral (Weyl) basis the mass term is the
 off-diagonal coupling between left- and right-handed sectors. A Madelung
 reduction (§2.2) shows that in a *closed* system this coupling generates unitary
@@ -85,9 +90,12 @@ off-switch, and that switch is the closed/open boundary. An attractor appears on
 when the system is *opened* to a dissipative bulk and the bath is traced out,
 where the reduced phase obeys an Adler/Kuramoto equation [9]. Measurement is that
 opening, in three stages: a resonant capture at the detector surface (Stage 1), a
-stochastic commit in which the local background configuration selects the basin
-(Stage 2 — where the outcome weights are set), and a reservoir-powered,
-energy-blind amplification that registers the committed outcome (Stage 3). The
+reversible provisional commit at the surface (Stage 2), and a reservoir-powered,
+energy-blind amplification that registers the outcome (Stage 3). *Which* outcome is
+selected we **inherit** — as standard conditional-measurement theory conditions on a
+record — rather than derive; a background-field configuration that would *determine* it
+is offered later only as a speculative candidate for the open selection law, not as the
+framework's mechanism. The
 reversible→irreversible boundary
 is exhibited directly by the nuclear-spin echo, the catch-and-reverse of a
 superconducting qubit [14], and Stern–Gerlach recombination. We model the bulk
@@ -97,12 +105,13 @@ an overwhelmingly thermal reservoir, not a coherent macrostate.
 We are explicit about scope. The framework does not modify quantum mechanics: it
 accepts Bell's theorem, takes the correlations from the entangled state (a
 clock-as-local-variable model is sub-classical, CHSH ≤ $\sqrt{2}$; Appendix A), and
-preserves no-signaling — confining its contribution to the local measurement
-mechanism. It carries a physical preferred frame that enters only through Stage 2.
-Two problems separate it from a complete theory and are stated as such: a
-derivation of the Born measure, and an explicit dynamical law for the
-background-field selection — which is also the locus of the framework's
-nonlocality. Its one candidate signature, a linewidth-dependent gravitational Bell
+preserves no-signaling — its nonlocality is exactly standard quantum mechanics', no
+more, confining its own contribution to the *local* registration mechanism. Two
+problems it does not solve, and inherits or parks: which outcome is selected
+(inherited, as in standard conditional-measurement theory) and the Born measure. A
+background-field selection law that would *derive* both — carrying the framework's own
+preferred frame, and, were it real, a nonlocality of its own — is offered only as a
+speculative candidate, never as a claim; the registration account does not rest on it. Its one candidate signature, a linewidth-dependent gravitational Bell
 effect (§6), does *not* follow from the framework plus standard QED but requires an
 additional, non-covariant postulate (§6.2, Appendix C); that experiment therefore
 tests the postulate, not the framework's core. We present MCI as a
@@ -149,6 +158,14 @@ macroscopic reference (§3). We call the resulting reading the **Many Clocks Int
 interactions synchronize clocks locally, no observer is required, and no
 branching occurs.
 
+The interpretive spine — common to this paper and its measurement companion
+("The Dirac Equation, the Heisenberg Cut, and the Measurement Problem") — is that
+**the wavefunction never collapses; it evolves.** Measurement is continued unitary
+evolution in which the incident state's information disperses into the detector,
+so the appearance of collapse is *effective*, information-theoretic irreversibility
+(§3.1) — not a real dynamical event. Read this way, "collapse" is the name we give
+to information becoming locally irrecoverable, never to a destruction of $\psi$.
+
 ### 1.3 Scope and honesty (stated once, up front)
 
 To keep the argument disciplined we state the boundaries here rather than
@@ -168,6 +185,16 @@ distributing them through the paper:
 - **The Born rule is reframed, not derived.** The gap is stated once, in full,
   as the fork of §3.3 and carried as open problem 1 of §8; later mentions refer
   back to it rather than restate it.
+- **Which outcome is selected is inherited, not derived.** We take the outcome as
+  an input — exactly as standard conditional-measurement theory conditions on a
+  record — and confine the framework's contribution to what happens *after*
+  selection: the reversible→irreversible registration (§3.1). A background-field
+  configuration that would *determine* the outcome is offered only as a
+  speculative candidate for the open selection law (§3.3, §8), never as the
+  framework's mechanism, and nothing in the registration account depends on it. We
+  make this separation deliberately: the framework's genuine content — the
+  closed/open chiral dynamics and the registration reading — stands on its own and
+  does not require solving the selection problem.
 - **One candidate prediction, contingent on a postulate.** A linewidth-dependent
   gravitational Bell effect (§6). We show it does *not* follow from the framework
   plus standard QED (§6.2, Appendix C); it requires an additional, non-covariant
@@ -473,7 +500,14 @@ companion documents say "Stage 2," read Stages 2–3 below.)
   global evolution remains unitary and the history is scrambled into the bulk
   rather than destroyed; what is gone is the system's *locally recoverable*
   history, the irreversible T1/T2 side of §3.2 and not the refocusable T2\*
-  side.
+  side. This is the framework's through-line, and it is an *information*
+  statement: the wavefunction does not collapse but disperses — the incident
+  state's information spreads across the reservoir's many particles, so the
+  *total* fine-grained entropy is conserved while the *locally accessible*
+  entropy rises. What looks like collapse is that dispersal: the outcome value
+  copied redundantly (making the record objective, the quantum-Darwinism face)
+  and the relative phase scrambled beyond recall (making it irreversible, the
+  scrambling face) — never a physical destruction of $\psi$.
 
 Three things are therefore distinct and should not be run together, and the
 three stages give each its own address: the *selection* of a single definite
@@ -525,20 +559,20 @@ This is not a metaphor; three independent systems exhibit it directly:
 
 ### 3.3 Why outcomes are definite — and what this does and does not explain
 
-The detector's macroscopic inertia provides the asymmetry. When a small
-oscillator (mass m) couples dissipatively to a large one (M ≫ m), the small one
-conforms; the reverse is suppressed by m/M. A single experimental run carries one
-actual configuration of the background field (§4), and the dissipative flow
-carries that configuration into exactly one attracting basin. There is then one
-ψ, one background, one outcome, one world — no branching, no projection
-postulate, no observer. (This background-configuration reading of single-run
-selection is one of two readings the paper carries: in the standard
-conditional-trajectory unraveling of Appendix D, the selecting stochasticity is
-the meter's vacuum noise $dW$, and the background configuration is the
-framework's hidden-variable completion of that noise, whose explicit dynamical
-law is open problem 2 of §8. The two readings are not yet reconciled — Appendix
-D, point 2 — and the sentence above states the conjecture, not the established
-half.)
+The detector's macroscopic inertia provides the asymmetry that makes the record
+definite. When a small oscillator (mass m) couples dissipatively to a large one
+(M ≫ m), the small one conforms; the reverse is suppressed by m/M. This is what
+the framework actually delivers: *given* a selected outcome, the dissipative flow
+carries the state into exactly one attracting basin and holds it there — one ψ,
+one record, one world, with no projection postulate and no observer. *Which*
+basin is the selected one we **inherit**, exactly as the standard
+conditional-trajectory unraveling (Appendix D) conditions on the meter's vacuum
+noise $dW$; we do not derive it. A stronger reading — that a single actual
+configuration of the background field (§4) *determines* which basin, completing
+that noise with a hidden variable — is the framework's **speculative candidate**
+for the open selection law (open problem 2 of §8), offered and not asserted. The
+two readings are not yet reconciled (Appendix D, point 2); the registration
+account rests only on the inherited one.
 
 We are deliberate about what this does *not* settle. The attractor explains why
 there is exactly **one** outcome per run; it does not explain why the long-run
@@ -546,9 +580,13 @@ there is exactly **one** outcome per run; it does not explain why the long-run
 here and carried as open problem 1 of §8. Conflating the two — treating "definite
 outcome" and "correct weight" as one result — is the error we most want to avoid.
 
-The *oneness* half of definiteness — exactly one outcome across an extended
-detector, however many sites the wave reaches — now carries a candidate
-mechanism rather than a stipulation: **conservation-enforced winner-take-all.**
+Within that speculative candidate, the *oneness* half of definiteness — exactly one
+outcome across an extended detector, however many sites the wave reaches — carries
+its own candidate sub-mechanism rather than a stipulation: **conservation-enforced
+winner-take-all.** (This, with its nonlocal depletion below, belongs to the
+candidate selection law, not to the inherited-selection registration account; we
+present it as a proposal to be judged, and the framework's core does not depend on
+it.)
 The packet carries one quantum; a site's threshold requires the whole quantum; a
 completed absorption therefore *is* the depletion of the budget, and no second
 site can close. Three qualifications keep this honest. (i) The depletion is
@@ -1325,10 +1363,14 @@ Within its own family MCI is currently the least complete member, and honesty
 requires saying so. Bohm has an explicit dynamical law (the guidance equation)
 and a clean account of the Born measure (quantum equilibrium, |ψ|²). MCI now adopts
 the first — the coherent guiding law is the Madelung velocity $\mathbf{v}=\nabla\varphi/m$
-of §2.2, read ontologically (§2.5) — but still owes the rest: no specified equation
-for *how* the background configuration selects the basin (the *dynamical* locus of
-its nonlocality, though the *ontological* locus is identified in §7.5), and an
-incomplete Born account — the fork of §3.3, not restated here. What this section
+of §2.2, read ontologically (§2.5). For the rest MCI makes a different choice than
+Bohm: rather than *derive* which basin, it **inherits** the selected outcome (§1.3),
+so its core owes no selection equation. The dynamical law that would fix the outcome
+— Bohm's achievement — MCI carries only as a *speculative candidate* (the unwritten
+background-field selection of §3.3), and its Born account is parked (the fork of
+§3.3). Its nonlocality is the standard non-separability of the entangled field
+(§7.5); only the candidate would add a further, superluminal selection nonlocality,
+which the core does not assert. What this section
 adds is the comparative point: reading |ψ|² as the energy density of a real field
 is true but, for the equal-energy channels the framework treats, coincides with
 the occupation fraction by normalization and so explains nothing about outcome
@@ -1474,7 +1516,7 @@ setting-independent common cause just excluded:
 
 - **The local thermal reference** at each detector — the faint, ppm bias of §4
   (B₀ in MRI, lattice and Coulomb binding in a solid-state detector). This
-  performs the local Stage-2 selection and Stage-3 registration, and — through its coherence
+  performs the local Stage-2 provisional commit and Stage-3 registration, and — through its coherence
   amplitude $r = e^{-\langle\delta^2\rangle/2}$ (§4.3) — the visibility of the
   outcome. It is established in the common past of both wings and is independent
   of the analyzer settings, so it is exactly a Bell common-cause variable; by the
@@ -1493,6 +1535,12 @@ setting-independent common cause just excluded:
   here is not a new postulate but a restatement of the ψ-ontic commitment of §7.1
   — the wavefunction is a real field, and an entangled pair is one extended,
   non-factorizable configuration of it spanning A and B.
+
+This nonlocality — the non-separability of the real entangled field — is exactly
+standard quantum mechanics', and adds no postulate. It should not be confused with
+the *superluminal depletion* of the winner-take-all candidate (§3.3): that further,
+postulated nonlocality belongs to the speculative selection law, which the
+framework's core neither needs nor asserts.
 
 Naming the locus this way settles, at the level of *ontology*, the gap §7.3
 flagged ("no explicit locus for its nonlocality"): the nonlocal element is the
@@ -1571,8 +1619,12 @@ the shared anti-anthropocentrism but claim no kinship beyond it.
 
 ## 8. Open problems: what would make this a theory
 
-Two problems separate a single-world *picture* from a single-world *theory*, and
-the framework's status depends entirely on them:
+Two problems would separate a single-world *picture* from a single-world *theory* —
+but only for the *ambitious* version of the framework that seeks to **derive**
+outcome selection. The registration account of §3 does not depend on them: it
+inherits which outcome is selected (§1.3) and stands whether or not these are ever
+solved. They are recorded here as what the speculative selection candidate (§3.3)
+would have to supply, together with the routes tried:
 
 1. **The Born measure** — the second horn of the §3.3 fork, which states the gap
    in full; this entry records only what a derivation must supply, and the routes
