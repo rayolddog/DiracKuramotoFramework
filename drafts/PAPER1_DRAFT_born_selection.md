@@ -250,7 +250,21 @@ Three answers, in decreasing strength of the question. In the strongest sense �
 
 ### 9.2 Relation to other programs
 
-**Table 2 — Derivation programs compared.** *(Columns: supplies a selection mechanism; noise physically identified; fairness derived vs postulated; Born exact; modifies quantum dynamics; predicts deviations.)* *(Rows: Gleason; Deutsch–Wallace; Zurek; Dürr–Goldstein–Zanghì; Valentini; Pearle/GRW/CSL; Hughston/ABBH; Adler trace dynamics; Khrennikov PCSFT; Allahverdyan–Balian–Nieuwenhuizen; this work. — To be typeset.)*
+**Table 2 — Born-rule derivation programs compared.**
+
+| Program | Selection mechanism | Noise physically identified | Fairness / measure status | Born statistics | Modifies quantum dynamics | Predicts deviations |
+|---|---|---|---|---|---|---|
+| Gleason (1957) | none (uniqueness theorem) | — | — | unique consistent measure | no | no |
+| Deutsch–Wallace | none (rational credence) | — | — | derived as credence | no | no |
+| Zurek envariance | none (symmetry argument) | — | — | derived from symmetry | no | no |
+| Dürr–Goldstein–Zanghì | outcomes from beables; probabilities from typicality | — | equivariant measure, postulated typical | exact in equilibrium | no (adds beables) | no |
+| Valentini | relaxation of the measure | — | equilibration dynamics | equilibrium value | no (adds beables) | **yes** (non-equilibrium) |
+| Pearle / GRW / CSL | stochastic reduction | no | **postulated** (engineered noise) | exact | **yes** (new constants) | yes (heating, X-ray) |
+| Hughston / ABBH | stochastic reduction | no | **postulated** (martingale by construction) | exact | yes | yes (weak) |
+| Adler trace dynamics | emergent CSL | partially (substrate fluctuations) | postulated at effective level | exact | fundamental-level replacement | as CSL |
+| Khrennikov PCSFT | threshold detection | yes (classical random field) | — | approximate | replaces QM with field theory | yes |
+| Allahverdyan–Balian–Nieuwenhuizen | apparatus phase transition | yes (apparatus bath) | — (weights from QM) | inherited | no | no |
+| **This work** | detector energy game | **yes** (vacuum/environment noise at the detector) | **derived** (Theorems 1–5) | **exact** | **no** | **yes** (specified family, §8) |
 
 Three neighbors deserve individual comment. **Valentini's** quantum non-equilibrium is the nearest analogue of our deviation structure: there too the Born rule is an equilibrium condition that suitable physics could violate, with relaxation explaining why violations are unobserved. The difference is locus — relaxation of the configuration-space measure there, fairness of a detector-level game here — and consequently the predicted deviation signatures differ entirely (primordial/exotic matter there; engineered detector asymmetries here). **Khrennikov's** threshold-detection program is the nearest detector-side analogue: classical random fields plus threshold detectors yielding Born statistics. It obtains Born approximately and calibration-dependently, without the winner-take-all competition; the martingale structure is what buys exactness here. **Allahverdyan, Balian and Nieuwenhuizen's** Curie–Weiss analysis is the nearest apparatus-side analogue: registration as a metastable apparatus tipping into one basin, treated with full statistical-mechanical care within unitary quantum theory. It takes the outcome weights from standard quantum theory; the present work supplies the selection stochastics beneath such weights. We regard the three as complementary flanks of the same position — that measurement is detector physics — approached from the state, the field, and the apparatus respectively; this paper approaches it from the noise.
 
@@ -304,3 +318,60 @@ $$\dot S_A = \frac{\sigma^2}{E^2}\big(q_B S_A - q_A S_B\big), \qquad q_P = \sum_
 vanishing iff $q_A/S_A = q_B/S_B$ (matched collective structure). For the uniform-port model — $m$ equal-energy sites per port, internal correlation $c_P$ — one finds $q_P = S_P E\,[1 + (m-1)c_P]$ and hence
 $$\dot S_A = \frac{\sigma^2}{E}\,S_A S_B\,(m-1)\,(c_B - c_A):$$
 drift proportional to the collective-structure mismatch, suppressing the internally-correlated port, and vanishing for matched ports at any $c$. A constant drift-to-diffusion ratio integrates to the biased-ruin form $P'(S) \approx S + \kappa S(1-S)$ quoted in §8.3, with $\kappa \propto (m-1)(c_B - c_A)$; the simulations give effective $\kappa \approx -\,\Delta c_{\rm eff}$ at $m = 4$ over the tested range.
+
+## References
+
+*(Author–year style, alphabetical; matches in-text name citations. Entries flagged [verify] require bibliographic confirmation before any submission.)*
+
+- Adler, S. L. (2004). *Quantum Theory as an Emergent Phenomenon: The Statistical Mechanics of Matrix Models as the Precursor of Quantum Field Theory.* Cambridge University Press.
+- Adler, S. L. (2009). Is quantum theory exact? *Science* **325**, 275–276.
+- Adler, S. L., & Bassi, A. (2007). Collapse models with non-white noises. *J. Phys. A* **40**, 15083.
+- Adler, S. L., Brody, D. C., Brun, T. A., & Hughston, L. P. (2001). Martingale models for quantum state reduction. *J. Phys. A* **34**, 8795–8820. arXiv:quant-ph/0107153.
+- Allahverdyan, A. E., Balian, R., & Nieuwenhuizen, T. M. (2003). Curie–Weiss model of the quantum measurement process. *Europhys. Lett.* **61**, 452.
+- Allahverdyan, A. E., Balian, R., & Nieuwenhuizen, T. M. (2013). Understanding quantum measurement from the solution of dynamical models. *Phys. Rep.* **525**, 1–166. arXiv:1107.2138.
+- Asenjo-Garcia, A., Moreno-Cardoner, M., Albrecht, A., Kimble, H. J., & Chang, D. E. (2017). Exponential improvement in photon storage fidelities using subradiance and "selective radiance" in atomic arrays. *Phys. Rev. X* **7**, 031024.
+- Barnum, H., Caves, C. M., Finkelstein, J., Fuchs, C. A., & Schack, R. (2000). Quantum probability from decision theory? *Proc. R. Soc. A* **456**, 1175.
+- Bassi, A., & Ghirardi, G. C. (2003). Dynamical reduction models. *Phys. Rep.* **379**, 257–426. arXiv:quant-ph/0302164.
+- Brody, D. C., & Hughston, L. P. (2002). Efficient simulation of quantum state reduction. *J. Math. Phys.* **43**, 5254.
+- Brody, D. C., & Hughston, L. P. (2005). Finite-time stochastic reduction models. *J. Math. Phys.* **46**, 082101.
+- Brody, D. C., & Hughston, L. P. (2018). Quantum state reduction. In *Collapse of the Wave Function* (S. Gao, ed.), Cambridge University Press. arXiv:1611.02664.
+- de la Peña, L., Cetto, A. M., & Valdés-Hernández, A. (2015). *The Emerging Quantum: The Physics Behind Quantum Mechanics.* Springer.
+- Deutsch, D. (1999). Quantum theory of probability and decisions. *Proc. R. Soc. A* **455**, 3129.
+- Diósi, L. (1988). Quantum stochastic processes as models for state vector reduction. *J. Phys. A* **21**, 2885.
+- Dürr, D., Goldstein, S., & Zanghì, N. (1992). Quantum equilibrium and the origin of absolute uncertainty. *J. Stat. Phys.* **67**, 843–907.
+- Ghirardi, G. C., Pearle, P., & Rimini, A. (1990). Markov processes in Hilbert space and continuous spontaneous localization of systems of identical particles. *Phys. Rev. A* **42**, 78–89.
+- Gisin, N. (1984). Quantum measurements and stochastic processes. *Phys. Rev. Lett.* **52**, 1657–1660.
+- Gisin, N. (1989). Stochastic quantum dynamics and relativity. *Helv. Phys. Acta* **62**, 363–371.
+- Gisin, N. (1990). Weinberg's non-linear quantum mechanics and supraluminal communications. *Phys. Lett. A* **143**, 1–2.
+- Gisin, N., & Percival, I. C. (1992). The quantum-state diffusion model applied to open systems. *J. Phys. A* **25**, 5677.
+- Gleason, A. M. (1957). Measures on the closed subspaces of a Hilbert space. *J. Math. Mech.* **6**, 885–893.
+- Hughston, L. P. (1996). Geometry of stochastic state vector reduction. *Proc. R. Soc. A* **452**, 953–979.
+- Javanainen, J., & Ruostekoski, J. (2016). Light propagation beyond the mean-field theory of standard optics. *Opt. Express* **24**, 993.
+- Javanainen, J., Ruostekoski, J., Li, Y., & Yoo, S.-M. (2014). Shifts of a resonance line in a dense atomic sample. *Phys. Rev. Lett.* **112**, 113603.
+- Khrennikov, A. (2009). Detection model based on representation of quantum particles by classical random fields: Born's rule and beyond. *Found. Phys.* **39**, 997. arXiv:0805.1511.
+- Khrennikov, A. (2012a). Born's rule from measurements of classical signals by threshold detectors which are properly calibrated. *J. Mod. Opt.* **59**, 667. arXiv:1105.4269.
+- Khrennikov, A. (2012b). Born's rule from statistical mechanics of classical fields: from hitting times to quantum probabilities. arXiv:1212.0756.
+- Khrennikov, A. (2014). *Beyond Quantum.* Pan Stanford.
+- Lamb, W. E., Jr., & Scully, M. O. (1969). The photoelectric effect without photons. In *Polarisation, Matière et Rayonnement* (Kastler jubilee volume), Presses Universitaires de France, pp. 363–369.
+- Mandel, L., Sudarshan, E. C. G., & Wolf, E. (1964). Theory of photoelectric detection of light fluctuations. *Proc. Phys. Soc.* **84**, 435–444.
+- Mandel, L., & Wolf, E. (1995). *Optical Coherence and Quantum Optics.* Cambridge University Press.
+- Marshall, T. W., & Santos, E. (1988). Stochastic optics: A reaffirmation of the wave nature of light. *Found. Phys.* **18**, 185–223.
+- Masanes, L., Galley, T. D., & Müller, M. P. (2019). The measurement postulates of quantum mechanics are operationally redundant. *Nat. Commun.* **10**, 1361. — See also the critical exchange in *Quantum* **9**, 1749 and 1592 (2025). [verify exchange authors and pagination]
+- Pearle, P. (1976). Reduction of the state vector by a nonlinear Schrödinger equation. *Phys. Rev. D* **13**, 857–868.
+- Pearle, P. (1979). Toward explaining why events occur. *Int. J. Theor. Phys.* **18**, 489–518.
+- Pearle, P. (1982). Might God toss coins? *Found. Phys.* **12**, 249–263.
+- Pearle, P. (1989). Combining stochastic dynamical state-vector reduction with spontaneous localization. *Phys. Rev. A* **39**, 2277–2289.
+- Percival, I. C. (1994). Primary state diffusion. *Proc. R. Soc. A* **447**, 189–209.
+- Rui, J., et al. (2020). A subradiant optical mirror formed by a single structured atomic layer. *Nature* **583**, 369–374.
+- Ruostekoski, J. (2023). Cooperative quantum-optical planar arrays of atoms. *Phys. Rev. A* **108**, 030101. [verify title]
+- Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the speed of "spooky action at a distance." *Nature* **454**, 861–864.
+- Stefanov, A., Zbinden, H., Gisin, N., & Suarez, A. (2002). Quantum correlations with spacelike separated beam splitters in motion: experimental test of multisimultaneity. *Phys. Rev. Lett.* **88**, 120404.
+- Valentini, A. (1991a). Signal-locality, uncertainty, and the subquantum H-theorem, I. *Phys. Lett. A* **156**, 5.
+- Valentini, A. (1991b). Signal-locality, uncertainty, and the subquantum H-theorem, II. *Phys. Lett. A* **158**, 1.
+- Valentini, A., & Westman, H. (2005). Dynamical origin of quantum probabilities. *Proc. R. Soc. A* **461**, 253.
+- Wallace, D. (2012). *The Emergent Multiverse: Quantum Theory according to the Everett Interpretation.* Oxford University Press.
+- Yin, J., Cao, Y., Yong, H.-L., Ren, J.-G., et al. (2013). Lower bound on the speed of nonlocal correlations without locality and measurement choice loopholes. *Phys. Rev. Lett.* **110**, 260407.
+- Zbinden, H., Brendel, J., Gisin, N., & Tittel, W. (2001). Experimental test of nonlocal quantum correlation in relativistic configurations. *Phys. Rev. A* **63**, 022111.
+- Zurek, W. H. (2003). Environment-assisted invariance, entanglement, and probabilities in quantum physics. *Phys. Rev. Lett.* **90**, 120404.
+- Zurek, W. H. (2005). Probabilities from entanglement, Born's rule $p_k = |\psi_k|^2$ from envariance. *Phys. Rev. A* **71**, 052105.
+- [Framework repository] Bramble, J. M., & Claude (Anthropic). *The Dirac–Kuramoto framework.* Public version-controlled repository with complete revision history. [insert URL; verify repository visibility and preferred citation form before submission]
