@@ -32,7 +32,7 @@ Throughout, a measurement event is decomposed into three stages — **capture** 
 
 **P1 (Energetics of capture).** *The incident wave couples to every site within its bandwidth, driving each as a damped oscillator; the energy deposited at site $i$ during capture is proportional to the squared local amplitude,*
 $$e_i(0) \propto A_i^2 .$$
-This is elementary driven-oscillator energetics — the energy of an oscillator is quadratic in its displacement — and it is where the squaring enters the theory: as mechanics, not as a probability rule. The same fact appears as the small-tip-angle excitation law in magnetic resonance ($\propto \sin^2(\theta/2) \approx \theta^2/4$) and as the semiclassical photodetection rate $\propto |E(\mathbf r)|^2$ of Lamb and Scully [ref] and Mandel–Sudarshan–Wolf [ref]. We emphasize a discipline that P1 imposes: at the capture stage *every* illuminated site is excited, in proportion to the local intensity. The single-site character of the eventual event is the *output* of selection, never an input. (Reducing the perturbative sum over sites to a single absorption diagram already presupposes the Born rule; we do not do so.)
+This is elementary driven-oscillator energetics — the energy of an oscillator is quadratic in its displacement — and it is where the squaring enters the theory: as mechanics, not as a probability rule. The same fact appears as the small-tip-angle excitation law in magnetic resonance ($\propto \sin^2(\theta/2) \approx \theta^2/4$) and as the semiclassical photodetection rate $\propto |E(\mathbf r)|^2$ of Lamb and Scully [Lamb & Scully 1969] and Mandel–Sudarshan–Wolf [Mandel et al. 1964]. We emphasize a discipline that P1 imposes: at the capture stage *every* illuminated site is excited, in proportion to the local intensity. The single-site character of the eventual event is the *output* of selection, never an input. (Reducing the perturbative sum over sites to a single absorption diagram already presupposes the Born rule; we do not do so.)
 
 **P2 (Amplitude-linear coupling).** *All couplings in the selection dynamics — the drive, site–field exchange, and the vacuum/environment noise — act linearly on wave amplitudes.* Consequently a noise force $\xi(t)$ does work on site $i$ at a rate proportional to its amplitude $\sqrt{e_i}$, so the stochastic increment of the site energy has the form
 $$de_i = (\text{drift terms}) + \sigma\sqrt{e_i}\;dW_i ,$$
@@ -48,7 +48,7 @@ The final two premises are of a different character: they are the ontological co
 
 **P6 (Ordering foliation).** *Registration events are ordered by a global foliation (a preferred time-slicing); for spacelike-separated commitments, "first" refers to this ordering.* P6 is consumed only in §7, and only to make the two-stage construction well-defined; §7.1 shows the outcome statistics are independent of the ordering, and §7.3 discusses the experimental status of preferred-frame effects.
 
-Three remarks on the status of the premises. First, they are logically independent handles: each theorem of §5 consumes specific premises, and each experimental proposal of §8 targets a specific premise's failure. Second, P1–P4 are not exotic: P1 and P4 are standard detector physics, P3 is standard detector *matter* physics, and P2 is the structural assumption already underlying the perturbative rate laws of ordinary quantum optics. Third, P5 and P6 are where the premises exceed standard physics, and they are quarantined: no single-detector result (§§3–5, §6.1) uses either. Any ontology supplying P5–P6 supports the constructions built on them; one concrete realization — a substrate framework in active, publicly documented development — supplies all six premises and motivated this investigation [ref; see §9].
+Three remarks on the status of the premises. First, they are logically independent handles: each theorem of §5 consumes specific premises, and each experimental proposal of §8 targets a specific premise's failure. Second, P1–P4 are not exotic: P1 and P4 are standard detector physics, P3 is standard detector *matter* physics, and P2 is the structural assumption already underlying the perturbative rate laws of ordinary quantum optics. Third, P5 and P6 are where the premises exceed standard physics, and they are quarantined: no single-detector result (§§3–5, §6.1) uses either. Any ontology supplying P5–P6 supports the constructions built on them; one concrete realization — a substrate framework in active, publicly documented development — supplies all six premises and motivated this investigation [Framework repository; see §9].
 
 ## 3. Stage 1 — capture
 
@@ -80,7 +80,7 @@ These failures define the burden of §5 exactly: the physics must place the exch
 
 ## 5. The fairness theorems
 
-Every dynamical account of outcome selection before this one obtains Born statistics by *engineering* the noise so that the engine theorem applies; Gisin's no-signaling results [refs] explain why they had no choice. The content of this paper is that no engineering is needed: the fairness is forced by the premises of §2. We prove this as four theorems, each answering one physical objection to fairness. The objections are not strawmen — §4's simulations show that plausible alternatives (extreme-value selection; state-independent noise; correlated noise; nonlinear registration) each destroy Born statistics decisively. Fairness is a knife-edge, and the physics must place the system exactly on it. It does.
+Every dynamical account of outcome selection before this one obtains Born statistics by *engineering* the noise so that the engine theorem applies; Gisin's no-signaling results [Gisin 1989; Gisin 1990] explain why they had no choice. The content of this paper is that no engineering is needed: the fairness is forced by the premises of §2. We prove this as four theorems, each answering one physical objection to fairness. The objections are not strawmen — §4's simulations show that plausible alternatives (extreme-value selection; state-independent noise; correlated noise; nonlinear registration) each destroy Born statistics decisively. Fairness is a knife-edge, and the physics must place the system exactly on it. It does.
 
 ### 5.1 Theorem 1: the noise cannot cheat (fairness from P2)
 
@@ -228,7 +228,7 @@ Let the two ports differ in collective structure — one a dense sub-wavelength 
 $$P'(S) \;\approx\; S + \kappa\,S(1-S)$$
 (the internally correlated port *suppressed* — a Jensen-inequality effect: correlated noise inflates a port's energy variance, and shares are concave in energy), together with a state-dependent no-click rate in the strong-correlation limit.
 
-An essential caution [handles the dressed-mode objection]: for radiative-dominated arrays, standard quantum mechanics *itself* predicts collective modifications of absorption — the response is governed by dressed (sub- and superradiant) modes, not independent atoms [Asenjo-Garcia et al. 2017; Javanainen et al. 2014; Javanainen & Ruostekoski 2016] — and the collective response is not hypothetical but measured: a single sub-wavelength monolayer of a few hundred atoms shows subradiant line narrowing and mirror-grade reflectivity [Rui et al. 2020], controllable at the single-photon level [Srakaew et al. 2023]. Deviation from *naive per-site* weighting is therefore ordinary cooperative optics and tests nothing. The framework's claim is a deviation from the *dressed-mode Born prediction*; the quantitative confrontation of the port game with the collective-mode calculation is open work, and the discriminator below is designed so that this subtlety cannot contaminate it.
+An essential caution: for radiative-dominated arrays, standard quantum mechanics *itself* predicts collective modifications of absorption — the response is governed by dressed (sub- and superradiant) modes, not independent atoms [Asenjo-Garcia et al. 2017; Javanainen et al. 2014; Javanainen & Ruostekoski 2016] — and the collective response is not hypothetical but measured: a single sub-wavelength monolayer of a few hundred atoms shows subradiant line narrowing and mirror-grade reflectivity [Rui et al. 2020], controllable at the single-photon level [Srakaew et al. 2023]. Deviation from *naive per-site* weighting is therefore ordinary cooperative optics and tests nothing. The framework's claim is a deviation from the *dressed-mode Born prediction*; the quantitative confrontation of the port game with the collective-mode calculation is open work, and the discriminator below is designed so that this subtlety cannot contaminate it.
 
 ### 8.4 A tabletop discriminator
 
@@ -270,7 +270,7 @@ Three neighbors deserve individual comment. **Valentini's** quantum non-equilibr
 
 ### 9.3 Relation to a broader program
 
-The premises of §2 are not free-floating. They are realized in a specific substrate framework — the Dirac–Kuramoto program — in active development by the present authors, which supplied the wave ontology behind P1, the coupling postulate P2, the locking threshold of P4(i), and the shared registry and foliation of P5–P6, and which motivated this investigation. The framework's development is publicly documented in a version-controlled repository [ref], whose complete, timestamped revision history constitutes the provenance record of the program, including the evolution of the present mechanism through its intermediate (and twice-retracted) forms. A companion paper develops the measurement-structure consequences — the classical–quantum boundary as the locking threshold quantified in Theorem 2. The present paper is nonetheless deliberately self-contained: its results are conditional on the stated premises and stand or fall with them, not with the framework; any ontology supplying P1–P6 inherits every theorem.
+The premises of §2 are not free-floating. They are realized in a specific substrate framework — the Dirac–Kuramoto program — in active development by the present authors, which supplied the wave ontology behind P1, the coupling postulate P2, the locking threshold of P4(i), and the shared registry and foliation of P5–P6, and which motivated this investigation. The framework's development is publicly documented in a version-controlled repository [Framework repository], whose complete, timestamped revision history constitutes the provenance record of the program, including the evolution of the present mechanism through its intermediate (and twice-retracted) forms. A companion paper develops the measurement-structure consequences — the classical–quantum boundary as the locking threshold quantified in Theorem 2. The present paper is nonetheless deliberately self-contained: its results are conditional on the stated premises and stand or fall with them, not with the framework; any ontology supplying P1–P6 inherits every theorem.
 
 ### 9.4 Open problems
 
@@ -324,7 +324,7 @@ drift proportional to the collective-structure mismatch, suppressing the interna
 *(Author–year style, alphabetical; matches in-text name citations. Entries flagged [verify] require bibliographic confirmation before any submission.)*
 
 - Adler, S. L. (2004). *Quantum Theory as an Emergent Phenomenon: The Statistical Mechanics of Matrix Models as the Precursor of Quantum Field Theory.* Cambridge University Press.
-- Adler, S. L. (2009). Is quantum theory exact? *Science* **325**, 275–276.
+- Adler, S. L., & Bassi, A. (2009). Is quantum theory exact? *Science* **325**, 275–276.
 - Adler, S. L., & Bassi, A. (2007). Collapse models with non-white noises. *J. Phys. A* **40**, 15083.
 - Adler, S. L., Brody, D. C., Brun, T. A., & Hughston, L. P. (2001). Martingale models for quantum state reduction. *J. Phys. A* **34**, 8795–8820. arXiv:quant-ph/0107153.
 - Allahverdyan, A. E., Balian, R., & Nieuwenhuizen, T. M. (2003). Curie–Weiss model of the quantum measurement process. *Europhys. Lett.* **61**, 452.
@@ -349,14 +349,14 @@ drift proportional to the collective-structure mismatch, suppressing the interna
 - Javanainen, J., & Ruostekoski, J. (2016). Light propagation beyond the mean-field theory of standard optics. *Opt. Express* **24**, 993.
 - Javanainen, J., Ruostekoski, J., Li, Y., & Yoo, S.-M. (2014). Shifts of a resonance line in a dense atomic sample. *Phys. Rev. Lett.* **112**, 113603.
 - Khrennikov, A. (2009). Detection model based on representation of quantum particles by classical random fields: Born's rule and beyond. *Found. Phys.* **39**, 997. arXiv:0805.1511.
-- Khrennikov, A. (2012a). Born's rule from measurements of classical signals by threshold detectors which are properly calibrated. *J. Mod. Opt.* **59**, 667. arXiv:1105.4269.
-- Khrennikov, A. (2012b). Born's rule from statistical mechanics of classical fields: from hitting times to quantum probabilities. arXiv:1212.0756.
-- Khrennikov, A. (2014). *Beyond Quantum.* Pan Stanford.
+- Khrennikov, A. (2012). Born's rule from measurements of classical signals by threshold detectors which are properly calibrated. *J. Mod. Opt.* **59**, 667–678. arXiv:1105.4269.
+- Khrennikov, A. (2014a). Born's rule from statistical mechanics of classical fields: from hitting times to quantum probabilities. *Physica A* **393**, 207–221. arXiv:1212.0756.
+- Khrennikov, A. (2014b). *Beyond Quantum.* Pan Stanford.
 - Lamb, W. E., Jr., & Scully, M. O. (1969). The photoelectric effect without photons. In *Polarisation, Matière et Rayonnement* (Kastler jubilee volume), Presses Universitaires de France, pp. 363–369.
 - Mandel, L., Sudarshan, E. C. G., & Wolf, E. (1964). Theory of photoelectric detection of light fluctuations. *Proc. Phys. Soc.* **84**, 435–444.
 - Mandel, L., & Wolf, E. (1995). *Optical Coherence and Quantum Optics.* Cambridge University Press.
 - Marshall, T. W., & Santos, E. (1988). Stochastic optics: A reaffirmation of the wave nature of light. *Found. Phys.* **18**, 185–223.
-- Masanes, L., Galley, T. D., & Müller, M. P. (2019). The measurement postulates of quantum mechanics are operationally redundant. *Nat. Commun.* **10**, 1361. — See also the critical exchange in *Quantum* **9**, 1749 and 1592 (2025). [verify exchange authors and pagination]
+- Masanes, L., Galley, T. D., & Müller, M. P. (2019). The measurement postulates of quantum mechanics are operationally redundant. *Nat. Commun.* **10**, 1361. — See also the critical exchange: Kent, A. (2025), The measurement postulates of quantum mechanics are not redundant, *Quantum* **9**, 1749; and Masanes, L., Galley, T. D., & Müller, M. P. (2025), Response to "The measurement postulates of quantum mechanics are not redundant," *Quantum* **9**, 1592.
 - Paris-Mandoki, A., Braun, C., Kumlin, J., Tresp, C., Mirgorodskiy, I., Christaller, F., Büchler, H. P., & Hofferberth, S. (2017). Free-space quantum electrodynamics with a single Rydberg superatom. *Phys. Rev. X* **7**, 041010.
 - Pearle, P. (1976). Reduction of the state vector by a nonlinear Schrödinger equation. *Phys. Rev. D* **13**, 857–868.
 - Pearle, P. (1979). Toward explaining why events occur. *Int. J. Theor. Phys.* **18**, 489–518.
@@ -364,7 +364,7 @@ drift proportional to the collective-structure mismatch, suppressing the interna
 - Pearle, P. (1989). Combining stochastic dynamical state-vector reduction with spontaneous localization. *Phys. Rev. A* **39**, 2277–2289.
 - Percival, I. C. (1994). Primary state diffusion. *Proc. R. Soc. A* **447**, 189–209.
 - Rui, J., et al. (2020). A subradiant optical mirror formed by a single structured atomic layer. *Nature* **583**, 369–374.
-- Ruostekoski, J. (2023). Cooperative quantum-optical planar arrays of atoms. *Phys. Rev. A* **108**, 030101. [verify title]
+- Ruostekoski, J. (2023). Cooperative quantum-optical planar arrays of atoms. *Phys. Rev. A* **108**, 030101 (Perspective).
 - Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the speed of "spooky action at a distance." *Nature* **454**, 861–864.
 - Srakaew, K., Weckesser, P., Hollerith, S., Wei, D., Adler, D., Bloch, I., & Zeiher, J. (2023). A subwavelength atomic array switched by a single Rydberg atom. *Nat. Phys.* **19**, 714–719.
 - Stefanov, A., Zbinden, H., Gisin, N., & Suarez, A. (2002). Quantum correlations with spacelike separated beam splitters in motion: experimental test of multisimultaneity. *Phys. Rev. Lett.* **88**, 120404.
@@ -378,4 +378,4 @@ drift proportional to the collective-structure mismatch, suppressing the interna
 - Zbinden, H., Brendel, J., Gisin, N., & Tittel, W. (2001). Experimental test of nonlocal quantum correlation in relativistic configurations. *Phys. Rev. A* **63**, 022111.
 - Zurek, W. H. (2003). Environment-assisted invariance, entanglement, and probabilities in quantum physics. *Phys. Rev. Lett.* **90**, 120404.
 - Zurek, W. H. (2005). Probabilities from entanglement, Born's rule $p_k = |\psi_k|^2$ from envariance. *Phys. Rev. A* **71**, 052105.
-- [Framework repository] Bramble, J. M., & Claude (Anthropic). *The Dirac–Kuramoto framework.* Public version-controlled repository with complete revision history. [insert URL; verify repository visibility and preferred citation form before submission]
+- [Framework repository] Bramble, J. M., & Claude (Anthropic). *DiracKuramotoFramework: The Many Clocks Interpretation of Quantum Mechanics.* Public version-controlled repository with complete revision history. https://github.com/rayolddog/DiracKuramotoFramework (visibility verified public; preferred citation metadata in the repository's CITATION.cff). [confirm author order against per-paper byline policy before submission]

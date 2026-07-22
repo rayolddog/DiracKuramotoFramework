@@ -102,6 +102,13 @@ pandoc "${REPO_DIR}/DISCRETIZATION_AS_SYNC_PAPER.md" \
     --toc --toc-depth=2 \
     "${PANDOC_OPTS[@]}"
 
+# Build the Born-selection paper (Paper 1 draft)
+echo "Building Born_Selection.pdf from drafts/PAPER1_DRAFT_born_selection.md..."
+pandoc "${REPO_DIR}/drafts/PAPER1_DRAFT_born_selection.md" \
+    -o "${REPO_DIR}/Born_Selection.pdf" \
+    --toc --toc-depth=2 \
+    "${PANDOC_OPTS[@]}"
+
 # Build the equations reference
 echo "Building equations.pdf from EQUATIONS.md..."
 pandoc "${REPO_DIR}/EQUATIONS.md" \
