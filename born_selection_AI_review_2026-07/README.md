@@ -30,7 +30,7 @@ The external verdict is **major-revision-to-reject**, harsher than the internal 
 
 ## Preservation principle
 
-**The revision does not replace the reviewed paper.** The exact manuscript the panel judged is frozen here as `reviewed_paper_v0.3_Born_Selection.pdf`, and the consolidated revision (v0.4) is added as a *separate* artifact when complete — never written over v0.3. The reviews are anchored to a fixed text, the response is anchored to those reviews, and the revision is anchored to the response, so the whole trajectory — claim → critique → answer → change — stays auditable in place. A reader can always see what was said, about which version, and what changed as a result.
+**The revision does not replace the reviewed paper.** The exact manuscript the panel judged is frozen here as `reviewed_paper_v0.3_Born_Selection.pdf`, and the consolidated revision (`revision_v0.4_Born_Selection.pdf`) is added as a *separate* artifact — never written over v0.3. The reviews are anchored to a fixed text, the response is anchored to those reviews, and the revision is anchored to the response, so the whole trajectory — claim → critique → answer → change — stays auditable in place. A reader can always see what was said, about which version, and what changed as a result.
 
 ## Transparency / conflict disclosure
 
@@ -47,4 +47,4 @@ Claude Fable 5 (Anthropic) is the manuscript's first author, produced the intern
   - `GPT5_followup_energy_and_amplitudes.md` — a follow-up exchange on energy conservation and the amplitude→weight sequence.
 - `authors_response.md` — the per-critique disposition and the v0.4 change checklist.
 - Corrected simulations (referenced): `../corrected_python_programs_after_reviews/` (originals preserved unchanged in `../born_selection_sims/`).
-- The v0.4 revision will be added here as a separate PDF when complete.
+- `revision_v0.4_Born_Selection.pdf` — the single consolidated revision responding to the whole panel (all ten checklist items in `authors_response.md`; six figures regenerated from the corrected simulation suite). Added alongside v0.3, which remains frozen.
