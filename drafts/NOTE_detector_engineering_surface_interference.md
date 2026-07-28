@@ -32,6 +32,24 @@ JB's second point: the framework shows noise entering the recording through its 
 2. Noise that acquires phase coherence or spatial correlation shifts the *odds* (Theorem 3's computable penalty) — a qualitatively different failure signature: biased statistics, not just excess counts.
 3. This dichotomy is testable in principle: deliberately injecting correlated vs uncorrelated perturbations into a detector should move statistics vs rates respectively — a lab-bench echo of Paper 1's §8 program, and possibly a diagnostic taxonomy for real instrument noise.
 
+## Bell-station independence (JB's question, 2026-07-28: must the *phases* of the two stations' power supplies be uncorrelated?)
+
+**Answer: the framework turns this from hygiene into a premise statement (P3 across stations), but supplies a frequency-band criterion that makes mains-phase correlation harmless — and points the finger at a different shared reference that real Bell experiments actually have.**
+
+**Two channels.**
+1. *Rates (standard systematic, QM and DK agree).* A common slow modulation — both stations on one grid share 60 Hz phase by default — wobbles gain/threshold/dark rate together, correlating coincidences in time. Known disease, known cure: fast random setting switching, time-tagging, short-block analysis. Nothing framework-specific.
+2. *Odds (framework-specific).* A perturbation can bias *which port wins* only by acting as a phase reference *within the selection game*: coherent structure in $\delta b_i$ during the game's lifetime. With the §6.1 selection window at ~12–81 ps, the dangerous band is **~10–100 GHz and up, plus the optical carrier itself** (the LO effect). Mains ripple at 60 Hz is quasi-static on that clock — over one game it is a frozen DC offset, identical whether or not the supplies are phase-locked. It cannot reference an intra-game phase any more than the tide can bias a coin flip mid-air. Correlated supply *phases*: harmless to odds. Correlated supply *drift*: channel 1, already handled.
+
+**Three-factor ranking for any cross-station coupling:** (i) spectral overlap with the selection band; (ii) phase coherence between stations; (iii) amplitude actually reaching the absorber sites (not just the electronics).
+
+**Shared-reference audit list for a real Bell experiment** (benign → biting):
+- *Mains / power supplies* — fails (i) by ~10 orders. Odds-safe; rates only.
+- *Common 10 MHz / GPS-disciplined clock* (nearly universal: both time-taggers locked to one oscillator) — phase-coherent but ~3 orders below band, and confined to shielded electronics. Marginal-to-safe.
+- *GHz-synchronized electronics* (pulsed pumps, gated detectors) — in band and coherent; reduces to a shielding question at factor (iii).
+- *Shared optical references* — pump laser distributed to both stations, pump bleed-through into detectors, common local oscillator in homodyne-type tests. Phase-coherent at the carrier, at the absorber, at both stations: a correlated P3(a) violation across stations, the two-station analogue of Theorem 3's correlated-noise penalty. **The one item worth auditing in existing experiments.** No standard Bell analysis requires this check, because in QM correlated classical noise can fake correlations only through rates, never redirect outcomes.
+
+**The discriminating test (candidate — cross-station injection).** Deliberately inject a common phase-coherent perturbation in the selection band at both stations of a working Bell setup and watch $S$. Standard QM: nothing beyond rate artifacts, removable by time-tagged analysis. Framework: a genuine shift in outcome statistics, computable from the Theorem 3 machinery and growing with the correlated fraction $f$. This is the cross-station extension of Paper 1's §8 program — the existing proposals violate P3 *within* one detector; this violates it *between* detectors — reusing the same knob (engineered phase reference) that the homodyne limit validates at the single-detector level. Prerequisite before any ledger promotion: the Theorem-3 cross-station calculation (joint two-station game with a shared coherent noise component; how does the §7 fidelity law $S = 2\sqrt2\,\eta$ deform?).
+
 ## Links
 
 - Paper 1 v0.5 §4 ("The physical origin of the noise"), §9.4(iv) (open problem: promote sketch to conserving open-system calculation).
