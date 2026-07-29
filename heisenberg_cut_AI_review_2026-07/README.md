@@ -16,13 +16,18 @@ This folder is the review record for the manuscript *The Heisenberg Cut as a Phy
 5. **Anticipated-findings ledger** — `anticipated_findings.md` in this folder was written and committed **before any review was requested**. Each incoming finding will be classified against it as *known-open* (anticipated) or *genuinely new*; that classification is part of the published output.
 6. **Response and revision** — authors' response with per-critique dispositions; a single consolidated revision (v0.3) added alongside the frozen v0.2, never over it; bounded resolution loop (≤5 rounds) for load-bearing disputes.
 
-## Scores
-
-*(To be filled verbatim as reviews return; spread preserved, never averaged.)*
+## Scores (panel returned 2026-07-28; spread preserved, never averaged)
 
 | Reviewer (lab) | Web-enabled | Followed repo pointer | Recommendation | Overall | Novelty | Internal consist. | Evidential | Reproducibility | Citation |
 |---|---|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| — | — | — | — | — | — | — | — | — | — |
+| GPT-5.6 Thinking (OpenAI) | yes | yes | reject | **1** | 3 | 1 | 1 | 3 | 3 |
+| Gemini, "standard" (Google) | no† | no† | major revision | **4** | 4 | 4 | 3 | 4 | 5 |
+| Grok 4.5 (xAI) | yes | yes | major revision | **2** | 3 | 4 | 2 | 4 | 4 |
+| *Fable 5 (Anthropic) — internal, down-weighted* | *author* | *author* | *major revision* | *2* | *3* | *3* | *2* | *4* | *4* |
+
+† Gemini reported it could not use web access due to environment constraints — so this round's access *invitation* did not achieve access *equalization* (see the protocol finding in `findings_classification.md`). All three externals complied with the scoped exclusion of this folder.
+
+The external verdict is **major-revision-to-reject**, with the spread (1/2/4) again carrying information: the two provenance-aware (web-enabled, repository-auditing) reviewers scored 1 and 2; the manuscript-only reviewer scored 4 — the same access–severity correlation as round 1, now visible under equalized *invitation*. The internal review (2) sits inside the external range this round, unlike round 1 where it sat above it. One reviewer (GPT-5.6) independently re-ran the public figure script and identified a genuine threshold-labeling error in Figure 1(a) — reproducible ≠ correct, for the second consecutive round. Findings are classified against the pre-logged ledger in `findings_classification.md`.
 
 ## Preservation principle
 
