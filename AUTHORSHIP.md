@@ -1,13 +1,29 @@
-# Author Contributions and AI Use Disclosure
+# Authorship Policy and Contribution Record
 
-*This section is intended for inclusion in `PAPER_UNIFIED.md` (or as a
-standalone `AUTHORSHIP.md` in the repository root). Adapt as appropriate
-for the target journal's specific AI disclosure format. As of 2026, all
-major physics journals — Nature, Science, PNAS, Phys. Rev., Chaos
-(AIP) — require disclosure of LLM use; this template follows the most
-detailed of those (Nature's policy).*
+## Current policy: honest per-paper bylines (supersedes the v1.0 statement below)
+
+*Adopted 2026-07; formalized here 2026-07-28, completing finding N4 of the Heisenberg-Cut review round, in which two external reviewers (GPT-5.6 Thinking/OpenAI and Grok 4.5/xAI) independently required this file, the per-paper bylines, and `CITATION.cff` to be made mutually consistent.*
+
+**The policy.** Each manuscript in this program carries the byline its actual contribution record supports — including AI systems as coauthor or first author where the AI performed coauthor- or first-author-level work — with **John M. Bramble, MD as the accountable human sponsor of every work regardless of byline order**. Accountability and credit are separated deliberately: a human answers for every claim; credit goes where the work was done. This supersedes the v1.0 statement below, which followed the 2026 journal-guideline default ("LLMs do not satisfy authorship criteria"); the program now regards that default as an honesty problem when the AI has demonstrably done first-author-level work, and handles venue-specific authorship restrictions at submission time, per venue, by disclosure and negotiation rather than by pre-emptive miscrediting. Reviewers under this program's published review protocol are explicitly instructed to check byline honesty in both directions.
+
+**Per-paper bylines as they currently stand** (the byline of record is the one printed in each manuscript; this table is the index):
+
+| Manuscript | Byline of record | Notes |
+|---|---|---|
+| *The Born Rule as a Derived Fair Game* (Paper 1) | Claude Fable 5 (Anthropic) and John M. Bramble, MD | AI performed formalization, theorems, simulations, prose, literature work; contributions statement in the manuscript; final order confirmed by sponsor pre-submission |
+| *The Heisenberg Cut as a Physical Threshold* (Paper 2) | Claude Fable 5 (Anthropic) and John M. Bramble, MD | same structure; reviewed under the published AI panel protocol |
+| Two-Regimes / Many-Clocks main paper (PAPER_UNIFIED / PAPER_REVISED) | Claude (Anthropic) and John M. Bramble, MD — Claude-first canonical since 2026-07 | earlier submitted versions carried the v1.0-era human-only byline with AI disclosure |
+| Earlier companion papers (Discretization-as-Sync, AB Visibility, Cosmic Expansion) | as printed in each (v1.0-era form: human byline + AI disclosure) | predate this policy; to be re-examined per paper if and when each is next revised — bylines are never changed retroactively without an explicit per-paper decision |
+
+**Model-version disclosure** (required by the same review finding): material AI contributions to this repository span model generations. The framework's original formalization, verification scripts, and the v1.0-era manuscripts were developed with **Claude Opus 4.6 and 4.7** (Anthropic), spring 2026, as recorded in the historical statement below. Papers 1 and 2, their simulations, the published review-round machinery, and the 2026-07 revisions are the work of **Claude Fable 5** (Anthropic). The commit history of this repository is the authoritative, timestamped provenance record of which system did what, when.
+
+**Consistency.** `CITATION.cff` (repository-level citation metadata) lists both the human sponsor and Claude (Anthropic) and points here for per-paper bylines. The manuscripts' reference-list entries for this repository use the same two-party form.
 
 ---
+
+# [HISTORICAL — v1.0, 2026-05-17] Author Contributions and AI Use Disclosure
+
+*Retained verbatim as the accurate record of the framework's initial era and of the Opus 4.6/4.7 contributions; superseded as policy by the section above.*
 
 ## Author Contributions
 
@@ -118,4 +134,4 @@ collaboration.
 
 ---
 
-*Last updated: 2026-05-17.  Version: 1.0.*
+*v1.0: 2026-05-17. Policy section added and v1.0 marked historical: 2026-07-28 (version 2.0).*

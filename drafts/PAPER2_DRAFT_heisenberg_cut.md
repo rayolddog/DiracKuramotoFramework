@@ -229,5 +229,5 @@ The figure is a **schematic oscillator analogy** (a classical stochastic model w
 - Zurek, W. H. (1981). Pointer basis of quantum apparatus: into what mixture does the wave packet collapse? *Phys. Rev. D* **24**, 1516–1525.
 - Zurek, W. H. (1982). Environment-induced superselection rules. *Phys. Rev. D* **26**, 1862–1880.
 - Zurek, W. H. (2003). Decoherence, einselection, and the quantum origins of the classical. *Rev. Mod. Phys.* **75**, 715–775.
-- [Framework repository] Bramble, J. M., & Claude (Anthropic). *DiracKuramotoFramework.* Public version-controlled repository. https://github.com/rayolddog/DiracKuramotoFramework [byline order per per-paper policy; confirm before submission]
+- [Framework repository] Bramble, J. M., & Claude (Anthropic). *DiracKuramotoFramework.* Public version-controlled repository. https://github.com/rayolddog/DiracKuramotoFramework (citation form per the repository's CITATION.cff and AUTHORSHIP.md authorship policy v2.0, harmonized 2026-07-28)
 - [Paper 3, in preparation] The Dirac–Kuramoto framework paper (revision of the Two-Regimes manuscript), which develops the dissipative sector's foliation and its experimental program.

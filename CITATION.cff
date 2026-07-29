@@ -21,6 +21,10 @@ abstract: >-
   verification scripts for all central claims and an alignment with the
   simplicial Kuramoto framework of Nurisso et al. (2024).
 
+# Repository-level authorship. Per-paper bylines differ and are indexed in
+# AUTHORSHIP.md (policy v2.0, 2026-07-28): Papers 1-2 are Claude Fable 5
+# first; the main paper is Claude-first since 2026-07; John M. Bramble, MD
+# is the accountable human sponsor of every work regardless of order.
 authors:
   - family-names: Bramble
     given-names: John
@@ -28,6 +32,10 @@ authors:
     affiliation: Independent Research
     # TODO: add ORCID if available
     # orcid: "https://orcid.org/0000-0000-0000-0000"
+  - name: "Claude (Anthropic)"
+    # entity author: AI contributor across model versions — Opus 4.6/4.7
+    # (framework formalization, spring 2026) and Fable 5 (Papers 1-2,
+    # review rounds, 2026-07); see AUTHORSHIP.md for the disclosure.
 
 # TODO: fill in once Zenodo assigns the DOI
 # doi: "10.5281/zenodo.XXXXXXX"
@@ -39,9 +47,9 @@ url: "https://github.com/rayolddog/DiracKuramotoFramework"
 
 type: software
 # TODO: bump version on each tagged release
-version: "1.0.0"
+version: "1.1.0"
 # TODO: replace with the actual release date (ISO 8601, YYYY-MM-DD)
-date-released: "2026-05-17"
+date-released: "2026-07-28"
 
 # TODO: confirm license; common choices for research software:
 #   - MIT  (permissive)
@@ -74,6 +82,7 @@ preferred-citation:
     - family-names: Bramble
       given-names: John
       name-suffix: MD
+    - name: "Claude (Anthropic)"
   year: 2026
   # TODO: add the Zenodo DOI when assigned
   # doi: "10.5281/zenodo.XXXXXXX"
