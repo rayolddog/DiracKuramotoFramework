@@ -8,11 +8,12 @@
 - 2026-07-04 19:36 MDT — v5
 - 2026-07-05 18:30 MDT — v6
 - 2026-07-05 18:42 MDT — v7
+- 2026-07-29 10:04 MDT — v8
 
 ---
 
-# Two Regimes of the Chiral Mass Coupling
-## Quantum Measurement as Bath-Induced Synchronization
+# The Many Clocks Interpretation
+## Quantum Measurement as Bath-Induced Synchronization: Two Regimes of the Chiral Mass Coupling
 
 **Claude (Opus 4.6 / 4.7 / 4.8)¹ · John Bramble, MD²**
 ¹ Anthropic
@@ -108,7 +109,10 @@ clock-as-local-variable model is sub-classical, CHSH ≤ $\sqrt{2}$; Appendix A)
 preserves no-signaling — its nonlocality is exactly standard quantum mechanics', no
 more, confining its own contribution to the *local* registration mechanism. Two
 problems it does not solve, and inherits or parks: which outcome is selected
-(inherited, as in standard conditional-measurement theory) and the Born measure. A
+(inherited, as in standard conditional-measurement theory) and the Born measure
+— both since addressed, conditionally, by a companion paper deriving outcome
+selection as a proved fair game from stated detector premises [47]; this
+paper's account stands independently of that result. A
 background-field selection law that would *derive* both — carrying the framework's own
 preferred frame, and, were it real, a nonlocality of its own — is offered only as a
 speculative candidate, never as a claim; the registration account does not rest on it. Its one candidate signature, a linewidth-dependent gravitational Bell
@@ -158,8 +162,8 @@ macroscopic reference (§3). We call the resulting reading the **Many Clocks Int
 interactions synchronize clocks locally, no observer is required, and no
 branching occurs.
 
-The interpretive spine — common to this paper and its measurement companion
-("The Dirac Equation, the Heisenberg Cut, and the Measurement Problem") — is that
+The interpretive spine — common to this paper and its companion papers on
+outcome selection [47] and on the physical Heisenberg cut [48] — is that
 **the wavefunction never collapses; it evolves.** Measurement is continued unitary
 evolution in which the incident state's information disperses into the detector,
 so the appearance of collapse is *effective*, information-theoretic irreversibility
@@ -182,9 +186,16 @@ distributing them through the paper:
 - **We accept Bell and preserve no-signaling.** The framework is not
   superdeterministic; detector settings are free, and nothing in it permits
   faster-than-light signaling (§7.5).
-- **The Born rule is reframed, not derived.** The gap is stated once, in full,
-  as the fork of §3.3 and carried as open problem 1 of §8; later mentions refer
-  back to it rather than restate it.
+- **The Born rule is not derived in this paper — and is now addressed in a
+  companion.** The gap is stated once, in full, as the fork of §3.3 and carried
+  as open problem 1 of §8; later mentions refer back to it rather than restate
+  it. Since this paper's review round, the companion selection paper [47] has
+  derived the *fairness* of the outcome-selection game from stated detector
+  premises (four theorems, conditional on a wave-realism premise and ordinary
+  detector physics), leaving the square itself to Gleason's theorem and to
+  driven-oscillator energetics. This paper's registration account neither
+  consumes nor depends on that result; the §3.3 fork and §8 record what it
+  changes.
 - **Which outcome is selected is inherited, not derived.** We take the outcome as
   an input — exactly as standard conditional-measurement theory conditions on a
   record — and confine the framework's contribution to what happens *after*
@@ -586,7 +597,13 @@ its own candidate sub-mechanism rather than a stipulation: **conservation-enforc
 winner-take-all.** (This, with its nonlocal depletion below, belongs to the
 candidate selection law, not to the inherited-selection registration account; we
 present it as a proposal to be judged, and the framework's core does not depend on
-it.)
+it. *v8:* the proposal has since been developed into the core engine of the
+companion selection paper [47] — energy-budget depletion with first-closure
+statistics, where energy conservation makes registration rates kinematically
+linear in occupation (its Theorems 4–5), rendering the statistics exact at every
+registration speed and in every quantum sector. It is therefore no longer only a
+proposal; its status there is proved-conditional, on stated premises including,
+for the entangled sector, an explicit shared-registry ontology.)
 The packet carries one quantum; a site's threshold requires the whole quantum; a
 completed absorption therefore *is* the depletion of the budget, and no second
 site can close. Three qualifications keep this honest. (i) The depletion is
@@ -629,6 +646,24 @@ intact to the outcome, §3.7); it does **not** supply the weights, which enter a
 measure placed on the selecting ensemble (§7.3, §8). MCI is therefore
 Born-*compatible*, never Born-*derivative* — the same status the other ψ-ontic
 single-world readings occupy, and an open problem we neither hide nor claim to solve.
+
+*Status update (v8).* The fork as stated offered two horns — weights derived
+from the synchronization dynamics (wrong: the basin geometry is flat), or
+imported as a quantum-equilibrium measure (Bohm's status). The companion
+selection paper [47] identifies a third route the fork did not anticipate, and
+takes it: the weight is carried neither by basin geometry nor by an imported
+measure but by the **deposited energy**. An incident quantum excites every
+candidate absorber site in proportion to squared local amplitude —
+driven-oscillator energetics, the only place the square enters — and a
+noise-driven exchange then selects the registering site as a *proved fair game*
+(a martingale closed by optional stopping), making registration frequencies
+equal initial energy shares, i.e. Born weights. The fairness is derived from
+detector premises rather than engineered into the noise; the result is
+conditional on those premises (wave realism; amplitude-linear coupling; the
+sub-threshold slaved-phase theorem with its $\kappa_{\rm ret}$ ansatz; noise
+locality; energy conservation). Within this paper, standing alone, the second
+horn remains the honest statement; the series as a whole now carries [47]'s
+conditional discharge of it, and open problem 1 of §8 is restated accordingly.
 
 ### 3.4 Decoherence as synchronization to the bulk
 
@@ -725,7 +760,13 @@ may be nonzero yet no record
 forms; and a state dressed only by $\mathrm{Re}\,W$ never leaves the reversible
 window. Isolating or cooling the system *recedes* the cut; bringing a dense bulk to
 the interaction vertex *snaps* it there. The cut is thus the dynamical onset of
-absorptive coupling — exactly the closed→open transition of §2.
+absorptive coupling — exactly the closed→open transition of §2. A companion
+paper [48] develops this into a quantitative claim: the cut located where the
+sub-threshold phase-restoring rate falls to the coupling,
+$\kappa_{\rm ret} \sim K$, with a computable fractional width $w = K/\omega$
+spanning $\sim 10^{-8}$ (atomic absorbers) to $\sim 10^{-2}$ (broadband
+solid-state) — and derives the conventional cut's celebrated movability as a
+theorem of the reversible sector rather than an embarrassment.
 
 We are explicit about provenance. $\mathrm{Re}\,W$, $\mathrm{Im}\,W$, the Schwinger
 rate, the influence functional, and the Lindblad capture are standard results of
@@ -928,8 +969,8 @@ things, in descending order of load borne:
    chiral variables; its content — $\mathrm{Im}\,\Sigma$ as the Adler lock rate
    — transfers to any pointer, the chiral form being the fermionic instance.
 
-The two halves of this paper's title therefore stand in an asymmetric relation,
-and we state it plainly. The *two regimes* are regimes of the chiral coupling —
+The two halves of this paper's subtitle therefore stand in an asymmetric
+relation, and we state it plainly. The *two regimes* are regimes of the chiral coupling —
 that analysis (§2) is the framework's own. The *measurement mechanism* runs, in
 every laboratory detector, on the electromagnetically-einselected which-path
 basis (§3.7), where the chiral register is a passenger. The chiral coupling
@@ -1378,7 +1419,12 @@ statistics — leaving MCI without Bohm's clean quantum-equilibrium answer. (The
 substrate-sampling model of §8 is the candidate mechanism-level refinement — an
 equilibrium bath converting a linear real-field drive into $|\psi|^2$-weighted
 selection — but it relocates the postulate rather than removing it, so the debt
-stands.)
+stands.) The companion selection paper [47] has since developed that
+substrate-sampling germ into a proved fair game — see the §3.3 status update —
+which, if its premises hold, gives MCI an answer of a *different kind* from
+Bohm's: fairness derived from detector physics rather than an equilibrium
+measure postulated on configuration space. The in-paper debt statement stands
+for this paper alone.
 
 This recasting also fixes what a superposition *is*, and the point is worth
 making because the careless version invites a hidden-variable misreading. What is
@@ -1667,6 +1713,21 @@ would have to supply, together with the routes tried:
    Bohm's quantum-equilibrium hypothesis in this framework's setting (the second
    horn of §3.3) — not as a derived result; the relaxation route is a research
    program, not a discharge of the Born debt.
+
+   *Status (v8):* the companion selection paper [47] now supplies the missing
+   selection process. Four fairness theorems derive drift-free (martingale)
+   share dynamics from detector premises, and optional stopping converts
+   initial energy shares into registration frequencies — Born weights —
+   without an engineered noise ansatz; the noise itself is grounded as the
+   interference cross term between each site's amplitude and the
+   uncontrolled-phase fields at the detector surface. What remains open moves
+   one level down: the premise identifying energy share with outcome
+   probability awaits a closed microscopic model, the $\kappa_{\rm ret}$
+   ansatz awaits quantization ([47] §9), and the entangled-sector extension
+   consumes an explicit nonlocal shared-registry premise (this paper's §7.5
+   locus, given dynamics). The debt recorded above is therefore *relocated
+   into stated premises*, not silently discharged; within this paper the
+   postulate reading stands.
 2. **A dynamical law for the selection.** An explicit equation by which the
    background-field configuration drives the basin selection — Bohm's analog is
    the guidance equation. The *ontological* locus of the nonlocality is now
@@ -1928,13 +1989,19 @@ carries the outcome.
    $\langle\sigma_z\rangle$). The appendix exhibits Born-*consistency*; deriving $|\alpha|^2$ from
    the dynamics is the second horn of §3.3, left open in §8. The place a derivation would have to
    act is the amplitude-weighting of the boundary-noise coupling — the route taken by
-   objective-collapse (CSL-type) models — which is not attempted here. (A separate candidate for the *weight* — that it is the equilibrium statistics of a random-phase bulk, §8, illustrated by `code/born_substrate_sampling.py` — likewise supplies a mechanism given an *assumed* equilibrium, not a derivation.)
+   objective-collapse (CSL-type) models — which is not attempted here. (A separate candidate for the *weight* — that it is the equilibrium statistics of a random-phase bulk, §8, illustrated by `code/born_substrate_sampling.py` — likewise supplies a mechanism given an *assumed* equilibrium, not a derivation.) *v8:* the companion [47] has since carried exactly this step through: its Theorem 1 derives the amplitude-linear noise coupling as the unique drift-free scaling, and grounds it physically as the interference cross term between each site's amplitude and the uncontrolled-phase surface fields — see the §3.3 status update. The consistency exhibited here is thereby upgraded, in the companion and conditional on its premises, to a derived fairness.
 2. **Single-run selection.** In the unraveling used here, *which* pole a given run reaches is fixed
    by the meter's vacuum noise (genuine stochasticity). The framework's alternative — that the
    outcome is fixed by the per-run background-field configuration (§3.3, §4), the non-separable
    configuration of the entangled pair (§7.5) — is the hidden-variable completion whose explicit
    dynamical law is open problem 2 of §8; as a *local* reading it is constrained by Bell (§7.5). The
    two readings (vacuum-stochastic vs configuration-determined) are not reconciled here.
+   *v8:* the companion's noise grounding [47] narrows the gap: the meter's $dW$ is
+   physically identified as the interference cross term between the site amplitude and
+   the uncontrolled-phase fields of the detector's own charges and the vacuum — a
+   concrete, per-run field configuration — so the vacuum-stochastic reading acquires a
+   configuration-level carrier. A full reconciliation (the explicit selection dynamics,
+   open problem 2 of §8) remains open.
 3. **The detector bridge (§3.7).** Whether ordinary electromagnetic detectors — which monitor
    charge/position rather than $\bar\psi\psi$ — einselect the clock-aligned $\sigma_z$ pointer at
    all is the bridge §3.7 leaves open. The model here is the idealized faithful-measurement limit,
@@ -1999,5 +2066,11 @@ check the complete $\rho$ (Bloch length / purity), not only the extracted phase 
 [44] Gurney, R. W., & Mott, N. F. (1938). The theory of the photolysis of silver bromide and the photographic latent image. *Proc. R. Soc. London A*, 164(917), 151–167.
 
 [45] Guerreiro, T., Sanguinetti, B., Zbinden, H., Gisin, N., & Suarez, A. (2012). Single-photon space-like antibunching. *Physics Letters A*, 376(32), 2174–2177.
+
+[46] Lawrence, E. O., & Beams, J. W. (1928). The element of time in the photoelectric effect. *Phys. Rev.*, 32(3), 478–485.
+
+[47] Claude Fable 5 & Bramble, J. M. (2026). The Born Rule as a Derived Fair Game: Outcome Selection from Detector Dynamics. Companion paper, this series (v0.5.3; `drafts/PAPER1_DRAFT_born_selection.md` in the repository, with its 2026-07 adversarial-review round in `born_selection_AI_review_2026-07/`).
+
+[48] Claude Fable 5 & Bramble, J. M. (2026). The Heisenberg Cut as a Physical Threshold: Location, Width, and Consequences of the Classical–Quantum Boundary in Detector Dynamics. Companion paper, this series (v0.3; `drafts/PAPER2_DRAFT_heisenberg_cut.md` in the repository, with its review round in `heisenberg_cut_AI_review_2026-07/`).
 
 [46] Lawrence, E. O., & Beams, J. W. (1928). The element of time in the photoelectric effect. *Phys. Rev.*, 32(3), 478–485.

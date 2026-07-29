@@ -4,6 +4,8 @@
 # and EQUATIONS.md to PDF
 #
 # Produces:
+#   current_revision_DK_paper.pdf — pandoc render of current_revision_DK_paper.md
+#                            (the canonical working manuscript), TOC depth 3
 #   ManyClocks.pdf         — pandoc render of PAPER_UNIFIED.md, TOC depth 3
 #   Two_Regimes_of_Chiral_Mass_Coupling.pdf       — pandoc render of PAPER_REVISED.md, TOC depth 3
 #   COVER_LETTER.pdf       — pandoc render of COVER_LETTER.md (cover letter, no TOC)
@@ -51,6 +53,14 @@ PANDOC_OPTS=(
 echo "Building ManyClocks.pdf from PAPER_UNIFIED.md..."
 pandoc "${REPO_DIR}/PAPER_UNIFIED.md" \
     -o "${REPO_DIR}/ManyClocks.pdf" \
+    --toc --toc-depth=3 \
+    "${PANDOC_OPTS[@]}"
+
+# Build the current working revision of the main DK paper (canonical manuscript;
+# PAPER_REVISED.md below is the frozen FoP-submission snapshot and stays as-is)
+echo "Building current_revision_DK_paper.pdf from current_revision_DK_paper.md..."
+pandoc "${REPO_DIR}/current_revision_DK_paper.md" \
+    -o "${REPO_DIR}/current_revision_DK_paper.pdf" \
     --toc --toc-depth=3 \
     "${PANDOC_OPTS[@]}"
 
@@ -142,7 +152,8 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
+ls -lh "${REPO_DIR}/current_revision_DK_paper.pdf" \
+       "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
        "${REPO_DIR}/CosmicExpansion.pdf" "${REPO_DIR}/CosmicExpansion.tex" \
        "${REPO_DIR}/DiscretizationAsSync.pdf" \
        "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \
