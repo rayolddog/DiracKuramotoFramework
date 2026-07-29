@@ -33,6 +33,14 @@ on this machinery.)*
 - **Bifurcation / supercritical pitchfork** — a "bifurcation" is where behavior
   qualitatively splits as you turn a knob; the "pitchfork" is the shape where one stable
   state smoothly becomes two (the valley splitting in Landau's landscape).
+- **Saddle-node bifurcation** — the other basic bifurcation: a stable state and an
+  unstable one slide together, collide, and annihilate — beyond that knob-setting the
+  state simply ceases to exist. This is what happens at the Arnold-tongue *edge*; its
+  signature is a waiting time that diverges as $1/\sqrt{\text{distance from the edge}}$.
+- **Thermodynamic limit** — the idealization of infinitely many parts ($N\to\infty$).
+  True phase transitions (sharp, singular) exist only in this limit; a few oscillators
+  can only *bifurcate*, a crowd of them can *transition*. Marks the difference between
+  the virtual/real boundary (one mode) and the Heisenberg cut (a crowd).
 - **Mean-field** — an approximation where each part feels the *average* of all the others
   instead of every neighbor individually. Each oscillator responds to the collective $r$,
   not to each partner.
@@ -69,6 +77,31 @@ on this machinery.)*
 - **Energy-time uncertainty** — the relation $\Delta E\,\Delta t\gtrsim\hbar$: a state
   with energy spread $\Delta E$ only stays coherent for a time $\sim\hbar/\Delta E$. In
   our reading it's the off-resonance "slip time" of an oscillator that fails to lock.
+- **Heisenberg cut** — the dividing line, in any description of a measurement, between
+  what you treat quantum-mechanically and what you treat as classical apparatus. Textbook
+  QM says the cut is movable and arbitrary; in our reading it is physical — the
+  collective lock threshold ($K_c$), where records become irreversible.
+- **Evanescent vs propagating wave** — a propagating wave has a real wavelength: its
+  phase advances and it carries energy away. An evanescent wave has an *imaginary*
+  wavenumber: it decays exponentially and clings to its source (the field leaking across
+  the gap in total internal reflection; the near-field in ultrasound). Our
+  representation-independent stand-in for "virtual vs real."
+- **Coherent state (Glauber state)** — the quantum state of laser light: an enormous
+  number of photons sharing one well-defined phase. The "most classical" quantum state —
+  its graininess ($\sqrt N$) is negligible against its signal ($N$). How *light* gets a
+  classical limit without ever forming a lock.
+- **Linewidth / width $\Gamma$** — an unstable state's energy is not a sharp line but a
+  peak of width $\Gamma=\hbar/\tau$: the shorter-lived, the blurrier (same reciprocity as
+  a short MRI echo giving a broad frequency spread). "On the mass shell" is really "on a
+  resonance peak of finite width."
+- **Dressed particle** — a particle plus the cloud of interaction it drags with it, whose
+  effective energy/mass is shifted off the bare, free-particle value (an electron in an
+  atom is off its free shell). In lock language: *in* the tongue but off the tongue's
+  center line — the tongue's width is the dressing.
+- **QND (quantum non-demolition) measurement** — measuring a quantum system without
+  destroying it, e.g. Haroche's counting of a photon bouncing in a cavity without
+  absorbing it. Notable here because even a QND-measured photon stays quantum — light
+  never becomes classical the way a dust grain does.
 
 ## C. Cosmology terms
 

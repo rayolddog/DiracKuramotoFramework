@@ -298,6 +298,148 @@ golden-rule width (unstable).
 
 ---
 
+## 5a. Addendum (2026-07-29): two boundaries, one mechanism — the ladder
+
+*Recorded from a discussion of the Heisenberg cut. §5 established the
+virtual/real line as the single-mode lock threshold. This addendum places that
+boundary next to the framework's other great boundary — the quantum/classical
+cut — and records four consequences of seeing them together.*
+
+### The ladder: three rungs, two boundaries
+
+| Rung | Lock status | Persistence | Reversible? |
+|---|---|---|---|
+| **Virtual** (off-shell) | unlocked — slips against the substrate | transient, $\tau_{\text{slip}}$ | — |
+| **Real** (on-shell) | locked, single mode inside its tongue (§5) | persists (∞ or $\hbar/\Gamma$) | **yes** — can be scattered off-shell, absorbed |
+| **Classical record** | collective lock, supercritical Kuramoto (§4) | committed | **no** — Stage 2/3 ratchet |
+
+Boundary 1 (virtual → real) is the single-oscillator tongue edge of §5.
+Boundary 2 (quantum → classical, the **Heisenberg cut**) is the collective
+threshold $K_c$ of §4's micro/macro hook.
+
+Standard physics explains these two boundaries with completely unrelated
+machinery: boundary 1 is "a pole of the propagator" (a feature of a
+perturbation expansion), boundary 2 is decoherence/einselection. Here both are
+the **same lock mechanism**, differing in exactly two properties:
+
+- **Scale** — one mode locking to the substrate, vs. a macroscopic assembly
+  locking to each other.
+- **Reversibility** — a threshold vs. a ratchet. A real particle can be knocked
+  back off-shell; a committed record cannot un-commit. The framework's entropy
+  monotone lives *only* at boundary 2.
+
+That unification is not available to the standard account and is worth stating
+as an architectural claim in its own right.
+
+### Sharpening "phase change"
+
+Is boundary 1 a phase transition? Precision matters here. For a *single* mode,
+lock/unlock at the tongue edge is a **saddle-node bifurcation** — a stable and
+an unstable solution collide and annihilate as you cross the edge; a
+qualitative change in a system with *few* variables. A **phase transition**
+proper requires the **thermodynamic limit** (a macroscopic number of degrees of
+freedom) — and that is exactly boundary 2, the Kuramoto transition at $K_c$, a
+genuine nonequilibrium phase transition. What the two share is the diagnostic
+§5 already leaned on: **critical slowing down** at the boundary.
+
+So the honest phrasing: *the virtual/real boundary is the single-oscillator
+shadow of the same transition whose many-body form is the Heisenberg cut.*
+
+### Lifetime-law crossover (a sharpening of §5's slip time)
+
+§5 quoted the full slip time but used only its far limit. Keep the whole
+expression and expand *near* the threshold. With $\Delta E_c\equiv\hbar K$ (the
+tongue edge in energy units) and $\delta E\equiv\Delta E-\Delta E_c\to0^+$:
+
+$$
+\tau_{\text{slip}}=\frac{2\pi}{\sqrt{\Delta\omega^2-K^2}}
+\;\approx\;\frac{2\pi\hbar}{\sqrt{2\,\Delta E_c\,\delta E}}
+\;\propto\;\delta E^{-1/2}.
+$$
+
+So the framework predicts **two regimes with a crossover** around
+$\Delta E\sim2\hbar K$:
+
+- **Far off-shell** ($\Delta E\gg\hbar K$): $\tau\approx2\pi\hbar/\Delta E$ —
+  the energy-time-UP clock, as in §5.
+- **Near-shell** ($\Delta E\to\hbar K^+$): $\tau\propto(\Delta E-\hbar K)^{-1/2}$
+  — saddle-node scaling, **longer** than the naive $\hbar/\Delta E$ estimate.
+  Critical slowing *enhances* near-shell virtual lifetimes.
+
+Standard-QFT shadow: the propagator $1/(p^2-m^2)$ already weights near-shell
+contributions most heavily; this is a dynamical re-reading of that weighting.
+Same caveat as §5 (a physical re-reading of the propagator heuristic, not a
+lift from the Feynman rules); turning the crossover into an observable — a
+near-shell linewidth or dispersion modification — is **open**.
+
+### The boundary is soft: widths, and bound states as tongue interior
+
+Two graded features fall straight out of the tongue geometry:
+
+1. **Persistence is graded.** An unstable real particle has width
+   $\Gamma=\hbar/\tau$: the "shell" is a resonance *peak* of finite width,
+   sharpening to a delta function only for stable particles. In lock language a
+   stable particle sits infinitely deep in its tongue; instability is depth in
+   the tongue, continuously interpolated — consistent with §5's clock table.
+2. **Tongue width = coupling = dressing.** The lock survives for
+   $|\Delta\omega|\le K$: a mode can sit off the *bare* shell by up to the
+   coupling strength and still persist. That is a **bound state** — an atomic
+   electron is off its free-particle shell and persists precisely because the
+   coupling holds it there. QFT encodes this as a pole *displaced* from the
+   free shell (the "dressed" particle); here it is simply
+   *in-tongue-but-off-bare-shell*, with no new ingredient. Consistent with the
+   ZBW toy-model result that **bound** matter is what locks.
+
+### Representation-independent grounding: propagating vs evanescent
+
+An objection to pre-empt: "virtual particles" are bookkeeping in a perturbation
+expansion — nonperturbative formulations of QFT contain none. If boundary 1 is
+load-bearing, it should not rest on Feynman diagrams. It doesn't have to: the
+representation-independent version of the same distinction is **propagating vs
+evanescent** solutions of the wave equation. Propagating = real wavenumber, the
+phase advances and the wave carries energy away; evanescent = imaginary
+wavenumber, exponentially damped, clinging to its source. Evanescent fields are
+laboratory-tangible — frustrated total internal reflection (light tunneling
+across a gap), the near-field in ultrasound. Propagating/evanescent is exactly
+the locked/slipping dichotomy stated in dispersion-relation terms, and no one
+disputes that *that* boundary is physical.
+
+### Corollary: light is real but never classical
+
+A photon crosses boundary 1 (goes on-shell) but is barred from boundary 2,
+twice over. In flight it has no lock partner — photons couple neither to each
+other nor to the vacuum, so there is no environment and no decoherence (why
+stellar interferometry survives light-years while a dust grain decoheres in
+nanoseconds). And at interaction it is *annihilated*: the photon does not cross
+the cut, it **dies at the cut**, converting itself into a lock in matter — the
+photoelectron cascade is matter crossing on the photon's behalf. (QND
+photodetection à la Haroche doesn't break this: a photon measured without
+absorption remains fully quantum.)
+
+Classical *light* still exists, but by a different route: a macroscopically
+occupied **coherent state** (laser light — vast photon number sharing one
+well-defined phase), whose quantum fluctuations scale as $\sqrt N$ against a
+signal scaling as $N$. So the framework carries **two distinct classical
+limits**:
+
+- **Matter**: classical by **locking** — discrete, irreversible, record-forming.
+- **Light**: classical by **occupancy** — a loud coherent substrate mode; no
+  lock ever forms, nothing irreversible happens in flight.
+
+A single photon is excluded from both routes — too free to lock, too small to
+be loud — so reality and classicality, which travel together for matter,
+**separate cleanly for light**.
+
+**Bottom line:** virtual→real and quantum→classical are one lock mechanism at
+two scales — a reversible single-mode bifurcation and an irreversible
+collective transition. The tongue's finite *width* gives bound states; its
+*edge* gives a lifetime-law crossover; its dispersion-relation reading
+(evanescent vs propagating) makes the boundary representation-independent; and
+light, which can only ever cross the first boundary, stays quantum until it
+spends itself making a lock in matter.
+
+---
+
 ## 6. Born weighting: eligibility vs weight
 
 Key distinction, easy to get wrong: **the tongue decides *eligibility*; the Born
@@ -437,11 +579,19 @@ noise and the framework predicts the wrong rule.
    $\tau\sim\hbar/\Delta E$ — *is* the energy-time UP. At the threshold
    $\tau\to\infty$ (critical slowing down) → the mode goes on-shell/real, its
    clock becoming ∞ (stable) or $\hbar/\Gamma$ (golden-rule decay).
-4. **Born weighting** = first-past-the-post race of golden-rule capture rates
+4. **Two boundaries, one mechanism (§5a).** Virtual→real (single-mode
+   saddle-node bifurcation, *reversible*) and the Heisenberg cut (collective
+   Kuramoto transition, *irreversible* ratchet) are the same lock threshold at
+   two scales. Consequences: a near-shell lifetime crossover
+   $\tau\propto(\Delta E-\hbar K)^{-1/2}$; bound states =
+   in-tongue-but-off-bare-shell (dressing = tongue width); the boundary grounded
+   representation-independently as evanescent vs propagating; and light real but
+   never classical — matter classicalizes by *locking*, light by *occupancy*.
+5. **Born weighting** = first-past-the-post race of golden-rule capture rates
    $\Gamma_k\propto|c_k|^2$, giving $P(k)=|c_k|^2$ with normalization built in.
-5. **Eligibility (tongue width $\propto|c_k|$) ≠ weight (rate $\propto|c_k|^2$).**
+6. **Eligibility (tongue width $\propto|c_k|$) ≠ weight (rate $\propto|c_k|^2$).**
    Reading probability off width/area gives the wrong, amplitude-linear rule.
-6. **Area vs depth**: outcomes are governed by basin **depth-as-rate** (pull),
+7. **Area vs depth**: outcomes are governed by basin **depth-as-rate** (pull),
    *not* basin **area** (extent). Bulk noise is what forces the depth/rate regime
    rather than the area/initial-condition regime.
 
