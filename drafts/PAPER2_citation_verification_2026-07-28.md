@@ -26,3 +26,17 @@ All 20 non-[P1-verified] entries of `PAPER2_DRAFT_heisenberg_cut.md` checked aga
 | Pikovsky, Rosenblum & Kurths (2001), CUP | confirmed | Cambridge Nonlinear Science Series 12 |
 
 Corrections applied to the draft: Schlosshauer year in both in-text citations (§1) and the reference entry; "Zurek 2003a" suffix dropped (only one Zurek 2003 in this paper's list). NOT covered by this pass: the order-of-magnitude values in the §3.3 layer-width table, which still carry their own [values to verify] flag and require physics sourcing (linewidth/frequency data per platform), not bibliographic checking.
+
+## Addendum — §3.3 layer-width table sourcing (same day)
+
+Every row of the table anchored to a citable source, all rates converted to a stated angular convention (Γ = 1/τ; Hz linewidths × 2π). Two corrections against the first-draft estimates, one sharpening:
+
+| Row | Sourced result | Anchor | URL |
+|---|---|---|---|
+| Alkali D-line (natural) | **CORRECTED**: w = 1.4–1.9×10⁻⁸ (first-draft upper decade 10⁻⁶ unsupported for natural width — that is the Doppler-broadened vapor value, noted as caveat (i)) | Steck, Rubidium 87 D Line Data rev. 2.3.4 (2025): Γ = 38.117(11)×10⁶ s⁻¹, ω₀ = 2π·384.230 THz | steck.us/alkalidata/rubidium87numbers.pdf |
+| Optical clock (⁸⁷Sr, Al⁺) | **SHARPENED**: w = 2–7×10⁻¹⁸ natural (was "≲10⁻¹⁴"); laser-limited practical coherence ≲10⁻¹⁵ | Dolde et al., PRA 112, 023121 (2025): measured ³P₀ lifetime τ = 167 s; Ludlow et al., RMP 87, 637 (2015) | arxiv.org/abs/2505.06440 |
+| Transmon (1/T₂) | **CORRECTED**: w = 3×10⁻⁷–4×10⁻⁶ (first draft said 10⁻⁶–10⁻⁵; arithmetic error). Circa-2020 typical; modern T₂ > 300 μs → w → 10⁻⁸ (caveat iii) | Kjaergaard et al., ARCMP 11, 369–395 (2020): T₁,T₂ 50–100 μs, ω_q/2π ≈ 5 GHz | arxiv.org/abs/1905.13641 |
+| Quantum dot 4 K | confirmed at order of magnitude, refined: w = 6×10⁻⁷–5×10⁻⁵ (radiative 800 ps → spectral-diffusion-broadened; upper bound inhomogeneous-in-time, caveat iv) | Kuhlmann et al., Nat. Commun. 6, 8204 (2015) | nature.com/articles/ncomms9204 |
+| Si photodiode 300 K | confirmed: w = 10⁻³–3×10⁻², anchored 1×10⁻² (32±5 fs momentum relaxation at 5×10¹⁸ cm⁻³; density-dependent, caveat iv) | Sabbah & Riffe, PRB 66, 165217 (2002) | journals.aps.org/prb/abstract/10.1103/PhysRevB.66.165217 |
+
+Consequence for the text: the table's dynamic range grew from eight to SIXTEEN orders of magnitude (§8.2 updated). Six new reference entries added (Dolde, Kjaergaard, Kuhlmann, Ludlow, Sabbah & Riffe, Steck), each confirmed by the URL above at sourcing time.
