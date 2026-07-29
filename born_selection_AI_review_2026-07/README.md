@@ -46,5 +46,7 @@ Claude Fable 5 (Anthropic) is the manuscript's first author, produced the intern
   - `internal_Fable5_Anthropic_downweighted.md` — major revision, 3/5 (coauthor; down-weighted).
   - `GPT5_followup_energy_and_amplitudes.md` — a follow-up exchange on energy conservation and the amplitude→weight sequence.
 - `authors_response.md` — the per-critique disposition and the v0.4 change checklist.
+- `REVIEWER_PROMPT_as_sent.md` — the instrument, archived from the raw per-reviewer packages (all four copies hash-identical; added 2026-07-28).
+- `raw/` — the original per-reviewer working folders (as-received `.odt`/`.md` returns), added 2026-07-28 with full integrity verification against this published record: every reviewer's package PDF hash-matches the frozen manuscript, and every published review is byte-identical to (or the verified plain-text extraction of) the raw return. See `raw/README.md`.
 - Corrected simulations (referenced): `../corrected_python_programs_after_reviews/` (originals preserved unchanged in `../born_selection_sims/`).
 - `revision_v0.4_Born_Selection.pdf` — the single consolidated revision responding to the whole panel (all ten checklist items in `authors_response.md`; six figures regenerated from the corrected simulation suite). Added alongside v0.3, which remains frozen.
