@@ -90,17 +90,22 @@ T_up = 2 * np.pi / dw_fine
 # ------------------------------------------------------------------- figure
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10.5, 4.0))
 
+g_lock = (F / DELTA) ** 2   # injection-locking boundary: running phase for g > g_lock
 ax1.plot(g_pos, adler, "-", color="0.55", lw=1.4,
          label=r"autonomous Adler rate $\sqrt{\Delta^2-K_{\rm eff}^2}$")
 ax1.plot(g_vals, wind, "o", ms=5, color="#1f4e8c", label="simulated winding rate")
 ax1.axvline(0.0, color="0.75", lw=0.8, ls="--")
-ax1.annotate("slaved phase\n(no clock)", xy=(-0.62, 0.42), ha="center", fontsize=9,
-             color="0.35")
-ax1.annotate("free clock runs", xy=(0.95, 0.55), ha="center", fontsize=9,
-             color="0.35")
-ax1.set_xlabel(r"net gain $g$  (threshold at $g=0$)")
+ax1.axvline(g_lock, color="0.75", lw=0.8, ls=":")
+ax1.annotate("slaved phase\n(no free phase)", xy=(-0.62, 0.42), ha="center",
+             fontsize=9, color="0.35")
+ax1.annotate("free phase exists,\nentrained (locked)", xy=(0.02, 0.75), ha="left",
+             fontsize=8, color="0.35")
+ax1.annotate(r"free clock runs ($g > (F/\Delta)^2$)", xy=(0.72, 0.55), ha="center",
+             fontsize=9, color="0.35")
+ax1.set_xlabel(r"net gain $g$   (Hopf at $g=0$; running onset at $g=(F/\Delta)^2=0.1225$,"
+               "\nnoise-smeared upward)")
 ax1.set_ylabel(r"mean phase winding rate $|\langle\dot\varphi\rangle|$")
-ax1.set_title("(a)  The clock switches on at threshold", fontsize=10)
+ax1.set_title("(a)  Two boundaries: the free phase appears, then runs", fontsize=10)
 ax1.legend(fontsize=8, loc="upper left")
 
 ax2.plot(dw_fine, T_analytic, "-", color="0.55", lw=1.4,
