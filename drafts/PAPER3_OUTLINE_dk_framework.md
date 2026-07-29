@@ -148,6 +148,75 @@ across the whole program.
 **§2 The framework statement.** Substrate, waves-that-persist, the locking
 machinery; the three-things-not-to-conflate spine inherited from Paper 2 §2.
 
+**§2 CONFIRMED ADDITIONS (JB, 2026-07-29 — the register/superposition package;
+four connected items, one continuous story; settled in scope, prose to be
+drafted):**
+
+1. **Superposition as coexistent clocks.** A superposition is both outcomes'
+   clocks running simultaneously with a definite relative phase — coexistence,
+   never alternation. When the two components differ in energy, their beat at
+   the **Bohr frequency** $\Delta E/\hbar$ (quantum beats, Ramsey fringes) is
+   the laboratory-real signature that both are present; zitterbewegung is the
+   founding instance (the $\pm E$ pair, gap $2mc^2$). Degenerate superpositions
+   are the **silent case** — frozen relative phase, no beat. Born-compatibility
+   constraint, stated as a constraint: on the Bloch sphere the free dynamics
+   precesses the *phase at fixed latitude*; the outcome populations are
+   constant, and literal alternation between outcomes would time-average to
+   50/50 and destroy the Born weights (main paper Appendix D's clock-hand vs
+   pointer split). Consistent with, not replacing, the main paper's §7.3
+   relational definition. *Caution:* ZBW is the exemplar, not the universal
+   rate — generalizing it would re-inflate the chiral register that the main
+   paper's §3.7–3.8 deliberately demoted after panel review.
+
+2. **The photon as the $K=0$ limit.** Vacuum Maxwell in Riemann–Silberstein
+   form ($\mathbf F_\pm = \mathbf E \pm i\mathbf B$, Majorana–Oppenheimer)
+   splits into two *decoupled* Weyl-form equations — the two circular/helicity
+   sectors. The photon is the framework's central structure with the
+   off-diagonal coupling set to zero: no gap → no beat → no internal clock →
+   no lock (ties the two-boundaries corollary: light real but never classical).
+   The Higgs condensate clocks fermions but leaves the photon unclocked (the
+   residual U(1) is unbroken). Matter can switch the coupling on: plasma gives
+   an effective photon mass ($\omega^2 = \omega_p^2 + c^2k^2$); magnetized
+   plasma splits R/L (Faraday rotation); optical activity likewise — light's
+   clock-like structure is always borrowed from matter. Supports the
+   helicity-pointer-basis direction (the free dynamics itself picks the
+   circular basis; Lorentz-invariant for $m=0$) — with the standing open
+   question of whether Stage-2 sync forces it. *Caveats:* spin-1 sectors, not
+   literal spinors (2π rotation gives $+1$); $|\mathbf F|^2$ is energy density,
+   not a Born amplitude; the medium-induced mass is the physical realization,
+   not a Proca term.
+
+3. **Polarization as the sector pair.** The photon's polarization degree of
+   freedom *is* the R/L pair: the Poincaré sphere is its Bloch sphere (poles =
+   circular, equator = linear, latitude = relative amplitude/ellipticity,
+   azimuth = relative phase/orientation). Every polarization state is a
+   superposition-as-coexistence — one definite field configuration with both
+   sectors present; degenerate, hence silent. The observable is stored as a
+   **relative phase** (rotating the R–L phase by $\varphi$ rotates the linear
+   axis by $\varphi/2$ — the half-angle/SU(2) double cover, which is why
+   polarization behaves spinorially at spin 1), satisfying the main paper's
+   §4.2 discipline that every physical claim reduce to a phase difference.
+   *Scope:* this covers polarization only — path, frequency, and number
+   superpositions live in other degrees of freedom.
+
+4. **Registers, intrinsic and geometric.** The electron's chiral pair, the
+   photon's helicity pair, and the interferometer's which-arm pair are one
+   register type — a two-sector SU(2)/Bloch structure storing its observable in
+   relative amplitude and phase — differing in origin: **intrinsic** (sector
+   pairs of the field itself) vs **geometric** (created by apparatus sculpting
+   of the mode function; dual-rail, with the beamsplitter as a coherent-boundary
+   rotation, main paper §2.5). Path superposition is therefore not a puzzle
+   about a delocalized photon — it *is* the delocalization, shaped: a mode
+   function with two branches, no stranger than a wide packet
+   (Grangier–Roger–Aspect: anticorrelation + interference in one apparatus).
+   The clean division: **delocalization is the wave's birthright; discreteness
+   is the detector's budget** (one quantum, one closure — main paper §3.3
+   winner-take-all, spacelike enforcement per [45]). The silent/beating
+   dichotomy carries over with optical delay as the gap (unequal arms beyond
+   the coherence length → register decoherence). Which-path is the register
+   electromagnetic detectors actually einselect (main paper §3.7) — why path is
+   the superposition detectors are best at destroying.
+
 **§3 The ladder** — the confirmed section above.
 
 **§4 Measurement chapter.** Draft from the clock-dictionary arc
