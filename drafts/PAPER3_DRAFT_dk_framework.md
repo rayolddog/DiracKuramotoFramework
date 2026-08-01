@@ -648,27 +648,100 @@ the one candidate signature and returns the frame to its unobserved-but-necessar
 role. What no accessible experiment reaches is the fenced outlook of §5.5 — and the
 program says so rather than borrowing credibility from it.
 
-## 7. Discussion and the consolidated ledger — [STUB]
+## 7. Many worlds, many clocks: placement, debts, and the ledger
 
-*Sources: **absorbed from [MCI §7], per JB's keep-list — the Many-Worlds-versus-
-Many-Clocks contrast leads this section**: the trade-not-conquest framing ([MCI §7.2] —
-insist on a single world with definite outcomes and Bell forces nonlocality; MWI buys
-locality at the price of many worlds, MCI buys one world at the price of nonlocality; no
-interpretation pays neither price), with branches-replaced-by-sync-basins as the
-one-line statement of what "many clocks" replaces "many worlds" WITH — every particle a
-clock, measurement their entrainment, one world occupied rather than branching. The
-naming contrast is the program's founding move and [MCI] holds its first statement;
-this section preserves it as the framework's interpretive identity. Then the honest
-placement (single-world, ψ-ontic, nonlocal family [MCI §7.1]), Bohm/Nelson debts
-updated post-[P1] ([MCI §7.3] + the fair-game answer), Penrose–Diósi ([MCI §7.4] + the
-[P2 §8] coupling-not-mass discriminator), Montevideo and relational clocks ([MCI §7.6]).
-Open problems merged across [P1 §9.4] (κ_ret microscopic derivation; P1 identification;
-Stage-2 signaling edges; GHZ), [P2 §9] (continuous boundary-spanning model — with the
-standing escape hatch: if solved during drafting, ladder+crossover+solution may split
-out as its own paper, on evidence), [MCI §8] (Born measure status after [P1]: relocated
-into premises; the dynamical selection law; the covariant formulation debt). Out of
-scope, standing decisions: cosmology and QCD (separate papers); GR/QM discretization
-spinoff; emergent-fields arc.*
+*(v0.1 first pass.)*
+
+### 7.1 The trade
+
+The moment one insists on a single world with definite outcomes that reproduces
+quantum statistics, Bell's theorem presents the bill: nonlocality. Everett escapes it
+only by denying definite single outcomes — Many-Worlds buys **locality** at the price
+of **many worlds**. This program makes the opposite trade: it buys a **single world**
+at the price of **nonlocality** (in the Bell sense, never signaling — §5). No
+interpretation pays neither price, and we present the choice as a trade, not a
+conquest [MCI §7.2]. What "many clocks" replaces "many worlds" *with* is the
+program's founding move, and it fits in a sentence: **every particle carries a clock;
+measurement is the entrainment of clocks; the alternatives that Many-Worlds spreads
+across branches are here the unoccupied basins of one world.** Where Everett's
+superposed outcomes all persist, ours compete — the sync basins of the selection game
+— and exactly one is occupied, with the Born weight as its occupation frequency,
+proved fair from detector premises [P1]. Branching is replaced by locking; the
+multiverse by a substrate; the preferred basis problem by the einselected which-path
+register (§4.1); and the probability postulate by a race.
+
+### 7.2 The family and the debts
+
+The framework's honest address is the **single-world, ψ-ontic, nonlocal family** —
+Bohm and Nelson are its neighbors, and naming the family is more durable than
+positioning against any member [MCI §7.1]. Within the family, the debts and
+distinctions after the companions:
+
+- **Against Bohm.** Bohm has a guidance law and quantum equilibrium; the framework now
+  answers with guidance inherited from the vacuum dressing ([MCI §7.3]) and — where
+  Bohm *postulates* an equilibrium measure on configuration space — a **fairness
+  proved from detector physics** [P1], an answer of a different kind. Bohm's foliation
+  is empirically inaccessible by construction; ours is physical and carries a test
+  program (§6.4–6.5). Bohm's history debt is the measurement sector (§4.4). The
+  remaining shared debt: the explicit covariant selection dynamics (§7.3, item 5).
+- **Against Penrose–Diósi.** Both cast gravity as classicalizer; the operational split
+  is now clean — they put the boundary on **mass**, we put it on **coupling**, and the
+  §6.1 dial decides. The deep-isolation regime where their intrinsic mechanism runs
+  and our dissipative one runs out of bath remains the arbiter [MCI §7.4].
+- **Against Montevideo and the relational-clock tradition.** Closest kin: real clocks,
+  real decoherence. The split: their coherence loss is fundamental (imperfect clocks
+  referred to time itself), ours is environmental and dissipative — absent for a
+  closed system however imprecise its clock; and we pay for definite outcomes with a
+  beable and a frame that Montevideo does not require [MCI §7.6]. Page–Wootters
+  supplies the natural formal home for the kinematics (the three-hand dial of §4.2 is
+  a PW clock with an entropy monotone bare PW lacks); we note the fit, and claim no
+  derivation.
+
+### 7.3 The consolidated ledger
+
+The program's open problems, merged across the trio and stated once:
+
+1. **The κ_ret ansatz** — derive the sub-threshold return rate $\kappa_{\rm ret} =
+   \Delta E/\hbar$ (and the legitimacy of contraction-eigenvalue modeling) from an
+   explicit quantized field–absorber–bath Hamiltonian [P1 §9.4(viii); P2 §9]. The
+   single deepest debt: §3's crossover, §4.1's stage boundaries, and the energy
+   audit's residue clause all turn on it.
+2. **The P1 identification** — energy share = outcome probability as a result rather
+   than a premise: the closed conserving open-system calculation that would make the
+   fair noise a consequence of surface wave mechanics [P1 §9.4(iv)].
+3. **The continuous boundary-spanning model** — one dynamical model exhibiting the
+   bifurcation at $\kappa_{\rm ret}/K = 1$ with detector-derived coefficients [P2 §9].
+   Standing decision: if solved, ladder + crossover + solution may split out as its
+   own paper — on evidence, not in advance.
+4. **The fork** [P1 §8.5] — whether a deeper fairness principle closes the
+   mismatched-port channel (protective reading) or the curvature is real (radical
+   reading); the §6.2 bench decides.
+5. **The covariant formulation** — the explicit selection dynamics on the foliation,
+   with its no-signaling proof written independently of the statistics it reproduces;
+   plus the quantitative clearance of every established Lorentz bound (§5.4).
+6. **The configuration-space objection** — Schrödinger's second defeat, held open at
+   the shared registry (§1, §5.4): a premise priced, not a problem solved.
+7. **Sector completions** — GHZ/multipartite iteration of the joint game; the
+   $\eta = 1$ derivation the frame-rotation picture suggests; the Stage-2 signaling
+   edges (finite-commit-duration ordering; the multi-quantum tone treatment)
+   [P1 §9.4].
+
+### 7.4 What this program is not, and what it is
+
+Out of scope by standing decision: cosmology and the QCD sector (separate papers);
+the GR/QM discretization spinoff; the emergent-fields arc deriving the substrate's
+own particle content. Each consumes this framework; none is consumed by it.
+
+What it is, returning to the spine: Schrödinger built an equation that describes the
+evolution of the wave and meant it as physics; the description was extended once to
+relativity and fields, and then stopped, one postulate short, for a century. The
+program assembled here — a fair game proved in the detector [P1], a cut with an
+address and a width [P2], and the ladder, registers, and clocks of this paper —
+is the case that the stopping was contingent, not necessary: that the measurement
+event is the same substrate doing one more thing waves do, which is to lock. The
+case is conditional, and every condition has been priced in the open — premises
+stated, deviations ledgered, the frame carried honestly, the debts numbered above.
+The wave does not collapse; it evolves — and where it locks, it records.
 
 ---
 
