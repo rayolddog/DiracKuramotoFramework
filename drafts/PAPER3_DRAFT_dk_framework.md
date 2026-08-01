@@ -250,13 +250,30 @@ goes on-shell — and is barred from the second twice over: in flight it has no 
 partner (no environment, no decoherence; stellar interferometry survives light-years),
 and at interaction it is annihilated — it dies at the cut, converting itself into a
 lock in matter, the photoelectron cascade being matter crossing on the photon's behalf.
-Classical *light* exists by a different route entirely: the macroscopically occupied
-coherent state, fluctuations $\sqrt N$ against signal $N$. The framework therefore
-carries two distinct classical limits — **matter classicalizes by locking; light by
-occupancy** — and a single photon, too free to lock and too small to be loud, is
+Classical *light* exists by a different route entirely: **occupancy** — the
+macroscopically occupied single mode *with a common phase*, the coherent state,
+fluctuations $\sqrt N$ against signal $N$. The route name is chosen with care.
+Occupancy is not ensemble statistics: the coherent state is a pure state of one mode,
+classical by being loud, with no averaging or thermalization anywhere — whereas the
+*ensemble* route, applied to light, yields only thermal radiation, which is classical
+as **noise** (intensities, ray optics, bunching) but carries no definite phase and is
+no classical *wave*; the Glauber counting of [P1 §6] separates exactly these cases.
+Nor is occupancy alone sufficient — a large-$N$ number state is loud and phaseless —
+and the missing common phase is, on theme, borrowed from matter: the laser threshold
+is a collective locking transition in the *gain medium* (Haken's theory, the direct
+ancestor of Kuramoto's model), a matter-side sync transition manufacturing the phase
+that light itself cannot lock. The framework therefore carries two distinct classical
+limits — **matter classicalizes by locking; light by occupancy** — and the assignment
+is *compelled, not chosen*: Bose statistics permits and stimulated emission enhances
+the piling of quanta into one mode, while Pauli exclusion categorically bars matter
+from it — which is why there is no classical electron field, and why matter accesses
+the occupancy route only by first becoming bosonic (Cooper pairs, atomic condensates:
+the superconductor's classical phase dynamics is the exception that enforces the
+rule). Spin-statistics distributes the two classical limits; each species takes the
+only road open to it. A single photon, too free to lock and too small to be loud, is
 excluded from both. Reality and classicality, which travel together for matter,
-separate cleanly for light: this is §2's uncoupled-limit result meeting the ladder, one
-fact from two directions.
+separate cleanly for light: this is §2's uncoupled-limit result meeting the ladder,
+one fact from two directions.
 
 ## 4. The anatomy of measurement: the clock dictionary
 
