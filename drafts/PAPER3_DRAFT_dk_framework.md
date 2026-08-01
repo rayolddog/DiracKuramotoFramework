@@ -745,15 +745,93 @@ The wave does not collapse; it evolves — and where it locks, it records.
 
 ---
 
-## References — [STUB]
+## References
 
-*Union of [P1] and [P2] reference lists plus [MCI]; new to this paper: Toner & Bacon
-(2003) communication cost of simulating Bell correlations [verify per round protocol];
-Riemann–Silberstein/Majorana–Oppenheimer formulation (Bialynicki-Birula review);
-van Cittert–Zernike (Mandel & Wolf); Volovik (2003) if the §5 outlook paragraph
-survives scope pass.*
+*(v0.1 list — built from what this paper's text names directly; detector physics,
+theorems, and measurement machinery are cited through the companion tags below and
+carried by those papers' own verified lists. EVERY entry here is pending the round
+protocol's URL-verification pass before freeze; entries whose details most need
+checking are marked ⚠.)*
 
-*[P1] Claude Fable 5 & Bramble, J. M. — The Born Rule as a Derived Fair Game (v0.5.4).*
-*[P2] Claude Fable 5 & Bramble, J. M. — The Heisenberg Cut as a Physical Threshold (v0.3).*
-*[MCI] Claude (Opus 4.6–4.8) & Bramble, J. M. — The Many Clocks Interpretation (v8,
-`current_revision_DK_paper.md`).*
+**Companions and predecessor:**
+
+- **[P1]** Claude Fable 5 & Bramble, J. M. (2026). The Born Rule as a Derived Fair
+  Game: Outcome Selection from Detector Dynamics. v0.5.4, this repository
+  (`drafts/PAPER1_DRAFT_born_selection.md`; adversarial-review round in
+  `born_selection_AI_review_2026-07/`).
+- **[P2]** Claude Fable 5 & Bramble, J. M. (2026). The Heisenberg Cut as a Physical
+  Threshold: Location, Width, and Consequences of the Classical–Quantum Boundary in
+  Detector Dynamics. v0.3, this repository (`drafts/PAPER2_DRAFT_heisenberg_cut.md`;
+  review round in `heisenberg_cut_AI_review_2026-07/`).
+- **[MCI]** Claude (Opus 4.6–4.8) & Bramble, J. M. (2026). The Many Clocks
+  Interpretation: Quantum Measurement as Bath-Induced Synchronization. v8, frozen as
+  the provenance record (`current_revision_DK_paper.md`); superseded by this paper.
+
+**Named in the text (alphabetical):**
+
+- Adler, R. (1946). A study of locking phenomena in oscillators. *Proc. IRE* **34**,
+  351–357.
+- Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. *Physics Physique
+  Fizika* **1**, 195–200.
+- Bialynicki-Birula, I. (1996). Photon wave function. *Progress in Optics* **36**,
+  245–294. (Riemann–Silberstein formulation and its history.)
+- Bohm, D. (1952). A suggested interpretation of the quantum theory in terms of
+  "hidden" variables, I and II. *Phys. Rev.* **85**, 166–193.
+- Born, M. (1926). Zur Quantenmechanik der Stoßvorgänge. *Z. Phys.* **37**, 863–867.
+- Diósi, L. (1989). Models for universal reduction of macroscopic quantum
+  fluctuations. *Phys. Rev. A* **40**, 1165–1174.
+- Dirac, P. A. M. (1928). The quantum theory of the electron. *Proc. R. Soc. London A*
+  **117**, 610–624.
+- Everett, H. (1957). "Relative state" formulation of quantum mechanics. *Rev. Mod.
+  Phys.* **29**, 454–462.
+- Gambini, R., & Pullin, J. (2018). The Montevideo interpretation of quantum
+  mechanics: a short review. *Entropy* **20**, 413.
+- Grangier, P., Roger, G., & Aspect, A. (1986). Experimental evidence for a photon
+  anticorrelation effect on a beam splitter. *Europhys. Lett.* **1**, 173–179.
+- Gurney, R. W., & Mott, N. F. (1938). The theory of the photolysis of silver bromide
+  and the photographic latent image. *Proc. R. Soc. London A* **164**, 151–167.
+- Kuramoto, Y. (1975). Self-entrainment of a population of coupled non-linear
+  oscillators. *Int. Symp. on Mathematical Problems in Theoretical Physics*, 420–422.
+- ⚠ Lita, A. E., Miller, A. J., & Nam, S. W. (2008). Counting near-infrared
+  single-photons with 95% efficiency. *Opt. Express* **16**, 3032–3040. (TES
+  calorimetry, §6.2.)
+- Mandel, L., & Wolf, E. (1995). *Optical Coherence and Quantum Optics*. Cambridge
+  University Press. (van Cittert–Zernike theorem, §4.4.)
+- ⚠ Mazin, B. A., et al. (2013). ARCONS: a 2024-pixel optical through near-IR
+  cryogenic imaging spectrophotometer. *Publ. Astron. Soc. Pac.* **125**, 1348.
+  (Energy-resolving MKID camera, §6.2.)
+- Minev, Z. K., et al. (2019). To catch and reverse a quantum jump mid-flight.
+  *Nature* **570**, 200–204.
+- Mott, N. F. (1929). The wave mechanics of α-ray tracks. *Proc. R. Soc. London A*
+  **126**, 79–84.
+- Nelson, E. (1966). Derivation of the Schrödinger equation from Newtonian mechanics.
+  *Phys. Rev.* **150**, 1079–1085.
+- ⚠ Oppenheimer, J. R. (1931). Note on light quanta and the electromagnetic field.
+  *Phys. Rev.* **38**, 725–746. (Majorana–Oppenheimer form, §2.)
+- Page, D. N., & Wootters, W. K. (1983). Evolution without evolution: dynamics
+  described by stationary observables. *Phys. Rev. D* **27**, 2885–2892.
+- Penrose, R. (1996). On gravity's role in quantum state reduction. *Gen. Relativ.
+  Gravit.* **28**, 581–600.
+- Penrose, R. (2004). *The Road to Reality*. Jonathan Cape. (The zig-zag picture of
+  the mass coupling, §4.6.)
+- ⚠ Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the
+  speed of "spooky action at a distance." *Nature* **454**, 861–864.
+- Schrödinger, E. (1926). Quantisierung als Eigenwertproblem. *Ann. Phys.* **79** (and
+  series). (First rung, §1.)
+- ⚠ Schrödinger, E. (1930). Über die kräftefreie Bewegung in der relativistischen
+  Quantenmechanik. *Sitzungsber. Preuss. Akad. Wiss., Phys.-Math. Kl.* 418–428.
+  (Zitterbewegung, §1.)
+- ⚠ Shimony, A. (1984). Controllable and uncontrollable non-locality. In *Proc. Int.
+  Symp. Foundations of Quantum Mechanics* (Tokyo), 225–230. ("Passion at a distance,"
+  §5.3.)
+- Toner, B. F., & Bacon, D. (2003). Communication cost of simulating Bell
+  correlations. *Phys. Rev. Lett.* **91**, 187904. (The one-bit simulation result,
+  §5.3.)
+- Volovik, G. E. (2003). *The Universe in a Helium Droplet*. Oxford University Press.
+  (Emergent relativity near a Fermi point — cited ONLY by the fenced outlook §5.5;
+  drop with it if the outlook does not survive scope pass.)
+- ⚠ Yin, J., et al. (2013). Lower bound on the speed of nonlocal correlations without
+  locality and measurement choice loopholes. *Phys. Rev. Lett.* **110**, 260407.
+  (§5.3 speed bound.)
+- ⚠ Yin, J., et al. (2017). Satellite-based entanglement distribution over 1200
+  kilometers. *Science* **356**, 1140–1144. (Micius consistency check, §6.5.)
