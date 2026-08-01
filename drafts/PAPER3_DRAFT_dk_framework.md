@@ -425,19 +425,109 @@ energy, returned at $\kappa_{\rm ret}$, never banked — so losing sites retain 
 residue, and the energy in the fringe is small or nonexistent until the second stage
 completes. Delocalization is the wave's birthright; the budget closes at one address.
 
-## 5. The entangled sector — [STUB]
+## 5. The entangled sector
 
-*Sources: [MCI §7.5] (two bulks distinguished; nonlocality located in the non-separable
-field configuration), [P1 §7] (two-stage joint game; resync-fidelity law $S = 2\sqrt2\,
-\eta$; no-signaling as theorem via inverted Gisin), the frame-rotation mechanism with
-its information-theoretic formulation (zero signal bits transmitted while doing the work
-that costs a classical simulator one bit — Toner–Bacon; two protections: geometric,
-rotations change only relative quantities; dynamical, the angle set by uncontrollable
-noise), the no-speed-floor prediction; the preferred-frame passenger quarantined out of
-[P2 §6] lands here in measurement-sector terms (constant-sync-phase foliation, VPFH
-scoping from [MCI §8]). The 4D→3+1 grounding of the rotation
-(`NOTE_pagewootters_chiral_clock.md` §7 + addendum) enters ONLY as a flagged speculative
-outlook paragraph, if at all — scope fence per the note.*
+*(v0.1 first pass. This is the sector where the configuration-space objection of §1
+lives; it is flagged open at the start and not glossed at the end. Everything here is
+conditional on the selection companion's P5–P6 — the explicit nonlocal shared-registry
+premise — over and above the single-detector premises.)*
+
+### 5.1 The locus: two bulks, one configuration
+
+Two physically different objects travel under the word "bulk," and the framework's
+honesty depends on never letting them blur [MCI §7.5]. The **local thermal reference**
+at each detector — the faint, parts-per-million bias that performs the local commit and
+sets outcome visibility — is established in the common past of both wings and is
+independent of the analyzer settings: it is exactly a Bell common-cause variable, and
+by Bell's theorem it *cannot* source the correlations. The framework's own numerics
+sharpen the exclusion into an internal no-go: a clock-as-local-variable model of the
+outcomes is not merely bounded by the classical CHSH value of 2, it is **sub-classical**
+— CHSH $\le \sqrt2$ [MCI App. A] — so whatever the clocks do locally, the correlation
+must come from elsewhere. It comes from the second object: the **extended,
+non-separable field configuration** carrying the entangled two-particle mode across
+both wings — not a common cause at all, but one configuration of the real field
+spanning A and B. Locating the nonlocality there adds no postulate; it restates the
+ψ-ontic commitment. The framework is not superdeterministic (settings are free), and
+no-signaling is not assumed (it is delivered as a theorem in §5.2).
+
+### 5.2 The joint game and the fidelity law
+
+The selection companion extends the single-detector game to entangled pairs as a
+**two-stage joint game** [P1 §7]: the pair is one substrate object with one shared
+internal orientation; the first wing's commit is stage one; the second wing then plays
+against a registry re-formed by that commit. Two exact results carry the sector. The
+**resync-fidelity law**, $S = 2\sqrt2\,\eta$: the CHSH value is the quantum maximum
+degraded only by the registry fidelity $\eta$, with the local-realism bound crossed at
+$\eta = 1/\sqrt2$ — which converts existing experiments into measurements of $\eta$
+(photonic CHSH near 2.8 over $10^2$-km baselines implies $\eta \gtrsim 0.99$: whatever
+the substrate's update mechanism is, it is near-perfect at terrestrial scales). And
+**no-signaling as a theorem**: the inverted-Gisin result derives commit-rate linearity
+— hence marginal invariance — from the premises, rather than imposing it as a
+constraint; within this framework, the impossibility of exploiting the nonlocal sector
+is *emergent* [P1 §7]. A controlled measurement of $\eta$ itself (deliberate
+cross-station injection, with its computable, angle-independent leak law) is part of
+the experimental program (§6; [P1 §8.7]).
+
+### 5.3 The frame rotation: influence without information
+
+The mechanism on offer for the registry update is the **frame rotation** — the
+sponsor's central-point picture, stated as the postulated mechanism of nonlocal
+influence at exactly premise level (P5–P6), no higher. The entangled pair carries one
+shared internal orientation (a plane/phase frame) anchored at the creation event; the
+first lock does not send anything anywhere — it **rotates the shared frame**, and the
+changed degree of freedom is an angle, not a field configuration crossing space.
+
+The information-theoretic statement is the sharpest form. The rotation **transmits
+zero signal bits while doing the work that costs a classical simulator exactly one
+bit** (Toner–Bacon: simulating singlet correlations classically requires one bit of
+communication per pair). Zero, not a fraction — and the zero is doubly protected:
+*geometrically*, because a rotation of a shared frame changes only a relative quantity
+with no local zero (nothing at either station moves — the discipline that only phase
+differences are physical, now doing nonlocality's bookkeeping); *dynamically*, because
+the rotation angle is set by the uncontrollable noise-driven outcome of the local game,
+and the inverted-Gisin theorem makes marginal invariance exact. This is Shimony's
+"uncontrollable nonlocality" — influence without information — given a mechanism.
+
+The same geometry yields the sector's standing prediction: **a rotation has no
+velocity, so there is no speed of quantum influence to measure** — experiments
+bounding "spooky action" speeds will find only ever-growing lower bounds, never a
+floor (the $10^4 c$ bounds of the Geneva and Chinese experiments are consistent
+entries in an unbounded sequence). Before-before puzzles dissolve the same way: the
+rotation happens at the shared object, ordered by the foliation, not at either wing.
+
+### 5.4 The frame, priced
+
+The foliation that orders the commits is the framework's openly carried preferred
+frame: the constant-sync-phase slicing of the substrate (the khronon), entering
+**through the measurement sector only** — Stage-1 dynamics is exactly Lorentz
+covariant, and the frame appears where the lock does [MCI §8]. As written this is
+explicit, low-energy Lorentz violation confined to measurement, not spontaneous
+breaking; the Einstein-aether/khronometric construction that would make it spontaneous
+is not carried out here. Ordinary matter couples to the frame, beyond the
+electromagnetic locking itself, only gravitationally — the suppression that explains
+why clock-comparison and Michelson–Morley bounds have not registered it — but the
+quantitative demonstration that the residual anisotropy clears every established bound
+remains **owed**, alongside the covariant formulation of the selection dynamics and
+the configuration-space objection of §1, which this sector holds rather than answers:
+the shared registry is precisely the many-particle structure that does not live in
+physical 3-space, stated as a premise and priced as one. Whether the frame is local
+(mass–energy rest frame) or cosmic (CMB) is an open, testable question — only a cosmic
+frame produces sidereal signatures, and the experimental program (§6) is built to ask.
+
+### 5.5 Outlook, fenced
+
+*(Speculative — stacked on the most conjectural material in the program's notes;
+nothing above depends on it.)* There is a picture in which the rotation's properties
+stop being surprising: if the 3+1 arena itself emerges from a synchronizing 4D
+substrate — the foliation as the condensate's global frame choice — then the pair's
+shared frame is a *local, pair-specific* orientation in the same order-parameter space
+out of which spacetime's split emerges, and a rotation of it is a change one level
+below the domain where "speed" and "distance" are defined. Post-breaking,
+reorientations within the degenerate vacuum manifold are Goldstone-type moves: locally
+costless, locally invisible, only relative orientations physical. On that picture the
+zero-bit property, the no-speed-floor prediction, and the emergence sketch are three
+faces of one statement — the rotation is motion along a symmetry direction of the
+medium spacetime is made of. We record the alignment and claim nothing from it.
 
 ## 6. The experimental program — [STUB]
 
