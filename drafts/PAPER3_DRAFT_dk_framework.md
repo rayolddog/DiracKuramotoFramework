@@ -529,22 +529,124 @@ zero-bit property, the no-speed-floor prediction, and the emergence sketch are t
 faces of one statement — the rotation is motion along a symmetry direction of the
 medium spacetime is made of. We record the alignment and claim nothing from it.
 
-## 6. The experimental program — [STUB]
+## 6. The experimental program
 
-*Sources: the T1–T5 ledger (memory + `LIGO_SIDEREAL_TEST_T5.md`) as probes of the single
-preferred-frame postulate; **absorbed whole from [MCI §6 + App. C], per JB's keep-list**:
-the linewidth-dependent gravitational Bell test — the candidate effect, the explicit
-demonstration that it does NOT follow from the framework plus standard QED (the
-factorization/cancellation null of App. C), the H′ postulate honestly isolated with its
-gauge-legal gradient repair, the Micius consistency check, and the linewidth × altitude
-parameter space (kHz linewidths, km-scale splits) — presented as a falsification test of
-the postulate, not of the core; plus the Bose–Marletto–Vedral discriminator of the
-wave-energy *reading* ([MCI §6.4]: a real-energy-density ontology predicts a BMV null).
-Then [P1 §8] (deviation ledger, tabletop discriminator, cross-station injection,
-energy-audit interferometry) and [P2 §8] (the γ/K dial: coupling, not mass, decides
-where quantum behavior ends — the discriminator against collapse and
-gravitational-reduction programs; transmon protocol sketch). Organizing claim: every
-live test probes one commitment — the preferred frame — or one dial — the coupling.*
+*(v0.1 first pass. Organizing claim, stated once and used throughout: every live test
+in the program probes one commitment — the preferred frame — or turns one dial — the
+coupling. Tests are labeled by what a positive result would establish and, with equal
+care, by what a null would and would not touch.)*
+
+### 6.1 The coupling dial
+
+The measurement companion's central experimental claim is that **coupling — not mass,
+size, or gravitational self-energy — is the variable that decides where quantum
+behavior ends** [P2 §8]. The cut sits at $\kappa_{\rm ret} \sim K$ with fractional
+width $w = K/\omega$, and existing platforms already span that dial across sixteen
+orders of magnitude — from atomic linewidths ($w \sim 10^{-8}$) through transmons to
+broadband solid-state absorbers ($w \sim 10^{-2}$) [P2 §3]. That makes the framework
+*differentially* testable against the collapse programs: CSL and Diósi–Penrose put the
+classical boundary on mass and size; this framework puts it on $\gamma/K$, so an
+engineered system moved along the coupling dial at fixed mass discriminates the
+programs — the preregistrable circuit-QED protocol sketched in [P2 §8.2], with the
+recoverability criterion [P2 §8.3] and Leggett–Garg-type axes [P2 §8.4] as the
+readouts. Macromolecule interferometry, the collapse programs' home turf, is re-read
+accordingly: interference should be lost where the *coupling* budget says so, not
+where the mass budget does.
+
+### 6.2 The selection game's own signatures
+
+The selection companion carries its falsifiability in a deviation ledger with a
+protective theorem: the port decomposition confines every observable deviation to one
+experimental family [P1 §8.1–8.2]. The live configuration is the **mismatched-port
+tabletop discriminator** [P1 §8.4]: single photons at a variable splitting ratio
+$S:(1-S)$ into ports of deliberately mismatched collective structure. Any local POVM —
+standard quantum mechanics with arbitrary physics inside each port — makes the
+conditional port statistics exactly affine in $S$; the framework's live channel
+predicts curvature $\kappa\,S(1-S)$. Nonzero curvature would discriminate against the
+linear-POVM structure of quantum mechanics itself; a null at the $10^{-3}$ level
+closes the last deviation channel and renders the mechanism empirically equivalent to
+standard quantum mechanics — the fork stated in [P1 §8.5], whose protective horn our
+own judgment favors, and which only the bench can decide. Around it sit the secondary
+signatures [P1 §8.6]: time-resolved Born statistics; the warm-detector odds-bias
+candidate at the $\hbar\omega \lesssim k_BT$ boundary of the fairness window; and the
+**energy-audit interferometry** consistency test (§4.7): full quantum per click at
+every fringe position, no calorimetric residue at losing sites — the audit that
+existing energy-resolving detector data (MKID astronomical cameras, TES calorimetry)
+could already begin, and that no experiment has yet been framed to perform.
+
+### 6.3 The entangled sector's knobs
+
+The fidelity law $S = 2\sqrt2\,\eta$ (§5.2) converts Bell tests into measurements of
+the registry fidelity, and the **cross-station injection protocol** [P1 §8.7] makes
+$\eta$ a controlled variable rather than an inferred one: deliberately injected
+broadband cross-station noise leaks into the correlators only through registry
+infidelity, with a computable, angle-independent signature ($\delta S = 4(1-\eta)L$) —
+a near-term, systematics-robust measurement on any working Bell setup. The same
+protocol's phase-locked-tone channel carries the sector's most radical flag: a
+correlation excess **above the Tsirelson bound**, which no quantum-mechanical
+mechanism can produce; its observation would be decisive, its null cheap. Standing
+alongside: the **no-speed-floor** prediction (§5.3) — bounds on the "speed of quantum
+influence" grow without ever finding a floor, because a rotation has no velocity.
+
+### 6.4 The preferred frame's tests: the T-ledger
+
+The frame enters through measurement only (§5.4), so its tests are boundary tests. The
+program's ledger:
+
+| | Test | Probes | Status |
+|---|---|---|---|
+| **T1** | Gravitational Bell vs. linewidth | the H′ postulate (below) | designed; never performed |
+| **T2** | Sidereal GHZ | cosmic vs. local frame | designed |
+| **T3** | AB visibility vs. $\gamma$ | in-flight (kinematic) frame coupling | companion draft |
+| **T4** | MRI/NMR surface relaxation | frame coupling in the *dissipation* channel | designed |
+| **T5** | LIGO sidereal quantum-noise modulation | cosmic frame, boundary anisotropy | drafted; pilot data streaming |
+
+The literature already constrains the *free-precession* channel severely (neutron
+bounds at $b_n < 6.7\times10^{-34}$ GeV close it); the framework's own scoping is that
+its coupling acts at boundaries — in the **dissipation channel, which existing bounds
+do not probe**. T4 and T5 live in exactly that loophole; T2 and T5 carry the sidereal
+signatures that would distinguish a cosmic (CMB) frame from a local one; a null across
+the ledger leaves the framework with only the gravitationally suppressed coupling and
+retires the stronger VPFH forms.
+
+### 6.5 The gravitational Bell test and its postulate, kept whole
+
+The program's oldest candidate prediction is retained with its honesty apparatus
+intact [MCI §6, App. C]. The candidate effect: two Bell detectors at different
+gravitational potentials, entangled photons of *narrow* linewidth $\Delta\nu$; if the
+local reference couples into the polarization projection, the redshift accumulates
+$\delta\phi_{\rm grav} = \omega\,\Delta\Phi/c^2\Delta\nu$ over the coherence time, and
+CHSH degrades as $\exp(-\delta\phi_{\rm grav}^2/2)$ — a $1/\Delta\nu^2$ visibility
+exponent, discriminated by a joint linewidth × altitude scan (kHz linewidths at
+km-scale splits reach order unity; Micius-class broadband photons sit seven orders
+below sensitivity, which is why the signature has never been tested). The honesty
+apparatus is the point: the effect **does not follow from the framework plus standard
+QED** — the absorption amplitude factorizes into a polarization projection times a
+temporal factor, the redshift lives entirely in the latter, and it cancels as a
+common-mode phase in the normalized correlation ([MCI App. C]; every apparatus element
+that might evade the factorization was checked and fails). The effect requires an
+additional, non-covariant coupling H′ of the polarization projection to the local
+reference rate (gauge-legal in its gradient form, still non-covariant, still absent
+from QED). The experiment is therefore a clean falsification test *of that postulate*
+— the preferred-frame commitment showing up at the level of a single measurement — and
+not of the framework's core. Separately, the **Bose–Marletto–Vedral configuration**
+discriminates the wave-energy *reading* of the ontology: a real-energy-density source
+gravitates as a mean field and would *not* gravitationally entangle two masses — a BMV
+null — where quantized gravity predicts entanglement [MCI §6.4]; far-future, and noted
+as an ontology discriminator rather than a framework prediction.
+
+### 6.6 What falsifies what
+
+The map, plainly: curvature in the tabletop discriminator or an above-Tsirelson
+injection excess would overturn quantum mechanics' linear structure in the framework's
+favor — and their nulls close deviation channels while leaving the core intact, since
+the core is built to be Born-exact [P1]. The coupling-dial protocols test the
+framework *against* the collapse programs — a mass-located boundary falsifies us, a
+coupling-located one falsifies them. The T-ledger and the H′ test probe the
+preferred-frame commitment: sidereal nulls retire the cosmic frame, an H′ null retires
+the one candidate signature and returns the frame to its unobserved-but-necessary
+role. What no accessible experiment reaches is the fenced outlook of §5.5 — and the
+program says so rather than borrowing credibility from it.
 
 ## 7. Discussion and the consolidated ledger — [STUB]
 
