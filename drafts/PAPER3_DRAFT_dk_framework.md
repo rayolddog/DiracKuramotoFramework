@@ -187,6 +187,28 @@ budget** — one quantum, one closure, however thinly the amplitude is spread [P
 §3.3]. Which-path is the register electromagnetic detectors einselect [MCI §3.7], which
 is why path is the superposition detectors are best at destroying.
 
+**A century of evidence, reorganized.** The framework's two-route structure — locking
+for matter, occupancy for light, ensemble statistics yielding only noise-classicality
+(§3) — is not a new empirical claim; it is a reorganization of what a century of
+experiments already measured. The table reads them in the framework's terms:
+
+| Experiment | What it probed | What it established, in these terms |
+|---|---|---|
+| Young 1801 (sunlight + pinhole) | ensemble light coaxed into wave behavior | coherence can be *manufactured* from ensemble light — visibility is source history (§4.4) |
+| Einstein 1909 (fluctuation formula) | both routes at once | blackbody fluctuations carry two terms — shot noise at low occupancy, wave interference at high — the two classicalities in one equation |
+| Planck 1900 / Rayleigh–Jeans | the ensemble route's breaking point | classical field theory fails exactly where mode occupancy drops below $\sim 1$: light's classical limit *is* an occupancy criterion |
+| Taylor 1909 (feeble light) | interference with one photon at a time | light's wave-classicality is not inter-photon statistical mechanics |
+| Hanbury Brown–Twiss 1956 | the two classicalities, distinguished | thermal bunching ($g^{(2)}=2$) vs. coherent flatness ($g^{(2)}=1$) — noise-classical and wave-classical light empirically separated |
+| Laser 1960 / Glauber 1963 | the occupancy route, isolated and formalized | the coherent state as the classical wave; the phase manufactured by a matter-side locking transition (Haken) |
+| Tonomura 1989 (electron buildup) | the fermion prohibition | no classical electron wave — matter's classicality arrives as records, dot by dot, one lock at a time |
+| BCS / BEC / Josephson | the exception that enforces the rule | matter reaches the occupancy route only by first becoming bosonic |
+
+None of these experiments needed the framework, and the framework claims none of them
+as evidence *for* it over standard quantum mechanics. What the table shows is
+different and worth showing: the two-route structure is not an interpretive novelty
+bolted onto the physics but the organizing pattern the record already follows — the
+framework names the axes the century was measuring along.
+
 ## 3. Two boundaries, one mechanism: the ladder
 
 *(Confirmed content in full; Figure 1 = the ladder.)*
@@ -799,14 +821,23 @@ checking are marked ⚠.)*
   fluctuations. *Phys. Rev. A* **40**, 1165–1174.
 - Dirac, P. A. M. (1928). The quantum theory of the electron. *Proc. R. Soc. London A*
   **117**, 610–624.
+- ⚠ Einstein, A. (1909). Zum gegenwärtigen Stand des Strahlungsproblems. *Phys. Z.*
+  **10**, 185–193. (The fluctuation formula, §2 table.)
 - Everett, H. (1957). "Relative state" formulation of quantum mechanics. *Rev. Mod.
   Phys.* **29**, 454–462.
 - Gambini, R., & Pullin, J. (2018). The Montevideo interpretation of quantum
   mechanics: a short review. *Entropy* **20**, 413.
+- Glauber, R. J. (1963). Coherent and incoherent states of the radiation field.
+  *Phys. Rev.* **131**, 2766–2788.
 - Grangier, P., Roger, G., & Aspect, A. (1986). Experimental evidence for a photon
   anticorrelation effect on a beam splitter. *Europhys. Lett.* **1**, 173–179.
 - Gurney, R. W., & Mott, N. F. (1938). The theory of the photolysis of silver bromide
   and the photographic latent image. *Proc. R. Soc. London A* **164**, 151–167.
+- ⚠ Haken, H. (1975). Cooperative phenomena in systems far from thermal equilibrium
+  and in nonphysical systems. *Rev. Mod. Phys.* **47**, 67–121. (Laser threshold as
+  locking transition, §§2–3.)
+- Hanbury Brown, R., & Twiss, R. Q. (1956). Correlation between photons in two
+  coherent beams of light. *Nature* **177**, 27–29.
 - Kuramoto, Y. (1975). Self-entrainment of a population of coupled non-linear
   oscillators. *Int. Symp. on Mathematical Problems in Theoretical Physics*, 420–422.
 - ⚠ Lita, A. E., Miller, A. J., & Nam, S. W. (2008). Counting near-infrared
@@ -831,6 +862,8 @@ checking are marked ⚠.)*
   Gravit.* **28**, 581–600.
 - Penrose, R. (2004). *The Road to Reality*. Jonathan Cape. (The zig-zag picture of
   the mass coupling, §4.6.)
+- ⚠ Planck, M. (1900). Zur Theorie des Gesetzes der Energieverteilung im
+  Normalspectrum. *Verh. Dtsch. Phys. Ges.* **2**, 237–245.
 - ⚠ Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the
   speed of "spooky action at a distance." *Nature* **454**, 861–864.
 - Schrödinger, E. (1926). Quantisierung als Eigenwertproblem. *Ann. Phys.* **79** (and
@@ -841,9 +874,14 @@ checking are marked ⚠.)*
 - ⚠ Shimony, A. (1984). Controllable and uncontrollable non-locality. In *Proc. Int.
   Symp. Foundations of Quantum Mechanics* (Tokyo), 225–230. ("Passion at a distance,"
   §5.3.)
+- ⚠ Taylor, G. I. (1909). Interference fringes with feeble light. *Proc. Camb. Phil.
+  Soc.* **15**, 114–115.
 - Toner, B. F., & Bacon, D. (2003). Communication cost of simulating Bell
   correlations. *Phys. Rev. Lett.* **91**, 187904. (The one-bit simulation result,
   §5.3.)
+- Tonomura, A., Endo, J., Matsuda, T., Kawasaki, T., & Ezawa, H. (1989).
+  Demonstration of single-electron buildup of an interference pattern. *Am. J. Phys.*
+  **57**, 117–120.
 - Volovik, G. E. (2003). *The Universe in a Helium Droplet*. Oxford University Press.
   (Emergent relativity near a Fermi point — cited ONLY by the fenced outlook §5.5;
   drop with it if the outlook does not survive scope pass.)
