@@ -392,6 +392,30 @@ the sign of the vacuum's compressibility / the excitation spectrum, again Step 2
 the skeleton — *disorder → sync/SSB → timelike khronon VEV → Weyl-point Lorentz cone →
 thermal/Matsubara identification of that axis* — reuses machinery DK already has.
 
+**Addendum (2026-07-31): the Bell frame rotation grounded here (JB's recalled
+connection, reconstructed — his original exploration predates the memory system and
+is not in the repo).** The resync-as-frame-rotation picture (Bell resync = rotation
+of the pair's shared plane/phase orientation anchored at the creation event; no
+propagation, no speed floor, zero signal bits) acquires its ontological ground in
+this section's picture: the pair's shared frame is an orientation **in the same
+order-parameter space out of which the 3+1 arena emerges** — a *local, pair-specific*
+sibling of the *global* frame choice that is the foliation itself — not a field
+configuration in the arena. Distance, velocity, and propagation are defined only
+inside the emergent metric (Step 2's Weyl cone), so a rotation of a pre-metric
+orientation has no transit: "no speed" is a category fact, not a large velocity. The
+foliation connects the two ideas twice: it supplies the simultaneity that orders the
+rotation (the before-before dissolution), and it is itself the substrate's global
+frame choice. Structural bonus: post-SSB, reorientations within the degenerate
+vacuum manifold are Goldstone-type moves — locally costless and locally invisible,
+only relative orientations physical — so the rotation's zero-bit property, the
+no-speed-floor prediction, and this section's SSB picture are three faces of one
+statement: *the rotation is motion along a symmetry direction of the medium
+spacetime is made of.* (Parallel, not identification: the pair's frame is not the
+khronon axis, but a sibling orientation in the same internal space.) Scope: stacks
+speculation on §7's speculation — note-level only, feeds at most Paper 3's
+preferred-frame section; Papers 1–2's frame-rotation content (P5–P6, Toner–Bacon
+zero-bit formulation, inverted Gisin) stands independently of all of this.
+
 ---
 
 ## 8. Open gaps (for next time)
