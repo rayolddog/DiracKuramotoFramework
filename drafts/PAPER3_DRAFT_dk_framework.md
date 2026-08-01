@@ -258,21 +258,172 @@ excluded from both. Reality and classicality, which travel together for matter,
 separate cleanly for light: this is §2's uncoupled-limit result meeting the ladder, one
 fact from two directions.
 
-## 4. The anatomy of measurement — [STUB: the clock-dictionary chapter]
+## 4. The anatomy of measurement: the clock dictionary
 
-*Sources, in drafting order: [MCI §3] (three stages: capture/selection/registration;
-the Re/Im W boundary; the dressed-mass pole form of the cut; what the coupling can and
-cannot supply) as the installed mechanism, cited; then the clock-dictionary arc from
-`NOTE_detector_engineering_surface_interference.md` — the three-hand clock (hour =
-foliation, second = chiral/ZBW, minute = transition register), same-rate/random-position,
-the 12/24-hour spinor double cover, the diffused-hologram account of the noise (reference
-trichotomy; fairness and irreversibility from one incoherence), backwards time as
-register-local retardation, the 2mc² energy ladder, antimatter chirality on the dial,
-the Higgs clockmaker (`NOTE_cut_crossover_higgs.md` §3); the history principle (where
-history is redundant vs real: state as sufficient statistic in the unitary sector;
-history as physical resource at boundaries; echo T2*/T2 as the regime boundary); the
-detector taxonomy table [MCI §5; P2 §4] and the energy-audit consistency test
-[P1 §8.6(vi)].*
+*(v0.1 first pass. The mechanism itself is inherited from [MCI §3] and the companions
+and compressed in §4.1; §§4.2–4.7 draft the clock-dictionary arc from the framework
+notes. Interpretive and speculative items keep their note-level flags.)*
+
+### 4.1 The three stages, installed
+
+A measurement separates into **capture, selection, registration** [MCI §3.1; P1 §3;
+P2 §4]. Capture is reversible: a resonant, amplitude-sensitive coupling inside the
+tongue ($|\Delta\omega| \lesssim K$), distributing excitation across every candidate
+site in proportion to local intensity, committing to nothing — its laboratory
+demonstrations are the spin echo, the catch-and-reverse of a monitored qubit, and
+Stern–Gerlach recombination [MCI §3.2]. Selection is the commit: the noise-driven
+exchange game among the captured shares, where the Born weights are set [P1]; and
+registration is the reservoir-powered closure — charge-triggered, energy-blind,
+equivariant by design: it copies whatever selection committed and contributes no
+statistics of its own [MCI §3.1]. The stage boundaries are physical, not narrative:
+formally the two clauses of the cut condition (an absorptive channel open; the bath
+lock engaged — $\mathrm{Im}\,W \neq 0$, $\Gamma_{\rm cap} > 0$ [MCI §3.5], equivalently
+the dressed Dirac mass pole leaving the real axis [MCI §3.6]); operationally the
+recoverability criterion of the measurement companion [P2 §4]; quantitatively the
+$\kappa_{\rm ret} \sim K$ layer of width $w = K/\omega$ [P2 §3]. One structural fact
+from [MCI §3.7–3.8] governs everything downstream and is restated once: the
+electromagnetic interaction couples through the vector current, so the pointer basis
+real detectors einselect is **which-path/charge**, not the chiral channel — the chiral
+register is the framework's *clock*, not its pointer.
+
+### 4.2 The clocks: three hands, two registers
+
+Per atom and per register, one clock; its **rate** is universal (a species constant set
+by mass or transition energy), its **position on the face** is random across atoms.
+That one sentence — *same rate, random position* — is the dictionary's core entry, and
+premise P3(a) of the selection companion is its formal statement.
+
+The full dial has three hands. The **hour hand** is universal, foliation time — the
+irreversible-lock counter, owned by the substrate and not by any atom, frozen during
+any single event. The **second hand** is the chiral/zitterbewegung phase
+($\sim 10^{20}$ Hz for electrons), the register bound matter collectively disciplines.
+The **minute hand** is the optical-transition phase ($\sim 10^{15}$ Hz), the recording
+register — and it is *this* register that thermal matter leaves phase-random. "The
+bulk is coherent" (second hand) and "the sites are mutually incoherent" (minute hand)
+are statements about different oscillators in the same atoms; the framework needs both
+and they do not compete. The second hand runs in three modes, by process: **held** at
+capture (the drive imprints its phase — the memory that points home), **geared** at
+entanglement formation (one shared orientation for the pair — the registry premise
+[P1 P5] in clock language), **rotated** at measurement (the first lock re-forms the
+joint orientation — the frame rotation of §5).
+
+The clock face itself carries Dirac structure. A spin-½ phase is a half-angle: the
+spinor returns to itself only after 720°, every observable (bilinear) after 360° —
+equivalently, the Dirac phase runs at $\omega_C = mc^2/\hbar$ while the observable
+zitterbewegung beat runs at $2\omega_C$. Choosing the 12-hour or the 24-hour face is
+choosing which object you track; the ZBW beat is the 12-hour observable reading of a
+24-hour spinor clock. The detector's fair game is played with minute hands at random
+positions on faces whose deep dial is 24-hour.
+
+### 4.3 The diffused hologram: one incoherence, two consequences
+
+The noise that runs the selection game has a physical identity: the interference cross
+term between each site's complex amplitude and the uncontrolled-phase fields of the
+detector's own charges and the vacuum [P1 §4]. The holographic reading makes its
+structure exact. Each absorbing atom is a recording site whose *reference beam* — its
+transition-register phase — has an uncontrolled angle: same frequency as its neighbors
+(a spectrally incoherent medium could not resonantly capture at all — white light
+models a medium outside the game, not a detector playing it unfairly), but random
+mutual phase. The decisive variable is what is *known* about the references, and it
+sorts every measurement architecture into a trichotomy [P2 §4.1]: **common** reference
+(the homodyne/local-oscillator limit — engineered fairness, engineered readout);
+**known-different** references (the echo and atomic-frequency-comb media — an
+angle-multiplexed hologram, invertible because the angles can be re-supplied);
+**random-unrecorded** references (the detector bulk — the diffused hologram, written
+but unreadable). The framework's central economy lives here: **one incoherence buys
+both fairness and irreversibility.** Because the references are random, the cross-term
+noise is zero-mean — no site is favored, the game is fair, and the Born weights are
+protected [P1, Theorem 1]. Because the references are unrecorded, the record cannot be
+inverted — the phase history is scrambled beyond recall, and the commit is permanent.
+Fairness and the arrow of the measurement are the same fact about the same phases.
+(Quantitative handle, open: each exchange hop adds one unrecorded reference, so
+history fidelity should decay with hop count like angle-multiplexing crosstalk — the
+volume-holography scaling laws are a candidate calibration, logged as a toy
+calculation in the notes.)
+
+### 4.4 Where history is redundant and where it is real
+
+The unitary sector needs no history variable: the state is its own sufficient
+statistic. Wave propagation is Markovian in the field — the field on any surface is
+complete boundary data for everything downstream — so the present wave *is* the
+integrated past, compressed; and interference reads only *differential* history, which
+begins where paths split (everything upstream of the split is common-mode phase and
+cancels — the discipline that only phase differences are physical, applied to
+provenance). This is why the double-slit fringe calculation needs the slits and not
+the source: fringe *spacing* is slit geometry, while the source's contribution —
+coherence — enters as fringe *visibility* (van Cittert–Zernike). At dissipative
+boundaries the accounting inverts: history becomes a real, non-redundant physical
+resource. The first interaction has memory primacy (the held phase of §4.2 — the
+memory that points home); reversal is possible exactly while the history still points
+back, and the spin echo marks the regime boundary in the laboratory — T2* dephasing
+refocusable because its history is locally stored, T2 irreversible because its history
+has diffused into the bulk (§4.3). One sentence for the interpretive ledger: Bohmian
+mechanics, whose guidance law needs no memory in flight (correctly — see above), has
+no measurement-sector history mechanism at all; the diffused hologram is ours.
+
+### 4.5 Backwards time, the energy ladder, and antimatter on the dial
+
+*(Interpretive, note-flagged; Dirac-level where stated.)* Locking requires
+bidirectional phase authority: in the Adler flow the instantaneous rate swings through
+$[\omega - K,\ \omega + K]$, and retardation — the hand moving backward against its
+reference — is half of what a lock *is*. The framework reads this at Dirac level: a
+real oscillation is identically a sum of counter-rotating components, and the
+negative-frequency sector is not optional — no localized packet exists without it, and
+the zitterbewegung *is* the beat of the two senses across $2mc^2$
+(Feynman–Stückelberg on the dial: a backward-running hand is a forward-running mirror
+hand). The resolution that keeps causality intact: **backwards time is always
+register-local — second hand relative to hour hand — never global**; the hour hand's
+monotonicity is supplied by the irreversible locks themselves (§4.3). The energy
+ladder then organizes the phenomenology: at common energies, backward rotation exists
+only as bounded, repaid slips — the $\kappa_{\rm ret}$ give-back of a failed lock, the
+virtual excursions of §3. At $2mc^2$ (or the Schwinger field) the counter-rotation is
+promoted from rented transient to self-sustaining clock: pair production, with the
+*what-escapes* of §3's threshold now identified — the rotation sense itself. No
+in-place reversal ever occurs: reversed clocks are only pair-created with a forward
+partner and pair-destroyed by mutual unwinding (charge conservation, read on the
+dial). And charge conjugation flips chirality for the same geometric reason a screw
+reverses handedness when its rotation reverses while its arrow is kept: the
+backward-running right-chiral clock *is* the forward-running left-chiral anti-clock —
+one fact in two vocabularies, with the invariant statement about chirality, not
+helicity. Slogan, flagged as slogan: eV physics rents backward time in closed loops;
+MeV physics buys it outright, only in matched pairs; nothing touches the hour hand.
+
+### 4.6 The clockmaker
+
+The second hand's coupling is not free-standing: the Yukawa interaction is *defined*
+as a chirality flip ($\bar\psi_L H \psi_R$ — a bare mass being gauge-forbidden), so
+$K = m = y\,v/\sqrt2$: **the Kuramoto coupling of the chiral clocks is set by the
+Higgs condensate**, and every second-hand tick is a transaction with the vacuum
+(Penrose's zig-zag picture, made mechanical). The condensate plays exactly three
+roles and refuses a fourth: it sets the denominator of every Compton clock; it
+*creates* the clocks (no condensate, no mass coupling, no beat); and it is **not**
+the frame — a scalar vacuum expectation value is Lorentz-invariant, and the
+frame-breaking is done elsewhere, by the foliation vector (§5). The QCD chiral
+condensate is the sibling clockmaker — it supplies ~99% of hadronic mass and hence of
+every nuclear clock rate — and §2's photon result is this section's converse: the
+condensate is neutral under the residual U(1), so the photon alone is sold no clock.
+(Full three-role analysis: `NOTE_cut_crossover_higgs.md` §3.)
+
+### 4.7 One mechanism, many detectors
+
+Two numbers span the detector zoo along the single mechanism: the per-event **capture
+strength** and the **commit threshold** $k$ — how many captures must accumulate at one
+site within its memory time before selection commits [MCI §5]. The Bell/photon
+detector is the projective limit ($k = 1$: one quantum, one capture, one commit, one
+click — the only detector class for which per-event Born claims are properly made).
+NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
+a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
+one drawn-out measurement but a *sequence* of partial capture–commit–register triplets
+(Mott's problem, resolved as track-recording taxonomy). The photographic emulsion is
+the integrating limit ($k \approx 3$–4, Gurney–Mott), and its reciprocity failure —
+a sub-threshold latent speck *decaying* if not reinforced — is everyday laboratory
+evidence that selection and registration are physically distinct stages: Stage-2
+progress can be made and then lost. The chapter closes with the audit that makes the
+whole anatomy calorimetric [P1 §8.6(vi)]: every click deposits the full quantum at one
+site, at every fringe position; the distributed capture of Stage 1 is reversible
+energy, returned at $\kappa_{\rm ret}$, never banked — so losing sites retain no
+residue, and the energy in the fringe is small or nonexistent until the second stage
+completes. Delocalization is the wave's birthright; the budget closes at one address.
 
 ## 5. The entangled sector — [STUB]
 
