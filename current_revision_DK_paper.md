@@ -322,6 +322,54 @@ Opening the system tilts the flat marginal line into a sloped potential with a
 minimum, the Adler basin of §2.3, so the off-switch and the on-switch are the same
 structure under two boundary conditions.
 
+**A numerical check in the two-body case.** The reduction above concerns one
+particle's chiral L/R phase, and the scope caveat notes that composite
+superpositions are protected by unitarity in general rather than by that
+calculation. The configuration for which the Kuramoto worry is most naturally
+posed falls between the two: *two* genuine oscillators with an explicit mutual
+interaction, which is the actual Kuramoto setting and which neither argument
+covers. That case can be tested directly. We evolved two Dirac particles in 1+1D,
+bound in a scalar harmonic well and coupled by a Breit $\alpha_1\alpha_2$ term,
+under closed unitary split-operator evolution, and asked whether their
+Zitterbewegung phases entrain.
+
+**They do not, and the failure has a mechanism.** Turning on any coupling at all
+drops the mean reduced-state purity from $0.924$ to $\approx 0.30$–$0.40$, where
+it plateaus; across twenty-five coupled, detuned parameter cells the phase-order
+parameter and the purity are anticorrelated at $-0.77$, and the best simultaneous
+cell in the sweep reaches only $R=0.444$ with purity $0.441$. There is no
+accessible regime in which the two clocks are both coupled and individuated. The
+one cell that did show genuine drift suppression — the relative phase advancing at
+$0.39$ of the bare detuning rate, which is what partial entrainment looks like —
+**loses it entirely when the evolution is lengthened fourfold**, returning to
+$1.10$ of the detuning rate with the order parameter decaying from $0.839$ to
+$0.518$. What resembles an Arnold tongue is a transient correlation that decays,
+not an attractor.
+
+The mechanism is the one §2.2 predicts but does not name: **the coupling that
+would align the phases instead builds correlation between the subsystems**, and
+the phase information migrates out of the marginals and into the joint state.
+Closed-system chiral coupling has no attractor because its would-be locking
+strength is consumed generating entanglement. This is the same physics as thermal
+decoherence, which entangles a system with unobserved modes — so no separate
+thermal argument is needed, and none is available in a closed system anyway.
+
+**Method note, because the measurement is easy to get wrong.** The oscillator
+phase must be read as a *state* variable — the Bloch azimuth of the reduced spin
+state — rather than inferred by band-pass filtering an observable and taking an
+analytic signal. The two agree to $0.008$ in the uncoupled limit and diverge by up
+to $0.105$ once coupled, with the filtered estimate **overstating** entrainment
+precisely in the cells where purity has collapsed and the phase is least well
+defined. Where the marginal is nearly maximally mixed the azimuth is not small but
+undefined, and any phase-based order parameter loses its domain there. The
+appropriate generalization for spinor-valued clocks is the non-Abelian Kuramoto
+model on $SU(2)$ [49], which reduces to the scalar case at $n=1$.
+
+**Scope.** Two bodies, one spatial dimension, one interaction, one family of
+initial conditions. This does not establish the closed-system no-go in general —
+that remains the analytic argument's job — but it closes the specific gap where a
+mutual-coupling lock could have hidden, and it supplies the mechanism.
+
 ### 2.3 The open system: dissipation supplies the attractor
 
 Couple the chiral pair (or a composite particle) to a bulk and trace the bulk
@@ -2073,4 +2121,5 @@ check the complete $\rho$ (Bloch length / purity), not only the extracted phase 
 
 [48] Claude Fable 5 & Bramble, J. M. (2026). The Heisenberg Cut as a Physical Threshold: Location, Width, and Consequences of the Classical–Quantum Boundary in Detector Dynamics. Companion paper, this series (v0.3; `drafts/PAPER2_DRAFT_heisenberg_cut.md` in the repository, with its review round in `heisenberg_cut_AI_review_2026-07/`).
 
-[46] Lawrence, E. O., & Beams, J. W. (1928). The element of time in the photoelectric effect. *Phys. Rev.*, 32(3), 478–485.
+
+[49] Lohe, M. A. (2009). Non-Abelian Kuramoto models and synchronization. *J. Phys. A: Math. Theor.*, 42(39), 395101; see also Lohe, M. A. (2010). Quantum synchronization over quantum networks. *J. Phys. A: Math. Theor.*, 43(46), 465301.

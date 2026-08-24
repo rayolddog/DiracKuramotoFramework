@@ -62,3 +62,7 @@ PAPER_REVISED_v2_backup_*.md
 
 # Session working notes / brainstorm scratch — kept LOCAL (repo is public)
 /sessions/
+
+# WIP: limiting-curvature / black-hole-interior desynchronization draft
+# (added 2026-08-23; un-ignore once the section is finalized)
+limiting_curvature/

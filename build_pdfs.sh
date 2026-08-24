@@ -8,6 +8,9 @@
 #                            (the canonical working manuscript), TOC depth 3
 #   ManyClocks.pdf         — pandoc render of PAPER_UNIFIED.md, TOC depth 3
 #   Two_Regimes_of_Chiral_Mass_Coupling.pdf       — pandoc render of PAPER_REVISED.md, TOC depth 3
+#   4D-3DandSpacetime.pdf  — pandoc render of 4D-3DandSpacetime.md, TOC depth 3
+#                            (NOTE: that document uses \( \) / \[ \] math delimiters rather than
+#                            $ ... $, so it needs -f markdown+tex_math_single_backslash)
 #   COVER_LETTER.pdf       — pandoc render of COVER_LETTER.md (cover letter, no TOC)
 #   AB_visibility.pdf      — pandoc render of AB_VISIBILITY_PAPER.md, TOC depth 2
 #   CosmicExpansion.pdf    — pandoc render of COSMIC_EXPANSION_PAPER.md, TOC depth 2
@@ -64,19 +67,44 @@ pandoc "${REPO_DIR}/current_revision_DK_paper.md" \
     --toc --toc-depth=3 \
     "${PANDOC_OPTS[@]}"
 
-# Build the revised single-paper manuscript (submission version)
-echo "Building Two_Regimes_of_Chiral_Mass_Coupling.pdf from PAPER_REVISED.md..."
-pandoc "${REPO_DIR}/PAPER_REVISED.md" \
-    -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" \
-    --toc --toc-depth=3 \
-    "${PANDOC_OPTS[@]}"
+# Build the 4D-to-3+1 spacetime document (speculative extension; untracked working doc).
+# It uses \( \) and \[ \] rather than $ ... $, which pandoc does not read as math by
+# default, hence the explicit input format.
+if [[ -f "${REPO_DIR}/4D-3DandSpacetime.md" ]]; then
+    echo "Building 4D-3DandSpacetime.pdf from 4D-3DandSpacetime.md..."
+    pandoc "${REPO_DIR}/4D-3DandSpacetime.md" \
+        -f markdown+tex_math_single_backslash \
+        -o "${REPO_DIR}/4D-3DandSpacetime.pdf" \
+        --toc --toc-depth=3 \
+        "${PANDOC_OPTS[@]}"
+else
+    echo "Skipping 4D-3DandSpacetime.pdf (source not present)."
+fi
 
-# Regenerate Two_Regimes_of_Chiral_Mass_Coupling.tex from PAPER_REVISED.md (standalone LaTeX source, for arXiv)
-echo "Regenerating Two_Regimes_of_Chiral_Mass_Coupling.tex from PAPER_REVISED.md..."
-pandoc "${REPO_DIR}/PAPER_REVISED.md" \
-    -s -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" \
-    --toc --toc-depth=3 \
-    "${PANDOC_OPTS[@]}"
+# Build the revised single-paper manuscript (frozen FoP-submission snapshot) and its
+# standalone LaTeX source for arXiv.
+#
+# NOTE (2026-08-24): PAPER_REVISED.md is currently ABSENT from the working tree — the
+# canonical manuscript now lives in current_revision_DK_paper.md, built above. Because
+# this script runs under `set -e`, an unguarded pandoc call on a missing source aborted
+# the whole build here, silently skipping everything below (cover letter, AB visibility,
+# cosmic expansion, discretization, equations, paper.tex/pdf). The guard below keeps the
+# rest of the build alive. If the frozen snapshot is restored, this block runs unchanged.
+if [[ -f "${REPO_DIR}/PAPER_REVISED.md" ]]; then
+    echo "Building Two_Regimes_of_Chiral_Mass_Coupling.pdf from PAPER_REVISED.md..."
+    pandoc "${REPO_DIR}/PAPER_REVISED.md" \
+        -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" \
+        --toc --toc-depth=3 \
+        "${PANDOC_OPTS[@]}"
+
+    echo "Regenerating Two_Regimes_of_Chiral_Mass_Coupling.tex from PAPER_REVISED.md..."
+    pandoc "${REPO_DIR}/PAPER_REVISED.md" \
+        -s -o "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" \
+        --toc --toc-depth=3 \
+        "${PANDOC_OPTS[@]}"
+else
+    echo "Skipping Two_Regimes_of_Chiral_Mass_Coupling.{pdf,tex} (PAPER_REVISED.md not present)."
+fi
 
 # Build the submission cover letter (no TOC)
 echo "Building COVER_LETTER.pdf from COVER_LETTER.md..."
@@ -152,10 +180,20 @@ echo "Compiling paper.pdf via xelatex (two-pass)..."
 # Report
 echo
 echo "Done:"
-ls -lh "${REPO_DIR}/current_revision_DK_paper.pdf" \
-       "${REPO_DIR}/ManyClocks.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.pdf" "${REPO_DIR}/Two_Regimes_of_Chiral_Mass_Coupling.tex" "${REPO_DIR}/COVER_LETTER.pdf" "${REPO_DIR}/AB_visibility.pdf" \
-       "${REPO_DIR}/CosmicExpansion.pdf" "${REPO_DIR}/CosmicExpansion.tex" \
-       "${REPO_DIR}/DiscretizationAsSync.pdf" \
-       "${REPO_DIR}/equations.pdf" "${REPO_DIR}/equations.tex" \
-       "${REPO_DIR}/paper.tex" "${REPO_DIR}/paper.pdf" \
-    | awk '{print "  " $9 ": " $5}'
+# List only what was actually produced, so a guarded/skipped target does not emit an
+# ls error into the summary.
+for f in current_revision_DK_paper.pdf \
+         4D-3DandSpacetime.pdf \
+         ManyClocks.pdf \
+         Two_Regimes_of_Chiral_Mass_Coupling.pdf Two_Regimes_of_Chiral_Mass_Coupling.tex \
+         COVER_LETTER.pdf AB_visibility.pdf \
+         CosmicExpansion.pdf CosmicExpansion.tex \
+         DiscretizationAsSync.pdf \
+         equations.pdf equations.tex \
+         paper.tex paper.pdf; do
+    if [[ -f "${REPO_DIR}/${f}" ]]; then
+        ls -lh "${REPO_DIR}/${f}" | awk '{print "  " $9 ": " $5}'
+    else
+        echo "  ${f}: (not built)"
+    fi
+done
