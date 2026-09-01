@@ -405,7 +405,16 @@ $$\tau_{\text{Penrose}} = \frac{\pi\hbar\,\Delta x}{Gm^2} \quad \Longleftrightar
 
 ## 12. The Born Rule as Energy Partition
 
-In this framework, $|\psi|^2$ is not fundamentally a probability — it is the **energy density** of the real oscillating field $\psi$. The probabilistic appearance of measurement outcomes reflects unpredictable interference with the zero-point + thermal background field at the moment of synchronization with the detector. For outcome channels of **equal energy per quantum** (spin, polarization, fixed-frequency detector clicks — the framework's use cases), the Born rule is read as the long-run frequency of quantum-number partition into the available detector channels under unbiased stochastic background driving, not as an independent probability axiom. The reading does not extend to non-degenerate energy measurements (see the limitation below).
+*Reconciled with the selection companion 2026-09-01. Throughout this section **[P1]** is
+`drafts/PAPER1_DRAFT_born_selection.md` — "A Field–Matter Selector for Outcome Production,
+Conditioned on a Detector Ready-State Measure," DRAFT v0.7 (2026-08-31). Where this section
+and [P1] differ on what has been shown, [P1] governs: it is the document that argues the
+selection mechanism, and this is a reference summary of it. Six sites were corrected against
+[P1] v0.6/v0.7, which neither tri-paper propagation round had swept — this section carried
+an independent Born-rule account for three revisions with no cross-reference in either
+direction.*
+
+In this framework, $|\psi|^2$ is not fundamentally a probability — it is the **energy density** of the real oscillating field $\psi$. The probabilistic appearance of measurement outcomes reflects unpredictable interference with the zero-point + thermal background field at the moment of synchronization with the detector. For outcome channels of **equal energy per quantum** (spin, polarization, fixed-frequency detector clicks — the framework's use cases), the Born rule is read as the long-run frequency of quantum-number partition into the available detector channels under unbiased stochastic background driving. Earlier wording closed that sentence "not as an independent probability axiom"; that is the claim [P1] v0.6 withdrew, and the conditional replacing it governs here too — **conditional outcome compatibility** with the Born comparator over a tested domain, the measure itself adopted rather than explained. The reading does not extend to non-degenerate energy measurements (see the limitation below).
 
 ### Wave energy as the primary quantity
 
@@ -417,13 +426,13 @@ are the **energy fractions** carried by each channel. This is classical wave phy
 
 ### Energy-partition mechanism
 
-A Kuramoto re-synchronization event transfers wave energy from the particle to one detector channel, raising it to its excited (registered) state. A discrete click — rather than a fractional excitation across multiple channels — arises because each detector channel is itself a quantized resonator with a discrete excitation threshold.
+A Kuramoto re-synchronization event transfers wave energy from the particle to one detector channel, raising it to its excited (registered) state. A discrete click — rather than a fractional excitation across multiple channels — needs more than each channel being a quantized resonator with a discrete excitation threshold, since independent thresholds do not by themselves forbid two channels from crossing. [P1] v0.7 supplies the missing ingredient as an explicit premise: a **closed pot**, $\sum_i e_i = \hbar\omega$, together with the requirement that registration consumes the *full* quantum (P4(a)). At most one site can then ever be above threshold, so exclusivity follows from energy conservation rather than from an imposed stopping rule. Note that [P1] §1/§9 nonetheless still records exclusivity, quench, and energy routing — the production of exactly *one* record — as **owed by the selection dynamics and not discharged there**; this section should not be read as claiming more.
 
 Which channel receives the quantum in any individual event depends on the instantaneous configuration of the background field at the moment of contact. Because the background fluctuations are statistically unbiased on the channel-selection phase space (zero-point symmetry; unbiased thermal noise), long-run frequencies of channel selection converge — for equal-energy channels — to the quantum-number fractions:
 
 $$\boxed{P(|0\rangle) = |\alpha|^2, \qquad P(|1\rangle) = |\beta|^2}$$
 
-read here as long-run *frequencies of quantum-number partition among equal-energy channels* rather than as a probability axiom of quantum theory. That the converged law is amplitude-*squared* (rather than some other symmetric function of $\alpha, \beta$) is an assumption of the channel-selection competition, not derived from the background symmetry alone.
+read here as long-run *frequencies of quantum-number partition among equal-energy channels* rather than as a probability axiom of quantum theory. That the converged law is amplitude-*squared* (rather than some other symmetric function of $\alpha, \beta$) is an assumption of the channel-selection competition, not derived from the background symmetry alone. [P1] agrees that background symmetry alone does not fix it, but locates the square elsewhere and declines to treat it as open — see gap 2 below.
 
 ### Connection to Nelson stochastic mechanics
 
@@ -431,13 +440,20 @@ Nelson (1966) [26] showed that a real particle undergoing stochastic motion in a
 
 ### Honest limitation
 
-The reframing replaces the standard Born axiom with a narrower postulate set (wave realism + equal-energy channels + unbiased background) and leaves two gaps explicitly open:
+The reframing replaces the standard Born axiom with a narrower postulate set (wave realism + equal-energy channels + unbiased background) and leaves two gaps explicitly open. That postulate set is this section's own, and it is **smaller than the one the selection companion carries**: [P1] v0.6 separates two probability spaces — the quantum outcome measure $B^M_\Psi(a) = \langle\Psi|\Pi_M(a)|\Psi\rangle$, adopted as comparator and not derived, and a **detector ready-state preparation measure** held as an explicit premise with independently measured provenance. No preparation measure appears anywhere in this section, so the boxed law above should be read as conditional on one.
 
 1. **Scope.** The energy-partition reading reproduces $|\alpha|^2$ only when the outcome channels carry the same energy per quantum (spin, polarization, fixed-frequency detector clicks). For channels of unequal energy the energy fraction $|\alpha|^2 E_0/(|\alpha|^2 E_0 + |\beta|^2 E_1)$ diverges from $|\alpha|^2$ — e.g. $E_1 = 100\,E_0$ gives an energy fraction $1/101$ against a Born weight $\tfrac12$ — so the mechanism must be read as partitioning *quantum-number occupation*, not raw energy, and the equal-energy condition is a genuine restriction rather than a convenience.
 
-2. **Why squared.** Even within the equal-energy regime, the unbiased-background assumption does not by itself fix the *squared* functional form; some symmetry of the channel-selection competition must single out $|\alpha|^2$ over other symmetric functions of $(\alpha,\beta)$. This is the same residual gap that contested branch-counting (Deutsch–Wallace) derivations face, not a feature unique to this framework.
+2. **Why squared.** Even within the equal-energy regime, the unbiased-background assumption does not by itself fix the *squared* functional form; some symmetry of the channel-selection competition must single out $|\alpha|^2$ over other symmetric functions of $(\alpha,\beta)$. **[P1] accepts that premise but rejects this framing of it, and the disagreement is worth stating.** There the square enters exactly once, as the deposited-energy law $e_i(0) = \kappa|A_i|^2$ (premise P1) — "elementary driven-oscillator energetics… where the squaring enters the theory: as mechanics, not as a probability rule" — after which a fair game carries initial shares to registration frequencies unchanged. On that account the square is *not the contested quantity*: that a driven oscillator's deposited energy is quadratic in amplitude is classical energetics, and that the measure can only be Born is Gleason's theorem, "neither ours to claim" ([P1] abstract, §1). What is contested is the *selection process* between the two. The comparison to contested branch-counting (Deutsch–Wallace) derivations therefore aims at a different problem than the one [P1] is solving, and is withdrawn (2026-09-01).
 
-Neither gap is a settled result; both are future-work items. The framework is structurally a hidden-variable theory in which the hidden variable is the instantaneous background-field configuration; it satisfies Bell's theorem because it does not use this story to explain Bell correlations (those come from the full Dirac spinor structure, Section 4 of this reference).
+Gap 1 is a genuine open restriction; gap 2 is open as stated here but disputed by [P1], as above. Neither is a settled result.
+
+**Withdrawn 2026-09-01.** This section formerly closed: *"The framework is structurally a hidden-variable theory in which the hidden variable is the instantaneous background-field configuration; it satisfies Bell's theorem because it does not use this story to explain Bell correlations (those come from the full Dirac spinor structure, Section 4 of this reference)."* Both halves are false against [P1] and are withdrawn.
+
+- **Not a hidden variable.** In [P1] §4 the background fluctuation is a *tie-breaker*: "the noise decides *that* symmetric alternatives get broken, not *toward whom*, and it carries no outcome information of its own; it is not a hidden variable, and the mechanism is not a local-hidden-variable model." The martingale theorem makes every property of the noise beyond its first two moments provably irrelevant — the fluctuation amplitude "sets rates, never odds." A variable whose magnitude drops out of the statistics cannot be the one carrying the outcome.
+- **The story *is* used for Bell.** [P1] §7 extends the selection mechanism to entangled pairs as a two-stage joint game, yielding the full quantum correlations with a resync-fidelity law $S = 2\sqrt2\,\eta$. Consistency with Bell's theorem is bought there by an explicitly nonlocal **shared-registry** premise (P5) plus an ordering foliation (P6) — "a correlation that local bookkeeping ignores, not a hidden variable" — and, as of v0.7, P5's scope is broadened to *any* state whose candidate registration sites are causally disconnected, the single-photon beam-splitter included.
+
+So the framework evades Bell by paying for nonlocality at premise level, not by declining to apply the mechanism. The Dirac-spinor account of Bell correlations in Section 4 of this reference and the shared-registry account in [P1] §7 are not reconciled anywhere; that reconciliation is an open item, not a settled equivalence.
 
 ---
 
@@ -513,7 +529,8 @@ $$\begin{array}{lll}
 \text{Zero-point field} & \tfrac{1}{2}\hbar\omega\text{ per mode} & \sigma_\varphi(0) = 1/\sqrt{2} \\
 \text{Antiparticle} & e^{+iEt/\hbar} & \text{Reversed clock} \\
 \text{Matter asymmetry} & \text{Baryogenesis} & \eta \approx \varepsilon\sin^2\delta_{\text{CP}} \\
-\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background} \\
+\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background,}\\
+ & & \text{given a preparation measure --- compatibility, not replacement (\S12)} \\
 \text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Fourier bandwidth theorem on real }\psi\text{; chiral phases }\delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
 \text{Measurement} & \text{Wavefunction collapse} & \text{Kuramoto re-sync to bulk} \\
 \text{Entanglement} & \text{Non-separable state} & \text{Synchronized clocks at creation: } \varphi_A = \varphi_B \\

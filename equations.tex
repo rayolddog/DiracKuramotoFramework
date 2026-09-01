@@ -303,7 +303,7 @@ Outside the window
 Vertex pair-sync (Stage 1) &
 \(K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle\) &
 \(\sim K_{\text{pair}}\) & Shed as secondary radiation, not locked \\
-Bulk relaxation (Stage 2) &
+Bulk relaxation (Stages 2--3) &
 \(\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)\)
 & \(\sim \Gamma_{\text{bulk}}\) & Decoheres without bulk-coherent
 absorption \\
@@ -527,10 +527,12 @@ photon--electron:
 (sync timescale \(\tau_1 = \hbar/K_{\text{pair}} \sim 1/\omega\) --- the
 photon's own period).
 
-\textbf{Two-stage measurement Lagrangian.} Combining vertex pair-sync
-(Stage 1) with bulk relaxation (Stage 2):
+\textbf{Staged measurement Lagrangian.} Combining vertex pair-sync
+(Stage 1) with bulk relaxation (Stages 2--3 --- selection then
+registration; the ``Stage 2'' of the paper's earlier two-stage division,
+split at §3.1 of the current revision):
 
-\[\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stage 2: }e\leftrightarrow\text{lattice}}\]
+\[\mathcal{L}_{\text{detect}} = \underbrace{-K_{\text{pair}}\sin(\phi_\gamma - \phi_e)}_{\text{Stage 1: }\gamma\leftrightarrow e} \;-\; \underbrace{\Gamma_{\text{bulk}}\sin(\phi_e - \Phi_{\text{bulk}})}_{\text{Stages 2–3: }e\leftrightarrow\text{lattice}}\]
 
 The framework carries three couplings, each at a different scale (only
 the latter two are dissipative Adler/Kuramoto couplings with an
@@ -559,13 +561,13 @@ normal modes / dispersion) \\
 \(K_{\text{pair}} = g_{\text{int}}\langle V_{\text{int}}\rangle\) &
 gauge interaction & pair-sync at vertex (Stage 1) \\
 \(\Gamma_{\text{bulk}} = \Gamma_{\text{env}}(T) + \Gamma_{\text{grav}}(M)\)
-& environmental + gravitational & bulk re-equilibration (Stage 2); see
-§7 below \\
+& environmental + gravitational & bulk re-equilibration (Stages 2--3);
+see §7 below \\
 \end{longtable}
 }
 
-See Paper §3.4 for the full two-stage measurement process and its Bell /
-gravitational consequences.
+See Paper §3.1/§3.4 for the full three-stage measurement process and its
+Bell / gravitational consequences.
 
 \subsubsection{Antiparticles as reversed
 clocks}\label{antiparticles-as-reversed-clocks}
@@ -695,15 +697,16 @@ vs threshold gravitational collapse. The framework's continuous form is
 what permits sub-threshold gravitational sensitivity (Paper §3.6, §5.5,
 §8.3 \#5).
 
-\subsubsection{Total Stage-2 rate: environmental +
-gravitational}\label{total-stage-2-rate-environmental-gravitational}
+\subsubsection{Total Stages-2--3 rate: environmental +
+gravitational}\label{total-stages-23-rate-environmental-gravitational}
 
 \(\Gamma_{\text{grav}}\) is the bulk's \emph{internal} gravitational
-coherence rate. The rate that controls Stage 2 of measurement (the
-perturbed partner re-equilibrating to \(\Phi_{\text{bulk}}\)) has an
-additional, usually dominant, environmental component:
+coherence rate. The rate that controls the dissipative closure of
+measurement (Stages 2--3: the perturbed partner re-equilibrating to
+\(\Phi_{\text{bulk}}\)) has an additional, usually dominant,
+environmental component:
 
-\[\boxed{\Gamma_{\text{Stage 2}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\,J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)}\]
+\[\boxed{\Gamma_{\text{2–3}}^{\text{total}} \;=\; \Gamma_{\text{env}}(T,\,J(\omega)) \;+\; \Gamma_{\text{grav}}(M,\,\Delta z)}\]
 
 The environmental term takes the standard quantum-optics form
 
@@ -957,6 +960,18 @@ time equals the thermal decoherence time:
 \subsection{12. The Born Rule as Energy
 Partition}\label{the-born-rule-as-energy-partition}
 
+\emph{Reconciled with the selection companion 2026-09-01. Throughout
+this section \textbf{{[}P1{]}} is
+\texttt{drafts/PAPER1\_DRAFT\_born\_selection.md} --- ``A Field--Matter
+Selector for Outcome Production, Conditioned on a Detector Ready-State
+Measure,'' DRAFT v0.7 (2026-08-31). Where this section and {[}P1{]}
+differ on what has been shown, {[}P1{]} governs: it is the document that
+argues the selection mechanism, and this is a reference summary of it.
+Six sites were corrected against {[}P1{]} v0.6/v0.7, which neither
+tri-paper propagation round had swept --- this section carried an
+independent Born-rule account for three revisions with no
+cross-reference in either direction.}
+
 In this framework, \(|\psi|^2\) is not fundamentally a probability ---
 it is the \textbf{energy density} of the real oscillating field
 \(\psi\). The probabilistic appearance of measurement outcomes reflects
@@ -966,7 +981,11 @@ channels of \textbf{equal energy per quantum} (spin, polarization,
 fixed-frequency detector clicks --- the framework's use cases), the Born
 rule is read as the long-run frequency of quantum-number partition into
 the available detector channels under unbiased stochastic background
-driving, not as an independent probability axiom. The reading does not
+driving. Earlier wording closed that sentence ``not as an independent
+probability axiom''; that is the claim {[}P1{]} v0.6 withdrew, and the
+conditional replacing it governs here too --- \textbf{conditional
+outcome compatibility} with the Born comparator over a tested domain,
+the measure itself adopted rather than explained. The reading does not
 extend to non-degenerate energy measurements (see the limitation below).
 
 \subsubsection{Wave energy as the primary
@@ -991,8 +1010,18 @@ mechanism}\label{energy-partition-mechanism}
 A Kuramoto re-synchronization event transfers wave energy from the
 particle to one detector channel, raising it to its excited (registered)
 state. A discrete click --- rather than a fractional excitation across
-multiple channels --- arises because each detector channel is itself a
-quantized resonator with a discrete excitation threshold.
+multiple channels --- needs more than each channel being a quantized
+resonator with a discrete excitation threshold, since independent
+thresholds do not by themselves forbid two channels from crossing.
+{[}P1{]} v0.7 supplies the missing ingredient as an explicit premise: a
+\textbf{closed pot}, \(\sum_i e_i = \hbar\omega\), together with the
+requirement that registration consumes the \emph{full} quantum (P4(a)).
+At most one site can then ever be above threshold, so exclusivity
+follows from energy conservation rather than from an imposed stopping
+rule. Note that {[}P1{]} §1/§9 nonetheless still records exclusivity,
+quench, and energy routing --- the production of exactly \emph{one}
+record --- as \textbf{owed by the selection dynamics and not discharged
+there}; this section should not be read as claiming more.
 
 Which channel receives the quantum in any individual event depends on
 the instantaneous configuration of the background field at the moment of
@@ -1008,7 +1037,9 @@ among equal-energy channels} rather than as a probability axiom of
 quantum theory. That the converged law is amplitude-\emph{squared}
 (rather than some other symmetric function of \(\alpha, \beta\)) is an
 assumption of the channel-selection competition, not derived from the
-background symmetry alone.
+background symmetry alone. {[}P1{]} agrees that background symmetry
+alone does not fix it, but locates the square elsewhere and declines to
+treat it as open --- see gap 2 below.
 
 \subsubsection{Connection to Nelson stochastic
 mechanics}\label{connection-to-nelson-stochastic-mechanics}
@@ -1025,7 +1056,15 @@ stochastic driving.
 
 The reframing replaces the standard Born axiom with a narrower postulate
 set (wave realism + equal-energy channels + unbiased background) and
-leaves two gaps explicitly open:
+leaves two gaps explicitly open. That postulate set is this section's
+own, and it is \textbf{smaller than the one the selection companion
+carries}: {[}P1{]} v0.6 separates two probability spaces --- the quantum
+outcome measure \(B^M_\Psi(a) = \langle\Psi|\Pi_M(a)|\Psi\rangle\),
+adopted as comparator and not derived, and a \textbf{detector
+ready-state preparation measure} held as an explicit premise with
+independently measured provenance. No preparation measure appears
+anywhere in this section, so the boxed law above should be read as
+conditional on one.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -1045,17 +1084,63 @@ leaves two gaps explicitly open:
   unbiased-background assumption does not by itself fix the
   \emph{squared} functional form; some symmetry of the channel-selection
   competition must single out \(|\alpha|^2\) over other symmetric
-  functions of \((\alpha,\beta)\). This is the same residual gap that
-  contested branch-counting (Deutsch--Wallace) derivations face, not a
-  feature unique to this framework.
+  functions of \((\alpha,\beta)\). \textbf{{[}P1{]} accepts that premise
+  but rejects this framing of it, and the disagreement is worth
+  stating.} There the square enters exactly once, as the
+  deposited-energy law \(e_i(0) = \kappa|A_i|^2\) (premise P1) ---
+  ``elementary driven-oscillator energetics\ldots{} where the squaring
+  enters the theory: as mechanics, not as a probability rule'' --- after
+  which a fair game carries initial shares to registration frequencies
+  unchanged. On that account the square is \emph{not the contested
+  quantity}: that a driven oscillator's deposited energy is quadratic in
+  amplitude is classical energetics, and that the measure can only be
+  Born is Gleason's theorem, ``neither ours to claim'' ({[}P1{]}
+  abstract, §1). What is contested is the \emph{selection process}
+  between the two. The comparison to contested branch-counting
+  (Deutsch--Wallace) derivations therefore aims at a different problem
+  than the one {[}P1{]} is solving, and is withdrawn (2026-09-01).
 \end{enumerate}
 
-Neither gap is a settled result; both are future-work items. The
+Gap 1 is a genuine open restriction; gap 2 is open as stated here but
+disputed by {[}P1{]}, as above. Neither is a settled result.
+
+\textbf{Withdrawn 2026-09-01.} This section formerly closed: \emph{``The
 framework is structurally a hidden-variable theory in which the hidden
 variable is the instantaneous background-field configuration; it
 satisfies Bell's theorem because it does not use this story to explain
 Bell correlations (those come from the full Dirac spinor structure,
-Section 4 of this reference).
+Section 4 of this reference).''} Both halves are false against {[}P1{]}
+and are withdrawn.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Not a hidden variable.} In {[}P1{]} §4 the background
+  fluctuation is a \emph{tie-breaker}: ``the noise decides \emph{that}
+  symmetric alternatives get broken, not \emph{toward whom}, and it
+  carries no outcome information of its own; it is not a hidden
+  variable, and the mechanism is not a local-hidden-variable model.''
+  The martingale theorem makes every property of the noise beyond its
+  first two moments provably irrelevant --- the fluctuation amplitude
+  ``sets rates, never odds.'' A variable whose magnitude drops out of
+  the statistics cannot be the one carrying the outcome.
+\item
+  \textbf{The story \emph{is} used for Bell.} {[}P1{]} §7 extends the
+  selection mechanism to entangled pairs as a two-stage joint game,
+  yielding the full quantum correlations with a resync-fidelity law
+  \(S = 2\sqrt2\,\eta\). Consistency with Bell's theorem is bought there
+  by an explicitly nonlocal \textbf{shared-registry} premise (P5) plus
+  an ordering foliation (P6) --- ``a correlation that local bookkeeping
+  ignores, not a hidden variable'' --- and, as of v0.7, P5's scope is
+  broadened to \emph{any} state whose candidate registration sites are
+  causally disconnected, the single-photon beam-splitter included.
+\end{itemize}
+
+So the framework evades Bell by paying for nonlocality at premise level,
+not by declining to apply the mechanism. The Dirac-spinor account of
+Bell correlations in Section 4 of this reference and the shared-registry
+account in {[}P1{]} §7 are not reconciled anywhere; that reconciliation
+is an open item, not a settled equivalence.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1173,7 +1258,8 @@ harmonic-analytic content.
 \text{Zero-point field} & \tfrac{1}{2}\hbar\omega\text{ per mode} & \sigma_\varphi(0) = 1/\sqrt{2} \\
 \text{Antiparticle} & e^{+iEt/\hbar} & \text{Reversed clock} \\
 \text{Matter asymmetry} & \text{Baryogenesis} & \eta \approx \varepsilon\sin^2\delta_{\text{CP}} \\
-\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background} \\
+\text{Born rule } P = |\psi|^2 & \text{Postulated} & |\psi|^2 = \text{wave energy density; freq.\ stat.\ under unbiased background,}\\
+ & & \text{given a preparation measure --- compatibility, not replacement (\S12)} \\
 \text{Uncertainty principle} & \Delta x\,\Delta p \geq \hbar/2 & \text{Fourier bandwidth theorem on real }\psi\text{; chiral phases }\delta\varphi_L\,\delta\varphi_R \geq \tfrac{1}{2} \\
 \text{Measurement} & \text{Wavefunction collapse} & \text{Kuramoto re-sync to bulk} \\
 \text{Entanglement} & \text{Non-separable state} & \text{Synchronized clocks at creation: } \varphi_A = \varphi_B \\
