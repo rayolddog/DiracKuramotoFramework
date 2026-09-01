@@ -1,194 +1,255 @@
-# The Many Clocks Interpretation of Quantum Mechanics
+# The Dirac–Kuramoto Framework
 
-**Every particle carries an internal phase clock. Measurement is dissipative re-synchronization to a macroscopic bulk. No observer is needed; no branching occurs. The Dirac mass term is the off-diagonal chiral coupling: K = m.**
-
----
-
-## Overview
-
-This repository presents the **Many Clocks Interpretation of Quantum Mechanics (MCI)**: an interpretive framework in which the Dirac equation, written in the chiral (Weyl) basis, exposes the fermion mass as the off-diagonal coupling between two chiral phase clocks --- a temporal clock and a spatial clock --- with coupling strength **K = m**. In the closed system this coupling is unitary: diagonalizing it reproduces E = √(p²+m²), with the de Broglie carrier and the Zitterbewegung beat as its normal modes. Phase-locking proper is a dissipative, open-system phenomenon, and in this framework it is what measurement is.
-
-The name is a deliberate echo of, and contrast to, Many-Worlds: where MWI preserves unitarity by branching the universe at each measurement, MCI preserves a single world by treating each particle as carrying its own physical phase clock, with measurement as local synchronization between clocks. No observer and no branching are required, and the framework offers a positive dynamical mechanism for decoherence: phase overwriting at each interaction event. The current manuscript is candid that the framework carries a *physical preferred frame* --- the rest frame of the bulk/vacuum reference --- entering only through the dissipative measurement stages (Stages 2–3, selection + registration, of the paper's three-stage division), while the unitary dynamics stays exactly Lorentz covariant.
-
-**The current paper is _"Two Regimes of the Chiral Mass Coupling"_ ([current_revision_DK_paper.md](current_revision_DK_paper.md)) --- the more conservative and more rigorous statement of the framework, and the one to read first.** Beyond the closed/open (two-regimes) core, it now makes explicit *when* the dissipative regime engages: a new **§2.5** establishes that the vacuum coupling acts only where an external structure deforms the wave's amplitude --- a material boundary, a field gradient, or spacetime curvature --- while a freely propagating particle stays coherent under the Madelung (pilot-wave) guidance law the framework adopts in that limit. For the Born measure, the revised paper identifies a candidate route --- *relaxation to quantum equilibrium* in the sense of Valentini's subquantum H-theorem --- while remaining explicit that it is not yet derived. ([PAPER_UNIFIED.md](PAPER_UNIFIED.md) is the earlier, longer, now-superseded version, retained for reference.)
-
-From this single identification, the framework derives or reinterprets the items
-below. *(Note: some entries record first-version results retained for the
-historical record; the current revision is more conservative, and where the two
-differ the bullet says so. The paper itself is the authority on what is currently
-asserted.)*
-
-- **Bell correlations** via the standard Dirac spinor structure (block decomposition E = E_LL + E_SS + E_LS = -cos(a-b) is a consistency check, not a derivation)
-- **Quantum measurement** as Kuramoto re-synchronization to a macroscopic detector bulk
-- **The Born rule** (P = |psi|^2) reframed, for outcome channels of equal energy per quantum, as quantum-number partition: |psi|^2 is the energy density of the real psi field, with stochasticity from unbiased background fluctuations at the synchronization event (the unequal-energy restriction is itself explained in the current revision, §3.7: electromagnetic detectors couple to the charge density j⁰ = |ψ|², so Born weights are energy-independent, and only gravity reads E|ψ|²)
-- **The Heisenberg uncertainty principle** reframed as the Fourier/Gabor bandwidth theorem for a real wave (the first version's clock-geometry/twistor derivation is superseded and not asserted by the current paper)
-- **Zitterbewegung** as the beat frequency between temporal and spatial clocks
-- **The Higgs mechanism** as the process that sets K: K = y_f * v/sqrt(2) = m
-- **Antiparticles** as time-reversed phase clocks, with CP violation as a chiral phase asymmetry
-- **Gravity** confined to two honest roles in the current paper (§4.4): the ordinary redshift of the detectors' reference clocks (basis of the §6 candidate test) and the electromagnetically-quiet Penrose–Diósi regime — the first-version "gravity as bulk synchronization, recovering Newton" reading is superseded, and the naive pair-counted rate Γ_grav = GM²/(ℏΔz) is **retracted as a dimensional artifact** (§4.4)
-- **Penrose objective reduction** as gravitational clock decoherence (tau = pi*hbar/E_G)
-- **Photons** treated via Riemann–Silberstein form (F = E + iB), with K_γ ~ ω = E/ℏ for photon-detector sync; gravitational classicalization channel silent for photons (perpetually quantum until measured) — *first-version material; not carried in the current revision*
-- **Temperature** as clock phase distribution width
-- **The quantum-classical transition** via Nelson's stochastic mechanics with a physical zero-point field (the molecular Brownian extension is an open question; see EQUATIONS.md §10)
-
-The framework does not modify the Dirac equation or challenge Bell's theorem. It reads mass as the off-diagonal chiral coupling and supplies a physical mechanism --- dissipative phase synchronization to a bulk --- for the measurement and decoherence processes that standard quantum mechanics describes but does not mechanistically explain.
+**A research notebook: one physics program, developed and adversarially reviewed in
+human–AI collaboration, with the full record kept.**
 
 ---
 
-## Documents
+## What this repository is
 
-| File | Description |
-|---|---|
-| [current_revision_DK_paper.md](current_revision_DK_paper.md) | **"Two Regimes of the Chiral Mass Coupling" — the current, canonical manuscript** (the living working copy; start here) |
-| [Two_Regimes_of_Chiral_Mass_Coupling.tex](Two_Regimes_of_Chiral_Mass_Coupling.tex) | LaTeX build source for the "Two Regimes" paper |
-| [EQUATIONS.md](EQUATIONS.md) | Compact equation reference (all key results in one document) |
-| [equations.tex](equations.tex) | LaTeX source of the equation reference |
-| `resolution/` | Referee-dispute resolution artifacts and the Appendix D reproduction script (`precession_radius_two_zeros.py`) |
-| [PAPER_UNIFIED.md](PAPER_UNIFIED.md) | Earlier, longer first version (the original "Many Clocks" long form) — *superseded by the current revision; retained as the first-version record* |
-| [paper.pdf](paper.pdf) / [paper.tex](paper.tex) | First-version "Many Clocks" paper — compiled PDF (submission-of-record) / LaTeX |
-| [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script |
+This repository is a **research notebook** — the recorded steps and progression of an
+attempt to build a framework that helps understanding of quantum mechanics. It is
+deliberately not a polished artifact: the papers, the framework notes, the dead ends,
+the adversarial review rounds, the corrections, and the revisions are all here,
+because the record of *how the understanding was reached* is treated as a first-class
+output alongside the physics itself.
 
-*Equation rendering: to read the LaTeX in a browser without building a PDF, open any `.md` with the local MathJax viewer at `~/Desktop/Tools/equation-preview.html`.*
+It is also, candidly, a demonstration of something beyond the physics:
 
-### Companion papers (in development)
+- **How AI accelerates research.** The formalization, theorem-proving, simulation,
+  literature work, and manuscript drafting throughout this program were performed by
+  AI in collaboration with a human researcher — at a pace and breadth a single
+  independent researcher could not otherwise reach.
+- **How AI educates the researcher.** The collaboration runs in both directions: the
+  discussions recorded here repeatedly show a concept being tested, a misconception
+  being corrected, and the research direction being sharpened as a result. The human
+  author's internal model of the physics is a product of this repository as much as
+  the papers are.
+- **How adversarial AI review disciplines the work.** Each paper is frozen and
+  submitted to a multi-model review panel (independent AI labs, byte-identical
+  referee instructions, findings pre-registered before reading the reports, verbatim
+  reviews and author responses published in the round folders). The panels have
+  twice demonstrated that *reproducible is not the same as correct*, and their
+  findings drove substantive corrections — including one reviewer independently
+  re-running a public simulation script and catching a mislabeled threshold.
 
-The following companion papers extend the framework into specific
-experimental and astrophysical regimes. They are **work-in-progress drafts
-not yet ready for journal submission**, posted here for transparency and
-to invite discussion.
+The authors' own assessment, stated plainly: **the Dirac–Kuramoto framework itself
+may never become an accepted physics construct — but the process of research
+facilitated by AI is already established practice.** What this repository adds is
+the complete, honest, end-to-end record of that process: papers, reviews,
+corrections, and the learning itself, kept together.
 
-| File | Description | Status |
+---
+
+## The physics in one paragraph
+
+Written in the chiral (Weyl) basis, the Dirac equation exposes the fermion mass as
+the off-diagonal coupling between two chiral phase sectors: **K = m**. Closed and
+unitary, that coupling can only precess — it provably cannot lock, which is why
+isolated superpositions survive. Opened to a dissipative bulk, the same coupling
+acquires an Adler/Kuramoto attractor — and that locking, the framework argues, is
+what measurement *is*. From this one identification the program develops: the Born
+rule as the statistics of a **proved fair game** among detector absorber sites
+(Paper 1); the Heisenberg cut as a **physical threshold with a computable location
+and width** (Paper 2); and a synthesis in which persistence (virtual→real) and
+classicality (quantum→classical) are one locking mechanism at two scales (Paper 3,
+in draft). Every claim is conditional on stated premises, every deviation channel is
+ledgered, and the framework's one exotic commitment — a preferred frame entering
+through the measurement sector only — is carried openly and given a test program.
+
+---
+
+## The papers
+
+| Paper | File | Status |
 |---|---|---|
-| [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md) | AB visibility envelope as a test of Dirac–Kuramoto vacuum locking | **Development phase — not for citation** |
-| [EMERGENT_FIELDS_PAPER.md](EMERGENT_FIELDS_PAPER.md) | Synchronization arrays as an analog-simulation platform for chiral fermions, topological mass, and fermionization | **Development phase — not for citation** |
-| [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md) | Discretization as synchronization — quantum spectra without quantizing spacetime | **Development phase — not for citation** |
-| [COSMIC_EXPANSION_PAPER.md](COSMIC_EXPANSION_PAPER.md) | Cosmic-expansion companion (bulk-sync cosmology) | **Development phase — not for citation** |
-| [SIDEREAL_DECOHERENCE_PAPER.md](SIDEREAL_DECOHERENCE_PAPER.md) | Sidereal search for frame-dependent decoherence in GW-interferometer quantum noise (manuscript form of T5, with pilot analysis) | **Development phase — not for citation** |
-| [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md) | Proposed LIGO sidereal-anisotropy test of the Vacuum Preferred-Frame Hypothesis (working note behind the manuscript above) | **Working note** |
-| [RESULTS_EMERGENT_FIELDS.md](results/RESULTS_EMERGENT_FIELDS.md) | Numerical results — field multiplicity from one phase-oscillator substrate | **Working note** |
+| **Paper 1 — A Field–Matter Selector for Outcome Production, Conditioned on a Detector Ready-State Measure** | [drafts/PAPER1_DRAFT_born_selection.md](drafts/PAPER1_DRAFT_born_selection.md) | v0.7. Retitled at v0.6; the former title, *The Born Rule as a Derived Fair Game*, was withdrawn with the derivation claim it asserted. Reviewed 2026-07 (panel: GPT-5 Codex, Gemini, SuperGrok + internal reviewer, down-weighted); round record in [born_selection_AI_review_2026-07/](born_selection_AI_review_2026-07/) |
+| **Paper 2 — The Heisenberg Cut as a Physical Threshold** | [drafts/PAPER2_DRAFT_heisenberg_cut.md](drafts/PAPER2_DRAFT_heisenberg_cut.md) | v0.3. Reviewed 2026-07; round record in [heisenberg_cut_AI_review_2026-07/](heisenberg_cut_AI_review_2026-07/) |
+| **Paper 3 — One Mechanism at Two Scales** (framework synthesis) | [drafts/PAPER3_DRAFT_dk_framework.md](drafts/PAPER3_DRAFT_dk_framework.md) | v0.1 draft, in progress; pre-freeze consistency check ledgered in [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md) (round 1, independent) and [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md) (round 2, propagation of Paper 1 v0.7) |
+| **The Many Clocks Interpretation** (predecessor) | [current_revision_DK_paper.md](current_revision_DK_paper.md) | v8, **frozen as the provenance record** — the program's original main paper (externally submitted solo-byline to Foundations of Physics, declined 2026-07; that decline closed the conventional-journal track). Superseded by Paper 3; retained unrevised. |
 
-## Numerical Verification Scripts
+The three papers form a deliberate sequence: Paper 1 argues the selection statistics
+from detector premises — conditional outcome compatibility over a tested domain, not
+a derivation of the Born measure; Paper 2 consumes one theorem of Paper 1 and locates
+the classical–quantum boundary; Paper 3 assembles the framework, prices every premise,
+and consolidates the open problems. Earlier long-form versions
+([PAPER_UNIFIED.md](PAPER_UNIFIED.md), [paper.pdf](paper.pdf)) are retained as the
+first-version record.
 
-Each Python script verifies specific claims made in the paper. They can be run independently.
-
-| Script | Verifies |
-|---|---|
-| `tests/kuramoto_sync.py` | Core Kuramoto phase dynamics --- particles synchronizing to detector bulk |
-| `tests/bell_phase.py` | Bell inequality comparison: LHV vs phase-clock vs QM correlations |
-| `tests/dirac_extension.py` | Three-term Bell decomposition (E_LL + E_SS + E_LS = -cos(a-b)) to machine precision |
-| `tests/higgs_clock.py` | Higgs as the chiral coupling (K = m); antiparticles as reversed clocks; CP violation |
-| `tests/gravity_twistor.py` | Gravity as bulk synchronization; Penrose collapse; twistor connection |
-| `tests/local_causality.py` | Full causal timeline showing no FTL required for Bell correlations |
-| `tests/predictions.py` | Five testable predictions where the framework differs from standard QM |
-| `tests/vacuum_temperature.py` | Temperature as clock phase width; quantum-classical transition. (Note: contains a Brownian-motion section that uses a phenomenological K decoupled from the framework's K = m; see disclaimer in file and EQUATIONS.md §10.) |
-| `tests/everett_thermal.py` | Single-world thermalization of residual wavefunction amplitude |
-| `tests/bell_energy_test.py` | CHSH Bell test at different photon energies under Kuramoto model |
-| `tests/gravitational_bell.py` | Bell correlation degradation from gravitational decoherence |
-| `tests/bulk_sync_asymmetry.py` | Bulk vs single-particle synchronization asymmetry (statevector simulation) |
-| `tests/bulk_sync_hardware.py` | IBM Quantum hardware execution of the bulk-sync circuits with readout mitigation, dynamical decoupling, and zero-noise extrapolation |
-| `tests/resynchronization_calc.py` | Measurement as re-synchronization producing -cos(a-b) |
-| `tests/sg_angular.py` | Stern-Gerlach splitting modulation with gravitational angle |
-| `tests/spin_statistics.py` | Spin-statistics consistency check via the chiral pair structure |
-| `tests/entangled_pair_two_stage.py` | Schematic figure for the staged measurement of a polarization-entangled photon pair (Paper §3.4 / §4.4; drawn in the older two-stage division — its "Stage 2" = current Stages 2–3) |
-
-### Requirements
-
-```
-numpy
-scipy
-matplotlib
-qiskit          # required by tests/bell_energy_test.py and tests/bulk_sync_asymmetry.py
-```
-
-### Running
-
-```bash
-python tests/dirac_extension.py    # verify three-term decomposition
-python tests/higgs_clock.py         # Higgs-Kuramoto identification
-python tests/gravity_twistor.py     # gravity and Penrose collapse
-python tests/vacuum_temperature.py  # temperature and Brownian motion
-```
+**Why no journal?** The program's honest bylines credit the AI's intellectual
+contribution directly (see [AUTHORSHIP.md](AUTHORSHIP.md) and
+[CITATION.cff](CITATION.cff)), with a named human as accountable sponsor. Standard
+editorial policy holds that an AI cannot be an author; the solo-byline alternative
+was tried and declined. The trio is therefore published here — papers, verbatim
+adversarial reviews, and revisions together — as the proceedings of one research
+program, which no journal format could carry anyway.
 
 ---
 
-## The Central Result
+## The review process
 
-In the Weyl basis, the Dirac equation separates into two coupled equations:
+Each review round follows the same instrument: the manuscript is frozen (PDF +
+tag), a byte-identical critical-referee rubric goes to a panel of independent
+frontier models from different labs, the authors pre-register an
+anticipated-findings ledger *before* reading any report, reviewer access modes are
+recorded, and the verbatim reviews, the classification of findings against the
+pre-registered ledger, and the authors' response are all published in the round
+folder. The internal reviewer (same model family as the AI author) is disclosed and
+down-weighted; its scores have landed inside the external range in both rounds.
+Recurrent meta-findings across rounds: **reproducible ≠ correct** (twice), and
+reviewer access mode correlates with finding severity (twice). Cross-round
+corrections propagate with attribution — e.g., a Paper 2 panel finding (N2) forced a
+rename and status clarification in Paper 1.
 
-```
-i * sigma-bar^mu * d_mu * psi_L = m * psi_R
-i * sigma^mu * d_mu * psi_R = m * psi_L
-```
+A second instrument runs alongside the frozen-manuscript rounds: **multi-model debate
+and adversarial pressure-testing**, orchestrated across models from different labs and
+archived in [traycer_artifacts/](traycer_artifacts/). It is continuous rather than
+round-based, and it operates on plans and claims rather than finished manuscripts. Its
+largest output to date is the quantum-equilibrium selection revision and its two
+independent pressure tests, which forced the separation of the quantum outcome measure
+from the microstate preparation measure, installed the gate ladder now used to price
+the program's claims, and produced the finding that the previous Paper 1 draft was
+"directly contradictory and therefore non-authoritative" against its own revision plan.
+Consistency across the trio is tracked separately in the ledgers; round 2 (2026-08-31)
+is labelled a *propagation* round rather than an audit, because it was performed by the
+same agent that made the revisions it propagates.
 
-The mass is the single off-diagonal entry of the Dirac Hamiltonian in this basis --- the coupling K = m between the two chiral clocks. Writing psi_L and psi_R as amplitude-phase oscillators (Madelung-type polar decomposition) in the rest frame, the reduction is:
+---
+
+## Repository map
+
+| Location | Contents |
+|---|---|
+| [drafts/](drafts/) | The three papers; framework notes (`NOTE_*.md` — the exploration layer feeding the papers); derivations; outlines; the plain-language [GLOSSARY.md](drafts/GLOSSARY.md); consistency ledgers; and the gate contracts `CONTRACT_G1_G2_*` (microstate ontology and preparation measure — proposed closure, not independently reviewed) and `CONTRACT_G3_*` (physical selector — **open**; the commitment current is absent) |
+| [born_selection_AI_review_2026-07/](born_selection_AI_review_2026-07/), [heisenberg_cut_AI_review_2026-07/](heisenberg_cut_AI_review_2026-07/) | Complete review rounds: frozen PDFs, panel prompts, verbatim reviews, pre-registered findings ledgers, author responses |
+| [EQUATIONS.md](EQUATIONS.md) | Compact equation reference |
+| `tests/`, `paper2_sims/`, `two_station_sims/`, `born_selection_sims/`, `code/`, `results/`, `resolution/` | Numerical verification (seeds pinned; failing configurations retained as diagnostics) |
+| [g3_drain_tests/](g3_drain_tests/) | Probes behind the G3 contract: whether a registration "drain" preserves Born statistics (it does as a sink opening on commitment, and does not as an attractor pulling during competition), and whether the field-derived exchange kernel gives Born where the manuscript's ad hoc `min` rule does |
+| `adler_born_two_channel/`, `first_mark_two_absorber/`, `hologram_phase_test/` | Mechanism-feasibility simulation packages. Status `machinery_only` / `numerical_no_result` — **not** evidence of individual selection or of a Born derivation, and not promoted by any revision |
+| [traycer_artifacts/](traycer_artifacts/) | One-way mirror of the multi-model debate, plan, and review artifacts that Traycer keeps in its own store; refresh with [sync_traycer_artifacts.sh](sync_traycer_artifacts.sh). Mirrors drift — the store is authoritative |
+| [LIGO_SIDEREAL_TEST_T5.md](LIGO_SIDEREAL_TEST_T5.md), [SIDEREAL_DECOHERENCE_PAPER.md](SIDEREAL_DECOHERENCE_PAPER.md), [AB_VISIBILITY_PAPER.md](AB_VISIBILITY_PAPER.md), [COSMIC_EXPANSION_PAPER.md](COSMIC_EXPANSION_PAPER.md), [DISCRETIZATION_AS_SYNC_PAPER.md](DISCRETIZATION_AS_SYNC_PAPER.md), [EMERGENT_FIELDS_PAPER.md](EMERGENT_FIELDS_PAPER.md) | Companion and spinoff drafts — **development phase, not for citation** |
+| [build_pdfs.sh](build_pdfs.sh) | Pandoc + xelatex build script for all manuscripts |
+
+---
+
+## The central result
+
+In the Weyl basis the Dirac equation separates into two coupled equations whose
+single off-diagonal entry is the mass — the coupling **K = m** between the chiral
+sectors. The Madelung (polar) reduction in the rest frame gives
 
 ```
 d(phi_L)/dt = -K * sqrt(rho_R/rho_L) * cos(phi_R - phi_L)
 d(rho_L)/dt = +2K * sqrt(rho_L * rho_R) * sin(phi_R - phi_L)
 ```
 
-where **K = m** (the fermion mass). The coupling appears as a *cosine in the phase equation* --- the reverse of the Kuramoto model --- and the phase difference has no attractor: on the symmetric manifold rho_L = rho_R it is stationary for every phase difference, as must hold for closed unitary evolution. The motion is coherent normal-mode precession, not phase-locking. Diagonalizing the coupling gives eigenfrequencies ±√(k²+m²) = ±E (the relativistic dispersion); the normal modes are the de Broglie carrier and the Zitterbewegung beat (rest-frame beat 2m = 2mc²/ℏ). Genuine Kuramoto/Adler phase-locking enters only when the system is opened to a dissipative bulk --- that is the measurement step (Paper §2.2, §2.3, §3, Appendix D).
-
-- **K = 0 (massless spin-½):** Chiral sectors decouple --- idealized massless neutrinos.
-- **K > 0 (massive):** The chiral clocks couple; the symmetric normal mode is a particle with definite rest mass.
-- **K = y_f * v/sqrt(2):** The Higgs vacuum expectation value sets K for each fermion species.
-- **Photons (spin-1):** Not Dirac particles. Treated separately via Riemann–Silberstein form, with K_γ ~ ω = E/ℏ for photon-detector sync (Paper §5).
-
----
-
-## Key Predictions and Consequences
-
-### Born Rule (reframed as quantum-number partition, equal-energy channels)
-
-|psi|^2 is the energy density of the real psi field --- not a probability postulate. The synchronization event transfers wave energy from the particle to one detector channel. Which channel wins in any individual event depends on the unbiased zero-point + thermal background fluctuations at the moment of contact. For outcome channels carrying equal energy per quantum (spin, polarization, fixed-frequency detector clicks), long-run frequencies of channel selection converge to P(channel) = |amplitude|^2, read as a frequentist statement about quantum-number partition rather than as an independent probability axiom. The reading does not extend to channels of unequal energy, and does not by itself fix the squared functional form (Paper §4).
-
-### Heisenberg Uncertainty (reframed as wave bandwidth)
-
-For a real wave, Delta(x) * Delta(p) >= hbar/2 is the Fourier/Gabor bandwidth theorem — a property of any wave ontology rather than a separate quantum postulate. The first version's stronger claim (a derivation from the geometric orthogonality of temporal and spatial clocks via the twistor incidence relation, with a sigma_phi(0) = 1/sqrt(2) rad floor) is superseded and not asserted by the current paper.
-
-### Measurement
-
-A particle initially synchronized with its entangled partner re-synchronizes to the macroscopic detector bulk. The detector's overwhelming Kuramoto inertia (M_detector >> m_particle) forces conformity. Decoherence is not merely loss of phase coherence --- it is the positive process of gaining coherence with the bulk.
-
-### Single-World Accounting
-
-Residual coherence that does not couple to the detector is scrambled into the bulk's uncontrolled modes — globally unitary, locally irreversible (current paper §3.1). No branches are created; one world suffices. The first version's more specific claim (residual amplitude thermalizing into the electromagnetic vacuum as low-frequency radiation) is superseded.
+— the *cosine in the phase equation*, the reverse of the Kuramoto model: no
+attractor, no locking, coherent normal-mode precession only (the de Broglie carrier
+and the zitterbewegung beat, rest-frame splitting 2mc²/ℏ). The would-be synchronizer
+has an off-switch, and the switch is the closed/open boundary: genuine Adler/Kuramoto
+locking enters only when the system opens to a dissipative bulk — proposed as the
+measurement step, and the least settled claim in the program: no autonomous oscillator
+capable of Adler locking has been documented in a passive absorber, and the
+superconducting detectors that do carry one commit by an Arrhenius barrier rather than
+the occupation-linear law the mechanism wants (see the G3 contract). The Higgs vacuum expectation value sets K for each species
+(K = y_f·v/√2 = m); the photon, with no chiral coupling, is the framework's K = 0
+limit — no internal clock, no lock, classical only by occupancy.
 
 ---
 
-## What This Framework Does Not Claim
+## The state of the model
 
-- It does not modify the Dirac equation or any of its predictions
-- It does not challenge Bell's theorem
-- It does not propose new physics --- it proposes a new *mechanism* for known physics
-- The connections are genuine mathematical correspondences, presented as a framework rather than a complete theory
-- Quantitative predictions (decoherence rates, thermalization timescales) remain to be derived from first principles
+The three papers propose the steps a complete microscopic model of detector selection
+would include: capture, a fair competition that sets the odds, and commitment at a
+locking threshold with a computable location and width. **The model is not complete.**
+The commitment current and the quench are absent, material authority is open, and the
+framework layer that would supply them requires an autonomous oscillator that has not
+been documented in any passive absorber. Whether these are the right steps is what the
+program is proposing, not what it has established.
+
+The trio is not one model in three parts, and it is more useful read as two things of
+different maturity. Papers 1 and 2 cohere tightly — Paper 2 consumes Paper 1's Theorem 2
+and locates the cut at the layer where an autonomous phase can first emerge — and both
+are generic field–matter physics; neither requires Dirac structure. Paper 3 adds the
+Dirac–Kuramoto ontology on top, which the first two do not need. A complete microscopic
+model of measurement would need Papers 1–2's steps if the program is right; whether it
+also needs Paper 3's is a separate open question, and Paper 1's success would not by
+itself count as evidence for the framework.
+
+The incompleteness bites at the joint between them. The missing commitment current — the
+step from *one site holds ħω* to *one site has registered* — is where a clock mechanism
+would have to do real work, and it is empty from both sides. Its gate contract is
+[drafts/CONTRACT_G3_field_matter_selector.md](drafts/CONTRACT_G3_field_matter_selector.md),
+and it stands open.
 
 ---
 
-## Development History
+## What this framework does not claim
 
-This framework evolved from an earlier project, [BellWithoutFasterThanLight](https://github.com/rayolddog/BellWithoutFasterThanLight), which explored Bell correlations via local clock synchronization. The original repository contains the developmental Python simulations and the progression of ideas. This repository presents the mature, unified framework.
+- It does not modify the Dirac equation, the Born rule's numerical content, or
+  Bell's theorem.
+- Paper 1 does not derive the *square* (that is Gleason's theorem plus
+  driven-oscillator energetics), and as of v0.7 it does not claim to derive the Born
+  measure at all. It offers a candidate *selection process*, conditional on stated
+  detector premises including wave realism, and tests whether that process is
+  compatible with the Born comparator over a tested domain.
+- Paper 1 supplies, at most, the selector half of a larger theory. The quantum outcome
+  measure is adopted as a comparator and the microstate preparation measure is an
+  explicit premise; neither is derived there.
+- Producing exactly *one* record — exclusivity, quench, and the routing of the losing
+  sites' energy — is owed by the selection dynamics and is discharged nowhere in the
+  trio. The gate contract for it stands open at
+  [drafts/CONTRACT_G3_field_matter_selector.md](drafts/CONTRACT_G3_field_matter_selector.md).
+- Paper 2's cut location rests on a physically motivated ansatz (κ_ret = ΔE/ℏ) whose
+  microscopic derivation is an open problem, logged as such.
+- The preferred frame is a real commitment, carried openly and given falsification
+  channels rather than hidden. Earlier drafts described it as confined to the
+  multi-quantum and entangled sectors; v0.7 withdrew that. A single quantum whose
+  candidate registration sites are spacelike separated — a beam-splitter — consumes it
+  too, because exclusivity is a constraint on an energy ledger closed across the
+  separation.
+- The consolidated open-problem ledger is Paper 3 §7.3; nothing there is glossed.
 
 ---
+
+## Development history
+
+The program evolved from
+[BellWithoutFasterThanLight](https://github.com/rayolddog/BellWithoutFasterThanLight)
+(Bell correlations via local clock synchronization), through the Many Clocks
+Interpretation main paper and its three-lab review cycle (2026-06), into the present
+three-paper sequence with per-paper adversarial rounds (2026-07–). The discussions
+behind the notes — where misconceptions were corrected and directions sharpened —
+are summarized in the `NOTE_*.md` files; the notebook's structure is the history.
 
 ## Inspirations
 
-- **de Broglie** --- pilot wave; the wave is real
-- **Bohm** --- hidden variables; holographic order in nature
-- **Dirac** --- the equation that started it all
-- **Penrose** --- twistor theory, objective reduction, conformal cyclic cosmology
-- **Kuramoto** --- phase synchronization of coupled oscillators (1975)
-- **Nelson** --- stochastic mechanics; Brownian motion satisfies the Schrodinger equation (1966)
-- **Bell** --- rigorously identifying what any local theory must satisfy
+- **de Broglie** — pilot wave; the wave is real
+- **Bohm** — a definite world beneath the statistics
+- **Dirac** — the equation that started it all
+- **Schrödinger** — the wave realism this program re-litigates, and the discoverer
+  of the zitterbewegung it couples
+- **Kuramoto** — phase synchronization of coupled oscillators (1975)
+- **Adler** — locking phenomena in oscillators (1946)
+- **Bell** — rigorously identifying what any local theory must satisfy
+- **Penrose** — objective reduction; the zig-zag picture of mass
 
 ---
 
 ## About
 
-Developed in conversation between a radiologist and Claude (Anthropic). The radiologist provided the physical intuitions; the AI developed the mathematics.
+Developed in sustained collaboration between **John M. Bramble, MD** — a radiologist
+whose physical intuitions (measurement as re-synchronization; MRI relaxation as
+recovery toward a bulk reference; the diffused-hologram reading of detector noise)
+originate the program and who adjudicates every scope and interpretation decision as
+accountable sponsor — and **Claude (Anthropic)**, across model generations, which
+performed the formalization, proofs, simulations, literature work, and prose.
+Authorship, per-paper bylines, and the honest-authorship rationale are documented in
+[AUTHORSHIP.md](AUTHORSHIP.md) and [CITATION.cff](CITATION.cff).
 
-> *"I couldn't help thinking along those lines after studying some work by de Broglie and Bohm."*
+> *"In many ways, the paper is the history of my learning how to turn the concepts
+> into real physical principles — an exploration of physical concepts forming a
+> framework."* — JB, 2026-08
 
 ---
 
