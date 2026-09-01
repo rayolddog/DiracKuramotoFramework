@@ -45,6 +45,55 @@ Rebuilt via the same pandoc invocation `build_pdfs.sh` uses (equations targets o
 | **E-13** | LOW | `DERIVATION_bell_pair_joint_game.md` §6b | The frame-rotation model's logged repair for the Gisin tension is **inverted Gisin**, which became [P1] Theorem 5 — demoted in v0.7 to a robustness result. The note-level dependency was never revisited after the demotion. | Note-level only; record the weakened dependency. No paper claim rests on it. |
 | **E-14** | LOW–MED | [P1] §2 P3(a); §4 (noise-origin ¶ and diffused-hologram ¶) | **One defect at two levels: the premise and the argument both say "distinct" where the physics requires "re-randomizing."** **(a) Premise level.** P3(a) is stated as an initial condition — "The internal phases of the absorber sites are **initially** mutually incoherent… **before capture**" — but §4's zero-mean argument consumes it as an ongoing dynamical property: "averaging over the phase of $\delta b_i$ kills it in expectation." Static-but-mutually-random offsets satisfy the premise as worded, yet within a shot they give a **constant** cross term — a drift, not zero-mean noise — and Theorem 1's converse already shows what drift does to the shares. **(b) Argument level.** §4 grounds the diffused hologram's non-invertibility on "a phase standard **nobody recorded**." That is epistemic, and it has a standing counterexample: wavefront shaping and optical phase conjugation invert scattering media whose phase standard nobody recorded either, by measuring the transmission matrix. *Unrecorded is not unrecordable.* The physical ground is that the references re-randomize every 10–70 fs, so no stable transmission matrix exists to learn. In magnetic-resonance terms the premise says $T_2^\*$ (mutually distinct) where the physics requires $T_2$ (stochastically re-randomizing); only the latter is non-invertible. | **Precision fix, not a physics failure** — the conclusion survives on the correct ground. See below. Recommend: P3(a) gains an explicit persistence clause cross-referenced to §6.1's ladder, and §4's non-invertibility claim is re-grounded on re-randomization rather than on non-recording. |
 
+| **E-15** | **MED–HIGH** | [P1] Theorem 1 proof; Appendix D | **The stochastic calculus is chosen but never justified, and the physical noise selects the other one.** Theorem 1's proof applies **Itô's lemma** to $s_i = e_i/\sum_j e_j$; Appendix D integrates by **Euler–Maruyama**, which is Itô by construction. Neither says why Itô rather than Stratonovich. For multiplicative noise the choice is physical, not cosmetic. By **Wong–Zakai**, noise of any finite correlation time converges as $\tau_c \to 0$ to the *Stratonovich* equation, never the Itô one, and for $a(e) = \sqrt e$ the two differ by a drift $\sigma^2 a a'/2 = \sigma^2/4$ — identical on every site, hence share-**equalising** (a leader gains proportionally less from an equal absolute increment), which is precisely the failure mode Theorem 1's converse attributes to multiplicative noise. Physical detector noise has $\tau_c \sim 10$–$70\,$fs and is therefore colored, so it selects Stratonovich. The question is not whether correlation time perturbs Born but whether the paper's Itô baseline is the small-$\tau_c$ limit of the physical process at all. | **Likely resolved by a premise the paper already has, but does not invoke here.** The $\sigma^2/4$ drift requires the *total* to grow; a closed pot forbids it. v0.7's **P4(a)** makes the pot closed ($\sum_i e_i = \hbar\omega$), added for exclusivity. If conservation restores Born under colored noise, P4(a) does double duty and Theorem 1 gains the justification it currently lacks — worth stating explicitly either way, since a reader who notices the Itô choice has no answer in the text. Numerical check: `born_selection_sims/colored_noise_knife_edge.py`. |
+
+---
+
+## E-15 numerical result (`born_selection_sims/colored_noise_knife_edge.py`, 2026-09-01)
+
+Colored-noise variant of `noise_scaling_born.py` (#6, the knife-edge script feeding Fig. 2):
+same configurations, same $\sigma = 0.3$, $\Delta t = 0.02$, threshold $0.9$, 4000 trials,
+$\sqrt e$ law. OU noise normalised to unit intensity, so the white limit is recovered as
+$\tau_c \to 0$.
+
+| config | Itô white (paper's) | colored $\tau_c = 0.1$ | colored $\tau_c = 1$ | colored $\tau_c = 10$ |
+|---|---|---|---|---|
+| 10-site, Born bright $= 0.5$ | **0.5310** | 0.2934 | 0.2234 | 0.1660 |
+| 3-site, Born bright $= 0.5$ | **0.5436** | 0.4496 | 0.4309 | 0.4037 |
+| 10-site, conserving projection | **0.5355** | 0.2953 | 0.2220 | 0.1578 |
+
+**The knife-edge does not survive colored noise in this engine.** At $\tau_c = 0.1$ — a
+properly resolved regime, $\Delta t \ll \tau_c \ll \tau_{\rm game}$ — the ten-site bright
+weight falls from $0.53$ to $0.29$ against a Born value of $0.50$. The direction is
+equalising (toward $1/N = 0.1$), as the Wong–Zakai drift predicts, and the deviation grows
+monotonically with $\tau_c$.
+
+**$N$-dependence matches the mechanism.** The 3-site config moves only $0.54 \to 0.45$
+against the 10-site's $0.53 \to 0.29$, because equalisation drives shares toward $1/N$ and
+the bright site's Born weight of $0.5$ is much further from $0.1$ than from $0.33$.
+
+**The closed-pot hypothesis FAILED — and the reason is instructive.** Conservation was
+expected to forbid the drift, since $\sigma^2/4$ on every site requires the total to grow.
+Implemented as a projection (rescale to fixed total each step) it changes nothing:
+$0.2953$ against the open pot's $0.2934$. The algebra is immediate — adding a constant $c$
+to every site and renormalising sends $s_i \mapsto (s_i + c/E)/(1 + nc/E)$, which is
+*still* a pull toward $1/n$. Fixing the total does not fix the shares.
+
+**What this does not settle.** The physical dynamics is exchange-type — energy *moved*
+between sites, as in `gambler_ruin_born3.py`'s $\delta = \pm\,\mathrm{step}\cdot\min(e_i,e_j)$
+— not independent-per-site noise with a projection. A genuine exchange formulation may be
+immune, since there the increment is antisymmetric in $(i,j)$ by construction and no
+common-mode drift can exist at all. That test has **not** been run, and until it is, the
+right statement is: *the knife-edge as verified in the paper's own engine is calculus-
+sensitive, and the obvious repair does not work.*
+
+**Two methodological cautions for anyone repeating this.** (i) $\tau_c < \Delta t$ is not a
+small-$\tau_c$ probe but an under-resolved one — the $\tau_c = 0.01$ column was discarded
+for this reason. (ii) The white-Stratonovich baseline is unreliable in the ten-site config
+(98% of trials never absorb, because the equalising drift holds every share below the
+threshold), so it cannot be used as the comparison point; the colored runs are compared
+against the Itô baseline instead.
+
 ---
 
 ## Why E-14's severity is low, and where it is not
