@@ -6,7 +6,7 @@ status: 1
 
 # Implementation tickets: single-channel stochastic commitment
 
-These tickets implement the closed [single-channel stochastic commitment plan](..) in `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`.
+These tickets implement the closed [single-channel stochastic commitment plan](..) in `~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`.
 
 Current baseline: the package contains deterministic Adler, raised-cosine pulse, and analytic flat-spectrum controls only. The canonical verifier passes 26/26 checks. The package is currently untracked in Git; tickets must not stage, commit, or modify unrelated repository files unless John separately asks.
 

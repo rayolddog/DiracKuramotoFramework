@@ -23,7 +23,7 @@ The best surviving common mechanism is therefore conditional:
 
 That is a useful cross-paper architecture. It is not yet a Born-selection derivation.
 
-Source basis: the [July 4 Opus discussion](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md), [Paper 2 draft](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md), [Paper 3 revision](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md), [SPAD round synthesis](../../spad-event-cascade/round-01/synthesis), its four participant records, and the [author–AI candidate ledger](../author-ai-update-candidates).
+Source basis: the [July 4 Opus discussion](~/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md), [Paper 2 draft](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md), [Paper 3 revision](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md), [SPAD round synthesis](../../spad-event-cascade/round-01/synthesis), its four participant records, and the [author–AI candidate ledger](../author-ai-update-candidates).
 
 ## Priority findings
 

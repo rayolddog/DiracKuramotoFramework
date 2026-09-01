@@ -12,7 +12,7 @@ status: 2
 - [Independent review](../independent-review)
 - [Ticket 01 isolation boundary](../../01-raw-process-isolation)
 
-Code scope remains `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`. Do not touch, stage, commit, or revert anything outside this package.
+Code scope remains `~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`. Do not touch, stage, commit, or revert anything outside this package.
 
 ## Objective
 

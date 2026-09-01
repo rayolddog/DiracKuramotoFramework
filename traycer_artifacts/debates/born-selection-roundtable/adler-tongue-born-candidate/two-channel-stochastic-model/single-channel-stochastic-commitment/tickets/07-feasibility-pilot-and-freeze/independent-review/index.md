@@ -3686,7 +3686,7 @@ Ticket08              6657ff71ec46d35507c9cc076a29879bdc97b4acf483d5295261a9e7bd
 Artifact path reviewed and appended:
 
 ```text
-/Users/john-bramble/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/adler-tongue-born-candidate/two-channel-stochastic-model/single-channel-stochastic-commitment/tickets/07-feasibility-pilot-and-freeze/independent-review/index.md
+~/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/adler-tongue-born-candidate/two-channel-stochastic-model/single-channel-stochastic-commitment/tickets/07-feasibility-pilot-and-freeze/independent-review/index.md
 ```
 
 Post-append artifact SHA-256 is reported in the reviewer reply; it is not

@@ -9,7 +9,7 @@ kind: review
 
 Review the implementation produced for [the deterministic and analytic ticket](..):
 
-`/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
+`~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
 
 ## Required lenses
 

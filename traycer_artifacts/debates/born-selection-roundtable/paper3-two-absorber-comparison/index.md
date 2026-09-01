@@ -138,4 +138,4 @@ The two-absorber model asks the right question because it removes the avalanche,
 
 The model can therefore validate the physical premises beneath Paper 3's fair-game proposal, or falsify them one by one. It cannot convert reduced-state weights into actuality merely by reproducing $|\psi|^2$, and it should not count branchwise single-excitation bookkeeping as a one-world winner.
 
-Sources: [Paper 3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md), [two-absorber technical plan](../two-absorber-first-mark-model), [first-mark audit](../cloud-chamber-spad-first-mark-comparison), and [SPAD cascade synthesis](../../spad-event-cascade/round-01/synthesis).
+Sources: [Paper 3](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md), [two-absorber technical plan](../two-absorber-first-mark-model), [first-mark audit](../cloud-chamber-spad-first-mark-comparison), and [SPAD cascade synthesis](../../spad-event-cascade/round-01/synthesis).

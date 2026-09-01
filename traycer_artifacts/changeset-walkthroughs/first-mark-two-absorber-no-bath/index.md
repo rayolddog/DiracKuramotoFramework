@@ -9,7 +9,7 @@ kind: spec
 
 This code is a calibrated starting point, not yet a selection model. One photon begins as a coherent wave across paths A and B. Each path can exchange that photon reversibly with its own absorber. The code follows the complete wave continuously, preserves its norm and energy under fixed controls, returns the photon with its original A/B phase, and can undo an arbitrary test history by reversing the complete Hamiltonian. It contains no collapse, no sampled winner, no Born-weighted random choice, and no one-world registry. That clean separation is the main value of this first implementation.
 
-The code is in `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/first_mark_two_absorber/`. The underlying design is recorded in the [continuous-generator specification](epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/two-absorber-first-mark-model/reversal-protocol/minimal-finite-bath/continuous-generator/index.md).
+The code is in `~/Projects/Physics/DiracKuramotoFramework/first_mark_two_absorber/`. The underlying design is recorded in the [continuous-generator specification](epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/two-absorber-first-mark-model/reversal-protocol/minimal-finite-bath/continuous-generator/index.md).
 
 ## The physical picture
 
@@ -186,7 +186,7 @@ These discoveries did not overturn the generator. They sharpened what its helper
 
 ## How to run and read the result
 
-From `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework`:
+From `~/Projects/Physics/DiracKuramotoFramework`:
 
 ```text
 python3 -m first_mark_two_absorber.verify --verbose

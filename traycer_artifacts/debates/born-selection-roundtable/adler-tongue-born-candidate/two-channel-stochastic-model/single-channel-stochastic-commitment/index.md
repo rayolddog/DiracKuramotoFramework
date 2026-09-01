@@ -653,7 +653,7 @@ Independent review should add mutation tests for at least: shared instead of ind
 
 Extend the existing isolated package:
 
-`/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
+`~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
 
 | File | Responsibility |
 | --- | --- |

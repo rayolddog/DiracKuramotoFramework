@@ -7,7 +7,7 @@ kind: spec
 
 ## Implementation status
 
-The first calibration slice is implemented in `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/first_mark_two_absorber/`. It constructs the full 576-dimensional operators, coherent no-bath capture and return, field recombination, and the exact reverse-ordered global inverse. The final verification suite passes 18 of 18 checks under NumPy 2.3.5.
+The first calibration slice is implemented in `~/Projects/Physics/DiracKuramotoFramework/first_mark_two_absorber/`. It constructs the full 576-dimensional operators, coherent no-bath capture and return, field recombination, and the exact reverse-ordered global inverse. The final verification suite passes 18 of 18 checks under NumPy 2.3.5.
 
 The [implementation ticket](implementation-no-bath), [independent review](implementation-no-bath/independent-review), two fixups, and [final closure review](implementation-no-bath/fixup-enforce-no-bath-contract/closure-review) record the full generator–reviewer exchange. All review findings are closed. Operational reversal, echo, and random-reference cases remain future work.
 

@@ -351,10 +351,10 @@ Even a robust coupling-squared winner frequency would still not derive energy ro
 
 ## Suggested review order
 
-1. Read the non-claims at the start of the [package README](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/README.md).
+1. Read the non-claims at the start of the [package README](~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/README.md).
 2. Review checks 11–14 above; they carry your finite-synchronization-time idea.
 3. Review checks 16–19; they separate the analytic prediction from the dynamics.
-4. Read the [independent review record](/Users/john-bramble/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/adler-tongue-born-candidate/two-channel-stochastic-model/implementation-deterministic-analytic/independent-review/index.md), especially the final closure section. It shows how apparently complete tests were strengthened after adversarial counterexamples.
-5. Run `python3 -m adler_born_two_channel.verify --verbose` from `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework` when you want the exact numerical record.
+4. Read the [independent review record](~/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/artifacts/debates/born-selection-roundtable/adler-tongue-born-candidate/two-channel-stochastic-model/implementation-deterministic-analytic/independent-review/index.md), especially the final closure section. It shows how apparently complete tests were strengthened after adversarial counterexamples.
+5. Run `python3 -m adler_born_two_channel.verify --verbose` from `~/Projects/Physics/DiracKuramotoFramework` when you want the exact numerical record.
 
 No manuscript files were changed, and the package remains unstaged and uncommitted.

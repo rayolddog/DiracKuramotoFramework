@@ -21,7 +21,7 @@ kind: spec
 
 **196 checks** (r1: 87 → r2: 152 → r3/r4: 196). r4 adds no checks; it constrains FLW-02 and rescopes two claim literals.
 
-**Build root (only writable code location):** `/Users/john-bramble/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/born_selection_equilibrium_fixture`
+**Build root (only writable code location):** `~/.traycer/epics/c443d91e-b0d5-43ff-a31b-805574ab7771/born_selection_equilibrium_fixture`
 
 ## 0-A. Response to the r2 critique
 

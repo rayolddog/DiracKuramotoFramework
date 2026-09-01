@@ -123,7 +123,7 @@ Environment recorded on 2026-08-28 in `America/Denver`:
 
 | Item | Value |
 | --- | --- |
-| Repository | `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework` |
+| Repository | `~/Projects/Physics/DiracKuramotoFramework` |
 | Python | CPython 3.12.6, `/Library/Frameworks/Python.framework/Versions/3.12/bin/python3` |
 | NumPy | 2.3.5 |
 | Platform | macOS 26.5.2, arm64 |

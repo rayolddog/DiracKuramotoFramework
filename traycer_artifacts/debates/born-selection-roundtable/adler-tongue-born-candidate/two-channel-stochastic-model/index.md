@@ -358,7 +358,7 @@ Numerical checks should pass independently of whether the scientific hypothesis 
 
 Create a new isolated package:
 
-`/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
+`~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
 
 | File | Responsibility |
 | --- | --- |

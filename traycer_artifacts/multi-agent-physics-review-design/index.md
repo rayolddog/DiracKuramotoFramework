@@ -57,7 +57,7 @@ John has requested model-family diversity because contrasting assessments are th
 | Synchronization and open-systems specialist | `claude` / `opus[1m]` | high | ambient authenticated Claude terminal account | Provides a second strong Anthropic model for the central physical analogy; external in model identity but not fully independent of the manuscript's Anthropic authorship ecosystem. |
 | Experimental and computational auditor | `grok` / `grok-4.6` | high | ambient Grok terminal account, **currently unauthenticated** | Adds an xAI model family with an adversarial style suited to reproduction and falsifiability. Authentication is required before launch. |
 
-All five would use GUI Traycer agents, `full_access` permission as required by the selection guide, fast mode off, and the `/Users/john-bramble/Projects/Physics` workspace. Review prompts prohibit source edits; `full_access` is an execution setting, not permission to revise manuscripts.
+All five would use GUI Traycer agents, `full_access` permission as required by the selection guide, fast mode off, and the `~/Projects/Physics` workspace. Review prompts prohibit source edits; `full_access` is an execution setting, not permission to revise manuscripts.
 
 ### Availability and diversity limits
 

@@ -958,7 +958,7 @@ is a numerical overclaim, not a smuggled physical claim.
 | fresh raw import and result-file search | prediction/audit modules absent; no result files |
 
 The canonical/RSS log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dcbd3f95-8859-4d3d-8f8c-bf3412ac7fb0/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dcbd3f95-8859-4d3d-8f8c-bf3412ac7fb0/output.log`.
 As in the earlier rounds, byte identity of historical rows cannot be independently
 reconstructed without a frozen prior snapshot or digest; the current 85 rows and
 their current residuals are independently confirmed.
@@ -1181,7 +1181,7 @@ documentation defects, not smuggled physical claims.
 | fresh raw import and post-verifier result-file search | prediction/audit modules absent; no result files |
 
 The canonical/RSS log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/64bff71f-0de7-4484-82c3-01e1f5f082a3/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/64bff71f-0de7-4484-82c3-01e1f5f082a3/output.log`.
 The implementer's verbose/direct/warning/failure/hash-seed matrix was not
 independently repeated after the public blockers above were reproduced; the
 canonical, compile, raw-isolation, no-file, high-precision and memory paths were.
@@ -1444,7 +1444,7 @@ corrected with the blockers.
 | compile, fresh raw import, result-file search | clean; prediction/audit modules absent; no result files |
 
 The canonical/RSS log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/85977449-5e9e-4b6e-ad5b-fcb4d600926b/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/85977449-5e9e-4b6e-ad5b-fcb4d600926b/output.log`.
 
 No implementation file was edited, staged, committed, or reverted. This
 round-5 closure section is the only durable write made by this review.
@@ -1659,7 +1659,7 @@ v4 report “is v2”; that documentation contradiction should be corrected.
 | `compileall`, fresh raw import, result-file search | clean; oracle/audit absent; no result files |
 
 The round-6 canonical/RSS log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/74b7eb28-dda8-4bbe-a4b8-fcd61a9e0980/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/74b7eb28-dda8-4bbe-a4b8-fcd61a9e0980/output.log`.
 
 No implementation file was edited, staged, committed, or reverted. This
 round-6 closure section is the only durable write made by this review.
@@ -1889,9 +1889,9 @@ The larger first pass exercised both `values` and `baseline`, every public
 same immutable `bytes` root and stable digest/report behavior.
 
 The round-7 canonical/RSS log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/1c299fa8-e37a-4cf5-b870-45593b1d60b7/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/1c299fa8-e37a-4cf5-b870-45593b1d60b7/output.log`.
 The direct audit log is
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/9e109dd8-00f8-4a7c-824a-2466ebac43f0/output.log`.
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/9e109dd8-00f8-4a7c-824a-2466ebac43f0/output.log`.
 
 No implementation file was edited, staged, committed, or reverted.  This
 round-7 closure section is the only durable write made by this review.
@@ -2075,19 +2075,19 @@ find adler_born_two_channel -type f \( -name '*.npy' -o -name '*.npz' \
 Round-8 logs:
 
 - canonical/RSS:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dab5cacd-1603-45be-af34-b2ced6a18aaa/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dab5cacd-1603-45be-af34-b2ced6a18aaa/output.log`
 - verbose:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b63696a5-a62e-4ce1-8aef-c19a48f4d5b2/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b63696a5-a62e-4ce1-8aef-c19a48f4d5b2/output.log`
 - warnings-as-errors:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/643bb6c2-1681-4e3b-bcaf-7190d51aa0b2/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/643bb6c2-1681-4e3b-bcaf-7190d51aa0b2/output.log`
 - direct script:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/48a42ad1-7352-470f-b3a7-2510204b5ae0/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/48a42ad1-7352-470f-b3a7-2510204b5ae0/output.log`
 - deliberate failure:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ab2fa35f-05e2-43e5-830e-2085d852d26d/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ab2fa35f-05e2-43e5-830e-2085d852d26d/output.log`
 - hash-seed:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/bfa3c1dc-3a44-446d-87e8-1c73a781faec/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/bfa3c1dc-3a44-446d-87e8-1c73a781faec/output.log`
 - direct scientific extraction:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/419b23df-b8dc-437d-a07a-cf2a826737c5/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/419b23df-b8dc-437d-a07a-cf2a826737c5/output.log`
 
 No implementation file was edited, staged, committed, or reverted.  This
 round-8 closure section is the only durable write made by this review.
@@ -2269,19 +2269,19 @@ find adler_born_two_channel -type f \( -name '*.npy' -o -name '*.npz' \
 Round-9 logs:
 
 - canonical/RSS:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b9716ceb-0299-4c67-9be2-5770079cf9a1/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b9716ceb-0299-4c67-9be2-5770079cf9a1/output.log`
 - verbose:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/83972242-d758-4483-981e-ab62d07e3383/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/83972242-d758-4483-981e-ab62d07e3383/output.log`
 - warnings-as-errors:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/5c1d01ca-bac8-4571-bb45-86a49ccc1c7e/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/5c1d01ca-bac8-4571-bb45-86a49ccc1c7e/output.log`
 - direct script:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/4c41d733-8229-466f-9f45-782c28a75eff/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/4c41d733-8229-466f-9f45-782c28a75eff/output.log`
 - deliberate failure:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/f6249fe9-fc2a-49dd-938c-51eed8c6086d/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/f6249fe9-fc2a-49dd-938c-51eed8c6086d/output.log`
 - hash seed:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ac77e609-b74d-4280-aa6c-cf07e079d516/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ac77e609-b74d-4280-aa6c-cf07e079d516/output.log`
 - direct scientific extraction:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/01c9afb6-6af5-4cf8-b02f-e5688e12d5a8/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/01c9afb6-6af5-4cf8-b02f-e5688e12d5a8/output.log`
 
 No implementation file was edited, staged, committed, or reverted.  This
 round-9 closure section is the only durable write made by this review.
@@ -2425,19 +2425,19 @@ find adler_born_two_channel -type f \( -name '*.npy' -o -name '*.npz' \
 Round-10 logs:
 
 - canonical/RSS:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ec9ac496-c9f7-4a7d-82d0-aad2b668a06c/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/ec9ac496-c9f7-4a7d-82d0-aad2b668a06c/output.log`
 - verbose:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/a98413b8-9e06-4abf-b90b-e51992fc6520/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/a98413b8-9e06-4abf-b90b-e51992fc6520/output.log`
 - warnings-as-errors:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/d62ab19c-9561-4f81-96d7-8398e16e9175/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/d62ab19c-9561-4f81-96d7-8398e16e9175/output.log`
 - direct script:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dad2c8fd-d465-4f99-b3f5-dbecbe847669/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/dad2c8fd-d465-4f99-b3f5-dbecbe847669/output.log`
 - deliberate failure:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b8d3ac2d-4dbe-44ed-b935-0fd817658de8/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/b8d3ac2d-4dbe-44ed-b935-0fd817658de8/output.log`
 - hash seed:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/3675ce84-b3ee-4f2a-bf34-24ac501a1473/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/3675ce84-b3ee-4f2a-bf34-24ac501a1473/output.log`
 - direct scientific extraction:
-`/Users/john-bramble/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/7586cecd-2bbb-42c0-b837-cf82dd0632b8/output.log`
+`~/.traycer/commands/c443d91e-b0d5-43ff-a31b-805574ab7771/7586cecd-2bbb-42c0-b837-cf82dd0632b8/output.log`
 
 No implementation file was edited, staged, committed, or reverted.  This
 round-10 closure section is the only durable write made by this review.

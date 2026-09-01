@@ -35,7 +35,7 @@ before.
 ## Commands
 
 ```bash
-cd /Users/john-bramble/Projects/Physics/DiracKuramotoFramework
+cd ~/Projects/Physics/DiracKuramotoFramework
 
 python3 -m py_compile adler_born_two_channel/*.py           # compile   -> 0
 python3 -m adler_born_two_channel.verify                    # canonical -> 0

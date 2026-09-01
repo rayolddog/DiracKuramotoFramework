@@ -14,7 +14,7 @@ status: 2
 
 Create an isolated Python package at:
 
-`/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
+`~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`
 
 Implement only the first three construction stages from the parent plan:
 

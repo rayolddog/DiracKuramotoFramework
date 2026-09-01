@@ -6,7 +6,7 @@ kind: spec
 # Physics Markdown corpus inventory
 
 Inventory date: 2026-08-24
-Workspace: `/Users/john-bramble/Projects/Physics`
+Workspace: `~/Projects/Physics`
 
 ## Scope result
 

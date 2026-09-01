@@ -93,7 +93,7 @@ The returned value matches `_normals(..., clock=-2**63, ...)` after scaling.
 
 Environment: macOS 26.5.2 arm64, Python 3.12.6, NumPy 2.3.5, SciPy 1.15.3.
 
-Commands run from `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework`:
+Commands run from `~/Projects/Physics/DiracKuramotoFramework`:
 
 ```text
 python3 -m adler_born_two_channel.verify
@@ -321,7 +321,7 @@ The actual public surface is fixed, and the README is current, but source API do
 - Canonical no-cube evidence remains 6.29 MB for 64 clocks by 200,000 steps versus 102.4 MB materialization; irregular streaming remains 0.04 MB for 20,000 steps. Independent AST inspection found no file-write primitive in `stochastic.py`; pre/post hashes of all implementation files were unchanged.
 - Fresh raw reachability remains exactly `__init__.py`, `raw_config.py`, `raw_ledger.py`, `raw_runner.py`, `stochastic.py`, and `validation.py`; no analytic, simulation, oracle, or comparison module is reachable. Raw isolation and absence of model/physics inputs remain closed.
 
-Commands were run from `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework` under macOS 26.5.2 arm64, Python 3.12.6, NumPy 2.3.5, and SciPy 1.15.3. They included all five canonical variants, `compileall`, four independent Python-stdin suites (routing/API/uint64/zero/duration/unresolvable; subnormal root/split; Bonferroni distributions/mutations; AST/raw/no-file), source searches, and SHA-256 snapshots. Reviewed scope was `stochastic.py`, `verify.py`, `README.md`, `raw_runner.py`, `raw_config.py`, `raw_ledger.py`, `validation.py`, `__init__.py`, the governing Brownian-tree plan/pressure test, Ticket 01 isolation contract, Ticket 02, and its two fix-up tickets. No implementation code, test, README, source file, or Git state was edited; only this review artifact was appended.
+Commands were run from `~/Projects/Physics/DiracKuramotoFramework` under macOS 26.5.2 arm64, Python 3.12.6, NumPy 2.3.5, and SciPy 1.15.3. They included all five canonical variants, `compileall`, four independent Python-stdin suites (routing/API/uint64/zero/duration/unresolvable; subnormal root/split; Bonferroni distributions/mutations; AST/raw/no-file), source searches, and SHA-256 snapshots. Reviewed scope was `stochastic.py`, `verify.py`, `README.md`, `raw_runner.py`, `raw_config.py`, `raw_ledger.py`, `validation.py`, `__init__.py`, the governing Brownian-tree plan/pressure test, Ticket 01 isolation contract, Ticket 02, and its two fix-up tickets. No implementation code, test, README, source file, or Git state was edited; only this review artifact was appended.
 
 ## Non-claims
 
@@ -395,7 +395,7 @@ The removed method names and cross-references are fixed, and the new name check 
 - Fresh/raw structural reachability remains exactly `__init__.py`, `raw_config.py`, `raw_ledger.py`, `raw_runner.py`, `stochastic.py`, and `validation.py`; no analytic, simulation, oracle, or comparison module is reachable.
 - The README and verifier mechanically agree once on **50 checks, 91 public callables, 329 invalid calls, and 196 parameters**.
 
-Commands were run from `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework` under macOS 26.5.2 arm64, Python 3.12.6, NumPy 2.3.5, SciPy 1.15.3, and mpmath with 120-digit precision. They included all five canonical variants, `compileall`, independent realized-width/root/split/coarse probes, a 30,000-case high-precision factor-rounding scan, minimum-subnormal distribution probes, all public eager-window routes with key counters, v2/v3 address probes, independent Bonferroni families/mutations, uint64/ULP/zero controls, raw AST/no-file inspection, and SHA-256 snapshots. Reviewed code scope was `stochastic.py`, `verify.py`, `README.md`, the raw boundary/transitive modules, and the governing Ticket 02/fix-up artifacts. No implementation, test, README, source, or Git state was edited; only this review artifact was appended.
+Commands were run from `~/Projects/Physics/DiracKuramotoFramework` under macOS 26.5.2 arm64, Python 3.12.6, NumPy 2.3.5, SciPy 1.15.3, and mpmath with 120-digit precision. They included all five canonical variants, `compileall`, independent realized-width/root/split/coarse probes, a 30,000-case high-precision factor-rounding scan, minimum-subnormal distribution probes, all public eager-window routes with key counters, v2/v3 address probes, independent Bonferroni families/mutations, uint64/ULP/zero controls, raw AST/no-file inspection, and SHA-256 snapshots. Reviewed code scope was `stochastic.py`, `verify.py`, `README.md`, the raw boundary/transitive modules, and the governing Ticket 02/fix-up artifacts. No implementation, test, README, source, or Git state was edited; only this review artifact was appended.
 
 ## Non-claims
 

@@ -12,7 +12,7 @@ status: 2
 - [Canonical-routing fix-up](../fixup-closure-boundaries)
 - [Independent review](../independent-review)
 
-Code scope remains `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`. Do not touch, stage, commit, or revert anything outside this package.
+Code scope remains `~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`. Do not touch, stage, commit, or revert anything outside this package.
 
 ## Objective
 

@@ -75,10 +75,10 @@ Independent pressure test: [Cloud chamber–SPAD first-mark audit](../cloud-cham
 
 This is not a new idea originating in the present exchange. John had already developed it with Claude Opus during earlier framework work. The surviving repository record makes the lineage unusually clear:
 
-- [July 4 three-stage-measurement discussion](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md:75) records the detector taxonomy “from the Opus 4.8 thread”: a cloud chamber has one particle, many vertices, with one local commit per vertex.
-- The same discussion later implements the click-to-track continuum and Mott conditioning in a toy simulation, explicitly recording what is input and what emerges: [Mott track analysis](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md:244).
-- [Paper 2's detector taxonomy](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:106) already describes a track as a correlated cascade of partial locks whose later stakes are conditioned by earlier registrations.
-- [Paper 3's cloud-chamber account](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1220) already treats the chamber as many capture–commit–register vertices rather than one extended measurement.
+- [July 4 three-stage-measurement discussion](~/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md:75) records the detector taxonomy “from the Opus 4.8 thread”: a cloud chamber has one particle, many vertices, with one local commit per vertex.
+- The same discussion later implements the click-to-track continuum and Mott conditioning in a toy simulation, explicitly recording what is input and what emerges: [Mott track analysis](~/Projects/Physics/DiracKuramotoFramework/discussions/2026-07-04-three-stage-measurement.md:244).
+- [Paper 2's detector taxonomy](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:106) already describes a track as a correlated cascade of partial locks whose later stakes are conditioned by earlier registrations.
+- [Paper 3's cloud-chamber account](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1220) already treats the chamber as many capture–commit–register vertices rather than one extended measurement.
 
 The present update is therefore a **cross-paper connection**, not a claim of new origin: Paper 2 and Paper 3 already describe the unitary/conditional evolution that builds a track; Paper 1 can use that established framework element to expose exactly what remains unresolved at the track's beginning.
 

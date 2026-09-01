@@ -29,7 +29,7 @@ The recommended revision makes a track useful in two ways:
 
 ### Placement A: after the three-stage definition in §2
 
-Target: [Paper 1 §2](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:37).
+Target: [Paper 1 §2](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:37).
 
 **Author-reviewed candidate passage — accepted in principle**
 
@@ -41,7 +41,7 @@ Target: [Paper 1 §2](/Users/john-bramble/Projects/Physics/DiracKuramotoFramewor
 
 ### Placement B: qualify the energy-share notation and P4
 
-Targets: [Paper 1 notation](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:39) and [P4](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:53).
+Targets: [Paper 1 notation](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:39) and [P4](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:53).
 
 **Passage B1 — author-reviewed candidate qualification**
 
@@ -57,7 +57,7 @@ Targets: [Paper 1 notation](/Users/john-bramble/Projects/Physics/DiracKuramotoFr
 
 ### Placement C: after Stage 1's exclusivity discussion
 
-Target: [Paper 1 §3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:73).
+Target: [Paper 1 §3](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:73).
 
 **Author-reviewed candidate passage**
 
@@ -67,7 +67,7 @@ Target: [Paper 1 §3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramewor
 
 ### Placement D: add a focused open problem in §9.4
 
-Target: [Paper 1 open problems](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:351).
+Target: [Paper 1 open problems](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md:351).
 
 **Author-reviewed candidate open problem**
 
@@ -100,7 +100,7 @@ This completes the author's passage-by-passage conceptual review. It authorizes 
 
 ### Placement A: refine the cut table in §4.1
 
-Target: [Paper 2 §4.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:81).
+Target: [Paper 2 §4.1](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:81).
 
 **Candidate replacement principle**
 
@@ -113,7 +113,7 @@ The current wording “one site assembles the full quantum” should be explicit
 
 ### Placement B: revise the track row in §4.2
 
-Target: [Paper 2 detector taxonomy](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:106).
+Target: [Paper 2 detector taxonomy](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:106).
 
 **Candidate passage**
 
@@ -129,7 +129,7 @@ This wording ties the new model directly to Paper 2's three reversal cases: exac
 
 ### Placement D: strengthen open problem §9(v)
 
-Target: [Paper 2 open problem §9(v)](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:187).
+Target: [Paper 2 open problem §9(v)](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:187).
 
 **Candidate replacement**
 
@@ -139,13 +139,13 @@ Target: [Paper 2 open problem §9(v)](/Users/john-bramble/Projects/Physics/Dirac
 
 ### Placement A: qualify the installed three stages
 
-Target: [Paper 3 §4.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:309).
+Target: [Paper 3 §4.1](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:309).
 
 Add one sentence stating that “capture” names full absorptive capture in an event detector but only a partial scattering/ionization coupling at a track vertex. Selection, commitment, and registration remain distinct in both cases.
 
 ### Placement B: correct the calorimetric sentence in §4.7
 
-Target: [Paper 3 §4.7](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:450).
+Target: [Paper 3 §4.7](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:450).
 
 **Candidate replacement**
 
@@ -153,7 +153,7 @@ Target: [Paper 3 §4.7](/Users/john-bramble/Projects/Physics/DiracKuramotoFramew
 
 ### Placement C: narrow the Many-Worlds comparison
 
-Target: [Paper 3 §7.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:698).
+Target: [Paper 3 §7.1](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER3_DRAFT_dk_framework.md:698).
 
 The strongest defensible distinction is not that the framework conserves energy while Many Worlds does not; unitary Everettian dynamics also conserves the global expectation of energy. The proposed advantage would be a **derived account of one actual material history**—for example one first mark followed by one evolving track—without discarding the wave or multiplying actuality. Until the first-mark law and the status of unselected amplitudes are derived, this remains the framework's goal rather than an achieved comparison.
 

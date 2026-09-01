@@ -136,7 +136,7 @@ The calculation succeeds as a Born candidate only if the quadratic channel-curre
 
 ## Relation to the existing framework note
 
-The earlier [Synchronization, Arnold Tongue, and Born Rule note](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/NOTE_sync_tongue_born_walkthrough.md:443) correctly separated tongue eligibility from outcome weight. It then supplied the square through a golden-rule capture rate. The Sol–Fable review identified that move as Born-adjacent and potentially circular.
+The earlier [Synchronization, Arnold Tongue, and Born Rule note](~/Projects/Physics/DiracKuramotoFramework/drafts/NOTE_sync_tongue_born_walkthrough.md:443) correctly separated tongue eligibility from outcome weight. It then supplied the square through a golden-rule capture rate. The Sol–Fable review identified that move as Born-adjacent and potentially circular.
 
 The present candidate retains the note's separation but asks whether the **rate-weighted interior of the tongue itself** supplies the square. This is a sharper, independently testable proposal.
 

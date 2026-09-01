@@ -7,7 +7,7 @@ kind: spec
 
 ## Manuscript
 
-- Path: `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md`
+- Path: `~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md`
 - SHA-256: `453acdadb86f579eb44a36b5e74d34f84a77a01163d2e85ce8774f2497f1a227`
 - Size: 124,233 bytes
 - Length: 438 lines

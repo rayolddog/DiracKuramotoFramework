@@ -11,7 +11,7 @@ The detector-class correction is necessary, but Placements A–D should **not be
 
 Recommended editorial outcome: **revise A, rewrite B, accept C with precision edits, and accept D after narrowing its model claims**.
 
-Reviewed against the [candidate passages](../paper-update-candidates), the current [Paper 1 draft](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md), the [cloud-chamber/SPAD first-mark audit](../../cloud-chamber-spad-first-mark-comparison), and the [three-mark model plan](../three-mark-two-rail-model). No artifact comments were open at review time.
+Reviewed against the [candidate passages](../paper-update-candidates), the current [Paper 1 draft](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER1_DRAFT_born_selection.md), the [cloud-chamber/SPAD first-mark audit](../../cloud-chamber-spad-first-mark-comparison), and the [three-mark model plan](../three-mark-two-rail-model). No artifact comments were open at review time.
 
 ## Priority findings
 

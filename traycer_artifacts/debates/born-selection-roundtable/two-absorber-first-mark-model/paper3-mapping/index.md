@@ -7,7 +7,7 @@ kind: spec
 
 ## Purpose
 
-This crosswalk translates the selection-related concepts in [Paper 3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md) and the reversibility/cut concepts in [Paper 2](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md) into variables for the [minimal two-absorber first-mark model](..). It makes three statuses explicit:
+This crosswalk translates the selection-related concepts in [Paper 3](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md) and the reversibility/cut concepts in [Paper 2](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md) into variables for the [minimal two-absorber first-mark model](..). It makes three statuses explicit:
 
 - **Defined:** Papers 2–3 supply a mathematical variable or established physical quantity that can be carried into the model.
 - **Interpretive:** Papers 2–3 supply a physical reading, but not yet a microscopic evolution law for it.
@@ -194,14 +194,14 @@ The corresponding operational design is the [two-absorber reversal protocol](../
 
 ## Source anchors
 
-- Paper 2's reversible/irreversible/committed distinction: [§2](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:27)
-- Reversible-return rate and proposed locking layer: [§3.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:43)
-- Recoverability ordering and reference-history trichotomy: [§4.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:81)
-- Paper 2's requested continuous microscopic model: [§9](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:183)
-- Paper 3's capture–selection–registration stages: [§3.1](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:496)
-- Background configuration, basins, and winner-take-all proposal: [§3.3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:620)
-- Bulk reference, phase mismatch, and bath noise: [§§2.3 and 4.3](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:385)
-- Local versus non-separable registry/nonlocality: [§7.5](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1585)
-- Explicitly open Born and selection dynamics: [§8](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1718)
-- Conditional versus unconditional measurement: [Appendix D](/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1941)
+- Paper 2's reversible/irreversible/committed distinction: [§2](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:27)
+- Reversible-return rate and proposed locking layer: [§3.1](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:43)
+- Recoverability ordering and reference-history trichotomy: [§4.1](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:81)
+- Paper 2's requested continuous microscopic model: [§9](~/Projects/Physics/DiracKuramotoFramework/drafts/PAPER2_DRAFT_heisenberg_cut.md:183)
+- Paper 3's capture–selection–registration stages: [§3.1](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:496)
+- Background configuration, basins, and winner-take-all proposal: [§3.3](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:620)
+- Bulk reference, phase mismatch, and bath noise: [§§2.3 and 4.3](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:385)
+- Local versus non-separable registry/nonlocality: [§7.5](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1585)
+- Explicitly open Born and selection dynamics: [§8](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1718)
+- Conditional versus unconditional measurement: [Appendix D](~/Projects/Physics/DiracKuramotoFramework/current_revision_DK_paper.md:1941)
 - Independent pressure test of this translation: [Paper 3 and the two-absorber first-mark test](../../paper3-two-absorber-comparison)

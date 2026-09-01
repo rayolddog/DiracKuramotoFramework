@@ -17,7 +17,7 @@ Make it structurally impossible for stochastic event-generation code to load the
 - [Parent two-channel plan](../../..)
 - [Ticket sequence](..)
 
-Code boundary: `/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`.
+Code boundary: `~/Projects/Physics/DiracKuramotoFramework/adler_born_two_channel/`.
 
 ## In scope
 
