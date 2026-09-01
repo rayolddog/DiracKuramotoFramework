@@ -82,11 +82,49 @@ equivalent.
    Whether Papers 2 or 3 anywhere presuppose a resolution of either was not swept.
 5. **[MCI] v8 was not swept at all.** Round 1 covered four documents; this round covered two.
 
+## Round 2b — the modal-verb sweep (2026-08-31, same day)
+
+The sweep recommended below was run rather than deferred. Method: every sentence in Paper 3
+containing a companion reference (`[P1]`, `[P2]`, `[MCI]`, "companion", "Paper 1/2") *and*
+an attribution verb (prove/derive/establish/demonstrate/show/confirm/guarantee/ensure/
+settle/entail/force). Eight candidates; a second pass for strong claims carrying no citation
+returned **zero**, so the pattern is confined to attributed statements.
+
+Three candidates were already clean — L3-5 and L3-6 from earlier today, plus one correct
+usage ("the quantitative content is the companion's, cited **not re-derived**"). Five needed
+fixing:
+
+| # | Location | Was | Now |
+|---|---|---|---|
+| **M-1** | P3 abstract | "Two companion papers **established** … the Born rule is the statistics of a **proved** fair game" | "argue … conditional outcome compatibility with the Born comparator, not a derivation of the Born measure." The most visible instance in the trio. |
+| **M-2** | P3 §6.1 | "[P2]'s **central experimental claim**" citing §8 | "central experimental *direction*," citing §8.3–8.4, with the demotion noted. **Closes round-1 item 12.** |
+| **M-3** | P3 §7.1 (Everett) | "the Born weight … **proved fair** from detector premises" | "argued fair … and conditional on them." |
+| **M-4** | P3 §7.2 (Bohm) | "a **fairness proved from detector physics**" | "argued … conditional on [P1]'s premises," plus a substantive repair (below). **Closes round-1 item 4.** |
+| **M-5** | P3 §7.4 (closing) | "a fair game **proved** in the detector" | "argued in the detector." |
+
+**M-4 needed more than a verb change.** The passage contrasted Bohm *postulating* an
+equilibrium measure with this program *proving* fairness. Paper 1 v0.7 now carries an
+explicit preparation measure as a premise, so the contrast is no longer measure-against-
+no-measure and the original framing would have become misleading rather than merely
+overstated. Restated as *where the measure sits*: Bohm places a probability law over hidden
+configurations of the propagating system; here the wave is the beable, the system factor is
+a Dirac delta — no probability law over hidden system variables at all — and the preparation
+measure is detector-side with independently measured provenance. The contrast survives and
+is sharper, but it is a different contrast.
+
+**Standing count.** Seven instances of the pattern across three passes (round-1 items 4 and
+9; round-2 L3-5 and L3-6; round-2b M-1, M-3, M-5 — M-2 and M-4 being the round-1 pair
+finally applied). All are now fixed, and the two round-1 items they overlapped are closed.
+
+**Caveat unchanged.** Same agent as the v0.7 edits, so this is not an independent audit; a
+sweep by the author of the changes will not catch a distortion the author shares. What it
+does establish is that no *unattributed* strong claim exists in Paper 3, which is the part
+a keyword sweep can settle reliably.
+
 ## Open item for a future independent round
 
-Round-1 items 4 and 9, and this round's L3-5 and L3-6, are four instances of one pattern:
-**Paper 3 firming up Paper 1's conditionals** — "proved" for "argued," "derives" for "is
-consistent with," dropped hedges. Two rounds finding it independently at four sites is
-enough to suspect it is systematic rather than incidental. A directed sweep of Paper 3 for
-modal verbs attributing results to the companions would be cheap and is recommended before
-Paper 3 leaves draft.
+The pattern above was systematic — seven sites across three passes — and Paper 3 was the
+only document exhibiting it. Two questions a genuinely independent round should ask, which
+this one cannot: whether Papers 1 and 2 firm up *each other's* conditionals in the same way
+(not swept), and whether [MCI] v8, frozen as a provenance record, contains attributions that
+its frozen status now makes uncorrectable but which should at least be catalogued.

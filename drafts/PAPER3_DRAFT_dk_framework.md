@@ -23,8 +23,9 @@ research direction — including the spine, the ladder confirmation, the registe
 and the history and frame-rotation readings developed in the framework notes —
 adjudicated scope and interpretation, and is the accountable human sponsor.
 
-**Abstract (draft).** Two companion papers established, from stated premises, that the
-Born rule is the statistics of a proved fair game among detector absorber sites [P1] and
+**Abstract (draft).** Two companion papers argue, from stated premises, that the Born
+statistics are those of a fair game among detector absorber sites — conditional outcome
+compatibility with the Born comparator, not a derivation of the Born measure [P1] — and
 that the Heisenberg cut is a physical threshold with a computable location and width
 [P2]. This paper supplies the framework those results install into: a real wave substrate
 whose single organizing mechanism — phase locking — operates at two scales. At the
@@ -584,9 +585,11 @@ care, by what a null would and would not touch.)*
 
 ### 6.1 The coupling dial
 
-The measurement companion's central experimental claim is that **coupling — not mass,
-size, or gravitational self-energy — is the variable that decides where quantum
-behavior ends** [P2 §8]. The cut sits at $\kappa_{\rm ret} \sim K$ with fractional
+The measurement companion's central experimental *direction* is that **coupling — not
+mass, size, or gravitational self-energy — is the variable that decides where quantum
+behavior ends** [P2 §8.3–8.4]. (Round-1 ledger item 12: [P2] §8.2 demoted the
+one-parameter collapse from claim to research direction, and the surviving
+discriminators are §8.3–8.4; the stronger wording here predated that demotion.) The cut sits at $\kappa_{\rm ret} \sim K$ with fractional
 width $w = K/\omega$, and existing platforms already span that dial across sixteen
 orders of magnitude — from atomic linewidths ($w \sim 10^{-8}$) through transmons to
 broadband solid-state absorbers ($w \sim 10^{-2}$) [P2 §3]. That makes the framework
@@ -712,7 +715,7 @@ measurement is the entrainment of clocks; the alternatives that Many-Worlds spre
 across branches are here the unoccupied basins of one world.** Where Everett's
 superposed outcomes all persist, ours compete — the sync basins of the selection game
 — and exactly one is occupied, with the Born weight as its occupation frequency,
-proved fair from detector premises [P1]. Branching is replaced by locking; the
+argued fair from detector premises [P1], and conditional on them. Branching is replaced by locking; the
 multiverse by a substrate; the preferred basis problem by the einselected which-path
 register (§4.1); and the probability postulate by a race.
 
@@ -724,9 +727,16 @@ positioning against any member [MCI §7.1]. Within the family, the debts and
 distinctions after the companions:
 
 - **Against Bohm.** Bohm has a guidance law and quantum equilibrium; the framework now
-  answers with guidance inherited from the vacuum dressing ([MCI §7.3]) and — where
-  Bohm *postulates* an equilibrium measure on configuration space — a **fairness
-  proved from detector physics** [P1], an answer of a different kind. Bohm's foliation
+  answers with guidance inherited from the vacuum dressing ([MCI §7.3]) and a
+  **fairness argued from detector physics, conditional on [P1]'s premises** — an answer
+  of a different kind, though narrower in its difference than earlier drafts of this
+  section claimed (round-1 ledger item 4). [P1] v0.7 carries an explicit preparation
+  measure as a premise of its own, so the contrast is not measure against no-measure.
+  It is *where the measure sits*: Bohm places a probability law over hidden
+  configurations of the propagating system, whereas here the wave is the beable, the
+  system factor is a Dirac delta — no probability law over hidden system variables at
+  all — and the preparation measure is detector-side with independently measured
+  provenance. Bohm's foliation
   is empirically inaccessible by construction; ours is physical and carries a test
   program (§6.4–6.5). Bohm's history debt is the measurement sector (§4.4). The
   remaining shared debt: the explicit covariant selection dynamics (§7.3, item 5).
@@ -781,7 +791,7 @@ own particle content. Each consumes this framework; none is consumed by it.
 What it is, returning to the spine: Schrödinger built an equation that describes the
 evolution of the wave and meant it as physics; the description was extended once to
 relativity and fields, and then stopped, one postulate short, for a century. The
-program assembled here — a fair game proved in the detector [P1], a cut with an
+program assembled here — a fair game argued in the detector [P1], a cut with an
 address and a width [P2], and the ladder, registers, and clocks of this paper —
 is the case that the stopping was contingent, not necessary: that the measurement
 event is the same substrate doing one more thing waves do, which is to lock. The
