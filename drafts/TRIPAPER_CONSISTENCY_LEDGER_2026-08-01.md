@@ -54,14 +54,14 @@ four documents including the closing line; every argument-bearing citation resol
 
 | # | Sev | Location | Finding | Suggested fix | Disposition |
 |---|---|---|---|---|---|
-| 23 | MED · CONVERGENT ×2 | P2 reference list | "[Paper 1] … Manuscript v0.5.2" — stale by two point-versions; contradicts P2's own header ("propagated… as its v0.5.3"). | Bump to v0.5.4 at next P2 touch. | |
-| 24 | MED | P3 references (Oppenheimer) | Annotation "(Majorana–Oppenheimer form, §2)" — the term never appears in P3's body; §2 names only Riemann–Silberstein. | Add "(the Majorana–Oppenheimer formulation)" to §2's sentence — one-phrase fix. | |
-| 25 | LOW | P3 §4.1 | "[P1 §3]" for the three-stage decomposition — it's stated in P1 §2 (§3 is capture only). | → [P1 §2]. | |
-| 26 | LOW | P3 §2 (registers) | Beamsplitter attributed to [MCI §2.5]'s examples — concept present there, example absent. | "A coherent boundary in the sense of [MCI §2.5]." | |
-| 27 | LOW | P3 §6.1 | Recoverability cited to [P2 §8.3]; it is *defined* in §4.1 (P3 cites §4 correctly elsewhere). | → [P2 §4.1] (or "applied in §8.3"). | |
-| 28 | LOW | P3 §4.5 | "The *what-escapes* of §3's threshold now identified" — §3 carries no escape framing. | Either add the escape sentence to §3 (it exists in the sync-tongue note §5) or rephrase §4.5. | |
-| 29 | LOW | P3 references (Grangier) | Orphan entry — never used in the body (the anticorrelation material was dropped in drafting §2). | Restore the §2 parenthetical "(Grangier–Roger–Aspect: anticorrelation + interference in one apparatus)" or drop the entry. | |
-| 30 | LOW | P1 header | Title line still reads "DRAFT v0.5"; v0.5.4 exists only inside the revision note. | Bump the header label before freeze (P1 touch). | |
+| 23 | MED · CONVERGENT ×2 | P2 reference list | "[Paper 1] … Manuscript v0.5.2" — stale by two point-versions; contradicts P2's own header ("propagated… as its v0.5.3"). | Bump to v0.5.4 at next P2 touch. | accepted (JB standing word); APPLIED 2026-08-01, w/ mechanical-touch note in entry |
+| 24 | MED | P3 references (Oppenheimer) | Annotation "(Majorana–Oppenheimer form, §2)" — the term never appears in P3's body; §2 names only Riemann–Silberstein. | Add "(the Majorana–Oppenheimer formulation)" to §2's sentence — one-phrase fix. | accepted; APPLIED 2026-08-01 (named in §2) |
+| 25 | LOW | P3 §4.1 | "[P1 §3]" for the three-stage decomposition — it's stated in P1 §2 (§3 is capture only). | → [P1 §2]. | accepted; APPLIED 2026-08-01 |
+| 26 | LOW | P3 §2 (registers) | Beamsplitter attributed to [MCI §2.5]'s examples — concept present there, example absent. | "A coherent boundary in the sense of [MCI §2.5]." | accepted; APPLIED 2026-08-01 |
+| 27 | LOW | P3 §6.1 | Recoverability cited to [P2 §8.3]; it is *defined* in §4.1 (P3 cites §4 correctly elsewhere). | → ([P2 §4.1], applied in [P2 §8.3]). | accepted; APPLIED 2026-08-01 |
+| 28 | LOW | P3 §4.5 | "The *what-escapes* of §3's threshold now identified" — §3 carries no escape framing. | Either add the escape sentence to §3 (it exists in the sync-tongue note §5) or rephrase §4.5. | accepted (rephrase option); APPLIED 2026-08-01 |
+| 29 | LOW | P3 references (Grangier) | Orphan entry — never used in the body (the anticorrelation material was dropped in drafting §2). | Restore the §2 parenthetical "(Grangier–Roger–Aspect: anticorrelation + interference in one apparatus)" or drop the entry. | accepted (restore option); APPLIED 2026-08-01 |
+| 30 | LOW | P1 header | Title line still reads "DRAFT v0.5"; v0.5.4 exists only inside the revision note. | Bump the header label before freeze (P1 touch). | accepted; APPLIED 2026-08-01 (label harmonized, itemization preserved) |
 
 ---
 
