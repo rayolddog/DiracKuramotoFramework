@@ -3,7 +3,9 @@
 *A conceptual walkthrough — understanding-oriented. Not paper text.*
 *Date: 2026-07-05. Sibling to `NOTE_sync_tongue_born_walkthrough.md` (lock threshold,
 virtual/real) and `NOTE_pagewootters_chiral_clock.md` (the chiral clock). Glossary
-terms extended at the bottom.*
+terms extended at the bottom. Extended 2026-08-26 with Role 4 — the Higgs is not a
+refractive medium, and that is Role 3 restated — plus the MSW cross-reference for the
+Fizeau file.*
 
 This note pins down two things that came out of a Q&A session. First: the precise
 sense in which the Heisenberg cut marks the onset of preferred-frame physics — not
@@ -11,8 +13,8 @@ sense in which the Heisenberg cut marks the onset of preferred-frame physics —
 exerts greater influence on predictions" (a change of which law *dominates*). That is
 a **crossover**, and naming it one buys a dimensionless location for the cut and a
 predicted dose–response for the T-tests. Second: where the Higgs field sits in this
-story — three candidate roles, of which it fills one plainly, one only in the DK/ZBW
-reading, and one not at all. Confidence is labeled **solid / sketch / open**
+story — four candidate roles, of which it fills one plainly, one only in the DK/ZBW
+reading, and two not at all (the last two being one refusal stated twice). Confidence is labeled **solid / sketch / open**
 throughout.
 
 ---
@@ -107,7 +109,7 @@ checking whether the existing sim can produce this curve with no new machinery
 
 ---
 
-## 3. The Higgs: three candidate roles (solid / solid-in-framework / non-actor)
+## 3. The Higgs: four candidate roles (solid / solid-in-framework / non-actor / non-actor)
 
 Is the Higgs field an important actor in the transition? Important, yes — but as the
 *scale-setter* for one side of the crossover, not as the mechanism. Three roles to
@@ -162,6 +164,64 @@ physics; it cannot supply the frame. Only the sync sector does.
 Likewise the numerator: the capture strength $K$ comes from ordinary interaction
 couplings to the detector (mostly electromagnetic), not from the Higgs.
 
+### Role 4 — the refractive medium: non-actor, and the same fact as Role 3 (solid)
+
+*Added 2026-08-26, from a Q&A thread on refractive index as accumulated phase lag.*
+
+A second tempting analogy, distinct from Role 3's. A medium slows light by accumulating
+phase lag — Ewald–Oseen: driven charges re-radiate, the secondary wavelets interfere with
+the incident wave and retard it, giving phase velocity $c/n$ while every constituent wave
+still moves at $c$. Does the Higgs do the same for massive particles?
+
+**Where the parallel is exact, and worth keeping.** In the broken case it is not an analogy
+at all: the Anderson–Higgs mechanism *is* the photon-mass-in-a-superconductor mechanism.
+The London penetration depth is the Compton wavelength of the massive photon,
+$m_\gamma = \hbar/(\lambda_L c)$; plasma dispersion $\omega^2 = \omega_p^2 + c^2 k^2$ is the
+relativistic massive dispersion with $m_{\rm eff} = \hbar\omega_p/c^2$. This is a
+**laboratory existence proof for Role 2** — a gauge boson acquiring a Compton frequency from
+a condensate, with the frequency measurable — and should be cited there.
+
+**Where it fails: dispersion.** Refraction is *frequency-dependent* lag, $n(\omega)$, and that
+dependence is what makes it a medium effect (prisms, rainbows, chromatic aberration). The
+Higgs delivers $E^2 = p^2c^2 + m^2c^4$ — the *free relativistic* dispersion, not a
+medium-modified one. No $n(\omega)$, no prism. This is bounded rather than merely
+conceptual: extra vacuum dispersion beyond the relativistic relation is exactly what
+Lorentz-violation searches constrain (energy-dependent photon arrival times from GRBs).
+
+**Inertia, not viscosity.** Molasses implies drag; drag implies deceleration; deceleration
+implies a frame in which things come to rest. None of that happens — a massive particle
+coasts forever. The Higgs supplies resistance to *change* of velocity, a medium supplies
+resistance to velocity. Mass makes $v < c$; it never slows anything.
+
+**Dissipation: exactly zero, by a stronger argument than transparency.** A transparent medium
+is only *nearly* lossless — causality (Kramers–Kronig) forbids $\chi''$ from vanishing
+identically, though it can be astronomically small: pure water reaches
+$\sim 0.0044\ \mathrm{m^{-1}}$ at its 418 nm minimum (attenuation length of order 200 m), and
+silica fibre 0.15–0.2 dB/km at 1550 nm, that residue mostly Rayleigh scattering rather than
+absorption. The Higgs vacuum is *exactly* lossless: the vacuum is the ground state, so there
+is no channel to excite until $\sqrt s > m_H \approx 125$ GeV.
+
+**Why this is Role 3 again.** Refraction is *slaved response* to a drive — reversible,
+dispersive, frame-defining. Mass is not a response at all: no drive, no lag, no
+re-radiation, just a term in the propagator — non-dispersive, frame-neutral. Those last two
+attributes are one fact, since both an $n(\omega)$ and a rest frame would require a preferred
+four-vector, and a scalar vev supplies neither.
+
+> **Roles 3 and 4 are the same statement twice: "no frame" and "no dispersion" are both
+> "the vev is a scalar."**
+
+**The real massive-particle refraction is MSW — and it *does* give a frame.** *(Cross-reference:
+this paragraph also belongs in the Fizeau preferred-frame file.)* Neutrinos traversing matter
+acquire an effective potential $V = \sqrt2\,G_F n_e$ from coherent forward scattering off
+electrons [Wolfenstein 1978] — a genuine refractive index for a massive fermion, computed from
+the standard forward-scattering formula, and strong enough to drive resonant flavour
+conversion (the MSW effect, confirmed in the resolution of the solar neutrino problem). Note
+what it does that the Higgs cannot: it defines a frame — the matter rest frame — SR-safely,
+because it is ordinary stuff with a rest frame rather than a modification of the vacuum. This
+extends the Fizeau precedent from photons to fermions: *matter defines an SR-safe propagation
+frame* now has a **massive-particle** instance with experimental confirmation attached, which
+matters precisely because Stage-2's frame is cosmic radiation, not vacuum.
+
 ### Compact summary
 
 > *The Higgs builds the oscillator and sets its frequency; the detector coupling
@@ -169,7 +229,7 @@ couplings to the detector (mostly electromagnetic), not from the Higgs.
 > frequency.*
 
 Four actors; the Higgs is first among them but acts entirely offstage before the
-measurement begins.
+measurement begins — as builder of the oscillator, never as medium through which it moves.
 
 ---
 
@@ -204,5 +264,14 @@ Penrose/GR spinoff). Do not mix into the main paper; parked here.
 - **Sargent's rule** — beta-decay rate scales as the fifth power of the energy
   release $Q$, not the parent mass; the empirical wall that killed the $K=m$
   attempt-rate idea.
+- **Ewald–Oseen extinction** — the theorem that refraction is re-radiated wavelets
+  cancelling the incident wave and replacing it with a phase-retarded composite; every
+  constituent wave still travels at $c$, so nothing is locally slowed.
+- **Anderson–Higgs mechanism** — mass generation by a condensate; identical mathematics to a
+  superconductor giving the photon mass, where the London penetration depth *is* the massive
+  photon's Compton wavelength. The lab instance of Role 2.
+- **MSW effect** — resonant neutrino flavour conversion in matter, driven by the refractive
+  potential $V = \sqrt2\,G_F n_e$ from coherent forward scattering; the massive-fermion
+  instance of a medium-defined propagation frame, and the Fizeau precedent's fermionic twin.
 - **Dose–response** (borrowed from medicine) — here: predicted monotonic growth of
   frame-dependent (sidereal) signal with lock depth $K_{\text{eff}}/\omega_{\text{eff}}$.
