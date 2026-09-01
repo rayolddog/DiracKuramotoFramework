@@ -102,8 +102,10 @@ lock. *Configuration space*: partially answered at best. The entangled sector ca
 it (§5), where the companion's shared-registry premise [P1, P5–P6] is an explicit
 ontological commitment, and we flag the objection **open** rather than glossed.
 
-**What a framework paper owes.** The two companions are deliberately narrow: [P1] proves
-that outcome selection is a fair game, conditional on stated detector premises; [P2]
+**What a framework paper owes.** The two companions are deliberately narrow: [P1] argues
+that outcome selection is a fair game, conditional on stated detector premises — v0.7 of
+that paper withdrew "proves" along with its claim to derive the Born measure, and states
+its result as conditional outcome compatibility over a tested domain (round 2, item L3-5); [P2]
 locates the cut and computes its width, conditional on [P1]'s Theorem 2. This paper is
 where the conditional structure is assembled into one picture and priced honestly:
 premises in one place, the settled/claimed/open partition maintained across the whole
@@ -151,8 +153,8 @@ universal rate: the chiral register is the framework's clock, not its universal 
 [MCI §3.7–3.8].
 
 **The photon as the uncoupled limit.** Vacuum Maxwell, written in Riemann–Silberstein
-form ($\mathbf F_\pm = \mathbf E \pm i\mathbf B$), splits into two decoupled Weyl-form
-equations — the two circular/helicity sectors. The photon is the framework's central
+form ($\mathbf F_\pm = \mathbf E \pm i\mathbf B$; the Majorana–Oppenheimer formulation
+of electromagnetism), splits into two decoupled Weyl-form equations — the two circular/helicity sectors. The photon is the framework's central
 structure with the off-diagonal coupling set to zero: no gap, hence no beat, no internal
 clock, and no lock. The Higgs condensate that clocks every fermion ($K = m = y_f\langle
 \phi\rangle$) leaves the photon unclocked because the residual U(1) is unbroken. Matter
@@ -178,10 +180,11 @@ superpositions live in other degrees of freedom.
 helicity pair, and the interferometer's which-arm pair are one register type — a
 two-sector SU(2) structure storing its observable in relative amplitude and phase —
 differing in origin: intrinsic (sector pairs of the field itself) versus geometric
-(created by apparatus sculpting of the mode function, the beamsplitter acting as a
-coherent-boundary rotation [MCI §2.5]). Path superposition is therefore not a puzzle
+(created by apparatus sculpting of the mode function, the beamsplitter a coherent
+boundary in the sense of [MCI §2.5], acting as a rotation on the register). Path superposition is therefore not a puzzle
 about a delocalized photon; it *is* the delocalization, shaped — a mode function with
-two branches is no stranger than a wide packet. The clean division the register picture
+two branches is no stranger than a wide packet (Grangier–Roger–Aspect:
+single-photon anticorrelation and interference demonstrated in one apparatus). The clean division the register picture
 enforces: **delocalization is the wave's birthright; discreteness is the detector's
 budget** — one quantum, one closure, however thinly the amplitude is spread [P1; MCI
 §3.3]. Which-path is the register electromagnetic detectors einselect [MCI §3.7], which
@@ -305,7 +308,7 @@ notes. Interpretive and speculative items keep their note-level flags.)*
 
 ### 4.1 The three stages, installed
 
-A measurement separates into **capture, selection, registration** [MCI §3.1; P1 §3;
+A measurement separates into **capture, selection, registration** [MCI §3.1; P1 §2;
 P2 §4]. Capture is reversible: a resonant, amplitude-sensitive coupling inside the
 tongue ($|\Delta\omega| \lesssim K$), distributing excitation across every candidate
 site in proportion to local intensity, committing to nothing — its laboratory
@@ -416,8 +419,9 @@ monotonicity is supplied by the irreversible locks themselves (§4.3). The energ
 ladder then organizes the phenomenology: at common energies, backward rotation exists
 only as bounded, repaid slips — the $\kappa_{\rm ret}$ give-back of a failed lock, the
 virtual excursions of §3. At $2mc^2$ (or the Schwinger field) the counter-rotation is
-promoted from rented transient to self-sustaining clock: pair production, with the
-*what-escapes* of §3's threshold now identified — the rotation sense itself. No
+promoted from rented transient to self-sustaining clock: pair production — the
+ladder's virtual→real crossing (§3), with the quantity that goes real now
+identified: the rotation sense itself. No
 in-place reversal ever occurs: reversed clocks are only pair-created with a forward
 partner and pair-destroyed by mutual unwinding (charge conservation, read on the
 dial). And charge conjugation flips chirality for the same geometric reason a screw
@@ -501,8 +505,11 @@ $\eta = 1/\sqrt2$ — which converts existing experiments into measurements of $
 (photonic CHSH near 2.8 over $10^2$-km baselines implies $\eta \gtrsim 0.99$: whatever
 the substrate's update mechanism is, it is near-perfect at terrestrial scales). And
 **no-signaling as a theorem**: the inverted-Gisin result derives commit-rate linearity
-— hence marginal invariance — from the premises, rather than imposing it as a
-constraint; within this framework, the impossibility of exploiting the nonlocal sector
+— [P1]'s Theorem 5, hence marginal invariance — from the premises, rather than imposing
+it as a constraint (v0.7 of that paper demotes Theorem 5 from the operative mechanism for
+continuum absorbers to a robustness result, the outcome in its own timescale regime being
+fixed by first passage before any commit-rate law acts; the inverted-Gisin reading is a
+consistency result, not a derivation — round 2, items L3-6 and round 1, item 9); within this framework, the impossibility of exploiting the nonlocal sector
 is *emergent* [P1 §7]. A controlled measurement of $\eta$ itself (deliberate
 cross-station injection, with its computable, angle-independent leak law) is part of
 the experimental program (§6; [P1 §8.7]).
@@ -587,8 +594,8 @@ broadband solid-state absorbers ($w \sim 10^{-2}$) [P2 §3]. That makes the fram
 classical boundary on mass and size; this framework puts it on $\gamma/K$, so an
 engineered system moved along the coupling dial at fixed mass discriminates the
 programs — the preregistrable circuit-QED protocol sketched in [P2 §8.2], with the
-recoverability criterion [P2 §8.3] and Leggett–Garg-type axes [P2 §8.4] as the
-readouts. Macromolecule interferometry, the collapse programs' home turf, is re-read
+recoverability criterion ([P2 §4.1], applied in [P2 §8.3]) and Leggett–Garg-type
+axes [P2 §8.4] as the readouts. Macromolecule interferometry, the collapse programs' home turf, is re-read
 accordingly: interference should be lost where the *coupling* budget says so, not
 where the mass budget does.
 
@@ -794,8 +801,8 @@ checking are marked ⚠.)*
 
 **Companions and predecessor:**
 
-- **[P1]** Claude Fable 5 & Bramble, J. M. (2026). The Born Rule as a Derived Fair
-  Game: Outcome Selection from Detector Dynamics. v0.5.4, this repository
+- **[P1]** Claude Fable 5 & Bramble, J. M. (2026). A Field–Matter Selector for Outcome
+  Production, Conditioned on a Detector Ready-State Measure. v0.7, this repository
   (`drafts/PAPER1_DRAFT_born_selection.md`; adversarial-review round in
   `born_selection_AI_review_2026-07/`).
 - **[P2]** Claude Fable 5 & Bramble, J. M. (2026). The Heisenberg Cut as a Physical
