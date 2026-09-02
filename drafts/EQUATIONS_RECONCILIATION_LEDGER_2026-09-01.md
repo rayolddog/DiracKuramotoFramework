@@ -79,13 +79,52 @@ $0.2953$ against the open pot's $0.2934$. The algebra is immediate — adding a 
 to every site and renormalising sends $s_i \mapsto (s_i + c/E)/(1 + nc/E)$, which is
 *still* a pull toward $1/n$. Fixing the total does not fix the shares.
 
-**What this does not settle.** The physical dynamics is exchange-type — energy *moved*
-between sites, as in `gambler_ruin_born3.py`'s $\delta = \pm\,\mathrm{step}\cdot\min(e_i,e_j)$
-— not independent-per-site noise with a projection. A genuine exchange formulation may be
-immune, since there the increment is antisymmetric in $(i,j)$ by construction and no
-common-mode drift can exist at all. That test has **not** been run, and until it is, the
-right statement is: *the knife-edge as verified in the paper's own engine is calculus-
-sensitive, and the obvious repair does not work.*
+### The exchange formulation is NOT immune (`colored_noise_exchange.py`, 2026-09-01)
+
+The prediction above was that `gambler_ruin_born3.py`'s conserving exchange
+$\delta = \pm\,\mathrm{step}\cdot\min(e_i,e_j)$ would be protected, since the increment is
+antisymmetric in $(i,j)$ and a common-mode drift is not merely forbidden but
+unrepresentable. **That prediction is false.** White baselines reproduce Born to 1.5–2.7%,
+matching the README's "~2% at absorb 0.95", so the harness is validated; the colored runs
+then break Born comprehensively.
+
+| config (Born bright) | white | $\tau_{\rm game}/\tau_c = 1210$ | $= 11$ | $= 1$ | $1/N$ |
+|---|---|---|---|---|---|
+| ten-site (0.5000) | 0.5187 | 0.3483 | 0.1240 | 0.1167 | **0.100** |
+| two-site (0.8000) | 0.8273 | 0.8197 | 0.6180 | 0.5470 | **0.500** |
+| three-site (0.6429) | 0.6580 | 0.6360 | 0.4050 | 0.3513 | **0.333** |
+
+**The failure is total, not a bias.** Every colored run converges on $1/N$ — 0.117 against
+0.100, 0.547 against 0.500, 0.351 against 0.333. The initial energy shares are not
+perturbed, they are **erased**. With persistent noise the winner is set by which site drew
+the favourable fluctuation, not by what it started with, so the outcome forgets $|A_i|^2$
+entirely.
+
+**The controlling parameter is not $\tau_{\rm game}/\tau_c$.** Note the two-site row is
+fine at separation 1210 while the ten-site row is already broken there. The two-site game
+lasts 220 steps, so separation 1210 puts $\tau_c$ at 0.18 *steps* — sub-step, i.e. white by
+construction. The ten-site game lasts 21281 steps, so the same ratio gives $\tau_c = 17.6$
+steps. What matters is $\tau_c$ measured against **a site's own inter-exchange interval**
+($n/2$ steps under pairwise serialisation): persistence $\approx 3.5$ for the ten-site row
+at 1210, $\approx 0.18$ for the two-site row. Deviation tracks persistence, not the ratio.
+
+**Consequence for the mechanism, and it is not small.** Whiteness is not a technical
+convenience in this construction — *it is what carries the Born weights at all*. If the
+tie-breaker noise persists across a site's successive exchanges, the shares wash out to
+uniform. That makes §6.1's timescale ladder load-bearing in a way the paper does not claim,
+and it **raises E-14's stakes**: the difference between "mutually distinct" ($T_2^\*$) and
+"stochastically re-randomising" ($T_2$) is not a precision fix but the difference between
+Born statistics and uniform statistics.
+
+**What remains genuinely open.** Mapping persistence to the physical detector requires
+knowing how many exchanges a site makes per correlation time. §6.1 sets *both* the exchange
+step and the surface-field correlation time from the same $\Gamma$ ("one exchange step per
+10–70 fs"), which suggests persistence $\approx 1$ — the marginal regime, between the safe
+0.18 and the broken 3.5 rows. The pairwise serialisation of the simulations introduces an
+inter-play interval that has no evident counterpart in the physical picture, where all
+sites couple to the common field simultaneously. **That mapping is not stated anywhere in
+the paper, and it now matters.** No verdict should be drawn from these runs about the real
+detector until it is made explicit.
 
 **Two methodological cautions for anyone repeating this.** (i) $\tau_c < \Delta t$ is not a
 small-$\tau_c$ probe but an under-resolved one — the $\tau_c = 0.01$ column was discarded
