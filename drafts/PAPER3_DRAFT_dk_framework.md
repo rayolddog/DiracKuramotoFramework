@@ -493,7 +493,14 @@ holding is an amplitude, not an energy lacking a final state — so the photon-t
 ratio does not move them either. What the substrate still owes is the actualization law
 itself: which site fires, in one world, with hazard linear in its share, without that
 linearity being inserted — the question the Adler-locking race of this program's
-two-channel model is built to ask (§6).
+two-channel model is built to ask (§6). Its first run, at diagnostic budget only
+(2026-09-02; the race package's frozen numerical budget is unmet), gives a coupling
+exponent of 1.56 [1.44, 1.69] at the frozen dwell — neither linear nor quadratic — and an
+exponent that rises to 1.78 [1.60, 1.96] at twice the dwell, Born still rejected, with the
+efficiency collapsing before it rises further; the pulse duration and the noise move it
+the same way. As specified,
+the race does not yet supply a universal hazard linear in the share; the inverse-coupling
+dwell control, the tolerance and spectral sensitivities, and production remain unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets

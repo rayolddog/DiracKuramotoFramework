@@ -205,7 +205,11 @@ and it stands open.
   which the gap gates commitment, was quantified in the paper's own engine and
   over-predicts. What the substrate still owes is the actualization law itself — which
   site fires, in one world, with hazard linear in its share — tested in Paper 3's
-  program, not in Paper 1.
+  program, not in Paper 1. A first diagnostic-budget test of that law, the two-channel
+  Adler race ([adler_two_channel_exploratory/RESULTS.md](adler_two_channel_exploratory/RESULTS.md),
+  2026-09-02), gives a coupling exponent of 1.56 [1.44, 1.69] at the frozen criterion,
+  neither linear nor quadratic, and criterion-dependent. The race as specified does not
+  yet supply the law; its production budget and positive-control runs remain unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

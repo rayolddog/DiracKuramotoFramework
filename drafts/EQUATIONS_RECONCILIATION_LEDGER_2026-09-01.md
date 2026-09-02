@@ -492,13 +492,30 @@ complete; they confirm Result 1 at $N = 100$:
 | 0.90 | 360,061 | 801,811 | 0.45 |
 
 The ungated linear row ($\theta = 0$) gives $-0.003$, $+0.003$, $+0.001$ at $r = 0.03$, $0.3$,
-$3$ (MC $1\sigma \approx 0.004$): Theorem 4 again. The gated deviation rows
-($\theta = 0.02, 0.45, 0.72, 0.90$; linear and Arrhenius) were still running when this
-was logged — each 100-site run takes about eight minutes at this $N$, so the remaining
-27 runs need several hours. The process was left running; `results_threshold_gated_commit.txt`
-is written incrementally and the script is seeded, so the rows can be read off or
-regenerated. The conclusions above rest on the two completed configurations and on the
-100-site exposure and control rows.
+$3$ (MC $1\sigma \approx 0.004$): Theorem 4 again. **Gated linear rows, appended as they
+completed (later on 2026-09-02):**
+
+| $\theta$ | $r = 0.03$ | $0.3$ | $3$ |
+|---|---|---|---|
+| 0.02 | −0.002 | −0.001 | +0.000 |
+| 0.45 | +0.005 | +0.001 | +0.002 |
+| 0.72 | −0.006 | +0.003 | −0.003 |
+
+**No gate bias at $N = 100$**, within MC, at every $r$ — unlike the $+0.04$ to $+0.19$ of
+the two-site and ten-site configurations. The difference is where the bright site starts.
+In the 80/20 and ten-site cases the bright site begins above or near $\theta$, so the gate
+creates an asymmetry at $t = 0$: it can commit and the others cannot. In the 100-site
+fringe (bright site 0.027) no site starts exposed; the gate acts only in the end-game,
+after a fair process has already picked the leader, and a linear pick among at most two
+exposed sites is then close to first passage. So reading A's gate bias is a
+**large-initial-share effect**: it afflicts asymmetric two-port splits in which one arm
+carries more than $\theta$ of the intensity (any silicon beamsplitter test more asymmetric
+than about 45/55 at 500 nm), and not many-site patterns such as a diffraction fringe.
+This sharpens rather than weakens the v0.9 grounds: the two-port asymmetric-split data
+that would show the effect are exactly the data item 2b found unpublished below 553 nm.
+The $\theta = 0.90$ linear row and the five Arrhenius rows were still running at this
+update; the script is seeded and `results_threshold_gated_commit.txt` is written
+incrementally.
 
 **Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
 physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
@@ -735,6 +752,81 @@ requirement self-evident and largely discharge E-14 editorially.
 
 ---
 
+## The actualization law, tested at diagnostic budget: the two-channel Adler race (`adler_two_channel_exploratory/`, 2026-09-02)
+
+*Status line first.* Every raw ledger behind this section carries the package's own
+`numerical_gate = "diagnostic_only"` — the ticket-07 frozen budget of
+`adler_born_two_channel/` is unmet and its moving-band audit stands at
+`numerical_no_result`. These runs use 16 (and 32) clocks per channel against the frozen
+64, timestep $2^{-7}$ (and $2^{-8}$) against the frozen $2^{-9}$, and 200–300 trials per
+cell against the 2 406 the power calculation asked for. They are labelled `pilot` and can
+never enter a production estimate. JB's instruction was "proceed with the Adler race"; the
+package was not modified and remains untracked by his earlier choice.
+
+**What was run.** The two-channel plan's race — earliest committing clock across two
+populations on the identical detuning grid, one common raised-cosine envelope,
+independent keyed noise per clock and channel, one fixed physical dwell — is exactly the
+pairwise minimum of two independent one-channel raw races on the same clock time, since
+the channels do not couple to each other. `race_driver.py` therefore calls the package's
+own `raw_runner.write_raw_run` once per (polarization angle, channel) with
+$K_A = K\cos\varphi$, $K_B = K\sin\varphi$, $K = 2.0$; `analysis.py` is the separate
+comparison process that pairs the closed ledgers through the package's gate and is the
+only place the analytic prediction is loaded. Estimand: the unconstrained exponent $p$ in
+$P_A/(P_A+P_B) = K_A^p/(K_A^p+K_B^p)$, by binomial maximum likelihood with a
+profile-likelihood 95% interval. Comparators, each scored by binomial deviance: $p=1$;
+$p=2$ (Born, $\cos^2\varphi$); strongest wins; the Poisson race on the bare relaxation-rate
+sum over the exact grid (quadratic on these grids: exponent 1.92 at $N=16$, 1.99 at 64);
+the Poisson race on the eligible-clock count (linear: 0.94–0.96).
+
+**Main sweep** ($N=16$, $dt=2^{-7}$, 300 trials/cell, nine angles 10°–80°):
+
+| comparator | deviance (9 cells) |
+|---|---|
+| linear ($p=1$) | 102.6 |
+| **Born ($p=2$)** | **51.9** |
+| strongest wins | 36 968 |
+| rate-sum race | 42.7 |
+| width-only race | 133.6 |
+| fitted $p = 1.56$ | 13.1 (8 dof) |
+
+**Fitted exponent $p = 1.56$, 95% [1.44, 1.69]**: both predeclared families rejected.
+Symmetric control at 45°: 0.470 [0.414, 0.526]. Ties 0.5%; unresolved 1 of 2700. The
+curve is flatter than Born at both extremes (10°: 0.916 vs 0.970; 80°: 0.084 vs 0.030).
+
+**Sensitivities** (three angles, 200 trials/cell): timestep $2^{-8}$ gives 1.42 [1.18,
+1.67] and $N=32$ gives 1.50 [1.26, 1.76] — inside the main interval, so within this budget
+the exponent is neither a discretisation nor a population-count artefact. The physical
+knobs move it: pulse 8.0 → 4.0 → 2.0 gives 1.38 → 1.56 → 1.68; diffusion 0.02 → 0.08 → 0.32
+gives 1.38 → 1.56 → 1.66; and the dwell, run as a full nine-angle sweep at each value,
+gives **1.42 (0.25, three angles) → 1.56 [1.44, 1.69] (0.5) → 1.78 [1.60, 1.96] (1.0)**,
+with Born still rejected at dwell 1.0 (deviance 23.5 on 9 cells; residual at 80°, 0.084
+against 0.030, and at 45°, 0.429). At dwell 2.0, 82% of trials produce no commitment and
+the exponent is undetermined [1.12, 2.40]. Each of those directions makes commitment
+harder, and the unresolved fraction rises from 0 to 7–14% as $p$ rises.
+
+**Reading.** Where nearly every trial commits, the race is decided by which channel's
+fastest clock locks first, and that scales as roughly $K^{1.4\text{–}1.5}$ — more than
+tongue width ($K^1$), less than width times rate ($K^2$). Where commitment is unreliable,
+surviving the dwell selects for strongly contracting clocks, the rate factor enters more
+fully, and the frequencies move toward the rate-weighted flux — but the efficiency
+collapses before they reach it. Three
+rows of the plan's predeclared interpretation matrix fire together: *the law is
+criterion-dependent, not universal*; *the proposed selection propensity is time-window
+dependent*; *quadratic analytic flux, nonquadratic direct outcomes* at the frozen dwell.
+
+**What it means for the program.** [P1] v0.9 moved the whole burden onto the
+actualization law: a substrate dynamics whose first-firing hazard is linear in the share
+without that linearity being inserted. The Dirac–Kuramoto candidate for it is this race.
+At diagnostic budget the race does not supply a universal hazard linear in the share (it
+supplies $p \approx 1.5$ at the frozen criterion, $1.8$ at twice the dwell with Born still
+rejected, and nothing determinable where the efficiency collapses). It is therefore not, as it stands, the actualization law B needs. It is not a
+falsification of the framework either: the inverse-coupling dwell (a labelled positive
+control the plan permits), the lock-tolerance and spectral sensitivities, and the frozen
+production budget remain unrun. Full write-up with the per-angle tables in
+`adler_two_channel_exploratory/RESULTS.md`.
+
+---
+
 ## Open items
 
 1. **Multi-site re-pinning is unsimulated.** §6.1 claims "a long wavepacket continually
@@ -780,6 +872,20 @@ requirement self-evident and largely discharge E-14 editorially.
 3. **EQUATIONS.md §4's Bell account vs [P1] §7's** — never reconciled; flagged in the E-1 fix
    as open rather than asserted equivalent.
 4. ~~**The $2\ln^2\!N$ robustness result** — derived here, not stated in [P1].~~ Stated in [P1] §6.1 (v0.8), 2026-09-02.
+6. **The Adler race, after the diagnostic run** (see "The actualization law, tested"). In
+   the plan's own order: (a) the **inverse-coupling dwell** as a labelled positive control
+   — the plan predicts it makes a quadratic result "much easier to obtain" precisely
+   because it makes the criterion amplitude-dependent; running it says whether the
+   $p \approx 1.5$–$1.8$ of the fixed dwell is the price of amplitude-neutrality; (b) the
+   **lock-tolerance** sensitivity (the one criterion knob not yet turned) and the
+   fixed-area pulse sweep; (c) the **spectral controls** (Gaussian, Lorentzian, structured
+   densities), which test whether the rate-weighted flux is what drives the events at all;
+   (d) the production question — the frozen ticket-07 budget is unmet, and the package's
+   own next authorization boundary is whether to price the intended-configuration
+   validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
+   production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)
+   can be entered into the package's production estimate; all of them can be run through
+   `adler_two_channel_exploratory/race_driver.py` at diagnostic budget in minutes.
 5. ~~**Reading B and a v0.9 of [P1] — awaiting explicit go-ahead.**~~ **Applied 2026-09-02
    as [P1] v0.9** (see "Applied later the same day"), on JB's instruction to proceed with
    all three items, after 2a and 2b returned. Original entry retained below. JB's disposition
