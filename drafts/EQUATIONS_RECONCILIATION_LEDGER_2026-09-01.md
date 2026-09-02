@@ -91,11 +91,78 @@ outcome:
 1. **Is $\tau_{ep}$ the right analogue of §6.1's "final-state width" for a superconductor?**
    A judgement, not a derivation. Less decisive: an order either way leaves the top rung in
    trouble on the picosecond reading.
-2. **What does "commitment" mean for an SNSPD?** Hotspot-to-resistive-transition (ps) gives
-   inversion; electrical reset (ns) gives a ratio straddling 1. **That single definitional
-   choice moves the verdict by two orders**, and [P1] never defines commitment
-   operationally — §6.1 quotes "ns–$\mu$s" for silicon, where the two readings coincide.
-   They do not coincide for an SNSPD.
+2. ~~**What does "commitment" mean for an SNSPD?**~~ **RESOLVED 2026-09-02 — see below.**
+   Was: hotspot-to-resistive-transition (ps) gives inversion; electrical reset (ns) gives a
+   ratio straddling 1, a two-order swing on a term [P1] never defines operationally.
+
+### Uncertainty #2 resolved: the commitment definition, fixed before application
+
+*Method note. At JB's instruction the definition was derived and fixed **before** applying
+it to any device, precisely to foreclose selecting the reading that gives the preferred
+answer. This is the pre-registration discipline, and it is recorded because the term was
+underdetermined and the temptation was real.*
+
+**Definition.** Four places in [P1] constrain what commitment must mean, and they agree:
+Theorem 2 (a slaved phase "points back to the drive, which is why $\kappa_{\rm ret}$-return
+is possible at all; an autonomous phase has forgotten the drive, **which is why only
+above-threshold sites can commit**"); §4's diffused hologram ("reversibility below the
+layer and commitment above it are **the same fact about memory**"); §3 (capture is
+reversible, evidenced by echo and quantum-memory experiments); §8.6(vi) ("deposition
+completes only at registration," losing sites retaining no calorimetric residue). Hence:
+
+> $\tau_{\rm commit}$ is the time from capture at which the deposited excitation **ceases to
+> be coherently returnable to the common field** — the first moment after which no
+> operation (echo, phase conjugation, cavity re-absorption) could recover it and re-run the
+> competition. **First irreversibility.** Not the electrical pulse, not the readout.
+
+**What makes that clock slow — [P1]'s own answer.** §6.1: "multiphonon dissipation of a
+2.5 eV *virtual* excitation is **blocked by the absence of sub-gap final states** — the same
+discreteness that sharpens the threshold (Th. 2) **protects the stakes**." Reversibility
+during the game is not free; it is bought by a gap that removes decay channels. The
+excitation stays virtual and returnable *because it has nowhere to go*. Generalising that,
+without reference to any device:
+
+> **The mechanism requires the absorber to have no dense manifold of final states below the
+> registration threshold — $E_{\rm photon}$ comparable to $E_{\rm gap}$, within a small
+> factor.** Where the photon vastly exceeds the gap, a down-conversion cascade is available
+> immediately, the excitation becomes real and thermalised, and commitment occurs as fast as
+> that cascade runs.
+
+**Applied:**
+
+| detector | $E_{\rm photon}$ | $E_{\rm gap}$ | ratio | stakes protected? |
+|---|---|---|---|---|
+| Si SPAD @ 500 nm (§6.1's own) | 2.5 eV | 1.12 eV | **2.2** | yes |
+| InGaAs SPAD @ 1550 nm | 0.80 eV | 0.75 eV | **1.1** | yes |
+| Ge SPAD @ 1550 nm | 0.80 eV | 0.66 eV | **1.2** | yes |
+| **NbN SNSPD @ 1550 nm** | 0.80 eV | **1.5 meV** | **≈ 530** | **no** |
+| TES (at transition) | — | ≈ 0 | — | **no** |
+
+The criterion separates gapped semiconductor absorbers from superconducting ones. A 1550 nm
+photon carries ~530× the NbN gap, so the quasiparticle cascade has abundant final states and
+runs immediately: **there is no virtual sub-threshold regime for the game to occupy.** The
+SNSPD therefore takes the picosecond reading and **the ladder inverts. Uncertainty #2
+resolves against the theory.**
+
+**What it means.** Not falsification, but a domain: *the mechanism applies to gapped
+absorbers with $E_{\rm photon} \sim E_{\rm gap}$, and superconducting detectors fall outside
+it.* [P1] could own that boundary explicitly.
+
+**Bias flag, recorded deliberately.** The domain restriction happens to exclude the detector
+families used in the most stringent Bell tests. However derived, that has the shape of the
+selection bias JB raised in session. What redeems it is that it makes a *dangerous*
+prediction rather than a safe one: **Born statistics should differ between SPAD and SNSPD
+measurements of the same optical setup** — same photons, same beamsplitter, two families on
+opposite sides of the criterion. The field's working assumption is that they agree. If they
+do, the mechanism is in trouble, not excused.
+
+**OWED: recompute silicon under the same definition.** The definition must be applied where
+it costs something. §6.1's quoted $\tau_{\rm commit}$ of ns–$\mu$s is the avalanche-and-quench
+*cycle*, whereas first irreversibility is the virtual→real transition preceding it. If
+silicon's true $\tau_{\rm commit}$ is ps–ns, **the safe case's margin shrinks by one to three
+orders too**, and §6.1's "two to four orders to spare at every rung" would need restating for
+its own detector. Not yet recomputed. Until it is, no claim should rest on silicon being
+comfortable either.
 
 All SNSPD inputs are literature-typical, not measured by this program.
 
@@ -286,7 +353,13 @@ requirement self-evident and largely discharge E-14 editorially.
    re-pinning. `adler_born_two_channel` has a time-dependent envelope but a *shared*
    raised-cosine one, deliberately common across channels; a spatially extended packet would
    give each site its own local envelope, which is the untested case.
-2. **Small-$N$ whiteness / frozen speckle** — see above. The two-site knife-edge runs sit
+2. **OWED — recompute the silicon ladder under the first-irreversibility definition of
+   commitment** (E-16, uncertainty #2). §6.1's ns–$\mu$s is the avalanche-and-quench cycle,
+   not the point of no return. If the true figure is ps–ns, §6.1's "two to four orders to
+   spare at every rung" needs restating for its own detector, and the safe case is not as
+   safe as the paper says. **This is the item most likely to be quietly skipped, because it
+   only costs the theory** — flagged here for that reason.
+3. **Small-$N$ whiteness / frozen speckle** — see above. The two-site knife-edge runs sit
    at $\approx 1$ correlation time of game duration, i.e. in the static-speckle regime, while
    assuming white noise. Needs a check of which conclusions depend on $N=2$, and ideally a
    re-run with coloured noise at the sims' own $\tau_c/\tau_{\rm game}$ ratio to confirm the
