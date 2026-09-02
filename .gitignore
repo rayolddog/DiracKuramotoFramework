@@ -49,6 +49,12 @@ tests/kuramoto_sync.png
 # WIP: Zitterbewegung-synchronization numerics, figures & session notes
 # (moved here 2026-06-15; un-ignore once §2.5 / the open-system study is finalized)
 ZBW_synchronization/
+
+# Timestamped editing snapshots (*_backup_<stamp>.md / .sh) — kept LOCAL.
+# These are checkpoints, not history: git already carries the history, and the repo is
+# public. Added 2026-09-01; supersedes the narrower PAPER_REVISED_v2 line below, which is
+# kept so existing clones go on ignoring it.
+*_backup_*
 PAPER_REVISED_v2_backup_*.md
 
 # External submission correspondence + cover letter — kept LOCAL.
