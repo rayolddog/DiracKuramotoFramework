@@ -500,6 +500,7 @@ completed (later on 2026-09-02):**
 | 0.02 | −0.002 | −0.001 | +0.000 |
 | 0.45 | +0.005 | +0.001 | +0.002 |
 | 0.72 | −0.006 | +0.003 | −0.003 |
+| 0.90 | −0.001 | +0.002 | +0.005 |
 
 **No gate bias at $N = 100$**, within MC, at every $r$ — unlike the $+0.04$ to $+0.19$ of
 the two-site and ten-site configurations. The difference is where the bright site starts.
@@ -513,9 +514,9 @@ carries more than $\theta$ of the intensity (any silicon beamsplitter test more 
 than about 45/55 at 500 nm), and not many-site patterns such as a diffraction fringe.
 This sharpens rather than weakens the v0.9 grounds: the two-port asymmetric-split data
 that would show the effect are exactly the data item 2b found unpublished below 553 nm.
-The $\theta = 0.90$ linear row and the five Arrhenius rows were still running at this
-update; the script is seeded and `results_threshold_gated_commit.txt` is written
-incrementally.
+All four gated linear rows are now in and null. The five Arrhenius rows were still
+running at this update (about eight minutes per run); the script is seeded and
+`results_threshold_gated_commit.txt` is written incrementally.
 
 **Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
 physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
@@ -819,10 +820,16 @@ actualization law: a substrate dynamics whose first-firing hazard is linear in t
 without that linearity being inserted. The Dirac–Kuramoto candidate for it is this race.
 At diagnostic budget the race does not supply a universal hazard linear in the share (it
 supplies $p \approx 1.5$ at the frozen criterion, $1.8$ at twice the dwell with Born still
-rejected, and nothing determinable where the efficiency collapses). It is therefore not, as it stands, the actualization law B needs. It is not a
-falsification of the framework either: the inverse-coupling dwell (a labelled positive
-control the plan permits), the lock-tolerance and spectral sensitivities, and the frozen
-production budget remain unrun. Full write-up with the per-angle tables in
+rejected, and nothing determinable where the efficiency collapses). It is therefore not, as it stands, the actualization law B needs. The plan's
+labelled positive control, the inverse-coupling dwell, was run afterwards at JB's request
+(open item 6(a)) and overshoots to $p = 3.81$ [3.50, 4.15]: Born lies between the
+amplitude-neutral and the scale-similar criterion and is reached by neither — and a
+tuned dwell $\propto K^{-1/4}$, run as a demonstration, reaches it exactly ($p = 2.00$
+[1.84, 2.16]), which quantifies how tuned a Born-producing criterion is and is not a
+mechanism. It is not a falsification of the framework: the lock-tolerance and spectral
+sensitivities and the frozen production budget remain unrun, and a commitment rule that
+carried a quarter-power amplitude dependence for a physical reason would do what the
+fixed-dwell one does not. Full write-up with the per-angle tables in
 `adler_two_channel_exploratory/RESULTS.md`.
 
 ---
@@ -873,10 +880,25 @@ production budget remain unrun. Full write-up with the per-angle tables in
    as open rather than asserted equivalent.
 4. ~~**The $2\ln^2\!N$ robustness result** — derived here, not stated in [P1].~~ Stated in [P1] §6.1 (v0.8), 2026-09-02.
 6. **The Adler race, after the diagnostic run** (see "The actualization law, tested"). In
-   the plan's own order: (a) the **inverse-coupling dwell** as a labelled positive control
-   — the plan predicts it makes a quadratic result "much easier to obtain" precisely
-   because it makes the criterion amplitude-dependent; running it says whether the
-   $p \approx 1.5$–$1.8$ of the fixed dwell is the price of amplitude-neutrality; (b) the
+   the plan's own order: (a) ~~the **inverse-coupling dwell** as a labelled positive control~~
+   **Run 2026-09-02 at JB's request — it does not produce Born; it overshoots it.** Dwell
+   $= 0.5\sqrt2/K_{\rm chan}$ (45° cell unchanged), nine angles, 300 trials: fitted exponent
+   **$p = 3.81$ [3.50, 4.15]**, Born rejected at deviance 204 on nine cells, the curve
+   more extreme than Born at every angle (0.99 at 20° against 0.88; 0.017 at 70° against
+   0.117); the $dt/2$ check gives 4.55 [3.71, 5.71]. So the fixed dwell gives $p \approx
+   1.5$, the inverse dwell $p \approx 3.8$, and the Born exponent lies *between* two
+   choices of the criterion's amplitude dependence — the plan's own falsification row ("a
+   universal Born candidate must not require one finely tuned numerical criterion")
+   reached from both sides. **The tuned interpolation was then run: dwell $\propto K^{-1/4}$ gives $p = 2.00$
+   [1.84, 2.16], Born deviance 4.7 on nine cells, every cell inside its Wilson interval.**
+   A one-parameter amplitude-dependent criterion reproduces the Born curve at this budget;
+   the parameter was chosen from the answer (one interpolation, one run), the sensitivity
+   $dp/d\alpha \approx 2.3$ pins it to $\alpha = 0.25 \pm 0.07$, and nothing in the model
+   fixes a quarter-power dwell — the plan's falsification row with the tuning quantified.
+   Recorded as a lead for a *different* commitment rule (one that carried an effective
+   $K^{-1/4}$ for a reason of its own would produce Born), not as support for this one.
+   The $dt/2$ check's 45° outlier (0.385 on 200 trials) re-ran at 0.525 [0.469, 0.581] on
+   300: a fluctuation. (b) the
    **lock-tolerance** sensitivity (the one criterion knob not yet turned) and the
    fixed-area pulse sweep; (c) the **spectral controls** (Gaussian, Lorentzian, structured
    densities), which test whether the rate-weighted flux is what drives the events at all;

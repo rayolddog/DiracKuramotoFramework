@@ -101,6 +101,14 @@ def main():
     ap.add_argument("--dwell", type=float, default=None, help="sensitivity: fixed dwell (default 0.5)")
     ap.add_argument("--diffusion", type=float, default=None, help="sensitivity: phase diffusion (default 0.08)")
     ap.add_argument("--pulse", type=float, default=None, help="sensitivity: pulse duration (default 4.0)")
+    ap.add_argument("--dwell-mode", choices=("fixed", "inverse", "power"), default="fixed",
+                    help="LABELLED CONTROLS ONLY: 'inverse' sets each channel's dwell to "
+                         "dwell0 * dwell_ref / K_chan (the plan's positive control); 'power' sets it to "
+                         "dwell0 * (dwell_ref / K_chan) ** alpha (a TUNED interpolation between fixed and "
+                         "inverse). Both are amplitude-DEPENDENT criteria; never the primary model")
+    ap.add_argument("--dwell-ref", type=float, default=math.sqrt(2.0),
+                    help="coupling at which the scaled dwell equals dwell0 (default sqrt 2 = the 45-degree coupling)")
+    ap.add_argument("--dwell-alpha", type=float, default=1.0, help="exponent for --dwell-mode power")
     a = ap.parse_args()
 
     angles = [int(x) for x in a.angles.split(",")]
@@ -111,9 +119,16 @@ def main():
     for deg, ch in jobs:
         name = run_name(a.tag, ch, deg, a.N, a.dtexp)
         K_chan = channel_coupling(a.K, deg, ch)
+        dwell0 = PHYSICS["dwell_time"] if a.dwell is None else a.dwell
+        if a.dwell_mode == "fixed":
+            dwell = dwell0
+        elif a.dwell_mode == "inverse":
+            dwell = dwell0 * a.dwell_ref / K_chan
+        else:
+            dwell = dwell0 * (a.dwell_ref / K_chan) ** a.dwell_alpha
         rec = dict(run=name, chan=ch, deg=deg, K_chan=K_chan, N=a.N,
                    timestep=2.0 ** (-a.dtexp), trials=a.trials,
-                   dwell=a.dwell, diffusion=a.diffusion, pulse=a.pulse)
+                   dwell=dwell, dwell_mode=a.dwell_mode, diffusion=a.diffusion, pulse=a.pulse)
         if closed(name):
             rec["status"] = "exists"
             print(json.dumps(rec), flush=True)
@@ -123,7 +138,7 @@ def main():
             print(json.dumps(rec), flush=True)
             continue
         cfg = build_config(name, a.N, a.dtexp, a.trials, K_chan,
-                           dwell=a.dwell, diffusion=a.diffusion, pulse=a.pulse)
+                           dwell=dwell, diffusion=a.diffusion, pulse=a.pulse)
         t0 = time.perf_counter()
         rep = raw_runner.write_raw_run(cfg, name)
         rec["seconds"] = round(time.perf_counter() - t0, 1)

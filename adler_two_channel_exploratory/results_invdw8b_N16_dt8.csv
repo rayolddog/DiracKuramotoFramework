@@ -1,0 +1,2 @@
+deg,K_A,K_B,trials,A,B,tie,unresolved,P_A,wilson_lo,wilson_hi,born,linear,strongest,rate_sum,width,eligible_A,eligible_B,commit_frac_A,commit_frac_B
+45,1.41421,1.41421,300,157,142,1,0,0.5251,0.4685,0.581,0.5,0.5,1.0,0.5,0.5,8,8,0.9733,0.9767

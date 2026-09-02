@@ -129,6 +129,81 @@ Three interpretation-matrix rows are therefore triggered at once:
   **not** what happened; the ratio moved).
 - *Quadratic analytic flux, nonquadratic direct outcomes* at the frozen dwell.
 
+## The inverse-coupling dwell — the plan's labelled positive control (run 2026-09-02, at JB's request)
+
+The plan: *"An inverse-coupling dwell would preserve Adler scale similarity and make the
+quadratic result easier to obtain. It would also make the selection criterion
+amplitude-dependent. … It may be run later as a labeled positive control, never as the
+primary result."* Implemented at the caller (`--dwell-mode inverse`): each channel's dwell
+is 0.5 × √2 / K_chan, so the 45° symmetric cell keeps the frozen dwell 0.5 and the main
+sweep's other inputs are unchanged. Strong-channel dwell at 10° is 0.36; weak-channel dwell
+is 2.04. Nine angles, 300 trials per cell, N = 16, dt = 2⁻⁷ (`results_invdw_N16_dt7.csv`).
+
+| φ | K_A | K_B | A | B | tie | unres. | P_A [Wilson 95 %] | Born | commit A/B |
+|---|---|---|---|---|---|---|---|---|---|
+| 10 | 1.970 | 0.347 | 300 | 0 | 0 | 0 | 1.000 [0.987, 1.000] | 0.970 | 1.00/0.00 |
+| 20 | 1.879 | 0.684 | 297 | 3 | 0 | 0 | 0.990 [0.971, 0.997] | 0.883 | 1.00/0.23 |
+| 30 | 1.732 | 1.000 | 259 | 41 | 0 | 0 | 0.863 [0.820, 0.898] | 0.750 | 1.00/0.60 |
+| 40 | 1.532 | 1.286 | 197 | 101 | 2 | 0 | 0.661 [0.606, 0.713] | 0.587 | 0.99/0.91 |
+| 45 | 1.414 | 1.414 | 147 | 153 | 0 | 0 | 0.490 [0.434, 0.546] | 0.500 | 0.97/0.96 |
+| 50 | 1.286 | 1.532 | 102 | 195 | 2 | 1 | 0.343 [0.292, 0.399] | 0.413 | 0.92/0.99 |
+| 60 | 1.000 | 1.732 | 35 | 264 | 0 | 1 | 0.117 [0.085, 0.158] | 0.250 | 0.63/0.99 |
+| 70 | 0.684 | 1.879 | 5 | 295 | 0 | 0 | 0.017 [0.007, 0.038] | 0.117 | 0.22/1.00 |
+| 80 | 0.347 | 1.970 | 0 | 300 | 0 | 0 | 0.000 [0.000, 0.013] | 0.030 | 0.00/1.00 |
+
+**Fitted exponent p = 3.81, 95 % [3.50, 4.15].** Deviance: linear 706, **Born 204**,
+rate-sum 216, width 757, strongest wins 22 596, fitted 6.4 (8 dof). Ties 0.15 %;
+unresolved 2 of 2700. Timestep check at 2⁻⁸ (three angles, 200 trials): p = 4.55 [3.71,
+5.71], Born deviance 83 on 3 cells — the overshoot survives refinement. That check's
+symmetric 45° cell came out 0.385 [0.320, 0.454] on 200 trials, 3.4σ below ½; a re-run
+of the same cell on an independent stream with 300 trials gives 0.525 [0.469, 0.581]
+(`results_invdw8b_N16_dt8.csv`), so the first reading was a fluctuation.
+
+**The control does not produce Born. It overshoots it.** Making the dwell inversely
+proportional to the coupling does not restore a coupling-squared law; it produces a law
+near coupling to the fourth. The fixed dwell gives p ≈ 1.5 (too shallow); the inverse
+dwell gives p ≈ 3.8 (too steep); the Born exponent lies between two choices of the
+commitment criterion's amplitude dependence, and neither the amplitude-neutral choice nor
+the scale-similar one lands on it. That is the plan's own falsification row — *"A
+universal Born candidate must not require one finely tuned numerical criterion"* —
+reached from both sides. The tuned interpolation (dwell ∝ K^−α with α between 0 and 1)
+that would hit p = 2 is run below as a demonstration that such a criterion exists and of
+how tuned it is; it is not a candidate mechanism.
+
+## The tuned dwell — a demonstration, not a mechanism
+
+Linear interpolation between α = 0 (p = 1.56) and α = 1 (p = 3.81) suggested α ≈ 0.2 for
+p = 2; α = 0.25 was run, nine angles, 300 trials, N = 16, dt = 2⁻⁷ (`--dwell-mode power
+--dwell-alpha 0.25`; each channel's dwell is 0.5 × (√2/K)^0.25, from 0.46 at K = 1.97 to
+0.71 at K = 0.35; `results_tune25_N16_dt7.csv`).
+
+| φ | P_A [Wilson 95 %] | Born | commit A/B |
+|---|---|---|---|
+| 10 | 0.973 [0.948, 0.986] | 0.970 | 1.00/0.22 |
+| 20 | 0.873 [0.830, 0.906] | 0.883 | 1.00/0.45 |
+| 30 | 0.747 [0.694, 0.793] | 0.750 | 0.99/0.77 |
+| 40 | 0.593 [0.537, 0.647] | 0.587 | 0.99/0.90 |
+| 45 | 0.497 [0.440, 0.553] | 0.500 | 0.96/0.98 |
+| 50 | 0.442 [0.386, 0.498] | 0.413 | 0.95/0.99 |
+| 60 | 0.281 [0.233, 0.334] | 0.250 | 0.80/1.00 |
+| 70 | 0.093 [0.065, 0.132] | 0.117 | 0.53/1.00 |
+| 80 | 0.030 [0.016, 0.056] | 0.030 | 0.20/1.00 |
+
+**Fitted exponent p = 2.00, 95 % [1.84, 2.16]; Born deviance 4.7 on 9 cells; rate-sum
+race 6.8; linear 220; width 261.** Every cell holds Born inside its Wilson interval.
+Ties 0.3 %; unresolved 1 of 2700.
+
+What this is: a one-parameter, amplitude-dependent commitment criterion that reproduces
+the Born curve across the whole sweep at this budget. What it is not: a mechanism. The
+parameter was chosen from the answer — one interpolation, one run, and it landed — and
+the sensitivity dp/dα ≈ 2.3 means the criterion must be specified to α = 0.25 ± 0.07 to
+stay inside the fitted interval. No physics in the model fixes a quarter-power dwell.
+Under the plan's own rule (*"A universal Born candidate must not require one finely
+tuned numerical criterion"*) this is the falsification row, now with the tuning
+quantified. What it leaves open, and is worth saying: if some physical commitment rule
+carried an effective K^−1/4 dependence for a reason of its own, this race would produce
+Born. That is a lead for a different rule, not support for this one.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

@@ -499,8 +499,13 @@ exponent of 1.56 [1.44, 1.69] at the frozen dwell — neither linear nor quadrat
 exponent that rises to 1.78 [1.60, 1.96] at twice the dwell, Born still rejected, with the
 efficiency collapsing before it rises further; the pulse duration and the noise move it
 the same way. As specified,
-the race does not yet supply a universal hazard linear in the share; the inverse-coupling
-dwell control, the tolerance and spectral sensitivities, and production remain unrun.
+the race does not yet supply a universal hazard linear in the share, and the plan's
+positive control — a dwell inversely proportional to the coupling — overshoots instead,
+to an exponent of 3.8 [3.5, 4.2]: Born lies between the amplitude-neutral criterion and
+the scale-similar one and is hit by neither, while a tuned dwell scaling as the inverse
+quarter power of the coupling hits it exactly (2.00 [1.84, 2.16]) — a fitted criterion,
+not a mechanism, and a lead for a rule that would carry that dependence for a physical
+reason. The tolerance and spectral sensitivities and production remain unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets

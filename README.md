@@ -208,8 +208,12 @@ and it stands open.
   program, not in Paper 1. A first diagnostic-budget test of that law, the two-channel
   Adler race ([adler_two_channel_exploratory/RESULTS.md](adler_two_channel_exploratory/RESULTS.md),
   2026-09-02), gives a coupling exponent of 1.56 [1.44, 1.69] at the frozen criterion,
-  neither linear nor quadratic, and criterion-dependent. The race as specified does not
-  yet supply the law; its production budget and positive-control runs remain unrun.
+  neither linear nor quadratic, and criterion-dependent; the plan's positive control, an
+  inverse-coupling dwell, overshoots to 3.8 [3.5, 4.2], and a tuned dwell scaling as the
+  inverse quarter power of the coupling lands on 2.00 [1.84, 2.16] — a fitted criterion,
+  not a mechanism. The race as specified does not supply the law, and Born sits between
+  its two natural criteria; the tolerance and spectral sensitivities and the production
+  budget remain unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at
