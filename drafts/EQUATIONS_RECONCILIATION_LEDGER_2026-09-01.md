@@ -482,10 +482,23 @@ kept testable: reading A's channel is retained in [P1] Table 1 as "reading A onl
 these magnitudes, and the 505 nm heralded bound of item 2b applies to its no-P4(a)
 version.
 
-**100-site Gaussian fringe (bright site Born 0.027):** grid running at the time of this
-entry (about two minutes per run at 1500 trials; 35 runs). Rows to be appended to this
-section when it completes; the conclusions above rest on the two completed
-configurations.
+**100-site Gaussian fringe (bright site Born 0.027; 1500 trials/run).** Exposure rows
+complete; they confirm Result 1 at $N = 100$:
+
+| $\theta$ | $t_{\rm exp0}$ (steps) | game length (steps) | fraction |
+|---|---|---|---|
+| 0.45 | 626,905 | 810,242 | 0.77 |
+| 0.72 | 545,795 | 835,184 | 0.65 |
+| 0.90 | 360,061 | 801,811 | 0.45 |
+
+The ungated linear row ($\theta = 0$) gives $-0.003$, $+0.003$, $+0.001$ at $r = 0.03$, $0.3$,
+$3$ (MC $1\sigma \approx 0.004$): Theorem 4 again. The gated deviation rows
+($\theta = 0.02, 0.45, 0.72, 0.90$; linear and Arrhenius) were still running when this
+was logged — each 100-site run takes about eight minutes at this $N$, so the remaining
+27 runs need several hours. The process was left running; `results_threshold_gated_commit.txt`
+is written incrementally and the script is seeded, so the rows can be read off or
+regenerated. The conclusions above rest on the two completed configurations and on the
+100-site exposure and control rows.
 
 **Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
 physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
