@@ -63,7 +63,7 @@ through the measurement sector only — is carried openly and given a test progr
 
 | Paper | File | Status |
 |---|---|---|
-| **Paper 1 — A Field–Matter Selector for Outcome Production, Conditioned on a Detector Ready-State Measure** | [drafts/PAPER1_DRAFT_born_selection.md](drafts/PAPER1_DRAFT_born_selection.md) | v0.8 (2026-09-02: the §6.1 timescale ladder corrected against the paper's own definition of commitment; the v0.7 demotion of Theorems 4–5 withdrawn in turn; see [drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md](drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md), E-16). Retitled at v0.6; the former title, *The Born Rule as a Derived Fair Game*, was withdrawn with the derivation claim it asserted. Reviewed 2026-07 (panel: GPT-5 Codex, Gemini, SuperGrok + internal reviewer, down-weighted); round record in [born_selection_AI_review_2026-07/](born_selection_AI_review_2026-07/) |
+| **Paper 1 — A Field–Matter Selector for Outcome Production, Conditioned on a Detector Ready-State Measure** | [drafts/PAPER1_DRAFT_born_selection.md](drafts/PAPER1_DRAFT_born_selection.md) | v0.9 (2026-09-02: v0.8 corrected the §6.1 timescale ladder against the paper's own definition of commitment and withdrew the v0.7 demotion of Theorems 4–5; v0.9 adopts reading B of the share ontology — amplitude bookkeeping that becomes energy only at the whole-quantum vertex — after the threshold-gated alternative was quantified in the paper's own engine and found to over-predict; see [drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md](drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md), E-16 and open items 2a, 2b, 5). Retitled at v0.6; the former title, *The Born Rule as a Derived Fair Game*, was withdrawn with the derivation claim it asserted. Reviewed 2026-07 (panel: GPT-5 Codex, Gemini, SuperGrok + internal reviewer, down-weighted); round record in [born_selection_AI_review_2026-07/](born_selection_AI_review_2026-07/) |
 | **Paper 2 — The Heisenberg Cut as a Physical Threshold** | [drafts/PAPER2_DRAFT_heisenberg_cut.md](drafts/PAPER2_DRAFT_heisenberg_cut.md) | v0.3. Reviewed 2026-07; round record in [heisenberg_cut_AI_review_2026-07/](heisenberg_cut_AI_review_2026-07/) |
 | **Paper 3 — One Mechanism at Two Scales** (framework synthesis) | [drafts/PAPER3_DRAFT_dk_framework.md](drafts/PAPER3_DRAFT_dk_framework.md) | v0.1 draft, in progress; pre-freeze consistency check ledgered in [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md) (round 1, independent) and [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md) (round 2, propagation of Paper 1 v0.7) |
 | **The Many Clocks Interpretation** (predecessor) | [current_revision_DK_paper.md](current_revision_DK_paper.md) | v8, **frozen as the provenance record** — the program's original main paper (externally submitted solo-byline to Foundations of Physics, declined 2026-07; that decline closed the conventional-journal track). Superseded by Paper 3; retained unrevised. |
@@ -196,12 +196,16 @@ and it stands open.
 - Paper 1 supplies, at most, the selector half of a larger theory. The quantum outcome
   measure is adopted as a comparator and the microstate preparation measure is an
   explicit premise; neither is derived there.
-- Paper 1 no longer claims (as of v0.8) that the selection game finishes with orders of
-  magnitude to spare before commitment can act. With commitment placed at first
-  irreversibility — the interband vertex and thermalisation of a site whose share exceeds
-  E_gap/E_photon — the ladder's top rung is marginal in silicon and inverted in
-  superconducting absorbers, and the Born statistics in that window rest on the linearity
-  of the vertex law (Theorems 4–5), which is load-bearing, not a rider.
+- Paper 1 no longer claims (as of v0.9) that the selection game supplies the Born
+  frequencies. With reading B of the share ontology adopted — a sub-threshold holding is
+  an amplitude, and commitment is available from every site at a hazard linear in its
+  share — the frequencies enter through that linearity (P1 with Theorem 5), Theorem 4
+  makes the commit speed irrelevant, and the exchange game's theorems state what the
+  substrate must not do to the shares before commitment. The alternative reading, in
+  which the gap gates commitment, was quantified in the paper's own engine and
+  over-predicts. What the substrate still owes is the actualization law itself — which
+  site fires, in one world, with hazard linear in its share — tested in Paper 3's
+  program, not in Paper 1.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

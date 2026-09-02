@@ -56,6 +56,28 @@ in-text as v0.8 or dated 2026-09-02, and withdrawn claims are quoted, not delete
 `Born_Selection.pdf` rebuilt from [P1] v0.8. [P2] and [P3] have no PDF targets in
 `build_pdfs.sh`.
 
+### Applied later the same day: [P1] v0.9 — reading B adopted (open item 5), on the results of 2a and 2b
+
+At JB's instruction ("proceed automatically and work on the 3 suggestions"), after 2a
+and 2b returned. Recorded as a *choice*, in the header, with the grounds.
+
+| section | edit |
+|---|---|
+| [P1] header | v0.9 note: reading B adopted as the working ontology; grounds (the 576-state model enforces it; QED agrees at the vertex; reading A quantified in the paper's own engine over-predicts; the 505 nm $g^{(2)}(0)$ bound); consequences; what is retained as reading A's prediction; what the substrate still owes (the actualization law). |
+| [P1] §2, P4(b)(ii) | v0.9 paragraph: no gate under B; Theorems 4–5 carry class (ii) at any speed; the $\theta$-gated statement retained as reading A's. |
+| [P1] §5.4 | v0.9 paragraph: the gate tested — ungated linear law gives Born at every speed (Theorem 4 confirmed), any gate biases even the linear law (+0.04 at $r=1$; +0.12/+0.19 at $r=10$), exposure 40–90% of the game; corrects v0.8's "linearity, not slowness, protects the window"; what the game is *for* under B. |
+| [P1] §6.1 | v0.9 paragraph: top rung not a condition under B; under A the discrete engine puts $t_{\rm exp} \approx \tau_{\rm game}$ (whole-game accounting, inverted, not marginal) and the gated bias at ~+0.1; the v0.8 "routine SPAD data" sentence replaced by 2b's finding (no asymmetric-split test below 553 nm located; coincidence branch bounded at $2\times10^{-3}$). |
+| [P1] §8.1 Table 1 | Threshold-gated row reclassified "Reading A only": closed under B by Theorem 4; open and over-predicting under A; discriminator, not prediction. Follow-on sentence updated. |
+| [P1] §8.6(vii) | v0.9 note: both owed checks done; predicted null under B; discriminates the readings. |
+| [P1] §9.1 | Boundary sharpened: frequencies enter through the hazard's linearity in the share (P1 with Theorem 5); the game's theorems state what the substrate must not do; the actualization law is tested in the framework companion. |
+| [P1] §9.4(xi) | Marked done; what is now owed in its place (the actualization law). |
+| [P2] §4.1 | One sentence: v0.9 adopts the gate-free reading; "completion" is the whole-quantum vertex at whichever site fires. |
+| [P3] §4.7, §5.2 | §4.7: under v0.9 the photon-to-gap ratio does not move the weights either; the substrate owes the actualization law (the Adler race, §6). §5.2: Theorem 5's linearity carries all the weight under B. |
+| README | Paper 1 row to v0.9; claims bullet rewritten. |
+| `g3_drain_tests/README.md` | Rows for `theorem5_check.py` and `threshold_gated_commit.py`. |
+
+`Born_Selection.pdf` rebuilt from [P1] v0.9.
+
 ---
 
 ## Pending disposition
@@ -356,6 +378,191 @@ readout time.
 
 ---
 
+## Open item 2a discharged: the threshold-gated commit channel in the discrete exchange (`g3_drain_tests/threshold_gated_commit.py`, 2026-09-02)
+
+**What was asked.** [P1] v0.8 §6.1 estimated the leader's exposed leg — its share above
+$\theta = E_{\rm gap}/E_{\rm photon}$, where a real final state exists — at
+$t_{\rm exp} \approx 2\ln^2(1/\theta)/\Gamma$, about one exchange step, and compared it
+with the commit clock. Uncertainty #1 of the silicon section flagged that estimate as
+least trustworthy at exactly that leg length. This run replaces it with a measurement in
+the paper's own discrete engine (the stakes-scaled exchange of `theorem5_check.py`), and
+then asks what a $\theta$-gated commit channel does to the outcome as a function of
+$r = \lambda\,t_{\rm exp0}$ — the expected number of commit opportunities during the
+winner's exposed leg, i.e. §6.1's $t_{\rm exp}/\tau_{\rm commit}$ — for a linear hazard
+(Theorem 5's law, $f(e) = e$) and an Arrhenius one ($f(e) = e^{\beta(e-1)}$, $\beta = 10$).
+Exposed sites fire with probability $\min(1, \lambda f(e_i))$ per step; the first to fire
+takes the whole quantum (P4(a)); otherwise the game absorbs at $s \ge 0.995$. The
+$\theta = 0$ rows are the ungated control, i.e. Theorem 4 as stated. Nothing samples an
+outcome from $|A_i|^2$.
+
+**Result 1 — exposure is most of the game, not one step.**
+
+| configuration | $\theta$ | $t_{\rm exp0}$ (winner's steps above $\theta$) | game length (steps) | fraction |
+|---|---|---|---|---|
+| 2-site 0.80/0.20 | 0.45 | 96 | 106 | 0.91 |
+| | 0.72 | 88 | 105 | 0.84 |
+| | 0.90 | 65 | 106 | 0.61 |
+| | 0.94 | 52 | 108 | 0.48 |
+| 10-site, bright 0.500 (paper's) | 0.45 | 5807 | 7025 | 0.83 |
+| | 0.72 | 4879 | 7002 | 0.70 |
+| | 0.90 | 3319 | 7009 | 0.47 |
+| | 0.94 | 2611 | 7013 | 0.37 |
+
+The eventual winner sits above $\theta$ for **40–90% of the game**. The reason is the
+kernel: a step moves $\delta = \pm 0.25\min(e_i, e_j)$, so as the losers drain the steps
+shrink, and the leader's climb from $\theta$ to the 0.995 boundary is the *slow* part of
+the game, not the fast part. The continuum estimate assumed constant log-share
+diffusivity and is off by about two orders. Which kernel is physical is E-15's question,
+unchanged — but the paper's own simulations use this one, so the paper's own accounting
+for reading A must be the whole-game one: $t_{\rm exp} \approx \tau_{\rm game}$, and for
+silicon $\tau_{\rm game}/\tau_{\rm commit} = 12$–$8100$, i.e. $r \gg 1$. The v0.8
+"marginal" verdict for silicon does not survive the paper's own engine; under reading A
+silicon is inverted.
+
+**Result 2 — the ungated linear law is Theorem 4; any gate is not.** Deviation
+$P(\text{bright}) - \text{Born}$, MC $1\sigma \approx 0.005$–$0.006$; columns are $r$.
+
+*2-site 0.80/0.20, linear hazard:*
+
+| $\theta$ | 0.01 | 0.03 | 0.1 | 0.3 | 1 | 3 | 10 |
+|---|---|---|---|---|---|---|---|
+| **0 (ungated)** | +0.001 | +0.009 | +0.012 | +0.001 | +0.001 | +0.003 | −0.006 |
+| 0.02 | −0.000 | +0.003 | −0.005 | +0.001 | −0.004 | +0.007 | +0.002 |
+| 0.37 | −0.002 | +0.001 | +0.009 | +0.014 | **+0.039** | **+0.075** | **+0.122** |
+| 0.45 | +0.000 | +0.003 | +0.004 | +0.013 | **+0.041** | **+0.067** | **+0.121** |
+| 0.59 | −0.004 | +0.013 | +0.011 | +0.017 | **+0.041** | **+0.071** | **+0.125** |
+| 0.72 | −0.005 | +0.003 | +0.006 | +0.003 | **+0.041** | **+0.070** | **+0.110** |
+| 0.90 | +0.003 | −0.008 | +0.007 | +0.012 | +0.012 | +0.029 | **+0.051** |
+| 0.94 | +0.005 | +0.003 | +0.002 | +0.001 | +0.010 | +0.021 | +0.027 |
+
+*10-site, bright site Born 0.500, linear hazard:*
+
+| $\theta$ | 0.01 | 0.03 | 0.1 | 0.3 | 1 | 3 | 10 |
+|---|---|---|---|---|---|---|---|
+| **0 (ungated)** | −0.003 | +0.015 | +0.007 | +0.004 | −0.004 | −0.001 | −0.003 |
+| 0.02 | +0.008 | +0.003 | −0.005 | +0.006 | +0.005 | +0.003 | +0.009 |
+| 0.37 | +0.005 | +0.015 | +0.012 | +0.012 | **+0.036** | **+0.097** | **+0.189** |
+| 0.45 | +0.004 | −0.003 | −0.001 | +0.023 | **+0.040** | **+0.092** | **+0.186** |
+| 0.59 | +0.006 | −0.014 | −0.004 | +0.002 | **+0.038** | **+0.066** | **+0.121** |
+| 0.72 | −0.011 | +0.005 | −0.006 | +0.003 | +0.027 | +0.036 | +0.054 |
+| 0.90 | +0.003 | −0.005 | −0.006 | −0.006 | +0.011 | +0.015 | +0.025 |
+| 0.94 | +0.009 | −0.001 | −0.002 | +0.001 | +0.012 | +0.008 | +0.015 |
+
+Reading it. (i) The ungated linear law reproduces Born at every $r$ to Monte-Carlo
+precision, on both configurations: **Theorem 4 confirmed as stated.** (ii) **Every gated
+row deviates**, bright-favoured, once $r \gtrsim 0.3$: about $+0.04$ at $r = 1$, $+0.07$
+to $+0.10$ at $r = 3$, $+0.12$ to $+0.19$ at $r = 10$ for $\theta$ in the silicon range
+(0.37–0.59), smaller at $\theta \ge 0.9$ where the exposed leg is short. A gate sets the
+conditional pick to zero for the unexposed sites, so a gated law is not Theorem 4's law,
+however linear it is above the gate. **This corrects [P1] v0.8 §5.4's sentence that
+"what protects the statistics in the exposed window is the linearity of the vertex law,
+not the slowness of commitment": under reading A only slowness ($r \ll 1$) protects it.**
+(iii) The deviation is negligible only for $r \lesssim 0.1$–$0.3$. With Result 1 putting
+silicon at $r \sim 10$–$10^4$ under reading A, that reading predicts bright-favoured
+shifts of order $+0.1$ at asymmetric splits, saturating as $r$ grows.
+
+*Arrhenius hazard, $\beta = 10$ (both configurations):* deviations are **smaller** than
+the gated-linear ones at the same nominal $r$ — at most $+0.05$–$0.06$ (2-site) and
+$+0.03$ (10-site) at $r = 10$, within MC below $r = 1$. This is not the 0.719 of
+`theorem5_check.py`, and the difference is the model: there, a *global* firing at rate
+$q$ picked a site with weight $e^{\beta e}$ (a pick law); here each site's *hazard* is
+$e^{\beta(e-1)}$, which at partial share is tiny ($e^{-5.5}$ at $e = 0.45$), so an
+Arrhenius hazard barely fires before first passage and acts like a soft stopping rule
+near $s = 1$. The dangerous law under a gate is the one that fires readily at partial
+share — the linear one. (A barrier that *suppresses* partial-share commitment protects
+the statistics; a golden-rule law does not, once gated.)
+
+**What it decides.** Reading A of the share ontology, run on the paper's own engine,
+predicts deviations that are large where the engine says silicon sits. That is one of
+the two grounds on which [P1] v0.9 adopts reading B (the other is that the only
+microscopic model in the program, `first_mark_two_absorber/`, enforces B by
+construction). Under B there is no gate, the $\theta = 0$ rows are the physical case, and
+Theorem 4 with a linear hazard is the whole of the registration argument. The fork is
+kept testable: reading A's channel is retained in [P1] Table 1 as "reading A only," with
+these magnitudes, and the 505 nm heralded bound of item 2b applies to its no-P4(a)
+version.
+
+**100-site Gaussian fringe (bright site Born 0.027):** grid running at the time of this
+entry (about two minutes per run at 1500 trials; 35 runs). Rows to be appended to this
+section when it completes; the conclusions above rest on the two completed
+configurations.
+
+**Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
+physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
+the $r$ axis inherits that uncertainty — but Result 1 is a ratio within the engine and
+does not. (b) The Arrhenius normalisation $f(1) = 1$ makes its effective hazard at
+partial share much smaller than the linear law's at the same $r$; the comparison across
+laws is therefore at equal *full-share* hazard, not equal total firing. (c) Ties among
+simultaneously firing sites are broken uniformly; at these hazards they are rare.
+
+---
+
+## Open item 2b discharged: sub-553 nm single-photon data taken with silicon SPADs (web search, 2026-09-02)
+
+*Scope: a web search of the published record, not a systematic review; model-knowledge
+claims are marked. Looked for: (i) $g^{(2)}(0)$ measurements below 553 nm taken with
+silicon avalanche detectors, because there $E_{\rm photon} > 2E_{\rm gap}$ and the closed
+pot could pay for two real pairs; (ii) percent-level Born-ratio tests at asymmetric
+splits below 553 nm.*
+
+**(i) Found, and it binds one version of reading A hard.**
+
+| source | $\lambda$ | $E_{\rm ph}/E_{\rm gap}$ (Si) | $\theta$ | $g^{(2)}(0)$ | detectors |
+|---|---|---|---|---|---|
+| Heralded SPDC in BBO, pairs at 562/505 nm — the Kwiat-group source used for the single-photon vision experiments (arXiv 1806.08430; Tinsley et al. 2016) | 505 nm | **2.19** | 0.456 | **0.0023** (heralded, 80 kHz) | Si SPAD herald; heralded HBT on the 505 nm arm (model not stated in the review) |
+| hBN "blue" quantum emitters, ZPL 436 nm (arXiv 2301.04269 and related) | 436 nm | 2.54 | 0.394 | ≈ 0.07 (background-corrected) | Si APDs, HBT |
+| InGaN/GaN quantum dot, quasi-resonant 375 nm excitation, 9 K (APL Materials 9, 061106, 2021) | blue, ≈ 400–470 nm (class, not extracted) | ≈ 2.5–2.8 | ≈ 0.36–0.40 | **0.043 ± 0.009, raw, no correction** | Si APDs, HBT |
+| InGaN/GaN QD, room temperature (same family) | blue | ≈ 2.5–2.8 | | 0.126 ± 0.003, uncorrected | Si APDs, HBT |
+
+Every entry is below 553 nm, taken with silicon avalanche detectors, and shows
+near-perfect anticorrelation. The heralded 505 nm source is the sharpest. Note what a
+50/50 HBT split does at that wavelength: each arm holds share 0.5, above
+$\theta = 0.456$, so under reading A **both** sites are exposed from $t = 0$ for the
+whole game, not just the final leg, and the two-pair channel is open throughout (a
+2.455 eV photon can pay for two 1.12 eV pairs with 0.2 eV to spare). Symmetry protects
+the *ratio* (§8.2) but not the *coincidence* branch.
+
+What the bound constrains depends on which version of reading A is meant:
+
+- **Reading A without P4(a) as a premise** (a site whose holding exceeds $E_{\rm gap}$ can
+  form a real pair on its own): both arms could fire, giving a double click. With
+  per-site hazard $\lambda$ over a game of $\tau_{\rm game}$, $P(\text{double}) \sim
+  (\lambda\tau_{\rm game})^2 \lesssim 2\times10^{-3}$ gives $\lambda\tau_{\rm game}
+  \lesssim 0.05$, and since the exposed leg is $\sim 1$–$2$ of $\sim 1200$ exchange steps,
+  $t_{\rm exp}/\tau_{\rm commit} = \lambda\,t_{\rm exp} \lesssim 10^{-4}$. **That version is
+  pushed four orders below the marginal range** — first passage dominates and §6.1's
+  original "safe" verdict is restored for it, though by data rather than by the argument
+  the paper gave.
+- **Reading A with P4(a) as a premise** (the first exposed site to fire takes the whole
+  quantum; the model item 2a simulates): no double click can occur by construction, and
+  $g^{(2)}(0)$ says nothing about the hazard. Its constraint must come from splitting
+  *ratios*, which is (ii).
+- **Reading B**: $g^{(2)}(0) \to 0$ is what QM predicts and carries no information about
+  the game.
+
+**(ii) Not found.** No purpose-built, percent-level test of Born splitting ratios at an
+*asymmetric* split below 553 nm was located. Nearest evidence: (a) absolute SPAD
+detection-efficiency calibrations with a focused beam tunable over 250–1000 nm
+(PTB-type, 2019) and Klyshko twin-photon calibrations — single-detector,
+wavelength-resolved efficiency measurements, which constrain linearity of response, not a
+ratio at a split; (b) detector tomography (Lundeen et al. 2009) reconstructing a linear
+POVM for a silicon SPAD, at $\sim$780 nm, i.e. above 553 nm. So the asymmetric-split
+test of §8.6(vii) remains unperformed as such below 553 nm, and the "percent-level"
+bound asserted in [P1] §6.1 (v0.8) should be read as an inference from calibration
+practice, not a measurement. **Recommended [P1] phrasing:** "no published asymmetric-split
+Born-ratio test below 553 nm was located (2026-09 search); the coincidence branch is
+bounded at $2\times10^{-3}$ by heralded 505 nm data."
+
+Sources: [arXiv 1806.08430](https://arxiv.org/abs/1806.08430) (vision-experiment review;
+505 nm heralded source, $g^{(2)}(0) = 0.0023$); [Tinsley et al. 2016, Nat. Commun. 7,
+12172](https://www.nature.com/articles/ncomms12172); [hBN blue emitters, arXiv
+2301.04269](https://arxiv.org/pdf/2301.04269); [InGaN/GaN QD, APL Materials 9, 061106
+(2021)](https://pubs.aip.org/aip/apm/article/9/6/061106/123137/Pure-single-photon-emission-from-an-InGaN-GaN);
+[GaN QD temperature dependence, Sci. Rep. 7 (2017)](https://www.nature.com/articles/s41598-017-16040-x);
+[PTB tunable 250–1000 nm SPAD calibration (2019)](https://www.researchgate.net/publication/332744312_Detection_efficiency_measurement_of_single_photon_avalanche_photodiodes_by_using_a_focused_monochromatic_beam_tunable_from_250_nm_to_1000_nm).
+
+---
+
 ## E-15 numerical result (`born_selection_sims/colored_noise_knife_edge.py`, 2026-09-01)
 
 Colored-noise variant of `noise_scaling_born.py` (#6, the knife-edge script feeding Fig. 2):
@@ -530,16 +737,24 @@ requirement self-evident and largely discharge E-14 editorially.
    commitment** (E-16, uncertainty #2).~~ **Discharged 2026-09-02** — see "E-16 silicon
    recomputed." Result: silicon is marginal, not safe; the SNSPD stays inverted; §6.1's top
    rung is mis-specified for every detector. Three new items replace it:
-   - **2a. Discrete-exchange run with a threshold-gated commit channel.** Extend
+   - ~~**2a. Discrete-exchange run with a threshold-gated commit channel.**~~ **Done
+     2026-09-02 — see "Open item 2a discharged."** Exposure is 40–90% of the game in the
+     paper's own engine (not one step); the ungated linear law gives Born at every speed
+     (Theorem 4 confirmed); any gate biases even the linear law (+0.04 at $r = 1$, +0.12 to
+     +0.19 at $r = 10$). Grounds for [P1] v0.9. The 100-site grid was still running when
+     logged; its rows are to be appended. Was: Extend
      `g3_drain_tests/theorem5_check.py`: commitment can fire only at sites with
      $s_i > \theta$, at rate $\propto e_i$ (Theorem 5) and, separately, Arrhenius; sweep
      $\theta \in \{0.37, 0.45, 0.59, 0.72, 0.90, 0.94\}$ and the commit hazard across the
      marginal range $t_{\rm exp}/\tau_{\rm commit} = 10^{-2}$–$10^{1}$. This replaces the
      analytic instant-commit bound and the ~1-step diffusive leg estimate (uncertainty #1)
      with a curve, and gives the wavelength-graded prediction its magnitude.
-   - **2b. Literature check, owed before use:** asymmetric-split Born-ratio and $g^{(2)}(0)$
-     measurements with Si SPADs below 553 nm (where the two-pair channel is open). The
-     percent-level bound cited above is from model knowledge.
+   - ~~**2b. Literature check, owed before use:**~~ **Done 2026-09-02 — see "Open item 2b
+     discharged."** $g^{(2)}(0)$ below 553 nm with Si SPADs: found (505 nm heralded,
+     0.0023; 436 nm hBN, ≈0.07; InGaN QDs, 0.043 raw); binds the no-P4(a) version of
+     reading A to $t_{\rm exp}/\tau_{\rm commit} \lesssim 10^{-4}$, says nothing about the
+     P4(a) version. Asymmetric-split Born-ratio tests below 553 nm: **not found**; the
+     percent-level bound in [P1] §6.1 v0.8 is an inference from calibration practice.
    - ~~**2c. §6.1 and §2 restatement**~~ **Done 2026-09-02 ([P1] v0.8; propagated to [P2], [P3]).** Was: per the disposition: $\theta$ explicit; "two to four
      orders at every rung" withdrawn or re-derived on the exposed-leg accounting; the
      sub-gap-final-states sentence qualified to $s_i < \theta$; P4(a) stated as a premise
@@ -552,7 +767,9 @@ requirement self-evident and largely discharge E-14 editorially.
 3. **EQUATIONS.md §4's Bell account vs [P1] §7's** — never reconciled; flagged in the E-1 fix
    as open rather than asserted equivalent.
 4. ~~**The $2\ln^2\!N$ robustness result** — derived here, not stated in [P1].~~ Stated in [P1] §6.1 (v0.8), 2026-09-02.
-5. **Reading B and a v0.9 of [P1] — awaiting explicit go-ahead.** JB's disposition
+5. ~~**Reading B and a v0.9 of [P1] — awaiting explicit go-ahead.**~~ **Applied 2026-09-02
+   as [P1] v0.9** (see "Applied later the same day"), on JB's instruction to proceed with
+   all three items, after 2a and 2b returned. Original entry retained below. JB's disposition
    2026-09-02, in session: "I guess B is the only choice." Grounds: the 576-state
    two-absorber model (`first_mark_two_absorber/`) enforces B by construction — the
    absorber's reversible excitation carries the full quantum, $E_e = \hbar\omega$, and what

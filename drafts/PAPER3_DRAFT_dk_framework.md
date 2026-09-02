@@ -487,8 +487,13 @@ reversible window closes at the surface event, not at the avalanche: for a semic
 absorber the interband vertex and thermalisation end recoverability within 10 fs–1 ps,
 and [P1 v0.8 §6.1] finds that window *marginal* against the selection game's final leg in
 silicon and inverted in superconducting absorbers — so the recording clock downstream
-(avalanche, hotspot, readout) is not the variable that can move the Born weights; the
-photon-to-gap ratio is.
+(avalanche, hotspot, readout) is not the variable that can move the Born weights. [P1
+v0.9] then adopts the reading under which the gap gates nothing — a sub-threshold
+holding is an amplitude, not an energy lacking a final state — so the photon-to-gap
+ratio does not move them either. What the substrate still owes is the actualization law
+itself: which site fires, in one world, with hazard linear in its share, without that
+linearity being inserted — the question the Adler-locking race of this program's
+two-channel model is built to ask (§6).
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets
@@ -546,7 +551,7 @@ continuum absorbers to a robustness result; v0.8 withdraws that demotion in turn
 corrected ladder placing commitment at first irreversibility and finding the separation
 marginal in silicon and inverted in superconducting absorbers, so Theorem 5's linearity —
 that of the first-irreversibility vertex, not of the downstream cascade — carries weight
-again; the inverted-Gisin reading is a
+again, and under the reading [P1 v0.9] adopts it carries all of it; the inverted-Gisin reading is a
 consistency result, not a derivation — round 2, items L3-6 and round 1, item 9); within this framework, the impossibility of exploiting the nonlocal sector
 is *emergent* [P1 §7]. A controlled measurement of $\eta$ itself (deliberate
 cross-station injection, with its computable, angle-independent leak law) is part of
