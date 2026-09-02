@@ -13,7 +13,7 @@ coverage is opportunistic, not exhaustive. Items E-9 onward reach outside EQUATI
 into Paper 1 and the sidereal/frame material; they are logged here only because this
 is where they surfaced, and they belong in a tri-paper round.*
 
-**Totals: 18 items · 6 applied · 12 pending disposition.**
+**Totals: 19 items · 7 applied · 12 pending disposition.** *(2026-09-02: E-16 applied to Papers 1–3 as v0.8; E-19 added.)*
 
 ---
 
@@ -32,6 +32,32 @@ Rebuilt via the same pandoc invocation `build_pdfs.sh` uses (equations targets o
 
 ---
 
+## Applied 2026-09-02 (Papers 1–3, v0.8 corrections from E-16)
+
+At JB's instruction ("correct the inconsistencies in the papers"). Every edit is marked
+in-text as v0.8 or dated 2026-09-02, and withdrawn claims are quoted, not deleted.
+
+| item | paper / section | edit |
+|---|---|---|
+| **E-16** | [P1] header | v0.8 revision note: ladder corrected against the paper's own commitment definition; v0.7 demotion of Theorems 4–5 withdrawn in turn; consequences (i)–(iv) listed. |
+| E-16 | [P1] §2, P4(a) | Clause (a) marked as a premise about the quantum wherever $E_{\rm photon} > 2E_{\rm gap}$ (Si below 553 nm; all superconducting absorbers): the gap does not enforce exclusivity there. |
+| E-16 | [P1] §2, P4(b)(ii) | v0.7's first-passage-only paragraph replaced: a commitment channel operates alongside selection, gated at $\theta$; Theorems 4–5 load-bearing for class (ii). |
+| E-16 | [P1] §5.4 | Lead sentence and four paragraphs rewritten: demotion withdrawn; the linearity Theorem 5 must supply identified as that of the first-irreversibility vertex, the downstream cascade being photon-agnostic and so unable to carry which-site weight; the `theorem5_check` numbers reinterpreted (the paper operates between the two points). |
+| E-16 | [P1] §6.1 | Losses bullet rewritten with $\theta$ explicit; exposed-window bullet added; "two to four orders at every rung" withdrawn and replaced by the corrected ladder (marginal Si, inverted NbN); $\Gamma$-invariance of $2\ln^2\!N$ stated (closes open item 4); temporal-structure paragraph's irreversibility moved up the ladder. |
+| E-16 | [P1] §8.1 Table 1 | Threshold-gated commitment added as a live candidate channel; the "exclusively failures of P3" sentence corrected. |
+| E-16 | [P1] §8.6(vii) | Gap-ratio-graded silicon test added as a candidate. |
+| E-16 | [P1] §9.4(xi) | Share-ontology fork and the owed discrete-exchange threshold-gated simulation added. |
+| E-16 | [P2] §4.1 table and prose; §4.2 | Registration row reworded (first irreversibility precedes record-writing); v0.8 update appended to the Theorem 4 sentence; "rate process throughout selection" replaced by the $\theta$-gated statement; a further correction appended to L2-1. |
+| E-16 | [P3] §4.1, §4.7, §5.2 | First irreversibility placed at the end of selection (the surface event), not the amplification; the Bell-detector paragraph gains the clause that the recording clock is not the variable, the photon-to-gap ratio is; the v0.7 parenthetical in §5.2 updated. |
+| E-16 | [MCI] `current_revision_DK_paper.md` | **Not edited** — frozen as the provenance record by JB's 2026-07-31 decision ([P3] header). Its §5 row "Reversible window: brief (resonance fluorescence)" and its reading "the irreversibility is the amplification, not the bare excitation (a single excited electron can re-emit)" are superseded by [P3] §4.1/§4.7 as corrected: a semiconductor's reversible window closes at the vertex and thermalisation (fs–ps), and "a single excited electron can re-emit" is an atomic statement that does not transfer to a thermalised carrier in a 300 K continuum. |
+
+| — | [P3] §4.2; [P2] §4.1 | **Sponsor-requested addition, not a reconciliation item.** Time/energy/information triad paragraph inserted after the "same rate, random position" entry and before the three hands, flagged interpretive and sponsor-originated: rate = energy, position = information, hand = time; the three bounds (time–energy uncertainty, Margolus–Levitin, Landauer) with $\hbar$ and $k_BT$ as the only two exchange rates; the framework's two conversions (capture: phase history → selecting noise; registration: dissipation → record); and the divergence at registration (energy conserved, position information not) identified with the cut. Stated as a binding, not an identity, at JB's agreement. Cross-reference added from [P2] §4.1's recoverability criterion. |
+
+`Born_Selection.pdf` rebuilt from [P1] v0.8. [P2] and [P3] have no PDF targets in
+`build_pdfs.sh`.
+
+---
+
 ## Pending disposition
 
 | # | Sev | Location | Finding | Recommended |
@@ -47,9 +73,10 @@ Rebuilt via the same pandoc invocation `build_pdfs.sh` uses (equations targets o
 
 | **E-15** | **MED–HIGH** | [P1] Theorem 1 proof; Appendix D | **The stochastic calculus is chosen but never justified, and the physical noise selects the other one.** Theorem 1's proof applies **Itô's lemma** to $s_i = e_i/\sum_j e_j$; Appendix D integrates by **Euler–Maruyama**, which is Itô by construction. Neither says why Itô rather than Stratonovich. For multiplicative noise the choice is physical, not cosmetic. By **Wong–Zakai**, noise of any finite correlation time converges as $\tau_c \to 0$ to the *Stratonovich* equation, never the Itô one, and for $a(e) = \sqrt e$ the two differ by a drift $\sigma^2 a a'/2 = \sigma^2/4$ — identical on every site, hence share-**equalising** (a leader gains proportionally less from an equal absolute increment), which is precisely the failure mode Theorem 1's converse attributes to multiplicative noise. Physical detector noise has $\tau_c \sim 10$–$70\,$fs and is therefore colored, so it selects Stratonovich. The question is not whether correlation time perturbs Born but whether the paper's Itô baseline is the small-$\tau_c$ limit of the physical process at all. | ~~**Likely resolved by a premise the paper already has.** The $\sigma^2/4$ drift requires the total to grow; a closed pot forbids it, and v0.7's P4(a) closes the pot.~~ **That recommendation was written before the exchange test and is withdrawn — it is false.** Conservation does not resolve it: the projection form leaves the result unchanged (0.2953 vs 0.2934), and the genuinely conserving, antisymmetric exchange formulation breaks Born *worse*, collapsing every configuration to $1/N$. See both result sections below. The standing recommendation is now only the weaker half: state the Itô choice and its grounds explicitly, since a reader who notices it has no answer in the text — and treat the grounds themselves as **open**, pending the discretisation question. Numerical checks: `colored_noise_knife_edge.py`, `colored_noise_exchange.py`. |
 
-| **E-16** | **HIGH** *(raised 2026-09-02 after computing the ladder — see the E-16 result section; severity is provisional on the two flagged uncertainties, either of which could return it to MED)* | [P1] §6.1 (ladder); §4 (noise origin); §5.4 | **Cooling inverts the ladder's top rung, and §6.1 is computed only at room temperature.** *(Rewritten 2026-09-02 — the first version of this item named the wrong failure; see the correction paragraph below.)* §4 writes P2's noise as one increment from "the wave packets of the detector's other bound charges *and* the vacuum/environment field," conflating a **thermal** source with a **zero-point** one. The asymmetry is real and large: the free-field thermal occupation at optical frequency is already negligible at room temperature ($\hbar\omega/k_BT \approx 97$ at $\lambda = 500\,$nm, $T = 300$ K, giving $n \sim 10^{-42}$ — which is just [P1]'s own fairness window $\hbar\omega \gg k_BT$), while the near-surface noise that actually drives the game is set by the material's dissipation and *is* thermal. P3(b) gives both channels: $\Gamma_{\rm loc} \sim 10^{13}$–$10^{14}\,\mathrm{s^{-1}}$ (phonon, carrier–carrier — thermal) against $\Gamma_{\rm rad} \sim 10^{8}\,\mathrm{s^{-1}}$ (radiative/vacuum — not thermal), five to six orders apart. Freeze the phonons out entirely and $\tau_c$ runs from tens of fs to ~10 ns. | **Accept. JB-originated 2026-09-02** (asking whether temperature affects the vacuum as it affects matter). **The correction:** that does *not* break whiteness, because $\tau_{\rm game} \sim 2\ln^2\!N/\Gamma$ scales as $1/\Gamma$ **too** — both middle rungs stretch together and the separation $\tau_{\rm game}/\tau_c = 2\ln^2\!N$ is invariant, whichever channel dominates. The first version of this item claimed cryogenic operation endangers whiteness; that was wrong. **The actual risk is the top rung.** $\tau_{\rm commit}$ (ns–$\mu$s) is set by avalanche physics and readout electronics and does *not* scale with $\Gamma$, so cooling pushes $\tau_{\rm game}$ **up toward it**: a two-order drop in $\Gamma$ takes $\tau_{\rm game}$ from ~80 ps to ~8 ns, i.e. into the commit window. That matters because v0.7's entire restructuring rests on this rung — commitment being slow is why first passage settles the outcome before any commit-rate law acts, and why Theorems 4–5 were demoted from operative mechanism to robustness rider (§5.4). **Invert the rung and the fast-commit reading v0.7 withdrew comes back.** §6.1's ladder is computed only for a room-temperature silicon SPAD, while §8 discusses SNSPDs, which run at 1–4 K. Recompute the ladder for the cryogenic families §8 actually names, and state the $\Gamma$-invariance of the middle separation while doing so — it is a free robustness result the paper currently does not claim. |
+| **E-16** *(APPLIED 2026-09-02 — Papers 1–3 v0.8; see "Applied 2026-09-02")* | **HIGH** *(raised 2026-09-02 after computing the ladder — see the E-16 result section; severity is provisional on the two flagged uncertainties, either of which could return it to MED)* | [P1] §6.1 (ladder); §4 (noise origin); §5.4 | **Cooling inverts the ladder's top rung, and §6.1 is computed only at room temperature.** *(Rewritten 2026-09-02 — the first version of this item named the wrong failure; see the correction paragraph below.)* §4 writes P2's noise as one increment from "the wave packets of the detector's other bound charges *and* the vacuum/environment field," conflating a **thermal** source with a **zero-point** one. The asymmetry is real and large: the free-field thermal occupation at optical frequency is already negligible at room temperature ($\hbar\omega/k_BT \approx 97$ at $\lambda = 500\,$nm, $T = 300$ K, giving $n \sim 10^{-42}$ — which is just [P1]'s own fairness window $\hbar\omega \gg k_BT$), while the near-surface noise that actually drives the game is set by the material's dissipation and *is* thermal. P3(b) gives both channels: $\Gamma_{\rm loc} \sim 10^{13}$–$10^{14}\,\mathrm{s^{-1}}$ (phonon, carrier–carrier — thermal) against $\Gamma_{\rm rad} \sim 10^{8}\,\mathrm{s^{-1}}$ (radiative/vacuum — not thermal), five to six orders apart. Freeze the phonons out entirely and $\tau_c$ runs from tens of fs to ~10 ns. | **Accept. JB-originated 2026-09-02** (asking whether temperature affects the vacuum as it affects matter). **The correction:** that does *not* break whiteness, because $\tau_{\rm game} \sim 2\ln^2\!N/\Gamma$ scales as $1/\Gamma$ **too** — both middle rungs stretch together and the separation $\tau_{\rm game}/\tau_c = 2\ln^2\!N$ is invariant, whichever channel dominates. The first version of this item claimed cryogenic operation endangers whiteness; that was wrong. **The actual risk is the top rung.** $\tau_{\rm commit}$ (ns–$\mu$s) is set by avalanche physics and readout electronics and does *not* scale with $\Gamma$, so cooling pushes $\tau_{\rm game}$ **up toward it**: a two-order drop in $\Gamma$ takes $\tau_{\rm game}$ from ~80 ps to ~8 ns, i.e. into the commit window. That matters because v0.7's entire restructuring rests on this rung — commitment being slow is why first passage settles the outcome before any commit-rate law acts, and why Theorems 4–5 were demoted from operative mechanism to robustness rider (§5.4). **Invert the rung and the fast-commit reading v0.7 withdrew comes back.** §6.1's ladder is computed only for a room-temperature silicon SPAD, while §8 discusses SNSPDs, which run at 1–4 K. Recompute the ladder for the cryogenic families §8 actually names, and state the $\Gamma$-invariance of the middle separation while doing so — it is a free robustness result the paper currently does not claim. |
 | **E-17** | LOW | [P1] §2 (notation/premises) or §6.1 | **Selection and registration are spatially orthogonal, and the paper relies on this silently.** The Born pattern varies over the detector face: $|A_i|^2$ lives in $xy$, and the selection game is a competition among sites at different $(x_i, y_i)$, decided by *differences* between them. Registration is an out-of-plane process — the avalanche develops along $z$, driven by the junction bias. A spatially uniform $z$ field is invariant under $xy$ translation and therefore **structurally incapable** of biasing which site wins: it cannot distinguish site $i$ from site $j$. Stage 2 and Stage 3 are thus not merely sequential in time but orthogonal in space, and the field that powers registration is geometrically barred from touching selection. [P1] treats sites as an abstract index $i$ with no geometry beyond the spacing $d$, yet the geometry it does use is already in-plane (P3(b)'s $d \gg \ell$; §8's polarization signature stated "relative to the **array axis**"). | **JB-originated 2026-09-02; accept.** State it in §2 or §6.1 — one or two sentences. It cheaply answers a referee objection that would otherwise need magnitude estimates ("your SPAD has hundreds of volts across it; how is that not a bias?"), answering by symmetry instead. **Residual channel, correctly located:** not the bias but its $xy$ **non-uniformity** — guard rings, edge effects, doping variation, field crowding at the active-area perimeter — plausibly acting through Stark-shifted detunings to make capture site-dependent. That is the tractable question for a real device: not "is there a field" (yes, large) but "how flat is it across the active area." **Correction recorded:** `window_tests.py` Test B's catastrophic common-mode result ("bright wins 100%") applies to *fluctuating* common-mode noise, where multiplicative $\sqrt e$ coupling hands the leader a proportionally larger increment each step. It does not describe a *static* common bias, and was misapplied to one in session before JB's geometric argument corrected it. |
 | **E-18** | **MED–HIGH** | [P1] §6.1 (parenthetical after the $\tau_{\rm game}$ estimate) | **A dismissal that E-15 invalidates.** §6.1 estimates $\tau_{\rm game} \sim 2\ln^2\!N/\Gamma$ for "$N \sim 5\times10^{10}$ sites in the diffraction volume" and then sets the question aside: *"(Only $\ln^2 N$ enters; **the answer is insensitive to the coarse-graining of 'sites'**.)"* That was fair while $N$ merely set the game duration. It is not fair now. E-15 showed the whiteness separation **is** $2\ln^2\!N$ — the same quantity — and that the failure when whiteness lapses is *total* (shares collapse to $1/N$) rather than graceful. So the definition of a "site," and more sharply the size of the region within which sites actually compete, becomes a physical parameter the Born result depends on. Range across plausible choices: $2\ln^2\!N$ = 1212 at $5\times10^{10}$, 382 at $10^6$, 95 at $10^3$, 42 at $10^2$, 11 at $N=10$ — a factor of ~29, against measured behaviour that is safe at persistence 0.18 and broken at 3.5. **JB-originated 2026-09-02** (from the medical-imaging framing: a detection event draws from a finite aperture, and no screen resolves single atoms). | **Accept; log the dependency, do not yet claim a defect.** Two sub-questions, both answerable: (i) what physically bounds the competing region — the diffraction volume (§6.1's implicit choice), the distance energy can hop through the common field during $\tau_{\rm game}$, or the pattern scale? (ii) Does $N$ in the ladder mean illuminated sites or sites-per-competing-region? These are the same "what is the discrete exchange model a discretisation *of*" question that blocks E-15, reached from the geometry side. **Note also what does *not* help:** coarse-graining cannot rescue the $1/N$ collapse, since uniform is scale-invariant — binning $N$ uniform sites into $P$ pixels gives uniform over $P$ pixels. Aperture changes the margin, it does not restore an erased pattern. |
+| **E-19** | LOW–MED | [P1] §6.1; P3(b); §8.1 Table 1 (P3(b) row) | **The SNSPD is the nearest deployed detector to the correlated-noise channel, for the reason JB gave.** JB-originated 2026-09-02: the white noise that drives the game is supplied by thermal scattering of electron phases in matter; cooling to superconducting temperatures freezes that out, leaving the vacuum/radiative contribution relatively larger; and the nanowire's topology keeps the whole competing region within a fraction of a wavelength, with the signal carried in a surface layer for the nanoseconds of the readout. Computed: $f = \Gamma_{\rm rad}/\Gamma_{\rm tot}$ rises from $\sim10^{-6}$ (silicon, P3(b)) to $\sim10^{-3}$ (NbN at 2 K: $\Gamma_{\rm loc}\sim5\times10^{10}$–$10^{11}$ from $\tau_{ep}$, against $\Gamma_{\rm rad}\sim10^{8}$ carried over from P3(b) — whether that radiative figure transfers to a superconducting film is uncertain, the same species as E-16 uncertainty #1). The competing region ($\sim$100 nm $\times$ 50 nm) is sub-wavelength at 1550 nm, so the radiative part is fully correlated across it. Table 1's P3(b) row has deviations $\propto f$, "large only as $f\to1$": three orders above silicon but still $\sim10^{-3}$. Separately, $\tau_{\rm game}$ for NbN is 3.8–7.6 ns, comparable to the electrical reset $L_k/R\sim5$–50 ns, so game and readout overlap in time — the ordering §6.1 assumes for silicon (game $\ll$ record-writing) fails in the nanowire. Whether that matters depends on whether readout dynamics can feed back on the shares; [P1] assumes not, and the device physics reads the current redistribution as the hotspot's consequence rather than the game's input. | **Accept as a computable candidate; log, do not yet claim.** Two things to carry. (i) JB's original whiteness worry — the motivation for simulating an SNSPD at all — is answered: whiteness survives cooling because $\tau_c$ and $\tau_{\rm game}$ both scale as $1/\Gamma$ (the E-16 correction, now stated in [P1] §6.1 v0.8); the surviving cold-detector effects are the top-rung inversion (E-16) and this rise in $f$. (ii) Table 1's P3(b) row should name the SNSPD as the nearest deployed detector to that channel, at $f\sim10^{-3}$, when §8.1 is next revised. A direct SNSPD simulation, the original plan, now has its inputs: $\Gamma$, $N$, $\theta$, $f$, and the exposed-leg/commit ratio from E-16. |
 
 ---
 
@@ -156,7 +183,9 @@ measurements of the same optical setup** — same photons, same beamsplitter, tw
 opposite sides of the criterion. The field's working assumption is that they agree. If they
 do, the mechanism is in trouble, not excused.
 
-**OWED: recompute silicon under the same definition.** The definition must be applied where
+**OWED: recompute silicon under the same definition.** *(**Discharged 2026-09-02** — see
+"E-16 silicon recomputed" below. The paragraph is kept as written so the order of
+operations stays visible.)* The definition must be applied where
 it costs something. §6.1's quoted $\tau_{\rm commit}$ of ns–$\mu$s is the avalanche-and-quench
 *cycle*, whereas first irreversibility is the virtual→real transition preceding it. If
 silicon's true $\tau_{\rm commit}$ is ps–ns, **the safe case's margin shrinks by one to three
@@ -180,6 +209,150 @@ a term whose physical referent is unpinned, and the answer depends on which refe
 chosen — the discretisation of the exchange (E-15), the size of the competing region
 (E-18), and the operational definition of commitment (here). That convergence is a better
 signal than any individual number in this file.
+
+---
+
+## E-16 silicon recomputed: owed item #2 discharged (`code/silicon_commit_recompute.py`, 2026-09-02)
+
+**Read the uncertainty statement at the end of this section before citing any number in
+it.** The silicon timescales are literature-typical, and the accounting that decides the
+verdict rests on §6.1's diffusive scaling at leg lengths where E-15 says that scaling is
+least trustworthy.
+
+*Method note.* The definition was fixed in the preceding section before this computation
+was attempted. The script was written to run silicon at five wavelengths, InGaAs, and NbN
+under two commitment readings, all by one rule, before any result was read. It validates
+against §6.1 first ($\tau_c$ 10–66.7 fs, $\tau_{\rm game}$ 12.1–80.9 ps, as before).
+
+**What the definition does to silicon.** Under first irreversibility the share axis of a
+gapped absorber splits at
+$$\theta = E_{\rm gap}/E_{\rm photon},$$
+the share below which a site's holding $e_i = s_i E_{\rm photon}$ has *no* real final
+state. Below $\theta$ the excitation is virtual and its only exit is return to the field:
+protected, exactly as §6.1 says. Above $\theta$ a real electron–hole pair is available,
+with $e_i - E_{\rm gap}$ going to phonons, and the interband vertex plus thermalisation is
+the first irreversibility. For silicon that clock is **10 fs–1 ps** (the SPAD
+device-physics review's three-event structure: photon-annihilation irreversibility
+fs–100 fs; which-site distinguishability 10 fs–1 ps; field-driven seed unrecoverability
+~1 ps). §6.1's quoted ns–$\mu$s is the avalanche-and-quench cycle, three to six orders
+downstream, and is not $\tau_{\rm commit}$ under the paper's own definition.
+
+Three things follow for §6.1's own detector before any ladder is computed:
+
+1. At 500 nm, $\theta = 0.45$. §6.1's sentence — "multiphonon dissipation of a 2.5 eV
+   *virtual* excitation is blocked by the absence of sub-gap final states" — is true for
+   45% of the share axis and false for the other 55%.
+2. $E_{\rm photon} = 2.2\,E_{\rm gap}$: **the closed pot can pay for two real pairs.** The
+   gap does not enforce exclusivity at 500 nm; only P4(a) does, as a premise about the
+   quantum rather than a fact about the absorber. The boundary $E_{\rm photon} = 2E_{\rm gap}$
+   sits at 553 nm in silicon.
+3. On the whole-game accounting E-16 used for the SNSPD, "two to four orders of magnitude
+   to spare at every rung" becomes $\tau_{\rm game}/\tau_{\rm commit} = 12$–$8100$:
+   inverted by one to four orders. **The paper's safe case is not safe by its own
+   definition.**
+
+**The accounting that matters, applied to both detectors by one rule.** The whole-game
+comparison overstates the exposure. Only a site above $\theta$ can commit; under a closed
+pot with $\theta \ge 1/2$ that is at most one site, and only during its final climb from
+$\theta$ to 1. Under §6.1's own diffusive log-share scaling that leg takes
+$t_{\rm exp} \sim 2\ln^2(1/\theta)/\Gamma$. The physically relevant top rung is
+$t_{\rm exp}/\tau_{\rm commit}$:
+
+| detector | $E_{\rm ph}/E_{\rm gap}$ | $\theta$ | pairs the pot pays for | whole-game $\tau_{\rm game}/\tau_{\rm commit}$ | exposed-leg $t_{\rm exp}/\tau_{\rm commit}$ | verdict |
+|---|---|---|---|---|---|---|
+| Si SPAD 405 nm | 2.7 | 0.37 | 2 | 12–8100 | 0.02–13 | marginal |
+| **Si SPAD 500 nm (§6.1's own)** | **2.2** | **0.45** | **2** | **12–8100** | **0.013–8.4** | **marginal** |
+| Si SPAD 650 nm | 1.7 | 0.59 | 1 | 12–8100 | 0.006–3.8 | marginal |
+| Si SPAD 800 nm | 1.4 | 0.72 | 1 | 12–8100 | 0.002–1.4 | marginal |
+| Si SPAD 1000 nm | 1.1 | 0.90 | 1 | 12–8100 | 0.0002–0.14 | marginal, near safe |
+| InGaAs SPAD 1550 nm (silicon inputs, flagged) | 1.07 | 0.94 | 1 | 12–8100 | 0.0001–0.06 | safe |
+| NbN SNSPD 1550 nm, commit = hotspot 10–50 ps | 533 | 0.002 | 533 | 76–760 | **16–160** | **inverted** |
+| NbN SNSPD 1550 nm, commit = cascade onset 0.1–1 ps | 533 | 0.002 | 533 | 3800–76000 | **790–16000** | **inverted** |
+
+Reading it: **silicon is marginal, not safe.** The range straddles unity by about an order
+of magnitude on each side at every visible wavelength, closing toward safe only near the
+band edge. **The SNSPD stays inverted on the exposed-leg accounting too**, on either
+reading of its commitment, because $\theta \approx 0.002$ makes the exposed leg 6.3
+log-units — about 79 exchange steps at $\tau_c$ = 10–20 ps, i.e. 0.8–1.6 ns against a
+10–50 ps commit. So the SPAD/SNSPD asymmetry E-16 found survives, weakened: not "safe by
+2–4 orders against inverted by 2–3," but "straddling unity against inverted by 1–2 (or 3–4)."
+
+**What is at stake if the exposed channel fires.** If commitment were instantaneous once
+a share crossed $\theta$, the two-site outcome for a Born 0.80/0.20 split would be
+$P_1 = 1.00$ at 650 and 800 nm, 0.87 at 1000 nm, and 0.84 even for InGaAs at
+$\theta = 0.94$ — §6.1's own "stopping at any finite share introduces a computable
+$O(1-\text{threshold})$ bias," made explicit by the martingale hitting probabilities
+(`two_site_instant_commit` in the script). For $\theta < 1/2$ (silicon below 553 nm) both
+sites of a two-way split can be exposed at once and the two-pair channel is open; the
+two-site formula no longer applies. *Asserted from model knowledge, not verified against a
+source:* routine Si SPAD calibrations at asymmetric splits are consistent with Born at the
+percent level or better. If so, the exposed reading is compatible with data only where
+$t_{\rm exp}/\tau_{\rm commit}$ sits at the low end of its range, $\lesssim 0.1$ — i.e.
+only if silicon's first irreversibility for an exposed site is $\gtrsim 0.1$–1 ps, the
+slow end of the device range, at every wavelength in use. **That is a constraint the
+mechanism now carries, not a refutation of it.**
+
+**Disposition.** E-16 stays **HIGH**, with its substance restated. The defect is no longer
+"cooling inverts the top rung," nor even "the SNSPD inverts." It is that **§6.1's top rung
+is mis-specified for every detector, including its own**: the quoted $\tau_{\rm commit}$ is
+the downstream avalanche cycle, not commitment as the paper defines it; with commitment
+correctly placed, silicon is marginal and NbN inverted; and at 500 nm the gap does not
+enforce the full-quantum threshold P4(a) relies on. §6.1 needs (i) $\theta$ made explicit,
+(ii) "two to four orders to spare at every rung" withdrawn or re-derived on the
+exposed-leg accounting, and (iii) the "absence of sub-gap final states" sentence
+qualified to $s_i < \theta$. §2 should say that P4(a) is a premise about the quantum, not a
+consequence of the absorber's gap, wherever $E_{\rm photon} > 2E_{\rm gap}$.
+
+**The dangerous prediction, reshaped.** Yesterday's form — Born statistics differ between
+SPAD and SNSPD on the same optics — survives but is confounded: material, $\Gamma$, $N$,
+temperature and efficiency all change at once. The recomputation gives a cleaner form on
+the paper's own detector family. **The deviation is graded in $E_{\rm photon}/E_{\rm gap}$**,
+through $\theta$ (the exposed fraction of the share axis) and through
+$\lfloor E_{\rm photon}/E_{\rm gap}\rfloor$ (how many real sub-gap excitations the pot can
+pay for). One Si SPAD pair, one deliberately *asymmetric* splitter (§8.2 protects symmetric
+ones), heralded single photons at two wavelengths straddling 553 nm. Standard QM: the same
+ratio, and $g^{(2)}(0) = 0$, at both. The exposed reading: a bright-favoured shift that
+grows with $1-\theta$, and below 553 nm an excess-coincidence channel from the open
+two-pair possibility. Every downstream variable — avalanche, quench, readout — is held
+fixed by construction. This is also the honest answer to the selection-bias flag in the
+previous section: the test lands on the paper's own detector family, not on the one it
+would prefer to exclude.
+
+**What this says about the recording-time-frame hypothesis.** The DK-paper taxonomy's slow
+recorders (cloud chamber, emulsion) differ from a SPAD in *record structure* — many
+vertices, or $k \approx 3$–4 captures per grain within a memory time — not in where first
+irreversibility sits. Under the fixed definition, every $k = 1$ detector's recording clock
+(avalanche ns, hotspot ps, CCD readout ms, developer minutes) is downstream of first
+irreversibility and, by Paper 3's own result that Stage 3 contributes no statistics,
+cannot move the Born weights. A precipitous-versus-slow *recorder* comparison at $k = 1$ is
+therefore predicted null on both readings. The live variable is the gap ratio, not the
+readout time.
+
+### Uncertainty — stated prominently
+
+1. **The exposed-leg time uses §6.1's continuum diffusive scaling at a leg of ~1 exchange
+   step** (0.8 log-units at 500 nm). That is exactly where E-15 says the scaling is least
+   trustworthy; in the discrete-exchange simulations one step moves a share by at most 25%
+   of the smaller holding, so the leader's climb from 0.45 to 1 takes several steps, not
+   one. That correction lengthens $t_{\rm exp}$ and worsens silicon's verdict. A
+   discrete-exchange run with a threshold-gated commit channel would replace this
+   estimate with a curve; see open items.
+2. **Silicon's first-irreversibility clock, 10 fs–1 ps, is literature-typical and spans
+   two orders**; the verdict sits inside that span. The device review's own placement of
+   "seed commitment" at field-driven separation (~1 ps) is the slow end and the kind end.
+3. **Whether a partial share above $\theta$ can form a real pair at all is the
+   share-ontology question** — the same unpinned referent as E-15 and E-18. If shares are
+   off-shell amplitude bookkeeping that becomes energy only at $s = 1$ (Theorem 2's picture
+   for class (i), extended to class (ii) by P4(a)), then there is no exposed channel, no
+   independent commit clock, and the top rung is not a timescale at all but the premise
+   P4(a). On that reading silicon *and* NbN are both first-passage detectors and the
+   SPAD/SNSPD prediction dissolves. The paper cannot have it both ways: §6.1's "gap protects
+   the stakes" argument presupposes that shares are energies which would decay if they could.
+4. InGaAs was run with silicon's $\Gamma$ and commit clock, flagged in the script. NbN
+   inputs are E-16's, unchanged, including uncertainty #1 ($E_{\rm gap}$ = 1.5 meV is the
+   single-particle gap; $2\Delta$ would halve the ratio and change nothing above).
+5. The claim that routine asymmetric-split SPAD data bound the deviation at the percent
+   level is from model knowledge. A citation is owed before it is used as a constraint.
 
 ---
 
@@ -353,12 +526,24 @@ requirement self-evident and largely discharge E-14 editorially.
    re-pinning. `adler_born_two_channel` has a time-dependent envelope but a *shared*
    raised-cosine one, deliberately common across channels; a spatially extended packet would
    give each site its own local envelope, which is the untested case.
-2. **OWED — recompute the silicon ladder under the first-irreversibility definition of
-   commitment** (E-16, uncertainty #2). §6.1's ns–$\mu$s is the avalanche-and-quench cycle,
-   not the point of no return. If the true figure is ps–ns, §6.1's "two to four orders to
-   spare at every rung" needs restating for its own detector, and the safe case is not as
-   safe as the paper says. **This is the item most likely to be quietly skipped, because it
-   only costs the theory** — flagged here for that reason.
+2. ~~**OWED — recompute the silicon ladder under the first-irreversibility definition of
+   commitment** (E-16, uncertainty #2).~~ **Discharged 2026-09-02** — see "E-16 silicon
+   recomputed." Result: silicon is marginal, not safe; the SNSPD stays inverted; §6.1's top
+   rung is mis-specified for every detector. Three new items replace it:
+   - **2a. Discrete-exchange run with a threshold-gated commit channel.** Extend
+     `g3_drain_tests/theorem5_check.py`: commitment can fire only at sites with
+     $s_i > \theta$, at rate $\propto e_i$ (Theorem 5) and, separately, Arrhenius; sweep
+     $\theta \in \{0.37, 0.45, 0.59, 0.72, 0.90, 0.94\}$ and the commit hazard across the
+     marginal range $t_{\rm exp}/\tau_{\rm commit} = 10^{-2}$–$10^{1}$. This replaces the
+     analytic instant-commit bound and the ~1-step diffusive leg estimate (uncertainty #1)
+     with a curve, and gives the wavelength-graded prediction its magnitude.
+   - **2b. Literature check, owed before use:** asymmetric-split Born-ratio and $g^{(2)}(0)$
+     measurements with Si SPADs below 553 nm (where the two-pair channel is open). The
+     percent-level bound cited above is from model knowledge.
+   - ~~**2c. §6.1 and §2 restatement**~~ **Done 2026-09-02 ([P1] v0.8; propagated to [P2], [P3]).** Was: per the disposition: $\theta$ explicit; "two to four
+     orders at every rung" withdrawn or re-derived on the exposed-leg accounting; the
+     sub-gap-final-states sentence qualified to $s_i < \theta$; P4(a) stated as a premise
+     about the quantum wherever $E_{\rm photon} > 2E_{\rm gap}$.
 3. **Small-$N$ whiteness / frozen speckle** — see above. The two-site knife-edge runs sit
    at $\approx 1$ correlation time of game duration, i.e. in the static-speckle regime, while
    assuming white noise. Needs a check of which conclusions depend on $N=2$, and ideally a
@@ -366,4 +551,30 @@ requirement self-evident and largely discharge E-14 editorially.
    knife-edge results are not artefacts of the whiteness assumption at small $N$.
 3. **EQUATIONS.md §4's Bell account vs [P1] §7's** — never reconciled; flagged in the E-1 fix
    as open rather than asserted equivalent.
-4. **The $2\ln^2\!N$ robustness result** — derived here, not stated in [P1].
+4. ~~**The $2\ln^2\!N$ robustness result** — derived here, not stated in [P1].~~ Stated in [P1] §6.1 (v0.8), 2026-09-02.
+5. **Reading B and a v0.9 of [P1] — awaiting explicit go-ahead.** JB's disposition
+   2026-09-02, in session: "I guess B is the only choice." Grounds: the 576-state
+   two-absorber model (`first_mark_two_absorber/`) enforces B by construction — the
+   absorber's reversible excitation carries the full quantum, $E_e = \hbar\omega$, and what
+   is split between arms is amplitude, so reading A is not representable in it; and QED
+   agrees at the vertex (absorption is single-vertex and whole-quantum; sub-threshold
+   excitation is reactive polarization, Theorem 2's slaved phase). Recorded as a *choice*,
+   not a result: B is forced by writing a QED-like Hamiltonian, and an SED-like substrate
+   with continuous energy accumulation and threshold firing would keep reading A, at the
+   price of producing the whole-quantum vertex as emergent. Both readings pay the same
+   nonlocality (P5). **What B costs, for the record:** no $\theta$, no exposed window;
+   commitment $\propto |A_i|^2$ from any site at the golden-rule rate; Theorem 4 gives Born at
+   any commit speed, so the exchange game is statistically inert and the Born weight
+   enters through the linear rate law (P0+P1, as v0.6 already conceded); the SPAD/SNSPD
+   and gap-ratio predictions (E-16, §8.6(vii)) dissolve; E-15/E-18/E-16's three unpinned
+   terms are answered at once (share = local $|A|^2$; region = wherever amplitude is
+   nonzero; discretisation = of the golden-rule race). What survives is the actualization
+   question — which site's clock fires first, in one world, at the right rates — which is
+   the SPAD review's owed "first actual mark" law and the question `adler_born_two_channel/`
+   is built to ask (do noisy Adler clocks at amplitude-linear coupling give first-commitment
+   frequencies $\propto$ coupling$^2$?). It has produced no number yet. **If B is adopted, [P1]
+   needs a v0.9:** §6.1 and §5.4 restated without $\theta$ and the exposed window, Table 1's
+   v0.8 row retired, §8.6(vii) withdrawn, and the claim boundary moved from "the game
+   realizes the Born measure" to "the game actualizes one site among golden-rule-weighted
+   candidates." Not applied: it changes the claim boundary, and the v0.8 corrections were
+   made within reading A because that is the reading §6.1 was written in.

@@ -318,7 +318,12 @@ Stern–Gerlach recombination [MCI §3.2]. Selection is the commit: the noise-dr
 exchange game among the captured shares, where the Born weights are set [P1]; and
 registration is the reservoir-powered closure — charge-triggered, energy-blind,
 equivariant by design: it copies whatever selection committed and contributes no
-statistics of its own [MCI §3.1]. The stage boundaries are physical, not narrative:
+statistics of its own [MCI §3.1]. Where the first irreversibility sits is a
+physical question with a detector-specific answer, and [P1 v0.8 §6.1] places it at the
+end of selection — when an exposed site's holding converts to a real excitation, in a
+semiconductor the interband vertex and thermalisation at 10 fs–1 ps — not in the
+amplification, which writes the record but cannot un-write a thermalised carrier. The
+stage boundaries are physical, not narrative:
 formally the two clauses of the cut condition (an absorptive channel open; the bath
 lock engaged — $\mathrm{Im}\,W \neq 0$, $\Gamma_{\rm cap} > 0$ [MCI §3.5], equivalently
 the dressed Dirac mass pole leaving the real axis [MCI §3.6]); operationally the
@@ -335,6 +340,29 @@ Per atom and per register, one clock; its **rate** is universal (a species const
 by mass or transition energy), its **position on the face** is random across atoms.
 That one sentence — *same rate, random position* — is the dictionary's core entry, and
 premise P3(a) of the selection companion is its formal statement.
+
+*(Interpretive, note-flagged; sponsor-originated, 2026-09-02.)* The core entry already
+binds three quantities, and the binding deserves its name before the hands are
+introduced. A hand's *rate* is an energy, $E = \hbar\,d\varphi/dt$; its *position* is
+the informational variable — the thing a record can capture, and the thing thermal
+matter leaves random; the hand itself is time. Three bounds make the binding
+quantitative, and none of them is an identity. Time–energy uncertainty: a hand cannot be
+read to $\Delta t$ without an energy spread $\hbar/\Delta t$, which [P1 §6.1] uses when
+it saturates capture at $1/\omega$ for a massless quantum. Margolus–Levitin: the energy
+sets the maximum rate, $2E/\pi\hbar$, at which a hand can pass between distinguishable
+positions — energy is the clock rate of information. Landauer: erasing one position
+costs $k_BT\ln 2$. So $\hbar$ and $k_BT$ are the two exchange rates, and there is no
+third; one quantum can carry unboundedly many bits and one bit can ride on arbitrarily
+little energy, which is why the three are *bound* and not *one*. The framework converts
+between them at two definite places. At capture, the incident wave's phase history —
+position information — is not destroyed but converted into the zero-mean noise that
+drives selection (the diffused hologram, §4.3; [P1 §4]). At registration, dissipated
+energy, many orders above $k_BT\ln 2$, buys one record. Between the two conversions
+sits the game. And the three come apart at exactly one place: energy is conserved
+through registration while position information is not — the hour hand's monotonicity
+(§4.3, §4.5) is supplied by the very locks that lose it. That is the cut, stated in
+information language; the measurement companion's criterion — the cut is where
+in-principle recoverability ends [P2 §4.1] — is the same statement.
 
 The full dial has three hands. The **hour hand** is universal, foliation time — the
 irreversible-lock counter, owned by the substrate and not by any atom, frozen during
@@ -454,7 +482,13 @@ Two numbers span the detector zoo along the single mechanism: the per-event **ca
 strength** and the **commit threshold** $k$ — how many captures must accumulate at one
 site within its memory time before selection commits [MCI §5]. The Bell/photon
 detector is the projective limit ($k = 1$: one quantum, one capture, one commit, one
-click — the only detector class for which per-event Born claims are properly made).
+click — the only detector class for which per-event Born claims are properly made). Its
+reversible window closes at the surface event, not at the avalanche: for a semiconductor
+absorber the interband vertex and thermalisation end recoverability within 10 fs–1 ps,
+and [P1 v0.8 §6.1] finds that window *marginal* against the selection game's final leg in
+silicon and inverted in superconducting absorbers — so the recording clock downstream
+(avalanche, hotspot, readout) is not the variable that can move the Born weights; the
+photon-to-gap ratio is.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets
@@ -507,9 +541,12 @@ $\eta = 1/\sqrt2$ — which converts existing experiments into measurements of $
 the substrate's update mechanism is, it is near-perfect at terrestrial scales). And
 **no-signaling as a theorem**: the inverted-Gisin result derives commit-rate linearity
 — [P1]'s Theorem 5, hence marginal invariance — from the premises, rather than imposing
-it as a constraint (v0.7 of that paper demotes Theorem 5 from the operative mechanism for
-continuum absorbers to a robustness result, the outcome in its own timescale regime being
-fixed by first passage before any commit-rate law acts; the inverted-Gisin reading is a
+it as a constraint (v0.7 of that paper demoted Theorem 5 from the operative mechanism for
+continuum absorbers to a robustness result; v0.8 withdraws that demotion in turn, its
+corrected ladder placing commitment at first irreversibility and finding the separation
+marginal in silicon and inverted in superconducting absorbers, so Theorem 5's linearity —
+that of the first-irreversibility vertex, not of the downstream cascade — carries weight
+again; the inverted-Gisin reading is a
 consistency result, not a derivation — round 2, items L3-6 and round 1, item 9); within this framework, the impossibility of exploiting the nonlocal sector
 is *emergent* [P1 §7]. A controlled measurement of $\eta$ itself (deliberate
 cross-station injection, with its computable, angle-independent leak law) is part of
