@@ -1168,8 +1168,15 @@ power.
    of about 1.4× the allowance, no longer the statistical floor. The stop rule halted S2–S4;
    the $dt/64$ stage that would test whether the bias falls with the timestep (the option
    table's $\sqrt{\text{factor}}$ projection would put it under the allowance) can run
-   only on a further override. M6, the $dt/16$ replay: **all four probability rows fit**,
-   but the ladder gate fires twice — the added-resets mean is 14.1 ± 2.5 against the cap of
+   only on a further override; the bias falls by about 1.55× per halving of the step, the
+   $\sqrt{dt}$ rate ticket 04 asserted, and the package's own `projected_bound` rule puts
+   the worst stationary row at ≈ 0.0045 at $dt/256$, under the allowance — a projection,
+   not evidence. The three stationary time rows already fit at $dt/16$ (0.5–0.8×). Of S1's
+   27.6-minute construction phase, 25.7 minutes went to the package's O(walkers²)
+   identity check, a finding for the package owner. M6, the $dt/16$ replay: **all four
+   probability rows fit, but trivially** — they are exactly zero with zero standard error,
+   no shift event in 480 audited histories, uninformative below about 0.002 rather than
+   resolved; and the ladder gate fires twice — the added-resets mean is 14.1 ± 2.5 against the cap of
    3.0 frozen for the reference granularity (the count has no continuum limit and grows
    with the step count), and the p20 commit-time shift is **not converging**: 0.0055 at
    $4\,dt$ against 0.0283 at $dt$, growing under refinement past the whole-ladder allowance
