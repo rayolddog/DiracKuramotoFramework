@@ -828,10 +828,16 @@ labelled positive control, the inverse-coupling dwell, was run afterwards at JB'
 amplitude-neutral and the scale-similar criterion and is reached by neither — and a
 tuned dwell $\propto K^{-1/4}$, run as a demonstration, reaches it exactly ($p = 2.00$
 [1.84, 2.16]), which quantifies how tuned a Born-producing criterion is and is not a
-mechanism. It is not a falsification of the framework: the lock-tolerance and spectral
-sensitivities and the frozen production budget remain unrun, and a commitment rule that
-carried a quarter-power amplitude dependence for a physical reason would do what the
-fixed-dwell one does not. Full write-up with the per-angle tables in
+mechanism. The lock-tolerance and spectral sensitivities were then run and the missing
+half power computed (open item 6(b)): the race scales as tongue width times the square
+root of the rate because each clock's entry is a near-deterministic slide from its
+starting phase and the fastest of $N$ such slides gains only logarithmically in $N$; a
+Born-producing race would need memoryless per-site commitment with hazard proportional
+to the local relaxation rate, so that hazards add across the tongue — which, read the
+other way, is the golden rule reading B already imports. It is not a falsification of the
+framework: the frozen production budget remains unrun, and a substrate rule that made
+per-site commitment a Poisson process with that rate would do what the deterministic
+slide does not. Full write-up with the per-angle tables in
 `adler_two_channel_exploratory/RESULTS.md`.
 
 ### Spectral controls (Experiment 7; `spectral_driver.py`, `spectral_analysis.py`, 2026-09-02)
@@ -870,8 +876,10 @@ direct curve is a threshold; the rate-sum race, which carries the same threshold
 band-to-spread candidate for it (a locked clock's in-band probability going as $K^{1/2}$
 through its noise spread $\sqrt{D/r}$) was recorded as a prediction and then tested by the
 tolerance sweep, which did not support it (open item 6(b)): the half power survives a
-band wide enough to remove it. Its source is open; the entry-time order statistics over
-the eligible clocks and noise-assisted entry are the remaining candidates.
+band wide enough to remove it. Its source was then computed (open item 6(b)): the entry-time order
+statistics of near-deterministic Adler slides from random phases, which gain only
+logarithmically in the number of eligible clocks where a Poisson race would gain a full
+power.
 
 ---
 
@@ -955,10 +963,25 @@ the eligible clocks and noise-assisted entry are the remaining candidates.
    interval, at a band about three times the noise spread where the in-band probability
    should have saturated. Half the prediction held and was confounded; half failed. **The
    band-to-spread reading of the half power is not supported.** It survives a band wide
-   enough to remove it, so it lives elsewhere — candidates: the entry-time order statistics
-   over the eligible clocks, or noise-assisted entry (the exponent rose with noise
-   strength, 1.38 → 1.56 → 1.66). Neither computed — and the
-   fixed-area pulse sweep; (c) ~~the **spectral controls** (Gaussian, Lorentzian, structured
+   enough to remove it, so it lives elsewhere. **Computed 2026-09-02 at JB's request
+   (`entry_time_order_statistics.py`): it is the entry-time order statistics.** The
+   deterministic skeleton — the package's drift and envelope, frozen grid, band and dwell,
+   uniform random initial phases, *no noise* — gives $p = 1.52$ [1.51, 1.53] against the
+   noisy race's 1.56 [1.44, 1.69]. Decomposition: a single central clock per channel,
+   whose entry time is $h(\theta_0)/K$ in closed form, gives 1.13 (the rate's
+   contribution is one power, sharpened by the spread of $\ln h$); the other fifteen
+   clocks add only $\approx 0.4$, because the fastest of $N$ near-deterministic slides is
+   set by the closest starting phase, an order statistic that gains logarithmically in $N$
+   (the chance some clock starts inside the band is $1-(1-\varepsilon/\pi)^N$: 0.21 at
+   $N=2$, 0.69 at $N=10$, matching the run), where a Poisson race would gain a full power.
+   So "width times root rate" is $K^{1.1}$ from the slide times $K^{0.4}$ from the order
+   statistic. **What a Born-producing race would need:** memoryless per-clock commitment,
+   an exponential waiting time with hazard proportional to the local relaxation rate, so
+   that hazards add across the tongue and width contributes its full power. The Adler
+   slide is the opposite of memoryless. Read the other way, that requirement is the golden
+   rule — a hazard linear in the site's coupling squared — i.e. what reading B already
+   imports. Noise-assisted entry is then a small correction (1.52 → 1.56), not the source —
+   and the fixed-area pulse sweep; (c) ~~the **spectral controls** (Gaussian, Lorentzian, structured
    densities), which test whether the rate-weighted flux is what drives the events at all~~
    **Run 2026-09-02 (see "Spectral controls" below): the direct events move with the
    spectrum in the same order as both analytic comparators, so the mechanism is spectrally

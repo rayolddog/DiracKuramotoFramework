@@ -269,6 +269,55 @@ computed. Across the whole criterion space now swept — dwell, tolerance, noise
 population, timestep — the frozen-criterion exponent stays between 1.4 and 1.8, and it
 reaches 2 only with an amplitude-dependent dwell put in by hand.
 
+## The half power, found: entry-time order statistics (`entry_time_order_statistics.py`)
+
+Strip the race to its deterministic skeleton — the package's own drift and raised-cosine
+envelope, the frozen grid, band (0.35 rad, contracting side) and dwell (0.5), uniform
+random initial phases, **no noise** — and ask what exponent the clocks' entry times alone
+produce. Twenty thousand trials per cell, nine angles.
+
+| skeleton | p [95 %] | note |
+|---|---|---|
+| one central clock per channel, constant K | 1.13 [1.12, 1.14] | closed form t = h(θ₀)/K, h = ln(tan(\|θ₀\|/2)/tan(ε/2)) for \|θ₀\| > ε, else 0; the closed form alone gives 1.134 |
+| one central clock per channel, pulsed | 1.12 [1.11, 1.14] | |
+| full 16-clock grid, constant K | 1.46 [1.45, 1.48] | 28 % ties: clocks starting inside the band commit simultaneously at constant K |
+| **full grid, raised-cosine pulse — the race's geometry** | **1.52 [1.51, 1.53]** | ties 0.7 %, unresolved 4 of 180 000 |
+| the noisy race (main sweep) | 1.56 [1.44, 1.69] | |
+
+**The deterministic skeleton reproduces the race.** Noise moves the exponent by at most a
+few hundredths. The decomposition:
+
+- **A single clock's entry-time race gives 1.13, not 1.** One clock per channel, entry
+  time proportional to 1/K times a random factor h(θ₀) whose log has standard deviation
+  0.84; the two-channel outcome is the probability that h_A/K_A < h_B/K_B, a sigmoid in
+  the log of the coupling ratio whose slope, in Born form, is 1.13. This is the "rate"
+  contribution.
+- **Fifteen more clocks add about 0.4, not 1.** In a Poisson race the eligible clocks'
+  rates add, so the width contributes a full power and the total is 2. Here each clock's
+  entry is a near-deterministic slide from its starting phase, and the fastest of N such
+  slides is set by the *closest* starting phase, an order statistic that improves only
+  logarithmically in N: the probability that some eligible clock starts inside the band
+  is 1 − (1 − ε/π)^N, which is 0.21 at N = 2 and 0.69 at N = 10 (exactly the "inside"
+  fractions the constant-K run records), and the time otherwise goes as
+  (1/K) ln(tan(π/2N)/tan(ε/2)). Over the swept range (2 to 10 eligible clocks) that
+  saturating gain is worth about K^0.4.
+
+So the race scales as K^1.1 from the slide times K^0.4 from the order statistic, which is
+the "width times root rate" of the spectral controls stated mechanically. The half power
+is not a half power in the physics; it is a full power of rate that a single slide already
+carries, plus a logarithmic gain from width where a Poisson race would have a linear one.
+
+**What this says a Born-producing race would need.** For the tongue's rate-weighted flux
+to be the outcome frequency — width times rate, the semicircle, coupling squared — each
+eligible clock's commitment would have to be *memoryless*: an exponential waiting time
+with hazard proportional to its relaxation rate, so that the hazards add across the
+tongue. The Adler slide from a random phase is the opposite of memoryless. That is a
+precise statement of what the Dirac–Kuramoto substrate would have to supply and does not,
+as specified: a per-site commitment that is a Poisson process with rate proportional to
+the local locking rate. It is also, read the other way, the golden rule again — a hazard
+linear in the site's coupling squared — which is what reading B of Paper 1 already
+imports.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

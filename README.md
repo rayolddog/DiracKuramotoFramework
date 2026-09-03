@@ -214,8 +214,12 @@ and it stands open.
   not a mechanism. The race as specified does not supply the law, and Born sits between
   its two natural criteria. The tolerance and spectral sensitivities leave the exponent
   between 1.6 and 1.8 and show the race scaling as tongue width times the square root of
-  the rate, with the source of the missing half power open; the production budget remains
-  unrun.
+  the rate. The missing half power is entry-time order statistics: the race's
+  deterministic skeleton with no noise reproduces the exponent, because the fastest of N
+  near-deterministic Adler slides gains only logarithmically in N where a Poisson race
+  would gain a full power. A Born-producing race would need memoryless per-site
+  commitment with hazard proportional to the local locking rate, which is the golden
+  rule in the substrate's language. The production budget remains unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

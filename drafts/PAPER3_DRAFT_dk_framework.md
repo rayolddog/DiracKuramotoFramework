@@ -508,8 +508,13 @@ not a mechanism, and a lead for a rule that would carry that dependence for a ph
 reason. The tolerance and spectral sensitivities, run at the same budget, leave the
 exponent between 1.6 and 1.8 across the lock band and move it with the detuning density
 in the order the analytic comparators predict, half a power above the eligible-count
-exponent: the race scales as tongue width times the square root of the rate, and the
-source of the missing half is open. Production remains unrun.
+exponent: the race scales as tongue width times the square root of the rate. The missing
+half was then computed: the race's deterministic skeleton, with no noise, reproduces the
+exponent, because each clock's entry is a near-deterministic Adler slide from its random
+starting phase and the fastest of N such slides gains only logarithmically in N, where a
+Poisson race would gain a full power. A Born-producing race needs memoryless per-site
+commitment with hazard proportional to the local relaxation rate — the golden rule in
+this substrate's language. Production remains unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets
