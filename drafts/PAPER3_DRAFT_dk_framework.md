@@ -505,7 +505,11 @@ to an exponent of 3.8 [3.5, 4.2]: Born lies between the amplitude-neutral criter
 the scale-similar one and is hit by neither, while a tuned dwell scaling as the inverse
 quarter power of the coupling hits it exactly (2.00 [1.84, 2.16]) — a fitted criterion,
 not a mechanism, and a lead for a rule that would carry that dependence for a physical
-reason. The tolerance and spectral sensitivities and production remain unrun.
+reason. The tolerance and spectral sensitivities, run at the same budget, leave the
+exponent between 1.6 and 1.8 across the lock band and move it with the detuning density
+in the order the analytic comparators predict, half a power above the eligible-count
+exponent: the race scales as tongue width times the square root of the rate, and the
+source of the missing half is open. Production remains unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets

@@ -123,12 +123,13 @@ def main():
     ap.add_argument("--K", type=float, default=2.0)
     ap.add_argument("--angles", default="10,20,30,40,45,50,60,70,80")
     ap.add_argument("--out", default=None, help="CSV path; default results_<tag>_N<N>_dt<dtexp>.csv")
+    ap.add_argument("--half-width", type=float, default=None, help="grid support used by the runs (default 3.0)")
     a = ap.parse_args()
     angles = [int(x) for x in a.angles.split(",")]
     here = os.path.dirname(os.path.abspath(__file__))
     out = a.out or os.path.join(here, f"results_{a.tag}_N{a.N}_dt{a.dtexp}.csv")
 
-    grid = analytic.FlatGrid(PHYSICS["half_width"], a.N)
+    grid = analytic.FlatGrid(PHYSICS["half_width"] if a.half_width is None else a.half_width, a.N)
     rows, cells = [], []
     gates = set()
     for deg in angles:

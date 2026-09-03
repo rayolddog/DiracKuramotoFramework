@@ -63,15 +63,19 @@ def channel_coupling(K, deg, chan):
     return K * math.cos(phi) if chan == "A" else K * math.sin(phi)
 
 
-def build_config(name, n, dtexp, trials, K_chan, dwell=None, diffusion=None, pulse=None):
+def build_config(name, n, dtexp, trials, K_chan, dwell=None, diffusion=None, pulse=None,
+                 tolerance=None, half_width=None):
     """Sensitivity overrides (Experiments 5 and 6) change one physical input at a time;
-    the fixed dwell stays the same for both channels and every amplitude."""
+    the fixed dwell stays the same for both channels and every amplitude. ``half_width``
+    widens the support (at the same spacing, use n proportional to it) for sweeps whose
+    couplings exceed the frozen +-3 support, e.g. the fixed-area duration sweep."""
     return RawEventConfig(
-        grid=RawClockGrid(half_width=PHYSICS["half_width"], n_points=n),
+        grid=RawClockGrid(half_width=PHYSICS["half_width"] if half_width is None else half_width,
+                          n_points=n),
         peak_coupling=K_chan,
         pulse_duration=PHYSICS["pulse_duration"] if pulse is None else pulse,
         phase_diffusion=PHYSICS["phase_diffusion"] if diffusion is None else diffusion,
-        lock_tolerance=PHYSICS["lock_tolerance"],
+        lock_tolerance=PHYSICS["lock_tolerance"] if tolerance is None else tolerance,
         dwell_time=PHYSICS["dwell_time"] if dwell is None else dwell,
         timestep=2.0 ** (-dtexp),
         trials=trials,
@@ -109,6 +113,9 @@ def main():
     ap.add_argument("--dwell-ref", type=float, default=math.sqrt(2.0),
                     help="coupling at which the scaled dwell equals dwell0 (default sqrt 2 = the 45-degree coupling)")
     ap.add_argument("--dwell-alpha", type=float, default=1.0, help="exponent for --dwell-mode power")
+    ap.add_argument("--tolerance", type=float, default=None, help="sensitivity: lock tolerance in rad (default 0.35)")
+    ap.add_argument("--half-width", type=float, default=None,
+                    help="grid support half-width (default 3.0); keep n_points/half_width fixed to keep the spacing")
     a = ap.parse_args()
 
     angles = [int(x) for x in a.angles.split(",")]
@@ -128,7 +135,8 @@ def main():
             dwell = dwell0 * (a.dwell_ref / K_chan) ** a.dwell_alpha
         rec = dict(run=name, chan=ch, deg=deg, K_chan=K_chan, N=a.N,
                    timestep=2.0 ** (-a.dtexp), trials=a.trials,
-                   dwell=dwell, dwell_mode=a.dwell_mode, diffusion=a.diffusion, pulse=a.pulse)
+                   dwell=dwell, dwell_mode=a.dwell_mode, diffusion=a.diffusion, pulse=a.pulse,
+                   tolerance=a.tolerance, half_width=a.half_width)
         if closed(name):
             rec["status"] = "exists"
             print(json.dumps(rec), flush=True)
@@ -138,7 +146,8 @@ def main():
             print(json.dumps(rec), flush=True)
             continue
         cfg = build_config(name, a.N, a.dtexp, a.trials, K_chan,
-                           dwell=dwell, diffusion=a.diffusion, pulse=a.pulse)
+                           dwell=dwell, diffusion=a.diffusion, pulse=a.pulse,
+                           tolerance=a.tolerance, half_width=a.half_width)
         t0 = time.perf_counter()
         rep = raw_runner.write_raw_run(cfg, name)
         rec["seconds"] = round(time.perf_counter() - t0, 1)

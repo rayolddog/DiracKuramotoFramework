@@ -514,9 +514,11 @@ carries more than $\theta$ of the intensity (any silicon beamsplitter test more 
 than about 45/55 at 500 nm), and not many-site patterns such as a diffraction fringe.
 This sharpens rather than weakens the v0.9 grounds: the two-port asymmetric-split data
 that would show the effect are exactly the data item 2b found unpublished below 553 nm.
-All four gated linear rows are now in and null. The five Arrhenius rows were still
-running at this update (about eight minutes per run); the script is seeded and
-`results_threshold_gated_commit.txt` is written incrementally.
+All four gated linear rows are now in and null. Arrhenius rows ($\beta = 10$) as they
+completed: $\theta = 0$: $+0.003$, $-0.010$, $+0.000$; $\theta = 0.02$: $-0.004$, $+0.003$,
+$-0.005$; $\theta = 0.45$: $+0.002$, $-0.003$, $-0.001$ — null as well. The $\theta = 0.72$ and
+$0.90$ Arrhenius rows were still running at this update (about eight minutes per run);
+the script is seeded and `results_threshold_gated_commit.txt` is written incrementally.
 
 **Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
 physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
@@ -832,6 +834,45 @@ carried a quarter-power amplitude dependence for a physical reason would do what
 fixed-dwell one does not. Full write-up with the per-angle tables in
 `adler_two_channel_exploratory/RESULTS.md`.
 
+### Spectral controls (Experiment 7; `spectral_driver.py`, `spectral_analysis.py`, 2026-09-02)
+
+The raw boundary admits only a flat grid, so the densities were realised through the
+package's public factories (a clock path at any detuning, a declared population, the
+validated race) with the commit times recorded in exploratory CSVs rather than the closed
+ledger. Five densities of 16 clocks per channel, five angles, 200 trials per cell; the
+flat case re-run through the same path as the reference. Comparators computed on the same
+detunings the race used.
+
+| spectrum | direct $p$ [95%] | rate-sum exponent | eligible-count exponent | dev. Born | dev. rate-sum | dev. width | dev. linear |
+|---|---|---|---|---|---|---|---|
+| flat | 1.51 [1.32, 1.71] | 1.91 | 0.97 | 22.2 | 17.0 | 45.5 | 34.4 |
+| Gaussian ($\sigma = 1$) | 1.29 [1.13, 1.47] | 1.82 | 0.81 | 51.8 | 26.9 | 47.9 | 14.4 |
+| Lorentzian ($\gamma = 0.75$) | 1.09 [0.95, 1.25] | 1.69 | 0.69 | 101.0 | 40.4 | 51.6 | 4.7 |
+| central peak | 1.01 [0.86, 1.16] | 1.48 | 0.36 | 131.5 | 39.2 | 85.5 | 4.6 |
+| central notch | 3.01 [2.62, 3.45] | 2.46 | 1.14 | 36.5 | **2.0** | 47.5 | 196.0 |
+
+(5 cells per spectrum; deviances of fixed comparators are $\chi^2$ with 5 dof.)
+
+**Reading.** (i) The plan's falsification — "outcome frequencies remain exactly quadratic
+while the analytic flux changes strongly" — did not happen: the direct exponent moves
+with the spectrum, monotonically and in the same order as both the rate-sum and the
+eligible-count exponents. The events are driven by the spectrum the tongue sweeps
+through; in the plan's matrix, "supports the spectral-flux interpretation but creates an
+empirical detector-spectrum burden." (ii) On the four spectra without a threshold, the
+direct exponent is not the rate-sum exponent (one power above the width) but about **one
+half power above the eligible-count exponent**: 0.97 + ½ = 1.47 against 1.51; 0.81 + ½ =
+1.31 against 1.29; 0.69 + ½ = 1.19 against 1.09; 0.36 + ½ = 0.86 against 1.01. The direct
+race scales as *width times the square root of the rate*, not width times rate. (iii) The
+notch is the exception that explains itself: with an empty centre no clock is eligible
+until $K$ exceeds 0.56, so at 10° and 80° the weak channel cannot commit at all and the
+direct curve is a threshold; the rate-sum race, which carries the same threshold, fits it
+(deviance 2.0) while Born does not (36.5). (iv) The missing half power is the one the tuned dwell supplied by hand. The
+band-to-spread candidate for it (a locked clock's in-band probability going as $K^{1/2}$
+through its noise spread $\sqrt{D/r}$) was recorded as a prediction and then tested by the
+tolerance sweep, which did not support it (open item 6(b)): the half power survives a
+band wide enough to remove it. Its source is open; the entry-time order statistics over
+the eligible clocks and noise-assisted entry are the remaining candidates.
+
 ---
 
 ## Open items
@@ -899,9 +940,30 @@ fixed-dwell one does not. Full write-up with the per-angle tables in
    $K^{-1/4}$ for a reason of its own would produce Born), not as support for this one.
    The $dt/2$ check's 45° outlier (0.385 on 200 trials) re-ran at 0.525 [0.469, 0.581] on
    300: a fluctuation. (b) the
-   **lock-tolerance** sensitivity (the one criterion knob not yet turned) and the
-   fixed-area pulse sweep; (c) the **spectral controls** (Gaussian, Lorentzian, structured
-   densities), which test whether the rate-weighted flux is what drives the events at all;
+   **lock-tolerance** sensitivity (the one criterion knob not yet turned) — **prediction
+   fixed before the result was opened (2026-09-02; the 0.175 and 0.70 rad sweeps were
+   running):** a locked clock's stationary phase spread under noise is $\sqrt{D/r}$, about
+   0.24 rad at the central contraction rate, so its probability of sitting inside a fixed
+   band scales as $K^{1/2}$ while the band is narrower than the spread and saturates once
+   it is wider. If that is where the race's missing half power lives, the exponent should
+   **rise** above 1.56 at tolerance 0.175 and **fall** toward the fastest-clock value near
+   1.4 at 0.70; no movement, or movement the other way, kills the lead. **Scored
+   (2026-09-02, nine angles, 200 trials):** tolerance 0.175 gives $p = 1.75$ [1.56, 1.96]
+   with **25% of trials unresolved** — a rise, but confounded with commitment becoming
+   harder, the same signature as long dwell and short pulse; tolerance 0.70 gives
+   $p = 1.63$ [1.48, 1.80] with 0% unresolved — **no fall**, inside the frozen band's
+   interval, at a band about three times the noise spread where the in-band probability
+   should have saturated. Half the prediction held and was confounded; half failed. **The
+   band-to-spread reading of the half power is not supported.** It survives a band wide
+   enough to remove it, so it lives elsewhere — candidates: the entry-time order statistics
+   over the eligible clocks, or noise-assisted entry (the exponent rose with noise
+   strength, 1.38 → 1.56 → 1.66). Neither computed — and the
+   fixed-area pulse sweep; (c) ~~the **spectral controls** (Gaussian, Lorentzian, structured
+   densities), which test whether the rate-weighted flux is what drives the events at all~~
+   **Run 2026-09-02 (see "Spectral controls" below): the direct events move with the
+   spectrum in the same order as both analytic comparators, so the mechanism is spectrally
+   driven, and on every non-threshold spectrum the direct exponent sits about one half
+   power above the eligible-count exponent — the same missing half;**
    (d) the production question — the frozen ticket-07 budget is unmet, and the package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the

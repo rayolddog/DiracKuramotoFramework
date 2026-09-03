@@ -15,6 +15,18 @@ one-channel raw race in `adler_born_two_channel/`, without modifying that packag
   Born, strongest-wins, rate-sum race, width-only race). The only place the analytic
   prediction is imported.
 
+- `race_driver.py` also takes one-factor sensitivity overrides (`--dwell`, `--diffusion`,
+  `--pulse`, `--tolerance`) and two labelled amplitude-DEPENDENT controls that are never the
+  primary model: `--dwell-mode inverse` (the plan's positive control, dwell ∝ 1/K) and
+  `--dwell-mode power --dwell-alpha a` (a tuned interpolation, dwell ∝ K^−a).
+- `spectral_driver.py` / `spectral_analysis.py` — Experiment 7, the spectral controls
+  (flat, Gaussian, Lorentzian, central peak, central notch detuning densities). The raw
+  configuration boundary admits only a flat grid, so these build the population through
+  the public factories (`raw_one_clock_path` at chosen detunings, `PopulationIdentity`,
+  `ClockPopulation`, `race_one_channel`) and record commit times in their own CSVs under
+  `spectral_runs/` (gitignored). Those records are not the package's closed ledger and pass
+  no gate. Comparators are computed on the same detunings the race used.
+
 Why the pairing is the race: the plan's channels share the envelope and the grid but not
 noise or phases, and do not couple to each other, so "the earliest committing clock across
 both populations" is the pairwise minimum of two independent one-channel first-commitment

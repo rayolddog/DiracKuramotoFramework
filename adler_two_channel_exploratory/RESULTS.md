@@ -204,6 +204,71 @@ quantified. What it leaves open, and is worth saying: if some physical commitmen
 carried an effective K^−1/4 dependence for a reason of its own, this race would produce
 Born. That is a lead for a different rule, not support for this one.
 
+## Spectral controls — Experiment 7 (`spectral_driver.py`, `spectral_analysis.py`)
+
+The raw boundary admits only a flat grid, so these densities were realised through the
+package's public factories (`raw_one_clock_path` at chosen detunings, `PopulationIdentity`,
+`ClockPopulation`, `race_one_channel`) with commit times recorded in exploratory CSVs, not
+the closed ledger. Sixteen clocks per channel, five angles (10°, 30°, 45°, 60°, 80°), 200
+trials per cell, frozen criterion; the flat density re-run through the same path as the
+reference (`results_spectral_s1_N16_dt7.csv`). Comparators are computed on the same
+detunings the race used.
+
+| spectrum | detunings (positive half) | direct p [95 %] | rate-sum exp. | width exp. | dev. Born | dev. rate | dev. width | dev. linear |
+|---|---|---|---|---|---|---|---|---|
+| flat | 0.19, 0.56, 0.94, 1.31, 1.69, 2.06, 2.44, 2.81 | 1.51 [1.32, 1.71] | 1.91 | 0.97 | 22.2 | 17.0 | 45.5 | 34.4 |
+| Gaussian σ = 1 | 0.08, 0.24, 0.40, 0.58, 0.78, 1.01, 1.32, 1.86 | 1.29 [1.13, 1.47] | 1.82 | 0.81 | 51.8 | 26.9 | 47.9 | 14.4 |
+| Lorentzian γ = 0.75 | 0.07, 0.23, 0.40, 0.62, 0.91, 1.40, 2.47, 7.62 | 1.09 [0.95, 1.25] | 1.69 | 0.69 | 101.0 | 40.4 | 51.6 | 4.7 |
+| central peak | 0.10, 0.25, 0.30, 0.75, 1.25, 1.75, 2.25, 2.75 | 1.01 [0.86, 1.16] | 1.48 | 0.36 | 131.5 | 39.2 | 85.5 | 4.6 |
+| central notch | 0.56, 0.94, 1.31, 1.69, 2.06, 2.44, 2.60, 2.81 | 3.01 [2.62, 3.45] | 2.46 | 1.14 | 36.5 | **2.0** | 47.5 | 196.0 |
+
+Ties ≤ 1 %; unresolved 0 except the notch (≤ 3 %).
+
+**The direct exponent moves with the spectrum**, monotonically and in the same order as
+both analytic comparators. The plan's falsification, that the events stay quadratic while
+the flux changes, did not happen: the race is driven by the spectrum the tongue sweeps
+through. But it is not driven by the rate-weighted flux. On the four spectra without a
+threshold the direct exponent sits about one half power above the eligible-count
+exponent, not one full power: 0.97 + ½ = 1.47 (measured 1.51), 0.81 + ½ = 1.31 (1.29),
+0.69 + ½ = 1.19 (1.09), 0.36 + ½ = 0.86 (1.01). The race scales as **width times the
+square root of the rate**. The notch is the exception that explains itself: no clock is
+eligible until K exceeds 0.56, so the weak channel at 10° and 80° cannot commit at all and
+the direct curve is a threshold, which the rate-sum race carries too (deviance 2.0) and
+Born does not (36.5).
+
+That half power is the one the tuned dwell supplied by hand. One candidate for it was
+recorded as a prediction before the lock-tolerance numbers were opened: a locked clock's
+stationary phase spread is √(D/r), so its probability of sitting inside a fixed band goes
+as K^½ while the band is narrower than the spread and saturates once it is wider; the
+exponent should then rise at tolerance 0.175 and fall toward the fastest-clock value near
+1.4 at 0.70. The tolerance sweep scores that prediction next.
+
+## Lock tolerance — Experiment 5, the last criterion knob (`results_tol*_N16_dt7.csv`)
+
+Nine angles, 200 trials per cell, everything else at the frozen criterion.
+
+| tolerance (rad) | p [95 %] | Born dev. (9) | rate-sum dev. | linear dev. | unresolved | ties | P_A(45°) |
+|---|---|---|---|---|---|---|---|
+| 0.175 | 1.75 [1.56, 1.96] | 10.9 | 7.5 | 77.1 | **25.4 %** | 0.06 % | 0.513 |
+| 0.35 (frozen; main sweep, 300 trials) | 1.56 [1.44, 1.69] | 51.9 | 42.7 | 102.6 | 0.0 % | 0.5 % | 0.470 |
+| 0.70 | 1.63 [1.48, 1.80] | 23.5 | 19.5 | 78.5 | 0.0 % | 0.8 % | 0.508 |
+
+**Scoring the prediction.** The narrow band raised the exponent, as predicted — but it
+did so while leaving 25 % of trials uncommitted, the same signature as the long dwell and
+the short pulse, so the rise cannot be attributed to the band rather than to commitment
+becoming harder. The wide band did not lower the exponent: at 0.70 rad, about three
+times the noise spread, the in-band probability should be nearly K-independent and the
+half power should have gone; instead p stayed at 1.63, inside the frozen band's interval.
+**The band-to-spread reading of the half power is not supported.** The half power
+survives a band wide enough to remove it, so it lives elsewhere in the race — most likely
+in the entry-time order statistics over the eligible clocks (how the fastest of N clocks
+with random starting phases reaches the band), with noise-assisted entry a second
+candidate, since the exponent also rose with the noise strength (1.38 → 1.56 → 1.66) in a
+direction a simple "more spread, flatter curve" picture does not give. Neither has been
+computed. Across the whole criterion space now swept — dwell, tolerance, noise, pulse,
+population, timestep — the frozen-criterion exponent stays between 1.4 and 1.8, and it
+reaches 2 only with an amplitude-dependent dwell put in by hand.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

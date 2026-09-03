@@ -212,8 +212,10 @@ and it stands open.
   inverse-coupling dwell, overshoots to 3.8 [3.5, 4.2], and a tuned dwell scaling as the
   inverse quarter power of the coupling lands on 2.00 [1.84, 2.16] — a fitted criterion,
   not a mechanism. The race as specified does not supply the law, and Born sits between
-  its two natural criteria; the tolerance and spectral sensitivities and the production
-  budget remain unrun.
+  its two natural criteria. The tolerance and spectral sensitivities leave the exponent
+  between 1.6 and 1.8 and show the race scaling as tongue width times the square root of
+  the rate, with the source of the missing half power open; the production budget remains
+  unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at
