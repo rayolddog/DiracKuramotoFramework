@@ -514,7 +514,12 @@ exponent, because each clock's entry is a near-deterministic Adler slide from it
 starting phase and the fastest of N such slides gains only logarithmically in N, where a
 Poisson race would gain a full power. A Born-producing race needs memoryless per-site
 commitment with hazard proportional to the local relaxation rate — the golden rule in
-this substrate's language. Production remains unrun.
+this substrate's language — and, run as a variant, that is what it produces: with
+commitment memoryless and its hazard linear in the energy a clock absorbs inside its
+tongue, under the Adler clock's own power law and no inserted square, the same clocks and
+pulse give 2.16 [2.14, 2.19], within about 0.02 of Born at every angle, the square arising
+as tongue width times locked absorption rate. Whether a detector's commitment has that
+structure is the first-irreversibility question of [P1 E-16]. Production remains unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets

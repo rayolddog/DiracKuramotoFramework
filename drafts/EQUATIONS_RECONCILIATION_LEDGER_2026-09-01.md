@@ -514,11 +514,12 @@ carries more than $\theta$ of the intensity (any silicon beamsplitter test more 
 than about 45/55 at 500 nm), and not many-site patterns such as a diffraction fringe.
 This sharpens rather than weakens the v0.9 grounds: the two-port asymmetric-split data
 that would show the effect are exactly the data item 2b found unpublished below 553 nm.
-All four gated linear rows are now in and null. Arrhenius rows ($\beta = 10$) as they
-completed: $\theta = 0$: $+0.003$, $-0.010$, $+0.000$; $\theta = 0.02$: $-0.004$, $+0.003$,
-$-0.005$; $\theta = 0.45$: $+0.002$, $-0.003$, $-0.001$ — null as well. The $\theta = 0.72$ and
-$0.90$ Arrhenius rows were still running at this update (about eight minutes per run);
-the script is seeded and `results_threshold_gated_commit.txt` is written incrementally.
+All four gated linear rows are in and null. Arrhenius rows ($\beta = 10$), complete:
+$\theta = 0$: $+0.003$, $-0.010$, $+0.000$; $0.02$: $-0.004$, $+0.003$, $-0.005$; $0.45$:
+$+0.002$, $-0.003$, $-0.001$; $0.72$: $+0.000$, $-0.005$, $+0.008$; $0.90$: $+0.001$,
+$-0.004$, $-0.001$ — null as well. The sweep finished after 24,791 s (6.9 h); the script is
+seeded and the full table is in `results_threshold_gated_commit.txt` (gitignored,
+regenerable). At $N = 100$ no gate, linear or Arrhenius, moves the outcome.
 
 **Caveats.** (a) $r$ is defined per exposed-leg step of *this* engine; mapping steps to
 physical time is E-15's unpinned discretisation, so the absolute placement of silicon on
@@ -840,6 +841,36 @@ per-site commitment a Poisson process with that rate would do what the determini
 slide does not. Full write-up with the per-angle tables in
 `adler_two_channel_exploratory/RESULTS.md`.
 
+### The energy-tracking race: memoryless commitment with hazard proportional to absorbed energy (`energy_hazard_race.py`, 2026-09-02)
+
+Run at JB's request ("run an energy-tracking race variant where commitment hazard grows
+with absorbed energy") after the order-statistics computation said what a Born-producing
+race would need. Dwell replaced by a memoryless hazard $c\,E_i$; energy law the Adler
+clock's own, power $K\cos\theta$ (zero on average over a slip, $\sqrt{K^2-\Delta^2}$ for a
+locked clock) accumulated with its sign only while the clock is inside the tongue; Paper
+1's quadratic deposit as the contrast. **Prediction stated first:** $p \approx 2$ for
+Adler's power, $\approx 3$ for the square. **Artefact on record:** the first run clipped
+energy at zero each step, rectifying the ineligible clocks' slip cycles into a spurious
+$K^{1.33}$ residue and giving $p \approx 1.05$; ungated signed accumulation fails the same
+way. Gated: **$p = 2.16$ [2.14, 2.19]** (Adler's power, $c = 1$, noise), 2.16–2.19 across a
+decade of $c$ and with noise off; per-angle within $\approx 0.02$ of Born everywhere;
+channel energy $\propto K^{2.20}$, which the exponent tracks; P1's square gives 3.20 with
+energy $\propto K^{3.20}$. So the plan's mechanism — the rate-weighted tongue flux as the
+outcome frequency — is realised once commitment is memoryless, and the square is *not*
+inserted: it is tongue width ($\propto K$) times a locked clock's absorbed power ($\propto
+K$). The residual 0.16–0.2 above 2 is the time-integrated flux on this grid and pulse
+(stationary rate-sum exponent 1.91; central clocks eligible longer than edge clocks), not
+the race. What was put in by hand is exactly the golden rule's structure — memorylessness
+and hazard linearity in energy — i.e. Theorem 5 and reading B; what the substrate supplies
+is the amplitude dependence. **Checks:** hazard $c\,E^m$ with $m = \tfrac12$ gives $p =
+1.70$ [1.68, 1.73] and $m = 2$ gives 3.25 [3.21, 3.29] at unchanged energy scaling — only
+the linear hazard lands near 2, so hazard linearity (Theorem 5) is load-bearing; a
+stationary drive gives 2.09 [2.06, 2.11], energy $\propto K^{2.17}$, the residual above the
+grid's stationary rate-sum exponent 1.91 being the locking transient. Open item 6 is
+updated accordingly: the fixed-dwell race is not the actualization law; the memoryless
+energy-hazard race is a candidate for it at diagnostic budget, conditional on a physical
+commitment process having the golden rule's structure, which is the E-16 question.
+
 ### Spectral controls (Experiment 7; `spectral_driver.py`, `spectral_analysis.py`, 2026-09-02)
 
 The raw boundary admits only a flat grid, so the densities were realised through the
@@ -994,7 +1025,17 @@ power.
    spectrum in the same order as both analytic comparators, so the mechanism is spectrally
    driven, and on every non-threshold spectrum the direct exponent sits about one half
    power above the eligible-count exponent — the same missing half;**
-   (d) the production question — the frozen ticket-07 budget is unmet, and the package's
+   (c′) **added 2026-09-02, the energy-tracking race** (see "The energy-tracking race"
+   above): with commitment memoryless and its hazard linear in the energy a clock absorbs
+   inside its tongue, under Adler's own power law and no inserted square, the same clocks
+   and pulse give $p = 2.16$ [2.14, 2.19], within $\approx 0.02$ of Born at every angle,
+   tracking the tongue flux; 2.09 under a stationary drive; 3.20 with P1's square; 1.70
+   and 3.25 with square-root and squared hazards. The plan's mechanism works once
+   commitment has the golden rule's structure. What remains owed for it: a physical
+   argument that a site's first irreversibility is a Poisson process with hazard linear
+   in its absorbed energy (E-16's continuum/thermalisation reading is the candidate),
+   the exclusivity rule (still imposed), and production budget. (d) the production
+   question — the frozen ticket-07 budget is unmet, and the package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

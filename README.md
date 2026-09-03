@@ -217,9 +217,13 @@ and it stands open.
   the rate. The missing half power is entry-time order statistics: the race's
   deterministic skeleton with no noise reproduces the exponent, because the fastest of N
   near-deterministic Adler slides gains only logarithmically in N where a Poisson race
-  would gain a full power. A Born-producing race would need memoryless per-site
+  would gain a full power. A Born-producing race needs memoryless per-site
   commitment with hazard proportional to the local locking rate, which is the golden
-  rule in the substrate's language. The production budget remains unrun.
+  rule in the substrate's language — and run as a variant, with the Adler clock's own
+  power law and no inserted square, that is what it produces: an exponent of 2.16,
+  within about 0.02 of Born at every angle, the square arising as tongue width times
+  locked absorption rate. Whether a detector's commitment has that structure is Paper
+  1's first-irreversibility question. The production budget remains unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

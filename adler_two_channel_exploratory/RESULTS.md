@@ -348,13 +348,99 @@ the local locking rate. It is also, read the other way, the golden rule again �
 linear in the site's coupling squared — which is what reading B of Paper 1 already
 imports.
 
+## The energy-tracking race: memoryless commitment with hazard proportional to absorbed energy (`energy_hazard_race.py`)
+
+Run at JB's request after the order-statistics result said what a Born-producing race
+would need. The dwell criterion is replaced by a memoryless one: each clock accumulates
+the energy it absorbs from the drive, and commits as a Poisson event with hazard c·E.
+The energy law is the Adler clock's own — a drive of amplitude K delivers power K cos θ to
+a fixed-amplitude phase oscillator, which averages to zero over a slip cycle and equals
+the relaxation rate √(K² − Δ²) for a locked clock — so **no square is inserted**; Paper 1's
+quadratic deposit (P1) is run as the contrast. Same grid, pulse, angles, noise (D = 0.08);
+10 000 trials per cell; the first commitment in either channel ends the trial.
+
+**Prediction, stated before running:** with Adler's power the summed absorbed power of a
+channel's locked clocks is the tongue's rate sum, the semicircle, so a linear memoryless
+hazard should give p near 2 up to entry transients; with P1's square it should overshoot
+toward 3.
+
+**A bookkeeping artefact first, on the record.** The first run clipped each clock's
+energy at zero every step. That rectifies the slip cycles of the ineligible clocks, whose
+power averages to zero, and leaves a spurious positive residue linear in K from all
+sixteen clocks: the channel energy scaled as K^1.33 and the exponent came out 1.05–1.15.
+Accumulating the signed power without gating fails the same way (1.03–1.15; a slipping
+clock's zero-mean oscillation still has positive excursions the hazard sees). The
+physical statement — a clock outside its tongue has no stable point and absorbs nothing
+on average — has to be enforced: energy is accumulated, with its sign, only while the
+clock is inside the tongue, and the hazard acts on its positive part.
+
+**Result (gated), the prediction holding:**
+
+| energy law | hazard scale c | noise | p [95 %] | Born dev. (9 cells, 10⁴ trials each) | channel energy ∝ |
+|---|---|---|---|---|---|
+| K cos θ (Adler's own) | 0.3 | 0.08 | 2.19 [2.17, 2.22] | 209 | K^2.21 |
+| K cos θ | 1.0 | 0.08 | **2.16 [2.14, 2.19]** | 128 | K^2.20 |
+| K cos θ | 3.0 | 0.08 | 2.16 [2.13, 2.19] | 147 | K^2.20 |
+| K cos θ | 1.0 | 0 | 2.17 [2.15, 2.20] | 142 | K^2.20 |
+| K² cos θ (P1 inserted) | 0.5 | 0.08 | 3.20 [3.16, 3.24] | 3795 | K^3.20 |
+
+Per angle at c = 1 with noise: 0.977, 0.897, 0.773, 0.594, 0.496, 0.405, 0.229, 0.104,
+0.025 against Born's 0.970, 0.883, 0.750, 0.587, 0.500, 0.413, 0.250, 0.117, 0.030 —
+within about 0.02 everywhere, on the Born side of every fixed-dwell result of the day.
+Independent of the hazard scale across a decade, independent of noise, no unresolved
+trials, ties below 1 %.
+
+**What this is.** The plan's candidate mechanism — the rate-weighted tongue flux, width
+times locked absorption rate, as the outcome frequency — realised in the race, once
+commitment is memoryless. The square is not inserted: it is tongue width (∝ K) times the
+absorbed power of a locked Adler clock (∝ K). The exponent tracks the channel energy's
+scaling exactly (2.16 against K^2.20), and that energy is the time-integrated tongue flux
+over the pulse, which on this grid and pulse scales as K^2.2 rather than exactly K²: the
+central clocks are eligible for more of the pulse than the edge clocks, and the stationary
+rate sum on this 16-clock grid already scales as K^1.91. So the race gives the flux, and
+the flux is Born to about a tenth of a power on this configuration. Born's deviance of 128
+on nine cells at 10 000 trials per cell means 2.16 is statistically distinct from 2.00 at
+this precision; it is not distinct from the flux.
+
+**Two checks.** (i) The hazard's own exponent, hazard c·E^m: m = ½ gives p = 1.70
+[1.68, 1.73] and m = 2 gives 3.25 [3.21, 3.29], against 2.16 at m = 1, with the channel
+energy unchanged (K^2.2) — the outcome exponent is set jointly by the energy's scaling
+and the hazard's, and only a hazard linear in the energy lands near 2. (ii) A stationary
+drive, K constant over the window instead of the raised-cosine pulse: p = 2.09 [2.06,
+2.11], energy ∝ K^2.17, closer to 2 than the pulsed case; the residual above the grid's
+stationary rate-sum exponent of 1.91 is the locking transient, which costs the weak
+channel proportionally more of its window.
+
+**What it needed, said plainly.** Two things were put in by hand, and neither is the
+square: that commitment is a Poisson process with no memory, and that its hazard is
+linear in the absorbed energy (check (i) shows the second is load-bearing). Those are the two structural properties of the golden rule,
+and they are what Paper 1's Theorem 5 and reading B assume. What the race then supplies
+on its own is the amplitude dependence — the tongue geometry and the Adler power law
+combine to the square without a squared quantity anywhere in the dynamics. Read against
+the fixed-dwell race (1.56, entry-time order statistics) and the tuned dwell (2.00 by a
+fitted quarter power), this is the version of the Dirac–Kuramoto candidate that works at
+diagnostic budget, and it works by being the golden rule's structure with the substrate's
+own coupling law inside it.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
 dwell does not produce a universal coupling-squared law. The exponent it produces sits
 between 1.4 and 1.8 and is set by the dwell, the pulse duration and the noise; it rises
 toward 2 as commitment becomes unreliable, and the efficiency collapses before it
-arrives. That is the negative branch of the two-channel
+arrives. The reason is computed: each clock's commitment is a near-deterministic slide,
+and the fastest of N slides gains only logarithmically in N where a rate-weighted race
+would gain a full power.
+
+It also establishes, at the same budget, that the same clocks, grid and pulse **do**
+produce the rate-weighted tongue flux as their outcome frequency — exponent 2.16, within
+about 0.02 of Born at every angle — when commitment is made memoryless with a hazard
+linear in the energy a clock has absorbed inside its tongue, using the Adler clock's own
+power law and no inserted square. What that version puts in by hand is the golden rule's
+structure, memorylessness and hazard linearity; what the substrate supplies is the
+amplitude dependence, tongue width times locked absorption rate. Whether a physical
+commitment process in a detector has that structure is exactly the E-16 question, first
+irreversibility as dissipation into a continuum, and is not answered here. That is the negative branch of the two-channel
 plan's completion boundary ("It is not complete merely because one parameter choice
 visually resembles the Born curve"), reached from the other side: one parameter choice —
 dwell 1.0 — does resemble the Born curve, and the sweep around it shows why that is not
