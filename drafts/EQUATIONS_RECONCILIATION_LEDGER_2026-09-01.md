@@ -871,6 +871,35 @@ updated accordingly: the fixed-dwell race is not the actualization law; the memo
 energy-hazard race is a candidate for it at diagnostic budget, conditional on a physical
 commitment process having the golden rule's structure, which is the E-16 question.
 
+### The E-16 first-irreversibility check for a memoryless hazard (`e16_memoryless_hazard_check.py`, 2026-09-02)
+
+Run at JB's request. **Part 1, the detectors' Markov ratio** $\lambda\tau_c$ (bath
+correlation time over first-irreversibility clock; the golden rule's constant rate needs
+$\ll 1$), from the E-16 inputs: Si SPAD 500 nm **0.01–6.7** (marginal, the third time this
+ratio has straddled unity for silicon, each time with a different meaning); NbN SNSPD
+hotspot reading 0.2–2.0 (marginal); NbN cascade reading **10–200** (not memoryless — a
+cascade completing inside a fraction of the electron–phonon time is an avalanche, not a
+rate process). **Part 2, the race with a lagged hazard** (absorbed energy becomes
+hazard-bearing after a first-order lag $\tau_{\rm mem}$; prediction fixed first: flat while
+$\lambda\tau_{\rm mem}$ is small, rising as the lag pushes commitment toward the pulse end):
+$p = 2.21, 2.16, 2.21, 2.18, 2.18, 2.18$ at $\lambda\tau_{\rm mem} = 0, 0.1, 0.3, 1, 3, 10$,
+no unresolved trials, the 45° control at 0.501 throughout. **The prediction's second half
+failed: nothing moves.** A lag common to every clock reparametrizes time identically for
+both channels and leaves the ratio of hazards, hence the outcome, unchanged. **Part 3,
+what it decides:** the Markov ratio is not the quantity that decides whether a detector
+can carry the energy race's mechanism; memory in the hazard's *timing* is harmless, while
+its *form* is not (square-root and squared hazards gave 1.70 and 3.25; a deterministic
+slide gave 1.5). What the detector must supply is a *stochastic* commitment whose
+probability per unit time is linear in the site's absorbed energy with a site-independent
+time profile — the structure of the absorption vertex itself, in both families — while the
+deterministic physics downstream (avalanche, hotspot, quench) is a cascade the device
+review had already found photon-agnostic. On this reading the SNSPD's non-Markov cascade
+is downstream of selection and irrelevant to it; the SPAD/SNSPD asymmetry does not arise
+from this mechanism either; and the picture is reading B's: weights fixed at the vertex,
+stochastically and linearly, everything slower writing the record. Still unanswered by any
+simulation: whether the vertex's stochastic selection is one-world actualization or a rate
+over an ensemble — the measurement problem.
+
 ### Spectral controls (Experiment 7; `spectral_driver.py`, `spectral_analysis.py`, 2026-09-02)
 
 The raw boundary admits only a flat grid, so the densities were realised through the

@@ -222,8 +222,11 @@ and it stands open.
   rule in the substrate's language — and run as a variant, with the Adler clock's own
   power law and no inserted square, that is what it produces: an exponent of 2.16,
   within about 0.02 of Born at every angle, the square arising as tongue width times
-  locked absorption rate. Whether a detector's commitment has that structure is Paper
-  1's first-irreversibility question. The production budget remains unrun.
+  locked absorption rate. A lagged-hazard sweep shows the result indifferent to the
+  hazard's timing and sensitive only to its form, so what a detector must supply is a
+  stochastic commitment linear in absorbed energy at the absorption vertex, which both
+  detector families have; the deterministic cascade downstream carries no which-site
+  weight. The production budget remains unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

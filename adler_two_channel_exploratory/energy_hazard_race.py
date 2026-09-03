@@ -56,7 +56,7 @@ rng = np.random.default_rng(2027)
 
 
 def channel_commit(K_peak, n_power, c, D, trials, detunings=GRID, dt=DT, mode="gated",
-                   m_hazard=1.0, stationary=False):
+                   m_hazard=1.0, stationary=False, tau_mem=0.0):
     """Return (first_commit_time per trial or nan, total absorbed energy per trial at pulse end).
 
     mode = "clip"   : the first run. dE = K^n cos(theta) dt for every clock, E clipped at 0
@@ -73,6 +73,8 @@ def channel_commit(K_peak, n_power, c, D, trials, detunings=GRID, dt=DT, mode="g
     nclk = len(Dd)
     theta = rng.uniform(-np.pi, np.pi, size=(trials, nclk))
     E = np.zeros((trials, nclk))
+    H = np.zeros((trials, nclk))      # hazard-bearing energy: E relaxed over tau_mem (memory of the hazard)
+    decay = math.exp(-dt / tau_mem) if tau_mem > 0 else 0.0
     fired = np.full((trials, nclk), np.nan)
     steps = int(round(DURATION / dt))
     t0 = CENTRE - DURATION / 2
@@ -92,8 +94,11 @@ def channel_commit(K_peak, n_power, c, D, trials, detunings=GRID, dt=DT, mode="g
             E = E + dE
         else:  # gated
             E = E + np.where((K > np.abs(Dd))[None, :], dE, 0.0)
-        # memoryless commitment with hazard c * max(E, 0) ** m_hazard
-        p_fire = -np.expm1(-c * np.maximum(E, 0.0) ** m_hazard * dt)
+        # commitment hazard c * H ** m_hazard, where H is the absorbed energy made hazard-bearing
+        # after a lag tau_mem (tau_mem = 0: H = E, memoryless; the golden-rule regime).
+        Epos = np.maximum(E, 0.0)
+        H = Epos if tau_mem == 0 else Epos + (H - Epos) * decay
+        p_fire = -np.expm1(-c * H ** m_hazard * dt)
         fire = (rng.random((trials, nclk)) < p_fire) & np.isnan(fired)
         fired = np.where(fire, t + dt, fired)
         # phase step: RK4 drift + Euler-Maruyama kick
@@ -108,15 +113,17 @@ def channel_commit(K_peak, n_power, c, D, trials, detunings=GRID, dt=DT, mode="g
     return np.nanmin(fired, axis=1), np.maximum(E, 0.0).sum(axis=1)
 
 
-def race(n_power, c, D, trials, label, mode="gated", m_hazard=1.0, stationary=False):
+def race(n_power, c, D, trials, label, mode="gated", m_hazard=1.0, stationary=False, tau_mem=0.0):
     cells, rows = [], []
     print(f"\n===== {label}")
     print(f" {'phi':>4} {'K_A':>6} {'K_B':>6} {'A':>6} {'B':>6} {'tie':>4} {'unr':>6} {'P_A':>7} {'[Wilson]':>16} "
           f"{'Born':>6} {'E_A':>7} {'E_B':>7}")
     for deg in ANGLES:
         KA, KB = K_TOTAL * math.cos(math.radians(deg)), K_TOTAL * math.sin(math.radians(deg))
-        cA, EA = channel_commit(KA, n_power, c, D, trials, mode=mode, m_hazard=m_hazard, stationary=stationary)
-        cB, EB = channel_commit(KB, n_power, c, D, trials, mode=mode, m_hazard=m_hazard, stationary=stationary)
+        cA, EA = channel_commit(KA, n_power, c, D, trials, mode=mode, m_hazard=m_hazard, stationary=stationary,
+                                tau_mem=tau_mem)
+        cB, EB = channel_commit(KB, n_power, c, D, trials, mode=mode, m_hazard=m_hazard, stationary=stationary,
+                                tau_mem=tau_mem)
         a_ok, b_ok = ~np.isnan(cA), ~np.isnan(cB)
         A = int(np.sum(a_ok & (~b_ok | (cA < cB))))
         B = int(np.sum(b_ok & (~a_ok | (cB < cA))))

@@ -422,6 +422,83 @@ fitted quarter power), this is the version of the Dirac–Kuramoto candidate tha
 diagnostic budget, and it works by being the golden rule's structure with the substrate's
 own coupling law inside it.
 
+## The E-16 first-irreversibility check for a memoryless hazard (`e16_memoryless_hazard_check.py`)
+
+The energy race needs commitment to be a Poisson event with hazard linear in absorbed
+energy. Fermi's golden rule supplies exactly that, but only in its regime of validity:
+the transition rate λ must be small compared with the bandwidth of the continuum it
+decays into, i.e. the bath correlation time τ_c = 1/Γ must be short compared with the
+commitment time 1/λ. Otherwise the coherent early-time growth is not over before the
+transition completes, the hazard carries memory, and commitment is a cascade rather than
+a Poisson event. E-16 already has both numbers for each detector.
+
+**Part 1 — the detectors' Markov ratio λτ_c** (all inputs literature-typical, from the
+E-16 ledger; a memoryless hazard needs ≪ 1):
+
+| detector | τ_c = 1/Γ | first-irreversibility clock | λτ_c | verdict |
+|---|---|---|---|---|
+| Si SPAD 500 nm, 300 K | 10–67 fs | 10 fs – 1 ps (vertex + thermalisation) | **0.01 – 6.7** | marginal, straddles unity |
+| InGaAs SPAD 1550 nm (silicon inputs, flagged) | 10–67 fs | 10 fs – 1 ps | 0.01 – 6.7 | marginal |
+| NbN SNSPD 2 K, commit = hotspot | 10–20 ps | 10–50 ps | 0.2 – 2.0 | marginal |
+| NbN SNSPD 2 K, commit = cascade onset | 10–20 ps | 0.1–1 ps | **10 – 200** | not memoryless: commits inside the bath correlation time |
+
+This is the morning's ladder read for a third time, with a third meaning. This morning
+the same ratio decided whether the exchange game finished before commitment could act;
+now it decides whether commitment is Poissonian at all. Silicon sits in the same marginal
+band it sat in twice already, one order each side of unity, so whether its first
+irreversibility has the golden rule's structure cannot be settled from these inputs. The
+SNSPD's cascade reading is not memoryless on any input in its range: a quasiparticle
+cascade that completes in a fraction of the electron–phonon time is a deterministic
+avalanche, not a rate process, and on that reading the SNSPD is exactly the detector for
+which the energy race's mechanism should fail — which is the same detector family the
+domain question of E-16 excluded on different grounds, and the same standing caution
+applies: SNSPDs are in wide use and consistent with quantum mechanics.
+
+**Part 2 — how much memory the Born result tolerates.** The race with a lagged hazard:
+each clock's absorbed energy becomes hazard-bearing only after a first-order lag τ_mem
+(τ_mem = 0 is the memoryless race). At c = 1 the race's own commitment rate is about 10 per
+time unit, so λτ_mem = 1 at τ_mem = 0.1; the pulse lasts 4. Prediction fixed before running:
+near 2.16 while λτ_mem is small, rising as the lag pushes commitment toward the pulse end.
+
+| τ_mem | λτ_mem | p [95 %] | Born dev. | unresolved | P_A(45°) |
+|---|---|---|---|---|---|
+| 0 | 0 | 2.21 [2.19, 2.24] | 210 | 0 | — |
+| 0.01 | 0.1 | 2.16 [2.14, 2.19] | 130 | 0 | — |
+| 0.03 | 0.3 | 2.21 [2.18, 2.23] | 208 | 0 | — |
+| 0.1 | 1 | 2.18 [2.15, 2.21] | 155 | 0 | — |
+| 0.3 | 3 | 2.18 [2.15, 2.21] | 152 | 0 | 0.501 |
+| 1.0 | 10 | 2.18 [2.16, 2.21] | 158 | 0 | 0.501 |
+
+**The prediction's second half failed: nothing moves.** Across two orders of magnitude of
+hazard memory, up to lags of a quarter of the pulse, the exponent stays inside the
+memoryless race's scatter, no trial is left unresolved, and the per-angle frequencies at
+10° and 80° (0.975 / 0.023 at λτ_mem = 3; 0.978 / 0.022 at 10) are the memoryless ones.
+The reason is the one the Poisson race's algebra gives: a lag that is the same for every
+clock reparametrizes time identically for both channels, the ratio of their hazards is
+unchanged at every instant, and the probability that A fires first is unchanged. Memory
+in the hazard's *timing* is harmless; what the sweeps before this one showed is that the
+hazard's *form* is not — a square-root or squared hazard moves the exponent (1.70, 3.25),
+and a deterministic slide instead of a hazard moves it to 1.5.
+
+**Part 3 — what this does to the E-16 question.** The Markov ratio λτ_c, which put silicon
+in a marginal band and the SNSPD's cascade reading outside it, is therefore not the
+quantity that decides whether a detector can carry the energy race's mechanism. A finite
+bath correlation time that merely delays or reshapes the turn-on of the rate leaves the
+Born ratio where it was. What the detector has to supply is narrower than a constant
+rate: a *stochastic* commitment whose probability per unit time is linear in the site's
+absorbed energy, with a time profile that does not depend on the site. That is the
+structure of the absorption vertex itself, in both detector families — a golden-rule
+transition into a continuum, linear in the local intensity — and it is the deterministic
+physics downstream of the vertex (the avalanche, the hotspot growth, the quench) that is
+a cascade, which the device review had already found to be photon-agnostic and unable to
+carry which-site weight. On this reading the SNSPD's non-Markov cascade is downstream of
+the selection and irrelevant to it, the SPAD/SNSPD asymmetry that reading A predicted
+does not arise from this mechanism either, and the picture is reading B's: the weights
+are fixed at the vertex, stochastically and linearly, and everything slower writes the
+record. What is still not answered by any simulation is whether the vertex's stochastic
+selection is one-world actualization or a rate over an ensemble — which is the
+measurement problem, and where the day began.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

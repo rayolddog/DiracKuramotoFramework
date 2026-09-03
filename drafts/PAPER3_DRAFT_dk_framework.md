@@ -519,7 +519,11 @@ commitment memoryless and its hazard linear in the energy a clock absorbs inside
 tongue, under the Adler clock's own power law and no inserted square, the same clocks and
 pulse give 2.16 [2.14, 2.19], within about 0.02 of Born at every angle, the square arising
 as tongue width times locked absorption rate. Whether a detector's commitment has that
-structure is the first-irreversibility question of [P1 E-16]. Production remains unrun.
+structure is the first-irreversibility question of [P1 E-16]; a lagged-hazard sweep
+shows the result indifferent to the hazard's timing and sensitive only to its form, so the
+requirement is a stochastic commitment linear in absorbed energy at the vertex — which
+both detector families have, the deterministic cascade downstream carrying no which-site
+weight. Production remains unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets
