@@ -1156,7 +1156,34 @@ power.
    13 min; the moving-band rows need the $dt/16$ replay (M6, 5.7 min, halted by the stop
    rule) and a re-frozen added-resets cap, which is a plan change; a redesigned campaign
    along those lines is affordable but is a design decision the plan reserves for the
-   sponsor. The package's
+   sponsor. **JB made that decision on 2026-09-03 ("run the redesigned campaign with 16x
+   walkers and the dt/16 replay") and it was run** (`validation/REDESIGN_REPORT.md`,
+   `observations_redesign.json`; 44.7 min serial, peak RSS 509 MiB, memory scaling
+   measured at 24 000 walkers before committing to 96 000; package unchanged by digest;
+   reset cap applied as frozen and reported separately, not re-frozen). **Outcome: the gate
+   is still red, but the redesign localised what remains.** S1 at 96 000 walkers: the
+   refinement gate now *passes* (oracle margin 335, all procedure checks) and 3 of 9
+   probability rows fit; the other six exceed the allowance by **1.1–1.7×** (bounds
+   0.0052–0.0085 against 0.0050), down from 2.0–5.5× — so what is left at $dt/16$ is bias
+   of about 1.4× the allowance, no longer the statistical floor. The stop rule halted S2–S4;
+   the $dt/64$ stage that would test whether the bias falls with the timestep (the option
+   table's $\sqrt{\text{factor}}$ projection would put it under the allowance) can run
+   only on a further override. M6, the $dt/16$ replay: **all four probability rows fit**,
+   but the ladder gate fires twice — the added-resets mean is 14.1 ± 2.5 against the cap of
+   3.0 frozen for the reference granularity (the count has no continuum limit and grows
+   with the step count), and the p20 commit-time shift is **not converging**: 0.0055 at
+   $4\,dt$ against 0.0283 at $dt$, growing under refinement past the whole-ladder allowance
+   of 0.022. Disposition with the new rows: `numerical_no_result`, same five blockers;
+   probability-admissible trials 824 (from 78 last night; needs 2 406); time admissible
+   false. **What it means:** the stationary probability rows are within a factor of 1.4 of
+   the production allowance and would be settled by one more refinement stage; the
+   moving-band probability rows are settled at $dt/16$; the moving-band *time* observable
+   diverges under refinement, which more trials will not fix and which is the substantive
+   numerical finding of the two campaigns — the dwell-endpoint scheme's commit-time
+   quantile is not converging in the audit at the intended cell, and the frozen
+   reset-count cap cannot be used to judge it. Next boundary, JB's: override the stop rule
+   once more for S2 (about an hour at 96 000 walkers), and decide whether the time
+   quantile is a production observable at all. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

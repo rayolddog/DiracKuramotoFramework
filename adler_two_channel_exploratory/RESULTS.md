@@ -567,6 +567,14 @@ and everything in this file stays diagnostic. A redesigned campaign (more walker
 timestep, the dt/16 replay, a re-frozen reset cap) is cheap in compute but is a plan
 change for the sponsor to decide.
 
+The sponsor decided, and the redesign ran the next morning (`validation/REDESIGN_REPORT.md`;
+45 min, peak 509 MiB). Sixteen times the walkers moved the stationary rows from 2–5.5× to
+1.1–1.7× the allowance with the refinement gate now passing, so what remains there is a
+bias of about 1.4× that one more timestep refinement would test. The dt/16 replay
+settled the moving-band probability rows but showed the commit-time quantile *diverging*
+under refinement, past the whole-ladder allowance, and the frozen reset-count cap fired
+at 14 against 3. The gate stays red; the diagnostic label on this file stays.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
