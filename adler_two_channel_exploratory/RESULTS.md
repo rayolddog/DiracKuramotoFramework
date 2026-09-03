@@ -269,6 +269,36 @@ computed. Across the whole criterion space now swept — dwell, tolerance, noise
 population, timestep — the frozen-criterion exponent stays between 1.4 and 1.8, and it
 reaches 2 only with an amplitude-dependent dwell put in by hand.
 
+## Fixed-area pulse sweep — Experiment 6, the other duration question (`results_fa*_N32_dt7.csv`)
+
+The plan separates fixed-peak and fixed-area duration sweeps because they answer
+different questions. The fixed-peak sweep is above (pulse 2 / 4 / 8 at K = 2: exponent
+1.68 / 1.56 / 1.38). The fixed-area sweep holds the pulse area K·T at the main sweep's
+value of 8, so a short strong pulse and a long weak one deliver the same integrated
+coupling. Since K = 4 exceeds the frozen ±3 support, the whole sweep uses a ±6 support with
+32 clocks at the same 0.375 spacing, so the population is identical across durations.
+Three angles, 200 trials per cell, frozen criterion.
+
+| pulse T | peak K | p [95 %] | Born dev. (3) | rate-sum dev. | linear dev. | eligible A/B at 20° | unresolved | P_A(45°) |
+|---|---|---|---|---|---|---|---|---|
+| 2 | 4.0 | **1.16 [0.94, 1.40]** | 45.6 | 44.4 | 3.7 | 20/8 | 0.0 % | 0.480 |
+| 4 | 2.0 | 1.55 [1.30, 1.81] | 10.8 | 8.4 | 20.1 | 10/4 | 0.0 % | 0.505 |
+| 8 | 1.0 | 1.51 [1.27, 1.78] | 14.2 | 5.7 | 19.1 | 6/2 | 0.7 % | 0.462 |
+| 16 | 0.5 | undetermined [5.2, 8] | 93.9 | 0.1 | 234.1 | 2/0 | 4.5 % | 0.490 |
+
+The reference cell (T = 4, K = 2) reproduces the main sweep's 1.56 on this wider grid, so
+the support change is inert, as it should be. **At fixed area the channel ratio is not
+preserved.** The short strong pulse drops the exponent to 1.16, essentially the
+single-slide value: with K = 4 twenty of the thirty-two clocks are eligible and all of
+them lock at once, so the order-statistic gain from width saturates and the race reduces
+to the fastest slide. The long weak pulse holds 1.5. The longest pulse is a grid artefact,
+not physics: a coupling of 0.17 reaches no clock on a 0.375 spacing, so the weak channel at
+20° and 70° has nothing that can lock and the outcome is deterministic (the rate-sum race,
+which carries the same threshold, fits it at deviance 0.1). In the plan's matrix this is
+the row *"normalized A/B ratio changes with pulse duration or shape — the proposed outcome
+weights are time-window dependent and are not yet a universal Born law,"* now from the
+fixed-area side as well as the fixed-peak side.
+
 ## The half power, found: entry-time order statistics (`entry_time_order_statistics.py`)
 
 Strip the race to its deterministic skeleton — the package's own drift and raised-cosine

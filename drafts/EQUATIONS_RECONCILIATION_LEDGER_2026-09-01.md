@@ -980,8 +980,15 @@ power.
    that hazards add across the tongue and width contributes its full power. The Adler
    slide is the opposite of memoryless. Read the other way, that requirement is the golden
    rule — a hazard linear in the site's coupling squared — i.e. what reading B already
-   imports. Noise-assisted entry is then a small correction (1.52 → 1.56), not the source —
-   and the fixed-area pulse sweep; (c) ~~the **spectral controls** (Gaussian, Lorentzian, structured
+   imports. Noise-assisted entry is then a small correction (1.52 → 1.56), not the source.
+   **The fixed-area pulse sweep was run too (2026-09-02; $K\cdot T = 8$ on a ±6 support with
+   32 clocks, three angles, 200 trials):** $T = 2, K = 4$ gives $p = 1.16$ [0.94, 1.40];
+   $T = 4, K = 2$ gives 1.55 [1.30, 1.81] (the main sweep reproduced on the wider grid);
+   $T = 8, K = 1$ gives 1.51 [1.27, 1.78]; $T = 16, K = 0.5$ is a grid-threshold artefact
+   (a coupling of 0.17 admits no clock at 0.375 spacing). The channel ratio is not
+   preserved at fixed area: a short strong pulse makes every eligible clock lock at once,
+   the width gain saturates, and the race falls to the single-slide exponent. Time-window
+   dependent from the fixed-area side as well; (c) ~~the **spectral controls** (Gaussian, Lorentzian, structured
    densities), which test whether the rate-weighted flux is what drives the events at all~~
    **Run 2026-09-02 (see "Spectral controls" below): the direct events move with the
    spectrum in the same order as both analytic comparators, so the mechanism is spectrally
