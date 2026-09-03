@@ -1115,7 +1115,48 @@ power.
    it says: the intended-configuration validation campaign, short of M7, costs about an
    hour of compute at 1.6 GiB — affordable; whether running it can turn the ticket-07
    `numerical_no_result` green is a separate question the plan reserves for after a
-   reviewed price, i.e. now. The package's
+   reviewed price. **JB authorized the campaign the same evening ("proceed with the
+   validation plan without my input") and it was run overnight**
+   (`adler_two_channel_exploratory/validation/`, outside the package; strictly serial,
+   peak RSS 635 MiB against the 2 GiB cap JB's memory history made a hard constraint;
+   60.5 min of a 2-hour budget; the package's `results/` tree and every source file
+   verified unchanged; the reference S3 and S3b ladders re-run through the kernels first
+   and reproducing the README's published numbers — oracle gap $1.2\times10^{-4}$, margin
+   37, survival bound 0.04125, p35 bound 0.15290, p20 shift bound 0.17700 — which
+   validates the mirror). **Outcome: both launched stages returned
+   `numerical_no_result` under their predeclared rules; the stop rule halted every
+   dependent stage; M7 was not launched; the frozen ticket-07 disposition does not
+   change.** S1 (stationary probability, dt/16 at doubled space; 21 s): the refinement
+   gate fired a repeated-reversal clause on one row (errors 0.0036 → 0.0043 → 0.0051,
+   within noise) and, decisively, **0 of 9 probability rows fit** the allowance of
+   0.00499 — bounds 0.010–0.028, i.e. 2.0–5.5× — for a structural reason: at 6 000
+   walkers two standard errors alone are 0.007–0.012, so S1–S3 cannot meet the
+   allowance whatever their bias. S2–S4 not run (stop rule). M5 (moving-band
+   probability, 64× master trials, 2 560 trials × 3 regime clocks × 4 replicates on the
+   intended $2^{-9}$ mesh; 59.8 min): the ladder gate fired on the added-resets mean
+   (3.61 ± 0.08 against the cap of 3.0 frozen for the reference cell's granularity), and
+   independently **3 of 4 probability rows exceed the allowance** by 1.7–2.3× (the fourth,
+   survival shift at 0.45, fits at 0.89×); the p20 commit-time shift bound is 0.0836
+   against the time allowance 0.0220, **3.8×** (down from 8× at the reference cell). M6
+   not run (stop rule). Feeding the 17 intended-configuration rows into the package's own
+   frozen disposition: the only blocker that clears is `no_evidence_at_intended_
+   configuration`; the other five stand (moving-band no-result carried through; endpoint
+   and audit envelopes exceed allowance; probability window empty — 78 admissible trials
+   per cell against 2 406; time bounds fail at every trial count). Ambiguities and the
+   choices made (three regime clocks rather than all 22 eligible, which would cost ~8 h;
+   peak coupling 1.0; the frozen added-resets cap applied unchanged although it has no
+   continuum limit) are listed in `VALIDATION_REPORT.md`. **What it means:** the endpoint
+   dwell scheme's discretisation error at $dt = 2^{-9}$ is two to five times what the
+   frozen production precision allows, now measured at the intended configuration rather
+   than inferred from a reference cell; the production design as frozen is not feasible
+   at this timestep, which is what ticket 07 concluded and is now confirmed. The
+   diagnostic results of 2026-09-02 stay diagnostic. **Next boundary, JB's call:** the
+   stationary shortfall is cheap to address — the SE floor needs ~16× the walkers, and
+   S1 took 21 s — and the time rows are timestep-driven, with S3 at $dt/256$ priced at
+   13 min; the moving-band rows need the $dt/16$ replay (M6, 5.7 min, halted by the stop
+   rule) and a re-frozen added-resets cap, which is a plan change; a redesigned campaign
+   along those lines is affordable but is a design decision the plan reserves for the
+   sponsor. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

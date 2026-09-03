@@ -555,6 +555,18 @@ minutes of compute at 1.6 GiB; the seventh, the 1 024×-trial moving-band time q
 is `pricing_unresolved` on the plan's 16× rule and because the comparison kernel is
 quadratic in cluster count at that size. A price is not an approval.
 
+The campaign was then authorized and run (`validation/VALIDATION_REPORT.md`; 60.5 min,
+serial, peak 635 MiB, package untouched, reference ladders reproduced first). Both
+launched stages, S1 and M5, returned `numerical_no_result` under their predeclared rules
+and the stop rule halted the rest; the ticket-07 disposition does not change. The
+endpoint dwell scheme's discretisation error at dt = 2⁻⁹ is two to five times the frozen
+production allowance, measured now at the intended configuration; at 6 000 walkers the
+statistical floor alone exceeds the probability allowance, and the moving-band time row
+sits at 3.8× the time allowance. So the package's production path is closed as designed,
+and everything in this file stays diagnostic. A redesigned campaign (more walkers, finer
+timestep, the dt/16 replay, a re-frozen reset cap) is cheap in compute but is a plan
+change for the sponsor to decide.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

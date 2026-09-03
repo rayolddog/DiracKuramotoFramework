@@ -1,0 +1,3735 @@
+{
+ "budget": {
+  "allowances": {
+   "count": 0.004994710172401896,
+   "probability": 0.004994710172401896,
+   "time": 0.021953125
+  },
+  "coverage_sigma": 2.0,
+  "digest": "8ff45c2c33c01192129320db814f367845c4cf29cf05cbb7372af8aa0886da61",
+  "intended_timestep": 0.001953125,
+  "probability_half_width": 0.019978840689607584,
+  "time_half_width": 0.08,
+  "trials_per_cell": 2406
+ },
+ "constraints": {
+  "price_contingency": 1.5,
+  "rss_ceiling_bytes": 2147483648,
+  "wall_budget_seconds": 7200.0
+ },
+ "disposition": {
+  "budget_digest": "8ff45c2c33c01192129320db814f367845c4cf29cf05cbb7372af8aa0886da61",
+  "sets": {
+   "intended_only": {
+    "admissible_trials": 0,
+    "blockers": [
+     "moving_band_numerical_no_result",
+     "endpoint_envelope_exceeds_allowance",
+     "audit_envelope_exceeds_allowance",
+     "probability_window_empty",
+     "time_bounds_fail_at_every_trial_count"
+    ],
+    "configurations": [
+     "intended"
+    ],
+    "disposition_digest": "a6066d645facadb542d60a49728c788a67670ab8de6847170e11e2ad911a1d31",
+    "evidence_digest": "87e518d1ffd7af38ea41e4c9f67f584b4f801f95e38c6081fd7f3cc393aa364a",
+    "limiting": {
+     "count": null,
+     "probability": [
+      "stationary_oracle",
+      "exit_count_lower",
+      "x=0.260512",
+      "probability",
+      0.02768332351862115,
+      0.004994710172401896,
+      false
+     ],
+     "time": [
+      "moving_band_audit",
+      "commit_time_quantile_p20_shift",
+      "pooled",
+      "time",
+      0.08360834184430277,
+      0.021953125,
+      false
+     ]
+    },
+    "probability_admissible_trials": 78,
+    "rows": [
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.02768332351862115,
+      "excess": 0.02268861334621925,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.260512",
+      "ratio": 5.542528507776973,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0206278520067884,
+      "excess": 0.0156331418343865,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.435512",
+      "ratio": 4.129939735195628,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0131026530539143,
+      "excess": 0.008107942881512405,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.610512",
+      "ratio": 2.6233059780550576,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.019022141682670468,
+      "excess": 0.014027431510268572,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.260512",
+      "ratio": 3.8084575533084335,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.010197513246952693,
+      "excess": 0.005202803074550797,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.435512",
+      "ratio": 2.04166265808549,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.012583062530757923,
+      "excess": 0.007588352358356027,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.610512",
+      "ratio": 2.519277815214427,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.031611234531457796,
+      "excess": 0.009658109531457796,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.260512",
+      "ratio": 1.4399423558813516,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.024490465129715325,
+      "excess": 0.0025373401297153243,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.435512",
+      "ratio": 1.1155799062646126,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.01577883919775874,
+      "excess": -0.006174285802241261,
+      "fits": true,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.610512",
+      "ratio": 0.718751394061608,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.014078181242143124,
+      "excess": 0.009083471069741228,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.260512",
+      "ratio": 2.8186182493494103,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.021324647764751688,
+      "excess": 0.01632993759234979,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.435512",
+      "ratio": 4.269446480114165,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.016823548953338742,
+      "excess": 0.011828838780936846,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.610512",
+      "ratio": 3.368273307687941,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.011558543377371494,
+      "excess": 0.006563833204969598,
+      "fits": false,
+      "observable": "commit_probability_shift",
+      "position": "pooled",
+      "ratio": 2.3141569737595264,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.08360834184430277,
+      "excess": 0.061655216844302765,
+      "fits": false,
+      "observable": "commit_time_quantile_p20_shift",
+      "position": "pooled",
+      "ratio": 3.808493863370375,
+      "source": "moving_band_audit",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.004435456979296313,
+      "excess": -0.0005592531931055827,
+      "fits": true,
+      "observable": "survival_shift_at_0.45",
+      "position": "pooled",
+      "ratio": 0.8880309019338665,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.00853359627541233,
+      "excess": 0.0035388861030104333,
+      "fits": false,
+      "observable": "survival_shift_at_0.60",
+      "position": "pooled",
+      "ratio": 1.7085268175447756,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.011686381511775135,
+      "excess": 0.006691671339373239,
+      "fits": false,
+      "observable": "survival_shift_at_0.80",
+      "position": "pooled",
+      "ratio": 2.339751678955837,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     }
+    ],
+    "rows_in": 17,
+    "time_admissible": false,
+    "verdict": "numerical_no_result"
+   },
+   "reference_only": {
+    "admissible_trials": 0,
+    "blockers": [
+     "moving_band_numerical_no_result",
+     "endpoint_envelope_exceeds_allowance",
+     "audit_envelope_exceeds_allowance",
+     "no_evidence_at_intended_configuration",
+     "probability_window_empty",
+     "time_bounds_fail_at_every_trial_count"
+    ],
+    "configurations": [
+     "non_intended"
+    ],
+    "disposition_digest": "acecf3753b20d4ea76029aea0090721d7b22d25f4ba826c22cf3661fb48abd5d",
+    "evidence_digest": "b551ecbcee40a581499d822758b6840b80506497a32def128799ed10eb8d55be",
+    "limiting": {
+     "count": null,
+     "probability": [
+      "stationary_oracle",
+      "survival",
+      "x=0.584397",
+      "probability",
+      0.0412453829967519,
+      0.004994710172401896,
+      false
+     ],
+     "time": [
+      "moving_band_audit",
+      "commit_time_quantile_p20_shift",
+      "pooled",
+      "time",
+      0.17700055614529983,
+      0.021953125,
+      false
+     ]
+    },
+    "probability_admissible_trials": 35,
+    "rows": [
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.035992592038107445,
+      "excess": 0.030997881865705547,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.184397",
+      "ratio": 7.206142257659575,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.025986914552589335,
+      "excess": 0.020992204380187438,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.384397",
+      "ratio": 5.202887385974698,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.012452122630857354,
+      "excess": 0.007457412458455458,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.584397",
+      "ratio": 2.4930620999114503,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.01086110329856755,
+      "excess": 0.005866393126165654,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.184397",
+      "ratio": 2.174521228194623,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.024425411441822927,
+      "excess": 0.01943070126942103,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.384397",
+      "ratio": 4.890256010605925,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.03669201671949187,
+      "excess": 0.03169730654708997,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.584397",
+      "ratio": 7.346175344113535,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.1528954619884105,
+      "excess": 0.1309423369884105,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.184397",
+      "ratio": 6.964633143956066,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.13298662392198962,
+      "excess": 0.11103349892198962,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.384397",
+      "ratio": 6.057753687549705,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.13255265699907023,
+      "excess": 0.11059953199907023,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.584397",
+      "ratio": 6.037985799245904,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.03973764558812684,
+      "excess": 0.03474293541572494,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.184397",
+      "ratio": 7.955946234417339,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.04046877277816914,
+      "excess": 0.03547406260576724,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.384397",
+      "ratio": 8.102326537739465,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0412453829967519,
+      "excess": 0.03625067282435,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.584397",
+      "ratio": 8.257813080857401,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.019046329453645056,
+      "excess": 0.01405161928124316,
+      "fits": false,
+      "observable": "commit_probability_shift",
+      "position": "pooled",
+      "ratio": 3.8133002308892543,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.17700055614529983,
+      "excess": 0.15504743114529984,
+      "fits": false,
+      "observable": "commit_time_quantile_p20_shift",
+      "position": "pooled",
+      "ratio": 8.062658785266327,
+      "source": "moving_band_audit",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0,
+      "excess": -0.004994710172401896,
+      "fits": true,
+      "observable": "survival_shift_at_0.45",
+      "position": "pooled",
+      "ratio": 0.0,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0,
+      "excess": -0.004994710172401896,
+      "fits": true,
+      "observable": "survival_shift_at_0.60",
+      "position": "pooled",
+      "ratio": 0.0,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.032856800382307594,
+      "excess": 0.027862090209905696,
+      "fits": false,
+      "observable": "survival_shift_at_0.80",
+      "position": "pooled",
+      "ratio": 6.578319711893744,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     }
+    ],
+    "rows_in": 17,
+    "time_admissible": false,
+    "verdict": "numerical_no_result"
+   },
+   "reference_plus_intended": {
+    "admissible_trials": 0,
+    "blockers": [
+     "moving_band_numerical_no_result",
+     "endpoint_envelope_exceeds_allowance",
+     "audit_envelope_exceeds_allowance",
+     "no_evidence_at_intended_configuration",
+     "probability_window_empty",
+     "time_bounds_fail_at_every_trial_count"
+    ],
+    "configurations": [
+     "intended",
+     "non_intended"
+    ],
+    "disposition_digest": "c7bb6e70bcb34be99ec55f467e3081feb19f67943aa8feb43786d81de55b1ff2",
+    "evidence_digest": "fd15499fed79f7bf2548dac285ee82ae6b1e50bf324a8026f66b8673c48654cf",
+    "limiting": {
+     "count": null,
+     "probability": [
+      "stationary_oracle",
+      "survival",
+      "x=0.584397",
+      "probability",
+      0.0412453829967519,
+      0.004994710172401896,
+      false
+     ],
+     "time": [
+      "moving_band_audit",
+      "commit_time_quantile_p20_shift",
+      "pooled",
+      "time",
+      0.17700055614529983,
+      0.021953125,
+      false
+     ]
+    },
+    "probability_admissible_trials": 35,
+    "rows": [
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.035992592038107445,
+      "excess": 0.030997881865705547,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.184397",
+      "ratio": 7.206142257659575,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.025986914552589335,
+      "excess": 0.020992204380187438,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.384397",
+      "ratio": 5.202887385974698,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.012452122630857354,
+      "excess": 0.007457412458455458,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.584397",
+      "ratio": 2.4930620999114503,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.01086110329856755,
+      "excess": 0.005866393126165654,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.184397",
+      "ratio": 2.174521228194623,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.024425411441822927,
+      "excess": 0.01943070126942103,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.384397",
+      "ratio": 4.890256010605925,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.03669201671949187,
+      "excess": 0.03169730654708997,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.584397",
+      "ratio": 7.346175344113535,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.1528954619884105,
+      "excess": 0.1309423369884105,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.184397",
+      "ratio": 6.964633143956066,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.13298662392198962,
+      "excess": 0.11103349892198962,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.384397",
+      "ratio": 6.057753687549705,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.13255265699907023,
+      "excess": 0.11059953199907023,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.584397",
+      "ratio": 6.037985799245904,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.03973764558812684,
+      "excess": 0.03474293541572494,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.184397",
+      "ratio": 7.955946234417339,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.04046877277816914,
+      "excess": 0.03547406260576724,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.384397",
+      "ratio": 8.102326537739465,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0412453829967519,
+      "excess": 0.03625067282435,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.584397",
+      "ratio": 8.257813080857401,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.019046329453645056,
+      "excess": 0.01405161928124316,
+      "fits": false,
+      "observable": "commit_probability_shift",
+      "position": "pooled",
+      "ratio": 3.8133002308892543,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.17700055614529983,
+      "excess": 0.15504743114529984,
+      "fits": false,
+      "observable": "commit_time_quantile_p20_shift",
+      "position": "pooled",
+      "ratio": 8.062658785266327,
+      "source": "moving_band_audit",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0,
+      "excess": -0.004994710172401896,
+      "fits": true,
+      "observable": "survival_shift_at_0.45",
+      "position": "pooled",
+      "ratio": 0.0,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0,
+      "excess": -0.004994710172401896,
+      "fits": true,
+      "observable": "survival_shift_at_0.60",
+      "position": "pooled",
+      "ratio": 0.0,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.032856800382307594,
+      "excess": 0.027862090209905696,
+      "fits": false,
+      "observable": "survival_shift_at_0.80",
+      "position": "pooled",
+      "ratio": 6.578319711893744,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.02768332351862115,
+      "excess": 0.02268861334621925,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.260512",
+      "ratio": 5.542528507776973,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0206278520067884,
+      "excess": 0.0156331418343865,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.435512",
+      "ratio": 4.129939735195628,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.0131026530539143,
+      "excess": 0.008107942881512405,
+      "fits": false,
+      "observable": "exit_count_lower",
+      "position": "x=0.610512",
+      "ratio": 2.6233059780550576,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.019022141682670468,
+      "excess": 0.014027431510268572,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.260512",
+      "ratio": 3.8084575533084335,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.010197513246952693,
+      "excess": 0.005202803074550797,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.435512",
+      "ratio": 2.04166265808549,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.012583062530757923,
+      "excess": 0.007588352358356027,
+      "fits": false,
+      "observable": "exit_count_upper",
+      "position": "x=0.610512",
+      "ratio": 2.519277815214427,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.031611234531457796,
+      "excess": 0.009658109531457796,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.260512",
+      "ratio": 1.4399423558813516,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.024490465129715325,
+      "excess": 0.0025373401297153243,
+      "fits": false,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.435512",
+      "ratio": 1.1155799062646126,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.01577883919775874,
+      "excess": -0.006174285802241261,
+      "fits": true,
+      "observable": "exit_quantile_p35",
+      "position": "x=0.610512",
+      "ratio": 0.718751394061608,
+      "source": "stationary_oracle",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.014078181242143124,
+      "excess": 0.009083471069741228,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.260512",
+      "ratio": 2.8186182493494103,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.021324647764751688,
+      "excess": 0.01632993759234979,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.435512",
+      "ratio": 4.269446480114165,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.016823548953338742,
+      "excess": 0.011828838780936846,
+      "fits": false,
+      "observable": "survival",
+      "position": "x=0.610512",
+      "ratio": 3.368273307687941,
+      "source": "stationary_oracle",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.011558543377371494,
+      "excess": 0.006563833204969598,
+      "fits": false,
+      "observable": "commit_probability_shift",
+      "position": "pooled",
+      "ratio": 2.3141569737595264,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.021953125,
+      "bound": 0.08360834184430277,
+      "excess": 0.061655216844302765,
+      "fits": false,
+      "observable": "commit_time_quantile_p20_shift",
+      "position": "pooled",
+      "ratio": 3.808493863370375,
+      "source": "moving_band_audit",
+      "unit": "time"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.004435456979296313,
+      "excess": -0.0005592531931055827,
+      "fits": true,
+      "observable": "survival_shift_at_0.45",
+      "position": "pooled",
+      "ratio": 0.8880309019338665,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.00853359627541233,
+      "excess": 0.0035388861030104333,
+      "fits": false,
+      "observable": "survival_shift_at_0.60",
+      "position": "pooled",
+      "ratio": 1.7085268175447756,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     },
+     {
+      "allowance": 0.004994710172401896,
+      "bound": 0.011686381511775135,
+      "excess": 0.006691671339373239,
+      "fits": false,
+      "observable": "survival_shift_at_0.80",
+      "position": "pooled",
+      "ratio": 2.339751678955837,
+      "source": "moving_band_audit",
+      "unit": "probability"
+     }
+    ],
+    "rows_in": 34,
+    "time_admissible": false,
+    "verdict": "numerical_no_result"
+   }
+  }
+ },
+ "environment_digest": "9dfcbc23f4c8b0902b797b311bf4250546eb42d400a6f3dac719aae0e30d3c56",
+ "events": [
+  "S2: stopped by dependency on S1 (numerical_no_result)",
+  "S3: stopped by dependency on S2 (None)",
+  "S4: stopped by dependency on S3 (None)",
+  "M6: stopped by dependency on M5 (numerical_no_result)",
+  "M7: not launched (pricing_unresolved)"
+ ],
+ "finished_at": "2026-09-03T00:33:44-0600",
+ "intended": {
+  "clocks": 64,
+  "dwell_time": 0.5,
+  "grid_half_width": 3.0,
+  "lock_tolerance": 0.35,
+  "peak_coupling": 1.0,
+  "phase_diffusion": 0.08,
+  "pulse_centre": 0.0,
+  "pulse_duration": 4.0,
+  "timestep": 0.001953125
+ },
+ "interpretations": [
+  [
+   "'intended configuration' versus 'relative to the ticket-04 ladder'",
+   "The frozen stage candidates say 'timestep x{f}, sample x{s}, spatial x{sp} relative to the ticket-04 ladder', while the ticket-07 blocker no_evidence_at_intended_configuration and NumericalBudget.intended_timestep (2^-9) define 'intended' by the production physics.  As instructed, the stages are run on the intended physics (pulse 4.0 at peak coupling 1.0, phase diffusion 0.08, tolerance 0.35, dwell 0.5, dt = 2^-9 on the 64-clock +-3 grid) with the outline's refinement factors and trial counts: stationary dt/f means finest endpoint step 2^-9/f (fine steps 2048*f over horizon 2.0) with the oracle grid (600*space_factor) x (600*f); moving 'x1 timestep' means the ladder (4dt, 2dt, dt) with dt = 2^-9 over the 2048-step pulse window, and dt/16 means (4,2,1) x 2^-13 over 32768 steps."
+  ],
+  [
+   "the stationary cell at the intended configuration",
+   "The S3 procedure is one fixed coupling, one fixed band, three starts.  At the intended configuration: coupling = the intended peak coupling 1.0, detuning = the intended-grid clock nearest the S3b interior regime (+0.45 -> index 36, 0.421875; the S3 reference ratio 0.3/0.8 = 0.375 maps to the same clock under an upward tie-break), tolerance 0.35, diffusion 0.08, horizon 2.0 and quantile p35 exactly as S3, starts at 0.25/0.5/0.75 of the admissible band, 6000 walkers (sample factor 1), chunk 1500 / window 1024 / strides (8,4,2) as S3."
+  ],
+  [
+   "the moving cell and '64 clocks'",
+   "The S3b pooled ladder is 3 regime clocks x master trials x 3 strides x 4 auxiliary replicates.  The outline scales its master trials (64x -> 2560) and its timestep; it does not change the clock set.  Running all 22 eligible clocks of the 64-clock grid at 2560 trials would cost ~7x more than M5's price (about 8 hours) and cannot fit the 2-hour budget, so the three regime clocks are mapped onto the intended grid (central -> index 32, 0.046875; interior+ -> 36, 0.421875; near_edge- -> 22, -0.890625; the even-parity grid has no clock at exactly 0) and keyed by their grid index.  Peak coupling 1.0 is the benchmark fixture's (_t07_config) and S3b's; the production matrix sweeps six nodes and its own dt-halving refinement at 0.6598/1.1487 is a different, unpriced design."
+  ],
+  [
+   "the oracle-margin check at eightfold space",
+   "verify.py refines the oracle (2M, 2N) and requires the change to be 20x below the smallest endpoint error.  At M = 4800 the refined grid (9600 x 307200) needs ~740 MB per dense matrix and cannot stay under 2 GiB, so for S3/S4 the check differences against the COARSER grid (2400 x 76800); for a second-order scheme that overstates the oracle's own error by about 3x, the conservative direction.  S1 and S2 use the refined grid as verify.py does."
+  ],
+  [
+   "S4",
+   "S4 is 'the same three with time observable' on the dt/256 eightfold ladder S3 already computed; the keyed streams are deterministic and digest-verified, so S4 judges the time rows of S3's frozen ladder instead of recomputing it (13 minutes), and its own stage rule is applied to the time-unit rows."
+  ],
+  [
+   "frozen caps at the intended cell",
+   "The S3 reference caps (survival 0.09/0.30/floor 0.012; p35 0.30/0.45/0.030; exit counts 0.07 and 0.08/0.45/0.012) and the S3b caps (0.10/4.0/floor 0.010; quantile floor = coarsest timestep; added_resets 3.0/30.0) are applied unchanged, as the frozen contract requires; their floors were derived for 6000 walkers / 40 trials x 4 replicates and are kept as frozen even where the sample is larger."
+  ],
+  [
+   "stage verdict",
+   "A stage 'succeeds' only if (i) compare_refinement under the frozen reference caps returns pass, (ii) the procedure's own checks pass (S3: bitwise pairing, oracle margin, bias sign, nonzero SE; S3b: reset-only subset on every record, both pulse edges on every clock), and (iii) every row of the stage's unit at the finest level satisfies |error| + 2 SE <= the frozen allowance.  Anything else is numerical_no_result and the stop rule applies to its dependents."
+  ],
+  [
+   "reference reproduction",
+   "REF_S3 and REF_S3B re-run the ticket-04 reference ladders through the same kernels (not the verifier) to validate this mirror against the README's published bounds (stationary survival 0.04125, p35 0.15290, moving p20 0.17700) and to supply the 17 non_intended rows; they are not stages."
+  ],
+  [
+   "preflight",
+   "predicted seconds = 1.5 x sum(component slowest rate from ../pricing/observations.json x the stage's work at the intended configuration, oracle-margin solve included); a stage is launched only if elapsed + predicted <= 7200 s."
+  ]
+ ],
+ "log": [
+  "[    0.0s] validation campaign session start",
+  "[    0.2s] source 8bb1a4eddd8b93a3 env 9dfcbc23f4c8b090 budget 8ff45c2c33c01192 allowances {'probability': 0.004994710172401896, 'time': 0.021953125, 'count': 0.004994710172401896}; pricing derivation 7c8c0f81d1f69f12",
+  "[    0.2s] REF_S3: preflight 6s predicted; elapsed 0s; budget remaining 7200s; work {'space_time_cells': 1800000, 'endpoint_observations': 32256000, 'resample_observations': 43200000}",
+  "[    7.1s]     |     oracle 600x600 solved in 0.0s",
+  "[    7.1s]     |     oracle margin (refined [1200, 1200]): gap 1.175e-04",
+  "[    7.1s]     |     endpoint walk 6000x2048 in 0.4s; paired=True",
+  "[    7.1s]     |     gate pass; checks {'paired_bitwise': True, 'oracle_margin_ok': True, 'oracle_margin_ratio': 36.56536152065438, 'survival_sign_ok': True, 'nonzero_se_ok': True, 'gate_pass': True}",
+  "[    7.1s] REF_S3: completed verdict=reference wall=7s rss=231MiB reasons=[]",
+  "[    7.1s] REF_S3B: preflight 22s predicted; elapsed 7s; budget remaining 7193s; work {'physical_intervals': 105480, 'audited_evaluations': 246880, 'resample_observations': 144000}",
+  "[   20.8s]     |     ladder 40 trials x 3 clocks x 3 strides in 13s; subset=True",
+  "[   20.8s]     |     gate numerical_no_result; checks {'subset_holds': True, 'both_edges_every_clock': True, 'gate_pass': False}",
+  "[   20.8s] REF_S3B: completed verdict=reference wall=14s rss=55MiB reasons=[]",
+  "[   20.8s] S1: preflight 61s predicted; elapsed 21s; budget remaining 7179s; work {'space_time_cells': 57600000, 'endpoint_observations': 516096000, 'resample_observations': 43200000}",
+  "[   42.2s]     |     oracle 1200x9600 solved in 0.7s",
+  "[   42.2s]     |     oracle margin (refined [2400, 19200]): gap 2.955e-06",
+  "[   42.2s]     |     endpoint walk 6000x32768 in 7.0s; paired=True",
+  "[   42.2s]     |     gate numerical_no_result; checks {'paired_bitwise': True, 'oracle_margin_ok': True, 'oracle_margin_ratio': 888.9715200191995, 'survival_sign_ok': True, 'nonzero_se_ok': True, 'gate_pass': False}",
+  "[   42.2s] S1: completed verdict=numerical_no_result wall=21s rss=635MiB reasons=[\"ladder gate: ('exit_count_lower', 'x=0.610512'): [repeated_reversal] 2 adjacent reversals; one upward step can be statistically unresolved, a ladder that turns around more than once is not converging\", '9 of 9 probability rows exceed the allowance 0.00499471: exit_count_lower@x=0.260512 bound 0.02768 (5.5x); exit_count_lower@x=0.435512 bound 0.02063 (4.1x); exit_count_lower@x=0.610512 bound 0.0131 (2.6x); exit_count_upper@x=0.260512 bound 0.01902 (3.8x); exit_count_upper@x=0.435512 bound 0.0102 (2.0x); exit_count_upper@x=0.610512 bound 0.01258 (2.5x); survival@x=0.260512 bound 0.01408 (2.8x); survival@x=0.435512 bound 0.02132 (4.3x); survival@x=0.610512 bound 0.01682 (3.4x)']",
+  "[   42.2s] S2: stopped \u2014 predecessor S1 = numerical_no_result",
+  "[   42.2s] S3: stopped \u2014 predecessor S2 = None",
+  "[   42.2s] S4: stopped \u2014 predecessor S3 = None",
+  "[   42.2s] M5: preflight 5624s predicted; elapsed 42s; budget remaining 7158s; work {'physical_intervals': 27571200, 'audited_evaluations': 59719680, 'resample_observations': 9216000}",
+  "[ 3627.3s]     |     stride 4 clock 32 (central) done at 317s",
+  "[ 3627.3s]     |     stride 4 clock 36 (interior+) done at 603s",
+  "[ 3627.3s]     |     stride 4 clock 22 (near_edge-) done at 857s",
+  "[ 3627.3s]     |     stride 2 clock 32 (central) done at 1294s",
+  "[ 3627.3s]     |     stride 2 clock 36 (interior+) done at 1672s",
+  "[ 3627.3s]     |     stride 2 clock 22 (near_edge-) done at 1985s",
+  "[ 3627.3s]     |     stride 1 clock 32 (central) done at 2639s",
+  "[ 3627.3s]     |     stride 1 clock 36 (interior+) done at 3176s",
+  "[ 3627.3s]     |     stride 1 clock 22 (near_edge-) done at 3584s",
+  "[ 3627.3s]     |     ladder 2560 trials x 3 clocks x 3 strides in 3584s; subset=True",
+  "[ 3627.3s]     |     gate numerical_no_result; checks {'subset_holds': True, 'both_edges_every_clock': True, 'gate_pass': False}",
+  "[ 3627.3s] M5: completed verdict=numerical_no_result wall=3585s rss=76MiB reasons=[\"ladder gate: ('added_resets_mean', 'pooled'): [absolute_cap] 3.6123 count with standard error 0.0769676 gives a 2-sigma bound 3.76624 past the cap 3\", '3 of 4 probability rows exceed the allowance 0.00499471: commit_probability_shift@pooled bound 0.01156 (2.3x); survival_shift_at_0.60@pooled bound 0.008534 (1.7x); survival_shift_at_0.80@pooled bound 0.01169 (2.3x)']",
+  "[ 3627.3s] M6: stopped \u2014 predecessor M5 = numerical_no_result",
+  "[ 3627.4s] session end: wall 3627s; results/ unchanged=True package unchanged=True"
+ ],
+ "machine": {
+  "cpu_brand": "Apple M4 Pro",
+  "efficiency_cores": "4",
+  "logical_cpus": "12",
+  "machine": "arm64",
+  "memory_bytes": "25769803776",
+  "numpy_blas": "accelerate",
+  "numpy_version": "2.4.3",
+  "os_version": "26.5.2",
+  "performance_cores": "8",
+  "physical_cpus": "12",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "psutil_version": "7.2.0",
+  "python_executable": "/Users/john-bramble/miniconda3/bin/python3",
+  "python_version": "3.13.11"
+ },
+ "moving_cell": {
+  "audit_namespace": "t07-campaign-auxiliary",
+  "base_step": 0.001953125,
+  "base_steps": 2048,
+  "base_trials": 40,
+  "centre": 0.0,
+  "clocks": [
+   [
+    32,
+    0.046875,
+    "central"
+   ],
+   [
+    36,
+    0.421875,
+    "interior+"
+   ],
+   [
+    22,
+    -0.890625,
+    "near_edge-"
+   ]
+  ],
+  "diffusion": 0.08,
+  "duration": 4.0,
+  "dwell": 0.5,
+  "label_prefix": "T07/campaign",
+  "origin": -2.0,
+  "peak": 1.0,
+  "physical_namespace": "t07-campaign-physical",
+  "quantile": 0.2,
+  "replicates": 4,
+  "resamples": 200,
+  "seed": 20260901,
+  "strides": [
+   4,
+   2,
+   1
+  ],
+  "survival_fractions": [
+   0.45,
+   0.6,
+   0.8
+  ],
+  "tolerance": 0.35
+ },
+ "moving_clocks": [
+  [
+   32,
+   0.046875,
+   "central"
+  ],
+  [
+   36,
+   0.421875,
+   "interior+"
+  ],
+  [
+   22,
+   -0.890625,
+   "near_edge-"
+  ]
+ ],
+ "order": [
+  "REF_S3",
+  "REF_S3B",
+  "S1",
+  "S2",
+  "S3",
+  "S4",
+  "M5",
+  "M6",
+  "M7"
+ ],
+ "pricing_derivation_digest": "7c8c0f81d1f69f12f5043a352d2571f2b5f97a922b05634a4729d0f3f0062018",
+ "pricing_rates": {
+  "audited_evaluations": 5.8097450790370374e-05,
+  "endpoint_observations": 2.126048292175845e-08,
+  "physical_intervals": 0.00013597931978694196,
+  "resample_observations": 5.2414308450992126e-08,
+  "space_time_cells": 4.810393337670071e-07
+ },
+ "repo_git_head": "edaee80791e85c80b1c425cca9da2d7c40726fcb",
+ "results_snapshot": {
+  "entries": 1176,
+  "package_stat_end": "2cf5b3bf47bc1671022623c920f377b879dfaf99f41b5a9b1f34f823ceae8286",
+  "package_stat_start": "2cf5b3bf47bc1671022623c920f377b879dfaf99f41b5a9b1f34f823ceae8286",
+  "package_unchanged": true,
+  "results_unchanged": true,
+  "sha_end": "b467a6ed3a162752b26f7a386047554a8fa9f0a17bfbb1b223ca451ee4b37dd7",
+  "sha_start": "b467a6ed3a162752b26f7a386047554a8fa9f0a17bfbb1b223ca451ee4b37dd7"
+ },
+ "rules": {
+  "disposition": "experiments.numerical_disposition: bound = |measured| + coverage_sigma * SE compared with budget.allowance(unit) (probability: 0.25 * planned 95% half-width at 2406 trials = 0.004995; time: 0.25 * 0.08 + one intended timestep = 0.021953); blockers: a numerical_no_result row is carried through; bound > allowance; not measured at the intended configuration; probability window empty below 2406 trials; any time row failing fails at every trial count.  README: \"A measured discrepancy, inflated by the budget's own frozen coverage sigma, must sit under one quarter of the planned production 95 % half-width, with one intended timestep added for a commit-time quantile.\"",
+  "evidence_rows": "verify.py _t07_evidence: every observable at every position at each ladder's finest level, added_resets_mean excluded (frozen with require_decrease=false, no continuum limit), measured = absolute_error, standard_error = bootstrap SE, sample_clusters = walkers / master trials, verdict = the ladder's verdict.",
+  "frozen_contract": "README 'The frozen contract': \"FrozenBudgets hashes its own contents, and compare_refinement refuses to produce a verdict at all unless the caller hands back the digest it recorded earlier.\"  The reference caps of verify.py _s3_budgets and _audit_caps are used unchanged; no tolerance is invented.",
+  "gate": "killed_diffusion.compare_refinement: every (observable, position) identity is judged on its own, and all must pass: (1) budgeted and sampled with the contract's cluster and level count; (2) at the finest timestep the uncertainty-aware absolute error |error| + coverage*SE is within the absolute cap and the relative point estimate within the relative cap; (3) the finest error is no larger than the coarsest within ONE allowance (resolution floor + coverage * paired bootstrap SE of the end-to-end change); (4) at most one adjacent pair may go the wrong way, inside the floor + coverage * paired SE of that step.  Failure of any clause yields numerical_no_result.",
+  "matrix_failure": "verify.py _t07_matrix failure_rule: \"a refinement ladder that misses the frozen numerical budget, or a moving-band audit that returns numerical_no_result, blocks scientific interpretation of the whole sweep; no fit window is reselected and no budget is widened after results are opened\"",
+  "s3_oracle_margin": "verify.py (S3 check): \"the oracle moved by {gap} under its own refinement, which is not a factor 20 below the smallest endpoint error it is the reference for\" -> problem; i.e. oracle_gap * 20 <= smallest finest-level absolute error.",
+  "s3_paired": "verify.py _s3_measured: each coarse increment must be the bit-for-bit left-to-right sum of the same fine leaves (control against PhaseNoiseStream._coarse_kicks_uniform).",
+  "s3_sign": "verify.py (S3 check): \"endpoint survival fell below the oracle by {x}; missing a between-step exit can only overcount uninterrupted dwell\" -> problem when measured - reference < -0.02.",
+  "s3_zero_se": "verify.py (S3 check): \"a level reports a zero bootstrap standard error; every S3 observable is a Monte Carlo estimate and none of them is deterministic\".",
+  "s3b_edges": "README 'The reduced matrix': \"Both pulse edges are covered by construction ... measured, by requiring every cell to report eligible intervals on both the rising and the falling side of its window\".",
+  "s3b_subset": "moving_band_audit reset-only contract (README 'The audit'): \"Every audited commitment is a delayed copy of an endpoint one at every level and in every cell\" -> AuditedRun.subset_holds for every record.",
+  "stage_no_result": "verify.py _t07_campaign no_result_rule: \"a stage that misses its target is a numerical_no_result: the budget is not widened, the allowance is not re-derived, and the moving-band verdict is not re-decided\"",
+  "stage_stop": "verify.py _t07_campaign stop_rule: \"stop at the first stage whose own predecessor returned a numerical_no_result; a later stage never runs on an unresolved one.  There is no resource cap here because there is no measured cost to cap\"",
+  "stage_success": "verify.py _t07_campaign success_rule: \"every {unit} row of this ladder must land, bias plus 2.0 standard errors, under the frozen {unit} allowance {allowance:.6g} at the trial count the matrix proposes\""
+ },
+ "schema": "validation-campaign-observations/v1",
+ "session_wall_seconds": 3627.40317450001,
+ "source_fingerprint": {
+  "digest": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992",
+  "files": [
+   [
+    "__init__.py",
+    "9f05ee02d0c2e0c2fd0669b9d555b11408d88e7aae95dc2fc7a8301d59fe240a"
+   ],
+   [
+    "analysis.py",
+    "0b3b57ff75f07510b1d0d29d611d0841ed3dc54613ece513e0b56fb1e6e1015b"
+   ],
+   [
+    "analytic.py",
+    "de572b82d5ef130acc1239723672efa9f25a12400eee6370851069741a83a6b1"
+   ],
+   [
+    "commitment.py",
+    "7f12124540dc8dd576833d40793c05893eca04ab867a48f0c21a03f31de02a57"
+   ],
+   [
+    "compare.py",
+    "abc89474b14d04f68bc21a4e61b9322c85847cd50152254a8ed6823062620817"
+   ],
+   [
+    "dynamics.py",
+    "9ecfefb4a5918f0f42bca7dee281f3b2a51d49325e6766be704bd6ac82eb3e11"
+   ],
+   [
+    "experiments.py",
+    "b2672e0ff226ef48f073cb31176b656d301ec37f24fa13d28f027586bb68afeb"
+   ],
+   [
+    "killed_diffusion.py",
+    "9a852a096d85583025b4c2f796766c61b9d2e884cd9463d2ff704f072674a457"
+   ],
+   [
+    "model.py",
+    "c3f4e5ca70b2c8c11a203d1fea6799bb3347aafc6dea23fc7de87e67ea9f80df"
+   ],
+   [
+    "moving_band_audit.py",
+    "135cbead60d03f44638b8ba77843984c825476f09f4625aa4bead2dfe7e344c9"
+   ],
+   [
+    "observables.py",
+    "38223e39a726b747680d6f16610bb90dae60fa75fd5e1e29f3dbf57ed087fe92"
+   ],
+   [
+    "raw_config.py",
+    "eb59d1971f74f772a2b8ccb21d20b363573e51bf2dd57b5a260645cf815d5430"
+   ],
+   [
+    "raw_experiments.py",
+    "b492e3a4556efbabb5cf7373dd4fd43009a10ea0baf7e784e0f9f4edc31217d9"
+   ],
+   [
+    "raw_ledger.py",
+    "91af4540abea7eccd4ab52b25d3e1d3dc7b4f805e283a89f24630d1596c26504"
+   ],
+   [
+    "raw_race.py",
+    "44e83995c12b6d08d766efcc39ed6a1ee2b64c3fdc7dbb43c665808bcd7f6432"
+   ],
+   [
+    "raw_runner.py",
+    "ee13e099c22bc7b492fb7439653a69cf5d4637aaa181571bf947706ba6442a2b"
+   ],
+   [
+    "simulate.py",
+    "1acb84aeddaf22e795738d1b2c7a20d4b5f092aa565e08eb5c6b71bd57c98d6c"
+   ],
+   [
+    "stochastic.py",
+    "fdf5420ebe38b1c85f27a121efe626f690b30bd00bfd09f511feef01563cbac2"
+   ],
+   [
+    "validation.py",
+    "ede647938253fefec4b366dbaa5117356638d070db3a794a6de1252a88bf693d"
+   ]
+  ],
+  "numpy_version": "2.4.3",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python_version": "3.13.11"
+ },
+ "stages": {
+  "M5": {
+   "child_returncode": 0,
+   "child_wall_seconds": 3585.0563210419787,
+   "elapsed_at_preflight": 42.220943624997744,
+   "exit_state": "completed",
+   "kind": "moving",
+   "label": "moving-band probability, 64x master trials",
+   "log": [
+    "[23:39:16]     stride 4 clock 32 (central) done at 317s",
+    "[23:44:02]     stride 4 clock 36 (interior+) done at 603s",
+    "[23:48:16]     stride 4 clock 22 (near_edge-) done at 857s",
+    "[23:55:33]     stride 2 clock 32 (central) done at 1294s",
+    "[00:01:51]     stride 2 clock 36 (interior+) done at 1672s",
+    "[00:07:04]     stride 2 clock 22 (near_edge-) done at 1985s",
+    "[00:17:58]     stride 1 clock 32 (central) done at 2639s",
+    "[00:26:55]     stride 1 clock 36 (interior+) done at 3176s",
+    "[00:33:43]     stride 1 clock 22 (near_edge-) done at 3584s",
+    "[00:33:43]     ladder 2560 trials x 3 clocks x 3 strides in 3584s; subset=True",
+    "[00:33:44]     gate numerical_no_result; checks {'subset_holds': True, 'both_edges_every_clock': True, 'gate_pass': False}"
+   ],
+   "parent_observed_rss_peak_bytes": 79855616,
+   "pid": 50639,
+   "preflight_predicted_seconds": 5624.3941079646265,
+   "result": {
+    "audit_stream": "dk-band-audit/v2/audit/t07-campaign-auxiliary/mesh=-0x1.0000000000000p+1:0x1.0000000000000p-9/replicate=0",
+    "audited_evaluations": 59719680,
+    "budgets_digest": "5f405885c890dbb65a3209a9bfb5b528a70e8be9c52dc74db2777da4ca30e1e7",
+    "caps": {
+     "added_resets_mean": [
+      3.0,
+      30.0,
+      0.0
+     ],
+     "commit_probability_shift": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "commit_time_quantile_p20_shift": [
+      0.1,
+      4.0,
+      0.0078125
+     ],
+     "survival_shift_at_0.45": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "survival_shift_at_0.60": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "survival_shift_at_0.80": [
+      0.1,
+      4.0,
+      0.01
+     ]
+    },
+    "cell": {
+     "audit_namespace": "t07-campaign-auxiliary",
+     "base_step": 0.001953125,
+     "base_steps": 2048,
+     "base_trials": 40,
+     "centre": 0.0,
+     "clocks": [
+      [
+       32,
+       0.046875,
+       "central"
+      ],
+      [
+       36,
+       0.421875,
+       "interior+"
+      ],
+      [
+       22,
+       -0.890625,
+       "near_edge-"
+      ]
+     ],
+     "diffusion": 0.08,
+     "duration": 4.0,
+     "dwell": 0.5,
+     "label_prefix": "T07/campaign",
+     "origin": -2.0,
+     "peak": 1.0,
+     "physical_namespace": "t07-campaign-physical",
+     "quantile": 0.2,
+     "replicates": 4,
+     "resamples": 200,
+     "seed": 20260901,
+     "strides": [
+      4,
+      2,
+      1
+     ],
+     "survival_fractions": [
+      0.45,
+      0.6,
+      0.8
+     ],
+     "tolerance": 0.35
+    },
+    "checks": {
+     "both_edges_every_clock": true,
+     "gate_pass": false,
+     "subset_holds": true
+    },
+    "contract_canonical": "[[\"0.0078125\",\"0.00390625\",\"0.001953125\"],\"2.0\",\"[\\\"master trial identifier: one initial phase, shared by every clock and by every refinement level\\\",2560,4,\\\"cluster bootstrap over master trial identifiers, one resample of clusters evaluated at every refinement level so that level contrasts are paired; auxiliary replications travel with their cluster\\\",200,\\\"2.0\\\",20260901]\"]",
+    "dataset_digest": "64ff29574b0ad19b0820b09019dc3e1bc2aeddb8116188377ccb0483f471677d",
+    "levels": [
+     {
+      "absolute_error": 1.7600260416666667,
+      "clusters": 2560,
+      "measured": 1.7600260416666667,
+      "observable": "added_resets_mean",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 1.7600260416666667,
+      "span_error": 0.04411484094306872,
+      "standard_error": 0.03786703525228561,
+      "timestep": 0.0078125,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 2.5247395833333335,
+      "clusters": 2560,
+      "measured": 2.5247395833333335,
+      "observable": "added_resets_mean",
+      "paired_error": 0.02169875316030663,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 2.5247395833333335,
+      "span_error": 0.04411484094306872,
+      "standard_error": 0.054802461059367015,
+      "timestep": 0.00390625,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 3.6123046875,
+      "clusters": 2560,
+      "measured": 3.6123046875,
+      "observable": "added_resets_mean",
+      "paired_error": 0.0285222935842426,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 3.6123046875,
+      "span_error": 0.04411484094306872,
+      "standard_error": 0.07696755429512768,
+      "timestep": 0.001953125,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 0.018652343750000022,
+      "clusters": 2560,
+      "measured": -0.018652343750000022,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.018652343750000022,
+      "span_error": 0.0012629778195161093,
+      "standard_error": 0.0014664985821678089,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01285807291666663,
+      "clusters": 2560,
+      "measured": -0.01285807291666663,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.0010194789746313664,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.01285807291666663,
+      "span_error": 0.0012629778195161093,
+      "standard_error": 0.0011384296041551452,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.009537760416666652,
+      "clusters": 2560,
+      "measured": -0.009537760416666652,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.0007606446498682369,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.009537760416666652,
+      "span_error": 0.0012629778195161093,
+      "standard_error": 0.0010103914803524215,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.125,
+      "clusters": 2560,
+      "measured": 0.125,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.125,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.015230018664284313,
+      "timestep": 0.0078125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.08984375,
+      "clusters": 2560,
+      "measured": 0.08984375,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.011633510133424866,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.08984375,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.012966294910498917,
+      "timestep": 0.00390625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.058984374999999645,
+      "clusters": 2560,
+      "measured": 0.058984374999999645,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.008874779615812019,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.058984374999999645,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.012311983422151562,
+      "timestep": 0.001953125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.00651041666666663,
+      "clusters": 2560,
+      "measured": 0.00651041666666663,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.00651041666666663,
+      "span_error": 0.0007103183651325225,
+      "standard_error": 0.0008335053283986846,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.003808593749999978,
+      "clusters": 2560,
+      "measured": 0.003808593749999978,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.0005672691498534081,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.003808593749999978,
+      "span_error": 0.0007103183651325225,
+      "standard_error": 0.0005925882673074612,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0032552083333332593,
+      "clusters": 2560,
+      "measured": 0.0032552083333332593,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.0004294154959503006,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.0032552083333332593,
+      "span_error": 0.0007103183651325225,
+      "standard_error": 0.000590124322981527,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.011458333333333348,
+      "clusters": 2560,
+      "measured": 0.011458333333333348,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.011458333333333348,
+      "span_error": 0.0010780647662358132,
+      "standard_error": 0.001003621222072403,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.008723958333333393,
+      "clusters": 2560,
+      "measured": 0.008723958333333393,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 0.0008859727635262231,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.008723958333333393,
+      "span_error": 0.0010780647662358132,
+      "standard_error": 0.0008831804576221895,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0068359375,
+      "clusters": 2560,
+      "measured": 0.0068359375,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 0.0006748700718611265,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.0068359375,
+      "span_error": 0.0010780647662358132,
+      "standard_error": 0.0008488293877061649,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01910807291666672,
+      "clusters": 2560,
+      "measured": 0.01910807291666672,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.01910807291666672,
+      "span_error": 0.001261391250395261,
+      "standard_error": 0.001504042267001867,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.012630208333333393,
+      "clusters": 2560,
+      "measured": 0.012630208333333393,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.0010744174544821295,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.012630208333333393,
+      "span_error": 0.001261391250395261,
+      "standard_error": 0.0011491031037509857,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.009667968749999978,
+      "clusters": 2560,
+      "measured": 0.009667968749999978,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.0007507610680351049,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.009667968749999978,
+      "span_error": 0.001261391250395261,
+      "standard_error": 0.0010092063808875785,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     }
+    ],
+    "mesh": "-0x1.0000000000000p+1:0x1.0000000000000p-9",
+    "physical_intervals": 27571200,
+    "physical_stream": "dk-phase-noise/v3/physical/t07-campaign-physical/mesh=-0x1.0000000000000p+1:0x1.0000000000000p-9",
+    "procedure_ok": true,
+    "reasons": [
+     "('added_resets_mean', 'pooled'): [absolute_cap] 3.6123 count with standard error 0.0769676 gives a 2-sigma bound 3.76624 past the cap 3"
+    ],
+    "records_digest": "5e52c225d1f11b36744ab64d8eba3a30e798db346515b45eee1e121d899a15df",
+    "regimes": {
+     "central": {
+      "stride=1": {
+       "falling": 2257920,
+       "rising": 2257920
+      },
+      "stride=2": {
+       "falling": 1128960,
+       "rising": 1128960
+      },
+      "stride=4": {
+       "falling": 565760,
+       "rising": 565760
+      }
+     },
+     "interior+": {
+      "stride=1": {
+       "falling": 1443840,
+       "rising": 1443840
+      },
+      "stride=2": {
+       "falling": 721920,
+       "rising": 721920
+      },
+      "stride=4": {
+       "falling": 360960,
+       "rising": 360960
+      }
+     },
+     "near_edge-": {
+      "stride=1": {
+       "falling": 563200,
+       "rising": 563200
+      },
+      "stride=2": {
+       "falling": 281600,
+       "rising": 281600
+      },
+      "stride=4": {
+       "falling": 140800,
+       "rising": 140800
+      }
+     }
+    },
+    "step": 0.001953125,
+    "steps": 2048,
+    "timesteps": [
+     0.0078125,
+     0.00390625,
+     0.001953125
+    ],
+    "timing": {
+     "compare_seconds": 0.38352874998236075,
+     "dataset_seconds": 0.36874616699060425,
+     "ladder_seconds": 3584.165349125018
+    },
+    "train_digest": "f30dde8b112ff27ef6318323799964b0",
+    "trials": 2560,
+    "verdict": "numerical_no_result"
+   },
+   "results_unchanged": true,
+   "rss_sampled_peak_bytes": 79888384,
+   "ru_maxrss_bytes": 79904768,
+   "ru_maxrss_bytes_final": 79904768,
+   "rule_rows": [
+    {
+     "absolute_error": 0.009537760416666652,
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "excess": 0.006563833204969598,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "standard_error": 0.0010103914803524215,
+     "timestep": 0.001953125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.0032552083333332593,
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "excess": -0.0005592531931055827,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "standard_error": 0.000590124322981527,
+     "timestep": 0.001953125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.0068359375,
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "excess": 0.0035388861030104333,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "standard_error": 0.0008488293877061649,
+     "timestep": 0.001953125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.009667968749999978,
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "excess": 0.006691671339373239,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "standard_error": 0.0010092063808875785,
+     "timestep": 0.001953125,
+     "unit": "probability"
+    }
+   ],
+   "short": "M5",
+   "source_digest": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992",
+   "stage_reasons": [
+    "ladder gate: ('added_resets_mean', 'pooled'): [absolute_cap] 3.6123 count with standard error 0.0769676 gives a 2-sigma bound 3.76624 past the cap 3",
+    "3 of 4 probability rows exceed the allowance 0.00499471: commit_probability_shift@pooled bound 0.01156 (2.3x); survival_shift_at_0.60@pooled bound 0.008534 (1.7x); survival_shift_at_0.80@pooled bound 0.01169 (2.3x)"
+   ],
+   "stage_verdict": "numerical_no_result",
+   "unit": "probability",
+   "wall_seconds": 3584.945019250008,
+   "warnings": [],
+   "work": {
+    "audited_evaluations": 59719680,
+    "physical_intervals": 27571200,
+    "resample_observations": 9216000
+   }
+  },
+  "M6": {
+   "exit_state": "stopped:dependency",
+   "kind": "moving",
+   "label": "moving-band probability, dt/16 replay",
+   "short": "M6",
+   "stage_reasons": [
+    "stop rule: predecessor M5 returned numerical_no_result; a later stage never runs on an unresolved one"
+   ],
+   "stage_verdict": "not_run",
+   "unit": "probability"
+  },
+  "M7": {
+   "exit_state": "not_launched",
+   "kind": "not_launched",
+   "label": "moving-band time quantile, 1024x master trials",
+   "short": "M7",
+   "stage_reasons": [
+    "pricing_unresolved in the pricing session: replay work 128x and comparison work 17.1x beyond the largest measured points (16x limit)"
+   ],
+   "stage_verdict": "not_launched",
+   "unit": "time"
+  },
+  "REF_S3": {
+   "child_returncode": 0,
+   "child_wall_seconds": 6.932790916005615,
+   "elapsed_at_preflight": 0.16437229100847617,
+   "exit_state": "completed",
+   "kind": "reference_stationary",
+   "label": "ticket-04 S3 stationary reference ladder (reproduction, non_intended)",
+   "log": [
+    "[23:33:17]     oracle 600x600 solved in 0.0s",
+    "[23:33:17]     oracle margin (refined [1200, 1200]): gap 1.175e-04",
+    "[23:33:18]     endpoint walk 6000x2048 in 0.4s; paired=True",
+    "[23:33:24]     gate pass; checks {'paired_bitwise': True, 'oracle_margin_ok': True, 'oracle_margin_ratio': 36.56536152065438, 'survival_sign_ok': True, 'nonzero_se_ok': True, 'gate_pass': True}"
+   ],
+   "parent_observed_rss_peak_bytes": 241664000,
+   "pid": 50591,
+   "preflight_predicted_seconds": 5.723920594481569,
+   "result": {
+    "band": [
+     -0.015603225504360996,
+     0.784396774495639
+    ],
+    "budgets_digest": "cb248c2b9f45071dabbd718ca62da1f3e6336f6da0aaf9f60356bd6a7262be35",
+    "cell": {
+     "base_fine_steps": 2048,
+     "base_space": 600,
+     "base_time": 600,
+     "chunk": 1500,
+     "coupling": 0.8,
+     "detuning": 0.3,
+     "diffusion": 0.05,
+     "fractions": [
+      0.25,
+      0.5,
+      0.75
+     ],
+     "horizon": 2.0,
+     "namespace": "t04-s3-endpoint",
+     "quantile": 0.35,
+     "resamples": 200,
+     "seed": 20260828,
+     "strides": [
+      8,
+      4,
+      2
+     ],
+     "tolerance": 0.4,
+     "walkers": 6000,
+     "window": 1024
+    },
+    "checks": {
+     "gate_pass": true,
+     "nonzero_se_ok": true,
+     "oracle_margin_ok": true,
+     "oracle_margin_ratio": 36.56536152065438,
+     "paired_bitwise": true,
+     "survival_sign_ok": true
+    },
+    "contract_canonical": "[[\"0.0078125\",\"0.00390625\",\"0.001953125\"],\"2.0\",\"[\\\"endpoint walker: one independent keyed Brownian stream\\\",6000,1,\\\"cluster bootstrap over walkers, one resample of clusters evaluated at every refinement level so that level contrasts are paired\\\",200,\\\"2.0\\\",20260828]\"]",
+    "dataset_digest": "1018571a766f119d9ca7dc797dbeb78aa74f40977aa8715b1705e9a71c2f2665",
+    "fine_steps": 2048,
+    "levels": [
+     {
+      "absolute_error": 0.04002717907160436,
+      "clusters": 6000,
+      "measured": 0.44033333333333335,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.184397",
+      "reference": 0.4803605124049377,
+      "relative_error": 0.08332737191741098,
+      "span_error": 0.0015738688297453484,
+      "standard_error": 0.006271449792178232,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.029527179071604404,
+      "clusters": 6000,
+      "measured": 0.4508333333333333,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0012456263518307613,
+      "position": "x=0.184397",
+      "reference": 0.4803605124049377,
+      "relative_error": 0.06146878918871952,
+      "span_error": 0.0015738688297453484,
+      "standard_error": 0.006138377095522411,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.023860512404937695,
+      "clusters": 6000,
+      "measured": 0.4565,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0010336922567873107,
+      "position": "x=0.184397",
+      "reference": 0.4803605124049377,
+      "relative_error": 0.04967209374783827,
+      "span_error": 0.0015738688297453484,
+      "standard_error": 0.006066039816584876,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.025025279289153463,
+      "clusters": 6000,
+      "measured": 0.23816666666666667,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.384397",
+      "reference": 0.26319194595582013,
+      "relative_error": 0.09508375797090025,
+      "span_error": 0.0014474295648005213,
+      "standard_error": 0.005917886785276487,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.018525279289153457,
+      "clusters": 6000,
+      "measured": 0.24466666666666667,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0010332951713923658,
+      "position": "x=0.384397",
+      "reference": 0.26319194595582013,
+      "relative_error": 0.07038695360481564,
+      "span_error": 0.0014474295648005213,
+      "standard_error": 0.005917953831725865,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.014191945955820129,
+      "clusters": 6000,
+      "measured": 0.249,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0009410292308957958,
+      "position": "x=0.384397",
+      "reference": 0.26319194595582013,
+      "relative_error": 0.05392241736075926,
+      "span_error": 0.0014474295648005213,
+      "standard_error": 0.005897484298384602,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01123379174363065,
+      "clusters": 6000,
+      "measured": 0.1245,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.584397",
+      "reference": 0.13573379174363065,
+      "relative_error": 0.08276341211220749,
+      "span_error": 0.0021161569724100658,
+      "standard_error": 0.00426059308056147,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.007900458410297323,
+      "clusters": 6000,
+      "measured": 0.12783333333333333,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0012208329195602407,
+      "position": "x=0.584397",
+      "reference": 0.13573379174363065,
+      "relative_error": 0.05820553827317695,
+      "span_error": 0.0021161569724100658,
+      "standard_error": 0.0041902905959349335,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.004733791743630644,
+      "clusters": 6000,
+      "measured": 0.131,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0015106062208747192,
+      "position": "x=0.584397",
+      "reference": 0.13573379174363065,
+      "relative_error": 0.0348755581260978,
+      "span_error": 0.0021161569724100658,
+      "standard_error": 0.0038591654436133547,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.010797095391142958,
+      "clusters": 6000,
+      "measured": 0.1345,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.184397",
+      "reference": 0.14529709539114297,
+      "relative_error": 0.07431046960764728,
+      "span_error": 0.0023254718657572844,
+      "standard_error": 0.004089038906284872,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.008297095391142956,
+      "clusters": 6000,
+      "measured": 0.137,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0010959564504112323,
+      "position": "x=0.184397",
+      "reference": 0.14529709539114297,
+      "relative_error": 0.057104344507417665,
+      "span_error": 0.0023254718657572844,
+      "standard_error": 0.0040501781883633455,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.00429709539114298,
+      "clusters": 6000,
+      "measured": 0.141,
+      "observable": "exit_count_upper",
+      "paired_error": 0.002020392458063489,
+      "position": "x=0.184397",
+      "reference": 0.14529709539114297,
+      "relative_error": 0.02957454434705047,
+      "span_error": 0.0023254718657572844,
+      "standard_error": 0.0032820039537122853,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.02540221062460879,
+      "clusters": 6000,
+      "measured": 0.25066666666666665,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.384397",
+      "reference": 0.27606887729127544,
+      "relative_error": 0.09201403241774103,
+      "span_error": 0.001407714819566938,
+      "standard_error": 0.00514726940506403,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.019068877291275432,
+      "clusters": 6000,
+      "measured": 0.257,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0011333601213702753,
+      "position": "x=0.384397",
+      "reference": 0.27606887729127544,
+      "relative_error": 0.06907289759850833,
+      "span_error": 0.001407714819566938,
+      "standard_error": 0.005080277935040963,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.014235543957942132,
+      "clusters": 6000,
+      "measured": 0.2618333333333333,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0009509812907283834,
+      "position": "x=0.384397",
+      "reference": 0.27606887729127544,
+      "relative_error": 0.05156518944698883,
+      "span_error": 0.001407714819566938,
+      "standard_error": 0.005094933741940398,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.04129523638296695,
+      "clusters": 6000,
+      "measured": 0.45766666666666667,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.584397",
+      "reference": 0.4989619030496336,
+      "relative_error": 0.08276230335537091,
+      "span_error": 0.0017548878855320866,
+      "standard_error": 0.006430665677461116,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.029961903049633642,
+      "clusters": 6000,
+      "measured": 0.469,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0013989384884519976,
+      "position": "x=0.584397",
+      "reference": 0.4989619030496336,
+      "relative_error": 0.06004847838383609,
+      "span_error": 0.0017548878855320866,
+      "standard_error": 0.006398329974740413,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.023795236382966933,
+      "clusters": 6000,
+      "measured": 0.4751666666666667,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0009702724726248041,
+      "position": "x=0.584397",
+      "reference": 0.4989619030496336,
+      "relative_error": 0.047689485384618494,
+      "span_error": 0.0017548878855320866,
+      "standard_error": 0.006448390168262468,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.1854968686147268,
+      "clusters": 6000,
+      "measured": 0.984375,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.184397",
+      "reference": 0.7988781313852732,
+      "relative_error": 0.2321967035110486,
+      "span_error": 0.011528171028140301,
+      "standard_error": 0.027508559134483537,
+      "timestep": 0.0078125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.1386218686147268,
+      "clusters": 6000,
+      "measured": 0.9375,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.010228508474342137,
+      "position": "x=0.184397",
+      "reference": 0.7988781313852732,
+      "relative_error": 0.17352067001052246,
+      "span_error": 0.011528171028140301,
+      "standard_error": 0.021384145037781833,
+      "timestep": 0.00390625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.1112781186147268,
+      "clusters": 6000,
+      "measured": 0.91015625,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.00545366923074186,
+      "position": "x=0.184397",
+      "reference": 0.7988781313852732,
+      "relative_error": 0.13929298380188224,
+      "span_error": 0.011528171028140301,
+      "standard_error": 0.020808671686841848,
+      "timestep": 0.001953125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.16250990848510427,
+      "clusters": 6000,
+      "measured": 1.4140625,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.384397",
+      "reference": 1.2515525915148957,
+      "relative_error": 0.12984664774526186,
+      "span_error": 0.012603956966149403,
+      "standard_error": 0.027861186193365074,
+      "timestep": 0.0078125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.12598647098510463,
+      "clusters": 6000,
+      "measured": 1.3775390625000004,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.010194906742512996,
+      "position": "x=0.384397",
+      "reference": 1.2515525915148957,
+      "relative_error": 0.10066414455073673,
+      "span_error": 0.012603956966149403,
+      "standard_error": 0.02185379795079847,
+      "timestep": 0.00390625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.09151381473510445,
+      "clusters": 6000,
+      "measured": 1.3430664062500002,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.007169062256666845,
+      "position": "x=0.384397",
+      "reference": 1.2515525915148957,
+      "relative_error": 0.07312023110777544,
+      "span_error": 0.012603956966149403,
+      "standard_error": 0.02073640459344259,
+      "timestep": 0.001953125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.15769008505012638,
+      "clusters": 6000,
+      "measured": 0.9140625,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.584397",
+      "reference": 0.7563724149498736,
+      "relative_error": 0.2084820677398406,
+      "span_error": 0.0094990271403357,
+      "standard_error": 0.0216382246061779,
+      "timestep": 0.0078125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.11472133505012638,
+      "clusters": 6000,
+      "measured": 0.87109375,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.007243775483345612,
+      "position": "x=0.584397",
+      "reference": 0.7563724149498736,
+      "relative_error": 0.15167308164950621,
+      "span_error": 0.0094990271403357,
+      "standard_error": 0.02089386993270977,
+      "timestep": 0.00390625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.08737758505012638,
+      "clusters": 6000,
+      "measured": 0.84375,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.006921837784219358,
+      "position": "x=0.584397",
+      "reference": 0.7563724149498736,
+      "relative_error": 0.11552190868292979,
+      "span_error": 0.0094990271403357,
+      "standard_error": 0.02258753597447193,
+      "timestep": 0.001953125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.050824274462747454,
+      "clusters": 6000,
+      "measured": 0.4251666666666667,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.184397",
+      "reference": 0.37434239220391924,
+      "relative_error": 0.13576948676189857,
+      "span_error": 0.0018118506846332351,
+      "standard_error": 0.006004053860370971,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.03782427446274744,
+      "clusters": 6000,
+      "measured": 0.4121666666666667,
+      "observable": "survival",
+      "paired_error": 0.0013529645160071822,
+      "position": "x=0.184397",
+      "reference": 0.37434239220391924,
+      "relative_error": 0.10104192111414155,
+      "span_error": 0.0018118506846332351,
+      "standard_error": 0.0058233807774787155,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.028157607796080786,
+      "clusters": 6000,
+      "measured": 0.4025,
+      "observable": "survival",
+      "paired_error": 0.0013048354750595014,
+      "position": "x=0.184397",
+      "reference": 0.37434239220391924,
+      "relative_error": 0.07521885947862997,
+      "span_error": 0.0018118506846332351,
+      "standard_error": 0.005790018896023027,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.050427489913762225,
+      "clusters": 6000,
+      "measured": 0.5111666666666667,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.384397",
+      "reference": 0.46073917675290443,
+      "relative_error": 0.1094491036537286,
+      "span_error": 0.001835874400103029,
+      "standard_error": 0.006360398837088298,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.03759415658042892,
+      "clusters": 6000,
+      "measured": 0.49833333333333335,
+      "observable": "survival",
+      "paired_error": 0.0015343125560139806,
+      "position": "x=0.384397",
+      "reference": 0.46073917675290443,
+      "relative_error": 0.08159531135462951,
+      "span_error": 0.001835874400103029,
+      "standard_error": 0.006145749758112151,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.02842748991376226,
+      "clusters": 6000,
+      "measured": 0.4891666666666667,
+      "observable": "survival",
+      "paired_error": 0.0012472166107571365,
+      "position": "x=0.384397",
+      "reference": 0.46073917675290443,
+      "relative_error": 0.06169974542670157,
+      "span_error": 0.001835874400103029,
+      "standard_error": 0.00602064143220344,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.052529028126597654,
+      "clusters": 6000,
+      "measured": 0.41783333333333333,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.584397",
+      "reference": 0.3653043052067357,
+      "relative_error": 0.14379526158847222,
+      "span_error": 0.0022130329090676473,
+      "standard_error": 0.0065228522824283515,
+      "timestep": 0.0078125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.03786236145993099,
+      "clusters": 6000,
+      "measured": 0.4031666666666667,
+      "observable": "survival",
+      "paired_error": 0.0017364050784062176,
+      "position": "x=0.584397",
+      "reference": 0.3653043052067357,
+      "relative_error": 0.10364608607200414,
+      "span_error": 0.0022130329090676473,
+      "standard_error": 0.006366339049425423,
+      "timestep": 0.00390625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.028529028126597633,
+      "clusters": 6000,
+      "measured": 0.3938333333333333,
+      "observable": "survival",
+      "paired_error": 0.0011801683438954814,
+      "position": "x=0.584397",
+      "reference": 0.3653043052067357,
+      "relative_error": 0.07809661074334254,
+      "span_error": 0.0022130329090676473,
+      "standard_error": 0.006358177435077135,
+      "timestep": 0.001953125,
+      "unit": "probability"
+     }
+    ],
+    "oracle_closure_residual": 2.220446049250313e-16,
+    "oracle_gap": 0.00011751819789107554,
+    "oracle_grid": [
+     600,
+     600
+    ],
+    "oracle_margin_grid": [
+     1200,
+     1200
+    ],
+    "oracle_margin_mode": "refined",
+    "procedure_ok": true,
+    "reasons": [],
+    "reference": {
+     "exit_count_lower": [
+      0.4803605124049377,
+      0.26319194595582013,
+      0.13573379174363065
+     ],
+     "exit_count_upper": [
+      0.14529709539114297,
+      0.27606887729127544,
+      0.4989619030496336
+     ],
+     "exit_quantile_p35": [
+      0.7988781313852732,
+      1.2515525915148957,
+      0.7563724149498736
+     ],
+     "survival": [
+      0.37434239220391924,
+      0.46073917675290443,
+      0.3653043052067357
+     ]
+    },
+    "smallest_finest_error": 0.00429709539114298,
+    "starts": [
+     0.18439677449563902,
+     0.384396774495639,
+     0.5843967744956391
+    ],
+    "timesteps": [
+     0.0078125,
+     0.00390625,
+     0.001953125
+    ],
+    "timing": {
+     "compare_seconds": 2.2484597500006203,
+     "dataset_seconds": 4.013284792017657,
+     "oracle_margin_seconds": 0.12843091698596254,
+     "oracle_seconds": 0.02463908400386572,
+     "walk_seconds": 0.3939902499841992
+    },
+    "verdict": "pass"
+   },
+   "results_unchanged": true,
+   "rss_sampled_peak_bytes": 242401280,
+   "ru_maxrss_bytes": 242434048,
+   "ru_maxrss_bytes_final": 242434048,
+   "rule_rows": [],
+   "short": "REF_S3",
+   "source_digest": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992",
+   "stage_reasons": [],
+   "stage_verdict": "reference",
+   "unit": null,
+   "wall_seconds": 6.822539125016192,
+   "warnings": [],
+   "work": {
+    "endpoint_observations": 32256000,
+    "resample_observations": 43200000,
+    "space_time_cells": 1800000
+   }
+  },
+  "REF_S3B": {
+   "child_returncode": 0,
+   "child_wall_seconds": 13.602965875004884,
+   "elapsed_at_preflight": 7.132685249991482,
+   "exit_state": "completed",
+   "kind": "reference_moving",
+   "label": "ticket-04 S3b pooled moving-band ladder (reproduction, non_intended)",
+   "log": [
+    "[23:33:37]     ladder 40 trials x 3 clocks x 3 strides in 13s; subset=True",
+    "[23:33:37]     gate numerical_no_result; checks {'subset_holds': True, 'both_edges_every_clock': True, 'gate_pass': False}"
+   ],
+   "parent_observed_rss_peak_bytes": 57376768,
+   "pid": 50594,
+   "preflight_predicted_seconds": 21.52596946731537,
+   "result": {
+    "audit_stream": "dk-band-audit/v2/audit/t04-audit-auxiliary/mesh=-0x1.0000000000000p+1:0x1.0624dd2f1a9fcp-7/replicate=0",
+    "audited_evaluations": 246880,
+    "budgets_digest": "aeb97e3c0c7e5f757fa3f6fed5872bc3b1573570c9d673ca24415290aabd9257",
+    "caps": {
+     "added_resets_mean": [
+      3.0,
+      30.0,
+      0.0
+     ],
+     "commit_probability_shift": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "commit_time_quantile_p20_shift": [
+      0.1,
+      4.0,
+      0.032
+     ],
+     "survival_shift_at_0.45": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "survival_shift_at_0.60": [
+      0.1,
+      4.0,
+      0.01
+     ],
+     "survival_shift_at_0.80": [
+      0.1,
+      4.0,
+      0.01
+     ]
+    },
+    "cell": {
+     "audit_namespace": "t04-audit-auxiliary",
+     "base_step": 0.008,
+     "base_steps": 500,
+     "base_trials": 40,
+     "centre": 0.0,
+     "clocks": [
+      [
+       0,
+       0.0,
+       "central"
+      ],
+      [
+       1,
+       0.45,
+       "interior+"
+      ],
+      [
+       2,
+       -0.88,
+       "near_edge-"
+      ]
+     ],
+     "diffusion": 0.02,
+     "duration": 4.0,
+     "dwell": 0.3,
+     "label_prefix": "S3b/ladder",
+     "origin": -2.0,
+     "peak": 1.0,
+     "physical_namespace": "t04-audit-physical",
+     "quantile": 0.2,
+     "replicates": 4,
+     "resamples": 200,
+     "seed": 20260901,
+     "strides": [
+      4,
+      2,
+      1
+     ],
+     "survival_fractions": [
+      0.45,
+      0.6,
+      0.8
+     ],
+     "tolerance": 0.25
+    },
+    "checks": {
+     "both_edges_every_clock": true,
+     "gate_pass": false,
+     "subset_holds": true
+    },
+    "contract_canonical": "[[\"0.032\",\"0.016\",\"0.008\"],\"2.0\",\"[\\\"master trial identifier: one initial phase, shared by every clock and by every refinement level\\\",40,4,\\\"cluster bootstrap over master trial identifiers, one resample of clusters evaluated at every refinement level so that level contrasts are paired; auxiliary replications travel with their cluster\\\",200,\\\"2.0\\\",20260901]\"]",
+    "dataset_digest": "a1b71abec7557997554a0682b40cdef9e97be72e59b63cdbce9cb3ad5b503d14",
+    "levels": [
+     {
+      "absolute_error": 0.47708333333333336,
+      "clusters": 40,
+      "measured": 0.47708333333333336,
+      "observable": "added_resets_mean",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.47708333333333336,
+      "span_error": 0.15739366624684462,
+      "standard_error": 0.11018527188318174,
+      "timestep": 0.032,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 0.6104166666666667,
+      "clusters": 40,
+      "measured": 0.6104166666666667,
+      "observable": "added_resets_mean",
+      "paired_error": 0.07395910081112629,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.6104166666666667,
+      "span_error": 0.15739366624684462,
+      "standard_error": 0.13767603795097894,
+      "timestep": 0.016,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 0.98125,
+      "clusters": 40,
+      "measured": 0.98125,
+      "observable": "added_resets_mean",
+      "paired_error": 0.11243784682306181,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.98125,
+      "span_error": 0.15739366624684462,
+      "standard_error": 0.23208023748307305,
+      "timestep": 0.008,
+      "unit": "count"
+     },
+     {
+      "absolute_error": 0.006249999999999978,
+      "clusters": 40,
+      "measured": -0.006249999999999978,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.006249999999999978,
+      "span_error": 0.006941568360316653,
+      "standard_error": 0.00496111344016282,
+      "timestep": 0.032,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.004166666666666707,
+      "clusters": 40,
+      "measured": -0.004166666666666707,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.004572900033069953,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.004166666666666707,
+      "span_error": 0.006941568360316653,
+      "standard_error": 0.0030320126848799684,
+      "timestep": 0.016,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.00833333333333336,
+      "clusters": 40,
+      "measured": -0.00833333333333336,
+      "observable": "commit_probability_shift",
+      "paired_error": 0.004805098245750249,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.00833333333333336,
+      "span_error": 0.006941568360316653,
+      "standard_error": 0.0053564980601558485,
+      "timestep": 0.008,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.13439999999999996,
+      "clusters": 40,
+      "measured": 0.13439999999999996,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.13439999999999996,
+      "span_error": 0.15064955239957065,
+      "standard_error": 0.1390880520212841,
+      "timestep": 0.032,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.11519999999999964,
+      "clusters": 40,
+      "measured": 0.11519999999999964,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.137713801252004,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.11519999999999964,
+      "span_error": 0.15064955239957065,
+      "standard_error": 0.12679014047871823,
+      "timestep": 0.016,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.011200000000000876,
+      "clusters": 40,
+      "measured": 0.011200000000000876,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.12494358445507449,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.011200000000000876,
+      "span_error": 0.15064955239957065,
+      "standard_error": 0.08290027807264948,
+      "timestep": 0.008,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.01041666666666663,
+      "clusters": 40,
+      "measured": 0.01041666666666663,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.01041666666666663,
+      "span_error": 0.008042886512352786,
+      "standard_error": 0.00804288651235279,
+      "timestep": 0.032,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.008333333333333304,
+      "clusters": 40,
+      "measured": 0.008333333333333304,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.0020288091194904916,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.008333333333333304,
+      "span_error": 0.008042886512352786,
+      "standard_error": 0.007447822408359757,
+      "timestep": 0.016,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0,
+      "clusters": 40,
+      "measured": 0.0,
+      "observable": "survival_shift_at_0.45",
+      "paired_error": 0.007447822408359751,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.0,
+      "span_error": 0.008042886512352786,
+      "standard_error": 0.0,
+      "timestep": 0.008,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01041666666666674,
+      "clusters": 40,
+      "measured": 0.01041666666666674,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.01041666666666674,
+      "span_error": 0.007680653934607706,
+      "standard_error": 0.007680653934607709,
+      "timestep": 0.032,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01041666666666663,
+      "clusters": 40,
+      "measured": 0.01041666666666663,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 6.092136056780927e-17,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.01041666666666663,
+      "span_error": 0.007680653934607706,
+      "standard_error": 0.007680653934607711,
+      "timestep": 0.016,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0,
+      "clusters": 40,
+      "measured": 0.0,
+      "observable": "survival_shift_at_0.60",
+      "paired_error": 0.007680653934607711,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.0,
+      "span_error": 0.007680653934607706,
+      "standard_error": 0.0,
+      "timestep": 0.008,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.022916666666666696,
+      "clusters": 40,
+      "measured": 0.022916666666666696,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.022916666666666696,
+      "span_error": 0.005440050671833503,
+      "standard_error": 0.011228692831918049,
+      "timestep": 0.032,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.012499999999999956,
+      "clusters": 40,
+      "measured": 0.012499999999999956,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.007263000002729083,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.012499999999999956,
+      "span_error": 0.005440050671833503,
+      "standard_error": 0.00787836210612038,
+      "timestep": 0.016,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.014583333333333282,
+      "clusters": 40,
+      "measured": 0.014583333333333282,
+      "observable": "survival_shift_at_0.80",
+      "paired_error": 0.0042577461677289685,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.014583333333333282,
+      "span_error": 0.005440050671833503,
+      "standard_error": 0.009136733524487156,
+      "timestep": 0.008,
+      "unit": "probability"
+     }
+    ],
+    "mesh": "-0x1.0000000000000p+1:0x1.0624dd2f1a9fcp-7",
+    "physical_intervals": 105480,
+    "physical_stream": "dk-phase-noise/v3/physical/t04-audit-physical/mesh=-0x1.0000000000000p+1:0x1.0624dd2f1a9fcp-7",
+    "procedure_ok": true,
+    "reasons": [
+     "('commit_time_quantile_p20_shift', 'pooled'): [absolute_cap] 0.0112 time with standard error 0.0829003 gives a 2-sigma bound 0.177001 past the cap 0.1"
+    ],
+    "records_digest": "90f9c38c9adce55280396f98c407ad0fac4671668af3b4ab801d7c24e92805c0",
+    "regimes": {
+     "central": {
+      "stride=1": {
+       "falling": 10000,
+       "rising": 10000
+      },
+      "stride=2": {
+       "falling": 5000,
+       "rising": 5000
+      },
+      "stride=4": {
+       "falling": 2480,
+       "rising": 2520
+      }
+     },
+     "interior+": {
+      "stride=1": {
+       "falling": 5320,
+       "rising": 5320
+      },
+      "stride=2": {
+       "falling": 2680,
+       "rising": 2680
+      },
+      "stride=4": {
+       "falling": 1320,
+       "rising": 1360
+      }
+     },
+     "near_edge-": {
+      "stride=1": {
+       "falling": 2280,
+       "rising": 2280
+      },
+      "stride=2": {
+       "falling": 1160,
+       "rising": 1160
+      },
+      "stride=4": {
+       "falling": 560,
+       "rising": 600
+      }
+     }
+    },
+    "step": 0.008,
+    "steps": 500,
+    "timesteps": [
+     0.032,
+     0.016,
+     0.008
+    ],
+    "timing": {
+     "compare_seconds": 0.03714050000417046,
+     "dataset_seconds": 0.0009963330230675638,
+     "ladder_seconds": 13.396854749997146
+    },
+    "train_digest": "f30dde8b112ff27ef6318323799964b0",
+    "trials": 40,
+    "verdict": "numerical_no_result"
+   },
+   "results_unchanged": true,
+   "rss_sampled_peak_bytes": 57409536,
+   "ru_maxrss_bytes": 57409536,
+   "ru_maxrss_bytes_final": 57409536,
+   "rule_rows": [],
+   "short": "REF_S3B",
+   "source_digest": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992",
+   "stage_reasons": [],
+   "stage_verdict": "reference",
+   "unit": null,
+   "wall_seconds": 13.446239417011384,
+   "warnings": [],
+   "work": {
+    "audited_evaluations": 246880,
+    "physical_intervals": 105480,
+    "resample_observations": 144000
+   }
+  },
+  "S1": {
+   "child_returncode": 0,
+   "child_wall_seconds": 21.40103541701683,
+   "elapsed_at_preflight": 20.769533999991836,
+   "exit_state": "completed",
+   "kind": "stationary",
+   "label": "stationary probability, dt/16 at doubled space",
+   "log": [
+    "[23:33:38]     oracle 1200x9600 solved in 0.7s",
+    "[23:33:45]     oracle margin (refined [2400, 19200]): gap 2.955e-06",
+    "[23:33:52]     endpoint walk 6000x32768 in 7.0s; paired=True",
+    "[23:33:59]     gate numerical_no_result; checks {'paired_bitwise': True, 'oracle_margin_ok': True, 'oracle_margin_ratio': 888.9715200191995, 'survival_sign_ok': True, 'nonzero_se_ok': True, 'gate_pass': False}"
+   ],
+   "parent_observed_rss_peak_bytes": 665452544,
+   "pid": 50609,
+   "preflight_predicted_seconds": 61.416920916075476,
+   "result": {
+    "band": [
+     0.08551237106443382,
+     0.7855123710644338
+    ],
+    "budgets_digest": "7c5eff8d642b5171436c6e1c7a2353cd69cf7fcc63f06d4ac33caaefee828e85",
+    "cell": {
+     "base_fine_steps": 2048,
+     "base_space": 600,
+     "base_time": 600,
+     "chunk": 1500,
+     "coupling": 1.0,
+     "detuning": 0.421875,
+     "diffusion": 0.08,
+     "fractions": [
+      0.25,
+      0.5,
+      0.75
+     ],
+     "horizon": 2.0,
+     "namespace": "t07-campaign-stationary",
+     "quantile": 0.35,
+     "resamples": 200,
+     "seed": 20260828,
+     "strides": [
+      8,
+      4,
+      2
+     ],
+     "tolerance": 0.35,
+     "walkers": 6000,
+     "window": 1024
+    },
+    "checks": {
+     "gate_pass": false,
+     "nonzero_se_ok": true,
+     "oracle_margin_ok": true,
+     "oracle_margin_ratio": 888.9715200191995,
+     "paired_bitwise": true,
+     "survival_sign_ok": true
+    },
+    "contract_canonical": "[[\"0.00048828125\",\"0.000244140625\",\"0.0001220703125\"],\"2.0\",\"[\\\"endpoint walker: one independent keyed Brownian stream\\\",6000,1,\\\"cluster bootstrap over walkers, one resample of clusters evaluated at every refinement level so that level contrasts are paired\\\",200,\\\"2.0\\\",20260828]\"]",
+    "dataset_digest": "110ea3c3c9d6a1a39c1408d9b60b9c54fd3df6b14aa6ad21d1243426ca3a266c",
+    "fine_steps": 32768,
+    "levels": [
+     {
+      "absolute_error": 0.021203584323994384,
+      "clusters": 6000,
+      "measured": 0.638,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.260512",
+      "reference": 0.6592035843239944,
+      "relative_error": 0.03216545666349556,
+      "span_error": 0.0012345719591719552,
+      "standard_error": 0.005888068107260163,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.018203584323994382,
+      "clusters": 6000,
+      "measured": 0.641,
+      "observable": "exit_count_lower",
+      "paired_error": 0.000911763190821083,
+      "position": "x=0.260512",
+      "reference": 0.6592035843239944,
+      "relative_error": 0.027614510534954003,
+      "span_error": 0.0012345719591719552,
+      "standard_error": 0.005925591035315489,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.015870250990661083,
+      "clusters": 6000,
+      "measured": 0.6433333333333333,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0007976791085053937,
+      "position": "x=0.260512",
+      "reference": 0.6592035843239944,
+      "relative_error": 0.02407488576831062,
+      "span_error": 0.0012345719591719552,
+      "standard_error": 0.005906536263980032,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.013408728868218311,
+      "clusters": 6000,
+      "measured": 0.42716666666666664,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.435512",
+      "reference": 0.44057539553488495,
+      "relative_error": 0.03043458396477023,
+      "span_error": 0.0010378445544195164,
+      "standard_error": 0.005328009634557244,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.011742062201551606,
+      "clusters": 6000,
+      "measured": 0.42883333333333334,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0006746444957868285,
+      "position": "x=0.435512",
+      "reference": 0.44057539553488495,
+      "relative_error": 0.02665165218156597,
+      "span_error": 0.0010378445544195164,
+      "standard_error": 0.0052576146557486445,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.010242062201551605,
+      "clusters": 6000,
+      "measured": 0.43033333333333335,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0006641601543139771,
+      "position": "x=0.435512",
+      "reference": 0.44057539553488495,
+      "relative_error": 0.02324701357668221,
+      "span_error": 0.0010378445544195164,
+      "standard_error": 0.005192894902618396,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0036083692789035116,
+      "clusters": 6000,
+      "measured": 0.244,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0,
+      "position": "x=0.610512",
+      "reference": 0.2476083692789035,
+      "relative_error": 0.014572888991644228,
+      "span_error": 0.0014998083583946363,
+      "standard_error": 0.003499048392161307,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.00427503594557016,
+      "clusters": 6000,
+      "measured": 0.24333333333333335,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0009399062298274444,
+      "position": "x=0.610512",
+      "reference": 0.2476083692789035,
+      "relative_error": 0.01726531279221343,
+      "span_error": 0.0014998083583946363,
+      "standard_error": 0.003686807171300601,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.005108369278903513,
+      "clusters": 6000,
+      "measured": 0.2425,
+      "observable": "exit_count_lower",
+      "paired_error": 0.0008695036343824876,
+      "position": "x=0.610512",
+      "reference": 0.2476083692789035,
+      "relative_error": 0.020630842542925108,
+      "span_error": 0.0014998083583946363,
+      "standard_error": 0.003997141887505394,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.009120421682293989,
+      "clusters": 6000,
+      "measured": 0.2663333333333333,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.260512",
+      "reference": 0.2572129116510393,
+      "relative_error": 0.03545864639434455,
+      "span_error": 0.0010930642175184465,
+      "standard_error": 0.005207083211785096,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.00962042168229399,
+      "clusters": 6000,
+      "measured": 0.2668333333333333,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0008468646919539091,
+      "position": "x=0.260512",
+      "reference": 0.2572129116510393,
+      "relative_error": 0.0374025612499034,
+      "span_error": 0.0010930642175184465,
+      "standard_error": 0.005254770477152918,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.008787088348960692,
+      "clusters": 6000,
+      "measured": 0.266,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0008095158297618186,
+      "position": "x=0.260512",
+      "reference": 0.2572129116510393,
+      "relative_error": 0.03416270315730546,
+      "span_error": 0.0010930642175184465,
+      "standard_error": 0.005117526666854888,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.004960012308498518,
+      "clusters": 6000,
+      "measured": 0.44616666666666666,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.435512",
+      "reference": 0.4511266789751652,
+      "relative_error": 0.010994721748149083,
+      "span_error": 0.002092815855092385,
+      "standard_error": 0.0044099953213319375,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.003293345641831813,
+      "clusters": 6000,
+      "measured": 0.44783333333333336,
+      "observable": "exit_count_upper",
+      "paired_error": 0.001528678182998584,
+      "position": "x=0.435512",
+      "reference": 0.4511266789751652,
+      "relative_error": 0.007300267963121538,
+      "span_error": 0.002092815855092385,
+      "standard_error": 0.003952784967612805,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.0026266789751651642,
+      "clusters": 6000,
+      "measured": 0.4485,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0007647972790808553,
+      "position": "x=0.435512",
+      "reference": 0.4511266789751652,
+      "relative_error": 0.005822486449110594,
+      "span_error": 0.002092815855092385,
+      "standard_error": 0.0037854171358937647,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.011208307351389113,
+      "clusters": 6000,
+      "measured": 0.659,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0,
+      "position": "x=0.610512",
+      "reference": 0.6702083073513891,
+      "relative_error": 0.016723617461089774,
+      "span_error": 0.003379825471030574,
+      "standard_error": 0.00542674255144303,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.006874974018055813,
+      "clusters": 6000,
+      "measured": 0.6633333333333333,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0020168953214686,
+      "position": "x=0.610512",
+      "reference": 0.6702083073513891,
+      "relative_error": 0.010257965982584091,
+      "span_error": 0.003379825471030574,
+      "standard_error": 0.004657524385197256,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.004541640684722514,
+      "clusters": 6000,
+      "measured": 0.6656666666666666,
+      "observable": "exit_count_upper",
+      "paired_error": 0.0017729122279381334,
+      "position": "x=0.610512",
+      "reference": 0.6702083073513891,
+      "relative_error": 0.006776461340311826,
+      "span_error": 0.003379825471030574,
+      "standard_error": 0.004020710923017704,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.029670382790989824,
+      "clusters": 6000,
+      "measured": 0.32600097656250004,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.260512",
+      "reference": 0.2963305937715102,
+      "relative_error": 0.10012595194226749,
+      "span_error": 0.002960938998510434,
+      "standard_error": 0.008375682070846333,
+      "timestep": 0.00048828125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.022431613259739802,
+      "clusters": 6000,
+      "measured": 0.31876220703125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0016590634237427487,
+      "position": "x=0.260512",
+      "reference": 0.2963305937715102,
+      "relative_error": 0.07569793241475434,
+      "span_error": 0.002960938998510434,
+      "standard_error": 0.008231297618184157,
+      "timestep": 0.000244140625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.015272189431614791,
+      "clusters": 6000,
+      "measured": 0.311602783203125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0023992468539078197,
+      "position": "x=0.260512",
+      "reference": 0.2963305937715102,
+      "relative_error": 0.051537673640915466,
+      "span_error": 0.002960938998510434,
+      "standard_error": 0.008169522549921504,
+      "timestep": 0.0001220703125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.01800806613490924,
+      "clusters": 6000,
+      "measured": 0.52685546875,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.435512",
+      "reference": 0.5088474026150908,
+      "relative_error": 0.03538991462344389,
+      "span_error": 0.002835362716944531,
+      "standard_error": 0.008122896025080225,
+      "timestep": 0.00048828125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.01312525363490924,
+      "clusters": 6000,
+      "measured": 0.52197265625,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.002039654313926831,
+      "position": "x=0.435512",
+      "reference": 0.5088474026150908,
+      "relative_error": 0.025794085942967112,
+      "span_error": 0.002835362716944531,
+      "standard_error": 0.007463616768016584,
+      "timestep": 0.000244140625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.00995142550990924,
+      "clusters": 6000,
+      "measured": 0.518798828125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.002086750085725417,
+      "position": "x=0.435512",
+      "reference": 0.5088474026150908,
+      "relative_error": 0.01955679730065721,
+      "span_error": 0.002835362716944531,
+      "standard_error": 0.007269519809903043,
+      "timestep": 0.0001220703125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.014368515964576223,
+      "clusters": 6000,
+      "measured": 0.30126953125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0,
+      "position": "x=0.610512",
+      "reference": 0.2869010152854238,
+      "relative_error": 0.050081788488206255,
+      "span_error": 0.0048272808680903225,
+      "standard_error": 0.008382026881567068,
+      "timestep": 0.00048828125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.006556015964576223,
+      "clusters": 6000,
+      "measured": 0.29345703125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.0034432613271072124,
+      "position": "x=0.610512",
+      "reference": 0.2869010152854238,
+      "relative_error": 0.02285114243340674,
+      "span_error": 0.0048272808680903225,
+      "standard_error": 0.006551194679557302,
+      "timestep": 0.000244140625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.004236680027076223,
+      "clusters": 6000,
+      "measured": 0.2911376953125,
+      "observable": "exit_quantile_p35",
+      "paired_error": 0.001936679019414538,
+      "position": "x=0.610512",
+      "reference": 0.2869010152854238,
+      "relative_error": 0.014767044385888134,
+      "span_error": 0.0048272808680903225,
+      "standard_error": 0.005771079585341258,
+      "timestep": 0.0001220703125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.01208316264170034,
+      "clusters": 6000,
+      "measured": 0.09566666666666666,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.260512",
+      "reference": 0.08358350402496632,
+      "relative_error": 0.14456396369899865,
+      "span_error": 0.0009572677010624087,
+      "standard_error": 0.003603334193322353,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.008583162641700337,
+      "clusters": 6000,
+      "measured": 0.09216666666666666,
+      "observable": "survival",
+      "paired_error": 0.0007616905251279667,
+      "position": "x=0.260512",
+      "reference": 0.08358350402496632,
+      "relative_error": 0.10268967234415721,
+      "span_error": 0.0009572677010624087,
+      "standard_error": 0.0035881527511597215,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.00708316264170035,
+      "clusters": 6000,
+      "measured": 0.09066666666666667,
+      "observable": "survival",
+      "paired_error": 0.0005600682527022269,
+      "position": "x=0.260512",
+      "reference": 0.08358350402496632,
+      "relative_error": 0.08474354747779675,
+      "span_error": 0.0009572677010624087,
+      "standard_error": 0.0034975093002213875,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.018368741176716774,
+      "clusters": 6000,
+      "measured": 0.12666666666666668,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.435512",
+      "reference": 0.1082979254899499,
+      "relative_error": 0.1696130474671133,
+      "span_error": 0.0010014558776752,
+      "standard_error": 0.004290420083709253,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.015035407843383433,
+      "clusters": 6000,
+      "measured": 0.12333333333333334,
+      "observable": "survival",
+      "paired_error": 0.0008022576846114628,
+      "position": "x=0.435512",
+      "reference": 0.1082979254899499,
+      "relative_error": 0.1388337567442945,
+      "span_error": 0.0010014558776752,
+      "standard_error": 0.0042381213113996145,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01286874117671677,
+      "clusters": 6000,
+      "measured": 0.12116666666666667,
+      "observable": "survival",
+      "paired_error": 0.000553842977342034,
+      "position": "x=0.435512",
+      "reference": 0.1082979254899499,
+      "relative_error": 0.1188272177744623,
+      "span_error": 0.0010014558776752,
+      "standard_error": 0.004227953294017458,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.014816676630292624,
+      "clusters": 6000,
+      "measured": 0.097,
+      "observable": "survival",
+      "paired_error": 0.0,
+      "position": "x=0.610512",
+      "reference": 0.08218332336970738,
+      "relative_error": 0.18028811713586682,
+      "span_error": 0.001223282605427715,
+      "standard_error": 0.003953738007908329,
+      "timestep": 0.00048828125,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.01115000996362596,
+      "clusters": 6000,
+      "measured": 0.09333333333333334,
+      "observable": "survival",
+      "paired_error": 0.0009001479955228828,
+      "position": "x=0.610512",
+      "reference": 0.08218332336970738,
+      "relative_error": 0.13567241511354886,
+      "span_error": 0.001223282605427715,
+      "standard_error": 0.0036768838626551606,
+      "timestep": 0.000244140625,
+      "unit": "probability"
+     },
+     {
+      "absolute_error": 0.009650009963625958,
+      "clusters": 6000,
+      "measured": 0.09183333333333334,
+      "observable": "survival",
+      "paired_error": 0.0006060220119628671,
+      "position": "x=0.610512",
+      "reference": 0.08218332336970738,
+      "relative_error": 0.11742053701350966,
+      "span_error": 0.001223282605427715,
+      "standard_error": 0.003586769494856392,
+      "timestep": 0.0001220703125,
+      "unit": "probability"
+     }
+    ],
+    "oracle_closure_residual": 2.220446049250313e-16,
+    "oracle_gap": 2.9547391744433327e-06,
+    "oracle_grid": [
+     1200,
+     9600
+    ],
+    "oracle_margin_grid": [
+     2400,
+     19200
+    ],
+    "oracle_margin_mode": "refined",
+    "procedure_ok": true,
+    "reasons": [
+     "('exit_count_lower', 'x=0.610512'): [repeated_reversal] 2 adjacent reversals; one upward step can be statistically unresolved, a ladder that turns around more than once is not converging"
+    ],
+    "reference": {
+     "exit_count_lower": [
+      0.6592035843239944,
+      0.44057539553488495,
+      0.2476083692789035
+     ],
+     "exit_count_upper": [
+      0.2572129116510393,
+      0.4511266789751652,
+      0.6702083073513891
+     ],
+     "exit_quantile_p35": [
+      0.2963305937715102,
+      0.5088474026150908,
+      0.2869010152854238
+     ],
+     "survival": [
+      0.08358350402496632,
+      0.1082979254899499,
+      0.08218332336970738
+     ]
+    },
+    "smallest_finest_error": 0.0026266789751651642,
+    "starts": [
+     0.2605123710644338,
+     0.4355123710644338,
+     0.6105123710644338
+    ],
+    "timesteps": [
+     0.00048828125,
+     0.000244140625,
+     0.0001220703125
+    ],
+    "timing": {
+     "compare_seconds": 2.3271800839866046,
+     "dataset_seconds": 4.150871833990095,
+     "oracle_margin_seconds": 7.078448167012539,
+     "oracle_seconds": 0.6574422080011573,
+     "walk_seconds": 7.049871167022502
+    },
+    "verdict": "numerical_no_result"
+   },
+   "results_unchanged": true,
+   "rss_sampled_peak_bytes": 665468928,
+   "ru_maxrss_bytes": 665485312,
+   "ru_maxrss_bytes_final": 665485312,
+   "rule_rows": [
+    {
+     "absolute_error": 0.015870250990661083,
+     "allowance": 0.004994710172401896,
+     "bound": 0.02768332351862115,
+     "excess": 0.02268861334621925,
+     "fits": false,
+     "observable": "exit_count_lower",
+     "position": "x=0.260512",
+     "ratio": 5.542528507776973,
+     "standard_error": 0.005906536263980032,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.010242062201551605,
+     "allowance": 0.004994710172401896,
+     "bound": 0.0206278520067884,
+     "excess": 0.0156331418343865,
+     "fits": false,
+     "observable": "exit_count_lower",
+     "position": "x=0.435512",
+     "ratio": 4.129939735195628,
+     "standard_error": 0.005192894902618396,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.005108369278903513,
+     "allowance": 0.004994710172401896,
+     "bound": 0.0131026530539143,
+     "excess": 0.008107942881512405,
+     "fits": false,
+     "observable": "exit_count_lower",
+     "position": "x=0.610512",
+     "ratio": 2.6233059780550576,
+     "standard_error": 0.003997141887505394,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.008787088348960692,
+     "allowance": 0.004994710172401896,
+     "bound": 0.019022141682670468,
+     "excess": 0.014027431510268572,
+     "fits": false,
+     "observable": "exit_count_upper",
+     "position": "x=0.260512",
+     "ratio": 3.8084575533084335,
+     "standard_error": 0.005117526666854888,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.0026266789751651642,
+     "allowance": 0.004994710172401896,
+     "bound": 0.010197513246952693,
+     "excess": 0.005202803074550797,
+     "fits": false,
+     "observable": "exit_count_upper",
+     "position": "x=0.435512",
+     "ratio": 2.04166265808549,
+     "standard_error": 0.0037854171358937647,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.004541640684722514,
+     "allowance": 0.004994710172401896,
+     "bound": 0.012583062530757923,
+     "excess": 0.007588352358356027,
+     "fits": false,
+     "observable": "exit_count_upper",
+     "position": "x=0.610512",
+     "ratio": 2.519277815214427,
+     "standard_error": 0.004020710923017704,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.00708316264170035,
+     "allowance": 0.004994710172401896,
+     "bound": 0.014078181242143124,
+     "excess": 0.009083471069741228,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 2.8186182493494103,
+     "standard_error": 0.0034975093002213875,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.01286874117671677,
+     "allowance": 0.004994710172401896,
+     "bound": 0.021324647764751688,
+     "excess": 0.01632993759234979,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 4.269446480114165,
+     "standard_error": 0.004227953294017458,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    },
+    {
+     "absolute_error": 0.009650009963625958,
+     "allowance": 0.004994710172401896,
+     "bound": 0.016823548953338742,
+     "excess": 0.011828838780936846,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 3.368273307687941,
+     "standard_error": 0.003586769494856392,
+     "timestep": 0.0001220703125,
+     "unit": "probability"
+    }
+   ],
+   "short": "S1",
+   "source_digest": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992",
+   "stage_reasons": [
+    "ladder gate: ('exit_count_lower', 'x=0.610512'): [repeated_reversal] 2 adjacent reversals; one upward step can be statistically unresolved, a ladder that turns around more than once is not converging",
+    "9 of 9 probability rows exceed the allowance 0.00499471: exit_count_lower@x=0.260512 bound 0.02768 (5.5x); exit_count_lower@x=0.435512 bound 0.02063 (4.1x); exit_count_lower@x=0.610512 bound 0.0131 (2.6x); exit_count_upper@x=0.260512 bound 0.01902 (3.8x); exit_count_upper@x=0.435512 bound 0.0102 (2.0x); exit_count_upper@x=0.610512 bound 0.01258 (2.5x); survival@x=0.260512 bound 0.01408 (2.8x); survival@x=0.435512 bound 0.02132 (4.3x); survival@x=0.610512 bound 0.01682 (3.4x)"
+   ],
+   "stage_verdict": "numerical_no_result",
+   "unit": "probability",
+   "wall_seconds": 21.27825433301041,
+   "warnings": [],
+   "work": {
+    "endpoint_observations": 516096000,
+    "resample_observations": 43200000,
+    "space_time_cells": 57600000
+   }
+  },
+  "S2": {
+   "exit_state": "stopped:dependency",
+   "kind": "stationary",
+   "label": "stationary probability, dt/64 at quadrupled space",
+   "short": "S2",
+   "stage_reasons": [
+    "stop rule: predecessor S1 returned numerical_no_result; a later stage never runs on an unresolved one"
+   ],
+   "stage_verdict": "not_run",
+   "unit": "probability"
+  },
+  "S3": {
+   "exit_state": "stopped:dependency",
+   "kind": "stationary",
+   "label": "stationary probability, dt/256 at eightfold space",
+   "short": "S3",
+   "stage_reasons": [
+    "stop rule: predecessor S2 returned nothing; a later stage never runs on an unresolved one"
+   ],
+   "stage_verdict": "not_run",
+   "unit": "probability"
+  },
+  "S4": {
+   "exit_state": "stopped:dependency",
+   "kind": "stationary_time",
+   "label": "stationary time quantile, dt/256 at eightfold space",
+   "short": "S4",
+   "stage_reasons": [
+    "stop rule: predecessor S3 returned nothing; a later stage never runs on an unresolved one"
+   ],
+   "stage_verdict": "not_run",
+   "unit": "time"
+  }
+ },
+ "stages_plan": [
+  {
+   "depends_on": null,
+   "kind": "reference_stationary",
+   "label": "ticket-04 S3 stationary reference ladder (reproduction, non_intended)",
+   "short": "REF_S3",
+   "space_factor": 1,
+   "time_factor": 1,
+   "unit": null
+  },
+  {
+   "depends_on": null,
+   "kind": "reference_moving",
+   "label": "ticket-04 S3b pooled moving-band ladder (reproduction, non_intended)",
+   "short": "REF_S3B",
+   "time_factor": 1,
+   "trials_factor": 1,
+   "unit": null
+  },
+  {
+   "attacks": "timestep_bias",
+   "depends_on": null,
+   "kind": "stationary",
+   "label": "stationary probability, dt/16 at doubled space",
+   "short": "S1",
+   "space_factor": 2,
+   "time_factor": 16,
+   "unit": "probability"
+  },
+  {
+   "attacks": "timestep_bias",
+   "depends_on": "S1",
+   "kind": "stationary",
+   "label": "stationary probability, dt/64 at quadrupled space",
+   "short": "S2",
+   "space_factor": 4,
+   "time_factor": 64,
+   "unit": "probability"
+  },
+  {
+   "attacks": "timestep_bias",
+   "depends_on": "S2",
+   "kind": "stationary",
+   "label": "stationary probability, dt/256 at eightfold space",
+   "short": "S3",
+   "space_factor": 8,
+   "time_factor": 256,
+   "unit": "probability"
+  },
+  {
+   "attacks": "timestep_bias",
+   "depends_on": "S3",
+   "kind": "stationary_time",
+   "label": "stationary time quantile, dt/256 at eightfold space",
+   "short": "S4",
+   "space_factor": 8,
+   "time_factor": 256,
+   "unit": "time"
+  },
+  {
+   "attacks": "sampling_error",
+   "depends_on": null,
+   "kind": "moving",
+   "label": "moving-band probability, 64x master trials",
+   "short": "M5",
+   "time_factor": 1,
+   "trials_factor": 64,
+   "unit": "probability"
+  },
+  {
+   "attacks": "timestep_bias",
+   "depends_on": "M5",
+   "kind": "moving",
+   "label": "moving-band probability, dt/16 replay",
+   "short": "M6",
+   "time_factor": 16,
+   "trials_factor": 1,
+   "unit": "probability"
+  },
+  {
+   "attacks": "sampling_error",
+   "depends_on": "M5",
+   "kind": "not_launched",
+   "label": "moving-band time quantile, 1024x master trials",
+   "short": "M7",
+   "time_factor": 1,
+   "trials_factor": 1024,
+   "unit": "time"
+  }
+ ],
+ "started_at": "2026-09-02T23:33:17-0600",
+ "stationary_cell": {
+  "base_fine_steps": 2048,
+  "base_space": 600,
+  "base_time": 600,
+  "chunk": 1500,
+  "coupling": 1.0,
+  "detuning": 0.421875,
+  "diffusion": 0.08,
+  "fractions": [
+   0.25,
+   0.5,
+   0.75
+  ],
+  "horizon": 2.0,
+  "namespace": "t07-campaign-stationary",
+  "quantile": 0.35,
+  "resamples": 200,
+  "seed": 20260828,
+  "strides": [
+   8,
+   4,
+   2
+  ],
+  "tolerance": 0.35,
+  "walkers": 6000,
+  "window": 1024
+ }
+}
