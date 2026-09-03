@@ -900,6 +900,28 @@ stochastically and linearly, everything slower writing the record. Still unanswe
 simulation: whether the vertex's stochastic selection is one-world actualization or a rate
 over an ensemble — the measurement problem.
 
+### Ensemble versus one-world at the vertex: the exclusivity discriminator (`vertex_exclusivity_discriminator.py`, 2026-09-02)
+
+Run at JB's request. The observable separating "independent golden-rule rates at every
+site" from "exactly one site commits per quantum" is the coincidence rate of a balanced
+split fed with single photons — item 2b's $g^{(2)}(0) = 0.0023$ at 505 nm. In the energy
+race (20 000 trials, step $2^{-8}$): independent hazards give $P(\text{both commit}) =
+1.000$ at 45°, a coincidence ratio of 1.00 — **the ensemble reading is excluded by a factor
+of ~400**. The first-commit stop gives zero by rule. A one-world stop that propagates with
+a delay $\tau_x$ leaves doubles growing linearly in $\tau_x$ (density 1.5 per race unit at
+45°, 0.5 at 20°) and meets the bound only for $\tau_x \le 1.5\times10^{-3}$ race units,
+$9\times10^{-4}$ of the mean commit latency. Through E-16's first-irreversibility clocks:
+silicon **0.01–0.9 fs**, in which light travels 3 nm–0.3 µm; SNSPD hotspot 9–45 fs,
+3–13 µm; against 1 mm–1 m port separations (3 ps–3 ns light-crossing). The mapping of race
+time to physical time is a choice; every mapping leaves the critical delay at
+$10^{-3}$–$10^{-4}$ of a femtosecond-to-picosecond interaction time, so the margin of
+$10^3$–$10^8$ is robust. **What it decides:** the vertex selection is one-world, and the
+stop rule is not droppable bookkeeping — it must act across the separation faster than
+light by orders of magnitude, i.e. it is the nonlocal closed-pot constraint P5 that v0.7
+already conceded the single-detector sector consumes. The Grangier argument, inside the
+race, with numbers. Nothing here derives the constraint; the simulations have now said
+what it must do and how fast.
+
 ### Spectral controls (Experiment 7; `spectral_driver.py`, `spectral_analysis.py`, 2026-09-02)
 
 The raw boundary admits only a flat grid, so the densities were realised through the

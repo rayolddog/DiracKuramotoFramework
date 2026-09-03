@@ -523,7 +523,12 @@ structure is the first-irreversibility question of [P1 E-16]; a lagged-hazard sw
 shows the result indifferent to the hazard's timing and sensitive only to its form, so the
 requirement is a stochastic commitment linear in absorbed energy at the vertex — which
 both detector families have, the deterministic cascade downstream carrying no which-site
-weight. Production remains unrun.
+weight. And the selection is one-world, not an ensemble rate: independent site rates
+would give a coincidence ratio of 1 at a balanced split against the observed $2 \times
+10^{-3}$, and the one-quantum stop reproduces the data only if it acts within about
+$10^{-3}$ of the commitment time, orders of magnitude faster than light could cross the
+port separation — the nonlocal closed-pot constraint [P1 P5], which nothing here derives.
+Production remains unrun.
 NMR/MRI is the ensemble limit (no single-quantum threshold; every free-induction decay
 a watched Stage-2/3 relaxation). The cloud chamber is the weak/repeated limit — not
 one drawn-out measurement but a *sequence* of partial capture–commit–register triplets

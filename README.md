@@ -226,7 +226,12 @@ and it stands open.
   hazard's timing and sensitive only to its form, so what a detector must supply is a
   stochastic commitment linear in absorbed energy at the absorption vertex, which both
   detector families have; the deterministic cascade downstream carries no which-site
-  weight. The production budget remains unrun.
+  weight. The selection is one-world, not an ensemble rate: independent site rates give a
+  coincidence ratio of 1 at a balanced split against the observed 0.002, and the
+  one-quantum stop reproduces the data only if it acts within about a thousandth of the
+  commitment time, orders of magnitude faster than light could cross the port
+  separation — the nonlocal constraint P5, which nothing here derives. The production
+  budget remains unrun.
 - Producing exactly *one* record — exclusivity, quench, and the routing of the losing
   sites' energy — is owed by the selection dynamics and is discharged nowhere in the
   trio. The gate contract for it stands open at

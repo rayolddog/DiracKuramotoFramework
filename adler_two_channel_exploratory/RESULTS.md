@@ -499,6 +499,52 @@ record. What is still not answered by any simulation is whether the vertex's sto
 selection is one-world actualization or a rate over an ensemble — which is the
 measurement problem, and where the day began.
 
+## Ensemble versus one-world at the vertex: the exclusivity discriminator (`vertex_exclusivity_discriminator.py`)
+
+The energy race fixes the weights at the vertex as a stochastic, energy-linear
+commitment. Two readings of that remain. In the *ensemble* reading the golden rule gives
+independent rates at every site and nothing forbids two separated sites from both
+committing in one trial. In the *one-world* reading exactly one site commits per quantum,
+which the race enforces by the first-commit stop — imposed bookkeeping, in the plan's
+words. The observable that separates them is the coincidence rate between the two ports
+of a balanced split fed with single photons: item 2b's heralded 505 nm source gives
+g²(0) = 0.0023 with silicon SPADs. Run at JB's request; same race as the energy variant
+(gated, Adler power, c = 1, noise), 20 000 trials, step 2⁻⁸; the two channels' commit
+times are generated independently, which *is* the ensemble model, and the rules differ
+only in how the pair is read.
+
+| reading | rule | P(both commit), 45° | coincidence ratio | against 0.0023 |
+|---|---|---|---|---|
+| ensemble | independent hazards, no exclusivity | 1.000 | 1.00 | excluded, ×400 |
+| one-world | first-commit stop | 0 by rule | 0 | consistent |
+| one-world, finite speed | the other channel keeps its hazard for τ_x after the first commit | linear in τ_x, density 1.5 per race unit | — | needs τ_x ≤ 1.5 × 10⁻³ race units |
+
+(At 20°: density 0.5, critical τ_x = 4.5 × 10⁻³. Same-step ties, 0.27 % at this step, are
+a discretisation floor — exact simultaneity has zero probability in continuous time — and
+are excluded from the doubles.)
+
+**Translation.** The critical delay is 9 × 10⁻⁴ of the mean commit latency at 45° and
+3 × 10⁻³ at 20°. Taking E-16's first-irreversibility clock as that latency: for silicon,
+10 fs to 1 ps, exclusivity must act within **0.01 to 0.9 fs**, in which light travels 3 nm
+to 0.3 µm; for the SNSPD's hotspot reading, within 9 to 45 fs, 3 to 13 µm. The output
+ports of a laboratory beamsplitter are 1 mm to 1 m apart, a light-crossing time of 3 ps to
+3 ns. The mapping of race time to physical time is a choice (any other mapping still puts
+the critical delay at 10⁻³ to 10⁻⁴ of the interaction time, and interaction times at a
+vertex are femtoseconds to picoseconds), so the margin is robust: exclusivity must act
+10³ to 10⁸ times faster than a signal could cross the separation.
+
+**What it decides.** The ensemble reading is excluded by a factor of four hundred: the
+vertex selection is one-world. And the one-world stop is not bookkeeping that could be
+dropped or made local: to reproduce the coincidence data it has to act across the
+separation faster than light by orders of magnitude, i.e. it is the nonlocal closed-pot
+constraint — Paper 1's P5, the premise v0.7 already conceded the single-detector sector
+consumes whenever the candidate sites are spacelike separated. This is the Grangier
+anticorrelation argument stated inside the race, with the race's own numbers. What
+remains is what was always going to remain: the golden rule supplies the rates and the
+substrate must supply a one-quantum constraint that is nonlocal in exactly this sense.
+Nothing here derives it; the day's simulations have now said precisely what it must do
+and how fast.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
