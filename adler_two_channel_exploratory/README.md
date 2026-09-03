@@ -27,6 +27,22 @@ one-channel raw race in `adler_born_two_channel/`, without modifying that packag
   `spectral_runs/` (gitignored). Those records are not the package's closed ledger and pass
   no gate. Comparators are computed on the same detunings the race used.
 
+- `entry_time_order_statistics.py` — the race's deterministic skeleton (package drift and
+  envelope, frozen grid, band and dwell, random phases, no noise): shows the fixed-dwell
+  exponent of 1.5 is entry-time order statistics.
+- `energy_hazard_race.py` — the energy-tracking race: memoryless commitment with hazard
+  linear in the energy a clock absorbs inside its tongue, under the Adler clock's own
+  power law; gives the Born curve (2.16). Modes `gated` (the physical one), `signed` and
+  `clip` (artefacts, on record), `checks` (hazard exponent, stationary drive); `tau_mem`
+  adds hazard memory.
+- `e16_memoryless_hazard_check.py` — the detectors' Markov ratio from the E-16 inputs, and
+  the lagged-hazard sweep (the Born ratio is indifferent to hazard memory).
+- `vertex_exclusivity_discriminator.py` — ensemble versus one-world at the vertex through
+  the coincidence rate; the one-quantum stop must act within a thousandth of the
+  commitment time.
+- `pricing/` — the ticket-07 validation-campaign pricing benchmark (protocol from the
+  pricing plan), outside the package; a price is not an approval.
+
 Why the pairing is the race: the plan's channels share the envelope and the grid but not
 noise or phases, and do not couple to each other, so "the earliest committing clock across
 both populations" is the pairwise minimum of two independent one-channel first-commitment

@@ -1085,8 +1085,37 @@ power.
    commitment has the golden rule's structure. What remains owed for it: a physical
    argument that a site's first irreversibility is a Poisson process with hazard linear
    in its absorbed energy (E-16's continuum/thermalisation reading is the candidate),
-   the exclusivity rule (still imposed), and production budget. (d) the production
-   question — the frozen ticket-07 budget is unmet, and the package's
+   the exclusivity rule (still imposed), and production budget. (d) ~~the production
+   question~~ **The validation-campaign pricing benchmark was run 2026-09-02 at JB's
+   request** (`adler_two_channel_exploratory/pricing/`, outside the package; protocol from
+   the ticket-07 pricing plan: four kernel components at three sizes, warmup plus three
+   timed repeats, slowest rate × 1.5 contingency, one-hour wall and 2 GiB ceilings). All
+   twelve cases completed clean in 2 493 s of the 3 600 s ceiling, digests identical
+   across repeats, no warnings, no ceiling event; the package's `results/` tree and every
+   source file verified unchanged. Component rates, all *priced*: stationary solve 481
+   ns per space-time cell (1.59 GiB peak, 0.46 GiB under the ceiling); endpoint and sample
+   construction 21.3 ns per endpoint observation; moving-band replay 136 µs per physical
+   interval (two counters, collapsible); refinement comparison 52.4 ns per
+   cluster-sample observation. **Stage prices:** S1 (dt/16, doubled space) 28 s; S2
+   (dt/64, quadrupled) 136 s; S3 (dt/256, eightfold) 13.3 min; S4 (time quantile at
+   dt/256) 13.3 min; M5 (moving-band probability, 64× master trials) 23.0 min; M6 (dt/16
+   replay) 5.7 min; **M7 (time quantile, 1 024× master trials) `pricing_unresolved`**.
+   Dependency paths: S1→S4 29.4 min at 1.59 GiB; M5→M6 28.7 min at 0.4 GiB; the six
+   resolved stages sum to **58 min**; the worst-case sum is unresolved because M7 is. Why
+   M7 is unresolved: its replay work is 128× the largest measured point against the
+   plan's 16× rule (pricing it needs a ≥2 560-trial replay case, about 1.3 h on its own),
+   and its 40 960-cluster comparison sits in a quadratic regime of
+   `killed_diffusion.compare_refinement` — `_require_names` runs an O(n²) membership check
+   on every `PairedSample` rebuild, so ns per observation is U-shaped (44 at 1 200
+   clusters, 188 at 20 480) and no 16× ladder passes the 1.5× band; that is a finding for
+   the package owner, not a change made here. Ambiguities in the plan and the choices
+   made (empty-`results/` read as unchanged-`results/`; solve priced at the largest stage
+   space, the conservative direction; S4 priced as a full stage) are listed in
+   `PRICING_REPORT.md`. **A price is not an approval and not a sufficiency promise.** What
+   it says: the intended-configuration validation campaign, short of M7, costs about an
+   hour of compute at 1.6 GiB — affordable; whether running it can turn the ticket-07
+   `numerical_no_result` green is a separate question the plan reserves for after a
+   reviewed price, i.e. now. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

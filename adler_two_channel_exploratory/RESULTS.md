@@ -545,6 +545,16 @@ substrate must supply a one-quantum constraint that is nonlocal in exactly this 
 Nothing here derives it; the day's simulations have now said precisely what it must do
 and how fast.
 
+## Production pricing (`pricing/PRICING_REPORT.md`)
+
+Not a physics result. The package's ticket-07 settled next step was to price the
+intended-configuration validation campaign under a frozen protocol before deciding
+whether to run it. That benchmark was run (41.6 of the 60-minute ceiling, twelve cases,
+all clean, package untouched): six of seven stages are priced, summing to about 58
+minutes of compute at 1.6 GiB; the seventh, the 1 024×-trial moving-band time quantile,
+is `pricing_unresolved` on the plan's 16× rule and because the comparison kernel is
+quadratic in cluster count at that size. A price is not an approval.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
