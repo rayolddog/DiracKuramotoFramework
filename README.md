@@ -184,6 +184,14 @@ and it stands open.
 
 ---
 
+**Status of the Born-selection program (2026-09-04): a negative result, recorded on
+purpose.** The attempt to derive the Born square from a microscopic mechanism in a
+real-wave substrate did not succeed: the substrate produces the square only by containing
+a commitment process with the golden rule's structure and a nonlocal one-quantum
+constraint, neither of which it derives. What was learned, what failed, and what remains
+are stated plainly in [NEGATIVE_RESULT.md](NEGATIVE_RESULT.md); the papers below carry
+their de-claimed boundaries.
+
 A plain-terms glossary of the program's physics, simulation and statistical vocabulary,
 with medical and statistical relatives, is at [GLOSSARY.md](GLOSSARY.md).
 
