@@ -578,9 +578,18 @@ at 14 against 3. The gate stays red; the diagnostic label on this file stays.
 A second override ran S2 at dt/64 with 96 000 walkers (`validation/S2_REPORT.md`; 37 min,
 oracle peak 1.9 GiB): gate pass, eight of nine probability rows and all three time rows
 fit, the ninth misses by 5 %, and every row projects under the allowance at dt/256 with
-the package's projection rule now checked against measurement. The stationary path is
-one refinement from clearing; the moving-band audit, with its diverging time quantile
-and a reset cap frozen for a coarser cell, is what still holds the gate red.
+the package's projection rule now checked against measurement. A third override ran S3
+at dt/256 (`validation/S3_REPORT.md`; 67 min, peak 1.5 GiB): the survival field
+converges and every time row fits, but the exit-count fields stop converging — the
+upper-exit count drifts upward under refinement on resolved increments, and a
+systematic offset of about 0.002–0.003 in the attribution of exits to the two edges
+remains between the endpoint scheme and the oracle, no longer falling with the
+timestep. The √dt projection under-predicted exactly those rows. Refinement has done
+what it can on the stationary path; what remains there is a numerics question inside
+the package (the oracle-margin check differences only the survival field, so an oracle
+error in the exit fields would be invisible to it). The moving-band audit, with its
+diverging time quantile and a reset cap frozen for a coarser cell, still blocks by
+larger factors. The gate stays red; the diagnostic label on this file stays.
 
 ## What this does and does not establish
 

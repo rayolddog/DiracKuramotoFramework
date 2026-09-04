@@ -1211,9 +1211,38 @@ power.
    walkers, about an hour, projected to pass on every row — on a third override; the
    moving-band path is blocked by its time observable, which diverges under refinement
    in the audit, and by a reset-count cap frozen for a coarser cell, neither of which more
-   trials or finer steps will fix. The decisions that remain are the sponsor's: a third
-   override for S3, and whether the commit-time quantile is a production observable at
-   all. The package's
+   trials or finer steps will fix. **JB took the third override on 2026-09-04 ("override
+   the stop rule and run S3 at 96k walkers") and S3 ran** (`validation/S3_REPORT.md`,
+   `observations_s3.json`; 67.3 min serial; oracle 4800 × 153 600 with the coarser
+   2400 × 76 800 margin grid to stay under the cap, conservative by about 3×, peak
+   1 536 MiB; construction 332 MiB; package unchanged by digest). **S3 at $dt/256$,
+   eightfold space, 96 000 walkers: `numerical_no_result`, and not for the reason the
+   projection allowed for.** The survival field converges cleanly (0.0028 → 0.0021 →
+   0.0016 at one start) and all three time rows fit at 0.30–0.35× — the stationary time
+   observable is admissible for the first time — but the exit-count fields do not
+   converge: the upper-exit count drifts *upward* under refinement at two starts (0.0009
+   → 0.0015 → 0.0018; 0.0014 → 0.0017 → 0.0019), with paired bootstrap errors of
+   0.0002–0.0004 on the steps, so the gate's repeated-reversal clause fires on resolved
+   increments, not noise; and three lower-exit rows sit over the allowance at 1.03×,
+   1.12×, 1.28×. The three fields sum to one, so what remains at $dt/256$ is a systematic
+   offset of about 0.002–0.003 in how exits are attributed to the two edges between the
+   endpoint scheme and the oracle, which no longer falls with the timestep. The
+   $\sqrt{dt}$ projection rule, checked against S3, **under-predicted every exit-count
+   row** (worst 0.0019 projected against 0.0056 measured) while staying conservative for
+   survival; it is not conservative for the edge-split observables on this cell. S4 not
+   run (frozen rule). One observation for the package owner, not an action: the
+   package's oracle-margin check differences the survival field only, so an oracle
+   discretisation error confined to the exit fields would be invisible to it; whether
+   the offset belongs to the endpoint scheme or the oracle is not established. **Where
+   the campaigns leave the package:** the stationary path is no longer "one refinement
+   away" — refinement has done what it can, and a residual edge-attribution offset
+   remains whose origin is a numerics question inside the package; disposition with the
+   stationary rows only, `numerical_no_result` with 1 477 admissible trials against
+   2 406 and time admissible; with all intended rows, unchanged, the moving-band audit's
+   rows still blocking by the larger factors (p20 3.8× and 2.8×, M5 probability rows
+   2.3×). The decisions that remain are the sponsor's: whether the exit-count
+   attribution and the commit-time quantile are production observables, or whether the
+   production design is re-frozen on the observables that converge. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)
