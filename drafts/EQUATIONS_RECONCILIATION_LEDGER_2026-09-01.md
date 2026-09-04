@@ -1188,9 +1188,32 @@ power.
    diverges under refinement, which more trials will not fix and which is the substantive
    numerical finding of the two campaigns — the dwell-endpoint scheme's commit-time
    quantile is not converging in the audit at the intended cell, and the frozen
-   reset-count cap cannot be used to judge it. Next boundary, JB's: override the stop rule
-   once more for S2 (about an hour at 96 000 walkers), and decide whether the time
-   quantile is a production observable at all. The package's
+   reset-count cap cannot be used to judge it. **JB overrode the stop rule a second time
+   ("override the stop rule and run S2 at 96k walkers") and S2 ran** (`validation/
+   S2_REPORT.md`, `observations_s2.json`; 36.6 min serial; oracle phase peak 1 909 MiB,
+   under the 2 GiB cap with 140 MiB to spare, construction 308 MiB; package unchanged by
+   digest). **S2 at $dt/64$, quadrupled space, 96 000 walkers: gate pass (oracle margin
+   943), 8 of 9 probability rows fit, all three time rows fit (0.3–0.5×), and the one
+   miss is by 5%** — exit-count-upper at $x = 0.61$, bound 0.00523 against 0.00499. The
+   bias fell at the $\sqrt{dt}$ rate from S1 (the S1 projections to $dt/64$ landed within
+   a few percent of the S2 measurements, so the package's projection rule is accurate on
+   this cell), and every S2 row projects under the allowance at $dt/256$, the worst at
+   0.78×. S3 and S4 stopped under the frozen rule on that one row. **Disposition, stationary
+   rows only** (S2 superseding S1): verdict *unresolved* rather than `numerical_no_result`
+   — blockers reduced to the one envelope row and a probability window of 2 198
+   admissible trials against 2 406 (91% of the target), time admissible. **Disposition,
+   all intended rows** (S2 + M5 + M6): still `numerical_no_result`, and now entirely on
+   the moving-band audit — M5's probability rows at $dt$ (survival shift at 0.80, 2.3×;
+   commit probability, 2.3×), M5's p20 time shift 3.8×, and M6's gate (the frozen
+   reset-count cap, and the p20 shift diverging under refinement), with M6's own
+   probability rows trivially zero. **Where the three campaigns leave the package:** the
+   stationary path is one further refinement from clearing — S3 at $dt/256$ with 96 000
+   walkers, about an hour, projected to pass on every row — on a third override; the
+   moving-band path is blocked by its time observable, which diverges under refinement
+   in the audit, and by a reset-count cap frozen for a coarser cell, neither of which more
+   trials or finer steps will fix. The decisions that remain are the sponsor's: a third
+   override for S3, and whether the commit-time quantile is a production observable at
+   all. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

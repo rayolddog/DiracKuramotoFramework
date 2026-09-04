@@ -575,6 +575,13 @@ settled the moving-band probability rows but showed the commit-time quantile *di
 under refinement, past the whole-ladder allowance, and the frozen reset-count cap fired
 at 14 against 3. The gate stays red; the diagnostic label on this file stays.
 
+A second override ran S2 at dt/64 with 96 000 walkers (`validation/S2_REPORT.md`; 37 min,
+oracle peak 1.9 GiB): gate pass, eight of nine probability rows and all three time rows
+fit, the ninth misses by 5 %, and every row projects under the allowance at dt/256 with
+the package's projection rule now checked against measurement. The stationary path is
+one refinement from clearing; the moving-band audit, with its diverging time quantile
+and a reset cap frozen for a coarser cell, is what still holds the gate red.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
