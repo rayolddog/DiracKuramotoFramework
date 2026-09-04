@@ -13,7 +13,7 @@ coverage is opportunistic, not exhaustive. Items E-9 onward reach outside EQUATI
 into Paper 1 and the sidereal/frame material; they are logged here only because this
 is where they surfaced, and they belong in a tri-paper round.*
 
-**Totals: 19 items · 7 applied · 12 pending disposition.** *(2026-09-02: E-16 applied to Papers 1–3 as v0.8; E-19 added.)*
+**Totals: 20 items · 7 applied · 13 pending disposition.** *(2026-09-02: E-16 applied to Papers 1–3 as v0.8; E-19 added.)*
 
 ---
 
@@ -1334,3 +1334,54 @@ power.
    realizes the Born measure" to "the game actualizes one site among golden-rule-weighted
    candidates." Not applied: it changes the claim boundary, and the v0.8 corrections were
    made within reading A because that is the reading §6.1 was written in.
+
+---
+
+## The cut, tested: recoverability in the smallest exact model (open item 7, 2026-09-04)
+
+**Sponsor's decision, 2026-09-04.** The Born-selection program is recorded as a negative
+result (`NEGATIVE_RESULT.md`), and the work turns to Paper 2, refined by microscopic tests.
+The first test is the recoverability crossover, run with predictions on record
+(`heisenberg_cut_recoverability/PREDICTIONS.md`, results in `RESULTS.md` there).
+
+**Uncertainty first.** The calculation is exact (single-excitation sector, eigendecomposition,
+no integrator, no sampling). Its limits are scope: one linear absorber, a linear record
+bath of N modes, rotating-wave capture, no competition among sites. Two of the seven
+predictions were wrong in a stated detail, both mine: (i) the operational coupling-flip
+was written down as if it were the in-principle reversal, and the no-bath calibration
+refuted it (R = 0.044 off resonance); the observable was corrected to the partial
+Loschmidt echo (system reversed, record channel untouched) before the corrected run,
+and passes the calibration to 2×10⁻¹⁵; (ii) the leak exponent is 2Γ_eff t, not Γ_eff t,
+because the echo leg leaks too.
+
+**Findings.**
+- *Location (P2-L) survives.* With a dense record channel (N = 256, recurrence time 40),
+  recoverability leaks at Γ × (absorber occupation) per leg; the occupation is
+  2K²/(Δ²+4K²) with half-point Δ = 2K, the resonant Rabi frequency; the measured
+  rate-based midpoint is Δ/K = 1.3–2.0 across Γ = 0.05–1 and t = 3–10. The cut sits
+  where the deficit-induced return rate κ_ret = Δ balances the coupling's
+  population-transfer rate: κ_ret/K = 1 within a factor 1.6 if K is that rate, 2 if it is
+  the matrix element. The midpoint read at fixed observation time drifts outward with Γt
+  (1.7 → 5 over Γt = 0.15 → 10); the location is a statement about rates.
+- *Width (P2-W) is out of scope for a linear absorber.* Relative width 0.8–1.6 in every
+  run; ω cannot appear in a rotating-wave model and did not. Not a falsification: a scope
+  restriction. The sharp layer w = K/ω, if real, belongs to a nonlinear self-sustaining
+  absorber with counter-rotating terms. Stage-2 model fixed by this: a limit-cycle
+  absorber, many-mode record channel, no RWA; test whether the width scales as K/ω.
+  Prediction on record for stage 2: counter-rotating terms alone (quantum Rabi model)
+  shift the location by the Bloch–Siegert amount ∝ K²/ω and do not sharpen; sharpening
+  needs the limit cycle.
+- *Completion (P2-C):* the ordering holds (capture reversible, record irreversible);
+  recoverability degrades continuously, no switch at any occupation; sharpness not shown,
+  same scope as the width.
+- *A single record degree of freedom is not a cut.* N = 1 gives coherent exchange,
+  oscillatory in g·t (the 576-state model's 0.83 → 0.09 → 0.25 is this); N = 4 leaks
+  nothing; N = 16 recurs at t ≥ 3. The existing 576-state model cannot exhibit an
+  irreversible step with one record qubit per absorber; a dense record channel is a
+  physical requirement on the model and on detectors.
+- *Bath memoryless* on the grid: R independent of bandwidth at fixed Γ to 0.001.
+
+**Owed to Paper 2 (proposed, not applied):** define recoverability as the echo with the
+environment untouched and distinguish the operational coupling-flip; state the location
+as a rate balance; restrict w = K/ω to nonlinear absorbers; state the dense-record
+requirement. Pending the sponsor's word.
