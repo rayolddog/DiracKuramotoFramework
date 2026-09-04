@@ -591,6 +591,18 @@ error in the exit fields would be invisible to it). The moving-band audit, with 
 diverging time quantile and a reset cap frozen for a coarser cell, still blocks by
 larger factors. The gate stays red; the diagnostic label on this file stays.
 
+The sponsor then re-froze the production design on the observables that converge —
+survival and the time rows, dropping the exit-count fields and the commit-time quantile
+(`validation/REFROZEN_DESIGN.json`, `REFREEZE_REPORT.md`; a hashed manifest, no run, no
+package change). On that set the stationary path at dt/256 fits every allowance and
+would buy an exponent half-width of 0.16 against the target of 0.25. The frozen verdict
+nevertheless stays at no-result because the package carries each ladder's gate verdict
+through and every gate on record failed on a dropped observable or on the reset cap,
+which was not re-frozen. With the gates re-decided on the retained identities the
+stationary set is satisfied and the moving-band set is unresolved on M5's probability
+shifts at the intended step, which a 25-hour ladder at dt/16 is projected to clear.
+Those are decisions for the sponsor; nothing here is a physics result.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical

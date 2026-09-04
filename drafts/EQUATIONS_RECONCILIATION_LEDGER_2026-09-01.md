@@ -1242,7 +1242,39 @@ power.
    rows still blocking by the larger factors (p20 3.8× and 2.8×, M5 probability rows
    2.3×). The decisions that remain are the sponsor's: whether the exit-count
    attribution and the commit-time quantile are production observables, or whether the
-   production design is re-frozen on the observables that converge. The package's
+   production design is re-frozen on the observables that converge. **JB decided on
+   2026-09-04: "Re-freeze the production design on survival and the time rows."**
+   Implemented outside the package as a hashed manifest (`validation/REFROZEN_DESIGN.json`,
+   digest `13f3bf1f…`, reproduced by `--check`; `REFREEZE_REPORT.md`; no run, no package
+   change, package verified unchanged). Retained: stationary survival and the p35 time
+   rows; moving-band commit-probability and survival-shift rows. Dropped, with the
+   measured reasons quoted: the two exit-count fields (S3's edge-attribution offset that
+   does not fall with $dt$) and the p20 commit-time shift (diverging under refinement in
+   M6). **Not re-frozen, stated in the manifest and flagged:** the ladder gates, including
+   the moving-band added-resets cap of 3.0, and the budget allowances. **Result on the
+   re-frozen set:** the stationary path at $dt/256$ with 96 000 walkers **fits every
+   allowance** — survival 0.53–0.65×, p35 0.30–0.35× — giving 5 704 admissible trials,
+   which by the package's own power model buys an exponent half-width of **0.162**
+   against the frozen target of 0.25. Yet the frozen disposition still reads
+   `numerical_no_result` in every evidence set, for a bookkeeping reason rather than a
+   measurement: `numerical_disposition` carries each ladder's *gate verdict* through, and
+   every gate on record failed — S3's on a dropped observable (the upper exit count's
+   reversals), the three moving-band gates on the un-re-frozen reset cap and the dropped
+   p20 row. Two labelled hypotheticals, authorizing nothing: with the gates re-decided on
+   the retained identities, the stationary-only set is **satisfied** with no blockers, and
+   the all-intended set is *unresolved* on M5's retained probability shifts at the intended
+   step (survival shift at 0.80, 2.34×; commit probability, 2.31×; survival shift at 0.60,
+   1.71×), which the re-freeze does not touch and which the M5 ladder shows falling as
+   $\sqrt{dt}$. Cheapest priced run that would clear them (proposal only): an M5-size
+   moving-band ladder (2 560 trials × 3 clocks × 4 replicates) at $dt/16$ — every retained
+   row projected under the allowance, worst 0.0044 — priced at **25 h** (16.6 h at the
+   measured rate) and about 80 MiB; it would matter only if the moving-band gate were
+   also re-frozen, since the reset cap fails at every step measured (3.6 at $dt$, 14.1 at
+   $dt/16$). **The two decisions now left to the sponsor are both decisions, not runs:**
+   whether to re-decide the two gate verdicts on the retained identities (for S3 this can
+   be done from the recorded per-identity reasons; a fresh verdict object under a
+   re-frozen contract would need S3 re-run, 67 min), and whether to buy the 25-hour
+   moving-band ladder. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

@@ -1,0 +1,1988 @@
+{
+ "authorized_by": "John (sponsor's plan change), relayed by the coordinator",
+ "budget_digest": "8ff45c2c33c01192129320db814f367845c4cf29cf05cbb7372af8aa0886da61",
+ "date": "2026-09-04",
+ "dispositions_refrozen_set": {
+  "all_intended": {
+   "admissible_trials": 439,
+   "blockers": [
+    "moving_band_numerical_no_result",
+    "endpoint_envelope_exceeds_allowance",
+    "audit_envelope_exceeds_allowance",
+    "probability_window_empty"
+   ],
+   "disposition_digest": "244b520782c4ade6f2e039e4dcfc84a96b2e4ac761f8b681948c9995809ef711",
+   "evidence_digest": "3e261f7a32e5dffa84a02771e9d8903a29c63e8d560b4f9ce0727d888d7f4621",
+   "limiting": {
+    "probability": [
+     "moving_band_audit",
+     "survival_shift_at_0.80",
+     "pooled",
+     "probability",
+     0.011686381511775135,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 439,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 14,
+   "time_admissible": true,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "moving_band_audit:numerical_no_result",
+    "stationary_oracle:numerical_no_result"
+   ]
+  },
+  "reference_plus_intended": {
+   "admissible_trials": 0,
+   "blockers": [
+    "moving_band_numerical_no_result",
+    "endpoint_envelope_exceeds_allowance",
+    "audit_envelope_exceeds_allowance",
+    "no_evidence_at_intended_configuration",
+    "probability_window_empty",
+    "time_bounds_fail_at_every_trial_count"
+   ],
+   "disposition_digest": "d9dca05d7bc486a634841a17abb5cf9b4c86e76cbea1fc6749e876bb8b8541e6",
+   "evidence_digest": "8c22fb78d1af1802ad7e5b9cfca11fb579633eb7163752c24cf1885f8d232b10",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.584397",
+     "probability",
+     0.0412453829967519,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.184397",
+     "time",
+     0.1528954619884105,
+     0.021953125,
+     false
+    ]
+   },
+   "probability_admissible_trials": 35,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.1528954619884105,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.184397",
+     "ratio": 6.964633143956066,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13298662392198962,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.384397",
+     "ratio": 6.057753687549705,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13255265699907023,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.584397",
+     "ratio": 6.037985799245904,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.03973764558812684,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.184397",
+     "ratio": 7.955946234417339,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.04046877277816914,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.384397",
+     "ratio": 8.102326537739465,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0412453829967519,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.584397",
+     "ratio": 8.257813080857401,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.019046329453645056,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 3.8133002308892543,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.032856800382307594,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 6.578319711893744,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 24,
+   "time_admissible": false,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "moving_band_audit:numerical_no_result",
+    "stationary_oracle:numerical_no_result",
+    "stationary_oracle:pass"
+   ]
+  },
+  "stationary_only": {
+   "admissible_trials": 5704,
+   "blockers": [
+    "endpoint_envelope_exceeds_allowance"
+   ],
+   "disposition_digest": "43d5403d6365181091303498879f1e4e9bd7916497fc4f68851f1adb4c6927e8",
+   "evidence_digest": "1f09a54c69baf98d3dc7f964dc2d17891e8557e28ff13101731f003ecc7646c4",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.260512",
+     "probability",
+     0.0032436325812476375,
+     0.004994710172401896,
+     true
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 5704,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 6,
+   "time_admissible": true,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "stationary_oracle:numerical_no_result"
+   ]
+  }
+ },
+ "dropped_observables": {
+  "commit_time_quantile_p20_shift": {
+   "finest_levels": {
+    "M5": [
+     {
+      "absolute_error": 0.125,
+      "clusters": 2560,
+      "measured": 0.125,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.125,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.015230018664284313,
+      "timestep": 0.0078125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.08984375,
+      "clusters": 2560,
+      "measured": 0.08984375,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.011633510133424866,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.08984375,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.012966294910498917,
+      "timestep": 0.00390625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.058984374999999645,
+      "clusters": 2560,
+      "measured": 0.058984374999999645,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.008874779615812019,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.058984374999999645,
+      "span_error": 0.013725190485171174,
+      "standard_error": 0.012311983422151562,
+      "timestep": 0.001953125,
+      "unit": "time"
+     }
+    ],
+    "M6": [
+     {
+      "absolute_error": 0.005468750000000688,
+      "clusters": 40,
+      "measured": 0.005468750000000688,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.0,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.005468750000000688,
+      "span_error": 0.010814992192758806,
+      "standard_error": 0.012322400835769782,
+      "timestep": 0.00048828125,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.04453125000000013,
+      "clusters": 40,
+      "measured": 0.04453125000000013,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.02717884060332705,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.04453125000000013,
+      "span_error": 0.010814992192758806,
+      "standard_error": 0.02836183584163997,
+      "timestep": 0.000244140625,
+      "unit": "time"
+     },
+     {
+      "absolute_error": 0.028320312500001,
+      "clusters": 40,
+      "measured": 0.028320312500001,
+      "observable": "commit_time_quantile_p20_shift",
+      "paired_error": 0.026665192087324322,
+      "position": "pooled",
+      "reference": 0.0,
+      "relative_error": 0.028320312500001,
+      "span_error": 0.010814992192758806,
+      "standard_error": 0.016191788188789864,
+      "timestep": 0.0001220703125,
+      "unit": "time"
+     }
+    ]
+   },
+   "quoted_gate_reasons": [
+    "('added_resets_mean', 'pooled'): [absolute_cap] 14.0938 count with standard error 2.54299 gives a 2-sigma bound 19.1797 past the cap 3",
+    "('commit_time_quantile_p20_shift', 'pooled'): [not_converging] 0.00546875 at 0.000488281 against 0.0283203 at 0.00012207, past the single whole-ladder allowance 0.0221183"
+   ],
+   "reason": "M6 (dt/16 replay, 40 master trials): gate clause 3 [not_converging] on this observable; M5 (2560 trials) and the reference audit also fail the time allowance on it (3.81x, 8.06x)",
+   "record": "observations_redesign.json, observations.json"
+  },
+  "exit_count_lower": {
+   "errors_by_level_coarse_to_fine": {
+    "x=0.260512": [
+     0.003891035764972961,
+     0.0030264524316395702,
+     0.0024743690983062283
+    ],
+    "x=0.435512": [
+     0.0037732573839506234,
+     0.0033878407172839298,
+     0.0031899240506172433
+    ],
+    "x=0.610512": [
+     0.0029937493143812055,
+     0.002983332647714526,
+     0.002879165981047871
+    ]
+   },
+   "quoted_stage_reason": "3 of 9 probability rows exceed the allowance 0.00499471: exit_count_lower@x=0.260512 bound 0.005166 (1.03x); exit_count_lower@x=0.435512 bound 0.006373 (1.28x); exit_count_lower@x=0.610512 bound 0.005582 (1.12x)",
+   "reason": "S3: the edge-attribution offset does not fall with dt; the three finest-level rows are the only stationary rows over the allowance",
+   "record": "observations_s3.json"
+  },
+  "exit_count_upper": {
+   "errors_by_level_coarse_to_fine": {
+    "x=0.260512": [
+     0.0010996036636990447,
+     0.0009433536636990203,
+     0.0008912703303657343
+    ],
+    "x=0.435512": [
+     0.0013733473946543895,
+     0.001665014061321024,
+     0.00187334739465439
+    ],
+    "x=0.610512": [
+     0.0009375486270625233,
+     0.001458381960395827,
+     0.0018333819603958412
+    ]
+   },
+   "quoted_gate_reasons": [
+    "('exit_count_upper', 'x=0.435512'): [repeated_reversal] 2 adjacent reversals; one upward step can be statistically unresolved, a ladder that turns around more than once is not converging",
+    "('exit_count_upper', 'x=0.610512'): [repeated_reversal] 2 adjacent reversals; one upward step can be statistically unresolved, a ladder that turns around more than once is not converging"
+   ],
+   "reason": "S3 (dt/256 at eightfold space, 96,000 walkers): ladder gate numerical_no_result on this observable at two starts; the error RISES under refinement with paired bootstrap SEs far below the steps",
+   "record": "observations_s3.json"
+  }
+ },
+ "evidence_chain": {
+  "moving": "M5 (observations.json) and M6 (observations_redesign.json) kept",
+  "reference": "17 ticket-04 rows reproduced in observations.json",
+  "stationary": "S3 (observations_s3.json) supersedes S2 and S1 per the dependency chain"
+ },
+ "hypothetical_audit_and_stationary_gates_not_carried": {
+  "all_intended": {
+   "admissible_trials": 439,
+   "blockers": [
+    "audit_envelope_exceeds_allowance",
+    "probability_window_empty"
+   ],
+   "disposition_digest": "500a2b4e4ce69e26dba1a2067df3580c2442243d924df625738f3d3fb6267aa1",
+   "evidence_digest": "6fe233f7d44018f348e8d6d0a578bd45839bfe18fb82a3579c61f2be8edbae66",
+   "limiting": {
+    "probability": [
+     "moving_band_audit",
+     "survival_shift_at_0.80",
+     "pooled",
+     "probability",
+     0.011686381511775135,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 439,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 14,
+   "time_admissible": true,
+   "verdict": "unresolved",
+   "verdicts_in": [
+    "moving_band_audit:pass",
+    "stationary_oracle:pass"
+   ]
+  },
+  "reference_plus_intended": {
+   "admissible_trials": 0,
+   "blockers": [
+    "endpoint_envelope_exceeds_allowance",
+    "audit_envelope_exceeds_allowance",
+    "no_evidence_at_intended_configuration",
+    "probability_window_empty",
+    "time_bounds_fail_at_every_trial_count"
+   ],
+   "disposition_digest": "ccfb73e543d0c294407344aa14085f542a1ee8ec94c8f883c6e6e5edfa5fc0e4",
+   "evidence_digest": "109288a623b45dde320267d2343b6ba2ccb1b303809cb1e8f1fc63d4b530a457",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.584397",
+     "probability",
+     0.0412453829967519,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.184397",
+     "time",
+     0.1528954619884105,
+     0.021953125,
+     false
+    ]
+   },
+   "probability_admissible_trials": 35,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.1528954619884105,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.184397",
+     "ratio": 6.964633143956066,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13298662392198962,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.384397",
+     "ratio": 6.057753687549705,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13255265699907023,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.584397",
+     "ratio": 6.037985799245904,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.03973764558812684,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.184397",
+     "ratio": 7.955946234417339,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.04046877277816914,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.384397",
+     "ratio": 8.102326537739465,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0412453829967519,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.584397",
+     "ratio": 8.257813080857401,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.019046329453645056,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 3.8133002308892543,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.032856800382307594,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 6.578319711893744,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 24,
+   "time_admissible": false,
+   "verdict": "unresolved",
+   "verdicts_in": [
+    "moving_band_audit:pass",
+    "stationary_oracle:pass"
+   ]
+  },
+  "stationary_only": {
+   "admissible_trials": 5704,
+   "blockers": [],
+   "disposition_digest": "1f30af0f009625580c2417522310ddbde7b6a9a258eac4cc23baf1a4826a5d45",
+   "evidence_digest": "1d6b8cb9415502abdee81c88c9729c2e5b7f7f4b5dc3e53c52c102a040e81784",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.260512",
+     "probability",
+     0.0032436325812476375,
+     0.004994710172401896,
+     true
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 5704,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 6,
+   "time_admissible": true,
+   "verdict": "satisfied",
+   "verdicts_in": [
+    "stationary_oracle:pass"
+   ]
+  }
+ },
+ "hypothetical_audit_gate_not_carried": {
+  "all_intended": {
+   "admissible_trials": 439,
+   "blockers": [
+    "endpoint_envelope_exceeds_allowance",
+    "audit_envelope_exceeds_allowance",
+    "probability_window_empty"
+   ],
+   "disposition_digest": "ff61357eae4f1b4cab301de5f6bbc38a82e38f7be4c420c35cf196655531ee83",
+   "evidence_digest": "affab0b80899af2598de75b4d77e3f0aa9a8e8a6542d66a1de2fb79904fa7afb",
+   "limiting": {
+    "probability": [
+     "moving_band_audit",
+     "survival_shift_at_0.80",
+     "pooled",
+     "probability",
+     0.011686381511775135,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 439,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 14,
+   "time_admissible": true,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "moving_band_audit:pass",
+    "stationary_oracle:numerical_no_result"
+   ]
+  },
+  "reference_plus_intended": {
+   "admissible_trials": 0,
+   "blockers": [
+    "endpoint_envelope_exceeds_allowance",
+    "audit_envelope_exceeds_allowance",
+    "no_evidence_at_intended_configuration",
+    "probability_window_empty",
+    "time_bounds_fail_at_every_trial_count"
+   ],
+   "disposition_digest": "48d4f39656da3351f62259f956193caa457ebd35f916d7319543c9a545d5b54a",
+   "evidence_digest": "e8876cc9d3815a026c57f5746c2c4d85b58372f0c29482d5c92cb8bf30af2a5e",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.584397",
+     "probability",
+     0.0412453829967519,
+     0.004994710172401896,
+     false
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.184397",
+     "time",
+     0.1528954619884105,
+     0.021953125,
+     false
+    ]
+   },
+   "probability_admissible_trials": 35,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.1528954619884105,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.184397",
+     "ratio": 6.964633143956066,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13298662392198962,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.384397",
+     "ratio": 6.057753687549705,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.13255265699907023,
+     "fits": false,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.584397",
+     "ratio": 6.037985799245904,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.03973764558812684,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.184397",
+     "ratio": 7.955946234417339,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.04046877277816914,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.384397",
+     "ratio": 8.102326537739465,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0412453829967519,
+     "fits": false,
+     "observable": "survival",
+     "position": "x=0.584397",
+     "ratio": 8.257813080857401,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.019046329453645056,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 3.8133002308892543,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.032856800382307594,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 6.578319711893744,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011558543377371494,
+     "fits": false,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 2.3141569737595264,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.004435456979296313,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.8880309019338665,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.00853359627541233,
+     "fits": false,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 1.7085268175447756,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.011686381511775135,
+     "fits": false,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 2.339751678955837,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "commit_probability_shift",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.45",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.60",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0,
+     "fits": true,
+     "observable": "survival_shift_at_0.80",
+     "position": "pooled",
+     "ratio": 0.0,
+     "source": "moving_band_audit",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 24,
+   "time_admissible": false,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "moving_band_audit:pass",
+    "stationary_oracle:numerical_no_result",
+    "stationary_oracle:pass"
+   ]
+  },
+  "stationary_only": {
+   "admissible_trials": 5704,
+   "blockers": [
+    "endpoint_envelope_exceeds_allowance"
+   ],
+   "disposition_digest": "43d5403d6365181091303498879f1e4e9bd7916497fc4f68851f1adb4c6927e8",
+   "evidence_digest": "1f09a54c69baf98d3dc7f964dc2d17891e8557e28ff13101731f003ecc7646c4",
+   "limiting": {
+    "probability": [
+     "stationary_oracle",
+     "survival",
+     "x=0.260512",
+     "probability",
+     0.0032436325812476375,
+     0.004994710172401896,
+     true
+    ],
+    "time": [
+     "stationary_oracle",
+     "exit_quantile_p35",
+     "x=0.260512",
+     "time",
+     0.007608777091452655,
+     0.021953125,
+     true
+    ]
+   },
+   "probability_admissible_trials": 5704,
+   "rows": [
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007608777091452655,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.260512",
+     "ratio": 0.3465919813900142,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.007479722082746427,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.435512",
+     "ratio": 0.34071331907172336,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.021953125,
+     "bound": 0.006549045892147271,
+     "fits": true,
+     "observable": "exit_quantile_p35",
+     "position": "x=0.610512",
+     "ratio": 0.2983195281832209,
+     "source": "stationary_oracle",
+     "unit": "time"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0032436325812476375,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.260512",
+     "ratio": 0.6494135734181776,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.0030634666470824336,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.435512",
+     "ratio": 0.6133422243415676,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    },
+    {
+     "allowance": 0.004994710172401896,
+     "bound": 0.002626900670357207,
+     "fits": true,
+     "observable": "survival",
+     "position": "x=0.610512",
+     "ratio": 0.5259365568140587,
+     "source": "stationary_oracle",
+     "unit": "probability"
+    }
+   ],
+   "rows_in": 6,
+   "time_admissible": true,
+   "verdict": "numerical_no_result",
+   "verdicts_in": [
+    "stationary_oracle:numerical_no_result"
+   ]
+  }
+ },
+ "instruction_quoted": "Re-freeze the production design on survival and the time rows.",
+ "manifest_digest": "13f3bf1f16d5463dfbfe91c7d1c1d5a80c70da2dd4bf3f91b8f934dab5685ec4",
+ "not_refrozen": {
+  "flag": "FLAG: every moving-band ladder verdict on record (reference S3b, M5, M6) is numerical_no_result under the un-re-frozen gate (added-resets cap and/or p20 non-convergence), and experiments.numerical_disposition carries that verdict through as the blocker moving_band_numerical_no_result regardless of which observables are retained.  Likewise S3's stationary gate verdict is numerical_no_result on exit_count_upper (a dropped observable) and is carried as endpoint_envelope_exceeds_allowance.  Unless the sponsor separately re-freezes the gates, the disposition cannot leave numerical_no_result whatever the observable set.  The hypothetical recomputations below show what changes if the gates were re-decided; they are labelled hypothetical and authorize nothing.",
+  "statement": "The ladder gates (killed_diffusion.compare_refinement under the frozen verify.py caps, INCLUDING the moving-band added_resets_mean absolute cap 3.0) and the frozen ticket-07 budget allowances (probability 0.004995, time 0.021953) are NOT re-frozen by this decision."
+ },
+ "power_translation": {
+  "frozen": {
+   "all_intended": {
+    "half_width_power_model": 0.5851701472038722,
+    "half_width_scaling": 0.5852690520826642,
+    "meets_target": false,
+    "target": 0.25,
+    "trials": 439,
+    "trials_needed_at_that_half_width": 439
+   },
+   "reference_plus_intended": {
+    "half_width_power_model": null,
+    "half_width_scaling": null,
+    "note": "no admissible trial count",
+    "trials": 0
+   },
+   "stationary_only": {
+    "half_width_power_model": 0.16233967191473977,
+    "half_width_scaling": 0.1623671104053234,
+    "meets_target": true,
+    "target": 0.25,
+    "trials": 5704,
+    "trials_needed_at_that_half_width": 5704
+   }
+  },
+  "hypothetical_both_gates": {
+   "all_intended": {
+    "half_width_power_model": 0.5851701472038722,
+    "half_width_scaling": 0.5852690520826642,
+    "meets_target": false,
+    "target": 0.25,
+    "trials": 439,
+    "trials_needed_at_that_half_width": 439
+   },
+   "reference_plus_intended": {
+    "half_width_power_model": null,
+    "half_width_scaling": null,
+    "note": "no admissible trial count",
+    "trials": 0
+   },
+   "stationary_only": {
+    "half_width_power_model": 0.16233967191473977,
+    "half_width_scaling": 0.1623671104053234,
+    "meets_target": true,
+    "target": 0.25,
+    "trials": 5704,
+    "trials_needed_at_that_half_width": 5704
+   }
+  },
+  "target_half_width": 0.25
+ },
+ "proposal": {
+  "candidates": [
+   {
+    "all_fit_allowance": false,
+    "audited_evaluations": 119398400,
+    "ladder": "M5-size (2560 master trials x 3 clocks x 4 replicates) at dt/2: mesh step 0.000977, 4096 steps, strides (4,2,1)",
+    "memory": "M5 measured 76 MiB, M6 79 MiB with the streaming validation runner (records digested, not stored); the pricing session's linear memory model (54.7 B per physical interval) applied only to the pricing children, which kept every AuditedRun record",
+    "physical_intervals": 55096320,
+    "priced_hours": 3.1216500484848693,
+    "priced_seconds_with_contingency": 11237.940174545529,
+    "projected_bounds": {
+     "commit_probability_shift": 0.008764998028662464,
+     "survival_shift_at_0.45": 0.003482028532637961,
+     "survival_shift_at_0.60": 0.006531396537429745,
+     "survival_shift_at_0.80": 0.008854699025199772
+    }
+   },
+   {
+    "all_fit_allowance": false,
+    "audited_evaluations": 238714880,
+    "ladder": "M5-size (2560 master trials x 3 clocks x 4 replicates) at dt/4: mesh step 0.000488, 8192 steps, strides (4,2,1)",
+    "memory": "M5 measured 76 MiB, M6 79 MiB with the streaming validation runner (records digested, not stored); the pricing session's linear memory model (54.7 B per physical interval) applied only to the pricing children, which kept every AuditedRun record",
+    "physical_intervals": 110146560,
+    "priced_hours": 6.240689294029829,
+    "priced_seconds_with_contingency": 22466.481458507384,
+    "projected_bounds": {
+     "commit_probability_shift": 0.0067896631690381685,
+     "survival_shift_at_0.45": 0.0028078528126296836,
+     "survival_shift_at_0.60": 0.005115627525412329,
+     "survival_shift_at_0.80": 0.006852397136775146
+    }
+   },
+   {
+    "all_fit_allowance": false,
+    "audited_evaluations": 477347840,
+    "ladder": "M5-size (2560 master trials x 3 clocks x 4 replicates) at dt/8: mesh step 0.000244, 16384 steps, strides (4,2,1)",
+    "memory": "M5 measured 76 MiB, M6 79 MiB with the streaming validation runner (records digested, not stored); the pricing session's linear memory model (54.7 B per physical interval) applied only to the pricing children, which kept every AuditedRun record",
+    "physical_intervals": 220247040,
+    "priced_hours": 12.478767785119748,
+    "priced_seconds_with_contingency": 44923.56402643109,
+    "projected_bounds": {
+     "commit_probability_shift": 0.005392890494683653,
+     "survival_shift_at_0.45": 0.0023311385893005077,
+     "survival_shift_at_0.60": 0.004114527656421037,
+     "survival_shift_at_0.80": 0.005436555893487464
+    }
+   },
+   {
+    "all_fit_allowance": true,
+    "audited_evaluations": 954613760,
+    "ladder": "M5-size (2560 master trials x 3 clocks x 4 replicates) at dt/16: mesh step 0.000122, 32768 steps, strides (4,2,1)",
+    "memory": "M5 measured 76 MiB, M6 79 MiB with the streaming validation runner (records digested, not stored); the pricing session's linear memory model (54.7 B per physical interval) applied only to the pricing children, which kept every AuditedRun record",
+    "physical_intervals": 440448000,
+    "priced_hours": 24.954924767299588,
+    "priced_seconds_with_contingency": 89837.72916227851,
+    "projected_bounds": {
+     "commit_probability_shift": 0.0044052230648715055,
+     "survival_shift_at_0.45": 0.0019940507292963688,
+     "survival_shift_at_0.60": 0.0034066431504123297,
+     "survival_shift_at_0.80": 0.004435404949275152
+    }
+   }
+  ],
+  "cheapest_that_projects_to_fit": "M5-size (2560 master trials x 3 clocks x 4 replicates) at dt/16: mesh step 0.000122, 32768 steps, strides (4,2,1)",
+  "pricing_derivation_digest": "7c8c0f81d1f69f12f5043a352d2571f2b5f97a922b05634a4729d0f3f0062018",
+  "rule": "bias projected with the package's sqrt(dt) rule, SE unchanged at 2560 trials (about 0.001)",
+  "stationary_note": "Under the re-frozen set nothing stationary blocks except S3's carried gate verdict, which came from exit_count_upper (dropped).  Re-deciding that gate on the retained identities is a decision, not a run; a fresh verdict object would need S3 re-run under a re-frozen FrozenBudgets: 4040 s measured (7249 s priced), oracle child 1536 MiB, construction child 332 MiB.",
+  "what_blocks": "the moving-band audit's retained probability shifts at the intended step dt = 2^-9 (M5, 2560 master trials): bias-dominated, 1.7x-2.3x the allowance"
+ },
+ "records_sha256": {
+  "first": "0e2b2b9769dfcb793b05180b132ab1fca7367a745babe40bc2e15f62f21770b0",
+  "pricing": "d22d12368a9c5ca07e9ba441fc4f638fb3901b7c6b4070fe22cd1014bf3a38a7",
+  "redesign": "5c4c4aeddb0edd617ae4d139f29514ca5ecc9fbbd4c7c79227e3bde5c380bb8e",
+  "s2": "2588c5e22937380b2dc61304c4bfe0957dba23972893311991f423e637bd7d58",
+  "s3": "3c1b2cf8e2434d2eb6e60185fc1ef2e93653b9b58d286409be6346d368a4de3c"
+ },
+ "retained_observables": {
+  "moving_band_audit": [
+   "commit_probability_shift",
+   "survival_shift_at_0.45",
+   "survival_shift_at_0.60",
+   "survival_shift_at_0.80"
+  ],
+  "stationary_oracle": [
+   "survival",
+   "exit_quantile_p35"
+  ]
+ },
+ "schema": "refrozen-production-design/v1",
+ "source_fingerprint": "8bb1a4eddd8b93a3458393bd027536e3b6f7a5f51d49fa561f7161926b945992"
+}
