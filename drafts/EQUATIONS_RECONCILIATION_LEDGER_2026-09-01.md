@@ -1274,7 +1274,33 @@ power.
    whether to re-decide the two gate verdicts on the retained identities (for S3 this can
    be done from the recorded per-identity reasons; a fresh verdict object under a
    re-frozen contract would need S3 re-run, 67 min), and whether to buy the 25-hour
-   moving-band ladder. The package's
+   moving-band ladder. **JB decided on 2026-09-04: "Re-decide the two gate verdicts on the
+   retained identities."** Done as a derivation (`validation/REDECIDED_GATES.json`, digest
+   `3f924ffc…`, chained to the re-freeze manifest and reproduced by `--check`;
+   `REDECIDE_REPORT.md`; no run, no package change, package verified unchanged): the
+   package's own per-identity clause function (`killed_diffusion._ladder_codes`, frozen
+   caps, coverage 2) was applied to the recorded ladders restricted to the retained
+   identities, after first confirming that applying it to *all* identities reproduces
+   every recorded failing reason verbatim for all five ladders. The added-resets cap was
+   set aside for these verdicts, as part of the decision and stated in the manifest, because
+   it judges a diagnostic count with no continuum limit that is not a retained observable;
+   its status is reported separately (it would still block M5 at 3.8 and M6 at 19.2), and
+   it is *not* re-frozen, so a future moving-band ladder's gate carries it again unless the
+   decision is extended. No clause was softened. **Result: every retained identity in every
+   ladder passes all four clauses** — S3 (survival 0.0026–0.0076 against caps 0.09,
+   p35 against 0.30, converging, at most one reversal), M5, M6 and the reference S3b — so
+   all five ladders re-decide to *pass*. **Dispositions with the re-decided verdicts
+   carried:** stationary only, **`satisfied`**, no blockers, 5 704 admissible trials, exponent
+   half-width 0.162 against the target 0.25; all intended, **`unresolved`** — blocked only by
+   M5's retained probability shifts at the intended step (survival shift at 0.80, 2.34×;
+   commit probability, 2.31×; survival shift at 0.60, 1.71×), 439 admissible trials,
+   half-width 0.585; reference plus intended, `unresolved` on the reference rows. **No
+   evidence set is `numerical_no_result` any more.** What remains is one measurement, not a
+   decision: the M5-size moving-band ladder at $dt/16$ (2 560 trials, 440 M physical
+   intervals), priced at 25 h (16.6 h at the measured rate), about 80 MiB, every retained row
+   projected under the allowance at 0.0044 worst; the records suggest nothing cheaper (fewer
+   trials fail on SE, a coarser step with more trials costs more). Its gate would carry the
+   reset cap again unless the decision is extended to it. The package's
    own next authorization boundary is whether to price the intended-configuration
    validation campaign. The diagnostic exponent's stability under $dt/2$ and $2N$ says the
    production direction is unlikely to be large; it does not say it is zero. None of (a)–(d)

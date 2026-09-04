@@ -603,6 +603,17 @@ stationary set is satisfied and the moving-band set is unresolved on M5's probab
 shifts at the intended step, which a 25-hour ladder at dt/16 is projected to clear.
 Those are decisions for the sponsor; nothing here is a physics result.
 
+The sponsor re-decided the gate verdicts on the retained identities
+(`validation/REDECIDED_GATES.json`, `REDECIDE_REPORT.md`; the package's own clause
+function applied to the recorded ladders, the reset-count cap set aside as a diagnostic
+count, no clause softened). Every retained identity in every ladder passes, so all five
+ladders re-decide to pass: the stationary set is now *satisfied* (5 704 admissible trials,
+half-width 0.16 against the 0.25 target) and the full set is *unresolved* on M5's
+probability shifts at the intended step alone, which the priced 25-hour ladder at dt/16
+would address. No evidence set is a numerical no-result any more; the diagnostic label on
+this file's physics results stays until a production sweep runs under the re-frozen
+design.
+
 ## What this does and does not establish
 
 It establishes, at diagnostic budget, that the noisy Adler race with a fixed physical
