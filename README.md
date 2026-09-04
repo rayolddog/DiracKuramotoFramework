@@ -184,6 +184,9 @@ and it stands open.
 
 ---
 
+A plain-terms glossary of the program's physics, simulation and statistical vocabulary,
+with medical and statistical relatives, is at [GLOSSARY.md](GLOSSARY.md).
+
 ## What this framework does not claim
 
 - It does not modify the Dirac equation, the Born rule's numerical content, or
