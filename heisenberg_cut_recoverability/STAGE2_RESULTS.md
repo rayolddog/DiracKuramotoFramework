@@ -90,7 +90,7 @@ stored energy.
 Applied (v0.4, beyond the four edits, flagged): the Figure 1 caption and Appendix A
 correction of S3.
 
-Proposed, not applied: a §4.1 refinement from S2. The table's "lock engagement" row
+Applied later the same day at the sponsor's word (Paper 2 v0.4 change (7)): the §4.1 refinement from S2. The table's "lock engagement" row
 (free phase exists, entrained) leaves the stored energy, and hence recoverability,
 exactly where the field set it; the handover of energy bookkeeping from field to site
 happens at the *running* onset, continuously, with a kink. If the cut is where

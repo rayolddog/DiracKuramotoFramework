@@ -1448,3 +1448,13 @@ single-outcome claim is the companion's negative result. §2 item (3), which sti
 the lock's statistics are "provably Born under stated premises", gets a one-line v0.4
 qualification to Paper 1 v0.9 / NEGATIVE_RESULT.md — an inconsistency the negative
 result had left standing. Six references added.
+
+**Item 7, addendum 3 (2026-09-04).** At the sponsor's word, the §4.1 refinement from stage-2
+finding S2 is applied to Paper 2 (v0.4 change (7)): the engagement row of the time-ordering
+table now carries a measured statement, and a paragraph gives the three regimes in the
+stored-energy observable of the paper's own injected-oscillator model — slaved (linear
+response), engaged (energy at the field-set value F²/Δ² through g = 0 and the forced
+fixed point's Hopf at 0.241, slope 0.004), running (slope 1.1 past the winding onset at
+0.355) — continuous with a kink; "completion" in that model is the running onset; the
+record channel shifts the onset to 0.397 and nothing else. Caveat carried: classical
+analogy with gain by hand; the quantum self-sustaining absorber (§9) remains open.
