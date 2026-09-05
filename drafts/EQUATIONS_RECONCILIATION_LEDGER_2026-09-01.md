@@ -1581,7 +1581,7 @@ committed with it.
 **Item 8, addendum (2026-09-04, late): the publication candidate.** At the sponsor's word
 ("much of the history of development doesn't need to be included; only the relationship
 to past theories/frameworks is important"), `drafts/PAPER_one_world_one_cut_SHORT.md`
-v1.0 (~4,300 words): scope; relations to existing frameworks first (decoherence lineage,
+v1.0 (about 5,700 words including references, 9 pages): scope; relations to existing frameworks first (decoherence lineage,
 Everett, GRW/CSL/DP, Bohm/Nelson, transactional with the Cramer/Kastner facts, ABN,
 Copenhagen/QBism); ontology; the cut with one table of exact-model results; the postulate
 in sink language with graded eligibility, the requirements list as one paragraph citing
