@@ -1616,3 +1616,23 @@ sponsor adjudications made on the first author's recommendation, reversible:** c
 now stated as a negative result: a real-wave, one-world, no-new-constant programme is
 pushed to the projection postulate at the decoherence crossover, and nothing in the
 detector or a synchronization substrate moves the weights.
+
+
+## The second round and v1.2 (item 12, 2026-09-05)
+
+Four re-reviews of v1.1 (`one_world_one_cut_AI_review_2026-09/reviews_v1.1/`): all major
+revision at 2/5; sub-scores up on consistency, evidence, reproducibility, citation;
+novelty 2 unchanged. Six errors introduced by v1.1 (the √2K/2K limit; a projector as the
+jump operator; no-signalling from linearity alone; the foliation "needed" argument and its
+Lorentz-violation contradiction; the Marchildon misattribution; a falsifier that does not
+falsify QM) and five residues (clause 3's finite delay; §4.5 residue; the no-go stated as
+a result; transmon row; candidate/long-form divergence) are fixed in v1.2. Standing as
+costs, not fixed: the unravelling-selection FAPP residue at the site–record split
+(Wiseman & Gambetta 2012); the coherence of configuration-space realism; and the three
+adjudications made overnight on the first author's recommendation, which the sponsor
+must ratify or reverse. The reviewers' consistent reading after two rounds: a priced,
+honest restatement of the projection postulate at the decoherence crossover with a
+negative result for one model family; novelty 2. First author's recommendation to the
+sponsor: do not send to external models for a verdict as it stands; either accept the
+record as the deliverable, or take R3's advice (M10) to make the priced restatement
+itself the contribution and stop calling anything in it a result.

@@ -70,8 +70,10 @@ the outcome weights entering as a premise, and the dynamics does not replace the
   right.
 - **Commitment is the vertex, not the record.** The first irreversibility in a detector is
   the absorption vertex and thermalisation, femtoseconds to a picosecond in silicon, not
-  the avalanche or the readout; everything downstream is photon-agnostic and carries no
-  which-site weight; the SPAD/SNSPD asymmetry a gap-gated reading predicted does not
+  the avalanche or the readout; everything downstream carries no interference-sensitive weight (it multiplies
+  the vertex weight by a stochastic, position- and energy-dependent efficiency and adds
+  photon-independent clicks; the earlier phrasing "photon-agnostic, no which-site weight"
+  was corrected at review, 2026-09-05); the SPAD/SNSPD asymmetry a gap-gated reading predicted does not
   arise. Paper 3's stage taxonomy was corrected accordingly.
 - **Method.** Every definition was fixed before application and every prediction written
   down before the result was opened; four of the day's predictions were wrong and are

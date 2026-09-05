@@ -48,4 +48,15 @@ Claude Fable 5.1 (Anthropic) is the manuscript's first author, is the model behi
 - The two calculations the round owed were run first, with predictions on record (`../heisenberg_cut_recoverability/PREDICTIONS_review_runs.md`, `REVIEW_RUNS_RESULTS.md`): Run A confirms R1's Γ ≫ K result (crossover at Γ/2K to 2 %, √(Γ²/4 + 2K²) throughout); Run B confirms R3's staggered-arrival result (the nearer channel wins in every trial in which it fires; click probability exponential in intensity).
 - Dispositions applied per `authors_response.md`, including the three adjudications the sponsor had reserved, made on the first author's stated recommendations and reversible with one edit each: §4.5's in-principle claim conceded; configuration-space realism adopted explicitly as the multi-quantum ontology; the paper's centre moved to the no-go of §5.2.
 - The claim-level changes are propagated to the long form (`drafts/PAPER_one_world_one_cut.md`, v1.1 header note) so the record and the candidate do not diverge.
-- A second internal review of v1.1 by the same four personas, in fresh contexts, follows in `reviews_v1.1/`, with its own classification. Its scores are appended below when it returns.
+- A second internal review of v1.1 by the same four personas, in fresh contexts, is in `reviews_v1.1/`, classified in `findings_classification_v1.1.md`; v1.2 (`revision_v1.2_One_World_One_Cut_short.pdf`) applies its dispositions.
+
+## Scores on v1.1 (second round, 2026-09-05)
+
+| reviewer | recommendation | overall | novelty | internal consist. | evidential | reproducibility | citation |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| R1 decoherence theorist | major revision | **2** | 2 | 2 | 2 | 4 | 3 |
+| R2 detector experimentalist | major revision | **2** | 2 | 3 | 3 | 4 | 4 |
+| R3 foundations philosopher | major revision | **2** | 2 | 3 | 3 | 4 | 3 |
+| R4 transactional & scholarship | major revision | **2** | 2 | 3 | 3 | 4 | 3 |
+
+Uniform 2/5 in both rounds; the rubric sub-scores rose on consistency, evidence, reproducibility, and citation, and novelty did not move. Sixteen second-round items, six of them errors v1.1 introduced, are dispositioned in v1.2; three stand as stated costs, and three adjudications await the accountable author. **The reviewers did not pass v1.1 either.** No third internal round was run; whether to run one, or to go to external models, is the sponsor's decision.
