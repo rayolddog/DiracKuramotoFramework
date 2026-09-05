@@ -41,3 +41,11 @@ Under the July protocol every one of these is an **internal review, labelled and
 ## Transparency / conflict disclosure
 
 Claude Fable 5.1 (Anthropic) is the manuscript's first author, is the model behind every reviewer in this internal stage, and coauthors the response; John M. Bramble, MD is the accountable human sponsor. Nothing in this round is an external verdict.
+
+## Revision (2026-09-05, overnight at the sponsor's word: "address the problems while I sleep")
+
+- `revision_v1.1_One_World_One_Cut_short.pdf` — the revised manuscript, source `drafts/PAPER_one_world_one_cut_SHORT.md` v1.1, published here beside the frozen v1.0, never over it.
+- The two calculations the round owed were run first, with predictions on record (`../heisenberg_cut_recoverability/PREDICTIONS_review_runs.md`, `REVIEW_RUNS_RESULTS.md`): Run A confirms R1's Γ ≫ K result (crossover at Γ/2K to 2 %, √(Γ²/4 + 2K²) throughout); Run B confirms R3's staggered-arrival result (the nearer channel wins in every trial in which it fires; click probability exponential in intensity).
+- Dispositions applied per `authors_response.md`, including the three adjudications the sponsor had reserved, made on the first author's stated recommendations and reversible with one edit each: §4.5's in-principle claim conceded; configuration-space realism adopted explicitly as the multi-quantum ontology; the paper's centre moved to the no-go of §5.2.
+- The claim-level changes are propagated to the long form (`drafts/PAPER_one_world_one_cut.md`, v1.1 header note) so the record and the candidate do not diverge.
+- A second internal review of v1.1 by the same four personas, in fresh contexts, follows in `reviews_v1.1/`, with its own classification. Its scores are appended below when it returns.

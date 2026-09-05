@@ -1589,3 +1589,30 @@ the negative result; entanglement and the price; consequences and tests; four op
 problems. Dropped: the development narrative, run-by-run numbers, the width/atom-count
 estimates, the century-of-evidence table, the T-ledger table. The long form remains the
 paper of record for how the numbers were obtained.
+
+
+## The review round and v1.1 (item 11, 2026-09-05)
+
+Four internal reviewers (R1–R4) returned major revision at 2/5 each; classification and
+proposed response in `one_world_one_cut_AI_review_2026-09/`. Sponsor: "Can you address the
+problems while I sleep?" Done in the protocol's order. **Runs first, predictions on record:**
+Run A (Γ/K to 1000): crossover at Γ/2K, √(Γ²/4 + 2K²)/K within 15 % everywhere; Run B
+(staggered arrival): the nearer channel wins whenever it fires; click probability
+exponential in intensity (36 % excess at half intensity); one bracket wrong (80°, an
+efficiency effect). **v1.1 of the short paper:** postulate restated as the quantum-jump
+unravelling on the conditional state (Born branch weights put in; no-jump renormalization
+nonlocal; no-signalling a theorem of the Lindblad average, Gisin 1989 / Polchinski 1991);
+location with regime, "coupling-set not temperature-set" withdrawn; in-principle claim
+CONCEDED (Bennett); configuration-space realism ADOPTED (Albert; Ney & Albert; PBR;
+Struyve on fermions); TI comparison rewritten (RTI's prior placement; derivation claim
+and the Marchildon dispute; Cramer & Mead; Hoyle–Narlikar; Pegg; possibilist ontology;
+TI's no-foliation claim); frame tests withdrawn, before-before nulls cited; foliation a
+choice (Tumulka; Bedingham; Pearle; Dürr et al.); registration row corrected (Renema;
+Engel); rare-earth and transmon protocols restated as consistency tests already done;
+photodetection/quantum-jump literature cited; diagnostic labels carried; Contributions
+restored with model versions; every citation error the panel found corrected. **Three
+sponsor adjudications made on the first author's recommendation, reversible:** concede
+§4.5; adopt configuration-space realism; centre on the no-go. The paper's one result is
+now stated as a negative result: a real-wave, one-world, no-new-constant programme is
+pushed to the projection postulate at the decoherence crossover, and nothing in the
+detector or a synchronization substrate moves the weights.
