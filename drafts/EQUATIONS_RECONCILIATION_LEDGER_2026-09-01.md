@@ -1577,3 +1577,15 @@ at t* = 0.6 — roughly logarithmic decay, consistent with the closest-phase (ex
 leak into the Poisson race; not established. Absorbed energy at the semicircle. Paper §4.2
 sentence updated; §4.1 clause 1 (graded eligibility) and the §4.2 linear-absorber note
 committed with it.
+
+**Item 8, addendum (2026-09-04, late): the publication candidate.** At the sponsor's word
+("much of the history of development doesn't need to be included; only the relationship
+to past theories/frameworks is important"), `drafts/PAPER_one_world_one_cut_SHORT.md`
+v1.0 (~4,300 words): scope; relations to existing frameworks first (decoherence lineage,
+Everett, GRW/CSL/DP, Bohm/Nelson, transactional with the Cramer/Kastner facts, ABN,
+Copenhagen/QBism); ontology; the cut with one table of exact-model results; the postulate
+in sink language with graded eligibility, the requirements list as one paragraph citing
+the negative result; entanglement and the price; consequences and tests; four open
+problems. Dropped: the development narrative, run-by-run numbers, the width/atom-count
+estimates, the century-of-evidence table, the T-ledger table. The long form remains the
+paper of record for how the numbers were obtained.
