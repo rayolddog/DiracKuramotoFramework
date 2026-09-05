@@ -49,3 +49,21 @@ each channel, the probability that A fires first, and the conditional ratio, aga
   restate the hazard as acting on the branch weight of the conditional state with the
   no-jump renormalization — the quantum-jump unravelling — which is the Born rule's
   branch weights put in.
+
+## Run A′ — the intermediate regime Γ/K = 1.5–7 (third round, before running)
+
+Two third-round reviewers re-ran Run A's propagator in the region Run A skipped and report
+that the rate-based midpoint is non-monotone in Γ/K, dipping to about 0.6K near Γ = 4K —
+the exceptional point of the 2 × 2 non-Hermitian matrix, where at Δ = 0 its eigenvalues
+−iΓ/4 ± √(K² − Γ²/16) coalesce — and that it drifts by a factor of about 4 with observation
+time at Γ/K = 3, so that the formula √(Γ²/4 + 2K²) is off by factors 1.6–2.2 at Γ/K = 2–5.
+Their numbers are not in the record; this run puts the measurement there.
+
+**Prediction:** the reviewers are right. At Γ/K ∈ {1.5, 2, 3, 4, 5, 7}, with the capture
+time scaled so the resonant leak over the run is of order one, the rate-based midpoint
+falls below the formula by a factor between 1.5 and 3 across the range, with its minimum
+near Γ/K = 4; at fixed Γ/K = 3 the midpoint changes by more than a factor of 2 between
+capture times differing by a factor of 10. Consequence, on record: the formula is a
+two-asymptote interpolation that fails in the intermediate regime, "to 15 % from 0.2 to
+1000" is false, and the location statement must be reduced to its two asymptotes with
+the intermediate region called non-monotone and convention-dependent.

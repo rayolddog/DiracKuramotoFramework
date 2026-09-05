@@ -1654,3 +1654,24 @@ picture in which the first interaction sends a phase. Also: abstract separates
 Everett and Copenhagen entries filled out (Wallace; Bohr's complementarity; von Neumann's
 process 1). The three overnight adjudications stand under the sponsor's instruction unless
 reversed.
+
+
+## The third round (item 13, 2026-09-05)
+
+At the sponsor's instruction, four fresh reviews of v1.3: all major revision at 2/5
+(`one_world_one_cut_AI_review_2026-09/reviews_v1.3/`, classified in
+`findings_classification_v1.3.md`). Two findings are corrections of fact to my v1.2
+repair, both confirmed by Run A′ (prediction on record first, `REVIEW_RUNS_RESULTS.md`):
+the formula √(Γ²/4 + 2K²) fails by up to 3× for Γ/K = 1.5–7, non-monotone with a dip at
+the exceptional point Γ = 4K, drifting 4.3× with observation time at Γ/K = 3; and "Γ/2,
+set by the record channel and hence by temperature" is wrong for band absorbers, whose
+hot-carrier relaxation is set by excess energy. Also: §6's picture paragraph conflates
+sharing with Bell nonlocality; the foliation is avoidable (hypersurface-relative
+conditional states); §7's order-independence paragraph mischaracterizes Stefanov, Salart,
+Minev and the circuit-QED experiments and overclaims; three objects are called "the cut";
+Gleason misapplied in §5.2; the Marchildon attribution still inexact; the header's
+account of the adjudications inadequate; the long form and NEGATIVE_RESULT.md diverge
+again on withdrawn wording. **Not revised;** dispositions proposed for the sponsor.
+**Assessment:** three rounds converged on the paper's status (a priced restatement,
+novelty 2), not on a passing version; each revision introduced errors at a rate
+comparable to the ones it fixed; a fourth internal round would find a fourth list.

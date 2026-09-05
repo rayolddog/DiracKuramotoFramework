@@ -64,3 +64,29 @@ one detector renormalizes the branches at the others: the quantum-jump unravelli
 Milburn 2010). That is the Born rule's branch weights put in, and the no-jump
 renormalization is nonlocal. The paper's §5 is restated accordingly in v1.1, and §5.2's
 "specification" is reduced to what it is: the Born rule and nonlocal exclusivity.
+
+## Run A′ — the intermediate regime Γ/K = 1.5–7 (third round, 2026-09-05)
+
+`gamma_intermediate_output.txt`; same propagator as Run A; capture times 1, 3, 10, 30.
+
+| Γ/K | midpoint at t = 1 | t = 3 | t = 10 | t = 30 | formula √(Γ²/4 + 2K²)/K |
+|---|---|---|---|---|---|
+| 1.5 | 3.71 | 1.14 | 1.15 | 1.10 | 1.60 |
+| 2 | 3.76 | 1.01 | 1.04 | 1.09 | 1.73 |
+| 3 | 3.92 | 1.16 | 0.93 | 0.92 | 2.06 |
+| 4 | 4.14 | 1.75 | 0.99 | 0.74 | 2.45 |
+| 5 | 4.41 | 2.35 | 1.90 | 1.81 | 2.87 |
+| 7 | 5.08 | 3.49 | 3.15 | 3.07 | 3.78 |
+
+**Prediction confirmed on both counts.** At long capture times the rate-based midpoint
+lies below the formula by factors 0.3–0.8 across the range, with its minimum, 0.74K at
+t = 30, at Γ/K = 4 — the exceptional point where the resonant eigenvalues coalesce; at
+short capture times (t = 1, transient-dominated) it lies above the formula by 1.35–2.3×;
+and at Γ/K = 3 it moves from 3.92 to 0.92, a factor of 4.3, between t = 1 and t = 30.
+**Consequence, on record:** the formula √(Γ²/4 + 2K²) is a two-asymptote interpolation
+that fails by up to a factor of three in the intermediate regime, the candidate's "to 15 %
+from 0.2 to 1000" is false, and the location statement must be reduced to its two
+asymptotes — of order the coupling, convention- and time-dependent, for Γ ≪ K; Γ/2 for
+Γ ≫ K — with the intermediate region called non-monotone and convention-dependent. The
+paper's v1.2 repair of the formula's small-Γ limit was itself a repair of the wrong
+thing: the limit was right to the reviewers' precision, and the fit's interior was wrong.
