@@ -4,7 +4,7 @@ This folder is the review record for `drafts/PAPER_one_world_one_cut_SHORT.md` v
 
 ## The frozen target
 
-- `reviewed_paper_short_v1.0_One_World_One_Cut.pdf` — the exact manuscript every reviewer judges, frozen at repository commit `2596bc3` (git tag `owoc-short-v1.0-review`), 2026-09-04.
+- `reviewed_paper_short_v1.0_One_World_One_Cut.pdf` — the exact manuscript every reviewer judges, whose text is that of repository commit `2596bc3`; the round was frozen and tagged one commit later, at `8232f41` (git tag `owoc-short-v1.0-review`, which also carries the anticipated-findings ledger), 2026-09-04–05.
 - Reviewer package: this PDF (and its Markdown source at the same commit) plus the public record it cites: `NEGATIVE_RESULT.md`, `adler_two_channel_exploratory/RESULTS.md`, `heisenberg_cut_recoverability/RESULTS.md` and `STAGE2_RESULTS.md`, the long-form paper `drafts/PAPER_one_world_one_cut.md`, and the ledger `drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md`. Reviewers are invited to audit every number against that record.
 
 ## Panel composition — the difference from July, disclosed
@@ -27,9 +27,16 @@ Under the July protocol every one of these is an **internal review, labelled and
 3. **Anticipated-findings ledger** — `anticipated_findings.md` was written and committed **before any review was requested** (the freeze commit precedes the reviews in git history). Each incoming finding is classified against it in `findings_classification.md` as anticipated, anticipated-sharpened, or genuinely new.
 4. **Response** — `authors_response.md` gives per-finding dispositions; any revision is a separate artifact, never over the frozen PDF.
 
-## Scores
+## Scores (panel returned 2026-09-05; spread preserved, never averaged)
 
-*(filled in when the reviews return; spread preserved, never averaged)*
+| reviewer | consulted the record | recommendation | overall | novelty | internal consist. | evidential | reproducibility | citation |
+|---|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| R1 decoherence theorist | yes (all listed files; code read-only) | major revision | **2** | 2 | 3 | 2 | 4 | 3 |
+| R2 detector experimentalist | yes (all listed files; git diff to the tag) | major revision | **2** | 2 | 2 | 2 | 3 | 3 |
+| R3 foundations philosopher | yes (ledger and race record by targeted search) | major revision | **2** | 2 | 2 | 3 | 4 | 3 |
+| R4 transactional & scholarship | yes (all listed files; web verification of the TI sources) | major revision | **2** | 2 | 2 | 2 | 3 | 3 |
+
+**The reviewers did not pass the paper.** Uniform 2/5, major revision. Beyond the ledger's fifteen anticipated items they found sixteen new ones (`findings_classification.md`), three of which change claims rather than wording: the selection postulate as written fails for time-separated detectors (R3 M1); the exact model was never run in the regime real detectors occupy, where the crossover is record-set (R1 M2); and clause 3 on a three-space field contradicts heralded and Hong–Ou–Mandel data (R2 M1). The first author's proposed dispositions, including three adjudications that are the sponsor's, are in `authors_response.md`. Nothing has been applied to the paper.
 
 ## Transparency / conflict disclosure
 
