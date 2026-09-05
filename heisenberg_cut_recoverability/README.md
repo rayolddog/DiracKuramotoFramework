@@ -15,6 +15,20 @@ irreversible record channel?
   linear absorber and fixes what the stage-2 model must be.
 - `run_output.txt`, `results.json` — the raw output and data.
 
+Stage 2 (same day), after the correction logged at the end of `RESULTS.md`:
+
+- `PREDICTIONS_STAGE2.md` — fixed before running: Part A, does the carrier frequency enter
+  (quantum Rabi absorber, no rotating-wave approximation); Part B, is the crossover sharp
+  for a self-sustaining absorber (Paper 2's own injected Stuart–Landau model with a record
+  channel and a counter-rotating drive).
+- `stage2_rabi_carrier.py`, `stage2_stuart_landau_sharpness.py` — the two scripts, 53 s
+  and 16 s.
+- `STAGE2_RESULTS.md` — 7 of 8 predictions confirmed, one bound wrong: the carrier is a
+  Bloch–Siegert shift and not a width; the recoverability-relevant energy is continuous
+  with a kink at the running onset and no signature at the Hopf; Paper 2's Figure 1
+  onset is deterministic, not noise-smeared.
+- `stage2_*_output.txt`, `stage2_*_results.json` — raw output and data.
+
 ```bash
 python3 fano_recoverability.py
 ```

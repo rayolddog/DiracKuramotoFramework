@@ -1385,3 +1385,40 @@ because the echo leg leaks too.
 environment untouched and distinguish the operational coupling-flip; state the location
 as a rate balance; restrict w = K/ω to nonlinear absorbers; state the dense-record
 requirement. Pending the sponsor's word.
+
+**Correction to item 7, 2026-09-04, before the Paper 2 edits.** The width bullet above
+misread w = K/ω as a relative width in κ_ret/K. Paper 2 §3.1 defines it as the layer's
+extent in share (ΔE ≲ ħK ⇔ 1 − s ≲ K/ω), which in the deficit-rate variable is a
+crossover of relative width order one — what the test measured. The width claim is
+therefore consistent with the linear model, not out of scope; the open question is
+sharpness (smooth crossover vs bifurcation) for a self-sustaining absorber, and stage 2
+is redefined to test it (`heisenberg_cut_recoverability/PREDICTIONS_STAGE2.md`). Edit 3
+applied in corrected form. The Paper 2 edits (v0.4) are applied at the sponsor's word,
+2026-09-04.
+
+**Item 7, stage 2 (2026-09-04, `heisenberg_cut_recoverability/STAGE2_RESULTS.md`).**
+Predictions fixed first (`PREDICTIONS_STAGE2.md`); 7 of 8 confirmed, one numerical bound
+wrong (the stored energy changes by up to 70 % per 0.1 in gain at the running onset, not
+under 30 %; continuous with a kink as predicted). Findings: (S1) the carrier frequency
+enters the recoverability crossover only as the Bloch–Siegert shift of its centre,
+−(1.1–1.5)K²/ω, with the half-width unchanged to 2 % from ω/K = 64 down to 8 — ω belongs
+in the share conversion and nowhere else; (S2) in Paper 2's own injected Stuart–Landau
+model the leak-relevant stored energy sits at the field-set value F²/Δ² through the free
+Hopf point and through the Hopf of the forced fixed point (slope 0.004) and rises with
+slope 1.1 only beyond the winding onset near g = 0.355 — the three regimes slaved /
+engaged / running appear in one energy observable, continuous with a kink, no jump, so a
+self-sustaining absorber kinks the recoverability crossover rather than sharpening it,
+and only the phase-winding observable switches; (S3) Paper 2's Figure 1 caption and
+Appendix A misattribute the onset near g ≈ 0.35 to noise smearing — it is deterministic
+(50 % onset 0.355 at D = 0, 0.352 at D = 10⁻⁴), the Adler estimate 0.1225 fails because
+F/√g = 1 there, the true loss of lock is a Hopf bifurcation of the forced fixed point at
+g = 0.241 — corrected in Paper 2 v0.4 (caption and Appendix A), beyond the four edits,
+flagged to the sponsor; (S4) a record channel Γ_rec = 0.1 shifts the onset to 0.397 and
+changes nothing else. Paper 2 v0.4 applied: the four edits (§3.1 location result; §3.2
+what the width is a width of, corrected form; §4.1 echo definition; §4.1 dense-record
+requirement), the §6.2 parenthetical, §8.5(v), the header note, and the S3 correction.
+Proposed, not applied: a §4.1 refinement — the engaged regime leaves recoverability where
+the field set it (slope 0.004), the energy handover is at the running onset and smooth.
+Open, unchanged: the quantum self-sustaining absorber with a record channel (§9); the
+location κ_ret/K = 1 is untestable in the forced sub-threshold oscillator because K is
+set by the response (the §3.1 circularity), and stage 2 does not resolve it.

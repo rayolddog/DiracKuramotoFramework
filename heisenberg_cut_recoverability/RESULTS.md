@@ -127,3 +127,24 @@ B ≲ Γ, K, which is outside the physical regime for any detector in Paper 2's 
    linear absorber with a record channel has a crossover of relative width order one (F4).
 4. Say that a single record degree of freedom gives coherent exchange, not a cut; the cut
    needs a dense record channel, and this is a physical requirement on detectors (F2).
+
+## Correction, 2026-09-04, logged before the Paper 2 edits were applied
+
+**F4 and proposed edit 3 misread Paper 2's width.** Paper 2 §3.1 defines w = K/ω as the
+layer's extent in *share*: the deficits ΔE ≲ ħK, that is 1 − s ≲ K/ω. It is not a
+relative width in κ_ret/K. A layer of share width K/ω, converted to the deficit-rate
+variable by ΔE = ħκ_ret, is a crossover of relative width of order one in κ_ret/K, which
+is precisely what this test measured (1.1–1.6 rate-based; 25–75% points at κ_ret/K ≈
+1.2–3). So the width claim is *not* out of scope for the linear absorber: the test is
+consistent with it and supplies the prefactor. The fact "ω cannot appear in a
+rotating-wave model" stands; the inference drawn from it was wrong.
+
+What remains open is a different question, and Paper 2 itself poses it (§3.1: no single
+continuous model yet spans both sides and exhibits the bifurcation at κ_ret/K = 1):
+whether the recoverability crossover is smooth, as here for a linear absorber, or sharp,
+as Figure 1(a)'s winding observable is for a self-sustaining oscillator. Stage 2 is
+redefined around that question in `PREDICTIONS_STAGE2.md`; the prediction already on
+record for counter-rotating terms (a Bloch–Siegert shift ∝ K²/ω, no sharpening) is kept
+and tested there. Edit 3 is applied to Paper 2 in corrected form: state what the width is
+a width of, and that the on/off of Figure 1(a) is a different observable from the
+recoverability crossover.
