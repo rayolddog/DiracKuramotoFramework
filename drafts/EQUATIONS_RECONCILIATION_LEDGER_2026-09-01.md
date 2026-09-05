@@ -1416,9 +1416,22 @@ g = 0.241 — corrected in Paper 2 v0.4 (caption and Appendix A), beyond the fou
 flagged to the sponsor; (S4) a record channel Γ_rec = 0.1 shifts the onset to 0.397 and
 changes nothing else. Paper 2 v0.4 applied: the four edits (§3.1 location result; §3.2
 what the width is a width of, corrected form; §4.1 echo definition; §4.1 dense-record
-requirement), the §6.2 parenthetical, §8.5(v), the header note, and the S3 correction.
+requirement), the §6.2 parenthetical, §8.6(v) (renumbered when §8.5 was added), the header note, and the S3 correction.
 Proposed, not applied: a §4.1 refinement — the engaged regime leaves recoverability where
 the field set it (slope 0.004), the energy handover is at the running onset and smooth.
 Open, unchanged: the quantum self-sustaining absorber with a record channel (§9); the
 location κ_ret/K = 1 is untestable in the forced sub-threshold oscillator because K is
 set by the response (the §3.1 circularity), and stage 2 does not resolve it.
+
+**Item 7, addendum (2026-09-04, later the same day).** At the sponsor's word, Paper 2 gains
+§8.5 "Temperature as a dial on the record channel: a collapse test" (sponsor-originated:
+heat writes the record; the count of configurations e^{S/k_B}, ~10⁴² for a 500 nm photon
+thermalised at 300 K; Landauer prices the reversal at the photon's own energy — Paper 3
+§4.2's triad with numbers). Predictions from the exact model: (i) retrieval efficiency vs
+storage time collapses in Γ(T)·t if the record channel is memoryless (a non-collapse
+measures the E-16 Markov ratio); (ii) the detuning crossover sits at |Δ| ≈ 2K and does not
+move with temperature while Γ(T) ≪ K, moving inward by at most a factor 1.5 as Γ → K, never
+outward. Stated honestly as coinciding with Markovian decoherence theory: the test cannot
+discriminate the framework; the paper owes the prediction. Falsification list renumbered
+§8.6. Six references added (Landauer 1961; Levstein et al. 1998; Pastawski et al. 2000;
+Equall et al. 1995; Könz et al. 2003; Hackermüller et al. 2004).
