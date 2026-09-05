@@ -60,3 +60,5 @@ Claude Fable 5.1 (Anthropic) is the manuscript's first author, is the model behi
 | R4 transactional & scholarship | major revision | **2** | 2 | 3 | 3 | 4 | 3 |
 
 Uniform 2/5 in both rounds; the rubric sub-scores rose on consistency, evidence, reproducibility, and citation, and novelty did not move. Sixteen second-round items, six of them errors v1.1 introduced, are dispositioned in v1.2; three stand as stated costs, and three adjudications await the accountable author. **The reviewers did not pass v1.1 either.** No third internal round was run; whether to run one, or to go to external models, is the sponsor's decision.
+
+- `revision_v1.3_One_World_One_Cut_short.pdf` — the identified post-review revision (2026-09-05, at the accountable author's instruction): his shared-waveform picture written into §5.1 and §6 as the no-jump renormalization, answering the staggered-arrival finding; the order-independence experiments in §7; abstract and §2 refinements from the second round.

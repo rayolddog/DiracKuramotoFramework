@@ -1636,3 +1636,21 @@ negative result for one model family; novelty 2. First author's recommendation t
 sponsor: do not send to external models for a verdict as it stands; either accept the
 record as the deliverable, or take R3's advice (M10) to make the priced restatement
 itself the contribution and stop calling anything in it a result.
+
+**Item 12, addendum — v1.3, the identified post-review revision (2026-09-05).** At the
+sponsor's instruction ("include the wording … apply the modifications to an identified
+revision after first review"). His shared-waveform picture — sink drains the waveform into
+the site (energy local); the shared waveform of a pair is pulled everywhere it has support
+(nonlocal, no speed, "first" frame-dependent and unobservable, the partner's conditional
+state a branch selected not a phase rotated) — is written into §5.1 and §6 in his words and
+identified as the no-jump renormalization, which answers R3's staggered-arrival finding:
+the nearer detector's silence pulls the waveform toward the farther one. His proposed test
+(nonlocality as the phase change of the first interaction shared with the partner) is met
+in §7 by the order-independence experiments already done — spacelike Bell tests, the
+before-before tests (Zbinden 2001; Stefanov 2002), delayed-choice entanglement swapping
+(Peres 2000; Ma 2012) — which the picture passes because QM does and which would falsify a
+picture in which the first interaction sends a phase. Also: abstract separates
+"computable location" (decoherence theory's) from "physical address" (by postulate); §2
+Everett and Copenhagen entries filled out (Wallace; Bohr's complementarity; von Neumann's
+process 1). The three overnight adjudications stand under the sponsor's instruction unless
+reversed.
