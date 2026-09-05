@@ -114,9 +114,17 @@ Two numbers span the detector zoo: the per-event capture strength and the commit
 
 ## 4. Selection at absorption: the postulate and its price
 
-### 4.1 The postulate
+### 4.1 The postulate, in the language of a sink
 
-At the vertex, commitment is a stochastic event. Its hazard at a site is linear in the energy the site has absorbed from the field, hence proportional to the squared amplitude there, with a time profile that does not depend on the site; exactly one site completes; and the constraint that enforces "exactly one" acts across the detector faster than light crosses it. This is Fermi's golden rule [Dirac 1927; Fermi 1950] read as an event rather than as a rate, together with the one-quantum constraint. The paper does not derive it. It took the program two months and a ledger of simulations to establish that it could not, and the postulate is written in the form the simulations said any mechanism would have to supply.
+*(The sponsor's formulation, 2026-09-04; the formal statement follows it and says the same thing.)* A quantum arrives at a detector as a wave spread over many sites. Three things then happen, and the paper postulates all three.
+
+1. **An eligible set.** Every site at which the local amplitude exceeds the site's own detuning from the wave is eligible: it is inside its tongue, and it draws energy from the field at its locked rate. A site below that threshold holds amplitude but draws nothing on average, and is not in the race.
+
+2. **A sink opens at one of them, by chance.** At each eligible site a sink can open at any moment, with a probability per unit time proportional to the energy that site has drawn so far, the same rule at every site. The first sink to open anywhere in the eligible set is the one that opens. Two phrases are load-bearing. *By chance*: the sink does not open when the site's phase reaches alignment with the wave. That rule makes the winner the fastest of N nearly deterministic slides, whose statistics are wrong (§4.2: exponent 1.5, and the count of eligible sites enters only as its logarithm). The sink opens as a memoryless event whose rate the absorbed energy sets, and then the count enters in proportion. *Drawn so far*: the rate is linear in that energy, hence proportional to the squared amplitude at the site. A square-root rate or a quadratic one gives the wrong statistics too, and the rate's timing — whether it lags the absorption — does not matter.
+
+3. **The whole quantum flows through it.** Once a sink is open, the quantum's entire energy passes through that one site, and the amplitude at every other site vanishes — including sites in the other arm of an interferometer, metres away — within a thousandth of the time the sink took to open, faster than light crosses the detector. One sink per quantum. This is the one-quantum constraint. The sink picture names it; nothing derives it.
+
+*Stated formally.* At the vertex, commitment is a stochastic event whose hazard at a site is linear in the energy the site has absorbed from the field, hence proportional to the squared amplitude there, with a time profile that does not depend on the site; exactly one site completes; and the constraint that enforces "exactly one" acts across the detector faster than light crosses it. Clause 1 is the tongue of §4.2; clause 2 is Fermi's golden rule [Dirac 1927; Fermi 1950] read as an event rather than as a rate, and it is what makes the outcome frequencies Born; clause 3 is the nonlocality that one world costs (§5). The paper derives none of the three. It took the program two months and a ledger of simulations to establish that it could not, and the postulate is written in the form the simulations said any mechanism would have to supply.
 
 ### 4.2 What was learned by trying to derive it
 

@@ -1549,3 +1549,12 @@ sponsor's request: §4.2 of the single paper carries the peak's width in physica
 micron spot, ~2 GHz for a 100-fs photon) and the atoms under the spot (vapour 10²–10³,
 tens eligible; rare-earth crystal ~10¹⁰ ions, ~10⁷ eligible; silicon ~5 × 10¹⁰, all
 eligible, the peak's width undefined for a band).
+
+**Item 8, addendum (2026-09-04, late).** At the sponsor's word, §4.1 of the single paper is
+restated in his sink language: (1) an eligible set (amplitude above the site's detuning);
+(2) a sink opens at one eligible site by chance, rate proportional to the energy drawn so
+far — explicitly not "first to align", which is the extreme-value race with exponent 1.5;
+(3) the whole quantum flows through the open sink and every other amplitude vanishes,
+nonlocally, within a thousandth of the opening time. The formal statement follows it
+unchanged. Choices: "sink" (the sponsor's word) over "drain"; "by chance" and "drawn so
+far" marked as the load-bearing phrases; the nonlocality named inside the picture.
