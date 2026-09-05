@@ -724,3 +724,81 @@ universal mechanism, because the narrow-band limit is linear and Born is not. Th
 compatible domain is stated in the single paper's §4.2; the discriminating regime is
 stated there as the mechanism's one falsifiable difference from quantum mechanics, and
 the paper takes quantum mechanics' side of it.
+
+---
+
+## The gated energy race in its broadband, adiabatic limit (2026-09-04, evening): the excess above 2 is intrinsic, and three explanations of it failed
+
+*Predictions fixed first in `PREDICTIONS_energy_race_adiabatic.md` (with two addenda, each
+written before the check it predicts); drivers `energy_race_adiabatic.py` and
+`energy_race_smallc.py`; output `energy_race_adiabatic_output.txt`. Gated race, hazard
+linear in absorbed energy, K = 2, flat ±3 grids of 16 and 64 clocks, stationary windows 4–32
+and raised-cosine pulses 1–16, D = 0.08 and 0, hazard scales spanning commitment times
+from 0.6 to 14 time units. 39 min for the main run, 6 min and 19 min for the checks.
+Diagnostic budget; every non-claim above applies.*
+
+| configuration | commitment time t* | p [95 %] | dev. Born | E ∼ K^ |
+|---|---|---|---|---|
+| stationary, window 4, 16 clocks (the record's variant) | 0.6 | 2.09 [2.06, 2.12] | 104 | 2.17 |
+| stationary, window 4, 64 clocks | 0.6 | 2.08 [2.06, 2.11] | 78 | 2.20 |
+| stationary, window 4, 64 clocks, **D = 0** | 0.6 | 2.07 [2.04, 2.10] | 61 | 2.18 |
+| stationary, window 8, 64 clocks | 0.6 | 2.12 [2.09, 2.15] | 114 | 2.15 |
+| stationary, window 16, 64 clocks | 0.6 | 2.17 [2.14, 2.19] | 113 | 2.13 |
+| stationary, window 16, 64 clocks, **D = 0** | 0.6 | 2.16 [2.12, 2.19] | 110 | 2.06 |
+| stationary, window 32, 64 clocks | 0.6 | 2.15 [2.12, 2.19] | 84 | 2.11 |
+| stationary, window 32, 64 clocks, **c = 10⁻³** | ≈ 7 | 2.15 [2.12, 2.19] | 66 | 2.11 |
+| stationary, window 32, 64 clocks, **c = 2.5 × 10⁻⁴** | ≈ 14 | 2.13 [2.09, 2.17] | 56 | 2.11 |
+| pulse, duration 1, 64 clocks | — | 2.10 [2.08, 2.13] | 60 | 2.15 |
+| pulse, duration 2 | — | 2.13 [2.10, 2.15] | 85 | 2.22 |
+| pulse, duration 4 | — | 2.12 [2.10, 2.15] | 86 | 2.27 |
+| pulse, duration 8 | — | 2.14 [2.11, 2.17] | 92 | 2.23 |
+| pulse, duration 16 | — | 2.16 [2.12, 2.21] | 67 | 2.16 |
+
+Analytic stationary rate-sum exponent of the grid (the semicircle sum over the clocks, K from
+0.4 to 2): 16 clocks 1.968, 64 clocks 2.009, continuum 2.000.
+
+**Scorecard.** Prediction 1 (grid density): 16 clocks 2.09 as the record; 64 clocks 2.08,
+at the edge of [2.00, 2.08]; the 64-clock rate-sum exponent 2.009 — confirmed at the
+boundary; discreteness is worth 0.01, not 0.09. Prediction 2 (window length brings p to
+2): **refuted** — p rose, 2.08 → 2.12 → 2.17 → 2.15. Prediction 3 (pulse length brings p
+to 2): **refuted** — flat at 2.10–2.16 across a factor 16. Prediction 4 (fast pulses do not
+go linear): confirmed, 2.10 at duration 1. Prediction 5 (noise irrelevant): confirmed,
+2.07 vs 2.08 and 2.16 vs 2.17. First addendum (the rise with window is noise-driven; D = 0
+at window 16 returns to 2.04–2.10): **refuted**, 2.16. Second addendum (the windows never
+left the transient because c ∝ 1/T pinned t* at 0.6; pushing commitment to t* ≈ 7 and
+14 brings p to 2.02–2.10 and 2.00–2.06): **refuted**, 2.15 and 2.13. A fourth hypothesis
+voiced to the sponsor between rows, a locking-delay offset between channels decaying as
+1/t*, predicted about 2.08 at t* ≈ 14; measured 2.13 [2.09, 2.17] — not supported.
+
+**What is established.** The gated energy race on a broadband flat spectrum has exponent
+2.13–2.16 in every configuration tried: 16 or 64 clocks, stationary windows from 4 to
+32, pulses from 1 to 16, noise on or off, commitment times from 0.6 to 14. The
+semicircle identity holds for the *absorbed energy* — the analytic rate sum on 64 clocks
+scales as K^2.009, and the measured channel energy at the window's end falls toward it
+as the window lengthens (2.20 → 2.11; 2.06 with the noise off) — but the *outcome* of the
+race stays 0.13–0.16 above 2, and it does not track the energy's approach to 2. The
+second addendum's diagnosis of the window series (t* pinned at 0.6 by the c ∝ 1/T
+scaling) was correct as a diagnosis and wrong as a prediction: freeing t* did not free
+the exponent.
+
+**What is not established.** The mechanism of the residual. Three candidates remain
+unseparated: the noise-reduced absorbed power of weakly locked clocks (a steady-state
+effect, but D = 0 at t* = 0.6 gives the same exponent, and no D = 0 run exists at large
+t*); the signed accumulation before lock, which delays the hazard for clocks that enter
+the tongue at unfavourable phase, more of them in the weak channel; and a slow 1/t*
+decay too weak to see across a factor of 2 in t*. The one run that separates the first
+from the others is stationary, window 32, 64 clocks, D = 0, c = 2.5 × 10⁻⁴ (about
+10 min); it was not run, because the sponsor asked for the results to be committed when
+the last row was in, and it is named here as the next check rather than assumed.
+
+**What this settles for the sponsor's question** (does removing the atom's discrete
+resonance, and the vacuum's contribution, make the result more broadband): replacing the
+resonance by a band makes the substrate broadband, and in that limit the mechanism's
+exponent is 2.13–2.16, not 2 — the morning's announced correction, that the broadband
+adiabatic limit is Born-exact by the semicircle identity, is **retracted before it was
+ever applied to the paper**: the identity governs the energy, not the outcome, at every
+budget run. The vacuum's noise contribution is irrelevant to the exponent (prediction 5);
+the vacuum's other contribution, the record channel's density of states, cannot be
+removed without removing commitment altogether. The finding of the spectra sweep stands
+in its original form: Born is reached at one spectral width only, where the
+narrow-spectrum deficit cancels the race's intrinsic excess.

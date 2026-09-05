@@ -1523,3 +1523,29 @@ square — a discriminating regime (single-photon strong coupling, identical abs
 which the record shows no linear law. Settled: Born-compatible for broadband substrates by
 tuning; not a universal mechanism. Applied to the single paper §4.2 as a paragraph; the
 paper takes quantum mechanics' side of the discriminator.
+
+
+## The gated energy race in its broadband, adiabatic limit (item 10, 2026-09-04, evening)
+
+Sponsor's question: does removing the absorbing atom's wave function and the vacuum's
+contribution make the result more broadband? Answering it required re-reading the record,
+and I announced to the sponsor a correction — that the broadband adiabatic limit is
+Born-exact by the semicircle identity and the flat grid's 2.21 a transient — before
+measuring it. Predictions first (`adler_two_channel_exploratory/PREDICTIONS_energy_race_adiabatic.md`,
+two addenda); runs `energy_race_adiabatic.py` (39 min) and `energy_race_smallc.py`
+(19 min), plus a 6-min noise-off check; output `energy_race_adiabatic_output.txt`;
+write-up in `RESULTS.md`. **Uncertainty first:** three of five predictions and both
+addenda wrong; a fourth hypothesis voiced between rows not supported. **Established:**
+exponent 2.13–2.16 in all fourteen configurations (grid 16/64, windows 4–32, pulses 1–16,
+D = 0.08/0, commitment times 0.6–14); the absorbed energy approaches K² (2.20 → 2.11;
+2.06 noise-off) while the outcome does not. **The announced correction is retracted
+before being applied**: the semicircle identity governs the energy, not the outcome. The
+spectra-sweep finding stands: Born at one width only. **Not established:** the residual's
+mechanism (noise-reduced power of weakly locked clocks; pre-lock signed accumulation; a
+slow decay) — the separating run (window 32, D = 0, c = 2.5e-4, ~10 min) is named, not
+run, because the sponsor asked for the commit when the last row landed. Also added at the
+sponsor's request: §4.2 of the single paper carries the peak's width in physical units
+(single-photon Rabi frequency: ~20 MHz for a nanosecond photon on an atomic dipole in a
+micron spot, ~2 GHz for a 100-fs photon) and the atoms under the spot (vapour 10²–10³,
+tens eligible; rare-earth crystal ~10¹⁰ ions, ~10⁷ eligible; silicon ~5 × 10¹⁰, all
+eligible, the peak's width undefined for a band).

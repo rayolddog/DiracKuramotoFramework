@@ -1,0 +1,29 @@
+/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_two_channel_exploratory/energy_hazard_race.py:113: RuntimeWarning: All-NaN slice encountered
+  return np.nanmin(fired, axis=1), np.maximum(E, 0.0).sum(axis=1)
+energy_race_adiabatic.py — the gated energy race in its broadband, adiabatic, continuum limit.
+Predictions fixed first in PREDICTIONS_energy_race_adiabatic.md. Flat +-3 grids of 16 and 64
+clocks; stationary drive with windows 4, 8, 16, 32; raised-cosine pulses of duration 1..16;
+hazard scale scaled as 4/T. Diagnostic only; every non-claim of RESULTS.md applies.
+rate-sum exponent of the grid (stationary, analytic): 16 clocks 1.968, 64 clocks 2.009, continuum 2.000
+
+config                                  p          [95%]  dev Born   E~K^  unres  P_A(30)  (Born 0.750)   elapsed
+P1  stationary T=4,  16 clk          2.09 [2.06, 2.12]     104.2   2.17  0.000    0.752        33 s
+P1  stationary T=4,  64 clk          2.08 [2.06, 2.11]      77.9   2.20  0.000    0.751       188 s
+P5  stationary T=4,  64 clk, D=0     2.07 [2.04, 2.10]      61.3   2.18  0.000    0.754       328 s
+P2  stationary T=8,  64 clk          2.12 [2.09, 2.15]     113.9   2.15  0.000    0.751       616 s
+P2  stationary T=16, 64 clk          2.17 [2.14, 2.19]     113.3   2.13  0.000    0.765      1017 s
+P2  stationary T=32, 64 clk          2.15 [2.12, 2.19]      84.3   2.11  0.000    0.755      1555 s
+P4  pulse T=1,  64 clk               2.10 [2.08, 2.13]      60.4   2.15  0.000    0.764      1593 s
+P3  pulse T=2,  64 clk               2.13 [2.10, 2.15]      85.4   2.22  0.000    0.760      1669 s
+P3  pulse T=4,  64 clk               2.12 [2.10, 2.15]      86.2   2.27  0.000    0.764      1820 s
+P3  pulse T=8,  64 clk               2.14 [2.11, 2.17]      91.6   2.23  0.000    0.765      2041 s
+P3  pulse T=16, 64 clk               2.16 [2.12, 2.21]      67.4   2.16  0.000    0.768      2338 s
+
+run time 2338 s
+
+CHECK stationary T=16, 64 clk, D=0       2.16 [2.12, 2.19]     109.9   2.06  0.000    0.762       361 s
+/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_two_channel_exploratory/energy_hazard_race.py:113: RuntimeWarning: All-NaN slice encountered
+  return np.nanmin(fired, axis=1), np.maximum(E, 0.0).sum(axis=1)
+SMALLC stationary T=32, 64 clk, c=0.001     2.15 [2.12, 2.19]      66.2   2.11  0.000    0.757       561 s
+SMALLC stationary T=32, 64 clk, c=0.00025     2.13 [2.09, 2.17]      55.8   2.11  0.000    0.761      1141 s
+run time 1141 s
