@@ -27,3 +27,7 @@ CHECK stationary T=16, 64 clk, D=0       2.16 [2.12, 2.19]     109.9   2.06  0.0
 SMALLC stationary T=32, 64 clk, c=0.001     2.15 [2.12, 2.19]      66.2   2.11  0.000    0.757       561 s
 SMALLC stationary T=32, 64 clk, c=0.00025     2.13 [2.09, 2.17]      55.8   2.11  0.000    0.761      1141 s
 run time 1141 s
+/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_two_channel_exploratory/energy_hazard_race.py:113: RuntimeWarning: All-NaN slice encountered
+  return np.nanmin(fired, axis=1), np.maximum(E, 0.0).sum(axis=1)
+NOISEOFF stationary T=32, 64 clk, c=0.00025, D=0     2.09 [2.06, 2.13]      35.0   2.03  0.000    0.747       495 s
+run time 495 s

@@ -802,3 +802,23 @@ the vacuum's other contribution, the record channel's density of states, cannot 
 removed without removing commitment altogether. The finding of the spectra sweep stands
 in its original form: Born is reached at one spectral width only, where the
 narrow-spectrum deficit cancels the race's intrinsic excess.
+
+**Addendum: the noise-off race at the longest commitment time (run at the sponsor's word;
+prediction in the third addendum of the predictions file).** Stationary, window 32, 64
+clocks, D = 0, c = 2.5 × 10⁻⁴ (commitment near 14 time units), 5,000 trials, 495 s:
+**p = 2.09 [2.06, 2.13]**, Born deviance 35, channel energy ∼ K^2.03, P_A at 30° = 0.747
+against Born's 0.750. Scored: the prediction (p in [2.09, 2.16], energy exponent in
+[2.02, 2.06]) holds at its lower edge on p and in the middle on the energy. Read against
+the noise-on row at the same commitment time (2.13 [2.09, 2.17]) and the noise-off row at
+commitment time 0.6 (2.16), the residual splits: about 0.04 is the noise's, appearing only
+once commitment is late enough for the steady-state phase spread to matter, and about
+0.09 is deterministic at commitment time 14, down from 0.16 at 0.6 — a decay across a
+factor 23 in commitment time that a 1/t* law would have taken to 0.01, so the
+deterministic part decays roughly logarithmically. That is the signature the
+closest-phase effect would leave: sites that begin near their locked phase draw energy
+first, the advantage falls on the stronger channel whose clocks lock faster, and an
+extreme-value ingredient decays as a logarithm. Consistent with, not established. The
+absorbed energy itself has reached the semicircle (2.03 against the 64-clock analytic
+2.009). Standing conclusion unchanged: the sharp eligibility threshold of a self-sustained
+clock carries a residual above 2 of a tenth of a power at any budget run here; the linear
+absorber's graded weight has no threshold and no residual.

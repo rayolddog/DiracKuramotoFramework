@@ -105,3 +105,19 @@ steady-state energy exponent.** At c = 10⁻³ (t* ≈ 7): p between 2.02 and 2.
 c = 2.5 × 10⁻⁴ (t* ≈ 14): p between 2.00 and 2.06, with some unresolved trials. If p stays
 at 2.15 with commitment at t* ≈ 14, the excess is not the transient either and this
 analysis has no explanation for it.
+
+## Third addendum, before the noise-off check at the longest commitment time
+
+At the sponsor's word, the separating run named in RESULTS.md: stationary, window 32,
+64 clocks, D = 0, c = 2.5 × 10⁻⁴ (commitment near 14 time units), 5,000 trials. It
+separates the noise-reduced absorbed power of weakly locked clocks (a steady-state,
+noise-dependent effect) from the deterministic candidates (pre-lock signed accumulation,
+the closest-phase leak into the Poisson race). The evidence so far: with the noise off
+at commitment time 0.6 the exponent was unchanged (2.16 vs 2.17), and with the noise on
+the exponent moved only from 2.15 to 2.13 as the commitment time went from 7 to 14.
+
+**Prediction: the residual is deterministic.** With the noise off at commitment time 14,
+p stays between 2.09 and 2.16 (within the noise-on value's interval, 2.13 [2.09, 2.17]),
+while the channel-energy exponent at the window's end falls to 2.02–2.06 (the
+noise-off value at window 16 was 2.06). If instead p falls to 2.06 or below, the residual
+is the noise's doing in the steady state and the deterministic candidates are cleared.

@@ -1558,3 +1558,22 @@ far — explicitly not "first to align", which is the extreme-value race with ex
 nonlocally, within a thousandth of the opening time. The formal statement follows it
 unchanged. Choices: "sink" (the sponsor's word) over "drain"; "by chance" and "drawn so
 far" marked as the load-bearing phrases; the nonlocality named inside the picture.
+
+**Item 8, addendum (2026-09-04, late).** Sponsor: "phase synchronization is unnecessary;
+the only thing that counts is the phase difference"; then: phase and interference stay as
+the microscopic description; synchronization may still enter entanglement but not in the
+paper. Applied: §4.1 clause 1 restated as graded eligibility — a linear absorber draws
+energy in proportion to the squared local amplitude weighted by the Lorentzian
+2K²/(Δ²+4K²), no site excluded, no tongue; the sharp threshold was the last vestige of
+synchronization in the postulate, and §4.2 now says it is where the race's residual
+excess (2.13–2.16) lives: with a graded weight the square is per site and the exponent
+is exactly 2. Entanglement left untouched (§5 carries no synchronization language).
+
+**Item 10, addendum (2026-09-04, late).** The separating run, at the sponsor's word:
+stationary, window 32, 64 clocks, D = 0, c = 2.5e-4 (commitment ≈ 14): p = 2.09 [2.06,
+2.13], energy ∼ K^2.03. Prediction (third addendum) holds at its lower edge. Residual
+split: ~0.04 noise (late commitment only), ~0.09 deterministic at t* = 14, down from 0.16
+at t* = 0.6 — roughly logarithmic decay, consistent with the closest-phase (extreme-value)
+leak into the Poisson race; not established. Absorbed energy at the semicircle. Paper §4.2
+sentence updated; §4.1 clause 1 (graded eligibility) and the §4.2 linear-absorber note
+committed with it.
