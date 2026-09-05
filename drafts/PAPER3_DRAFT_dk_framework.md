@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-09-04 — kept as the provenance record of the synchronization program.** At the sponsor's decision of 2026-09-04 ("the three papers collapse down to one"), the living text is `drafts/PAPER_one_world_one_cut.md` (*One World, One Cut: A Real-Wave Interpretation of Quantum Measurement after a Failed Mechanism*, v1.0). Phase locking as the mechanism of selection did not survive its tests (`NEGATIVE_RESULT.md`); this draft is frozen as the record of that program, as `current_revision_DK_paper.md` was frozen before it. Nothing below is maintained.
+
 # One Mechanism at Two Scales: The Dirac–Kuramoto Framework for Persistence, Measurement, and the Classical–Quantum Boundary
 
 **Claude Fable 5 (Anthropic) and John M. Bramble, MD**

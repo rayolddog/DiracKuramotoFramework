@@ -1458,3 +1458,43 @@ fixed point's Hopf at 0.241, slope 0.004), running (slope 1.1 past the winding o
 0.355) — continuous with a kink; "completion" in that model is the running onset; the
 record channel shifts the onset to 0.397 and nothing else. Caveat carried: classical
 analogy with gain by hand; the quantum self-sustaining absorber (§9) remains open.
+
+
+---
+
+## The three papers collapse to one (item 8, 2026-09-04)
+
+**Sponsor's decisions, 2026-09-04, in order:** drop synchronization from the framework;
+rewrite Paper 3 as the interpretation without it; "I think the three papers collapse down
+to one." Applied as: `drafts/PAPER_one_world_one_cut.md` v1.0, *One World, One Cut: A
+Real-Wave Interpretation of Quantum Measurement after a Failed Mechanism* — the single
+paper. Paper 1 v0.9 is the recorded negative result; Paper 2 v0.4 is absorbed (its §3
+becomes the new §3, its §8.5 the new §6, its lineage paragraph the new §1) with its test
+program as evidence; Paper 3 v0.1 is superseded and frozen with a banner, as [MCI] was.
+Nothing deleted.
+
+**What the single paper keeps and drops.** Keeps: real waves; superposition as coexistence
+and the register unification; the photon as the uncoupled limit; the Compton clock, sober
+(a phase, representation-dependent, not a coupling); two classical limits (matter by
+records, light by occupancy); the cut with its criterion, location, width, three stages,
+dense-record requirement, amplifier kink, trichotomy, and the in-principle claim flagged
+as an argument; the detector taxonomy; the selection postulate (golden-rule hazard at the
+vertex + nonlocal one-quantum constraint) with the requirements list and numbers from the
+race; the entangled sector's two objects, frame-rotation picture at premise level,
+foliation priced; the triad and the temperature dial; the experimental program restated
+honestly (coupling dial discriminates against mass-based collapse, not decoherence; port
+discriminator; energy audit; temperature collapse; T-ledger; H′; BMV); placement table;
+six open problems. Drops: the ladder as lock threshold (propagating/evanescent kept);
+the sync transition as the cut; Higgs as Kuramoto clockmaker; the three-hand dial's sync
+content; backwards-time-as-lock; the selection game as mechanism; "Many Clocks" as a
+name; the joint-game fidelity law demoted to a definition; no-signalling restated as
+Gisin's argument in reverse (hazard linearity).
+
+**Cramer and Dirac spinors (sponsor's question, answered from the sources).** Cramer 1986
+§3.3 notes the Dirac and Klein–Gordon equations have advanced solutions and that ψ → ψ*
+is time reversal; the absorber is functional, no microscopic model. Kastner 2012 uses
+Davies' direct-action QED with fermionic (Dirac) currents and explicitly ignores spin,
+deferring a spinor treatment. Kastner & Cramer 2018 define the absorber as an atom or
+molecule and derive the Born rule for radiative processes as the offer–confirmation
+product; no detector model. Nobody in that lineage put Dirac spinor structure into a
+microscopic absorber. Placed in the new §4.3.
