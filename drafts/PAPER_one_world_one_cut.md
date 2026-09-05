@@ -136,11 +136,9 @@ The postulate costs three things. **Nonlocality**, in Bell's sense and never sig
 
 ## 5. The entangled sector and the frame
 
-*(Conditional on the shared-registry premise over and above the single-detector commitments; the configuration-space objection lives here and is held open.)*
+*(Conditional on the real-wave commitment extended to the non-separable two-particle configuration, over and above the single-detector commitments; the configuration-space objection lives here and is held open. The reviewed drafts carried a picture of the nonlocal update, a rotation of a shared frame; it is withdrawn at the sponsor's decision of 2026-09-04, and this section now states only what the theorems require.)*
 
 **Two objects, not to be blurred.** The local thermal reference at each detector — the random-unrecorded references that make commitment possible — is established in the common past of both wings and is independent of the analyzer settings: it is a Bell common-cause variable, and by Bell's theorem it cannot source the correlations; a clock-as-local-variable model of the outcomes is sub-classical, CHSH ≤ √2. The correlation comes from the second object: the extended, non-separable field configuration carrying the entangled two-particle mode across both wings — not a common cause but one configuration of the real field spanning A and B. Locating the nonlocality there adds no postulate; it restates the real-wave commitment. The framework is not superdeterministic (settings are free), and no-signalling is not assumed: it follows from the hazard's linearity in the squared amplitude, which is Gisin's argument [Gisin 1990] run in reverse as a consistency condition — a nonlinear hazard would signal, and the postulate's linearity is what forbids it.
-
-**The frame rotation, as picture.** The pair carries one shared internal orientation anchored at its creation; the first commitment does not send anything anywhere — it rotates the shared frame, and the changed degree of freedom is an angle, not a configuration crossing space. The information-theoretic statement is the sharpest: the rotation transmits zero signal bits while doing the work that costs a classical simulator exactly one bit per pair [Toner & Bacon 2003] — Shimony's uncontrollable nonlocality [Shimony 1984] given a picture, and no more than a picture, stated at premise level. Its standing prediction: a rotation has no velocity, so bounds on the speed of quantum influence [Salart et al. 2008; Yin et al. 2013] will grow without finding a floor. The fidelity of the shared registry, η, degrades the CHSH value as S = 2√2 η, which converts existing Bell experiments into measurements of η near unity at terrestrial scales; this is a definition and a reading, inherited, not a derivation.
 
 **The foliation, priced.** Nonlocal commitments must be ordered, and the ordering is a preferred slicing of the substrate that enters through the measurement sector only: capture is exactly Lorentz covariant, and the frame appears where the event does. As written this is explicit low-energy Lorentz violation confined to measurement. Ordinary matter couples to it, beyond the electromagnetic commitment itself, only gravitationally — the suppression that explains why clock-comparison and Michelson–Morley bounds have not registered it — but the quantitative demonstration that the residual anisotropy clears every established bound remains owed, alongside the covariant formulation of the selection event. Whether the frame is local (mass–energy rest frame) or cosmic is an open, testable question; only a cosmic frame produces sidereal signatures, and §7 is built to ask.
 
@@ -195,7 +193,7 @@ The family is the single-world, ψ-ontic, nonlocal one; Bohm, Nelson, and the tr
 1. **The quantum self-sustaining absorber with a record channel.** The exact tests used a linear absorber (§3.2–3.3) and, for the amplifier, a classical oscillator with gain put in by hand (§3.4). The one calculation that would show the three regimes — slaved, engaged, running — with κ_ret a coherent return rather than a damping is an open quantum system with a limit cycle and a dense record channel; the quantum synchronization literature has the oscillator and not the channel.
 2. **In principle versus for all practical purposes.** §3.5's claim is an argument. Making it a result would require showing that a random-unrecorded reference structure forbids reversal by any agent, not merely by any practical one, or conceding the point to decoherence.
 3. **The covariant formulation.** The selection event on the foliation, with its no-signalling proof written independently of the statistics it reproduces, and the quantitative clearance of every established Lorentz bound (§5).
-4. **The configuration-space objection.** Schrödinger's second defeat, held open at the shared registry: a premise priced, not a problem solved.
+4. **The configuration-space objection.** Schrödinger's second defeat, held open at the non-separable two-particle configuration: a premise priced, not a problem solved.
 5. **The port discriminator's fork** (§7): whether a deeper principle closes the last deviation channel or the curvature is real; the bench decides.
 6. **The location in a self-sustaining sub-threshold system.** In the forced oscillator below threshold, K is set by the response itself, so κ_ret/K = 1 cannot be tested there — the circularity the second paper flagged — and the exact test resolved it only for a linear absorber.
 
@@ -263,17 +261,13 @@ Schrödinger built an equation that describes the evolution of the wave and mean
 - Pastawski, H. M., Levstein, P. R., Usaj, G., Raya, J., & Hirschinger, J. (2000). A nuclear magnetic resonance answer to the Boltzmann–Loschmidt controversy? *Physica A* **283**, 166–170.
 - Penrose, R. (1996). On gravity's role in quantum state reduction. *Gen. Relativ. Gravit.* **28**, 581–600.
 - Sabbah, A. J., & Riffe, D. M. (2002). Femtosecond pump-probe reflectivity study of silicon carrier dynamics. *Phys. Rev. B* **66**, 165217.
-- Salart, D., Baas, A., Branciard, C., Gisin, N., & Zbinden, H. (2008). Testing the speed of "spooky action at a distance". *Nature* **454**, 861–864.
 - Schlosshauer, M. (2004). Decoherence, the measurement problem, and interpretations of quantum mechanics. *Rev. Mod. Phys.* **76**, 1267–1305.
 - Schlosshauer, M., & Camilleri, K. (2008). The quantum-to-classical transition: Bohr's doctrine of classical concepts, emergent classicality, and decoherence. arXiv:0804.1609.
 - Schrödinger, E. (1930). Über die kräftefreie Bewegung in der relativistischen Quantenmechanik. *Sitzungsber. Preuss. Akad. Wiss., Phys.-Math. Kl.* 418–428.
-- Shimony, A. (1984). Controllable and uncontrollable non-locality. In *Proc. Int. Symp. Foundations of Quantum Mechanics* (Tokyo), 225–230.
 - Steck, D. A. (2025). Rubidium 87 D Line Data (rev. 2.3.3). https://steck.us/alkalidata.
 - Tegmark, M. (1993). Apparent wave function collapse caused by scattering. *Found. Phys. Lett.* **6**, 571–590.
-- Toner, B. F., & Bacon, D. (2003). Communication cost of simulating Bell correlations. *Phys. Rev. Lett.* **91**, 187904.
 - Tonomura, A., Endo, J., Matsuda, T., Kawasaki, T., & Ezawa, H. (1989). Demonstration of single-electron buildup of an interference pattern. *Am. J. Phys.* **57**, 117–120.
 - Wheeler, J. A., & Feynman, R. P. (1945). Interaction with the absorber as the mechanism of radiation. *Rev. Mod. Phys.* **17**, 157–181.
-- Yin, J., et al. (2013). Lower bound on the speed of nonlocal correlations without locality and measurement choice loopholes. *Phys. Rev. Lett.* **110**, 260407.
 - Zeh, H. D. (1970). On the interpretation of measurement in quantum theory. *Found. Phys.* **1**, 69–76.
 - Zurek, W. H. (1981). Pointer basis of quantum apparatus: into what mixture does the wave packet collapse? *Phys. Rev. D* **24**, 1516–1525.
 - Zurek, W. H. (1982). Environment-induced superselection rules. *Phys. Rev. D* **26**, 1862–1880.

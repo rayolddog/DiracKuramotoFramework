@@ -1498,3 +1498,9 @@ deferring a spinor treatment. Kastner & Cramer 2018 define the absorber as an at
 molecule and derive the Born rule for radiative processes as the offer–confirmation
 product; no detector model. Nobody in that lineage put Dirac spinor structure into a
 microscopic absorber. Placed in the new §4.3.
+
+**Item 8, addendum (2026-09-04).** At the sponsor's word the frame-rotation picture is
+removed from §5 of the single paper (with the no-speed-floor prediction and the
+fidelity-law reading that lived in it, and the four references cited only there); §5 now
+carries the two-objects argument and the foliation, priced, and says the picture was
+withdrawn. Open problem 4 reworded to the non-separable configuration.
