@@ -1435,3 +1435,16 @@ outward. Stated honestly as coinciding with Markovian decoherence theory: the te
 discriminate the framework; the paper owes the prediction. Falsification list renumbered
 §8.6. Six references added (Landauer 1961; Levstein et al. 1998; Pastawski et al. 2000;
 Equall et al. 1995; Könz et al. 2003; Hackermüller et al. 2004).
+
+**Item 7, addendum 2 (2026-09-04).** At the sponsor's word, Paper 2 §2 gains a lineage
+paragraph placing the paper against the decoherence programme's treatment of the cut
+(Zeh 1970; Zurek 1981, 1982, 2003, 2009; Joos & Zeh 1985; Tegmark 1993; Brune et al. 1996;
+Ollivier et al. 2004; Schlosshauer 2004; Schlosshauer & Camilleri 2008; Camilleri &
+Schlosshauer 2015; Bell 1990), and states what remains distinctively the paper's after
+v0.4: recoverability ending in principle rather than for all practical purposes (the
+§4.1 random-reference argument) and a coupling-set location with a computable share
+width; the location and crossover results are decoherence-compatible, and the
+single-outcome claim is the companion's negative result. §2 item (3), which still said
+the lock's statistics are "provably Born under stated premises", gets a one-line v0.4
+qualification to Paper 1 v0.9 / NEGATIVE_RESULT.md — an inconsistency the negative
+result had left standing. Six references added.
