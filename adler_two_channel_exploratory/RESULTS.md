@@ -649,3 +649,78 @@ routing, or a microscopic bath.
 
 Raw ledgers: `adler_born_two_channel/results/x2-<tag>-<A|B>-phi<deg>-N<N>-dt<k>/`
 (gitignored there). Paired summaries: `results_<tag>_N<N>_dt<k>.csv` here.
+
+---
+
+## The gated energy race on peaked spectra (2026-09-04): where the second power of K comes from, and what that costs
+
+*Predictions fixed first in `PREDICTIONS_energy_race_spectra.md`; driver
+`energy_race_spectra.py`; output `energy_race_spectra_output.txt`. Same gated race as the
+record (hazard linear in absorbed energy, power accumulated only inside the tongue, K = 2,
+D = 0.08, c = 1, 10,000 trials per angle and channel, 9 angles), with the detuning set
+varied: flat midpoints of ±3, Gaussian quantile sets of width σ = 2, 1, 0.5, 0.25, and all
+16 clocks at Δ = 0. Diagnostic budget; every non-claim above applies.*
+
+| spectrum | p [95 %] | deviance vs Born (p = 2) | vs linear (p = 1) | E_total ∼ K^ | P_A at 30° (Born 0.750) |
+|---|---|---|---|---|---|
+| flat ±3 | **2.21** [2.19, 2.24] | 210 | 9429 | 2.21 | 0.777 |
+| Gaussian σ = 2 | 2.09 [2.06, 2.12] | 50 | 8197 | 2.20 | 0.767 |
+| Gaussian σ = 1 | **2.01** [1.99, 2.04] | **12.3** (accepted) | 7323 | 2.09 | 0.752 |
+| Gaussian σ = 0.5 | 1.78 [1.76, 1.80] | 308 | 4998 | 1.80 | 0.716 |
+| Gaussian σ = 0.25 | 1.52 [1.50, 1.54] | 1664 | 2614 | 1.51 | 0.687 |
+| delta (all at Δ = 0) | **1.08** [1.07, 1.10] | 7849 | 93 | 1.32 | 0.646 |
+
+(9 cells per fit; a deviance of 16.9 is the 5 % point of χ² with 9 degrees of freedom.)
+
+**Scorecard.** (1) Flat control: 2.21 against the predicted 2.16 ± 0.05 — at the edge of the
+bracket, and the record's own gated summary (2.16 [2.14, 2.19]) was across a decade of
+hazard scale; confirmed at the boundary. (2) σ = 2: 2.09, in [1.9, 2.2] — confirmed.
+(3) σ = 1: 2.01, predicted [1.6, 1.9] — **wrong**, higher. (4) σ = 0.5: 1.78, predicted
+[1.3, 1.6] — **wrong**, higher. (5) σ = 0.25: 1.52, predicted [1.05, 1.3] — **wrong**,
+higher. (6) Delta: 1.08, predicted 1.00 ± 0.05 — just outside; the second power is gone
+as predicted, the residual 0.08 is the pulse's time profile (the absorbed-energy exponent
+at the delta spectrum is 1.32, the race's 1.08). (7) Monotone — confirmed. (8) Born
+rejected at σ ≤ 0.5 — confirmed; linear accepted at the delta spectrum — **wrong** in the
+strict statistical form (deviance 93 at 90,000 trials per cell), right in substance
+(exponent within 0.08 of 1). Four of eight brackets wrong, all in the same direction: the
+saturation is slower in σ/K than erf(K/σ√2), because the raised-cosine pulse carries every
+clock through couplings below σ on the way up, the noise widens the effective tongue at
+its edge, and the locked-phase factor cos θ* adds a fractional power of K for clocks near
+the edge. The trend is the prediction's; the scale is not.
+
+**Findings.**
+
+1. **The second power of K is the tongue factor, and it goes away with the spectrum.** With
+   every clock at the same detuning the race is linear in the coupling (1.08); with a
+   spread wider than the coupling it is quadratic and more (2.21). The energy a channel
+   absorbs tracks the race exponent at every width (E ∼ K^p to 0.1 except at the delta
+   spectrum), so the hazard is doing what it was told: the amplitude dependence is in
+   the eligible fraction, not in the commitment rule.
+2. **Born is exact at one width only.** The exponent passes through 2 at σ ≈ 1, half the
+   maximum coupling on the angle grid, where the Born comparator is accepted (deviance
+   12.3); on the flat grid it is 2.21 and the Born comparator is rejected (210), a
+   2.7 % excess in P_A at 30°, far outside the precision of Malus-law tests. So
+   synchronization plus the golden-rule hazard is Born-*compatible* only in the sense
+   that some spectrum makes it so; the exponent is a property of the substrate's spectrum
+   (1.08 → 2.21 across this sweep), and a universal Born rule would require every
+   substrate to sit at the same tuned width. That is a coincidence, not a mechanism.
+3. **A discriminating regime exists, and standard quantum mechanics does not agree with
+   the mechanism there.** Two absorbers of identical frequency, each strongly coupled to
+   one arm of a split single photon so that the coupling exceeds any spread (cavity QED at
+   single-photon strong coupling, identical trapped atoms), would divide the photon in
+   proportion to the *amplitude* (0.86 : 0.14 at the 10° split) on this mechanism and in
+   proportion to the *squared amplitude* (0.97 : 0.03) on quantum mechanics. Nothing in
+   the strong-coupling record suggests a linear law. Unless every real substrate is
+   broadband at the level of its own clocks relative to a single quantum's coupling —
+   which for a single photon's Rabi frequency against any inhomogeneous width is in fact
+   the usual case, and is why the failure has not been seen in ordinary detectors — the
+   mechanism is falsified in the narrow-band regime by the same rule it was built to
+   reproduce.
+
+**What this settles for the sponsor's question** (whether Adler synchronization becomes
+Born-compatible once deriving Born is no longer required): yes for broadband substrates,
+with an exponent that is spectrum-dependent and equals 2 only by tuning; no as a
+universal mechanism, because the narrow-band limit is linear and Born is not. The
+compatible domain is stated in the single paper's §4.2; the discriminating regime is
+stated there as the mechanism's one falsifiable difference from quantum mechanics, and
+the paper takes quantum mechanics' side of it.

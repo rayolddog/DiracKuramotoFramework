@@ -1504,3 +1504,22 @@ removed from §5 of the single paper (with the no-speed-floor prediction and the
 fidelity-law reading that lived in it, and the four references cited only there); §5 now
 carries the two-objects argument and the foliation, priced, and says the picture was
 withdrawn. Open problem 4 reworded to the non-separable configuration.
+
+
+## The gated energy race on peaked spectra (item 9, 2026-09-04)
+
+Sponsor's question: with deriving Born no longer required, is Adler synchronization
+Born-compatible? Predictions first (`adler_two_channel_exploratory/PREDICTIONS_energy_race_spectra.md`);
+run `energy_race_spectra.py`, 204 s, output in `energy_race_spectra_output.txt`; write-up
+appended to `RESULTS.md`. **Uncertainty first:** diagnostic budget (10,000 trials per angle
+and channel, 9 angles); four of eight prediction brackets wrong, all in the same direction
+(saturation slower in σ/K than erf(K/σ√2): the pulse, the noise, and the cos θ* factor);
+the trend and the endpoints as predicted. Exponent by spectrum: flat 2.21 [2.19, 2.24];
+Gaussian σ = 2, 1, 0.5, 0.25: 2.09, 2.01, 1.78, 1.52; delta 1.08 [1.07, 1.10]. Findings:
+the second power of K is the tongue factor and vanishes with the spectrum; Born is exact
+at one width only (σ ≈ 1, deviance 12.3 accepted; flat rejected at 210, a 2.7 % excess at
+30°); the narrow-band limit predicts a linear law where quantum mechanics predicts the
+square — a discriminating regime (single-photon strong coupling, identical absorbers) in
+which the record shows no linear law. Settled: Born-compatible for broadband substrates by
+tuning; not a universal mechanism. Applied to the single paper §4.2 as a paragraph; the
+paper takes quantum mechanics' side of the discriminator.

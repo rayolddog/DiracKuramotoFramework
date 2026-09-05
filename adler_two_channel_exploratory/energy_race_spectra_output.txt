@@ -1,0 +1,18 @@
+/Users/john-bramble/Projects/Physics/DiracKuramotoFramework/adler_two_channel_exploratory/energy_hazard_race.py:113: RuntimeWarning: All-NaN slice encountered
+  return np.nanmin(fired, axis=1), np.maximum(E, 0.0).sum(axis=1)
+energy_race_spectra.py — the gated energy race (memoryless hazard linear in absorbed energy,
+power K cos(theta) accumulated only inside the tongue) on detuning spectra of decreasing width.
+Predictions fixed first in PREDICTIONS_energy_race_spectra.md. Everything else — grid size,
+pulse, K = 2, noise D = 0.08, hazard scale c = 1.0, m = 1, trials — is the record's gated run.
+Diagnostic only; every non-claim of RESULTS.md applies.
+
+spectrum            p          [95%]  dev Born  dev lin   E~K^  unres   P_A at phi = 10, 30, 45, 60, 80 (Born: .970 .750 .500 .250 .030)
+flat +-3         2.21 [2.19, 2.24]     210.0   9428.5   2.21  0.000   0.978 0.777 0.500 0.232 0.021
+gauss s=2        2.09 [2.06, 2.12]      50.5   8197.1   2.20  0.000   0.974 0.767 0.495 0.235 0.028
+gauss s=1        2.01 [1.99, 2.04]      12.3   7322.6   2.09  0.000   0.970 0.752 0.503 0.255 0.030
+gauss s=0.5      1.78 [1.76, 1.80]     307.9   4998.4   1.80  0.000   0.959 0.716 0.506 0.276 0.041
+gauss s=0.25     1.52 [1.50, 1.54]    1663.8   2613.6   1.51  0.000   0.936 0.687 0.497 0.319 0.063
+delta            1.08 [1.07, 1.10]    7849.2     93.2   1.32  0.000   0.864 0.646 0.501 0.348 0.134
+
+(9 cells per fit; deviance ~ chi^2 with 9 dof under the comparator: 16.9 is the 5% point)
+run time 204 s
