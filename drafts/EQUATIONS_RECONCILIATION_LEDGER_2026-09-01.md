@@ -1705,3 +1705,16 @@ and B of `findings_classification_v1.3.md`): the crossover formula withdrawn for
 asymptotes with Run A′'s non-monotone interior stated; "hence temperature-set" withdrawn
 for band absorbers. The third round's other findings remain unapplied by the sponsor's
 decision.
+
+**Item 14, addendum 2 — v1.5 (2026-09-05).** At the sponsor's word, two statements added to
+both papers, each resting on runs in the record: (§3.1) virtual particles are the
+perturbative bookkeeping of the evanescent amplitude, with observable effects that are
+continuous phase and energy shifts (Bloch–Siegert, stage 2; Lamb-type from the finite
+record band) and never a jump, the jump being the real event; (§5.1) phase alignment plays
+no role in selection — a linear site's phase is slaved from the first instant, only the
+amplitude builds, commitment is a memoryless jump (timing immaterial, form load-bearing),
+and Kuramoto/Adler locking belongs only to self-sustaining oscillators downstream. Origin:
+the sponsor's reflection that holograms and MRI led him to wavefunctions persisting in the
+classical world, the quantum/classical separation being an artefact of reference control,
+and his question whether synchronization is instant rather than gradual and whether
+virtual particles are bookkeeping for phase jumps.
