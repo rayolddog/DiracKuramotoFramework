@@ -1696,3 +1696,12 @@ reproduce the Markov decay, N = 4 revive, N = 1 oscillate. Answer: three answers
 by state and noise; the entanglement cut can be a genuine finite-time boundary with
 nothing sharp at either site, which the single-site crossover never was. Standard
 open-systems physics; not a paper claim; a record item.
+
+**Item 14, addendum — applied to the papers as v1.4 (2026-09-05).** At the sponsor's word the
+entanglement-cut results enter the candidate as §4.6 (and the long form's §3.4), with a
+table row and five references (Wootters 1998; Yu & Eberly 2004, 2009; Carravetta et al.
+2004; Levitt 2012). Applied alongside, as corrections of fact from the third round (items A
+and B of `findings_classification_v1.3.md`): the crossover formula withdrawn for its two
+asymptotes with Run A′'s non-monotone interior stated; "hence temperature-set" withdrawn
+for band absorbers. The third round's other findings remain unapplied by the sponsor's
+decision.
