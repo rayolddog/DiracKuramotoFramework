@@ -1283,15 +1283,21 @@ Frequency}\label{zitterbewegung-as-clock-beat-frequency}
 Zitterbewegung --- the rapid trembling motion of a free Dirac particle
 --- is the beat note between the temporal and spatial phase clocks.
 
-The temporal clock oscillates at \(\omega_t = E/\hbar\); the spatial
-clock at \(\omega_s = p^2/(m\gamma\hbar)\). Their beat frequency in the
-non-relativistic limit:
+At rest the two chiral clocks obey
+\(i\hbar\,\partial_t\psi_L = mc^2\psi_R\) and
+\(i\hbar\,\partial_t\psi_R = mc^2\psi_L\) (§6). Their normal modes are
+\(\psi_L = \psi_R\) at \(E = +mc^2\) and \(\psi_L = -\psi_R\) at
+\(E = -mc^2\): the positive- and negative-energy solutions. A state
+carrying both modes beats at their splitting:
 
-\(\boxed{\omega_{\text{Zitter}} \approx \frac{2mc^2}{\hbar}}\)
+\(\boxed{\omega_{\text{Zitter}} = \frac{2E}{\hbar} = \frac{2mc^2}{\hbar}\ \text{at rest}}\)
 
-This is the known Zitterbewegung frequency, here derived as the beat
-note between two coupled oscillators rather than as interference between
-positive- and negative-frequency Dirac solutions.
+This is the known Zitterbewegung frequency. The beat between the two
+coupled clocks and the interference between the positive- and
+negative-energy Dirac solutions are one statement, not two: the normal
+modes of the coupled pair \emph{are} those solutions, and the beat is
+the advance of the relative phase of the positive- and negative-energy
+parts. A pure positive-energy state has no beat.
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -1322,10 +1328,34 @@ amplitude \\
 \end{longtable}
 }
 
-The Zitterbewegung frequency is the Compton frequency
+The Compton frequency \(\omega_C = mc^2/\hbar = K\) is the rate of each
+clock and of the chiral coupling; it sets the Nyquist spatial bandwidth
+limit of Section 13 and the coupling time
+\(\tau_{\text{sync}} = 1/K = \hbar/mc^2\). The Zitterbewegung frequency
+is twice it, \(\omega_{\text{Zitter}} = 2K\): for the electron
+\(1.55 \times 10^{21}\) rad/s, period
+\(\pi\hbar/mc^2 = 4.0 \times 10^{-21}\) s.
+
+\textbf{Corrected 2026-09-06, at the accountable author's instruction.}
+This section formerly derived the beat from \emph{``the temporal clock
+at \(\omega_t = E/\hbar\) and the spatial clock at
+\(\omega_s = p^2/(m\gamma\hbar)\)''} and closed: \emph{``The
+Zitterbewegung frequency is the Compton frequency
 \(\omega_C = mc^2/\hbar\) --- the same rate that sets the Nyquist
 spatial bandwidth limit in Section 13 and the synchronization timescale
-\(\tau_{\text{sync}} = 1/K = \hbar/mc^2\).
+\(\tau_{\text{sync}} = 1/K = \hbar/mc^2\).''} The closing sentence
+contradicted the boxed equation, §6 and §14 by a factor of two, and the
+stated difference \(\omega_t - \omega_s\) gives \(mc^2/\hbar\) in the
+non-relativistic limit, not \(2mc^2/\hbar\). Both are replaced by the
+normal-mode statement above, which is the textbook result (Schrödinger
+1930). No simulation in the record used the wrong factor: the code
+carries \(2K\) throughout (\texttt{tests/higgs\_clock.py},
+\texttt{tests/predictions.py} P5, \texttt{tests/dirac\_extension.py},
+\texttt{ZBW\_synchronization/}, \texttt{limiting\_curvature/}). The same
+slip stands in the frozen Paper 3 (\texttt{PAPER\_UNIFIED.md}: the
+``Many clocks, not many times'' paragraph, the dictionary row for mass,
+and Appendix B) and is noted here rather than edited, that paper being
+frozen.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
