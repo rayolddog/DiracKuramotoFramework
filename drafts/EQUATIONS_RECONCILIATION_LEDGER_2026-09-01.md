@@ -1718,3 +1718,16 @@ the sponsor's reflection that holograms and MRI led him to wavefunctions persist
 classical world, the quantum/classical separation being an artefact of reference control,
 and his question whether synchronization is instant rather than gradual and whether
 virtual particles are bookkeeping for phase jumps.
+
+
+## Closing (item 15, 2026-09-05)
+
+The sponsor's closing statement, written into the README at his instruction: the
+repository is a study into an interpretation of quantum mechanics based on wave realism;
+it was postulated that synchronization of Dirac spinors by a Kuramoto-like mechanism could
+add to the mechanism underlying the equations of quantum mechanics; all tests and three
+rounds of adversarial AI review failed to support any mechanism of phase shift other than
+an immediate one, refuting the development of a phase-synchronization mechanism; none of
+the papers are for submission; they are the record of the sponsor gaining a better
+understanding of Dirac's equation and the decoherence interpretation. The ledger's
+totals line is left as it stands; this item closes it.

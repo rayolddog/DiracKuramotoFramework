@@ -1,61 +1,85 @@
 # The Dirac–Kuramoto Framework
 
-**A research notebook: one physics program, developed and adversarially reviewed in
-human–AI collaboration, with the full record kept.**
+**A study into an interpretation of quantum mechanics based on wave realism, kept as a
+complete record — including the mechanism it postulated, the tests that refuted it, and
+the understanding that was gained instead.**
 
 ---
 
 ## What this repository is
 
-This repository is a **research notebook** — the recorded steps and progression of an
-attempt to build a framework that helps understanding of quantum mechanics. It is
-deliberately not a polished artifact: the papers, the framework notes, the dead ends,
-the adversarial review rounds, the corrections, and the revisions are all here,
-because the record of *how the understanding was reached* is treated as a first-class
-output alongside the physics itself.
+This repository is a study into an interpretation of quantum mechanics based on wave
+realism: the wave function is taken to be real, there is one world, and the question
+asked was what physical process, if any, underlies the equations of quantum mechanics at
+a measurement.
 
-It is also, candidly, a demonstration of something beyond the physics:
+It was postulated that synchronization of Dirac spinors — phase locking of the chiral
+sectors of the Dirac field to a detector's matter, by a mechanism such as Kuramoto or
+Adler synchronization — could add to the mechanism underlying the equations of quantum
+mechanics, and in particular could produce the Born statistics and the single outcome of
+a measurement from dynamics rather than by postulate.
 
-- **How AI accelerates research.** The formalization, theorem-proving, simulation,
-  literature work, and manuscript drafting throughout this program were performed by
-  AI in collaboration with a human researcher — at a pace and breadth a single
-  independent researcher could not otherwise reach.
-- **How AI educates the researcher.** The collaboration runs in both directions: the
-  discussions recorded here repeatedly show a concept being tested, a misconception
-  being corrected, and the research direction being sharpened as a result. The human
-  author's internal model of the physics is a product of this repository as much as
-  the papers are.
-- **How adversarial AI review disciplines the work.** Each paper is frozen and
-  submitted to a multi-model review panel (independent AI labs, byte-identical
-  referee instructions, findings pre-registered before reading the reports, verbatim
-  reviews and author responses published in the round folders). The panels have
-  twice demonstrated that *reproducible is not the same as correct*, and their
-  findings drove substantive corrections — including one reviewer independently
-  re-running a public simulation script and catching a mislabeled threshold.
+**That postulate was refuted.** All the tests run — exact calculations in the smallest
+models containing the relevant physics, stochastic races among synchronizing clocks at
+every criterion the ledger could name, and three rounds of adversarial review by AI
+referees instructed to find the errors — failed to support any mechanism of phase shift
+other than an immediate one: a detector site's phase relation to the wave is set from
+the first instant by its detuning and return rate, commitment is a memoryless jump, and
+the gradual approach of a synchronizing oscillator either gives the wrong statistics or
+acts downstream of the event and touches nothing. The development of a phase-
+synchronization mechanism is recorded as a negative result (`NEGATIVE_RESULT.md`), with
+the predictions that were written before each test and the ones that were wrong.
 
-The authors' own assessment, stated plainly: **the Dirac–Kuramoto framework itself
-may never become an accepted physics construct — but the process of research
-facilitated by AI is already established practice.** What this repository adds is
-the complete, honest, end-to-end record of that process: papers, reviews,
-corrections, and the learning itself, kept together.
+What was left standing, after the mechanism went, is the projection postulate read
+realistically at the decoherence crossover, honestly priced: real waves on configuration
+space, a nonlocal projection, a foliation chosen rather than forced, and a Heisenberg cut
+that is a crossover with a location and a width — all of it decoherence and open-systems
+theory, and all of it said to be so.
+
+**None of the papers here are for submission for publication.** They are the record of
+one person gaining a better understanding of Dirac's equation and of the decoherence
+interpretation of quantum mechanics, in collaboration with an AI, with the dead ends,
+the corrections, the review rounds, and the learning kept together as the output.
+
+Three things about the process are worth stating, since they are what the record shows:
+
+- **The AI did the formalization, simulation, literature work, and drafting; the human
+  supplied the physical questions and adjudicated.** Several of the corrections that
+  mattered most came from the human's questions from outside the field — commitment at
+  the absorption vertex, the shared-waveform picture that repaired the postulate, the
+  two-absorber entanglement calculation.
+- **Every test was pre-registered.** Definitions were fixed before they were applied,
+  predictions were written before results were opened, and wrong predictions are scored
+  as wrong in the same files as the right ones.
+- **Adversarial AI review found what the authors had not.** Each frozen paper was
+  reviewed by panels with byte-identical referee instructions and the findings
+  classified against a ledger of anticipated criticisms committed in advance. The panels
+  caught mislabelled thresholds, a postulate that failed for detectors reached at
+  different times, a formula that failed in the regime it was quoted for, and misread
+  sources; three rounds on the final paper converged on its status rather than on a
+  passing version.
 
 ---
 
-## The physics in one paragraph
+## The physics in one paragraph, as it ended
 
-Written in the chiral (Weyl) basis, the Dirac equation exposes the fermion mass as
-the off-diagonal coupling between two chiral phase sectors: **K = m**. Closed and
-unitary, that coupling can only precess — it provably cannot lock, which is why
-isolated superpositions survive. Opened to a dissipative bulk, the same coupling
-acquires an Adler/Kuramoto attractor — and that locking, the framework argues, is
-what measurement *is*. From this one identification the program develops: the Born
-rule as the statistics of a **proved fair game** among detector absorber sites
-(Paper 1); the Heisenberg cut as a **physical threshold with a computable location
-and width** (Paper 2); and a synthesis in which persistence (virtual→real) and
-classicality (quantum→classical) are one locking mechanism at two scales (Paper 3,
-in draft). Every claim is conditional on stated premises, every deviation channel is
-ledgered, and the framework's one exotic commitment — a preferred frame entering
-through the measurement sector only — is carried openly and given a test program.
+Written in the chiral basis, the Dirac equation exposes the fermion mass as the coupling
+between two chiral phase sectors, and the programme asked whether that coupling, opened
+to a dissipative detector, could lock and thereby select an outcome. It cannot: the
+sub-threshold site has no autonomous phase to entrain, the locking race of self-sustaining
+clocks gives an outcome exponent of 1.5 rather than Born's 2, reaches Born only when the
+golden rule's structure is put in by hand, fails on narrow spectra and on staggered
+arrival, and requires a nonlocal one-quantum constraint it does not supply. What the
+exact models did establish is decoherence theory's own account with numbers attached: the
+crossover at which irreversible capture sets in is coupling-set where the coupling exceeds
+the record channel's rate and record-set where it does not; irreversibility needs a
+record channel dense on the capture timescale; the carrier frequency enters only as a
+Bloch–Siegert shift; a self-sustaining amplifier kinks the crossover and does not sharpen
+it; and for a pair of absorbers the same machinery gives the three known shapes of
+entanglement loss, including a finite-time death with nothing sharp at either site. The
+selection itself remained a postulate — the quantum-jump unravelling of photodetection
+read as what happens — and the programme's one result is that no detector dynamics, and
+no synchronization substrate, could have done the choosing.
 
 ---
 
@@ -65,18 +89,12 @@ through the measurement sector only — is carried openly and given a test progr
 |---|---|---|
 | **Paper 1 — A Field–Matter Selector for Outcome Production, Conditioned on a Detector Ready-State Measure** | [drafts/PAPER1_DRAFT_born_selection.md](drafts/PAPER1_DRAFT_born_selection.md) | v0.9 (2026-09-02: v0.8 corrected the §6.1 timescale ladder against the paper's own definition of commitment and withdrew the v0.7 demotion of Theorems 4–5; v0.9 adopts reading B of the share ontology — amplitude bookkeeping that becomes energy only at the whole-quantum vertex — after the threshold-gated alternative was quantified in the paper's own engine and found to over-predict; see [drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md](drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md), E-16 and open items 2a, 2b, 5). Retitled at v0.6; the former title, *The Born Rule as a Derived Fair Game*, was withdrawn with the derivation claim it asserted. Reviewed 2026-07 (panel: GPT-5 Codex, Gemini, SuperGrok + internal reviewer, down-weighted); round record in [born_selection_AI_review_2026-07/](born_selection_AI_review_2026-07/) |
 | **Paper 2 — The Heisenberg Cut as a Physical Threshold** | [drafts/PAPER2_DRAFT_heisenberg_cut.md](drafts/PAPER2_DRAFT_heisenberg_cut.md) · [PDF](Heisenberg_Cut_v0.4.pdf) | v0.4 (2026-09-04: first microscopic test of the recoverability criterion, predictions on record — [heisenberg_cut_recoverability/](heisenberg_cut_recoverability/RESULTS.md); location claim survives, width restated). Reviewed 2026-07 at v0.3; round record in [heisenberg_cut_AI_review_2026-07/](heisenberg_cut_AI_review_2026-07/) |
-| **One World, One Cut — publication candidate** (short form, 2026-09-04) | [drafts/PAPER_one_world_one_cut_SHORT.md](drafts/PAPER_one_world_one_cut_SHORT.md) · [PDF v1.5](One_World_One_Cut_short_v1.5.pdf) · [v1.4](One_World_One_Cut_short_v1.4.pdf) · [v1.3](One_World_One_Cut_short_v1.3.pdf) · [v1.2](One_World_One_Cut_short_v1.2.pdf) · [v1.1](One_World_One_Cut_short_v1.1.pdf) · [v1.0 frozen](One_World_One_Cut_short_v1.0.pdf) | v1.5 (2026-09-05: two statements added — virtual particles as bookkeeping of the evanescent amplitude whose effects are phase shifts, the jump being real; and phase alignment playing no role in selection. v1.4: §4.6, the cut for a pair — entanglement loss under three noises, scored against Yu–Eberly and Levitt; the two corrections of fact from the third review round applied; the rest of that round unapplied by the sponsor's decision), revised after the four-reviewer internal round in [one_world_one_cut_AI_review_2026-09/](one_world_one_cut_AI_review_2026-09/): the postulate restated as the quantum-jump unravelling read as ontic after the record's own model falsified the v1.0 hazard for staggered arrival; the cut's location given its regime (coupling-set for Γ ≪ K, record-set for Γ ≫ K); the in-principle claim conceded; the transactional comparison rewritten against the sources; frame tests withdrawn; the paper's one result stated as a no-go |
-| **One World, One Cut** (the single paper into which the three collapse, 2026-09-04) | [drafts/PAPER_one_world_one_cut.md](drafts/PAPER_one_world_one_cut.md) · [PDF](One_World_One_Cut_v1.0.pdf) | v1.0 draft: the interpretation without synchronization — real waves, one world, a located cut, selection at absorption as a postulate; the transactional interpretation placed as nearest neighbour |
+| **One World, One Cut** (short form — not for submission; the final statement of the interpretation, three review rounds recorded) | [drafts/PAPER_one_world_one_cut_SHORT.md](drafts/PAPER_one_world_one_cut_SHORT.md) · [PDF v1.5](One_World_One_Cut_short_v1.5.pdf) · [v1.4](One_World_One_Cut_short_v1.4.pdf) · [v1.3](One_World_One_Cut_short_v1.3.pdf) · [v1.2](One_World_One_Cut_short_v1.2.pdf) · [v1.1](One_World_One_Cut_short_v1.1.pdf) · [v1.0 frozen](One_World_One_Cut_short_v1.0.pdf) | v1.5 (2026-09-05: two statements added — virtual particles as bookkeeping of the evanescent amplitude whose effects are phase shifts, the jump being real; and phase alignment playing no role in selection. v1.4: §4.6, the cut for a pair — entanglement loss under three noises, scored against Yu–Eberly and Levitt; the two corrections of fact from the third review round applied; the rest of that round unapplied by the sponsor's decision), revised after the four-reviewer internal round in [one_world_one_cut_AI_review_2026-09/](one_world_one_cut_AI_review_2026-09/): the postulate restated as the quantum-jump unravelling read as ontic after the record's own model falsified the v1.0 hazard for staggered arrival; the cut's location given its regime (coupling-set for Γ ≪ K, record-set for Γ ≫ K); the in-principle claim conceded; the transactional comparison rewritten against the sources; frame tests withdrawn; the paper's one result stated as a no-go |
+| **One World, One Cut** (long form — the paper of record for how every number was obtained; not for submission) | [drafts/PAPER_one_world_one_cut.md](drafts/PAPER_one_world_one_cut.md) · [PDF](One_World_One_Cut_v1.0.pdf) | v1.0 draft: the interpretation without synchronization — real waves, one world, a located cut, selection at absorption as a postulate; the transactional interpretation placed as nearest neighbour |
 | **Paper 3 — One Mechanism at Two Scales** (superseded) | [drafts/PAPER3_DRAFT_dk_framework.md](drafts/PAPER3_DRAFT_dk_framework.md) | v0.1, **frozen 2026-09-04 as the record of the synchronization program**; was: draft in progress; pre-freeze consistency check ledgered in [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-01.md) (round 1, independent) and [drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md](drafts/TRIPAPER_CONSISTENCY_LEDGER_2026-08-31.md) (round 2, propagation of Paper 1 v0.7) |
 | **The Many Clocks Interpretation** (predecessor) | [current_revision_DK_paper.md](current_revision_DK_paper.md) | v8, **frozen as the provenance record** — the program's original main paper (externally submitted solo-byline to Foundations of Physics, declined 2026-07; that decline closed the conventional-journal track). Superseded by Paper 3; retained unrevised. |
 
-The three papers form a deliberate sequence: Paper 1 argues the selection statistics
-from detector premises — conditional outcome compatibility over a tested domain, not
-a derivation of the Born measure; Paper 2 consumes one theorem of Paper 1 and locates
-the classical–quantum boundary; Paper 3 assembles the framework, prices every premise,
-and consolidates the open problems. Earlier long-form versions
-([PAPER_UNIFIED.md](PAPER_UNIFIED.md), [paper.pdf](paper.pdf)) are retained as the
-first-version record.
+The papers are a sequence in time, not a programme for submission: Paper 1 developed the selection game and is now the recorded negative result; Paper 2 located the cut and was tested into its final, decoherence-compatible form; Paper 3 assembled the synchronization framework and is frozen as its record; the single paper *One World, One Cut* is what survived the tests and three review rounds — an interpretation, priced, that claims no prediction beyond quantum mechanics. Earlier long-form versions ([PAPER_UNIFIED.md](PAPER_UNIFIED.md), [paper.pdf](paper.pdf)) are retained as the first-version record.
 
 **Why no journal?** The program's honest bylines credit the AI's intellectual
 contribution directly (see [AUTHORSHIP.md](AUTHORSHIP.md) and
