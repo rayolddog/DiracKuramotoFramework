@@ -1675,3 +1675,24 @@ again on withdrawn wording. **Not revised;** dispositions proposed for the spons
 **Assessment:** three rounds converged on the paper's status (a priced restatement,
 novelty 2), not on a passing version; each revision introduced errors at a rate
 comparable to the ones it fixed; a fourth internal round would find a fourth list.
+
+
+## The entanglement cut: two absorbers, three regimes (item 14, 2026-09-05)
+
+Sponsor's question: does the cut extend to loss of entanglement, and is that loss a
+gradual loss of phase coherence? Predictions first
+(`heisenberg_cut_recoverability/PREDICTIONS_entanglement_cut.md`); exact Lindblad two-qubit
+model plus a finite-bath cross-check (`entanglement_cut.py`,
+`ENTANGLEMENT_CUT_RESULTS.md`). **Uncertainty first:** one phrasing wrong (prediction 1's
+"product of the local coherences" — the local coherences of a maximally entangled pair are
+zero; the concurrence is the pair's coherence and decays as the product of the local decay
+factors); one bracket missed at short times (finite bath, 0.017 vs 0.01). **Established:**
+(i) independent dephasing — gradual, e^{−2γt}, set by the local rates, invisible locally;
+(ii) correlated dephasing — Ψ⁺ protected at C = 1 (decoherence-free; Levitt's singlet),
+Φ⁺ at e^{−4γt}, twice the independent rate; (iii) independent damping — Ψ⁺ e^{−Γt}, Φ⁺
+(1−p)² asymptotic, the tilted state √0.2|gg⟩+√0.8|ee⟩ dead at exactly Γt = ln 2 with its
+double-quantum coherence still 0.40 (Yu–Eberly sudden death); (iv) N = 64 record modes
+reproduce the Markov decay, N = 4 revive, N = 1 oscillate. Answer: three answers selected
+by state and noise; the entanglement cut can be a genuine finite-time boundary with
+nothing sharp at either site, which the single-site crossover never was. Standard
+open-systems physics; not a paper claim; a record item.
