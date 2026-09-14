@@ -57,7 +57,14 @@ these. The ledger below assumes they do, and adds what v0.10's own content invit
    record, not by a global stop). *Status: anticipated; not addressed in A.7, which should be
    amended to state that the race's rates are those of the conditional state and that the
    simultaneous-arrival runs do not test staggered arrival. A run with staggered arrival is owed
-   and is a one-line change to `vacuum_race.py`.*
+   and is a one-line change to `vacuum_race.py`.* **Removed before the freeze (2026-09-14, night;
+   runs on record in MathX `vacuum_race/` addenda 2 and 2b, ledger L28).** The race as first
+   written does inherit the failure (0.997 at a tenth of a packet length of stagger). A local
+   repair, ports coupled only by the stop, gives 0.952 and was a registered prediction that
+   missed. The rates on the normalized conditional state give Born at every stagger and coupling.
+   A.7 is amended to state that premise. The item stays here so the round can see that the
+   removal cost the second face of P5, renormalization on a null across the separation, which a
+   reviewer may press as item 8 now doubled.*
 
 4. **A.2's clause is either trivial or unfalsifiable in a real detector.** Any physical
    fluctuation in silicon decorrelates in femtoseconds, so the decorrelation requirement bounds
