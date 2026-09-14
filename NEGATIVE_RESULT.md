@@ -80,6 +80,15 @@ the outcome weights entering as a premise, and the dynamics does not replace the
   recorded as wrong. That discipline, and the sponsor's questions from outside the field,
   caught more errors than the simulations did.
 
+**Added 2026-09-14 (Paper 1 v0.10, Addendum A).** The MathX explorations reached the same
+negative result from the sponsor's two-spinor construction, without reference to this record:
+Born only as a hazard linear in |ψ|² (there, the distribution of a per-atom vacuum term), and
+exclusivity only as the one-quantum stop (there, the maximum over both ports). They add one
+clause to the specification above: any site-specific random factor in the commitment hazard must
+decorrelate between arrivals, and the Fano factor of a single detector's two-port split is the
+observable that bounds its correlation time (experiment: F = 1, so under one arrival interval).
+Detail and the conditional exclusion of reading A at a balanced split: Paper 1 Addendum A.
+
 ## What remains
 
 - Paper 1's open-system derivation (§9.4 (iv), (viii)): a field–absorber–bath Hamiltonian
