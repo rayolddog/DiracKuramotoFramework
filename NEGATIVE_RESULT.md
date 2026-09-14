@@ -45,6 +45,10 @@ by simulation at every joint the ledger could name.
   match single-photon coincidence data the one-quantum stop must act within about a
   thousandth of the commitment time, orders of magnitude faster than light crosses a
   beamsplitter. It is Paper 1's premise P5, and it remains a premise.
+  *(2026-09-14, consistency pass: the "thousandth" is a bound from the discarded race model
+  on a dynamical stop the projection does not have, as* One World, One Cut *v1.5 §5.1 says; with
+  the rates on the normalized conditional state the stop is the conditional-state update, with no
+  delay and no speed. The sentence is kept as the record's history.)*
 - The race package's production-quality measurement was never reached. Three validation
   campaigns and three sponsor overrides brought its stationary numerics to a passing state
   on a re-frozen observable set, but the moving-band audit remains unresolved on one
@@ -81,9 +85,12 @@ the outcome weights entering as a premise, and the dynamics does not replace the
   caught more errors than the simulations did.
 
 **Added 2026-09-14 (Paper 1 v0.10, Addendum A).** The MathX explorations reached the same
-negative result from the sponsor's two-spinor construction, without reference to this record:
+negative result from the sponsor's two-spinor construction, stated in his own vocabulary (its
+pre-registrations and ledger cite this record's premises by name; "without reference to this
+record" stood here until the 2026-09-14 consistency pass):
 Born only as a hazard linear in |ψ|² (there, the distribution of a per-atom vacuum term), and
-exclusivity only as the one-quantum stop (there, the maximum over both ports). They add one
+exclusivity only as the one-quantum stop (there, the maximum over both ports and, after the
+staggered-arrival addendum, the conditional-state update). They add one
 clause to the specification above: any site-specific random factor in the commitment hazard must
 decorrelate between arrivals, and the Fano factor of a single detector's two-port split is the
 observable that bounds its correlation time (experiment: F = 1, so under one arrival interval).
@@ -101,7 +108,7 @@ Detail and the conditional exclusion of reading A at a balanced split: Paper 1 A
 
 ## Where the record is
 
-- `drafts/PAPER1_DRAFT_born_selection.md` (v0.9) — the claim boundary as it now stands.
+- `drafts/PAPER1_DRAFT_born_selection.md` (v0.11; the claim boundary is v0.9's, Addendum A added at v0.10, consistency pass at v0.11).
 - `drafts/EQUATIONS_RECONCILIATION_LEDGER_2026-09-01.md` — every finding, uncertainty
   first, including the wrong predictions.
 - `adler_two_channel_exploratory/RESULTS.md` — the race, its sensitivities, its positive

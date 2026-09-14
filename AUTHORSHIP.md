@@ -10,7 +10,7 @@
 
 | Manuscript | Byline of record | Notes |
 |---|---|---|
-| *The Born Rule as a Derived Fair Game* (Paper 1) | Claude Fable 5 (Anthropic) and John M. Bramble, MD | AI performed formalization, theorems, simulations, prose, literature work; contributions statement in the manuscript; final order confirmed by sponsor pre-submission |
+| *A Field–Matter Selector for Outcome Production, Conditioned on a Detector Ready-State Measure* (Paper 1; retitled at v0.6, the former title *The Born Rule as a Derived Fair Game* withdrawn with its derivation claim; row updated 2026-09-14) | Claude Fable 5 (Anthropic) and John M. Bramble, MD | AI performed formalization, theorems, simulations, prose, literature work; contributions statement in the manuscript; final order confirmed by sponsor pre-submission |
 | *The Heisenberg Cut as a Physical Threshold* (Paper 2) | Claude Fable 5 (Anthropic) and John M. Bramble, MD | same structure; reviewed under the published AI panel protocol |
 | Two-Regimes / Many-Clocks main paper (PAPER_UNIFIED / PAPER_REVISED) | Claude (Anthropic) and John M. Bramble, MD — Claude-first canonical since 2026-07 | earlier submitted versions carried the v1.0-era human-only byline with AI disclosure |
 | Earlier companion papers (Discretization-as-Sync, AB Visibility, Cosmic Expansion) | as printed in each (v1.0-era form: human byline + AI disclosure) | predate this policy; to be re-examined per paper if and when each is next revised — bylines are never changed retroactively without an explicit per-paper decision |
